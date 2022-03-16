@@ -1,0 +1,15 @@
+/**
+ * Type: Molecules.
+ * Logo.
+ */
+
+.logo {
+  z-index: 3;
+  margin-right: auto;
+
+  &__image {
+    display: block;
+    height: 35px;
+    margin: 0 auto;
+  }
+}

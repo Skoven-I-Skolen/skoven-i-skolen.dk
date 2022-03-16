@@ -1,0 +1,14 @@
+{% if hierarchy %}
+  <div class="search-hierarchy">
+    <strong class="search-hierarchy__title">{{ 'Found in'|t }}:</strong>
+    {% for item in hierarchy %}
+      <span>
+      {% if loop.last == false %}
+        {{ item|length > 30 ? item|slice(0, 30) ~ '...' : item}}{{ ' / ' }}
+      {% else %}
+        {{ item }}
+      {% endif %}
+    </span>
+    {% endfor %}
+  </div>
+{% endif %}

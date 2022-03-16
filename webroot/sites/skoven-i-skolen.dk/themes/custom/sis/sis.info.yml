@@ -1,0 +1,32 @@
+name: sis
+type: theme
+description: 'Premium subtheme'
+package: Drupal Premium
+version: 2.0.0
+core_version_requirement: ^8.8 || ^9
+base theme: premium_theme
+dependencies:
+  - styles
+  - premium_theme_helper
+  - premium_core
+
+libraries:
+  - sis/master
+
+regions:
+  preheader: Pre header
+  header: Header
+  pageheader: Pageheader
+  breadcrumb: Breadcrumb
+  content: Content
+  burgermenu: Burgermenu
+
+component-libraries:
+  reusable-component:
+    paths:
+      - assets/components/twig/01-particles
+      - assets/components/twig/02-molecules
+      - assets/components/twig/03-organisms
+
+interface translation project: sis
+interface translation server pattern: sis/translations/%language.po

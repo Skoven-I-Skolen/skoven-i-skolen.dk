@@ -1,0 +1,77 @@
+/**
+ * Type: Base.
+ * Base styling.
+ */
+
+/* Box sizing */
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+/* Body */
+body {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding-top: var(--header-height-mobile);
+  overflow-x: hidden;
+  color: var(--theme-color);
+  font-weight: var(--base-font-weight);
+  font-size: var(--base-font-size);
+  font-family: var(--base-font-family);
+  line-height: 1.5;
+  background-color: var(--site-background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (--viewport-md-min) {
+    padding-top: calc(var(--header-height) + var(--meta-menu-height));
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+/* Links */
+a {
+  color: var(--theme-link-color);
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Horizontal ruler */
+hr {
+  margin: 30px 0;
+  border: none;
+  border-bottom: 1px solid var(--theme-divider-background-color);
+}
+
+/* Image handling */
+figure {
+  width: 100%;
+  margin: 0;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    transition: opacity .2s;
+  }
+
+  figcaption {
+    margin-top: 8px;
+  }
+}

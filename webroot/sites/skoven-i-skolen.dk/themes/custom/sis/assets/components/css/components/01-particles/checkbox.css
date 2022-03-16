@@ -1,0 +1,65 @@
+/**
+ * Type: Atom.
+ * Checkbox.
+ */
+
+.checkbox {
+  &:checked,
+  &:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  &:checked + label,
+  &:not(:checked) + label {
+    position: relative;
+    display: inline-block;
+    padding-left: 28px;
+    color: currentcolor;
+    line-height: 1.3;
+    cursor: pointer;
+  }
+
+  &:checked + label::before,
+  &:not(:checked) + label::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--theme-input-border);
+    border-radius: 0;
+    transition: all .2s ease;
+    content: "";
+  }
+
+  &:checked + label::after,
+  &:not(:checked) + label::after {
+    position: absolute;
+    top: 2px;
+    left: 7px;
+    width: 7px;
+    height: 12px;
+    background: transparent;
+    border-right: 2px solid var(--theme-input-color-marked);
+    border-bottom: 2px solid var(--theme-input-color-marked);
+    border-radius: 0;
+    transform: rotate(45deg);
+    transition: all .2s ease;
+    content: "";
+  }
+
+  &:not(:checked) + label::after {
+    opacity: 0;
+  }
+
+  &:checked + label::after {
+    opacity: 1;
+  }
+
+  &[disabled],
+  &.disabled,
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}

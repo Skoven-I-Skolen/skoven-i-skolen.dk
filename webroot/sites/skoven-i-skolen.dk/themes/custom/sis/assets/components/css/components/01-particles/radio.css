@@ -1,0 +1,63 @@
+/**
+ * Type: Atom.
+ * Radio.
+ */
+
+.radio {
+  &:checked,
+  &:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  &:checked + label,
+  &:not(:checked) + label {
+    position: relative;
+    display: inline-block;
+    padding-left: 28px;
+    color: currentcolor;
+    line-height: 1.3;
+    cursor: pointer;
+  }
+
+  &:checked + label::before,
+  &:not(:checked) + label::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--theme-input-border);
+    border-radius: 100%;
+    content: "";
+  }
+
+  &:checked + label::after,
+  &:not(:checked) + label::after {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    background: var(--theme-input-color-marked);
+    border-radius: 100%;
+    transition: all .2s ease;
+    content: "";
+  }
+
+  &:not(:checked) + label::after {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  &:checked + label::after {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  &[disabled],
+  &.disabled,
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,72 @@
+/**
+ * Type: Organisms.
+ * Inline navigation.
+ */
+
+.inline-navigation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__list {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow-x: hidden;
+    list-style: none;
+    outline: none;
+
+    @media (--viewport-sm-min) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @media (--viewport-md-min) {
+      padding: 0;
+    }
+
+    @media (--viewport-lg-min) {
+      margin: -50px;
+    }
+  }
+
+  &__see-more {
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (--viewport-md-min) {
+      margin-top: 100px;
+    }
+  }
+
+  &--one-column {
+    .inline-navigation-item {
+      @media (--viewport-md-min) {
+        width: 100%;
+      }
+    }
+  }
+
+  &--two-columns {
+    .inline-navigation-item {
+      @media (--viewport-md-min) {
+        width: calc(50% - 100px);
+      }
+
+      &__image {
+        &::before {
+          @media (--viewport-sm-min) {
+            padding-top: 75%;
+          }
+        }
+      }
+    }
+  }
+
+  .flickity-button:disabled {
+    opacity: 0;
+  }
+}

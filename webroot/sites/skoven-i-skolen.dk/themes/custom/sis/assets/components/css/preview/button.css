@@ -1,0 +1,11 @@
+/**
+ * Type: Preview.
+ * Form styling inside wrapper.
+ */
+
+@nestedimport "./assets/components/css/base/variables.css";
+
+.field--type-styles,
+.field--type-styles-link {
+  @nestedimport "./assets/components/css/components/01-particles/button.css";
+}

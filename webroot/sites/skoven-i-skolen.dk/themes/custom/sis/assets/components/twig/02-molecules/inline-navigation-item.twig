@@ -1,0 +1,21 @@
+{{ attach_library('sis/inline-navigation-item') }}
+
+<li {{ (not attributes ? create_attribute() : attributes ).addClass('inline-navigation-item') }}>
+  <a href="{{ url }}" class="inline-navigation-item__link">
+    <figure{{ create_attribute().addClass('inline-navigation-item__image').addClass(media is empty ? 'inline-navigation-item__image--fallback') }}>
+      {% if media is not empty %}
+        {{ media }}
+      {% else %}
+        {% include '@reusable-component/svg-icon.twig' with {
+          'attributes': '',
+          'svgIconName': 'no-image'
+        } %}
+      {% endif %}
+    </figure>
+    <h3 class="inline-navigation-item__title">{{ label }}</h3>
+    {% if teaser %}
+      <div class="inline-navigation-item__text">{{ teaser }}</div>
+    {% endif %}
+    <div class="inline-navigation-item__read-more">{{ 'Read more'|t }}</div>
+  </a>
+</li>

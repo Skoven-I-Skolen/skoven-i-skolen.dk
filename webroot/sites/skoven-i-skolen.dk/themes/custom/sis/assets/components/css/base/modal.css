@@ -1,0 +1,38 @@
+/**
+ * Type: Base.
+ * Modal styling.
+ */
+
+.ui-dialog:not(.ui-dialog-position-side) {
+  /* stylelint-disable */
+  top: 50% !important;
+  height: 80% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+
+  .ui-dialog-content {
+    max-height: calc(100% - 46px) !important;
+    min-height: calc(100% - 46px) !important;
+  }
+  /* stylelint-enable */
+}
+
+#layout-builder-modal {
+  .js-media-library-selection {
+    .js-media-library-item {
+      margin: 10px 0;
+
+      .js-form-type-number {
+        margin: 0 0 20px;
+
+        label {
+          display: block;
+        }
+      }
+
+      input.js-form-submit {
+        float: right;
+      }
+    }
+  }
+}

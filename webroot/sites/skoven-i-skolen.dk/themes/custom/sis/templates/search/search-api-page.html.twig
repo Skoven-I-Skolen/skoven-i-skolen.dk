@@ -1,0 +1,26 @@
+{{ attach_library('sis/search-page') }}
+
+<div{{ attributes.addClass('container') }}>
+    <div class="search-page">
+        <div class="search-page__title">
+            {% if search_title %}
+                <h2>{{ search_title }}</h2>
+            {% endif %}
+        </div>
+        <div class="search-page__no-of-results">
+            {% if no_of_results %}
+                <p>{{ no_of_results }}</p>
+            {% endif %}
+        </div>
+        <div class="search-page__form">
+            {{ form }}
+        </div>
+        <div class="search-page__results">
+            {{ results }}
+            {{ no_results_found }}
+        </div>
+        <div class="search-page__pager">
+            {{ pager }}
+        </div>
+    </div>
+</div>

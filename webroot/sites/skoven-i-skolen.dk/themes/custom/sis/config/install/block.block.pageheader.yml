@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - premium_core
+  theme:
+    - sis
+id: pageheader
+theme: sis
+region: pageheader
+weight: 0
+provider: null
+plugin: premium_hero_block
+settings:
+  id: premium_hero_block
+  label: Pageheader
+  provider: premium_core
+  label_display: '0'
+visibility: {  }

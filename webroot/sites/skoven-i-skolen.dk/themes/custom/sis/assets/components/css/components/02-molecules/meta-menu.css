@@ -1,0 +1,48 @@
+/**
+ * Type: Molecules.
+ * Meta menu.
+ */
+
+.meta-menu {
+  display: none;
+  background-color: var(--color-gray-light);
+
+  @media (--viewport-md-min) {
+    display: block;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: var(--meta-menu-height);
+  }
+}
+
+.meta-menu-list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.meta-menu-item {
+  margin-right: 35px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &__link {
+    color: var(--color-primary);
+    font-size: var(--base-font-size);
+    line-height: 1.3;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

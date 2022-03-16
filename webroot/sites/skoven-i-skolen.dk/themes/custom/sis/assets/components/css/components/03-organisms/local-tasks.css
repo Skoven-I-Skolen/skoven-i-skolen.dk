@@ -1,0 +1,41 @@
+/**
+ * Type: Organisms.
+ * Local tasks (Drupal).
+ */
+
+.local-tasks {
+  z-index: 13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 11px 0;
+  list-style: none;
+  background-color: var(--color-gray-dark);
+
+  li {
+    font-size: var(--base-font-size);
+
+    &:last-child::after {
+      content: "";
+    }
+
+    &::after {
+      margin: 0 10px;
+      content: "|";
+    }
+  }
+
+  li,
+  a {
+    color: var(--color-white);
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--color-white);
+    text-decoration: underline;
+  }
+}

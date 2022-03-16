@@ -1,0 +1,42 @@
+/**
+ * Type: Molecules.
+ * Burger.
+ */
+
+.burger {
+  display: inline-flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--base-font-size-extra-small);
+  cursor: pointer;
+
+  @media (--viewport-md-min) {
+    margin-left: 20px;
+  }
+
+  &__lines {
+    > span {
+      display: block;
+      width: 40px;
+      height: 1px;
+      margin-bottom: 10px;
+      background-color: var(--color-primary);
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__label {
+    margin-left: 15px;
+    font-weight: 300;
+    font-size: var(--base-font-size-extra-small);
+
+    @media (--viewport-md-min) {
+      display: none;
+    }
+  }
+}

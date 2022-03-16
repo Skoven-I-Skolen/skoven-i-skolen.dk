@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a link with target
+ *
+ * Available variables:
+ * - link: The link that has already been formatted by l().
+ * - title: (optional) A descriptive or alternate title for the link, which may
+ *   be different than the actual link text.
+ * - target_value: Boolean indicating whether or not link should open in new window
+ *
+ * @see template_preprocess()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set attributes = (not attributes ? create_attribute() : attributes).addClass('button') %}
+
+{% if target_blank %}
+  {% set attributes = attributes
+    .setAttribute('target', '_blank')
+    .setAttribute('rel', 'noopener') %}
+{% endif %}
+
+<a {{ attributes.setAttribute('href', url.toString()) }}>
+  {% block content %}
+    {{ title }}
+  {% endblock %}
+</a>

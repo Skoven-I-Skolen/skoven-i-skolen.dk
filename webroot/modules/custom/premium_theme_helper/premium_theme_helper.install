@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Install custom theme.
+ *
+ * @see system_install()
+ */
+function premium_theme_helper_install() {
+  \Drupal::service('theme_installer')->install(['sis']);
+}

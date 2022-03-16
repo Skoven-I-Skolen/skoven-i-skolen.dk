@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('sis/header') }}
+{{ attach_library('sis/burger') }}
+{{ attach_library('sis/meta-menu') }}
+{{ attach_library('sis/search-toggle') }}
+
+<header class="header">
+  <div class="meta-menu">
+    <div class="container">
+      <div class="meta-menu__inner">
+        {{ elements.languageswitcher }}
+        {{ elements.metamenu }}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="header__inner">
+      {{ elements.site_branding }}
+      {{ elements.mainnavigation }}
+      <div class="burger" id="js-burger">
+        <div class="burger__lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="burger__label">{{ 'Menu'|t }}</div>
+      </div>
+      <div class="search-toggle js-search-toggle">
+        {% include '@reusable-component/svg-icon.twig' with {
+          'attributes': '',
+          'svgIconName': 'search'
+        } %}
+        {{ 'Search'|t }}
+      </div>
+    </div>
+  </div>
+</header>

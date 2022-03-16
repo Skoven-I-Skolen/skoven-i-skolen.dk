@@ -1,0 +1,288 @@
+master:
+  version: VERSION
+  css:
+    base:
+      dist/components/css/base/variables.css: {}
+      dist/components/css/base/normalize.css: {}
+      dist/components/css/base/base.css: {}
+      dist/components/css/base/fonts.css: {}
+      dist/components/css/base/helpers.css: {}
+      dist/components/css/base/modal.css: {}
+      dist/components/css/base/typography.css: { }
+      dist/components/css/base/form-styling.css: { }
+      dist/components/css/base/pager.css: { }
+    component:
+      dist/components/css/components/03-organisms/search-overlay.css: {}
+      dist/components/css/components/03-organisms/footer.css: {}
+    layout:
+      dist/components/css/layout/grid.css: {}
+  js:
+    dist/components/js/search-overlay.js: {}
+  dependencies:
+    - sis/theme-primary
+
+# Themes.
+theme:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/theme/theme.css: {}
+
+theme-primary:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/theme/theme-primary.css: {}
+  dependencies:
+    - sis/theme
+
+theme-secondary:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/theme/theme-secondary.css: {}
+  dependencies:
+    - sis/theme
+
+theme-dark:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/theme/theme-dark.css: {}
+  dependencies:
+    - sis/theme
+
+theme-green:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/theme/theme-green.css: {}
+  dependencies:
+    - sis/theme
+
+theme-red:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/theme/theme-red.css: {}
+  dependencies:
+    - sis/theme
+
+theme-seashell:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/theme/theme-seashell.css: {}
+  dependencies:
+    - sis/theme
+
+theme-yellow:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/theme/theme-yellow.css: {}
+  dependencies:
+    - sis/theme
+
+# Previews.
+theme-preview:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/preview/theme.css: {}
+  dependencies:
+    - sis/theme-primary
+    - sis/theme-secondary
+    - sis/theme-dark
+    - sis/theme-green
+    - sis/theme-red
+    - sis/theme-seashell
+    - sis/theme-yellow
+
+button-preview:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/preview/button.css: {}
+
+# Molecules.
+breadcrumb:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/breadcrumb.css: {}
+
+burger:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/burger.css: {}
+
+divider:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/divider.css: {}
+
+image:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/image.css: {}
+
+image-slideshow:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/image-slideshow.css: {}
+      dist/components/js/image-slideshow.css: {}
+  js:
+    dist/components/js/image-slideshow.js: {}
+  dependencies:
+    - core/drupal
+
+inline-navigation-item:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/inline-navigation-item.css: {}
+
+language-menu:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/language-menu.css: {}
+  js:
+    dist/components/js/language-menu.js: {}
+
+logo:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/logo.css: {}
+
+meta-menu:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/meta-menu.css: {}
+
+navigation:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/navigation.css: {}
+  js:
+    dist/components/js/navigation.js: {}
+
+quote:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/quote.css: {}
+
+search-toggle:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/search-toggle.css: {}
+  js:
+    dist/components/js/search-toggle.js: {}
+
+spacer:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/spacer.css: {}
+
+sub-navigation:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/sub-navigation.css: {}
+
+video:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/video.css: {}
+  js:
+    dist/components/js/video.js: {}
+  dependencies:
+    - core/drupal
+
+# Organisms
+accordion:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/accordion.css: {}
+  js:
+    dist/components/js/accordion.js: {}
+  dependencies:
+    - core/drupal
+
+appetiser:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/appetiser.css: {}
+
+burger-menu:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/burger-menu.css: {}
+  js:
+    dist/components/js/burger-menu.js: {}
+
+header:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/header.css: {}
+
+hero:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/hero.css: {}
+  js:
+    dist/components/js/hero.js: {}
+  dependencies:
+    - core/drupal
+
+inline-navigation:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/inline-navigation.css: {}
+      dist/components/js/inline-navigation.css: {}
+  js:
+    dist/components/js/inline-navigation.js: {}
+  dependencies:
+    - core/drupal
+
+local-tasks:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/local-tasks.css: {}
+
+search-page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/search-page.css: {}
+
+status-message:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/status-message.css: {}
+
+maintenance-page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/maintenance-page.css: {}
