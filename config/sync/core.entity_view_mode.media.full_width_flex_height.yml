@@ -1,0 +1,12 @@
+uuid: 5d279514-4999-4156-9707-2a380f5f09e6
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: PBnZop0YAzR1TU8V3LG9DIkQCtbaQlrQhONmb5xL8dE
+id: media.full_width_flex_height
+label: 'Full width - dynamic height'
+targetEntityType: media
+cache: true

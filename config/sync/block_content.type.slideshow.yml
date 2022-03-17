@@ -1,0 +1,10 @@
+uuid: 7ed015f8-33cf-428c-8efc-44dd5a78f0fe
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJexiueaYnP07e0jkuVOiDkfGncI7-4swUkdPLRPxxg
+id: slideshow
+label: Slideshow
+revision: 0
+description: 'En blok der indeholder et slideshow af billeder.'

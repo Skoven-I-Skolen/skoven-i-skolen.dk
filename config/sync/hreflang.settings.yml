@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: AP0rUkD9J76UrK28UKE15IsUXCzjSfCwJKBujS7ox1M
+langcode: da
+x_default: true
+defer_to_content_translation: false

@@ -1,0 +1,62 @@
+uuid: 2c3c21db-177a-4222-b81a-5b94acdcbe64
+langcode: da
+status: true
+dependencies:
+  config:
+    - image.style.appetiser_wide_lg_
+    - image.style.appetiser_wide_md_
+    - image.style.appetiser_wide_sm_
+    - image.style.appetiser_wide_xl_
+    - image.style.appetiser_wide_xs_
+    - image.style.appetiser_wide_xsx2_
+    - image.style.appetiser_wide_xxs_
+    - image.style.appetiser_wide_xxsx2_
+  theme:
+    - sis
+_core:
+  default_config_hash: Hh0p3DphQrw5TVmXjeEE5QcND5gjDCorsz1IIaw5FRs
+id: appetiser_wide
+label: 'Appetiser wide'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: appetiser_wide_xl_
+    breakpoint_id: sis.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: appetiser_wide_lg_
+    breakpoint_id: sis.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: appetiser_wide_md_
+    breakpoint_id: sis.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: appetiser_wide_sm_
+    breakpoint_id: sis.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: appetiser_wide_xs_
+    breakpoint_id: sis.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: appetiser_wide_xsx2_
+    breakpoint_id: sis.xs
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: appetiser_wide_xxs_
+    breakpoint_id: sis.xxs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: appetiser_wide_xxsx2_
+    breakpoint_id: sis.xxs
+    multiplier: 2x
+breakpoint_group: sis
+fallback_image_style: appetiser_wide_xxs_

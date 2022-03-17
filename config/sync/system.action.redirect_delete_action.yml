@@ -1,0 +1,16 @@
+uuid: f4348682-5263-4330-99eb-dec31ec0209a
+langcode: da
+status: true
+dependencies:
+  module:
+    - redirect
+  enforced:
+    module:
+      - redirect
+_core:
+  default_config_hash: vcnRZRvBqTbK3nZ2M4_lKPlEGc8GjPzgaqapYUfyX8M
+id: redirect_delete_action
+label: 'Slet omdirigering'
+type: redirect
+plugin: redirect_delete_action
+configuration: {  }

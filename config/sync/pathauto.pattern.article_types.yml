@@ -1,0 +1,24 @@
+uuid: bdff6ca2-12dc-4528-83de-93e792c172dd
+langcode: da
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: 1CeKPEhQIu5GlY8wZE41fh3jS6veeD11mnS4Vbh8A9Q
+id: article_types
+label: 'Artikel typer'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  91628b84-3bba-4ffa-afdb-413ba4630001:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 91628b84-3bba-4ffa-afdb-413ba4630001
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      article_types: article_types
+selection_logic: and
+weight: -5
+relationships: {  }

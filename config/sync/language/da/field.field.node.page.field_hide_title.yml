@@ -1,0 +1,4 @@
+label: 'Skjul titel'
+settings:
+  on_label: Tilsluttet
+  off_label: Afbrudt

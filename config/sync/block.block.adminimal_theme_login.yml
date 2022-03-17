@@ -1,0 +1,22 @@
+uuid: cc877a43-215d-4cef-8da0-fdf9696035bb
+langcode: da
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - adminimal_theme
+_core:
+  default_config_hash: 862sIulDdHmF0vBU1s2j2_a_CwkxursrL0pIrMDzzOg
+id: adminimal_theme_login
+theme: adminimal_theme
+region: content
+weight: 10
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'Log ind'
+  label_display: visible
+  provider: user
+visibility: {  }

@@ -1,0 +1,12 @@
+uuid: 475d3e41-ccc7-4d02-ae04-34dddb1a0d22
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: 4bWYX7aQyveXIE-cBSeWwmAlN0Q_p5b_1Ml88xlMniM
+id: media.token
+label: Symbol
+targetEntityType: media
+cache: true

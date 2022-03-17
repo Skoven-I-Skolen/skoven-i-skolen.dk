@@ -1,0 +1,27 @@
+uuid: ea2b089a-bda9-4db1-b00f-f086e99f6043
+langcode: da
+status: true
+dependencies:
+  config:
+    - system.menu.meta-menu
+  module:
+    - system
+  theme:
+    - premium_theme
+_core:
+  default_config_hash: oJEYReNtsZdzGrtyGnVYr5bqk1M7o0r8dtEhWzN8D4w
+id: premium_theme_metamenu_bm
+theme: premium_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:meta-menu'
+settings:
+  id: 'system_menu_block:meta-menu'
+  label: 'Meta menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

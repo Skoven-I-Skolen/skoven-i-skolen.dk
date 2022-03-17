@@ -1,0 +1,29 @@
+uuid: 4955b4b8-eeba-4ab4-9b31-81b7201d9572
+langcode: da
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - filter
+    - media
+    - search_api_page
+    - shortcut
+    - system
+_core:
+  default_config_hash: TYdJO5zptwCzpVTAtzgxbFmYGNx9jzFNyF8Ga34dHNo
+id: authenticated
+label: 'Godkendt bruger'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'view media'
+  - 'view search api pages'

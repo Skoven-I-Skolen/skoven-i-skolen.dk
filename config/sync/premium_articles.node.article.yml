@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: IVMyIcytxydE8UHLgtdyyKUQ2wO4vviJUNbJgH2rhHc
+id: node.article
+entity_type_id: node
+bundle: article
+fields:
+  field_article_categories: checkboxes
+  field_article_type: checkboxes
+sort_field: field_list_date
+langcode: da

@@ -1,0 +1,19 @@
+uuid: dadddb11-fd5e-4321-9a3d-d4f52cad4c8b
+langcode: da
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: aEVA8Z--dePOAwtE9GtvbYJnMHtAtBWaMsqvgW-bApY
+name: Artikel
+type: article
+description: 'Brug <em>artikler</em> til dine artikler, nyheder, begivenheder og lignende.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

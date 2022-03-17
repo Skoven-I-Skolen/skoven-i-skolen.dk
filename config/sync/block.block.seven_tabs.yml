@@ -1,0 +1,22 @@
+uuid: 2a17c986-1735-4f35-8819-09cd4eb30a5b
+langcode: da
+status: true
+dependencies:
+  theme:
+    - seven
+_core:
+  default_config_hash: lN2V3cyL3facfQemdIyN9i3K8HRIxQjpKyBKG3Zzki4
+id: seven_tabs
+theme: seven
+region: header
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Faner
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

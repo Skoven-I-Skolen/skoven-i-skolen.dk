@@ -1,0 +1,17 @@
+uuid: 2b56ed85-a707-4243-8b11-fa1e65c71caa
+langcode: da
+status: true
+dependencies:
+  module:
+    - webp
+_core:
+  default_config_hash: DYDef2DqSmSSKUzaOxVWKbtjL5Ea0355dudYZI-Z_YI
+name: optimi
+label: Optimize
+processors:
+  d045dedb-f38d-46f9-90c0-04101e0c5694:
+    id: webp_webp
+    data:
+      quality: 100
+    weight: null
+    uuid: d045dedb-f38d-46f9-90c0-04101e0c5694

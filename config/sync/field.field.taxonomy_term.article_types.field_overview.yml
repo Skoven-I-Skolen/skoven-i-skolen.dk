@@ -1,0 +1,33 @@
+uuid: 182a06c2-7800-4992-a5c5-acc746e57750
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_overview
+    - taxonomy.vocabulary.article_types
+  module:
+    - premium_articles
+_core:
+  default_config_hash: nM896UBRgXfJNwLA5uJ0dRXqx7UpOlypwq_29J21X9s
+id: taxonomy_term.article_types.field_overview
+field_name: field_overview
+entity_type: taxonomy_term
+bundle: article_types
+label: Overblik
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    fields:
+      field_article_type: {  }
+      field_article_categories: {  }
+    count: 20
+    sort: newest
+    pagination: true
+    facets:
+      - field_article_categories
+      - sort
+default_value_callback: ''
+settings: {  }
+field_type: article_filter

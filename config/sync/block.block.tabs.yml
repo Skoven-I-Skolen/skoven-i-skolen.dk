@@ -1,0 +1,22 @@
+uuid: e0ded189-f4c4-4849-800e-09c9a344702f
+langcode: da
+status: true
+dependencies:
+  theme:
+    - sis
+_core:
+  default_config_hash: lN2V3cyL3facfQemdIyN9i3K8HRIxQjpKyBKG3Zzki4
+id: tabs
+theme: sis
+region: preheader
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Faner
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

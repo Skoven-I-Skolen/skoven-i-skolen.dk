@@ -1,0 +1,16 @@
+uuid: 9b7d48d1-9d10-49fc-9b43-b5a70201c1ec
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eJw8n6Tk2tO3ZysuEeGR1gZa1yRffaZzR4t0Q7iNurs
+id: audio
+label: Lyd
+description: 'En lokal lydfil.'
+source: audio_file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_audio_file
+field_map:
+  name: name

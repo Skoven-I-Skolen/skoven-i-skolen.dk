@@ -1,0 +1,27 @@
+uuid: 1ed28995-9411-469e-b6c7-6899bef424e9
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.article_form
+    - field.field.block_content.article_form.field_articles_form
+  module:
+    - premium_articles
+_core:
+  default_config_hash: ypp4zCkiXqOw0DXOzjjfMXHDI31Nwa6770Z7IHAQbLc
+id: block_content.article_form.default
+targetEntityType: block_content
+bundle: article_form
+mode: default
+content:
+  field_articles_form:
+    type: article_filter_form
+    label: hidden
+    settings:
+      view_mode: teaser
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

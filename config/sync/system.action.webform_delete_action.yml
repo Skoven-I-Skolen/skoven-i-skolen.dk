@@ -1,0 +1,13 @@
+uuid: 8c710350-5a83-4d4d-bbba-e2ead17bef2b
+langcode: da
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: e1bCTp0ryXZZtnS9nlVAbtoWz3-8fmbNlqKY3GHzbsM
+id: webform_delete_action
+label: 'Slet webform'
+type: webform
+plugin: webform_delete_action
+configuration: {  }

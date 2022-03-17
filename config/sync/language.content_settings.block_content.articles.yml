@@ -1,0 +1,18 @@
+uuid: 86ebe257-d9b2-4217-8f65-e6e5c12b84b6
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.articles
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+_core:
+  default_config_hash: _6vgNdbHxh08C-ax8u_ATwsGRc6cCVfpFQaPi7vLaNU
+id: block_content.articles
+target_entity_type_id: block_content
+target_bundle: articles
+default_langcode: site_default
+language_alterable: false

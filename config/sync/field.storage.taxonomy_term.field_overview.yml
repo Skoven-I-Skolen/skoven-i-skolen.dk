@@ -1,0 +1,23 @@
+uuid: 7501aed6-ca86-4ba3-801d-549bb347a8d1
+langcode: da
+status: true
+dependencies:
+  module:
+    - premium_articles
+    - taxonomy
+_core:
+  default_config_hash: K2GeWLeQQsANLDBIbiP8_1DB8Z5AsZnBWE9Xw7O2R6M
+id: taxonomy_term.field_overview
+field_name: field_overview
+entity_type: taxonomy_term
+type: article_filter
+settings:
+  entity_bundle: node.article
+  allow_facets: 1
+module: premium_articles
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

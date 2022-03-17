@@ -1,0 +1,23 @@
+uuid: 505e5af1-5d33-4e7c-bd20-25aa0d78b934
+langcode: da
+status: true
+dependencies:
+  module:
+    - block_content
+_core:
+  default_config_hash: 0hwEVp_GAecjUP0KtCExhuecMvaZ2boF56BCn7INCJ4
+id: block_content.field_video_headline
+field_name: field_video_headline
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

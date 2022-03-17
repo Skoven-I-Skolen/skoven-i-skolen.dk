@@ -1,0 +1,18 @@
+uuid: e2e77cdd-7c89-4830-8671-e339a4d6dfd2
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kXXE-KSTJ2E1Fpt156mfoPVTx39YbSRmJnGHrwCOofk
+name: full_size_sm_flex_height
+label: "Full size (SM) - dynamic height\t"
+effects:
+  bc2f4378-1f57-4cdb-bea4-e220cbbd5796:
+    uuid: bc2f4378-1f57-4cdb-bea4-e220cbbd5796
+    id: image_scale
+    weight: 1
+    data:
+      width: 991
+      height: null
+      upscale: true
+pipeline: __default__

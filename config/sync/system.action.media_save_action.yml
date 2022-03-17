@@ -1,0 +1,13 @@
+uuid: 9dc2af8d-55c6-44de-a26c-83a80ce604ec
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: VVyUA6PIaVeGtcIbgEWqJ6SYDiJdReBeojFswURFpKs
+id: media_save_action
+label: 'Gem medie'
+type: media
+plugin: 'entity:save_action:media'
+configuration: {  }

@@ -1,0 +1,25 @@
+uuid: e9cb8db2-b421-4e23-b057-59c08749ae50
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_title
+    - node.type.page
+_core:
+  default_config_hash: W9wVuboE5ZzDMYCpX2u6QD_9fiLCnUQlREP9dGryJQY
+id: node.page.field_hide_title
+field_name: field_hide_title
+entity_type: node
+bundle: page
+label: 'Skjul titel'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Tilsluttet
+  off_label: Afbrudt
+field_type: boolean

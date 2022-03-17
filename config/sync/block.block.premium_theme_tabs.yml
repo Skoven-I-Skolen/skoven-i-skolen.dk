@@ -1,0 +1,22 @@
+uuid: ffb5f1b1-61e6-46a0-8632-d0e2488b33c2
+langcode: da
+status: true
+dependencies:
+  theme:
+    - premium_theme
+_core:
+  default_config_hash: lN2V3cyL3facfQemdIyN9i3K8HRIxQjpKyBKG3Zzki4
+id: premium_theme_tabs
+theme: premium_theme
+region: sidebar_first
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Faner
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

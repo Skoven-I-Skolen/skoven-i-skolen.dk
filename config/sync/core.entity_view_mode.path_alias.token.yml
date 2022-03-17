@@ -1,0 +1,12 @@
+uuid: b666e1e3-5ce9-49a4-9dc8-8bb6f56e0fae
+langcode: da
+status: true
+dependencies:
+  module:
+    - path_alias
+_core:
+  default_config_hash: GiQY8TcbkMat1Lpyz5z9WMUYl6KWQ46XSdW-b5GOKrQ
+id: path_alias.token
+label: Symbol
+targetEntityType: path_alias
+cache: true

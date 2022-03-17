@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
+langcode: da
+uuid: caee44fc-f243-4872-ae99-8df777d80632
+name: 'Skoven i skolen'
+mail: noreply@skoven-i-skolen.dk
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: da

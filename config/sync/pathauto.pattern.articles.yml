@@ -1,0 +1,24 @@
+uuid: 31521e52-c196-4229-8da6-577f08ff47a0
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: tWtKMAaWR14iTJHDEZPnrlhtefL4krxGr4mdCuic8e0
+id: articles
+label: Artikler
+type: 'canonical_entities:node'
+pattern: '[node:field_article_type:entity:name]/[node:title]'
+selection_criteria:
+  de797767-2e16-4081-a76a-133e8637ec08:
+    id: node_type
+    negate: false
+    uuid: de797767-2e16-4081-a76a-133e8637ec08
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+selection_logic: and
+weight: -5
+relationships: {  }

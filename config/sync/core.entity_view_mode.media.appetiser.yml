@@ -1,0 +1,12 @@
+uuid: 705092d9-1c09-40a1-ad0c-575e001391bb
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: rZ9paUkdTbR0Kg2aV6Vdn63fQwttP0xeb9gtvAK_c0I
+id: media.appetiser
+label: Appetiser
+targetEntityType: media
+cache: true

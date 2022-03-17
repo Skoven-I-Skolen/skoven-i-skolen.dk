@@ -1,0 +1,31 @@
+uuid: a4fbf55a-ee3e-4537-bb84-dd36bfa071d7
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.articles
+    - field.storage.block_content.field_articles
+  module:
+    - premium_articles
+_core:
+  default_config_hash: 8lnXdEMYABRqcwywWmjmwgDgk-sjlbLdSjtW5hKbxiQ
+id: block_content.articles.field_articles
+field_name: field_articles
+entity_type: block_content
+bundle: articles
+label: Articles
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    fields:
+      field_article_type: {  }
+      field_article_categories: {  }
+    count: 5
+    sort: newest
+    pagination: false
+    facets: {  }
+default_value_callback: ''
+settings: {  }
+field_type: article_filter

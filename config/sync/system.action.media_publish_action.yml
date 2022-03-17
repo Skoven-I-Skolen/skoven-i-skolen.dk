@@ -1,0 +1,13 @@
+uuid: d73a82ca-b0ff-4260-be79-9411b173d7d7
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: nh83qNNrmWE-CDdHz2MdFOAk60T9mzv3R-MaKfZR2jw
+id: media_publish_action
+label: 'Udgiv medie'
+type: media
+plugin: 'entity:publish_action:media'
+configuration: {  }

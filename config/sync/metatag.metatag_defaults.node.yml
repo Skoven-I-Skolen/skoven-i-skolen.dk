@@ -1,0 +1,14 @@
+uuid: 090faac1-886f-4d99-9465-5d0b6834b1b6
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 5fYQaGTVIkL7svGQnBoIu2PliuID4IfKuyWFmkqQgdE
+id: node
+label: Indhold
+tags:
+  description: '[node:field_description:value]'
+  image_src: '[node:field_list_media:entity:field_media_image]'
+  content_language: '[node:langcode]'
+  title: '[node:title] | [site:name]'
+  canonical_url: '[node:url]'

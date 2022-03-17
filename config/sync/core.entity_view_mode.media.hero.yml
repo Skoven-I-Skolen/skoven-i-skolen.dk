@@ -1,0 +1,12 @@
+uuid: f16c5e7d-dae6-409d-9cc0-db25e72986e9
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: XHi0bUTi0UQU5CFI90xrtRS1tLLlwUSrMhNft4fY_XA
+id: media.hero
+label: Hero
+targetEntityType: media
+cache: true

@@ -1,0 +1,22 @@
+uuid: 854a8784-e60d-432c-abc4-1022ffacaa08
+langcode: da
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - stable
+_core:
+  default_config_hash: eGulZgkPKZ6-d1r0JfLOQ-tfTk381W6GNaafy8650kU
+id: stable_messages
+theme: stable
+region: sidebar_first
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Beskeder
+  label_display: '0'
+  provider: system
+visibility: {  }

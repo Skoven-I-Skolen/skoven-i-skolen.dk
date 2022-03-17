@@ -1,0 +1,26 @@
+uuid: 137693c5-f4d0-420d-ab51-25d4c7500394
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_list_date
+    - node.type.article
+  module:
+    - datetime
+_core:
+  default_config_hash: lnqOGyDuIENtGyDduwATTDTXyLnmFQ3FaUImVmRPBNI
+id: node.article.field_list_date
+field_name: field_list_date
+entity_type: node
+bundle: article
+label: 'Liste dato'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

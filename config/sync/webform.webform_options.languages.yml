@@ -1,0 +1,14 @@
+uuid: 452471e4-d85d-4ee3-a71a-bc32a5f6905e
+langcode: da
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: mYH14Vi65Ixj10c_GFa7CipxU3D0Bt9wgo8zE8zjOfE
+id: languages
+label: Sprog
+category: Sprog
+likert: false
+options: ''

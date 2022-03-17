@@ -1,0 +1,22 @@
+uuid: 35e1db6f-387f-460e-a65e-6d3ba15a9d71
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - styles
+_core:
+  default_config_hash: fBIno5X3fljpLyW04Lj04R3_dAtgvEER-KHkWhyril8
+id: paragraph.field_text_position
+field_name: field_text_position
+entity_type: paragraph
+type: styles
+settings:
+  collection: hero_text_align
+module: styles
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

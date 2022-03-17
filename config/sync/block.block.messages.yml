@@ -1,0 +1,22 @@
+uuid: 9fcb4189-26c3-4003-aa30-0d7edc72c175
+langcode: da
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sis
+_core:
+  default_config_hash: eGulZgkPKZ6-d1r0JfLOQ-tfTk381W6GNaafy8650kU
+id: messages
+theme: sis
+region: preheader
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Beskeder
+  label_display: '0'
+  provider: system
+visibility: {  }

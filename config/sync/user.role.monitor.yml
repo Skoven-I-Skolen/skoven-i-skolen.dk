@@ -1,0 +1,17 @@
+uuid: fcafe017-0aea-4a6b-baa1-59394555f9a2
+langcode: da
+status: true
+dependencies:
+  module:
+    - status_feed
+  enforced:
+    module:
+      - status_feed
+_core:
+  default_config_hash: TiWKiSqMGGdT6x5XWVDj2TcHFK2yUe7J8f2WHFp7rv4
+id: monitor
+label: Monitor
+weight: 5
+is_admin: null
+permissions:
+  - 'access status feed'

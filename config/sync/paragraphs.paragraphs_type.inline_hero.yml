@@ -1,0 +1,12 @@
+uuid: 8c6cdf3c-e563-45b8-b3af-3115cc18c5db
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: lJfol67ltomT0UcteQnh_-Ps6tG1TcNdBrsCVUc-3lw
+id: inline_hero
+label: Hero
+icon_uuid: null
+icon_default: null
+description: 'Use in layout builder blocks.'
+behavior_plugins: {  }

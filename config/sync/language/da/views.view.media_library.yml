@@ -1,0 +1,48 @@
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          exposed_sorts_label: 'Sortér efter'
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Antal elementer'
+            items_per_page_options_all_label: '- Alle -'
+          tags:
+            previous: ‹‹
+            next: ››
+      filters:
+        bundle:
+          expose:
+            label: Type
+          group_info:
+            label: Type
+        status:
+          group_info:
+            label: Udgivet
+            group_items:
+              1:
+                title: Udgivet
+              2:
+                title: 'Ikke udgivet'
+        langcode:
+          expose:
+            label: Sprog
+      title: Media
+      empty:
+        area_text_custom:
+          content: 'Ingen tilgængelige media'
+  page:
+    display_options:
+      fields:
+        name:
+          separator: ', '
+  widget:
+    display_title: Widget
+  widget_table:
+    display_options:
+      fields:
+        thumbnail__target_id:
+          label: Thumbnail

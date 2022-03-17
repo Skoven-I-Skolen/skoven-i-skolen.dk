@@ -1,0 +1,10 @@
+uuid: 9809d9ef-d535-456f-9595-3d885a238d12
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: IcQDd_O0wEN_dzz4dZVeXt4XW1uaXNJ0YEfYqmpqlxc
+id: article_form
+label: 'Artikel formular'
+revision: 0
+description: 'En blok der viser artikler med instillinger til filtre og paginering.'

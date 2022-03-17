@@ -1,0 +1,30 @@
+uuid: b4a917ac-444a-43ce-847d-72c57435a303
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.articles
+    - field.field.block_content.articles.field_articles
+  module:
+    - premium_articles
+_core:
+  default_config_hash: 0ywkXYm0UiWv2vKm47Aj-HDkcH-nYWqxUhnFnA7cOCo
+id: block_content.articles.default
+targetEntityType: block_content
+bundle: articles
+mode: default
+content:
+  field_articles:
+    type: article_filter_widget
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  info: true
+  langcode: true

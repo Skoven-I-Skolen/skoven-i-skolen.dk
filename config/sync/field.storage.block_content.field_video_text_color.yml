@@ -1,0 +1,29 @@
+uuid: 427a8efd-ca1c-4b58-b989-ec830809d994
+langcode: da
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+_core:
+  default_config_hash: 9b0XTrkgkFhIJB3DVYhjHO37gYLMjnCDEONMNKjYSZU
+id: block_content.field_video_text_color
+field_name: field_video_text_color
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: light
+      label: Lyst
+    -
+      value: dark
+      label: Mørk
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,10 @@
+uuid: d0f94b24-7f2a-4944-afc2-ca7899ee6138
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 6FfEWwuUCdYyZ4XVENT40Og6Ot9RjxzWDlfuk_snMd4
+id: articles
+label: Artikler
+revision: 0
+description: 'En blok der lister et par artikler.'

@@ -1,0 +1,10 @@
+uuid: e84bac96-273b-4cdf-9378-1b8d233fd236
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xhZUsCcoDZt6Q6hpKXNqtBGjdLca-km5lBgZr-EEi_Q
+name: 'Artikel typer'
+vid: article_types
+description: 'De tilgængelige typer af artikler.'
+weight: 0

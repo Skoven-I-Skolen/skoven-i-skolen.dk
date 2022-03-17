@@ -1,0 +1,13 @@
+uuid: e320227b-3446-43e1-a957-467bb24dccb3
+langcode: da
+status: true
+dependencies:
+  module:
+    - content_moderation
+_core:
+  default_config_hash: qNtLFSzYM3fEdSeexSZgtjRUfcMEz7ulJPQ_7MddF6s
+id: content_moderation_state.content_moderation_state
+target_entity_type_id: content_moderation_state
+target_bundle: content_moderation_state
+default_langcode: site_default
+language_alterable: false

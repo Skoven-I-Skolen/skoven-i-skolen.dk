@@ -1,0 +1,33 @@
+uuid: c99d4332-5641-47ef-a370-ddd08d507fc1
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.article_form
+    - field.storage.block_content.field_articles_form
+  module:
+    - premium_articles
+_core:
+  default_config_hash: uD6wXf0xRYUOVitiSB1xFEVCuS3Bo9d_BCwYUEtTVlk
+id: block_content.article_form.field_articles_form
+field_name: field_articles_form
+entity_type: block_content
+bundle: article_form
+label: Artikler
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    fields:
+      field_article_type: {  }
+      field_article_categories: {  }
+    count: 20
+    sort: newest
+    pagination: true
+    facets:
+      - field_article_type
+      - sort
+default_value_callback: ''
+settings: {  }
+field_type: article_filter

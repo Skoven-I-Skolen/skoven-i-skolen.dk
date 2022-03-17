@@ -1,0 +1,23 @@
+uuid: 4ffdd363-a8aa-48ed-9622-aa73d871221a
+langcode: da
+status: true
+dependencies:
+  module:
+    - block_content
+    - premium_articles
+_core:
+  default_config_hash: HiaDqG_1rQJkSA_M4c7IljGYvj2b78Gxg4w2vVui31w
+id: block_content.field_articles
+field_name: field_articles
+entity_type: block_content
+type: article_filter
+settings:
+  entity_bundle: node.article
+  allow_facets: 0
+module: premium_articles
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

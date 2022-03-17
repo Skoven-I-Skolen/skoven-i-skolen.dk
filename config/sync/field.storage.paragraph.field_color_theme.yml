@@ -1,0 +1,22 @@
+uuid: f58a8e73-d473-40c3-a61c-bf33c59b0716
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - styles
+_core:
+  default_config_hash: jMJ0Gmfbe1Y9c3Gw7EwaIg5GyRvorsUIEhuKKHVQohc
+id: paragraph.field_color_theme
+field_name: field_color_theme
+entity_type: paragraph
+type: styles
+settings:
+  collection: color_theme
+module: styles
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

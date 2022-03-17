@@ -1,0 +1,22 @@
+uuid: 9a269ce0-7131-40da-ac9f-dec18ce474bf
+langcode: da
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - premium_theme
+_core:
+  default_config_hash: eGulZgkPKZ6-d1r0JfLOQ-tfTk381W6GNaafy8650kU
+id: premium_theme_messages
+theme: premium_theme
+region: sidebar_first
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Beskeder
+  label_display: '0'
+  provider: system
+visibility: {  }

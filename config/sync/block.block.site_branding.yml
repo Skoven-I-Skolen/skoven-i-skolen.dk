@@ -1,0 +1,25 @@
+uuid: 6e0cc338-04fc-41a3-88ba-c65c6bc20d61
+langcode: da
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sis
+_core:
+  default_config_hash: L2kk-Ya-Zl7sIfIwIo0gPJ_L6vmbinlu-7dCSixC8xU
+id: site_branding
+theme: sis
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

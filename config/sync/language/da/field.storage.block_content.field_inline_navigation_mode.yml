@@ -1,0 +1,6 @@
+settings:
+  allowed_values:
+    -
+      label: 'Vælg forældreside'
+    -
+      label: 'Vælg specifikke sider'

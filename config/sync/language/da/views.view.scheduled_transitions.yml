@@ -1,0 +1,47 @@
+label: 'Planlagte Overgange'
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Udfør
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Antal elementer'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Forskydning
+          tags:
+            previous: ‹‹
+            next: ››
+      fields:
+        entity__target_id:
+          label: Entity
+          separator: ', '
+        entity_revision_link:
+          label: Version
+          text: 'Vis revidering'
+        state_from:
+          label: 'Fra tilstand'
+        moderation_state:
+          label: 'Til tilstand'
+        transition_on:
+          label: 'På dato'
+          separator: ', '
+        author:
+          label: 'Planlagt af'
+          separator: ', '
+        operations:
+          label: Handlinger
+      title: 'Planlagte Overgange'
+      empty:
+        area:
+          content:
+            value: 'Der er ingen planlagte overgange endnu.'
+  page_1:
+    display_title: Side

@@ -1,0 +1,10 @@
+uuid: 6b248943-71c3-4121-a0dc-0fe3224054db
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: FW69KrIscpDyfVgXyFIX6KjI09KX3FekVG2AR0r0Vmo
+name: 'Media kategorier'
+vid: media_categories
+description: 'Bruges til at organisere media.'
+weight: 0

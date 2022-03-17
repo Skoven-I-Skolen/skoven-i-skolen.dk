@@ -1,0 +1,12 @@
+uuid: 4b7f6197-79de-4669-9a70-9813ca160170
+langcode: da
+status: true
+dependencies:
+  module:
+    - file
+_core:
+  default_config_hash: T6IiNXJhdrBudWJ_guxnUz3p71T0lFcidLSTM9VlFl8
+id: file.token
+label: Symbol
+targetEntityType: file
+cache: true

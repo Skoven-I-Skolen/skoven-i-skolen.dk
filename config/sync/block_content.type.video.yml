@@ -1,0 +1,10 @@
+uuid: 4db0dcfd-216c-45a4-a529-3923b73174d6
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: UcgGPabvDSlQQtmSGu1GxRLG6aGAPgYfK1IObPJEg08
+id: video
+label: Video
+revision: 0
+description: 'A block containing a video.'
