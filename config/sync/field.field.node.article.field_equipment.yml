@@ -1,0 +1,26 @@
+uuid: 75671585-e15a-4c17-a09d-2db540bf0a38
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_equipment
+    - node.type.article
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: node.article.field_equipment
+field_name: field_equipment
+entity_type: node
+bundle: article
+label: Grej
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

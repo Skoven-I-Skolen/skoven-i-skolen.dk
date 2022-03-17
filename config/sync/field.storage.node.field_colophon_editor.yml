@@ -1,0 +1,21 @@
+uuid: ca895415-976b-4e33-a7a1-d2f070990643
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_colophon_editor
+field_name: field_colophon_editor
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

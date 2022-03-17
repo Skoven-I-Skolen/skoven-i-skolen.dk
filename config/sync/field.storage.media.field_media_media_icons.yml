@@ -1,0 +1,20 @@
+uuid: 5e4e4f00-b79c-4155-a2ab-24d9e282debc
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+    - media_icons
+id: media.field_media_media_icons
+field_name: field_media_media_icons
+entity_type: media
+type: icon_field
+settings:
+  max_length: 255
+module: media_icons
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,68 @@
+uuid: bf368ece-1c41-4ac2-89a7-c46818a89bcd
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.media.graphics.field_media_media_icons
+    - media.type.graphics
+  module:
+    - media_icons
+    - path
+id: media.graphics.default
+targetEntityType: media
+bundle: graphics
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_media_icons:
+    type: icon_widget
+    weight: 0
+    region: content
+    settings:
+      height: 64
+      width: 64
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

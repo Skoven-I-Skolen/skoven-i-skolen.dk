@@ -1,0 +1,10 @@
+uuid: 963e878d-fb08-45a3-b14b-5d55330d96c8
+langcode: da
+status: true
+dependencies: {  }
+id: factbox_item
+label: Factbox
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

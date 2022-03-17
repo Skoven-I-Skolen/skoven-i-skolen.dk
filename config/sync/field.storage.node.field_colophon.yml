@@ -1,0 +1,19 @@
+uuid: f0277cbb-acd4-4f2a-8274-6ec59163ab55
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_colophon
+field_name: field_colophon
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+uuid: 856240b7-b4e1-4b10-8a5d-60237dd0e3f1
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaching_goals
+    - node.type.article
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: node.article.field_teaching_goals
+field_name: field_teaching_goals
+entity_type: node
+bundle: article
+label: Undervisningsmål
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,8 @@
+uuid: 4dc8bd32-dc97-4890-a011-9c45fe7c8be0
+langcode: da
+status: true
+dependencies: {  }
+name: Årstid
+vid: season
+description: 'Inderholder de forskellige årstider som en artikel kan tilknyttes'
+weight: 0

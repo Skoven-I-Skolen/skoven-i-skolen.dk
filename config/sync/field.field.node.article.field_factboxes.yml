@@ -1,0 +1,40 @@
+uuid: 1a7fce85-4a21-4893-8173-489db3c1b348
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_factboxes
+    - node.type.article
+    - paragraphs.paragraphs_type.factbox_item
+  module:
+    - entity_reference_revisions
+id: node.article.field_factboxes
+field_name: field_factboxes
+entity_type: node
+bundle: article
+label: Faktabokse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      factbox_item: factbox_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 6
+        enabled: false
+      basic_hero:
+        weight: 7
+        enabled: false
+      factbox_item:
+        weight: 5
+        enabled: true
+      inline_hero:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

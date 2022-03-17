@@ -1,0 +1,19 @@
+uuid: e79a4d8d-bad0-4263-a4c4-e19ed54596d7
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colophon_editor
+    - node.type.article
+id: node.article.field_colophon_editor
+field_name: field_colophon_editor
+entity_type: node
+bundle: article
+label: Redaktør
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

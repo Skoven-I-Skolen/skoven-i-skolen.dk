@@ -1,0 +1,8 @@
+uuid: 07eaafe9-5400-45a4-b85c-9e1f2c53db43
+langcode: da
+status: true
+dependencies: {  }
+name: Sted
+vid: location
+description: 'Inderholder de forskellige steder som en artikel kan tilknyttes'
+weight: 0

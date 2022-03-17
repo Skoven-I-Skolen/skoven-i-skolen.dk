@@ -1,0 +1,19 @@
+uuid: 3c519edb-9052-42d3-85ed-359eb8d2b2e7
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colophon_photographer
+    - node.type.article
+id: node.article.field_colophon_photographer
+field_name: field_colophon_photographer
+entity_type: node
+bundle: article
+label: Fotograf
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

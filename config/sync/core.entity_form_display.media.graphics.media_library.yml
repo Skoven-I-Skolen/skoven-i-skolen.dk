@@ -1,0 +1,21 @@
+uuid: ebd8fd4c-bd74-4418-9477-d56e00f586cf
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.graphics.field_media_media_icons
+    - media.type.graphics
+id: media.graphics.media_library
+targetEntityType: media
+bundle: graphics
+mode: media_library
+content: {  }
+hidden:
+  created: true
+  field_media_media_icons: true
+  langcode: true
+  name: true
+  path: true
+  status: true
+  uid: true

@@ -1,0 +1,30 @@
+uuid: 94374eeb-58b3-464e-aa3a-e3a474cf06c4
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.media.graphics.field_media_media_icons
+    - media.type.graphics
+  module:
+    - media_icons
+id: media.graphics.default
+targetEntityType: media
+bundle: graphics
+mode: default
+content:
+  field_media_media_icons:
+    type: icon_formatter
+    label: visually_hidden
+    settings:
+      height: 100
+      width: 100
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

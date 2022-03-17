@@ -1,0 +1,21 @@
+uuid: 24f97fdc-98b7-414e-8290-dfd1a9935518
+langcode: da
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_factboxes
+field_name: field_factboxes
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

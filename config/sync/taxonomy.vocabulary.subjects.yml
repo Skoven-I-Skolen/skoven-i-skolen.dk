@@ -1,0 +1,8 @@
+uuid: 7167a24c-6e90-4a4d-99d1-2d63bd4457f2
+langcode: da
+status: true
+dependencies: {  }
+name: Fag
+vid: subjects
+description: 'Inderholder de forskellige fag som en artikel kan tilknyttes'
+weight: 0

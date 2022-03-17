@@ -1,0 +1,29 @@
+uuid: c824ff51-5368-4e3a-af0b-980303435a87
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.article
+    - taxonomy.vocabulary.location
+id: node.article.field_location
+field_name: field_location
+entity_type: node
+bundle: article
+label: Sted
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      location: location
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

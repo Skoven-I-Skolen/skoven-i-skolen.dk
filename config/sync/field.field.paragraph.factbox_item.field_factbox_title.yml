@@ -1,0 +1,19 @@
+uuid: 235d561c-767f-45b7-aa5f-6e8993e7b861
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_factbox_title
+    - paragraphs.paragraphs_type.factbox_item
+id: paragraph.factbox_item.field_factbox_title
+field_name: field_factbox_title
+entity_type: paragraph
+bundle: factbox_item
+label: Titel
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

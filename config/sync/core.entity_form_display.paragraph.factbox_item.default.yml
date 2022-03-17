@@ -1,0 +1,43 @@
+uuid: 1c4e58b8-be53-4c60-963c-a14e0422e1a4
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.factbox_item.field_factbox_content
+    - field.field.paragraph.factbox_item.field_factbox_subtitle
+    - field.field.paragraph.factbox_item.field_factbox_title
+    - paragraphs.paragraphs_type.factbox_item
+  module:
+    - text
+id: paragraph.factbox_item.default
+targetEntityType: paragraph
+bundle: factbox_item
+mode: default
+content:
+  field_factbox_content:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_factbox_subtitle:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_factbox_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

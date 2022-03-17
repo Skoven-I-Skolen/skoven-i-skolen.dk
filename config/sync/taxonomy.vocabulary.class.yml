@@ -1,0 +1,8 @@
+uuid: 057bb41e-2a3c-4435-a986-64edd000635f
+langcode: da
+status: true
+dependencies: {  }
+name: Klasse
+vid: class
+description: 'Inderholder de forskellige klasser som en artikel kan tilknyttes'
+weight: 0

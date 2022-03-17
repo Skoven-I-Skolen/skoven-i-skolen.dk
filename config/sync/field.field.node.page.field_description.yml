@@ -11,7 +11,7 @@ id: node.page.field_description
 field_name: field_description
 entity_type: node
 bundle: page
-label: Beskrivelse
+label: 'Liste beskrivelse'
 description: 'Beskrivelsen er brugt til meta tags, søgeresultater og inline navigation'
 required: true
 translatable: true

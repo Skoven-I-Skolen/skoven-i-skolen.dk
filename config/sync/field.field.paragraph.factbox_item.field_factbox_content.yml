@@ -1,0 +1,26 @@
+uuid: 6db5e35f-76d9-479a-85e5-a58edec2891f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_factbox_content
+    - paragraphs.paragraphs_type.factbox_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: paragraph.factbox_item.field_factbox_content
+field_name: field_factbox_content
+entity_type: paragraph
+bundle: factbox_item
+label: Indhold
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

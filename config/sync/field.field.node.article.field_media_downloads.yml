@@ -1,0 +1,33 @@
+uuid: 57329b9e-720e-45ef-aafb-de1d63f4529f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_downloads
+    - media.type.document
+    - media.type.remote_video
+    - media.type.video
+    - node.type.article
+id: node.article.field_media_downloads
+field_name: field_media_downloads
+entity_type: node
+bundle: article
+label: Filer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+      remote_video: remote_video
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: document
+field_type: entity_reference
