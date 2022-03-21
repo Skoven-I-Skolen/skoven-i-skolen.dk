@@ -13,16 +13,16 @@
   cursor: pointer;
 
   @media (--viewport-md-min) {
-    margin-left: 20px;
+    display: none;
   }
 
   &__lines {
     > span {
       display: block;
-      width: 40px;
-      height: 1px;
-      margin-bottom: 10px;
-      background-color: var(--color-primary);
+      width: 25px;
+      height: 2px;
+      margin-bottom: 5px;
+      background-color: var(--color-white);
 
       &:last-of-type {
         margin-bottom: 0;
