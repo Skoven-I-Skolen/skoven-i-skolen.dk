@@ -38,7 +38,7 @@
 
   /* Typography
   ********************/
-  --base-font-family: "Roboto Slab", "sans-serif";
+  --base-font-family: "Nunito", "sans-serif";
   --base-font-size-xxxlarge: 40px;
   --base-font-size-xxlarge: 30px;
   --base-font-size-xlarge: 25px;
@@ -48,7 +48,7 @@
   --base-font-size-small: 14px;
   --base-font-size-extra-small: 12px;
   --base-font-weight: 300;
-  --heading-font-family: "Roboto", "sans-serif";
+  --heading-font-family: "Baloo 2", "sans-serif";
   --heading-font-weight: 700;
 
   /* Layout
