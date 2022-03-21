@@ -15,3 +15,8 @@ msgstr ""
 "Language: da\n"
 "X-Generator: Poedit 1.8.11\n"
 
+msgid "Show graphic top"
+msgstr "Vis grafisk top"
+
+msgid "Show graphic bottom"
+msgstr "Vis grafisk bund"

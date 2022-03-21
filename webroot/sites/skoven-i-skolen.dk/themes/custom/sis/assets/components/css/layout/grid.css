@@ -4,6 +4,8 @@
  */
 
 .section {
+  position: relative;
+  z-index: 0;
   padding-top: var(--grid-section-spacing-mobile);
   padding-bottom: var(--grid-section-spacing-mobile);
 
@@ -56,6 +58,29 @@
 
   &--spacing-bottom-large {
     padding-bottom: var(--grid-section-spacing);
+  }
+
+  &--place-top {
+    z-index: 2;
+  }
+
+  &__graphics-top,
+  &__graphics-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    & path {
+      fill: var(--theme-background-color);
+    }
+  }
+
+  &__graphics-top {
+    bottom: 99.9%;
+  }
+
+  &__graphics-bottom {
+    top: 99.9%;
   }
 
   @media (--viewport-md-min) {

@@ -4,11 +4,18 @@
  */
 
 .footer {
+  position: relative;
+  z-index: 3;
+
   & > *:last-child {
     padding-bottom: 70px;
 
     @media (--viewport-md-min) {
       padding-bottom: var(--grid-section-spacing);
     }
+  }
+
+  &__inner {
+    position: relative;
   }
 }
