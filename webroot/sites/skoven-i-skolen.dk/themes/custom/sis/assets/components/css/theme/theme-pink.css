@@ -1,16 +1,16 @@
 /**
  * Type: Theme.
- * Secondary theme.
+ * Pink theme.
  */
 
-.theme-secondary {
-  --theme-background-color: #d1d1d1;
-  --theme-color: #232323;
-  --theme-button-background-color: #232323;
-  --theme-button-color: #d1d1d1;
+.theme-pink {
+  --theme-background-color: var(--color-pink);
+  --theme-color: var(--color-purple);
+  --theme-button-background-color: var(--color-green-dark);
+  --theme-button-color: #fff;
   --theme-link-color: #232323;
   --theme-divider-background-color: #232323;
-  --theme-accordion-border-color: #d1d1d1;
+  --theme-accordion-border-color: #232323;
   --theme-accordion-background-color: var(--color-white);
   --theme-accordion-text-color: #232323;
   --theme-input-border: #232323;
