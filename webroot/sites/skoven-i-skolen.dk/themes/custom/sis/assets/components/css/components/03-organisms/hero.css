@@ -86,6 +86,7 @@
   &--center {
     .hero__content {
       align-items: center;
+      text-align: center;
     }
 
     .hero__title,
@@ -132,6 +133,18 @@
       top: 0;
       right: 0;
       left: 0;
+    }
+  }
+
+  &--dynamic-height {
+    height: auto;
+    max-height: none;
+
+    & .container,
+    & .row,
+    & .hero__content {
+      height: 100%;
+      max-height: none;
     }
   }
 }

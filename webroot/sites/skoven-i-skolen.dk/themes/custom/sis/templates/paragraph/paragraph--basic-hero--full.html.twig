@@ -51,7 +51,7 @@
   {% set text_color = paragraph.field_text_color.value %}
   {% set color_theme = paragraph.field_color_theme.value %}
   {% set overlay = paragraph.field_overlay.value %}
-
+  {% set dynamic_height = paragraph.field_dynamic_height.value %}
   {% if color_theme != '' and color_theme != 'none' %}
     {% set attributes = attributes.addClass('theme').addClass(color_theme) %}
     {{ attach_library('sis/' ~ color_theme) }}
@@ -64,6 +64,7 @@
         .addClass(overlay == 1 ? 'hero--overlay'),
       'media': media,
       'media_image': media_image,
+      'dynamic_height': dynamic_height,
       'position': position,
       'title': title,
       'text': content.field_text,
