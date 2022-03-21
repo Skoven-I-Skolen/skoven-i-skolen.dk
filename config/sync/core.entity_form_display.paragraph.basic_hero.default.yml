@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.basic_hero.field_background
     - field.field.paragraph.basic_hero.field_color_theme
     - field.field.paragraph.basic_hero.field_cta
+    - field.field.paragraph.basic_hero.field_dynamic_height
     - field.field.paragraph.basic_hero.field_link
     - field.field.paragraph.basic_hero.field_overlay
     - field.field.paragraph.basic_hero.field_text
@@ -32,13 +33,13 @@ content:
     third_party_settings: {  }
   field_color_theme:
     type: styles
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_cta:
     type: styles_link_target
-    weight: 4
+    weight: 5
     region: content
     settings:
       placeholder_url: ''
@@ -46,9 +47,16 @@ content:
       style: ''
       target_blank: 0
     third_party_settings: {  }
-  field_overlay:
+  field_dynamic_height:
     type: boolean_checkbox
     weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_overlay:
+    type: boolean_checkbox
+    weight: 3
     region: content
     settings:
       display_label: true
@@ -63,12 +71,12 @@ content:
     third_party_settings: {  }
   field_text_position:
     type: styles
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   translation:
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
