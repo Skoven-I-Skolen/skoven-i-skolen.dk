@@ -6,7 +6,7 @@
 :root {
   /* Colors
   ********************/
-  --color-primary: #263ed3;
+  --color-primary: #00687f;
   --color-black: #000;
   --color-white: #fff;
   --color-gray: #b0afaf;
@@ -14,13 +14,21 @@
   --color-gray-dark: #272727;
   --color-gray-dark-1: #232323;
   --color-error: #f00;
+  --color-pink: #f2cbce;
+  --color-purple: #3d2859;
+  --color-blue: #408e9f;
+  --color-blue-light: #f2fafc;
+  --color-yellow: #ffce42;
+  --color-sand: #ffe6a0;
+  --color-green: #007950;
+  --color-green-dark: #1c6153;
 
   /* Default theme-colors
   ********************/
   --theme-background-color: var(--color-white);
   --theme-color: var(--color-black);
-  --theme-button-background-color: var(--color-black);
-  --theme-button-color: var(--color-white);
+  --theme-button-background-color: var(--color-pink);
+  --theme-button-color: var(--color-purple);
   --theme-link-color: var(--color-black);
   --theme-divider-background-color: var(--color-black);
   --theme-accordion-border-color: #d4d4d4;

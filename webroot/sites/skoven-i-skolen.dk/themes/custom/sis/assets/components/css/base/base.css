@@ -20,7 +20,7 @@ body {
   margin: 0;
   padding-top: var(--header-height-mobile);
   overflow-x: hidden;
-  color: var(--theme-color);
+  color: var(--color-purple);
   font-weight: var(--base-font-weight);
   font-size: var(--base-font-size);
   font-family: var(--base-font-family);
