@@ -118,33 +118,4 @@
     {{ page.burgermenu }}
   {% endblock %}
 
-  <div :class="{'search-overlay--open' : isOpen }" class="search-overlay" id="js-search-overlay">
-    <div @click="closeSearchOverlay()" class="search-overlay__close">
-      {% include '@reusable-component/svg-icon.twig' with {
-        'attributes': '',
-        'svgIconName': 'close'
-      } %}
-      <span class="search-overlay__close-label">{{ 'Close (Esc)'|t }}</span>
-    </div>
-    <div class="search-overlay__content">
-      <div class="container">
-        <form action="/search" method="get">
-          <div class="search-overlay__input-field">
-            <label class="sr-only" for="js-search-overlay-input">{{ 'Search'|t }}</label>
-            <input {{ create_attribute().addClass('input')
-              .setAttribute('type', 'search').setAttribute('aria-label', 'Search'|t)
-              .setAttribute('placeholder', 'Search'|t)
-              .setAttribute('name', 'keys')
-              .setAttribute('id', 'js-search-overlay-input') }}>
-            <button {{ create_attribute().setAttribute('type', 'submit').addClass('search-overlay__submit') }}>
-              {% include '@reusable-component/svg-icon.twig' with {
-                'attributes': '',
-                'svgIconName': 'search'
-              } %}
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 </div>
