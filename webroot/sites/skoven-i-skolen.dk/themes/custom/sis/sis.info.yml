@@ -19,6 +19,7 @@ regions:
   pageheader: Pageheader
   breadcrumb: Breadcrumb
   content: Content
+  footerbottom: Footer bottom
   burgermenu: Burgermenu
 
 component-libraries:
