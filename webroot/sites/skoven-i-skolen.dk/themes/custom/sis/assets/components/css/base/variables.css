@@ -14,20 +14,25 @@
   --color-gray-dark: #272727;
   --color-gray-dark-1: #232323;
   --color-error: #f00;
-  --color-pink: #f2cbce;
+  --color-cherry: #f5bac7;
   --color-purple: #3d2859;
-  --color-blue: #408e9f;
+  --color-purple-dark: #1f0640;
+  --color-blue: #00687f;
+  --color-blue-ice: #85cddb;
   --color-blue-light: #f2fafc;
   --color-yellow: #ffce42;
+  --color-yellow-dark: #f2b300;
+  --color-orange: #f69e4b;
+  --color-orange-dark: #e08a39;
   --color-sand: #ffe6a0;
-  --color-green: #007950;
+  --color-green: #008c5d;
   --color-green-dark: #1c6153;
 
   /* Default theme-colors
   ********************/
   --theme-background-color: var(--color-white);
   --theme-color: var(--color-black);
-  --theme-button-background-color: var(--color-pink);
+  --theme-button-background-color: var(--color-cherry);
   --theme-button-color: var(--color-purple);
   --theme-link-color: var(--color-black);
   --theme-divider-background-color: var(--color-black);
