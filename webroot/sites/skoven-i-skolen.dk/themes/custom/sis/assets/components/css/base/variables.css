@@ -54,9 +54,11 @@
   /* Typography
   ********************/
   --base-font-family: "Nunito", "sans-serif";
+  --base-font-size-xxxxxlarge: 56px;
+  --base-font-size-xxxxlarge: 48px;
   --base-font-size-xxxlarge: 40px;
   --base-font-size-xxlarge: 30px;
-  --base-font-size-xlarge: 25px;
+  --base-font-size-xlarge: 24px;
   --base-font-size-large: 20px;
   --base-font-size-medium: 18px;
   --base-font-size: 16px;
