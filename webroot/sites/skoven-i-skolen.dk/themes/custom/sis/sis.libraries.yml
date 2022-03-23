@@ -37,6 +37,14 @@ theme-primary:
   dependencies:
     - sis/theme
 
+theme-cherry:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/theme/theme-cherry.css: {}
+  dependencies:
+    - sis/theme
+
 theme-green:
   version: VERSION
   css:
@@ -45,11 +53,11 @@ theme-green:
   dependencies:
     - sis/theme
 
-theme-pink:
+theme-red:
   version: VERSION
   css:
     theme:
-      dist/components/css/theme/theme-pink.css: {}
+      dist/components/css/theme/theme-red.css: {}
   dependencies:
     - sis/theme
 
@@ -78,7 +86,8 @@ theme-preview:
   dependencies:
     - sis/theme-primary
     - sis/theme-green
-    - sis/theme-pink
+    - sis/theme-cherry
+    - sis/theme-red
     - sis/theme-sand
     - sis/theme-yellow
 
