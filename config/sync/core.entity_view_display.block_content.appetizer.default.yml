@@ -10,6 +10,7 @@ dependencies:
     - field.field.block_content.appetizer.field_appetizer_orientation
     - field.field.block_content.appetizer.field_appetizer_text
     - field.field.block_content.appetizer.field_appetizer_text_alignment
+    - field.field.block_content.appetizer.field_image_overflow
   module:
     - options
     - styles
@@ -24,7 +25,12 @@ content:
   field_appetizer_cta:
     type: styles_link_target
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
+      rel: ''
+      target: ''
     third_party_settings: {  }
     weight: 1
     region: content
@@ -40,7 +46,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: appetiser
       link: false
     third_party_settings: {  }
     weight: 3
@@ -65,6 +71,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_image_overflow:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
     region: content
 hidden:
   langcode: true

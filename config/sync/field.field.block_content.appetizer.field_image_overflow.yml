@@ -1,0 +1,23 @@
+uuid: f0422fdb-d240-4881-9068-0757d775c80a
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.appetizer
+    - field.storage.block_content.field_image_overflow
+id: block_content.appetizer.field_image_overflow
+field_name: field_image_overflow
+entity_type: block_content
+bundle: appetizer
+label: 'Billede overlap'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Tilsluttet
+  off_label: Afbrudt
+field_type: boolean

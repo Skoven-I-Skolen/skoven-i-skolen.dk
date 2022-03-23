@@ -27,34 +27,36 @@
 #}
 {{ attach_library('sis/appetiser') }}
 
+{% set orientation = content['#block_content'].field_appetizer_orientation.value %}
+{% set text_alignment = content['#block_content'].field_appetizer_text_alignment.value %}
+{% set image_overflow = content['#block_content'].field_image_overflow.value %}
 {% set classes = [
   'appetiser',
   text_alignment ? 'appetiser--content-' ~ text_alignment,
   orientation and not is_small_version ? 'appetiser--image-' ~ orientation,
-  is_small_version ? 'appetiser--small'
+  is_small_version ? 'appetiser--small',
+  image_overflow ? 'appetiser--image-overflow'
 ] %}
-{% set orientation = content['#block_content'].field_appetizer_orientation.value %}
-{% set text_alignment = content['#block_content'].field_appetizer_text_alignment.value %}
 
 <div {{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
   <div class="appetiser__content-wrapper">
-    {% if display_as_fullwidth %}
     <div class="container">
-      {% endif %}
-      <div class="appetiser__content">
-        <h2 class="appetiser__title">{{ content.field_appetizer_headline }}</h2>
-        <div class="appetiser__description">{{ content.field_appetizer_text }}</div>
-        {{ content.field_appetizer_cta }}
+      <div class="row">
+        <div class="appetiser__content col-xs-12 col-sm-6">
+          <h2 class="appetiser__title">{{ content.field_appetizer_headline }}</h2>
+          <div class="appetiser__description">{{ content.field_appetizer_text }}</div>
+          {{ content.field_appetizer_cta }}
+        </div>
+        {% if media %}
+          <div class="appetiser__image-wrapper col-xs-12 col-sm-6">
+            <figure{{ create_attribute().addClass('appetiser__image') }}>
+              {{ media }}
+            </figure>
+          </div>
+        {% endif %}
       </div>
-      {% if display_as_fullwidth %}
     </div>
-    {% endif %}
   </div>
-  {% if media %}
-    <figure{{ create_attribute().addClass('appetiser__image') }}>
-      {{ media }}
-    </figure>
-  {% endif %}
 </div>
