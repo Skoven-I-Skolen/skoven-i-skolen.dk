@@ -63,22 +63,6 @@ class BaseLayout extends MultiWidthLayoutBase {
       '#description' => $this->t('Choose column spacing for this layout.'),
     ];
 
-    $form['column_show_graphic_top'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Show graphic top'),
-      '#size' => 10,
-      '#maxlength' => 255,
-      '#default_value' => $this->configuration['column_show_graphic_top'] ?? 0,
-    ];
-
-    $form['column_show_graphic_bottom'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Show graphic bottom'),
-      '#size' => 10,
-      '#maxlength' => 255,
-      '#default_value' => $this->configuration['column_show_graphic_bottom'] ?? 0,
-    ];
-
     return $form;
   }
 
