@@ -1,0 +1,35 @@
+<?php
+
+use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Render\Element;
+
+module_load_include('inc', 'sis_articles', 'node.preprocess');
+module_load_include('inc', 'sis_articles', 'block.preprocess');
+
+function sis_articles_theme() {
+  return [
+    'list_element' => [
+      'variables' => ['links' => [], 'article_type' => []],
+    ],
+  ];
+}
+
+
+function sis_articles_preprocess_list_element(&$variables) {
+  $fieldParent = $variables['article_type']->_referringItem->getParent()
+    ->getParent()
+    ->getEntity();
+
+  if ($fieldParent->get('field_show_link_list')->value) {
+    foreach (Element::children($variables['links']) as $key) {
+      $variables['children'] = $variables['links'][$key];
+    }
+
+    $variables['list_headline'] = $fieldParent->get('field_link_list_headline')->value;
+    $variables['list_link_title'] = $fieldParent->get('field_link_list_title')->value;
+  }
+}
+
+function sis_articles_query_sort_by_random_alter(AlterableInterface $query) {
+  $query->orderRandom();
+}

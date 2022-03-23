@@ -1,0 +1,51 @@
+uuid: 3edd0861-6bcd-40b7-9e2f-aa47270841d2
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.overview_element.field_link_list_headline
+    - field.field.paragraph.overview_element.field_link_list_title
+    - field.field.paragraph.overview_element.field_show_link_list
+    - field.field.paragraph.overview_element.field_type
+    - paragraphs.paragraphs_type.overview_element
+id: paragraph.overview_element.default
+targetEntityType: paragraph
+bundle: overview_element
+mode: default
+content:
+  field_link_list_headline:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_link_list_title:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_show_link_list:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_type:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

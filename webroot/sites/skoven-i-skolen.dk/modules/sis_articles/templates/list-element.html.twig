@@ -1,0 +1,17 @@
+{% if children %}
+  <h2>{{ list_headline }}</h2>
+  <ul>
+    {% for child in children %}
+      {% if child.id %}
+        <li><a href="{{ path('entity.node.canonical', {'node': child.id}) }}">{{ child.label }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': article_type.id}) }}">
+    {% if list_link_title %}
+      {{ list_link_title }}
+    {% else %}
+      {{ "Go to all"|t() }}
+    {% endif %}
+  </a>
+{% endif %}

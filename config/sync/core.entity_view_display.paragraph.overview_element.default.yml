@@ -1,0 +1,29 @@
+uuid: 029c353a-8263-48e2-94a1-154543f024af
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.overview_element.field_link_list_headline
+    - field.field.paragraph.overview_element.field_link_list_title
+    - field.field.paragraph.overview_element.field_show_link_list
+    - field.field.paragraph.overview_element.field_type
+    - paragraphs.paragraphs_type.overview_element
+  module:
+    - sis_articles
+id: paragraph.overview_element.default
+targetEntityType: paragraph
+bundle: overview_element
+mode: default
+content:
+  field_type:
+    type: article_random_content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_link_list_headline: true
+  field_link_list_title: true
+  field_show_link_list: true
+  search_api_excerpt: true

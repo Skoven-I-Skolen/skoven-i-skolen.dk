@@ -1,0 +1,35 @@
+uuid: fa52b0b6-90a9-4257-90c8-d3438d0eb0d0
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.inspiration_overview
+    - field.field.block_content.inspiration_overview.body
+    - field.field.block_content.inspiration_overview.field_column
+  module:
+    - entity_reference_revisions
+    - text
+id: block_content.inspiration_overview.default
+targetEntityType: block_content
+bundle: inspiration_overview
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_column:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
