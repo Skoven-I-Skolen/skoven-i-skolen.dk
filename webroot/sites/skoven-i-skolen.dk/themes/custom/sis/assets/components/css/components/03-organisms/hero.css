@@ -147,4 +147,20 @@
       max-height: none;
     }
   }
+
+  .section__graphics-bottom {
+    display: none;
+  }
+}
+
+#block-pageheader .hero {
+  .section__graphics-bottom {
+    top: auto;
+    bottom: -.1%;
+    display: block;
+
+    & path {
+      fill: #fff;
+    }
+  }
 }
