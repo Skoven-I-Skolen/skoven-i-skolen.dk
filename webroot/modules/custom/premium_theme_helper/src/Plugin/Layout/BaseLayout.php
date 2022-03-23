@@ -65,7 +65,7 @@ class BaseLayout extends MultiWidthLayoutBase {
 
     $form['column_show_graphic_top'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Show graphic bottom'),
+      '#title' => $this->t('Show graphic top'),
       '#size' => 10,
       '#maxlength' => 255,
       '#default_value' => $this->configuration['column_show_graphic_top'] ?? 0,
