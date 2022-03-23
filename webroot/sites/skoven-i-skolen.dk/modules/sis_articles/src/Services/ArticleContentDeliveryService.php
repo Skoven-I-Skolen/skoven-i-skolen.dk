@@ -171,7 +171,7 @@ class ArticleContentDeliveryService {
    * @return \Drupal\Core\Entity\EntityBase[]|\Drupal\Core\Entity\EntityInterface[]|\Drupal\node\Entity\Node[]|null
    */
   public function loadArticles(NodeInterface $currentNode, ?array $articleIds): ?array {
-    if (!empty($articleIds)) {
+    if (empty($articleIds)) {
       return NULL;
     }
 
