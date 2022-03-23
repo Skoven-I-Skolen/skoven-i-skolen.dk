@@ -1,0 +1,15 @@
+sis_articles.settings_form:
+  path: '/admin/config/sis/articles'
+  defaults:
+    _form: '\Drupal\sis_articles\Form\ArticleConfigForm'
+    _title: 'Article configuration'
+  requirements:
+    _permission: 'configure sis articles'
+
+sis_articles.debug:
+  path: '/admin/config/sis/debug'
+  defaults:
+    _controller: '\Drupal\sis_articles\Controller\DebugController::debug'
+    _title: 'Debug controler'
+  requirements:
+    _permission: 'access content'

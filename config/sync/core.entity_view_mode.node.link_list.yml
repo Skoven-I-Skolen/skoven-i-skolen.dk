@@ -1,0 +1,10 @@
+uuid: 04e45d61-4823-4624-b5e1-fa44a5b7dc6b
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+id: node.link_list
+label: 'Link liste'
+targetEntityType: node
+cache: true

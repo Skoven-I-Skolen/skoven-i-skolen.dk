@@ -1,0 +1,89 @@
+uuid: 36164fb0-83ff-4579-80f2-42be925e4e9e
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list
+    - field.field.node.article.body
+    - field.field.node.article.field_article_categories
+    - field.field.node.article.field_article_type
+    - field.field.node.article.field_class
+    - field.field.node.article.field_colophon
+    - field.field.node.article.field_colophon_author
+    - field.field.node.article.field_colophon_editor
+    - field.field.node.article.field_colophon_photographer
+    - field.field.node.article.field_description
+    - field.field.node.article.field_equipment
+    - field.field.node.article.field_factboxes
+    - field.field.node.article.field_graphics
+    - field.field.node.article.field_header
+    - field.field.node.article.field_list_date
+    - field.field.node.article.field_list_media
+    - field.field.node.article.field_location
+    - field.field.node.article.field_media_downloads
+    - field.field.node.article.field_season
+    - field.field.node.article.field_subject
+    - field.field.node.article.field_teaching_goals
+    - field.field.node.article.layout_builder__layout
+    - node.type.article
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      blacklisted_blocks: {  }
+      whitelisted_blocks: {  }
+      restricted_categories: {  }
+_core:
+  default_config_hash: MPH0xWosBjCbxPv7RhMaPznJBnPAJT06vK8GDR7H2AE
+id: node.article.list
+targetEntityType: node
+bundle: article
+mode: list
+content:
+  field_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_list_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: list
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_article_categories: true
+  field_article_type: true
+  field_class: true
+  field_colophon: true
+  field_colophon_author: true
+  field_colophon_editor: true
+  field_colophon_photographer: true
+  field_equipment: true
+  field_factboxes: true
+  field_graphics: true
+  field_header: true
+  field_list_date: true
+  field_location: true
+  field_media_downloads: true
+  field_season: true
+  field_subject: true
+  field_teaching_goals: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true

@@ -999,7 +999,7 @@ display:
           entity_type: webform_submission
           entity_field: completed
           plugin_id: field
-          label: Completed
+          label: Gennemført
           exclude: false
           alter:
             alter_text: false
@@ -1921,7 +1921,7 @@ display:
           entity_type: webform_submission
           entity_field: completed
           plugin_id: field
-          label: Completed
+          label: Gennemført
           exclude: false
           alter:
             alter_text: false
@@ -2755,7 +2755,7 @@ display:
           entity_type: webform_submission
           entity_field: completed
           plugin_id: field
-          label: Completed
+          label: Gennemført
           exclude: false
           alter:
             alter_text: false

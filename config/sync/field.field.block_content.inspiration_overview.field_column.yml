@@ -1,0 +1,43 @@
+uuid: 530a3f5c-7e49-4942-890f-f4608bd3668f
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.inspiration_overview
+    - field.storage.block_content.field_column
+    - paragraphs.paragraphs_type.overview_element
+  module:
+    - entity_reference_revisions
+id: block_content.inspiration_overview.field_column
+field_name: field_column
+entity_type: block_content
+bundle: inspiration_overview
+label: Kolonne
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      overview_element: overview_element
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 7
+        enabled: false
+      basic_hero:
+        weight: 8
+        enabled: false
+      factbox_item:
+        weight: 9
+        enabled: false
+      inline_hero:
+        weight: 10
+        enabled: false
+      overview_element:
+        weight: 6
+        enabled: true
+field_type: entity_reference_revisions

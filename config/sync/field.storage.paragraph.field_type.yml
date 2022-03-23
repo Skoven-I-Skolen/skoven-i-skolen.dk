@@ -1,19 +1,19 @@
-uuid: 23ac0583-1d02-42ea-abd1-057811b630a9
+uuid: 9a85010f-f53c-4494-a07e-b3e7345c4814
 langcode: da
 status: true
 dependencies:
   module:
-    - node
+    - paragraphs
     - taxonomy
-id: node.field_location
-field_name: field_location
-entity_type: node
+id: paragraph.field_type
+field_name: field_type
+entity_type: paragraph
 type: entity_reference
 settings:
   target_type: taxonomy_term
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

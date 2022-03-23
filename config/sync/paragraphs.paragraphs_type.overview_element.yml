@@ -1,0 +1,10 @@
+uuid: 4ce56bc6-1f8c-4fe5-9dd4-d440317bceaf
+langcode: da
+status: true
+dependencies: {  }
+id: overview_element
+label: 'Oversigt '
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

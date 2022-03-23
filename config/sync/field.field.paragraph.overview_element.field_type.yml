@@ -1,0 +1,29 @@
+uuid: a1766752-affd-40b6-be4e-92b513baf587
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type
+    - paragraphs.paragraphs_type.overview_element
+    - taxonomy.vocabulary.article_types
+id: paragraph.overview_element.field_type
+field_name: field_type
+entity_type: paragraph
+bundle: overview_element
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_types: article_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

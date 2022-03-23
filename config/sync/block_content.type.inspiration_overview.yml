@@ -1,0 +1,8 @@
+uuid: 1b819b5d-fc71-40cb-acf3-6595d5f8d1f9
+langcode: da
+status: true
+dependencies: {  }
+id: inspiration_overview
+label: 'Inspirations Oversigt'
+revision: 0
+description: 'En blok som vises fire koloner med inspiration'

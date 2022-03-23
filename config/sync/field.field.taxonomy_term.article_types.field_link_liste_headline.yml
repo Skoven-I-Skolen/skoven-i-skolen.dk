@@ -1,0 +1,19 @@
+uuid: 175d153b-c204-4629-9486-b8fba586f3f1
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_link_liste_headline
+    - taxonomy.vocabulary.article_types
+id: taxonomy_term.article_types.field_link_liste_headline
+field_name: field_link_liste_headline
+entity_type: taxonomy_term
+bundle: article_types
+label: 'Link liste overskrift'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
