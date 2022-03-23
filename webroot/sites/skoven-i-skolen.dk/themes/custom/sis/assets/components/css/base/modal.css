@@ -36,3 +36,12 @@
     }
   }
 }
+
+.layout-builder .layout-builder__add-section {
+  z-index: 10;
+}
+
+#layout-builder-modal .form-composite > legend,
+#layout-builder-modal .label {
+  display: table;
+}
