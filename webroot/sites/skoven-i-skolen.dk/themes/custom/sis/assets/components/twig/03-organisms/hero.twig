@@ -25,7 +25,9 @@
             <h1>{{ title }}</h1>
           {% endif %}
           {% if text %}
-            {{ text }}
+            <div class="hero__content-text">
+              {{ text }}
+            </div>
           {% endif %}
           {% block cta %}
             {{ cta }}

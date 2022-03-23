@@ -13,6 +13,16 @@
   max-height: var(--hero-max-height);
   overflow: hidden;
 
+  & h1 {
+    font-size: var(--base-font-size-xxxlarge);
+
+    @media (--viewport-md-min) {
+      max-width: 500px;
+      margin: 0 auto 20px;
+      font-size: var(--base-font-size-xxxxxlarge);
+    }
+  }
+
   &--narrow-height {
     max-height: var(--hero-narrow-max-height);
 
@@ -54,9 +64,14 @@
     width: 100%;
     height: 100vh;
     max-height: var(--hero-max-height);
+    font-size: var(--base-font-size-medium);
 
     @media (--viewport-md-min) {
       height: calc(90vh - var(--header-height));
+    }
+
+    &-text {
+      margin-bottom: 24px;
     }
   }
 
@@ -120,6 +135,7 @@
     .hero__image-wrapper div:not(.contextual) {
       display: block;
       height: inherit;
+      min-height: inherit;
       max-height: inherit;
     }
 
@@ -138,6 +154,7 @@
 
   &--dynamic-height {
     height: auto;
+    min-height: 480px;
     max-height: none;
 
     & .container,
