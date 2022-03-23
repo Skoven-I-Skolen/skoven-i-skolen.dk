@@ -14,7 +14,9 @@
   --color-gray-dark: #272727;
   --color-gray-dark-1: #232323;
   --color-error: #f00;
-  --color-cherry: #f5bac7;
+  --color-red: #c70f46;
+  --color-pink: #f5bac7;
+  --color-cherry: #fbdace;
   --color-purple: #3d2859;
   --color-purple-dark: #1f0640;
   --color-blue: #00687f;
@@ -32,7 +34,7 @@
   ********************/
   --theme-background-color: var(--color-white);
   --theme-color: var(--color-black);
-  --theme-button-background-color: var(--color-cherry);
+  --theme-button-background-color: var(--color-pink);
   --theme-button-color: var(--color-purple);
   --theme-link-color: var(--color-black);
   --theme-divider-background-color: var(--color-black);
@@ -52,9 +54,11 @@
   /* Typography
   ********************/
   --base-font-family: "Nunito", "sans-serif";
+  --base-font-size-xxxxxlarge: 56px;
+  --base-font-size-xxxxlarge: 48px;
   --base-font-size-xxxlarge: 40px;
   --base-font-size-xxlarge: 30px;
-  --base-font-size-xlarge: 25px;
+  --base-font-size-xlarge: 24px;
   --base-font-size-large: 20px;
   --base-font-size-medium: 18px;
   --base-font-size: 16px;

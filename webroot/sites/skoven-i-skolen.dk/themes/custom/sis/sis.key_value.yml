@@ -2,12 +2,15 @@ color_themes:
   primary:
     name: Blue
     color: '#00687f'
+  cherry:
+    name: Cherry
+    color: '#fbdace'
   green:
     name: Green
     color: '#007950'
-  pink:
-    name: Pink
-    color: '#f2cbce'
+  red:
+    name: Red
+    color: '#c70f46'
   sand:
     name: Sand
     color: '#ffe6a0'

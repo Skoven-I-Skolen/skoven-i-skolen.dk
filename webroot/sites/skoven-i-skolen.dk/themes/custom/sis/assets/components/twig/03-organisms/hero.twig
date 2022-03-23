@@ -25,7 +25,9 @@
             <h1>{{ title }}</h1>
           {% endif %}
           {% if text %}
-            {{ text }}
+            <div class="hero__content-text">
+              {{ text }}
+            </div>
           {% endif %}
           {% block cta %}
             {{ cta }}
@@ -34,4 +36,7 @@
       </div>
     </div>
   </div>
+  <svg class="section__graphics-bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1440 30" xml:space="preserve">
+    <path d="M1440,30V1.3l-240.4,12.3L950.4,0L939,9l-22.9-2.9L801.7,16.5l-625.5-2.9L164.8,3l-87.7,7.5L0,1.3V30H1440z"/>
+  </svg>
 </div>
