@@ -14,10 +14,10 @@ body.adminimal-admin-toolbar header.header {
   left: 0;
   z-index: 100;
   width: 100%;
-  color: var(--color-gray-dark-1);
+  color: var(--color-white);
   font-weight: 500;
   font-family: var(--heading-font-family);
-  background-color: var(--color-white);
+  background-color: var(--color-primary);
   box-shadow: 0 25px 75px rgb(0 0 0 / 10%);
 
   &__inner {
@@ -31,19 +31,50 @@ body.adminimal-admin-toolbar header.header {
       height: var(--header-height);
     }
 
-    .search-toggle {
-      margin-right: 50px;
-
-      @media (--viewport-md-min) {
-        margin-right: 0;
-      }
-    }
-
     .burger {
       order: 2;
 
       @media (--viewport-md-min) {
         order: 0;
+      }
+    }
+  }
+
+  &-search {
+    display: flex;
+    margin: auto;
+
+    &__input-field {
+      position: relative;
+      width: 100%;
+      height: 42px;
+      padding: 11px 50px 11px 20px;
+      background: var(--color-white);
+      border: 1px solid var(--color-blue);
+      border-radius: 24px;
+
+      & .input {
+        height: 100%;
+        padding: 0;
+        border: none;
+      }
+    }
+
+    &__submit {
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      width: 34px;
+      height: 34px;
+      padding: 10px;
+      background: var(--color-blue);
+      border-radius: 50%;
+      cursor: pointer;
+
+      & svg.icon {
+        width: 14px;
+        height: 14px;
+        fill: var(--color-white);
       }
     }
   }

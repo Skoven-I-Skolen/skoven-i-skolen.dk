@@ -6,7 +6,7 @@
   'hero--left': 'col-xs-10 col-md-8'
 } %}
 
-<div{{ attributes.addClass(['hero', 'js-hero']).addClass(media_image ? 'hero--image-added' : 'hero--narrow-height') }}>
+<div{{ attributes.addClass(['hero', 'js-hero']).addClass(media_image ? 'hero--image-added' : 'hero--narrow-height').addClass(dynamic_height ? 'hero--dynamic-height' : '') }}>
   {% if media_image %}
     <div class="hero__image-wrapper">
       {{ media_image }}

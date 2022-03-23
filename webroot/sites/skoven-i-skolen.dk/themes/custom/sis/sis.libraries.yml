@@ -20,6 +20,7 @@ master:
     dist/components/js/search-overlay.js: {}
   dependencies:
     - sis/theme-primary
+    - sis/theme-green
 
 # Themes.
 theme:
@@ -36,22 +37,6 @@ theme-primary:
   dependencies:
     - sis/theme
 
-theme-secondary:
-  version: VERSION
-  css:
-    theme:
-      dist/components/css/theme/theme-secondary.css: {}
-  dependencies:
-    - sis/theme
-
-theme-dark:
-  version: VERSION
-  css:
-    theme:
-      dist/components/css/theme/theme-dark.css: {}
-  dependencies:
-    - sis/theme
-
 theme-green:
   version: VERSION
   css:
@@ -60,19 +45,19 @@ theme-green:
   dependencies:
     - sis/theme
 
-theme-red:
+theme-pink:
   version: VERSION
   css:
     theme:
-      dist/components/css/theme/theme-red.css: {}
+      dist/components/css/theme/theme-pink.css: {}
   dependencies:
     - sis/theme
 
-theme-seashell:
+theme-sand:
   version: VERSION
   css:
     theme:
-      dist/components/css/theme/theme-seashell.css: {}
+      dist/components/css/theme/theme-sand.css: {}
   dependencies:
     - sis/theme
 
@@ -92,11 +77,9 @@ theme-preview:
       dist/components/css/preview/theme.css: {}
   dependencies:
     - sis/theme-primary
-    - sis/theme-secondary
-    - sis/theme-dark
     - sis/theme-green
-    - sis/theme-red
-    - sis/theme-seashell
+    - sis/theme-pink
+    - sis/theme-sand
     - sis/theme-yellow
 
 button-preview:

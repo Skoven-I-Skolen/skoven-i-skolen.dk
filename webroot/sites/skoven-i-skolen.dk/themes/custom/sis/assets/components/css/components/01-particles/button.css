@@ -11,13 +11,13 @@ a.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
-  padding: 0 60px;
+  min-height: 55px;
+  padding: 0 55px;
   overflow: hidden;
   color: var(--theme-button-color);
-  font-weight: 500;
+  font-weight: 800;
   font-size: var(--base-font-size);
-  font-family: var(--heading-font-family);
+  font-family: var(--base-font-family);
   text-decoration: none;
   background-color: var(--theme-button-background-color);
   border: 1px solid transparent;

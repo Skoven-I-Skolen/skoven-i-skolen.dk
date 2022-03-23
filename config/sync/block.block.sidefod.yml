@@ -1,0 +1,25 @@
+uuid: ef0af49d-22b0-4c19-bb18-78853ec09497
+langcode: da
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - sis
+id: sidefod
+theme: sis
+region: footerbottom
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Sidefod
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

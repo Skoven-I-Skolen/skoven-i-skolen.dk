@@ -16,9 +16,7 @@ color_theme:
     - theme
   styles:
     theme-primary: Primary
-    theme-secondary: Secondary
-    theme-dark: Dark
     theme-green: Green
-    theme-red: Red
-    theme-seashell: Seashell
+    theme-pink: Pink
+    theme-sand: Sand
     theme-yellow: Yellow

@@ -4,11 +4,55 @@
  */
 
 .footer {
-  & > *:last-child {
-    padding-bottom: 70px;
+  position: relative;
+  z-index: 3;
 
-    @media (--viewport-md-min) {
-      padding-bottom: var(--grid-section-spacing);
+  &__inner {
+    position: relative;
+  }
+
+  &__bottom {
+    position: relative;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: var(--color-white);
+    background-color: var(--color-green-dark);
+
+    &-logo,
+    &-address,
+    &-links {
+      align-self: center;
+    }
+
+    &-logo {
+      .logo__image {
+        height: 41px;
+        margin: 0;
+      }
+    }
+
+    &-address {
+      text-align: center;
+    }
+
+    &-links {
+      font-size: var(--base-font-size-small);
+      text-align: right;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        li {
+          display: inline-flex;
+          padding-left: 25px;
+
+          a {
+            color: var(--color-white);
+          }
+        }
+      }
     }
   }
 }
