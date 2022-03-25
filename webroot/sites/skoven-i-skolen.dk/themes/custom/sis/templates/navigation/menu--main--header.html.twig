@@ -29,24 +29,18 @@
         .addClass(item.below ? 'navigation-item--has-children') }}>
         {{ link(item.title, item.url, {'class': 'navigation-item__link'}) }}
         {% if item.below %}
-          {% include '@reusable-component/svg-icon.twig' with {
-            'attributes': '',
-            'svgIconName': 'arrow-line-down'
-          } %}
           <div class="sub-navigation">
-            <ul class="sub-navigation__list">
-              {%- for item_below in item.below -%}
-                <li class="sub-navigation__item">
-                  <a href="{{ item_below.url }}" class="sub-navigation__link">
-                    {{ item_below.title }}
-                    {% include '@reusable-component/svg-icon.twig' with {
-                      'attributes': '',
-                      'svgIconName': 'arrow-right'
-                    } %}
-                  </a>
-                </li>
-              {%- endfor -%}
-            </ul>
+            <div class="container">
+              <ul class="sub-navigation__list">
+                {%- for item_below in item.below -%}
+                  <li class="sub-navigation__item">
+                    <a href="{{ item_below.url }}" class="sub-navigation__link">
+                      {{ item_below.title }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
           </div>
         {% endif %}
       </li>
