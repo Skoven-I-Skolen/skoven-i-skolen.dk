@@ -1,0 +1,18 @@
+/**
+ * Type: Theme.
+ * Purple theme.
+ */
+
+.theme-purple {
+  --theme-background-color: var(--color-purple);
+  --theme-color: #fff;
+  --theme-button-background-color: var(--color-pink);
+  --theme-button-color: var(--color-purple);
+  --theme-link-color: #ffefe5;
+  --theme-divider-background-color: #ffefe5;
+  --theme-accordion-border-color: #232323;
+  --theme-accordion-background-color: var(--color-white);
+  --theme-accordion-text-color: var(--color-black);
+  --theme-input-border: #ffefe5;
+  --theme-input-color-marked: #ffefe5;
+}

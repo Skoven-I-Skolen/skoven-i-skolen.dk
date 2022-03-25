@@ -1,10 +1,10 @@
 /**
  * Type: Theme.
- * Sand theme.
+ * Pink theme.
  */
 
-.theme-sand {
-  --theme-background-color: var(--color-sand);
+.theme-pink {
+  --theme-background-color: var(--color-pink-light);
   --theme-color: var(--color-purple);
   --theme-button-background-color: var(--color-green-dark);
   --theme-button-color: #fff;
