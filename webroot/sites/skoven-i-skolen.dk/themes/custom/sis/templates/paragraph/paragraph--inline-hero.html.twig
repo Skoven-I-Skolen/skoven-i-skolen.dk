@@ -50,6 +50,7 @@
   {% set position = paragraph.field_text_position.value %}
   {% set text_color = paragraph.field_text_color.value %}
   {% set overlay = paragraph.field_overlay.value %}
+  {% set dynamic_height = paragraph.field_dynamic_height.value %}
 
   {% include '@reusable-component/hero.twig' with {
     'attributes': attributes.addClass(position != 'hero--left' ? position)
