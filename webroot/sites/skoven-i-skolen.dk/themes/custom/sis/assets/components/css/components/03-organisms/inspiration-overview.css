@@ -84,5 +84,15 @@
       font-family: var(--base-font-family);
       background-color: var(--color-yellow);
     }
+
+    &-item--more-text {
+      display: inline-flex;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      padding: 5px 0;
+      font-weight: 600;
+      font-size: var(--base-font-size-extra-small);
+      font-family: var(--base-font-family);
+    }
   }
 }

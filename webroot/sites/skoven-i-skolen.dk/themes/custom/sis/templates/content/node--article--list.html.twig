@@ -67,6 +67,7 @@
  *
  */
 #}
+{% set subject_items = content.field_subject['#items'] %}
 
 <a href="{{ url }}" class="inspiration-overview__item-link">
   <div class="inspiration-overview__image">
@@ -86,9 +87,20 @@
       {{ content.field_description }}
     </div>
   </div>
-  {% if content.field_subject|length > 2 %}
+  {% if subject_items|length > 0 %}
     <div class="inspiration-overview__subject">
-      {{ content.field_subject }}
+      {% if subject_items|length > 2 %}
+        {% for item in subject_items|slice(0, 2) %}
+          <div class="inspiration-overview__subject-item">
+            {{ item.entity.name.value }}
+          </div>
+        {% endfor %}
+        <div class="inspiration-overview__subject-item--more-text">
+          + {{ subject_items|length - 2 }} {{ 'subjects'|t }}
+        </div>
+      {% else %}
+        {{ content.field_subject }}
+      {% endif %}
     </div>
   {% endif %}
 </a>
