@@ -255,6 +255,12 @@ inline-navigation:
   dependencies:
     - core/drupal
 
+inspiration-overview:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/inspiration-overview.css: {}
+
 local-tasks:
   version: VERSION
   css:
