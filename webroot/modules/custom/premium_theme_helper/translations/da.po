@@ -20,3 +20,6 @@ msgstr "Vis grafisk top"
 
 msgid "Show graphic bottom"
 msgstr "Vis grafisk bund"
+
+msgid "subjects"
+msgstr "fag"
