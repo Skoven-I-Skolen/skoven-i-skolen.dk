@@ -40,6 +40,7 @@ module:
   editor: 0
   editor_advanced_link: 0
   entity_clone: 0
+  entity_overview: 0
   entity_reference_revisions: 0
   entity_usage: 0
   field: 0

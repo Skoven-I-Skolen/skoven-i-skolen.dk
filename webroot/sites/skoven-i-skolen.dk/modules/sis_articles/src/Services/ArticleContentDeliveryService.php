@@ -37,14 +37,18 @@ class ArticleContentDeliveryService {
 
   public function getInspirationalArticlesForCurrent(NodeInterface $node) {
 
-    $classTitle = $node->get('field_class')->entity->label();
-    $subjectTitle = $node->get('field_subject')->entity->label();
-
-    $inspirational = [
-      $classTitle => $this->getRandomArticlesByFields(['field_class'], $node),
-      $subjectTitle => $this->getRandomArticlesByFields(['field_subject'], $node),
+    $fields = [
+      'field_class',
+      'field_subject'
     ];
 
+    $inspirational = [];
+    foreach ($fields as $field) {
+      if ($node->hasField($field) && !$node->get($field)->isEmpty()) {
+        $title = $node->get($field)->entity->label();
+        $inspirational[$title] = $this->getRandomArticlesByFields([$field], $node);
+      }
+    }
     return $inspirational;
   }
 
