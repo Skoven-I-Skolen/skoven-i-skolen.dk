@@ -77,9 +77,15 @@
     </div>
   </div>
   <div class="inspiration-overview__content">
-    <div class="inspiration-overview__class">
-      {{ content.field_class }}
-    </div>
+    {% if subject_items|length > 0 %}
+      <div class="inspiration-overview__class">
+        {% include '@reusable-component/svg-icon.twig' with {
+          'attributes': '',
+          'svgIconName': 'reading'
+        } %}
+        {{ content.field_class }}
+      </div>
+    {% endif %}
     <div class="inspiration-overview__title">
       {{ label }}
     </div>

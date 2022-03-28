@@ -11,9 +11,9 @@
       text-align: center;
 
       &-headline {
+        margin-bottom: 24px;
         font-size: var(--base-font-size-xxxxlarge);
         line-height: 1.1;
-        margin-bottom: 24px;
       }
 
       &-description {
@@ -44,6 +44,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
+    color: var(--color-purple);
     text-decoration: none;
     background-color: #fff;
     box-shadow: 0 4px 30px rgb(131 131 131 / 25%);
@@ -78,7 +79,20 @@
   }
 
   &__class {
+    position: relative;
+    margin-bottom: 4px;
+    padding-left: 20px;
     font-size: var(--base-font-size-extra-small);
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 15px;
+      height: 18px;
+      transform: translateY(-50%);
+      fill: var(--color-purple);
+    }
   }
 
   &__title {
