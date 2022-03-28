@@ -1,0 +1,23 @@
+{% if children %}
+  <div class="inspiration-overview__list-links">
+    <div class="inspiration-overview__headline">{{ list_headline }}</div>
+    <ul class="inspiration-overview__list">
+      {% for child in children %}
+        {% if child.id %}
+          <li class="inspiration-overview__list-item"><a class="inspiration-overview__list-item-link" href="{{ path('entity.node.canonical', {'node': child.id}) }}">{{ child.label }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <a class="inspiration-overview__more-link" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': article_type.id}) }}">
+      {% if list_link_title %}
+        {{ list_link_title }}
+      {% else %}
+        {{ "Go to all"|t() }}
+      {% endif %}
+      {% include '@reusable-component/svg-icon.twig' with {
+        'attributes': '',
+        'svgIconName': 'arrow-right'
+      } %}
+    </a>
+  </div>
+{% endif %}
