@@ -4,7 +4,7 @@
  */
 
 .theme-pink {
-  --theme-background-color: var(--color-cherry);
+  --theme-background-color: var(--color-pink-light);
   --theme-color: var(--color-purple);
   --theme-button-background-color: var(--color-green-dark);
   --theme-button-color: #fff;

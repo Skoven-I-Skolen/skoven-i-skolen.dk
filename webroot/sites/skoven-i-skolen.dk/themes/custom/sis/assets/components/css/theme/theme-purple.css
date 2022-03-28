@@ -1,12 +1,12 @@
 /**
  * Type: Theme.
- * Green theme.
+ * Purple theme.
  */
 
-.theme-red {
-  --theme-background-color: var(--color-red);
+.theme-purple {
+  --theme-background-color: var(--color-purple);
   --theme-color: #fff;
-  --theme-button-background-color: var(--color-cherry);
+  --theme-button-background-color: var(--color-pink);
   --theme-button-color: var(--color-purple);
   --theme-link-color: #ffefe5;
   --theme-divider-background-color: #ffefe5;

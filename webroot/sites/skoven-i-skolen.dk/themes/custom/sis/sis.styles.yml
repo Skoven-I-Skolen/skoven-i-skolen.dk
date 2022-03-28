@@ -16,8 +16,8 @@ color_theme:
     - theme
   styles:
     theme-primary: Primary
-    theme-pink: Cherry
+    theme-blue: Blue
     theme-green: Green
-    theme-red: Red
-    theme-sand: Sand
+    theme-pink: Pink
+    theme-purple: Purple
     theme-yellow: Yellow

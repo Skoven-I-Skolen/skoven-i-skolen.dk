@@ -78,12 +78,13 @@
     &::after {
       position: absolute;
       top: auto;
-      bottom: -10px;
-      left: 50%;
-      width: 9px;
-      height: 9px;
-      background-color: var(--color-primary);
-      border-radius: 50px;
+      bottom: 0;
+      left: -3%;
+      width: 106%;
+      height: 10px;
+      background-image: url("../../../../../dist/images/selected-underline.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
       opacity: 0;
       transition: opacity .3s;
       content: "";

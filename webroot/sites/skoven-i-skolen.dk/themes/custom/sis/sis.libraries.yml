@@ -37,11 +37,11 @@ theme-primary:
   dependencies:
     - sis/theme
 
-theme-cherry:
+theme-blue:
   version: VERSION
   css:
     theme:
-      dist/components/css/theme/theme-cherry.css: {}
+      dist/components/css/theme/theme-blue.css: {}
   dependencies:
     - sis/theme
 
@@ -53,19 +53,19 @@ theme-green:
   dependencies:
     - sis/theme
 
-theme-red:
+theme-pink:
   version: VERSION
   css:
     theme:
-      dist/components/css/theme/theme-red.css: {}
+      dist/components/css/theme/theme-pink.css: {}
   dependencies:
     - sis/theme
 
-theme-sand:
+theme-purple:
   version: VERSION
   css:
     theme:
-      dist/components/css/theme/theme-sand.css: {}
+      dist/components/css/theme/theme-purple.css: {}
   dependencies:
     - sis/theme
 
@@ -85,10 +85,10 @@ theme-preview:
       dist/components/css/preview/theme.css: {}
   dependencies:
     - sis/theme-primary
+    - sis/theme-blue
     - sis/theme-green
-    - sis/theme-cherry
-    - sis/theme-red
-    - sis/theme-sand
+    - sis/theme-pink
+    - sis/theme-purple
     - sis/theme-yellow
 
 button-preview:
@@ -254,6 +254,12 @@ inline-navigation:
     dist/components/js/inline-navigation.js: {}
   dependencies:
     - core/drupal
+
+inspiration-overview:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/inspiration-overview.css: {}
 
 local-tasks:
   version: VERSION

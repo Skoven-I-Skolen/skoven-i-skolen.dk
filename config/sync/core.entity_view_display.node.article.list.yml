@@ -48,6 +48,22 @@ targetEntityType: node
 bundle: article
 mode: list
 content:
+  field_article_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_class:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_description:
     type: basic_string
     label: hidden
@@ -64,11 +80,17 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_subject:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
 hidden:
   body: true
   field_article_categories: true
-  field_article_type: true
-  field_class: true
   field_colophon: true
   field_colophon_author: true
   field_colophon_editor: true
@@ -81,7 +103,6 @@ hidden:
   field_location: true
   field_media_downloads: true
   field_season: true
-  field_subject: true
   field_teaching_goals: true
   langcode: true
   layout_builder__layout: true
