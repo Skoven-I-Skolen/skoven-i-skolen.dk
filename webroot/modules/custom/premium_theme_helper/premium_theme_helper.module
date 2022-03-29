@@ -1,8 +1,6 @@
 <?php
 
 use Drupal\Core\Access\AccessResult;
-use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\media_library\MediaLibraryState;
@@ -41,43 +39,4 @@ function premium_theme_helper_locale_translation_projects_alter(array &$projects
   $module_handler = \Drupal::service('module_handler');
   $path = $module_handler->getModule('premium_theme_helper')->getPath();
   $projects['premium_theme_helper']['info']['interface translation server pattern'] = $path . '/translations/%language.po';
-}
-
-/**
- * Implements hook_entity_base_field_info().
- */
-function premium_theme_helper_entity_base_field_info(EntityTypeInterface $entity_type): array {
-  $fields = [];
-
-  if ($entity_type->id() == 'menu_link_content') {
-    $fields['icon'] = BaseFieldDefinition::create('icon_field')
-      ->setLabel(t('Icon'))
-      ->setDescription(t('Add icon to menu item'))
-      ->setDisplayOptions('form', [
-        'type' => 'icon_field',
-        'weight' => '0',
-        'settings' => [
-          'display_label' => TRUE,
-        ],
-      ])
-      ->setDisplayConfigurable('form', TRUE);
-  }
-
-  return $fields;
-}
-
-/**
- * Control access for icon field.
- *
- * @param array $form
- *   Form.
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- *   Form state.
- */
-function premium_theme_helper_form_menu_link_content_menu_link_content_form_alter(array &$form, FormStateInterface $form_state): void {
-  $name = $form_state->getFormObject()->getEntity()->getMenuName();
-  // Hide the menu related fields for any menu that is not the main menu.
-  if ($name !== 'main') {
-    $form['icon']['#access'] = FALSE;
-  }
 }

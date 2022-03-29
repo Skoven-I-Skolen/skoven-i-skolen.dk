@@ -1,3 +1,0 @@
-services:
-   premium_theme_helper.menu_icons_manipulators:
-    class: Drupal\premium_theme_helper\MenuIconManipulator
