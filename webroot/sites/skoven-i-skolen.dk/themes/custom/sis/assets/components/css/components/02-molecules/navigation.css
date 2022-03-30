@@ -14,6 +14,12 @@
   @media (--viewport-lg-min) {
     display: flex;
   }
+
+  &-list {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .navigation-item {
@@ -22,7 +28,6 @@
   height: 100%;
   margin: 0 10px;
   color: var(--color-gray-dark-1);
-  cursor: pointer;
 
   @media (--viewport-lg-min) {
     margin: 0 15px;
@@ -70,14 +75,19 @@
 
   &__link {
     position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
     color: var(--color-white);
     font-weight: 700;
     font-family: var(--heading-font-family);
+    line-height: 1.2;
     text-decoration: none;
+    cursor: pointer;
 
     &::after {
       position: absolute;
-      top: auto;
+      top: calc(50% + 3px);
       bottom: 0;
       left: -3%;
       width: 106%;

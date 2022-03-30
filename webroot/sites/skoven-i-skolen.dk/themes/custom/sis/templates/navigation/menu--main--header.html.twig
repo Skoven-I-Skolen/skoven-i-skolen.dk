@@ -29,13 +29,14 @@
         .addClass(item.below ? 'navigation-item--has-children') }}>
         {{ link(item.title, item.url, {'class': 'navigation-item__link'}) }}
         {% if item.below %}
-          <div class="sub-navigation">
+          <div class="sub-navigation ">
             <div class="container">
               <ul class="sub-navigation__list">
                 {%- for item_below in item.below -%}
                   <li class="sub-navigation__item">
                     <a href="{{ item_below.url }}" class="sub-navigation__link">
-                      {{ item_below.title }}
+                      <span class="sub-navigation__link-title">{{ item_below.content.field_menu_icon }}{{ item_below.title }}</span>
+                      <span class="sub-navigation__link-description">{{ item_below.content.field_menu_description }}</span>
                     </a>
                   </li>
                 {%- endfor -%}
