@@ -3,18 +3,18 @@ langcode: da
 status: true
 dependencies:
   module:
-    - premium_articles
+    - entity_overview
     - taxonomy
 _core:
   default_config_hash: K2GeWLeQQsANLDBIbiP8_1DB8Z5AsZnBWE9Xw7O2R6M
 id: taxonomy_term.field_overview
 field_name: field_overview
 entity_type: taxonomy_term
-type: article_filter
+type: overview_filter
 settings:
   entity_bundle: node.article
   allow_facets: 1
-module: premium_articles
+module: entity_overview
 locked: false
 cardinality: 1
 translatable: true

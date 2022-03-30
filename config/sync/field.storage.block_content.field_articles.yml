@@ -4,17 +4,17 @@ status: true
 dependencies:
   module:
     - block_content
-    - premium_articles
+    - entity_overview
 _core:
   default_config_hash: HiaDqG_1rQJkSA_M4c7IljGYvj2b78Gxg4w2vVui31w
 id: block_content.field_articles
 field_name: field_articles
 entity_type: block_content
-type: article_filter
+type: overview_filter
 settings:
   entity_bundle: node.article
   allow_facets: 0
-module: premium_articles
+module: entity_overview
 locked: false
 cardinality: 1
 translatable: true
