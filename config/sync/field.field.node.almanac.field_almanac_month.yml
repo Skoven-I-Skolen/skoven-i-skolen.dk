@@ -1,0 +1,23 @@
+uuid: 28327807-9442-47dc-8c6a-5e93fa81584b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_almanac_month
+    - node.type.almanac
+id: node.almanac.field_almanac_month
+field_name: field_almanac_month
+entity_type: node
+bundle: almanac
+label: Måned
+description: 'Den måned i året, hvor almanakken skal vises.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: 12
+  prefix: ''
+  suffix: ''
+field_type: integer

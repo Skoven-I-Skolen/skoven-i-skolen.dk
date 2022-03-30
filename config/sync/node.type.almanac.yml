@@ -1,0 +1,18 @@
+uuid: 90fbf543-0e6d-4373-8f3b-e4163aba5328
+langcode: da
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Almanak
+type: almanac
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

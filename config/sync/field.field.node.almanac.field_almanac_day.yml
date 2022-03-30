@@ -1,0 +1,23 @@
+uuid: 403dad12-b3ad-4769-9259-226dcc32a16a
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_almanac_day
+    - node.type.almanac
+id: node.almanac.field_almanac_day
+field_name: field_almanac_day
+entity_type: node
+bundle: almanac
+label: Dag
+description: 'Den dag i måneden, hvor almanakken skal vises.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: 31
+  prefix: ''
+  suffix: ''
+field_type: integer

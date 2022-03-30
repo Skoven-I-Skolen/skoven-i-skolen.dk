@@ -1,0 +1,20 @@
+uuid: 06dfc54f-1d97-4d42-aeca-e3f71409eb47
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_almanac_month
+field_name: field_almanac_month
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,50 @@
+uuid: 005ca189-f959-4e04-8638-0ef8fbcd8f1a
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.node.almanac.field_almanac_content
+    - field.field.node.almanac.field_almanac_day
+    - field.field.node.almanac.field_almanac_month
+    - node.type.almanac
+  module:
+    - text
+    - user
+id: node.almanac.default
+targetEntityType: node
+bundle: almanac
+mode: default
+content:
+  field_almanac_content:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_almanac_day:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_almanac_month:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

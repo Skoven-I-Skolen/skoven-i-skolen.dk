@@ -1,0 +1,14 @@
+id: node.article
+label: Artikel
+entity_type_id: node
+bundle: article
+engine: entity_query
+fields:
+  field_article_categories: checkboxes
+  field_article_type: checkboxes
+  field_class: checkboxes
+  field_location: checkboxes
+  field_season: checkboxes
+  field_subject: checkboxes
+sort_field: changed
+show_total: ''

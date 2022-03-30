@@ -1,0 +1,28 @@
+uuid: d6c745ba-c405-4415-9021-b34dc46655fd
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.almanac.field_almanac_content
+    - field.field.node.almanac.field_almanac_day
+    - field.field.node.almanac.field_almanac_month
+    - node.type.almanac
+  module:
+    - user
+id: node.almanac.teaser
+targetEntityType: node
+bundle: almanac
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_almanac_content: true
+  field_almanac_day: true
+  field_almanac_month: true
+  langcode: true
+  search_api_excerpt: true

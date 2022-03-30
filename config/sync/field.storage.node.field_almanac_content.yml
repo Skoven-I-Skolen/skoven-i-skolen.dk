@@ -1,0 +1,19 @@
+uuid: cc12fcf6-be5b-4693-8b06-d76ad3528495
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_almanac_content
+field_name: field_almanac_content
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+uuid: b093eae2-87fa-4ca7-b7a8-809e001f635a
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_almanac_content
+    - node.type.almanac
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: node.almanac.field_almanac_content
+field_name: field_almanac_content
+entity_type: node
+bundle: almanac
+label: Almanak
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

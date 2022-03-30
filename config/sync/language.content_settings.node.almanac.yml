@@ -1,0 +1,11 @@
+uuid: edc29ef2-be54-47cf-abe7-376ecddf0c8b
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.almanac
+id: node.almanac
+target_entity_type_id: node
+target_bundle: almanac
+default_langcode: site_default
+language_alterable: false
