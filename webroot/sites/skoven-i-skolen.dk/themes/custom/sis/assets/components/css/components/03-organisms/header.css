@@ -42,6 +42,7 @@ body.adminimal-admin-toolbar header.header {
 
   &-search {
     display: flex;
+    max-width: 210px;
     margin: auto;
 
     &__input-field {
@@ -56,6 +57,7 @@ body.adminimal-admin-toolbar header.header {
       & .input {
         height: 100%;
         padding: 0;
+        font-size: var(--base-font-size-small);
         border: none;
       }
     }
