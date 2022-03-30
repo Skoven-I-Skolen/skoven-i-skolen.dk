@@ -1,0 +1,19 @@
+uuid: 1034a7e0-2521-49dd-8f53-3f750dea020f
+langcode: da
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.field_menu_description
+field_name: field_menu_description
+entity_type: menu_link_content
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
