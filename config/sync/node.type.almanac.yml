@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Almanak
 type: almanac
-description: ''
+description: 'Brug almanak til at oprette et emne i almanakken'
 help: ''
 new_revision: true
 preview_mode: 1
