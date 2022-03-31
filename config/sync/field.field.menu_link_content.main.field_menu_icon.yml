@@ -1,0 +1,21 @@
+uuid: 52f95dd1-6e15-4eed-a364-d4becb1f2f6b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_icon
+    - system.menu.main
+  module:
+    - media_icons
+id: menu_link_content.main.field_menu_icon
+field_name: field_menu_icon
+entity_type: menu_link_content
+bundle: main
+label: Ikon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: icon_field
