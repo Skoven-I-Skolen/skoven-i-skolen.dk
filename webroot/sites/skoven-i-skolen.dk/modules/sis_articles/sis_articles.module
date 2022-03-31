@@ -14,7 +14,6 @@ function sis_articles_theme() {
   ];
 }
 
-
 function sis_articles_preprocess_list_element(&$variables) {
   $fieldParent = $variables['article_type']->_referringItem->getParent()
     ->getParent()

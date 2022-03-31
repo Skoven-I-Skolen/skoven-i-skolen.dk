@@ -12,3 +12,4 @@ fields:
   field_subject: checkboxes
 sort_field: changed
 show_total: ''
+langcode: da

@@ -1,0 +1,3 @@
+services:
+  sis_almanac.repository:
+    class: 'Drupal\sis_almanac\Repository\AlmanacRepository'

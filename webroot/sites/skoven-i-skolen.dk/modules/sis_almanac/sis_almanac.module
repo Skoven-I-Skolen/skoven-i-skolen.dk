@@ -1,0 +1,9 @@
+<?php
+
+function sis_almanac_theme() {
+  return [
+    'almanac' => [
+      'variables' => ['date' => NULL, 'content' => NULL]
+    ]
+  ];
+}

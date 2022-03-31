@@ -1,0 +1,7 @@
+sis.almanac.data:
+  path: sis/almanac/get/{action}/{day}/{month}
+  defaults:
+    _controller: '\Drupal\sis_almanac\Controller\AlmanacController::get'
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
