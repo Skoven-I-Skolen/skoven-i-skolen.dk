@@ -5,12 +5,14 @@ dependencies:
   config:
     - core.entity_view_display.node.page.full
     - filter.format.full_html
+    - filter.format.limited_html_link
     - media.type.audio
     - media.type.document
     - media.type.image
     - media.type.remote_video
     - media.type.video
     - node.type.page
+    - workflows.workflow.editorial
   module:
     - atoms
     - content_moderation
@@ -27,6 +29,7 @@ dependencies:
     - paragraphs
     - path
     - redirect
+    - scheduled_transitions
     - system
     - taxonomy
     - toolbar
@@ -35,7 +38,7 @@ dependencies:
 _core:
   default_config_hash: W9l725Rrmc6gHYxUr_BVGjQepGmTDzF15DZAO9s8F-o
 id: editor
-label: Editor
+label: Redaktør
 weight: 3
 is_admin: null
 permissions:
@@ -132,6 +135,7 @@ permissions:
   - 'use editorial transition publish'
   - 'use media icons'
   - 'use text format full_html'
+  - 'use text format limited_html_link'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any unpublished content'

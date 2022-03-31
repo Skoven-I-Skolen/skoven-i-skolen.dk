@@ -33,7 +33,11 @@ function sis_almanac_preprocess_block__inline_block__almanac(&$variables) {
     $almanacs[] = [
       '#theme' => 'almanac',
       '#date' =>  $almanacService->createdFormattedDate($month, $day),
-      '#content' => $almanac->get('field_almanac_content')->value,
+      '#content' => [
+        '#type' => 'processed_text',
+        '#text' => $almanac->get('field_almanac_content')->value,
+        '#format' => $almanac->get('field_almanac_content')->format,
+      ] ,
     ];
   }
 
@@ -41,8 +45,4 @@ function sis_almanac_preprocess_block__inline_block__almanac(&$variables) {
     '#theme' => 'almanacs',
     '#almanacs' => $almanacs
   ];
-}
-
-function sis_almanac_preprocess_almanac(&$variables) {
-  $variables['content'] = ['#markup' => strip_tags($variables['content'], '<a>')];
 }

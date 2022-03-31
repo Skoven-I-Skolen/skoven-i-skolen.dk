@@ -2,8 +2,6 @@
 
 namespace Drupal\sis_almanac\Controller;
 
-use DateTime;
-use Drupal\Component\Datetime\Time;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Render\Renderer;
 use Drupal\node\Entity\Node;
@@ -85,7 +83,10 @@ class AlmanacController extends ControllerBase {
       $statusCode = $e->getCode();
     }
 
-    return new JsonResponse(['data' => $output, 'status' => $statusCode ?? 200]);
+    return new JsonResponse([
+      'data' => $output,
+      'status' => $statusCode ?? 200,
+    ]);
   }
 
   /**
@@ -103,7 +104,11 @@ class AlmanacController extends ControllerBase {
     $almanacToRender = [
       '#theme' => 'almanac',
       '#date' => $date,
-      '#content' => $almanac->get('field_almanac_content')->value,
+      '#content' => [
+        '#type' => 'processed_text',
+        '#text' => $almanac->get('field_almanac_content')->value,
+        '#format' => $almanac->get('field_almanac_content')->format,
+      ],
     ];
     return $this->renderer->render($almanacToRender);
   }
