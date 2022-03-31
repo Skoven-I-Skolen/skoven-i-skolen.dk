@@ -1,0 +1,14 @@
+uuid: 067c7480-6529-4c0e-8fba-9d03f069be30
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.almanac
+id: block_content.almanac.default
+targetEntityType: block_content
+bundle: almanac
+mode: default
+content: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

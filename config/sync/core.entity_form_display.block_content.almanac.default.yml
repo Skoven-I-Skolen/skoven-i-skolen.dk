@@ -1,0 +1,27 @@
+uuid: af8097b3-fcc5-4612-b1d5-493a259d2b30
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.almanac
+id: block_content.almanac.default
+targetEntityType: block_content
+bundle: almanac
+mode: default
+content:
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

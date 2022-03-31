@@ -1,0 +1,8 @@
+uuid: b441fc04-7b44-4b92-9f15-8d3842fc3cf2
+langcode: da
+status: true
+dependencies: {  }
+id: almanac
+label: Almanak
+revision: 0
+description: 'En blok der indeholder en almanac.'

@@ -1,3 +1,7 @@
 services:
   sis_almanac.repository:
     class: 'Drupal\sis_almanac\Repository\AlmanacRepository'
+  sis_almanac.service:
+    class: 'Drupal\sis_almanac\Services\AlmanacService'
+    arguments:
+      - '@datetime.time'

@@ -1,9 +1,48 @@
 <?php
 
+use Drupal\node\Entity\Node;
+
 function sis_almanac_theme() {
   return [
     'almanac' => [
       'variables' => ['date' => NULL, 'content' => NULL]
+    ],
+     'almanacs' => [
+      'variables' => ['almanacs' => []]
     ]
   ];
+}
+
+function sis_almanac_preprocess_block__inline_block__almanac(&$variables) {
+  /** @var \Drupal\sis_almanac\Repository\AlmanacRepository $almanacRepository */
+  $almanacRepository = \Drupal::service('sis_almanac.repository');
+  /** @var \Drupal\sis_almanac\Services\AlmanacService $almanacService */
+  $almanacService = \Drupal::service('sis_almanac.service');
+  $almanacIds = $almanacRepository->getCurrentAlmanacWithPreviousAndNext();
+
+  if (!empty($almanacIds)) {
+    $almanacEntities = Node::loadMultiple($almanacIds);
+  }
+
+  $almanacs = [];
+
+  foreach ($almanacEntities as $index => $almanac) {
+    $month = $almanac->get('field_almanac_month')->value;
+    $day = $almanac->get('field_almanac_day')->value;
+
+    $almanacs[] = [
+      '#theme' => 'almanac',
+      '#date' =>  $almanacService->createdFormattedDate($month, $day),
+      '#content' => $almanac->get('field_almanac_content')->value,
+    ];
+  }
+
+  $variables['almanacs'] = [
+    '#theme' => 'almanacs',
+    '#almanacs' => $almanacs
+  ];
+}
+
+function sis_almanac_preprocess_almanac(&$variables) {
+  $variables['content'] = ['#markup' => strip_tags($variables['content'], '<a>')];
 }

@@ -1,0 +1,11 @@
+uuid: 495607c8-19c0-4852-9bf3-f4f35084e511
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.almanac
+id: block_content.almanac
+target_entity_type_id: block_content
+target_bundle: almanac
+default_langcode: site_default
+language_alterable: false
