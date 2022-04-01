@@ -5,3 +5,8 @@ services:
     class: 'Drupal\sis_almanac\Services\AlmanacService'
     arguments:
       - '@datetime.time'
+  sis_almanac.content_delivery:
+    class: 'Drupal\sis_almanac\Services\AlmanacContentDeliveryService'
+    arguments:
+      - '@sis_almanac.repository'
+      - '@sis_almanac.service'

@@ -14,35 +14,13 @@ function sis_almanac_theme() {
 }
 
 function sis_almanac_preprocess_block__inline_block__almanac(&$variables) {
-  /** @var \Drupal\sis_almanac\Repository\AlmanacRepository $almanacRepository */
-  $almanacRepository = \Drupal::service('sis_almanac.repository');
-  /** @var \Drupal\sis_almanac\Services\AlmanacService $almanacService */
-  $almanacService = \Drupal::service('sis_almanac.service');
-  $almanacIds = $almanacRepository->getCurrentAlmanacWithPreviousAndNext();
+  /** @var \Drupal\sis_almanac\Services\AlmanacContentDeliveryService $almanacContentDeliveryService */
+  $almanacContentDeliveryService = \Drupal::service('sis_almanac.content_delivery');
+  $variables['almanac'] = $almanacContentDeliveryService->getAlmanac();
+}
 
-  if (!empty($almanacIds)) {
-    $almanacEntities = Node::loadMultiple($almanacIds);
-  }
-
-  $almanacs = [];
-
-  foreach ($almanacEntities as $index => $almanac) {
-    $month = $almanac->get('field_almanac_month')->value;
-    $day = $almanac->get('field_almanac_day')->value;
-
-    $almanacs[] = [
-      '#theme' => 'almanac',
-      '#date' =>  $almanacService->createdFormattedDate($month, $day),
-      '#content' => [
-        '#type' => 'processed_text',
-        '#text' => $almanac->get('field_almanac_content')->value,
-        '#format' => $almanac->get('field_almanac_content')->format,
-      ] ,
-    ];
-  }
-
-  $variables['almanacs'] = [
-    '#theme' => 'almanacs',
-    '#almanacs' => $almanacs
-  ];
+function sis_almanac_preprocess_page(&$variables) {
+  /** @var \Drupal\sis_almanac\Services\AlmanacContentDeliveryService $almanacContentDeliveryService */
+  $almanacContentDeliveryService = \Drupal::service('sis_almanac.content_delivery');
+  $variables['almanac'] = $almanacContentDeliveryService->getAlmanac();
 }
