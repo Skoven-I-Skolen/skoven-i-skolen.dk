@@ -25,10 +25,10 @@ class AlmanacContentDeliveryService {
   public function getAlmanac() {
     $almanacIds = $this->almanacRepository->getCurrentAlmanacWithPreviousAndNext();
 
+    $almanacs = [];
     if (!empty($almanacIds)) {
       $almanacEntities = Node::loadMultiple($almanacIds);
 
-      $almanacs = [];
       foreach ($almanacEntities as $almanac) {
         $month = $almanac->get('field_almanac_month')->value;
         $day = $almanac->get('field_almanac_day')->value;
