@@ -1,0 +1,47 @@
+uuid: a17263cd-f48a-41b1-a0b6-87a9d06e636f
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.lexicon_teaser
+    - field.field.block_content.lexicon_teaser.body
+    - field.field.block_content.lexicon_teaser.field_lexicon_initial_letter
+  module:
+    - text
+id: block_content.lexicon_teaser.default
+targetEntityType: block_content
+bundle: lexicon_teaser
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_lexicon_initial_letter:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

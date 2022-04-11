@@ -1,0 +1,23 @@
+uuid: d6c2bc84-31d2-493e-ac3d-2b6ff1d04083
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.lexicon_teaser
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.lexicon_teaser.body
+field_name: body
+entity_type: block_content
+bundle: lexicon_teaser
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

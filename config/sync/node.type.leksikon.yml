@@ -1,4 +1,4 @@
-uuid: 90fbf543-0e6d-4373-8f3b-e4163aba5328
+uuid: 13b72d67-e199-4fd5-a317-4fd0d50d9e6a
 langcode: da
 status: true
 dependencies:
@@ -9,9 +9,9 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Almanak
-type: almanac
-description: 'Brug <em>almanak</em> til at oprette et emne i almanakken'
+name: Leksikon
+type: leksikon
+description: 'Brug <em>leksikon</em> til at oprettet et nyt emne i leksikonet'
 help: ''
 new_revision: true
 preview_mode: 1

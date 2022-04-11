@@ -1,0 +1,102 @@
+uuid: 88345fe7-efa6-465b-a0f3-5d4a8803b8ca
+langcode: da
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_lexicon_initial_letter
+field_name: field_lexicon_initial_letter
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: A
+      label: A
+    -
+      value: B
+      label: B
+    -
+      value: C
+      label: C
+    -
+      value: D
+      label: D
+    -
+      value: E
+      label: E
+    -
+      value: F
+      label: F
+    -
+      value: G
+      label: G
+    -
+      value: H
+      label: H
+    -
+      value: I
+      label: I
+    -
+      value: J
+      label: J
+    -
+      value: K
+      label: K
+    -
+      value: L
+      label: L
+    -
+      value: M
+      label: M
+    -
+      value: S
+      label: S
+    -
+      value: O
+      label: O
+    -
+      value: P
+      label: P
+    -
+      value: Q
+      label: Q
+    -
+      value: R
+      label: R
+    -
+      value: T
+      label: T
+    -
+      value: U
+      label: U
+    -
+      value: V
+      label: V
+    -
+      value: X
+      label: X
+    -
+      value: 'Y'
+      label: 'Y'
+    -
+      value: Z
+      label: Z
+    -
+      value: Æ
+      label: Æ
+    -
+      value: Ø
+      label: Ø
+    -
+      value: Å
+      label: Å
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -19,14 +19,18 @@ required: false
 translatable: true
 default_value:
   -
+    element_id_field: field_article_type
     fields:
-      field_article_type: {  }
+      field_article_type: ''
       field_article_categories: {  }
+      field_class: {  }
+      field_location: {  }
+      field_season: {  }
+      field_subject: {  }
     count: 20
     sort: newest
     pagination: true
     facets:
-      - field_article_categories
       - sort
 default_value_callback: ''
 settings: {  }

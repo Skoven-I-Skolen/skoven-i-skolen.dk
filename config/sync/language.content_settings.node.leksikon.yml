@@ -1,0 +1,11 @@
+uuid: 5eb9f878-4f4c-4819-835a-06707aee8b34
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.leksikon
+id: node.leksikon
+target_entity_type_id: node
+target_bundle: leksikon
+default_langcode: site_default
+language_alterable: false

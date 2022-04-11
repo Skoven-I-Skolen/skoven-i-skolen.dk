@@ -1,0 +1,11 @@
+uuid: daa143d3-471f-4c98-90ea-55b8b2df0c09
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.lexicon_teaser
+id: block_content.lexicon_teaser
+target_entity_type_id: block_content
+target_bundle: lexicon_teaser
+default_langcode: site_default
+language_alterable: false

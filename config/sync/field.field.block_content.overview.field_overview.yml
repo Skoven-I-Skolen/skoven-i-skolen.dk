@@ -1,0 +1,35 @@
+uuid: cbe22608-b216-48bd-b519-1eb78b14ea6d
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.overview
+    - field.storage.block_content.field_overview
+  module:
+    - entity_overview
+id: block_content.overview.field_overview
+field_name: field_overview
+entity_type: block_content
+bundle: overview
+label: Overview
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    fields:
+      field_article_categories: {  }
+      field_article_type:
+        - '3'
+        - '4'
+      field_class: {  }
+      field_location: {  }
+      field_season: {  }
+      field_subject: {  }
+    count: 5
+    sort: newest
+    pagination: false
+    facets: {  }
+default_value_callback: ''
+settings: {  }
+field_type: overview_filter

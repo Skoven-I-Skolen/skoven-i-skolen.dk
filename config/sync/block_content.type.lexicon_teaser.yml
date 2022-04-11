@@ -1,0 +1,8 @@
+uuid: 60480f4b-5f9f-47f1-97b5-014f8c8648c8
+langcode: da
+status: true
+dependencies: {  }
+id: lexicon_teaser
+label: 'Leksikon teaser'
+revision: 0
+description: 'En blok der indeholder en leksikon teaser.'

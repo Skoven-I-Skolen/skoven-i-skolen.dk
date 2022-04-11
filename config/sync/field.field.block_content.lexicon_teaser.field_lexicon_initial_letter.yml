@@ -1,0 +1,23 @@
+uuid: 85298f1d-f06e-47d3-b5fc-465afd8d0124
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.lexicon_teaser
+    - field.storage.block_content.field_lexicon_initial_letter
+  module:
+    - options
+id: block_content.lexicon_teaser.field_lexicon_initial_letter
+field_name: field_lexicon_initial_letter
+entity_type: block_content
+bundle: lexicon_teaser
+label: Forbogstav
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: A
+default_value_callback: ''
+settings: {  }
+field_type: list_string

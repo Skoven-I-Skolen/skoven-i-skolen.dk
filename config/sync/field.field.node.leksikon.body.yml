@@ -1,0 +1,23 @@
+uuid: 91b8517e-2f57-456e-821e-8bfe4894da74
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.leksikon
+  module:
+    - text
+id: node.leksikon.body
+field_name: body
+entity_type: node
+bundle: leksikon
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
