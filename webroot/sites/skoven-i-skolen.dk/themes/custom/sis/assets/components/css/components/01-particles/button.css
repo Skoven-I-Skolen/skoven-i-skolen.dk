@@ -18,6 +18,7 @@ a.button {
   font-weight: 800;
   font-size: var(--base-font-size);
   font-family: var(--base-font-family);
+  white-space: nowrap;
   text-decoration: none;
   background-color: var(--theme-button-background-color);
   border: 1px solid transparent;
@@ -33,7 +34,7 @@ a.button {
   &--ghost {
     color: currentcolor;
     background-color: transparent;
-    border: 1px solid var(--theme-button-background-color);
+    border: 2px solid var(--theme-color);
   }
 
   &--center {

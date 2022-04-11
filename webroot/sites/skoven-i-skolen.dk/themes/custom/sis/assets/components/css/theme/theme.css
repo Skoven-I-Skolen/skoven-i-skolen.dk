@@ -18,7 +18,7 @@
     &--ghost {
       color: var(--theme-color);
       background-color: transparent;
-      border-color: var(--theme-button-background-color);
+      border-color: var(--theme-color);
     }
   }
 
