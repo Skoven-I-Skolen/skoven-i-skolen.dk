@@ -1,0 +1,10 @@
+services:
+  sis_lexicon.repository:
+    class: 'Drupal\sis_lexicon\Repository\LexiconRepository'
+    arguments:
+      - '@database'
+  sis_lexicon.content_delivery:
+    class: 'Drupal\sis_lexicon\Services\LexiconContentDeliveryService'
+    arguments:
+      - '@sis_lexicon.repository'
+      - '@entity_type.manager'

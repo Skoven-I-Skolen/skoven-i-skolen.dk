@@ -1,0 +1,19 @@
+<?php
+
+function sis_lexicon_theme() {
+  return [
+    'lexicon' => [
+      'variables' => ['articles' => []]
+    ]
+  ];
+}
+
+function sis_lexicon_preprocess_block__inline_block__lexicon_teaser(&$variables) {
+  /** @var \Drupal\sis_lexicon\Services\LexiconContentDeliveryService $lexiconContentDeliveryService */
+  $lexiconContentDeliveryService = Drupal::service('sis_lexicon.content_delivery');
+  $variables['filters'] = $lexiconContentDeliveryService->getFilters();
+
+  $initialLetter = $variables['content']['#block_content']
+    ->get('field_lexicon_initial_letter')->value;
+  $variables['articles'] = $lexiconContentDeliveryService->getArticles($initialLetter);
+}

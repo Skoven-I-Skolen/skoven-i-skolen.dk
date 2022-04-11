@@ -1,0 +1,6 @@
+sis_lexicon.get_articles:
+  path: sis/lexicon/get/{letter}
+  defaults:
+    _controller: 'Drupal\sis_lexicon\Controller\LexiconController::get'
+  requirements:
+    _access: 'TRUE'

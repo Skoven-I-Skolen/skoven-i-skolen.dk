@@ -39,4 +39,22 @@ class AlmanacService {
   public function createdFormattedDate(int $month, int $day) {
     return $this->createDate($month, $day)->format('j F. Y');
   }
+
+  /**
+   * Check if date is today
+   *
+   * @param \DateTime $matchDate
+   *   The data to check if its today
+   * @return bool
+   *   return TRUE if the date provided is today
+   */
+  public function isToday(int $month, int $day): bool {
+    $matchDate = $this->createDate($month, $day);
+    $matchDate->setTime( 0, 0, 0 );
+
+    $today = new DateTime('today');
+    $diff = $today->diff($matchDate);
+    $diffDays = (integer)$diff->format( "%R%a" );
+    return (bool) $diffDays == 0;
+  }
 }

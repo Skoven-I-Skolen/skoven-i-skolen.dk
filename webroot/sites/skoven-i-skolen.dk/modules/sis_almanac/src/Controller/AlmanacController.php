@@ -99,11 +99,10 @@ class AlmanacController extends ControllerBase {
   private function buildAlmanac(NodeInterface $almanac): string {
     $month = $almanac->get('field_almanac_month')->value;
     $day = $almanac->get('field_almanac_day')->value;
-    $date = $this->almanacService->createdFormattedDate($month, $day);
 
     $almanacToRender = [
       '#theme' => 'almanac',
-      '#date' => $date,
+      '#date' => $this->almanacService->createdFormattedDate($month, $day),
       '#content' => [
         '#type' => 'processed_text',
         '#text' => $almanac->get('field_almanac_content')->value,

@@ -1,5 +1,10 @@
 <ul class="almanac__list">
   {% for almanac in almanacs %}
-    <li>{{ almanac }}</li>
+    {%
+      set classes = [
+        almanac['#active'] ? 'almanac--active'
+      ]
+    %}
+    <li{{ attributes.addClass(classes) }}>{{ almanac }}</li>
   {% endfor %}
 </ul>
