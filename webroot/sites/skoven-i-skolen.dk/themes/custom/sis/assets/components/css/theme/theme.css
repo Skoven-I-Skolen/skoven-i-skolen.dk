@@ -3,7 +3,9 @@
  * Global theme styling.
  */
 
-.section.theme {
+.section.theme,
+.appetiser.theme,
+.appetiser.theme.layout-builder-block {
   color: var(--theme-color);
   background-color: var(--theme-background-color);
 

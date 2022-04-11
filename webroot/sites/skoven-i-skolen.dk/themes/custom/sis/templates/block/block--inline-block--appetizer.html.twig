@@ -30,33 +30,50 @@
 {% set orientation = content['#block_content'].field_appetizer_orientation.value %}
 {% set text_alignment = content['#block_content'].field_appetizer_text_alignment.value %}
 {% set image_overflow = content['#block_content'].field_image_overflow.value %}
+{% set color_theme = content['#block_content'].field_appetizer_color_theme.value %}
 {% set classes = [
   'appetiser',
   text_alignment ? 'appetiser--content-' ~ text_alignment,
   orientation and not is_small_version ? 'appetiser--image-' ~ orientation,
   is_small_version ? 'appetiser--small',
-  image_overflow ? 'appetiser--image-overflow'
+  image_overflow ? 'appetiser--image-overflow',
+  color_theme ? 'theme ' ~ color_theme
 ] %}
 
 <div {{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
   <div class="appetiser__content-wrapper">
-    <div class="container">
-      <div class="row">
-        <div class="appetiser__content col-xs-12 col-sm-6">
-          <h2 class="appetiser__title">{{ content.field_appetizer_headline }}</h2>
-          <div class="appetiser__description">{{ content.field_appetizer_text }}</div>
-          {{ content.field_appetizer_cta }}
-        </div>
-        {% if media %}
-          <div class="appetiser__image-wrapper col-xs-12 col-sm-6">
-            <figure{{ create_attribute().addClass('appetiser__image') }}>
-              {{ media }}
-            </figure>
-          </div>
-        {% endif %}
+    {% if is_small_version %}
+      <div class="appetiser__content">
+        <h2 class="appetiser__title">{{ content.field_appetizer_headline }}</h2>
+        <div class="appetiser__description">{{ content.field_appetizer_text }}</div>
+        {{ content.field_appetizer_cta }}
       </div>
-    </div>
+      {% if media %}
+        <div class="appetiser__image-wrapper">
+          <figure{{ create_attribute().addClass('appetiser__image') }}>
+            {{ media }}
+          </figure>
+        </div>
+      {% endif %}
+    {% else %}
+      <div class="container">
+        <div class="row">
+          <div class="appetiser__content col-xs-12 col-sm-6">
+            <h2 class="appetiser__title">{{ content.field_appetizer_headline }}</h2>
+            <div class="appetiser__description">{{ content.field_appetizer_text }}</div>
+            {{ content.field_appetizer_cta }}
+          </div>
+          {% if media %}
+            <div class="appetiser__image-wrapper col-xs-12 col-sm-6">
+              <figure{{ create_attribute().addClass('appetiser__image') }}>
+                {{ media }}
+              </figure>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
   </div>
 </div>
