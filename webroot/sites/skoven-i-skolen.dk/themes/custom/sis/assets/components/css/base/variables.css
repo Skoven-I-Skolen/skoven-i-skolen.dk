@@ -74,8 +74,8 @@
   --container-width: 1560px;
   --grid-section-spacing: 100px;
   --grid-section-spacing-mobile: calc(var(--grid-section-spacing) / 2);
-  --gutter-width: 100px;
-  --gutter-width-mobile: 35px;
+  --gutter-width: 36px;
+  --gutter-width-mobile: 48px;
   --half-gutter-width: calc(var(--gutter-width) * .5);
   --half-gutter-width-mobile: calc(var(--gutter-width-mobile) * .5);
   --half-gutter-compensation: calc(var(--half-gutter-width) * -1);
