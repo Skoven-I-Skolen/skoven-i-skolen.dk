@@ -1,0 +1,21 @@
+uuid: 1194a49b-484d-4936-87f8-d83b75ea5e09
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.appetizer
+    - field.storage.block_content.field_appetizer_color_theme
+  module:
+    - styles
+id: block_content.appetizer.field_appetizer_color_theme
+field_name: field_appetizer_color_theme
+entity_type: block_content
+bundle: appetizer
+label: 'Farve tema'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: styles

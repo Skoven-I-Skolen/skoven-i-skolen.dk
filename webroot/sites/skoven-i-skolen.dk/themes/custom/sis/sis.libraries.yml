@@ -219,6 +219,14 @@ appetiser:
   css:
     theme:
       dist/components/css/components/03-organisms/appetiser.css: {}
+  dependencies:
+    - sis/theme
+    - sis/theme-primary
+    - sis/theme-blue
+    - sis/theme-green
+    - sis/theme-pink
+    - sis/theme-purple
+    - sis/theme-yellow
 
 burger-menu:
   version: VERSION

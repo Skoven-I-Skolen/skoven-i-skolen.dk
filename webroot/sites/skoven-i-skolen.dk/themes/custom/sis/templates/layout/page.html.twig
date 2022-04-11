@@ -97,17 +97,15 @@
         </svg>
         <div class="container">
           <div class="row">
-            {% if footer_cols|length > 0 %}
-              {% set number_of_cols = 12 / footer_cols|length %}
-              {% for col in footer_cols %}
-                <div class="col-xs-12 col-md-{{ number_of_cols }}">
-                  {% if col.headline %}
-                    <div><b>{{ col.headline }}</b></div>
-                  {% endif %}
-                  {{ col.content }}
-                </div>
-              {% endfor %}
-            {% endif %}
+            <div class="col-xs-12 col-md-3">
+            </div>
+            <div class="col-xs-12 col-md-3">
+            </div>
+            <div class="col-xs-12 col-md-3">
+              {{ almanac }}
+            </div>
+            <div class="col-xs-12 col-md-3">
+            </div>
           </div>
         </div>
       </div>

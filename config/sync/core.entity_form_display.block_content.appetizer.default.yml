@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.appetizer
+    - field.field.block_content.appetizer.field_appetizer_color_theme
     - field.field.block_content.appetizer.field_appetizer_cta
     - field.field.block_content.appetizer.field_appetizer_headline
     - field.field.block_content.appetizer.field_appetizer_image
@@ -22,6 +23,12 @@ targetEntityType: block_content
 bundle: appetizer
 mode: default
 content:
+  field_appetizer_color_theme:
+    type: styles
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_appetizer_cta:
     type: styles_link_target
     weight: 6

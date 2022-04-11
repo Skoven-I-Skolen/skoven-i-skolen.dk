@@ -10,9 +10,6 @@
  * @see template_preprocess_media()
  */
 #}
-<div{{ attributes }}>
-  {{ title_suffix.contextual_links }}
-  {% if content %}
-    {{ content }}
-  {% endif %}
-</div>
+{% if content %}
+  {{ content }}
+{% endif %}

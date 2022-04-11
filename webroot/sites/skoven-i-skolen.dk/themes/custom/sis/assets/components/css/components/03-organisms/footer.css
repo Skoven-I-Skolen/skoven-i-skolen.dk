@@ -30,6 +30,11 @@
       align-self: center;
     }
 
+    &-address,
+    &-links {
+      padding-top: 10px;
+    }
+
     &-logo {
       .logo__image {
         height: 41px;

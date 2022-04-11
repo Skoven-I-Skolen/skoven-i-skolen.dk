@@ -1,0 +1,20 @@
+uuid: 829f9b13-eba9-496e-aa76-29332d893148
+langcode: da
+status: true
+dependencies:
+  module:
+    - block_content
+    - styles
+id: block_content.field_appetizer_color_theme
+field_name: field_appetizer_color_theme
+entity_type: block_content
+type: styles
+settings:
+  collection: color_theme
+module: styles
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
