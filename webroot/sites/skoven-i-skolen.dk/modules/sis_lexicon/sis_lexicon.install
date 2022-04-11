@@ -1,0 +1,30 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+
+function sis_lexicon_install() {
+  sis_lexicon_update_9001();
+}
+
+
+/**
+ * Add "Leksikon" term to the article types
+ */
+function sis_lexicon_update_9001() {
+  $machine_name = 'lexicon';
+  $vid = 'article_types';
+
+  $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary')
+    ->loadByProperties([
+        'machine_name' => $machine_name,
+        'vid' => $vid
+      ]);
+
+  if (empty($terms)) {
+    Term::create([
+      'vid' => $vid,
+      'name' => 'Leksikon',
+      'machine_name' => $machine_name
+    ])->save();
+  }
+}
