@@ -15,6 +15,10 @@
 
   &__inner {
     position: relative;
+
+    & h2 {
+      font-size: var(--base-font-size-xlarge);
+    }
   }
 
   .almanac__list-navigation-arrow {
