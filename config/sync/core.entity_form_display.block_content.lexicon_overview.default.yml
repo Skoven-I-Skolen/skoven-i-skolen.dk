@@ -1,17 +1,17 @@
-uuid: db6ed9ae-bb91-43a2-bce7-216da3d9485a
+uuid: 530413fa-bea8-4dce-b746-b7962db7eafa
 langcode: da
 status: true
 dependencies:
   config:
-    - block_content.type.overview
-    - field.field.block_content.overview.body
-    - field.field.block_content.overview.field_overview
+    - block_content.type.lexicon_overview
+    - field.field.block_content.lexicon_overview.body
+    - field.field.block_content.lexicon_overview.field_lexicon_overview
   module:
-    - entity_overview
+    - sis_lexicon
     - text
-id: block_content.overview.default
+id: block_content.lexicon_overview.default
 targetEntityType: block_content
-bundle: overview
+bundle: lexicon_overview
 mode: default
 content:
   body:
@@ -24,8 +24,8 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  field_overview:
-    type: overview_filter_widget
+  field_lexicon_overview:
+    type: lexicon_overview_widget
     weight: 27
     region: content
     settings: {  }

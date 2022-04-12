@@ -1,0 +1,8 @@
+uuid: e3dc8188-21de-4291-9339-e1e26ac918cf
+langcode: da
+status: true
+dependencies: {  }
+id: lexicon_overview
+label: 'Leksikon oversigt'
+revision: 0
+description: 'En blok der indeholder en oversigt over leksikon artikler.'

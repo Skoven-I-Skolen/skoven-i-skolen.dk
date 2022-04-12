@@ -1,0 +1,11 @@
+uuid: 2b9b4f51-75d4-4eda-a4fe-8439fb842c5c
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.lexicon_overview
+id: block_content.lexicon_overview
+target_entity_type_id: block_content
+target_bundle: lexicon_overview
+default_langcode: site_default
+language_alterable: false
