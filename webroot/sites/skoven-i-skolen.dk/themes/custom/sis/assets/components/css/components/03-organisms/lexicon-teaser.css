@@ -1,0 +1,58 @@
+.lexicon-teaser {
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    padding-bottom: 24px;
+    font-size: var(--base-font-size-large);
+  }
+
+  &__filters {
+    margin-bottom: 36px;
+
+    @media (--viewport-md-min) {
+      margin-bottom: 0;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      word-break: break-word;
+      list-style-type: none;
+
+      li {
+        display: inline;
+        margin-right: 18px;
+        margin-bottom: 12px;
+
+        a {
+          font-weight: var(--base-font-weight);
+          font-size: var(--base-font-size-xlarge);
+          font-family: var(--heading-font-family);
+
+          @media (--viewport-md-min) {
+            font-size: var(--base-font-size-xxlarge);
+          }
+        }
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    gap: 36px;
+    flex-flow: column;
+
+    @media (--viewport-ms-min) {
+      flex-flow: row;
+    }
+
+    .inspiration-overview__item-link {
+      height: auto;
+
+      .inspiration-overview__content {
+        padding-bottom: 54px;
+      }
+    }
+  }
+}

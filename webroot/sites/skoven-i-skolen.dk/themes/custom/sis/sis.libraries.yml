@@ -275,6 +275,12 @@ local-tasks:
     theme:
       dist/components/css/components/03-organisms/local-tasks.css: {}
 
+lexicon-teaser:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/lexicon-teaser.css: {}
+
 search-page:
   version: VERSION
   css:
