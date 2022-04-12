@@ -77,8 +77,8 @@ li.almanac__list-item--active {
 
 .almanac__list-navigation-arrow--left::after {
   margin-left: 2px;
-  border-left: 1px solid #fff;
-  border-bottom: 1px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
 }
 
 .almanac__list-navigation-arrow--right {
@@ -88,5 +88,5 @@ li.almanac__list-item--active {
 .almanac__list-navigation-arrow--right::after {
   margin-left: -2px;
   border-top: 1px solid #fff;
-  border-right: 1px solid #fff;
+  border-right: 2px solid #fff;
 }
