@@ -36,6 +36,8 @@ class AlmanacContentDeliveryService {
         $almanacs[] = [
           '#theme' => 'almanac',
           '#date' => $this->almanacService->createdFormattedDate($month, $day),
+          '#day' => $day,
+          '#month' => $month,
           '#active' => $this->almanacService->isToday($month, $day),
           '#content' => [
             '#type' => 'processed_text',
