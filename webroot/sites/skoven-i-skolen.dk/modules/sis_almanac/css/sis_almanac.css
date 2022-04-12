@@ -39,6 +39,13 @@ li.almanac__list-item--active {
   position: relative;
   cursor: pointer;
   font-weight: bold;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.almanac__list-navigation-left[disabled='disabled'],
+.almanac__list-navigation-right[disabled='disabled'] {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .almanac__list-navigation-left {
