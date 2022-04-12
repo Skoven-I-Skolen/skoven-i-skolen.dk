@@ -1,13 +1,7 @@
 {{ attach_library('sis_almanac/sis_almanac') }}
 <ul class="almanac__list">
   {% for almanac in almanacs %}
-    {%
-      set classes = [
-        'almanac__list-item',
-        almanac['#active'] ? 'almanac__list-item--active'
-      ]
-    %}
-    <li{{ attributes.addClass(classes) }}>{{ almanac }}</li>
+    <li class="almanac__list-item{{ almanac['#active'] == true ? ' almanac__list-item--active' }}">{{ almanac }}</li>
   {% endfor %}
 </ul>
 <div class="almanac__list-navigation">
