@@ -1,0 +1,42 @@
+ul.almanac__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.almanac__list-item {
+  display: none;
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+li.almanac__list-item--active {
+  display: block;
+}
+
+.sis-almanac .sis-almanac-date {
+  font-weight: bold;
+  color: #000000;
+}
+.sis-almanac .sis-almanac-navigation a {
+  text-decoration:none;
+}
+.sis-almanac .sis-almanac-navigation .sis-almanac-arrow {
+  font-size: 50px;
+}
+.sis-almanac .sis-almanac-navigation .sis-almanac-navigation-text {
+  bottom: 7px;
+  position: relative;
+}
+.sis-almanac .sis-almanac-navigation .sis-almanac-left {
+  float: left;
+  cursor: pointer;
+  width: 50%;
+}
+.sis-almanac .sis-almanac-navigation .sis-almanac-right {
+  float: left;
+  width: 50%;
+  cursor: pointer;
+  text-align: right;
+}
