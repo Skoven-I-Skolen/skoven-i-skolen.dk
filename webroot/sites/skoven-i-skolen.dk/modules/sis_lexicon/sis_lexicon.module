@@ -3,7 +3,7 @@
 function sis_lexicon_theme() {
   return [
     'lexicon' => [
-      'variables' => ['articles' => []]
+      'variables' => ['articles' => [], 'letter' => NUll, 'load_more' => FALSE]
     ]
   ];
 }

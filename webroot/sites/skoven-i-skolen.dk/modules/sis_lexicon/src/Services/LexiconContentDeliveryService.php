@@ -24,13 +24,13 @@ class LexiconContentDeliveryService {
     $this->entityTypeManager = $entityTypeManager;
   }
 
-  public function getFilters() {
+  public function getFilters(int $limit = 0, int $page = 0) {
     $alphapet = array_merge(range('A', 'Z'), ['Æ', 'Ø', 'Å']);
     $alphapet_links = [];
 
     foreach ($alphapet as $letter) {
       $alphapet_links[] = Link::createFromRoute($letter, 'sis_lexicon.get_articles',
-        ['letter' => $letter],
+        ['letter' => $letter, 'limit' => $limit, 'page' => $page],
         ['attributes' => ['class' => ['use-ajax']],]
       );
     }
@@ -50,8 +50,33 @@ class LexiconContentDeliveryService {
    * @return array|null
    *   Array of nodes matching the criteries.
    */
-  public function getArticles(string $initialLetter): ?array {
-    if (!$lexiconArticlesIds = $this->lexiconRepository->getEntityIdsByInitialLetter($initialLetter)) {
+  public function getArticles(string $initialLetter, $limit = 2, $page = 0): ?array {
+    if (!$lexiconArticlesIds = $this->lexiconRepository->getEntityIdsByInitialLetter($initialLetter, $limit, $page)) {
+      return NULL;
+    }
+
+    $nodes = Node::loadMultiple($lexiconArticlesIds);
+    $lexiconArticles = $this->entityTypeManager->getViewBuilder('node')
+      ->viewMultiple($nodes, 'list');
+
+    return [
+      '#theme' => 'lexicon',
+      '#articles' => $lexiconArticles,
+      '#letter' => $initialLetter,
+    ];
+  }
+
+  /**
+   * Get lexicon articles
+   *
+   * @param string $initialLetter
+   *   Letter to show articles from.
+   *
+   * @return array|null
+   *   Array of nodes matching the criteries.
+   */
+  public function getArticlesByKeyword(string $keyword, $limit = 0, $page = 0): ?array {
+    if (!$lexiconArticlesIds = $this->lexiconRepository->getEntityIdsByKeyword($keyword)) {
       return NULL;
     }
 

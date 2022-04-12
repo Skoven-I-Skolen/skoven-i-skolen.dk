@@ -1,3 +1,7 @@
 <div id="lexicon-items" class="lexicon__items">
   {{ articles }}
 </div>
+
+{% if load_more %}
+  <a href="{{ path('sis_lexicon.get_articles', {'letter': letter, 'limit': 0, 'page': 0}) }}" class="use-ajax">{{ 'Show all lexicon articles with the letter @letter'|t({'@letter': letter}) }}</a>
+{% endif %}
