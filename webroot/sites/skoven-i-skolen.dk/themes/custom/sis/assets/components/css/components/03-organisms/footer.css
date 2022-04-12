@@ -17,6 +17,14 @@
     position: relative;
   }
 
+  .almanac__list-navigation-arrow {
+    background-color: var(--color-pink);
+
+    &::after {
+      border-color: var(--color-purple);
+    }
+  }
+
   &__bottom {
     position: relative;
     padding-top: 24px;

@@ -1,0 +1,8 @@
+sis_almanac:
+  css:
+    theme:
+      css/sis_almanac.css: {}
+  js:
+    js/sis_almanac.js: {}
+  dependencies:
+    - core/drupal
