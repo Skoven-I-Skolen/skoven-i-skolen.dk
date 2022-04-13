@@ -30,26 +30,22 @@
   {{ title_prefix }}
   {{ title_suffix }}
   {% if content.field_inspiration_headline['#items']|length or content.field_inspiration_description['#items']|length %}
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-xs-12 inspiration-overview__intro">
-          {% if content.field_inspiration_headline['#items']|length %}
-            <h2 class="inspiration-overview__intro-headline">
-              {{ content.field_inspiration_headline }}
-            </h2>
-          {% endif %}
-          {% if content.field_inspiration_description['#items']|length %}
-            <div class="inspiration-overview__intro-description">
-              {{ content.field_inspiration_description }}
-            </div>
-          {% endif %}
-        </div>
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-xs-12 inspiration-overview__intro">
+        {% if content.field_inspiration_headline['#items']|length %}
+          <h2 class="inspiration-overview__intro-headline">
+            {{ content.field_inspiration_headline }}
+          </h2>
+        {% endif %}
+        {% if content.field_inspiration_description['#items']|length %}
+          <div class="inspiration-overview__intro-description">
+            {{ content.field_inspiration_description }}
+          </div>
+        {% endif %}
       </div>
     </div>
   {% endif %}
-  <div class="container">
-    <div class="row">
-      {{ content.field_column }}
-    </div>
+  <div class="row">
+    {{ content.field_column }}
   </div>
 </div>
