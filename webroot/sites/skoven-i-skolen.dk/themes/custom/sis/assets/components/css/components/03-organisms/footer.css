@@ -5,12 +5,17 @@
 
 .footer {
   position: relative;
-  z-index: 3;
 
   &__graphic {
+    position: relative;
+    z-index: -1;
     width: 100%;
     height: auto;
     margin-bottom: -20px;
+
+    @media (--viewport-md-min) {
+      margin-top: -80px;
+    }
   }
 
   &__inner {
