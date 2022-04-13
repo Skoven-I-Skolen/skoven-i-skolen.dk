@@ -1,4 +1,14 @@
 .lexicon-teaser {
+  .section--fullwidth & {
+    padding-right: var(--container-spacing-mobile);
+    padding-left: var(--container-spacing-mobile);
+
+    @media (--viewport-md-min) {
+      padding-right: var(--container-spacing);
+      padding-left: var(--container-spacing);
+    }
+  }
+
   &__title {
     margin-bottom: 12px;
   }
@@ -39,7 +49,7 @@
     }
   }
 
-  &__items {
+  .lexicon__items {
     display: flex;
     flex-flow: column;
     gap: 36px;
