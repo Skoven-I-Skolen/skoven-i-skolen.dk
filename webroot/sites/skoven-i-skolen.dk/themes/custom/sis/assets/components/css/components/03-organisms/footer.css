@@ -19,6 +19,10 @@
     & h2 {
       font-size: var(--base-font-size-xlarge);
     }
+
+    &.section.theme a {
+      color: var(--color-white);
+    }
   }
 
   .almanac__list-navigation-arrow {
