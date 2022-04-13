@@ -9,6 +9,9 @@ function sis_articles_preprocess_node(&$variables) {
     $related = $contentDelivery->getRelatedArticles($variables['node']);
 
     foreach ($inspirations as $title => $inspiration) {
+      if ($inspiration == null) {
+        continue;
+      }
       $variables['inspiration'][$title] = Drupal::entityTypeManager()
         ->getViewBuilder('node')
         ->viewMultiple($inspiration, 'default');
