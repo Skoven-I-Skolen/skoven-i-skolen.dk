@@ -18,7 +18,8 @@
   'section',
   'section--spacing-top-' ~ settings.column_spacing_top,
   'section--spacing-bottom-' ~ settings.column_spacing_bottom,
-  settings.color_theme ? 'section--place-top'
+  settings.color_theme ? 'section--place-top',
+  settings.column_width == 'fullwidth' ? 'section--fullwidth',
 ] %}
 
 {% if settings.color_theme is not empty %}
