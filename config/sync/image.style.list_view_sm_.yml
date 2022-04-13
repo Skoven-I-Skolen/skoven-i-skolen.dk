@@ -14,7 +14,7 @@ effects:
     id: focal_point_scale_and_crop
     weight: 1
     data:
-      width: 436
-      height: 318
+      width: 460
+      height: 335
       crop_type: focal_point
 pipeline: __default__
