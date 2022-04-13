@@ -1,11 +1,14 @@
-.lexicon-teaser {
-  &__title {
-    margin-bottom: 12px;
-  }
+.lexicon {
 
-  &__description {
-    padding-bottom: 24px;
-    font-size: var(--base-font-size-large);
+  &-teaser {
+    &__title {
+      margin-bottom: 12px;
+    }
+
+    &__description {
+      padding-bottom: 24px;
+      font-size: var(--base-font-size-large);
+    }
   }
 
   &__filters {

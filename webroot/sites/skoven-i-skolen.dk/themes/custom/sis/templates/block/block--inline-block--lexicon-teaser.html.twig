@@ -1,4 +1,4 @@
-{{ attach_library('sis/lexicon-teaser') }}
+{{ attach_library('sis/lexicon') }}
 <div{{ attributes.addClass('lexicon-teaser') }}>
   <div class="container">
     <div class="row">
@@ -7,10 +7,8 @@
         <div class="lexicon-teaser__description">
           {{ atom('lexicon-block-description') }}
         </div>
-        <h4 class="lexicon-teaser__filters-title">{{ atom('lexicon-block-filter-headline') }}</h4>
-        <div class="lexicon-teaser__filters">
-          {{ filters }}
-        </div>
+        <h4 class="lexicon__filters-title">{{ atom('lexicon-block-filter-headline') }}</h4>
+        {{ filters }}
       </div>
       <div class="col-xs-12 col-md-6 lexicon-teaser__articles">
         {{ articles }}

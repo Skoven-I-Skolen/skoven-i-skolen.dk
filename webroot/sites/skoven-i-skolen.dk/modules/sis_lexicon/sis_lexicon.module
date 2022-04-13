@@ -3,7 +3,13 @@
 function sis_lexicon_theme() {
   return [
     'lexicon' => [
-      'variables' => ['articles' => [], 'letter' => NUll, 'load_more' => FALSE]
+      'variables' => ['articles' => [], 'letter' => NUll, 'pager' => FALSE]
+    ],
+    'lexicon-filters' => [
+      'base hook' => 'item_list'
+    ],
+    'lexicon_search' => [
+      'variables' => ['articles' => []]
     ]
   ];
 }

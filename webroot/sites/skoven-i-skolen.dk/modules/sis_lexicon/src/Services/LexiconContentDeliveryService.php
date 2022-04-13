@@ -24,19 +24,19 @@ class LexiconContentDeliveryService {
     $this->entityTypeManager = $entityTypeManager;
   }
 
-  public function getFilters(int $limit = 0, int $page = 0) {
+  public function getFilters(int $limit = 0, int $page = 0, array $options = []) {
     $alphapet = array_merge(range('A', 'Z'), ['Æ', 'Ø', 'Å']);
     $alphapet_links = [];
 
     foreach ($alphapet as $letter) {
       $alphapet_links[] = Link::createFromRoute($letter, 'sis_lexicon.get_articles',
-        ['letter' => $letter, 'limit' => $limit, 'page' => $page],
+        ['letter' => $letter, 'limit' => $limit, 'page' => $page] + $options,
         ['attributes' => ['class' => ['use-ajax']],]
       );
     }
 
     return [
-      '#theme' => 'item_list',
+      '#theme' => 'lexicon-filters',
       '#items' => $alphapet_links,
     ];
   }
@@ -85,7 +85,7 @@ class LexiconContentDeliveryService {
       ->viewMultiple($nodes, 'list');
 
     return [
-      '#theme' => 'lexicon',
+      '#theme' => 'lexicon_search',
       '#articles' => $lexiconArticles,
     ];
   }

@@ -1,0 +1,11 @@
+{{ attach_library('sis/lexicon') }}
+<div{{ attributes.addClass('lexicon') }}>
+  <div class="container">
+    <div class="row">
+      {{ filters }}
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+  </div>
+</div>

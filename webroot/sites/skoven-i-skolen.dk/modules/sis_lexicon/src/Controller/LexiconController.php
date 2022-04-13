@@ -42,7 +42,14 @@ class LexiconController extends ControllerBase {
     $response = new AjaxResponse();
 
     if(!$content = $this->lexiconContentDelivery->getArticles($letter, $limit, $page)) {
-      return $response->addCommand(new HtmlCommand('#lexicon-items', ''));
+      $content = [
+        '#theme' => 'lexicon',
+        '#articles' => 'No results found'
+      ];
+
+      if ($this->request->get('pager')) {
+        $content['pager'] = true;
+      }
     }
 
     $response->addCommand(new ReplaceCommand('#lexicon-items', $content));
@@ -69,7 +76,10 @@ class LexiconController extends ControllerBase {
     }
 
     if(!$content = $this->lexiconContentDelivery->getArticlesByKeyword($keyword, $limit, $page)) {
-      return $response->addCommand(new HtmlCommand('#lexicon-items', 'No results found'));
+      $content = [
+        '#theme' => 'lexicon_search',
+        '#articles' => 'No results found'
+      ];
     }
 
     $response->addCommand(new ReplaceCommand('#lexicon-items', $content));
