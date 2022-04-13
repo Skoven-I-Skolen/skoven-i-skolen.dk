@@ -14,6 +14,7 @@
     @media (--viewport-md-min) {
       margin-bottom: 0;
     }
+
     ul {
       margin: 0;
       padding: 0;
@@ -40,8 +41,8 @@
 
   &__items {
     display: flex;
-    gap: 36px;
     flex-flow: column;
+    gap: 36px;
 
     @media (--viewport-ms-min) {
       flex-flow: row;
