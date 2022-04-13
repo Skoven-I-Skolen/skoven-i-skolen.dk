@@ -1,20 +1,18 @@
 {{ attach_library('sis/lexicon-teaser') }}
 <div{{ attributes.addClass('lexicon-teaser') }}>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <h2 class="lexicon-teaser__title">{{ atom('lexicon-block-headline') }}</h2>
-        <div class="lexicon-teaser__description">
-          {{ atom('lexicon-block-description') }}
-        </div>
-        <h4 class="lexicon-teaser__filters-title">{{ atom('lexicon-block-filter-headline') }}</h4>
-        <div class="lexicon-teaser__filters">
-          {{ filters }}
-        </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <h2 class="lexicon-teaser__title">{{ atom('lexicon-block-headline') }}</h2>
+      <div class="lexicon-teaser__description">
+        {{ atom('lexicon-block-description') }}
       </div>
-      <div class="col-xs-12 col-md-6 lexicon-teaser__articles">
-        {{ articles }}
+      <h4 class="lexicon-teaser__filters-title">{{ atom('lexicon-block-filter-headline') }}</h4>
+      <div class="lexicon-teaser__filters">
+        {{ filters }}
       </div>
+    </div>
+    <div class="col-xs-12 col-md-6 lexicon-teaser__articles">
+      {{ articles }}
     </div>
   </div>
 </div>
