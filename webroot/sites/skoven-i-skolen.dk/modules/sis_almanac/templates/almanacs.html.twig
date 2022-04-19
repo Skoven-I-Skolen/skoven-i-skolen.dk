@@ -1,17 +1,19 @@
 {{ attach_library('sis_almanac/sis_almanac') }}
 <h2>Almanak</h2>
-<ul class="almanac__list">
-  {% for almanac in almanacs %}
-    <li class="almanac__list-item{{ almanac['#active'] == true ? ' almanac__list-item--active' }}">{{ almanac }}</li>
-  {% endfor %}
-</ul>
-<div class="almanac__list-navigation">
-  <a class="almanac__list-navigation-left js-almanac__list-navigation-left">
-    <span class="almanac__list-navigation-arrow almanac__list-navigation-arrow--left"></span>
-    <span class="almanac__list-navigation-text">Forrige</span>
-  </a>
-  <a class="almanac__list-navigation-right js-almanac__list-navigation-right">
-    <span class="almanac__list-navigation-text">Næste</span>
-    <span class="almanac__list-navigation-arrow almanac__list-navigation-arrow--right"></span>
-  </a>
-</div>
+{%if almanacs %}
+  <ul class="almanac__list">
+    {% for almanac in almanacs %}
+      <li class="almanac__list-item{{ almanac['#active'] == true ? ' almanac__list-item--active' }}">{{ almanac }}</li>
+    {% endfor %}
+  </ul>
+  <div class="almanac__list-navigation">
+    <a class="almanac__list-navigation-left js-almanac__list-navigation-left">
+      <span class="almanac__list-navigation-arrow almanac__list-navigation-arrow--left"></span>
+      <span class="almanac__list-navigation-text">Forrige</span>
+    </a>
+    <a class="almanac__list-navigation-right js-almanac__list-navigation-right">
+      <span class="almanac__list-navigation-text">Næste</span>
+      <span class="almanac__list-navigation-arrow almanac__list-navigation-arrow--right"></span>
+    </a>
+  </div>
+{%endif %}
