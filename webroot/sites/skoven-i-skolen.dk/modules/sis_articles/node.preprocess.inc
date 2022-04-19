@@ -12,15 +12,15 @@ function sis_articles_preprocess_node(&$variables) {
       if ($inspiration == null) {
         continue;
       }
-      $variables['inspiration'][$title] = Drupal::entityTypeManager()
+      $variables['inspirations'][$title][] = Drupal::entityTypeManager()
         ->getViewBuilder('node')
-        ->viewMultiple($inspiration, 'default');
+        ->viewMultiple($inspiration, 'simple_list');
     }
 
     if ($related) {
       $variables['related'] = Drupal::entityTypeManager()
         ->getViewBuilder('node')
-        ->viewMultiple($related, 'default');
+        ->viewMultiple($related, 'list');
     }
   }
 }
