@@ -22,10 +22,9 @@ class LexiconOverviewForm extends OverviewFilterForm {
   function __construct(
     OverviewManager               $overviewManager,
     RequestStack                  $requestStack,
-    OverviewFormStateService      $overviewFormState,
     LexiconContentDeliveryService $lexiconContentDelivery
   ) {
-    parent::__construct($overviewManager, $requestStack, $overviewFormState);
+    parent::__construct($overviewManager, $requestStack);
     $this->lexiconContentDelivery = $lexiconContentDelivery;
   }
 
@@ -36,7 +35,6 @@ class LexiconOverviewForm extends OverviewFilterForm {
     return new static(
       $container->get('entity_overview.manager'),
       $container->get('request_stack'),
-      $container->get('entity_overview.form_state'),
       $container->get('sis_lexicon.content_delivery')
     );
   }
@@ -48,12 +46,33 @@ class LexiconOverviewForm extends OverviewFilterForm {
       'onsubmit' => 'return false',
     ];
 
-    $form['content']['filter'] = $this->getContentDelivery()
+    /**
+     * Add the filters
+     */
+
+    $form['content']['filters'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => ['lexicon__filter-wrapper']
+      ]
+    ];
+
+    $form['content']['filters']['filter'] = $this->getContentDelivery()
       ->getFilters(self::DEFAULT_LIMIT, 0, ['query' => ['pager' => TRUE]]);
 
-    $form['content']['keyword'] = [
+    /**
+     * Add the search field and button
+     */
+
+    $form['content']['filters']['search'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => ['lexicon__search']
+      ]
+    ];
+
+    $form['content']['filters']['search']['keyword'] = [
       '#type' => 'textfield',
-      '#description' => $this->t('Enter search text and hit enter key.'),
       '#maxlength' => 64,
       '#size' => 64,
       // Attach AJAX callback.
@@ -70,6 +89,11 @@ class LexiconOverviewForm extends OverviewFilterForm {
           'message' => $this->t('Searching ...'),
         ],
       ],
+    ];
+
+    $form['content']['filters']['search']['search'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('Search'),
     ];
 
     return $form;
@@ -104,7 +128,7 @@ class LexiconOverviewForm extends OverviewFilterForm {
   protected function buildEntitiesInContent(array &$content, array $entities, array $options) {
     $content['content']['articles'] = $this->getContentDelivery()
       ->getArticles('A', self::DEFAULT_LIMIT);
-    $content['content']['articles']['#theme'] = 'lexicon_overview';
+    $content['content']['articles']['#theme'] = 'lexicon';
     $content['content']['articles']['#pager'] = TRUE;
     $content['content']['#weight'] = 100;
   }

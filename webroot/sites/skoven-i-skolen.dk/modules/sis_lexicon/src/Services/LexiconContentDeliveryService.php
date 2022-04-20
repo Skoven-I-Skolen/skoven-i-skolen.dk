@@ -24,16 +24,19 @@ class LexiconContentDeliveryService {
     $this->entityTypeManager = $entityTypeManager;
   }
 
-  public function getFilters(int $limit = 0, int $page = 0, array $options = []) {
+  public function getFilters(int $limit = 0, int $page = 0, $options = []) {
     $alphapet = array_merge(range('A', 'Z'), ['Æ', 'Ø', 'Å']);
     $alphapet_links = [];
 
-    $options = array_merge($options, ['attributes' => ['class' => ['use-ajax']]]);
+    $params = array_merge_recursive($options, [
+      'attributes' => ['class' => ['use-ajax']],
+      'query' => ['limit' => $limit, 'page' => $page]
+    ]);
 
     foreach ($alphapet as $letter) {
-      $alphapet_links[] = Link::createFromRoute($letter, 'sis_lexicon.get_articles',
-        ['letter' => $letter, 'limit' => $limit, 'page' => $page],
-        $options
+      $params['query']['letter'] = $letter;
+      $alphapet_links[] = Link::createFromRoute($letter, 'sis_lexicon.get_articles', [],
+        $params
       );
     }
 

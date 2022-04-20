@@ -1,4 +1,10 @@
 <div id="lexicon-items" class="lexicon__items">
+  {% if letter %}
+    <div class="lexicon__letter">
+      <h2>{{ letter }}</h2>
+    </div>
+  {% endif %}
+
   {{ articles }}
 
   {% if pager %}

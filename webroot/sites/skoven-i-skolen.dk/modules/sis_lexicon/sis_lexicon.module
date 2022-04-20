@@ -1,5 +1,20 @@
 <?php
 
+/**
+ * Implements hook_locale_translation_projects_alter().
+ *
+ * @param $projects
+ *   List of all projects
+ */
+function sis_lexicon_locale_translation_projects_alter(&$projects) {
+  $module_handler = \Drupal::service('module_handler');
+  $path = $module_handler->getModule('sis_lexicon')->getPath();
+  $projects['sis_lexicon']['info']['interface translation server pattern'] = $path . '/translations/%language.po';
+}
+
+/**
+ * Implements hook_theme()
+ */
 function sis_lexicon_theme() {
   return [
     'lexicon' => [
@@ -8,21 +23,25 @@ function sis_lexicon_theme() {
     'lexicon_filters' => [
       'base hook' => 'item_list'
     ],
-    'lexicon_overview' => [
-      'variables' => ['articles' => [], 'letter' => NUll, 'pager' => FALSE]
-    ],
     'lexicon_search' => [
       'variables' => ['articles' => []]
     ]
   ];
 }
 
+/**
+ * Implements preprocess_HOOK
+ *
+ * @param $variables
+ *   The variables to alter
+ */
 function sis_lexicon_preprocess_block__inline_block__lexicon_teaser(&$variables) {
   /** @var \Drupal\sis_lexicon\Services\LexiconContentDeliveryService $lexiconContentDeliveryService */
   $lexiconContentDeliveryService = Drupal::service('sis_lexicon.content_delivery');
-  $variables['filters'] = $lexiconContentDeliveryService->getFilters();
+  $variables['filters'] = $lexiconContentDeliveryService->getFilters(2);
 
   $initialLetter = $variables['content']['#block_content']
     ->get('field_lexicon_initial_letter')->value;
   $variables['articles'] = $lexiconContentDeliveryService->getArticles($initialLetter);
+  $variables['articles']['#letter'] = NULL;
 }

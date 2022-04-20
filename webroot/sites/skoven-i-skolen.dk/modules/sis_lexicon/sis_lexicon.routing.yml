@@ -1,12 +1,7 @@
 sis_lexicon.get_articles:
-  path: sis/lexicon/get/{letter}/{limit}/{page}
+  path: sis/lexicon/get
   defaults:
     _controller: 'Drupal\sis_lexicon\Controller\LexiconController::get'
-  options:
-    query:
-      pager: ""
-    parameters:
-      letter: 'A'
   requirements:
     _access: 'TRUE'
 
