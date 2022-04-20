@@ -10,9 +10,7 @@
   --theme-button-color: var(--color-purple);
   --theme-link-color: var(--color-white);
   --theme-divider-background-color: var(--color-white);
-  --theme-accordion-border-color: var(--color-primary);
-  --theme-accordion-background-color: var(--color-white);
-  --theme-accordion-text-color: var(--color-black);
+  --theme-accordion-color: var(--color-white);
   --theme-input-border: var(--color-white);
   --theme-input-color-marked: var(--color-white);
 }
