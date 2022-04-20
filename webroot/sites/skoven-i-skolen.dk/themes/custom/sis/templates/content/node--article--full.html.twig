@@ -263,5 +263,22 @@
         {% endif%}
       </div>
     </div>
+    {% if related %}
+      <div class="article-page__related section section--spacing-bottom-none">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="article-page__related-header">
+              <h3>Måske du også leder efter...</h3>
+              <p>Gå på opdagelse i vores aktiviteter og materialer og find lige det, der passer til din undervisning.</p>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="article-page__related-items">
+              {{ related }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
   </div>
 </article>
