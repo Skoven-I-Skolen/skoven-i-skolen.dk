@@ -84,3 +84,22 @@ function sis_preprocess_block__inline_block__appetizer(array &$variables) {
   }
 }
 
+
+/**
+ * Article full node preprocess.
+ *
+ * @param array $variables
+ *   Template variables.
+ */
+function sis_preprocess_node__article__full(array &$variables) {
+  $node = $variables['elements']['#node'];
+
+  if ($node->hasField('field_list_media') && !$node->get('field_list_media')->isEmpty()) {
+    $field = $node->get('field_list_media');
+    $media = $field->referencedEntities()[0] ?? NULL;
+    $variables['media_image'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('media')
+      ->view($media, '1_column_flex_height');
+  }
+}
+
