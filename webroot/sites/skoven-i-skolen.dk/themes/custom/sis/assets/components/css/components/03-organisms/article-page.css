@@ -1,0 +1,5 @@
+.article-page {
+  &__description {
+    font-size: var(--base-font-size-medium);
+  }
+}

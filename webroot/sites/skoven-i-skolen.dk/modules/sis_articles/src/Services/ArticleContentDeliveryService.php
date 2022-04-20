@@ -139,9 +139,11 @@ class ArticleContentDeliveryService {
     $fields['field_season'] = $this->seasonService->getCurrentSeasonTermId();
 
     // Fetch the related article ids based the current filter fields.
-    $articleIds = $this->articleRepository->fetchArticlesIdsByTaxonomy($fields, $limit);
-    return $this->loadArticles($node, $articleIds);
+    if ($articleIds = $this->articleRepository->fetchArticlesIdsByTaxonomy($fields, $limit)) {
+      return $this->loadArticles($node, $articleIds);
+    }
 
+    return null;
   }
 
   /**

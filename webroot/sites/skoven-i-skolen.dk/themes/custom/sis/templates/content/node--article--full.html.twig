@@ -1,0 +1,254 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ *
+ */
+#}
+
+{{ attach_library('sis/article-page') }}
+{{ attach_library('sis/facts-box') }}
+
+{% set classes = [
+  'article-page'
+] %}
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-lg-7">
+        <div{{ content_attributes }}>
+          <div class="article-page__description">
+            {{ node.field_description.value|t }}
+          </div>
+          {{ content }}
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-4 col-lg-offset-1">
+        {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Hvem, hvad, hvor
+            </div>
+            <div class="facts-box__content">
+              {% if node.field_subject[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Fag
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {{ node.field_subject.entity.name.value }}
+                  </div>
+                </div>
+              {% endif %}
+              {% if node.field_class[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Klasse
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {% for class in node.field_class %}
+                      {{ class.entity.name.value }}{{ loop.index != node.field_class|length ? ', ' : '' }}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+              {% if node.field_location[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Sted
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {% for location in node.field_location %}
+                      {{ location.entity.name.value }}{{ loop.index != node.field_location|length ? ', ' : '' }}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+              {% if node.field_season[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    &Aring;rstid
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {% for season in node.field_season %}
+                      {{ season.entity.name.value }}{{ loop.index != node.field_season|length ? ', ' : '' }}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_equipment.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Grej
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_equipment.value|t }}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_factboxes.value %}
+          {% for factboxe in node.field_factboxes %}
+            <div class="facts-box">
+              <div class="facts-box__title">
+                {{ factboxe.entity.field_factbox_title.value }}
+              </div>
+              <div class="facts-box__content">
+                {% if factboxe.entity.field_factbox_subtitle.value %}
+                  <div class="facts-box__content-item">
+                    <div class="facts-box__content-item-label">
+                      {{ factboxe.entity.field_factbox_subtitle.value }}
+                    </div>
+                    <div class="facts-box__content-item-value">
+                      {{ factboxe.entity.field_factbox_content.value|t }}
+                    </div>
+                  </div>
+                {% else %}
+                  {{ factboxe.entity.field_factbox_content.value|t }}
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+        {% if node.field_teaching_goals.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Undervisningsm&aring;l
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_teaching_goals.value|t }}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_colophon[0] or node.field_colophon_author[0] or node.field_colophon_editor[0] or node.field_colophon_photographer[0] %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Kolofon
+            </div>
+            <div class="facts-box__content">
+              {% if node.field_colophon[0] %}
+                {{ node.field_colophon.value|t }}
+              {% endif %}
+              {% if node.field_colophon_author[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Forfatter
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {{ node.field_colophon_author.value }}
+                  </div>
+                </div>
+              {% endif %}
+              {% if node.field_colophon_editor[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Redakt&oslash;r
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {{ node.field_colophon_editor.value }}
+                  </div>
+                </div>
+              {% endif %}
+              {% if node.field_colophon_photographer[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Foto
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {{ node.field_colophon_photographer.value }}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_media_downloads[0] %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Filer
+            </div>
+            <div class="facts-box__content">
+              {% for file in node.field_media_downloads %}
+                <div class="facts-box__content-item">
+                  <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+        {% for title, inspiration in inspirations %}
+          {{ title }}
+          {% for article in inspiration %}
+            {{ article.field_article_type }}
+            {{ article }}
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</article>

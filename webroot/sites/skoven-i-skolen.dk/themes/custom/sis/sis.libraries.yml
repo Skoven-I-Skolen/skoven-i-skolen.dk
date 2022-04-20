@@ -116,6 +116,12 @@ divider:
     theme:
       dist/components/css/components/02-molecules/divider.css: {}
 
+facts-box:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/facts-box.css: {}
+
 image:
   version: VERSION
   css:
@@ -227,6 +233,12 @@ appetiser:
     - sis/theme-pink
     - sis/theme-purple
     - sis/theme-yellow
+
+article-page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/article-page.css: {}
 
 burger-menu:
   version: VERSION
