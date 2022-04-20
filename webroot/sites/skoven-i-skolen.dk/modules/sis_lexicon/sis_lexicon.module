@@ -2,6 +2,9 @@
 
 /**
  * Implements hook_locale_translation_projects_alter().
+ *
+ * @param $projects
+ *   List of all projects
  */
 function sis_lexicon_locale_translation_projects_alter(&$projects) {
   $module_handler = \Drupal::service('module_handler');
@@ -9,6 +12,9 @@ function sis_lexicon_locale_translation_projects_alter(&$projects) {
   $projects['sis_lexicon']['info']['interface translation server pattern'] = $path . '/translations/%language.po';
 }
 
+/**
+ * Implements hook_theme()
+ */
 function sis_lexicon_theme() {
   return [
     'lexicon' => [
@@ -23,6 +29,12 @@ function sis_lexicon_theme() {
   ];
 }
 
+/**
+ * Implements preprocess_HOOK
+ *
+ * @param $variables
+ *   The variables to alter
+ */
 function sis_lexicon_preprocess_block__inline_block__lexicon_teaser(&$variables) {
   /** @var \Drupal\sis_lexicon\Services\LexiconContentDeliveryService $lexiconContentDeliveryService */
   $lexiconContentDeliveryService = Drupal::service('sis_lexicon.content_delivery');
