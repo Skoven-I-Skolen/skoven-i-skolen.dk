@@ -5,8 +5,11 @@ function sis_lexicon_theme() {
     'lexicon' => [
       'variables' => ['articles' => [], 'letter' => NUll, 'pager' => FALSE]
     ],
-    'lexicon-filters' => [
+    'lexicon_filters' => [
       'base hook' => 'item_list'
+    ],
+    'lexicon_overview' => [
+      'variables' => ['articles' => [], 'letter' => NUll, 'pager' => FALSE]
     ],
     'lexicon_search' => [
       'variables' => ['articles' => []]

@@ -28,15 +28,17 @@ class LexiconContentDeliveryService {
     $alphapet = array_merge(range('A', 'Z'), ['Æ', 'Ø', 'Å']);
     $alphapet_links = [];
 
+    $options = array_merge($options, ['attributes' => ['class' => ['use-ajax']]]);
+
     foreach ($alphapet as $letter) {
       $alphapet_links[] = Link::createFromRoute($letter, 'sis_lexicon.get_articles',
-        ['letter' => $letter, 'limit' => $limit, 'page' => $page] + $options,
-        ['attributes' => ['class' => ['use-ajax']],]
+        ['letter' => $letter, 'limit' => $limit, 'page' => $page],
+        $options
       );
     }
 
     return [
-      '#theme' => 'lexicon-filters',
+      '#theme' => 'lexicon_filters',
       '#items' => $alphapet_links,
     ];
   }

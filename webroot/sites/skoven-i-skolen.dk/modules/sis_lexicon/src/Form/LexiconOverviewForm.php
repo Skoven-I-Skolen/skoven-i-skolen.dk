@@ -7,6 +7,7 @@ use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\entity_overview\Form\OverviewFilterForm;
 use Drupal\entity_overview\OverviewManager;
+use Drupal\entity_overview\Services\OverviewFormStateService;
 use Drupal\node\Entity\Node;
 use Drupal\sis_lexicon\Services\LexiconContentDeliveryService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -21,10 +22,10 @@ class LexiconOverviewForm extends OverviewFilterForm {
   function __construct(
     OverviewManager               $overviewManager,
     RequestStack                  $requestStack,
+    OverviewFormStateService      $overviewFormState,
     LexiconContentDeliveryService $lexiconContentDelivery
   ) {
-    $this->overviewManager = $overviewManager;
-    $this->request = $requestStack->getCurrentRequest();
+    parent::__construct($overviewManager, $requestStack, $overviewFormState);
     $this->lexiconContentDelivery = $lexiconContentDelivery;
   }
 
@@ -35,6 +36,7 @@ class LexiconOverviewForm extends OverviewFilterForm {
     return new static(
       $container->get('entity_overview.manager'),
       $container->get('request_stack'),
+      $container->get('entity_overview.form_state'),
       $container->get('sis_lexicon.content_delivery')
     );
   }
@@ -46,7 +48,8 @@ class LexiconOverviewForm extends OverviewFilterForm {
       'onsubmit' => 'return false',
     ];
 
-    $form['content']['filter'] = $this->getContentDelivery()->getFilters(self::DEFAULT_LIMIT, 0, ['pager' => true]);
+    $form['content']['filter'] = $this->getContentDelivery()
+      ->getFilters(self::DEFAULT_LIMIT, 0, ['query' => ['pager' => TRUE]]);
 
     $form['content']['keyword'] = [
       '#type' => 'textfield',
@@ -80,16 +83,18 @@ class LexiconOverviewForm extends OverviewFilterForm {
       return $response;
     }
 
-    if(!$content = $this->getContentDelivery()->getArticlesByKeyword($keyword)) {
+    if (!$content = $this->getContentDelivery()
+      ->getArticlesByKeyword($keyword)) {
       $content = [
         '#theme' => 'lexicon_search',
-        '#articles' => 'No results found'
+        '#articles' => 'No results found',
       ];
     }
 
     $response->addCommand(new ReplaceCommand('#lexicon-items', $content));
 
-    return $response;  }
+    return $response;
+  }
 
   /**
    * @param array $content
@@ -97,10 +102,11 @@ class LexiconOverviewForm extends OverviewFilterForm {
    * @param array $options
    */
   protected function buildEntitiesInContent(array &$content, array $entities, array $options) {
-    $content['content']['articles'] = $this->getContentDelivery()->getArticles('A', self::DEFAULT_LIMIT);
+    $content['content']['articles'] = $this->getContentDelivery()
+      ->getArticles('A', self::DEFAULT_LIMIT);
+    $content['content']['articles']['#theme'] = 'lexicon_overview';
     $content['content']['articles']['#pager'] = TRUE;
     $content['content']['#weight'] = 100;
-
   }
 
   private function getContentDelivery() {
@@ -110,4 +116,5 @@ class LexiconOverviewForm extends OverviewFilterForm {
 
     return \Drupal::service('sis_lexicon.content_delivery');
   }
+
 }

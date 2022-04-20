@@ -3,7 +3,6 @@
 namespace Drupal\sis_lexicon\Controller;
 
 use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Http\RequestStack;
@@ -46,10 +45,11 @@ class LexiconController extends ControllerBase {
         '#theme' => 'lexicon',
         '#articles' => 'No results found'
       ];
+    }
 
-      if ($this->request->get('pager')) {
-        $content['pager'] = true;
-      }
+    $test = $this->request->get('pager');
+    if ($this->request->get('pager') === '1') {
+      $content['#pager'] = TRUE;
     }
 
     $response->addCommand(new ReplaceCommand('#lexicon-items', $content));
