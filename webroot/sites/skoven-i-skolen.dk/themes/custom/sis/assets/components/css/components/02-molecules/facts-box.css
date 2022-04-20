@@ -1,7 +1,7 @@
 .facts-box {
   margin-bottom: 40px;
   background-color: var(--color-white);
-  box-shadow: 0 4px 30px rgba(131, 131, 131, 25%);
+  box-shadow: 0 4px 30px rgb(131 131 131 / 25%);
 
   &__title {
     padding: 6px 15px;
