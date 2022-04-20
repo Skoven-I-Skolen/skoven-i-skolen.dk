@@ -51,7 +51,7 @@
     }
   }
 
-  .lexicon__items {
+  &__items {
     display: flex;
     flex-flow: column;
     gap: 36px;
