@@ -241,13 +241,23 @@
             </div>
           </div>
         {% endif %}
-        {% for title, inspiration in inspirations %}
-          {{ title }}
-          {% for article in inspiration %}
-            {{ article.field_article_type }}
-            {{ article }}
-          {% endfor %}
-        {% endfor %}
+        {% if inspirations %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Inspiration og lignende materialer
+            </div>
+            <div class="facts-box__content facts-box__inspiration">
+              {% for title, inspiration in inspirations %}
+                <div class="facts-box__inspiration-group">
+                  <div class="facts-box__inspiration-title">{{ title }}</div>
+                  {% for article in inspiration %}
+                    {{ article }}
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif%}
       </div>
     </div>
   </div>
