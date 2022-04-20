@@ -1,0 +1,23 @@
+uuid: db0babf8-603a-4d66-8cd7-ef7073c26dc5
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.top_image.field_background
+    - paragraphs.paragraphs_type.top_image
+id: paragraph.top_image.default
+targetEntityType: paragraph
+bundle: top_image
+mode: default
+content:
+  field_background:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: hero
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

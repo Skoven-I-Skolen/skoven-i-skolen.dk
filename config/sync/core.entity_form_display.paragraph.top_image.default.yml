@@ -1,0 +1,24 @@
+uuid: 31337134-1469-47a6-b8eb-67b163f11948
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.top_image.field_background
+    - paragraphs.paragraphs_type.top_image
+  module:
+    - media_library
+id: paragraph.top_image.default
+targetEntityType: paragraph
+bundle: top_image
+mode: default
+content:
+  field_background:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
