@@ -36,19 +36,18 @@ class LexiconController extends ControllerBase {
    *
    * @return void
    */
-  public function get(string $letter, $limit = 2, $page = 0): ?AjaxResponse {
+  public function get(): ?AjaxResponse {
 
     $response = new AjaxResponse();
 
-    if(!$content = $this->lexiconContentDelivery->getArticles($letter, $limit, $page)) {
+    if(!$content = $this->lexiconContentDelivery->getArticles($this->getLetter(), $this->getLimit(), $this->getPage())) {
       $content = [
         '#theme' => 'lexicon',
-        '#articles' => 'No results found'
+        '#articles' => $this->t('No results found')
       ];
     }
 
-    $test = $this->request->get('pager');
-    if ($this->request->get('pager') === '1') {
+    if (is_array($content['#articles']) && $this->getPager()) {
       $content['#pager'] = TRUE;
     }
 
@@ -65,9 +64,9 @@ class LexiconController extends ControllerBase {
    */
   public function search(): ?AjaxResponse {
 
-    $keyword = $this->request->get('keyword') ?? null;
-    $limit = $this->request->get('number') ?? 0;
-    $page = $this->request->get('page') ?? 0;
+    $keyword = $this->getKeyword();
+    $limit = $this->getLimit();
+    $page = $this->getPage();
 
     $response = new AjaxResponse();
 
@@ -87,4 +86,53 @@ class LexiconController extends ControllerBase {
     return $response;
   }
 
+  /**
+   * Get letter query parameter from request.
+   *
+   * @return string
+   *   The letter
+   */
+  public function getLetter() {
+    return $this->request->get('letter', 'A');
+  }
+
+  /**
+   * Get limit query parameter from request.
+   *
+   * @return int
+   *   The limit
+   */
+  public function getLimit() {
+    return $this->request->get('limit', 2);
+  }
+
+  /**
+   * Get page query parameter from request.
+   *
+   * @return int
+   *   The page
+   */
+  public function getPage() {
+    return $this->request->get('page', 1);
+  }
+
+  /**
+   * Get pager query parameter from request.
+   *
+   * @return bool
+   *   The page
+   */
+  public function getPager() {
+    return (bool) $this->request->get('pager', false);
+  }
+
+  /**
+   * Get keyword query parameter from request.
+   *
+   * @return string
+   *   The keyword
+   */
+  public function getKeyword() {
+    return $this->request->get('keyword', null);
+  }
 }
