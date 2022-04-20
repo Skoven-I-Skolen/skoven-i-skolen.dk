@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Implements hook_locale_translation_projects_alter().
+ */
+function sis_lexicon_locale_translation_projects_alter(&$projects) {
+  $module_handler = \Drupal::service('module_handler');
+  $path = $module_handler->getModule('sis_lexicon')->getPath();
+  $projects['sis_lexicon']['info']['interface translation server pattern'] = $path . '/translations/%language.po';
+}
+
 function sis_lexicon_theme() {
   return [
     'lexicon' => [
@@ -22,4 +31,5 @@ function sis_lexicon_preprocess_block__inline_block__lexicon_teaser(&$variables)
   $initialLetter = $variables['content']['#block_content']
     ->get('field_lexicon_initial_letter')->value;
   $variables['articles'] = $lexiconContentDeliveryService->getArticles($initialLetter);
+  $variables['articles']['#letter'] = NULL;
 }

@@ -1,0 +1,11 @@
+# Danish translation of Sis Lexicon (all releases)
+# Copyright (c) 2021 Novicell
+#
+msgid ""
+msgstr ""
+
+msgid "Show all lexicon articles with the letter @letter"
+msgstr "Vis alle leksikonartikler med bogstavet @letter"
+
+msgid "No results found"
+msgstr "Ingen resultater fundet"
