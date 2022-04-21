@@ -1,0 +1,6 @@
+sis_overview.term.get:
+  path: sis/term/overview/get/{taxonomy_term}
+  defaults:
+    _controller: 'Drupal\sis_overview\Controller\TermOverviewController::get'
+  requirements:
+    _access: 'TRUE'

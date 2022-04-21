@@ -1,0 +1,8 @@
+name: SIS Overview
+description: Helper module for taxonomy overview
+package: Skoven i Skolen
+type: module
+core_version_requirement: ^8 || ^9
+
+interface translation project: sis_overview
+interface translation server pattern: modules/contrib/sis_overview/translations/%language.po

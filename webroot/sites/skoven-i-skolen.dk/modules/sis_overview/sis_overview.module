@@ -1,0 +1,24 @@
+<?php
+
+module_load_include('inc', 'sis_overview', 'preprocess');
+
+/**
+ * Implements hook_locale_translation_projects_alter().
+ *
+ * @param $projects
+ *   List of all projects
+ */
+function sis_overview_locale_translation_projects_alter(&$projects) {
+  $module_handler = \Drupal::service('module_handler');
+  $path = $module_handler->getModule('sis_overview')->getPath();
+  $projects['sis_overview']['info']['interface translation server pattern'] = $path . '/translations/%language.po';
+}
+
+
+function sis_overview_theme() {
+  return [
+    'term_overview' => [
+      'variables' => ['term' => NULL, 'entities' => []]
+    ]
+  ];
+}

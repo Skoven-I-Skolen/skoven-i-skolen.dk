@@ -1,0 +1,14 @@
+services:
+  sis_overview.route_subscriber:
+    class: Drupal\sis_overview\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  sis_overview.term_repository:
+    class: Drupal\sis_overview\Repository\TermRepository
+    arguments:
+      - '@database'
+  sis_overview.content_delivery:
+    class: Drupal\sis_overview\Service\TermContentDeliveryService
+    arguments:
+      - '@sis_overview.term_repository'
+      - '@entity_type.manager'
