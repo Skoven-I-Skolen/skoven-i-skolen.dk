@@ -54,17 +54,30 @@
   &__items {
     display: flex;
     flex-flow: column;
-    gap: 36px;
+    margin-right: var(--half-gutter-compensation-mobile);
+    margin-left: var(--half-gutter-compensation-mobile);
+
+    @media (--viewport-md-min) {
+      margin-right: var(--half-gutter-compensation);
+      margin-left: var(--half-gutter-compensation);
+    }
 
     @media (--viewport-ms-min) {
       flex-flow: row;
     }
 
-    .inspiration-overview__item-link {
+    .inspiration-overview__item {
       height: auto;
+      padding-right: var(--half-gutter-width-mobile);
+      padding-left: var(--half-gutter-width-mobile);
+
+      @media (--viewport-md-min) {
+        padding-right: var(--half-gutter-width);
+        padding-left: var(--half-gutter-width);
+      }
 
       .inspiration-overview__content {
-        padding-bottom: 54px;
+        padding-bottom: 36px;
       }
     }
   }
