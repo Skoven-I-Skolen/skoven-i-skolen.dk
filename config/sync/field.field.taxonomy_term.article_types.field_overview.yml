@@ -27,11 +27,10 @@ default_value:
       field_location: {  }
       field_season: {  }
       field_subject: {  }
-    count: 20
+    count: 16
     sort: newest
-    pagination: true
-    facets:
-      - sort
+    pagination: false
+    facets: {  }
 default_value_callback: ''
 settings: {  }
 field_type: article_filter

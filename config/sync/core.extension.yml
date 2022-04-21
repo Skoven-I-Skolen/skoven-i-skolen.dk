@@ -99,6 +99,7 @@ module:
   sis_almanac: 0
   sis_articles: 0
   sis_lexicon: 0
+  sis_overview: 0
   status_feed: 0
   styles: 0
   system: 0

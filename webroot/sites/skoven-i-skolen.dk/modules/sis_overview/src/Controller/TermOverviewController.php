@@ -59,12 +59,12 @@ class TermOverviewController extends ControllerBase {
    */
   public function view(Term $taxonomy_term): array {
 
-    if ($taxonomy_term->bundle() === 'article_types') {
-      return $taxonomy_term->get('field_overview')->view([
-        'label' => 'hidden',
-        'type' => 'taxonomy_overview_formatter'
-      ]);
-    }
+//    if ($taxonomy_term->bundle() === 'article_types') {
+//      return $taxonomy_term->get('field_overview')->view([
+//        'label' => 'hidden',
+//        'type' => 'taxonomy_overview_formatter'
+//      ]);
+//    }
 
     $this->pagerManager
       ->createPager($this->termRepository->getNumberOfItemsWithTaxonomyTerm($taxonomy_term->id()), $this->getLimit())

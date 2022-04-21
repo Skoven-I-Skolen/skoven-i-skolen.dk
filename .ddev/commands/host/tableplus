@@ -7,10 +7,10 @@
 ## Usage: tableplus
 ## Example: "ddev tableplus"
 ## OSTypes: darwin
-## HostBinaryExists: /Applications/TablePlus.app
+## HostBinaryExists: /Applications/Setapp/TablePlus.app
 
 set -x
 query="mysql://root:root@127.0.0.1:${DDEV_HOST_DB_PORT}/db"
 
-open "$query" -a "/Applications/TablePlus.app/Contents/MacOS/TablePlus"
+open "$query" -a "/Applications/Setapp/TablePlus.app/Contents/MacOS/TablePlus"
 

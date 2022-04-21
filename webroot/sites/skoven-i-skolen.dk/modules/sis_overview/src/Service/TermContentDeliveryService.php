@@ -31,6 +31,8 @@ class TermContentDeliveryService {
       ->getViewBuilder('node')
       ->viewMultiple($nodes, 'list');
 
+
+
     return [
       '#theme' => 'term_overview',
       '#entities' => $termNodes,

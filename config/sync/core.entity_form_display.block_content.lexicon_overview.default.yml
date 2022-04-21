@@ -4,26 +4,14 @@ status: true
 dependencies:
   config:
     - block_content.type.lexicon_overview
-    - field.field.block_content.lexicon_overview.body
     - field.field.block_content.lexicon_overview.field_lexicon_overview
   module:
     - sis_lexicon
-    - text
 id: block_content.lexicon_overview.default
 targetEntityType: block_content
 bundle: lexicon_overview
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 26
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   field_lexicon_overview:
     type: lexicon_overview_widget
     weight: 27
