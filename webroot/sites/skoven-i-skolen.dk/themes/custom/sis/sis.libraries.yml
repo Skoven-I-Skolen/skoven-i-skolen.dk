@@ -184,6 +184,15 @@ search-toggle:
   js:
     dist/components/js/search-toggle.js: {}
 
+related-articles:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/related-articles.css: {}
+      dist/components/js/related-articles.css: {}
+  js:
+    dist/components/js/related-articles.js: {}
+
 spacer:
   version: VERSION
   css:
