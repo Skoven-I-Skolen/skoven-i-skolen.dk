@@ -80,10 +80,13 @@
     <div class="row">
       <div class="col-md-8 col-lg-7">
         <div{{ content_attributes }}>
+          {% if node.field_header[0] %}
+            <h1 class="article-page__title">{{ label }}</h1>
+          {% endif %}
           <div class="article-page__description">
             {{ node.field_description.value|t }}
           </div>
-          {{ content }}
+          {{ content|without(['field_list_date', 'field_header']) }}
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-lg-offset-1">
@@ -241,14 +244,41 @@
             </div>
           </div>
         {% endif %}
-        {% for title, inspiration in inspirations %}
-          {{ title }}
-          {% for article in inspiration %}
-            {{ article.field_article_type }}
-            {{ article }}
-          {% endfor %}
-        {% endfor %}
+        {% if inspirations %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Inspiration og lignende materialer
+            </div>
+            <div class="facts-box__content facts-box__inspiration">
+              {% for title, inspiration in inspirations %}
+                <div class="facts-box__inspiration-group">
+                  <div class="facts-box__inspiration-title">{{ title }}</div>
+                  {% for article in inspiration %}
+                    {{ article }}
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif%}
       </div>
     </div>
+    {% if related %}
+      <div class="article-page__related section section--spacing-bottom-none">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="article-page__related-header">
+              <h3>Måske du også leder efter...</h3>
+              <p>Gå på opdagelse i vores aktiviteter og materialer og find lige det, der passer til din undervisning.</p>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="article-page__related-items">
+              {{ related }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
   </div>
 </article>

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_header
     - node.type.article
-    - paragraphs.paragraphs_type.basic_hero
+    - paragraphs.paragraphs_type.top_image
   module:
     - entity_reference_revisions
 _core:
@@ -24,7 +24,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      basic_hero: basic_hero
+      top_image: top_image
     negate: 0
     target_bundles_drag_drop:
       accordion_item:
@@ -32,8 +32,17 @@ settings:
         enabled: false
       basic_hero:
         weight: 5
-        enabled: true
+        enabled: false
+      factbox_item:
+        weight: 10
+        enabled: false
       inline_hero:
         weight: 6
         enabled: false
+      overview_element:
+        weight: 12
+        enabled: false
+      top_image:
+        weight: 7
+        enabled: true
 field_type: entity_reference_revisions

@@ -12,12 +12,9 @@ master:
       dist/components/css/base/form-styling.css: { }
       dist/components/css/base/pager.css: { }
     component:
-      dist/components/css/components/03-organisms/search-overlay.css: {}
       dist/components/css/components/03-organisms/footer.css: {}
     layout:
       dist/components/css/layout/grid.css: {}
-  js:
-    dist/components/js/search-overlay.js: {}
   dependencies:
     - sis/theme-primary
     - sis/theme-green

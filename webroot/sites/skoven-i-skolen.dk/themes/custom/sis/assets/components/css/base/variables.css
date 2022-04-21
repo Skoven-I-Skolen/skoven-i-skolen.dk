@@ -38,9 +38,7 @@
   --theme-button-color: var(--color-purple);
   --theme-link-color: var(--color-black);
   --theme-divider-background-color: var(--color-black);
-  --theme-accordion-border-color: #d4d4d4;
-  --theme-accordion-background-color: transparent;
-  --theme-accordion-text-color: var(--color-black);
+  --theme-accordion-color: var(--color-purple);
   --theme-input-border: #e5e3de;
   --theme-input-color-marked: var(--color-primary);
   --theme-status-message-background-color: #c6c6c6;

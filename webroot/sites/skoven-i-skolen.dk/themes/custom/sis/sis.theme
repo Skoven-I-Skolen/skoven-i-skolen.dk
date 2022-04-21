@@ -83,4 +83,3 @@ function sis_preprocess_block__inline_block__appetizer(array &$variables) {
     $variables['media'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($block->get('field_appetizer_image')->entity, $image_style);
   }
 }
-

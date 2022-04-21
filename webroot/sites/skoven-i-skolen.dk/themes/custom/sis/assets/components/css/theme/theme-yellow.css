@@ -10,9 +10,6 @@
   --theme-button-color: #fff;
   --theme-link-color: #232323;
   --theme-divider-background-color: #232323;
-  --theme-accordion-border-color: #232323;
-  --theme-accordion-background-color: var(--color-white);
-  --theme-accordion-text-color: #232323;
   --theme-input-border: #232323;
   --theme-input-color-marked: #232323;
 }
