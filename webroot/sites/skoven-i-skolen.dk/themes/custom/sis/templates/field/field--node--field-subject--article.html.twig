@@ -43,5 +43,7 @@
 %}
 
 {% for item in items %}
-  <a class="inspiration-overview__subject-item" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.content['#taxonomy_term'].tid.value}) }}">{{ item.content['#taxonomy_term'].name.value }}</a>
+  {% if (item.content['#taxonomy_term']) %}
+    <a class="inspiration-overview__subject-item" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.content['#taxonomy_term'].tid.value}) }}">{{ item.content['#taxonomy_term'].name.value }}</a>
+  {% endif %}
 {% endfor %}
