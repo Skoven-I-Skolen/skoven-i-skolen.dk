@@ -5,7 +5,7 @@ function sis_preprocess_node(&$variables) {
   $node = $variables['node'];
 
   $hasHeader = FALSE;
-  if (!$node->get('field')->isEmpty()) {
+  if ($node->hasField('field_header') && !$node->get('field_header')->isEmpty()) {
     $hasHeader = TRUE;
   }
 
