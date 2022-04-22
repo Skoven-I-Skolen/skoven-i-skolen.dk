@@ -299,6 +299,12 @@ lexicon:
     theme:
       dist/components/css/components/03-organisms/lexicon.css: {}
 
+overview-form:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/overview-form.css: {}
+
 search-page:
   version: VERSION
   css:

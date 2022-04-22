@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('sis/overview-form') }}
+
+<form{{ attributes.addClass('overview-form') }}>
+  <div class="container">
+    {#  {{ children }}#}
+    <div class="row">
+      <div class="col-xs-12 col-md-7">
+        <div class="overview-form__search-title">
+          {{ element['search'].title }}
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-5">
+        <div class="overview-form__search-input">
+          {{ element['search'].keyword }}
+          {{ element['search'].search }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <div class="overview-form__search-filters">
+          {{ element['facets'].field_class }}
+          {{ element['facets'].field_location }}
+          {{ element['facets'].field_season }}
+          {{ element['facets'].field_subject }}
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-9">
+        <div class="row">
+          {{ element['content'] }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ element['page'] }}
+  {{ element['page_submit'] }}
+  {{ element['form_build_id'] }}
+  {{ element['form_token'] }}
+  {{ element['form_id'] }}
+</form>

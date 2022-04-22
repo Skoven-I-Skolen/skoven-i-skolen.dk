@@ -1,0 +1,43 @@
+.overview-form {
+  &-contents {
+    display: flex;
+
+    .inspiration-overview__item {
+      flex: 0 0 100%;
+      height: auto;
+      min-height: 100%;
+      padding: var(--container-spacing-mobile);
+
+      @media (--viewport-ms-min) {
+        flex: 0 0 50%;
+        padding: var(--container-spacing);
+      }
+
+      @media (--viewport-md-min) {
+        flex: 0 0 33.3333%;
+        padding: var(--container-spacing);
+      }
+    }
+  }
+
+  &__search {
+    &-filters {
+      & legend {
+        display: block;
+        width: 100%;
+        margin-bottom: 24px;
+        font-weight: var(--heading-font-weight);
+      }
+
+      & fieldset {
+        margin: 0 0 24px;
+        padding: 0 0 24px;
+        border-bottom: 1px solid rgba(61 41 89 / 30%);
+
+        .form-item:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
