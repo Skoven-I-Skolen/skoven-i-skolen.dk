@@ -9,7 +9,7 @@ settings:
   default_ajax_effect: fade
   default_ajax_speed: 500
   default_submit_button_label: Indsend
-  default_reset_button_label: Gendan
+  default_reset_button_label: Reset
   default_delete_button_label: Slet
   default_form_submit_once: false
   default_form_open_message: 'This form has not yet been opened to submissions.'

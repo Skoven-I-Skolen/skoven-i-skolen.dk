@@ -1,0 +1,13 @@
+uuid: 1de04a2b-a725-4911-9da9-fb79370003b4
+langcode: da
+status: true
+dependencies: {  }
+id: organization
+label: Organisation
+display_label: ''
+multiple: false
+registration: false
+roles:
+  organization: organization
+allow_revisions: false
+new_revision: false

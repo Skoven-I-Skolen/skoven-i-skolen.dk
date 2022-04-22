@@ -1,0 +1,52 @@
+uuid: 85d948d0-6b1e-4950-b791-1f3c9dfd504b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_organization_address
+    - profile.type.organization
+  module:
+    - address
+id: profile.organization.field_organization_address
+field_name: field_organization_address
+entity_type: profile
+bundle: organization
+label: Adresse
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    langcode: da
+    country_code: DK
+    administrative_area: null
+    locality: ''
+    dependent_locality: null
+    postal_code: ''
+    sorting_code: null
+    address_line1: ''
+    address_line2: ''
+    organization: ''
+    given_name: ''
+    additional_name: null
+    family_name: ''
+default_value_callback: ''
+settings:
+  available_countries:
+    DK: DK
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    sortingCode:
+      override: hidden
+    dependentLocality:
+      override: hidden
+    administrativeArea:
+      override: hidden
+  fields: {  }
+field_type: address

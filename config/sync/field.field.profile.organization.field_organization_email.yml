@@ -1,0 +1,19 @@
+uuid: 2601b909-daee-4b97-8f9c-dcf9c12a2bbe
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_organization_email
+    - profile.type.organization
+id: profile.organization.field_organization_email
+field_name: field_organization_email
+entity_type: profile
+bundle: organization
+label: E-mailadresse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

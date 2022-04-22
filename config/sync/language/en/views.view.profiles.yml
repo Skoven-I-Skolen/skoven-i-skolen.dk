@@ -1,0 +1,29 @@
+label: Profiles
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      empty:
+        area:
+          content:
+            value: 'There are no profiles yet.'
+      arguments:
+        uid:
+          exception:
+            title: All
+        type:
+          exception:
+            title: All
+        status:
+          exception:
+            title: All
+      title: Profiles
+  user_page:
+    display_title: 'User page'

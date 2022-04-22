@@ -1,0 +1,9 @@
+uuid: f3fff4ce-2a20-459c-98a2-5dc76f6d0623
+langcode: da
+status: true
+dependencies: {  }
+id: organization
+label: Organisation
+weight: 6
+is_admin: null
+permissions: {  }
