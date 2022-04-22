@@ -32,20 +32,4 @@
       height: auto;
     }
   }
-
-  &__related {
-    &-header {
-      margin-bottom: 48px;
-    }
-
-    &-items {
-      display: flex;
-      gap: 36px;
-    }
-
-    .inspiration-overview__item-link {
-      width: calc(25% - 18px);
-      height: auto;
-    }
-  }
 }

@@ -1,0 +1,106 @@
+.article-page__related {
+  &-header {
+    margin-bottom: 20px;
+
+    @media (--viewport-sm-min) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &-items {
+    position: relative;
+    display: flex;
+
+    &.swiper {
+      margin-right: var(--half-gutter-compensation-mobile);
+      margin-left: var(--half-gutter-compensation-mobile);
+
+      @media (--viewport-md-min) {
+        margin-right: var(--half-gutter-compensation);
+        margin-left: var(--half-gutter-compensation);
+      }
+    }
+  }
+
+  .swiper-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+
+    @media (--viewport-sm-min) {
+      padding-bottom: 18px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: relative;
+      top: auto;
+      right: auto;
+      left: auto;
+      display: block;
+      width: 44px;
+      height: 44px;
+      margin-top: 0;
+      background-color: var(--theme-button-color);
+      border-radius: 50%;
+      transform: translate(0);
+    }
+
+    .swiper-button-prev {
+      margin-right: 8px;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 12px;
+      height: 12px;
+      transform: translate(-50%, -50%) rotate(45deg);
+      content: "";
+    }
+
+    .swiper-button-prev::after {
+      margin-left: 2px;
+      border-bottom: 2px solid #fff;
+      border-left: 2px solid #fff;
+    }
+
+    .swiper-button-next::after {
+      margin-left: -2px;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+    }
+  }
+
+
+  .inspiration-overview__item {
+    flex: 0 0 100%;
+    height: auto;
+    min-height: 100%;
+    padding: var(--container-spacing-mobile);
+
+    @media (--viewport-ms-min) {
+      flex: 0 0 50%;
+      padding: var(--container-spacing);
+    }
+
+    @media (--viewport-md-min) {
+      flex: 0 0 33.3333%;
+      padding: var(--container-spacing);
+    }
+
+    @media (--viewport-lg-min) {
+      flex: 0 0 25%;
+      padding: var(--container-spacing);
+    }
+  }
+
+  .inspiration-overview__item-link {
+    width: 100%;
+    height: auto;
+  }
+}
