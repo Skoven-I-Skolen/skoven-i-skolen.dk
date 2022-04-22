@@ -1,0 +1,19 @@
+uuid: 2a2884df-0481-4a1e-be8c-d21f7a44f0e7
+langcode: da
+status: true
+dependencies:
+  module:
+    - address
+    - node
+id: node.field_business_card_address
+field_name: field_business_card_address
+entity_type: node
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: a942ae99-8a27-458b-b559-e8c87ed68c37
+langcode: da
+status: true
+dependencies:
+  module:
+    - address
+    - profile
+id: profile.field_organization_address
+field_name: field_organization_address
+entity_type: profile
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

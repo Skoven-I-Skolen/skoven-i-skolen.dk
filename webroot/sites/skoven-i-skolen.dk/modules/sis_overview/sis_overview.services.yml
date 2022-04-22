@@ -12,3 +12,7 @@ services:
     arguments:
       - '@sis_overview.term_repository'
       - '@entity_type.manager'
+  profile_label_alter:
+    class: '\Drupal\sis_overview\EventSubscriber\ProfileLabelEventSubscriber'
+    tags:
+      - { name: 'event_subscriber' }

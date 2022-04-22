@@ -6,3 +6,6 @@ msgstr ""
 
 msgid "All @type pages"
 msgstr "Alle @type sider"
+
+msgid "Materials from @organization"
+msgstr "Materialer fra @organization"

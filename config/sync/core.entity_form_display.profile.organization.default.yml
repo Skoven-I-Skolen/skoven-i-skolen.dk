@@ -1,0 +1,115 @@
+uuid: 98641fc1-3bb4-4952-af98-96274d432f6c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.profile.organization.field_orgamization_overview
+    - field.field.profile.organization.field_organization_address
+    - field.field.profile.organization.field_organization_description
+    - field.field.profile.organization.field_organization_email
+    - field.field.profile.organization.field_organization_graphic
+    - field.field.profile.organization.field_organization_logo
+    - field.field.profile.organization.field_organization_phone
+    - field.field.profile.organization.field_organization_website
+    - image.style.thumbnail
+    - profile.type.organization
+  module:
+    - address
+    - entity_overview
+    - field_group
+    - image
+    - link
+    - path
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_additional_contact_info:
+      children:
+        - field_organization_email
+        - field_organization_website
+        - field_organization_phone
+      label: 'Yderligere kontaktinformation'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+id: profile.organization.default
+targetEntityType: profile
+bundle: organization
+mode: default
+content:
+  field_orgamization_overview:
+    type: overview_filter_widget
+    weight: 31
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_organization_address:
+    type: address_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_organization_description:
+    type: text_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_organization_email:
+    type: email_default
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_organization_graphic:
+    type: image_image
+    weight: 28
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_organization_logo:
+    type: image_image
+    weight: 26
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_organization_phone:
+    type: telephone_default
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_organization_website:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  is_default: true

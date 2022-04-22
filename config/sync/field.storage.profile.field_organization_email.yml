@@ -1,0 +1,18 @@
+uuid: 72b92756-819c-454c-a97b-6b91d2773a42
+langcode: da
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.field_organization_email
+field_name: field_organization_email
+entity_type: profile
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 0f986437-447f-4f7b-b37e-cf6d769f2cb5
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_organization_phone
+    - profile.type.organization
+  module:
+    - telephone
+id: profile.organization.field_organization_phone
+field_name: field_organization_phone
+entity_type: profile
+bundle: organization
+label: Telefonnummer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

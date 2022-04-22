@@ -161,7 +161,7 @@ display:
           submit_button: 'Tilføj filtre'
           reset_button: false
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: false
           sort_asc_label: Stigende
           sort_desc_label: Faldende

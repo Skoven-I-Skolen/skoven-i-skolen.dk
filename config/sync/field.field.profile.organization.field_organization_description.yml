@@ -1,0 +1,26 @@
+uuid: 792291ed-050a-4f22-ab8c-1642959311c8
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_organization_description
+    - profile.type.organization
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - limited_html_link
+id: profile.organization.field_organization_description
+field_name: field_organization_description
+entity_type: profile
+bundle: organization
+label: Beskrivelse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

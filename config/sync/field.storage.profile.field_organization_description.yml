@@ -1,0 +1,19 @@
+uuid: 59248896-4fc2-4887-abf9-a932539980d7
+langcode: da
+status: true
+dependencies:
+  module:
+    - profile
+    - text
+id: profile.field_organization_description
+field_name: field_organization_description
+entity_type: profile
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
