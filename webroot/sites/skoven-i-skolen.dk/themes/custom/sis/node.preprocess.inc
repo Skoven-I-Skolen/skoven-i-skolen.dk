@@ -8,6 +8,7 @@ function sis_preprocess_node(&$variables) {
     $variables['content']['title'] = [
       '#theme' => 'page_title',
       '#title' => $node->get('title')->value,
+      '#weight' => -1
     ];
   }
 }
