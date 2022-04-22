@@ -7,8 +7,7 @@ function sis_preprocess_node(&$variables) {
   if ($node->hasField('field_header') && $node->get('field_header')->isEmpty()) {
     $variables['content']['title'] = [
       '#theme' => 'page_title',
-      '#title' => $node->get('title')->value,
-      '#weight' => -1
+      '#title' => $node->get('title')->value
     ];
   }
 }

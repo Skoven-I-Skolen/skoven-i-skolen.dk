@@ -81,7 +81,7 @@
         </div>
       </div>
       <div class="inspiration-overview__content">
-        {% if subject_items|length > 0 %}
+        {% if content.field_class[0]|length > 0 %}
           <div class="inspiration-overview__class">
             {% include '@reusable-component/svg-icon.twig' with {
               'attributes': '',
