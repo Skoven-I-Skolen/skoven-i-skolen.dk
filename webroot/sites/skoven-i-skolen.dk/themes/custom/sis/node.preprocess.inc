@@ -15,9 +15,9 @@ function sis_preprocess_node(&$variables) {
 
 function sis_preprocess_page(&$variables) {
   /** @var \Drupal\node\Entity\Node $node */
-  $node = $variables['node'];
+  $node = $variables['node'] ?? NULL;
 
-  if ($node->hasField('field_header') && $node->get('field_header')->isEmpty()) {
+  if ($node && $node->hasField('field_header') && $node->get('field_header')->isEmpty()) {
     unset($variables['page']['pageheader']);
   }
 }
