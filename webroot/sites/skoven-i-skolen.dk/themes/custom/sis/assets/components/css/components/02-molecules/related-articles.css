@@ -1,6 +1,10 @@
 .article-page__related {
   &-header {
-    margin-bottom: 48px;
+    margin-bottom: 20px;
+
+    @media (--viewport-sm-min) {
+      margin-bottom: 48px;
+    }
   }
 
   &-items {
@@ -20,10 +24,13 @@
 
   .swiper-navigation {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
     height: 100%;
-    padding-bottom: 18px;
+
+    @media (--viewport-sm-min) {
+      padding-bottom: 18px;
+    }
 
     .swiper-button-next,
     .swiper-button-prev {
