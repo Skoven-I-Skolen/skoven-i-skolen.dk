@@ -40,7 +40,8 @@
       list-style-type: none;
 
       li {
-        display: inline;
+        position: relative;
+        display: inline-block;
         margin-right: 18px;
         margin-bottom: 12px;
 
