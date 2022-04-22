@@ -1,5 +1,5 @@
 .lexicon {
-  &--teaser {
+  &-teaser {
     .section--fullwidth & {
       padding-right: var(--container-spacing-mobile);
       padding-left: var(--container-spacing-mobile);
@@ -17,6 +17,12 @@
     &__description {
       padding-bottom: 24px;
       font-size: var(--base-font-size-large);
+    }
+
+    &__articles {
+      .lexicon__letter {
+        display: none;
+      }
     }
   }
 
