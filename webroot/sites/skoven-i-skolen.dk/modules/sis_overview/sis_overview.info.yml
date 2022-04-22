@@ -6,3 +6,6 @@ core_version_requirement: ^8 || ^9
 
 interface translation project: sis_overview
 interface translation server pattern: modules/contrib/sis_overview/translations/%language.po
+
+dependencies:
+  - profile
