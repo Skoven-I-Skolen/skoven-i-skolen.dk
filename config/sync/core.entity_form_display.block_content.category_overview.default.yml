@@ -1,0 +1,45 @@
+uuid: 172ef4a9-6b4a-462c-b3a1-7bfc46f779c6
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.category_overview
+    - field.field.block_content.category_overview.field_category_overview
+    - field.field.block_content.category_overview.field_category_overview_headline
+  module:
+    - entity_overview
+id: block_content.category_overview.default
+targetEntityType: block_content
+bundle: category_overview
+mode: default
+content:
+  field_category_overview:
+    type: overview_filter_widget
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_category_overview_headline:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

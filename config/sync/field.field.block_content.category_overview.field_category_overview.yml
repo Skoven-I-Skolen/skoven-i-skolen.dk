@@ -1,0 +1,39 @@
+uuid: b510f814-ab5b-49bc-8a00-942cdd6b955b
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.category_overview
+    - field.storage.block_content.field_category_overview
+  module:
+    - entity_overview
+id: block_content.category_overview.field_category_overview
+field_name: field_category_overview
+entity_type: block_content
+bundle: category_overview
+label: Overblik
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    title: ''
+    fields:
+      field_article_categories: {  }
+      field_article_type: {  }
+      field_class: {  }
+      field_location: {  }
+      field_season: {  }
+      field_subject: {  }
+    count: 5
+    sort: newest
+    pagination: true
+    facets:
+      - field_article_type
+      - field_class
+      - field_location
+      - field_season
+      - field_subject
+default_value_callback: ''
+settings: {  }
+field_type: overview_filter

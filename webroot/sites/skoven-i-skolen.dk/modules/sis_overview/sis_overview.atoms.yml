@@ -1,0 +1,8 @@
+atoms:
+  overview-no-results:
+    type: textfield
+    title: No results found
+    description: Text to show if no results is found
+    category: Overviews
+    default:
+      da: 'Ingen resultater fundet'

@@ -1,0 +1,27 @@
+uuid: 0ee75ee4-a057-4388-adb8-2b628e5a2bda
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.category_overview
+    - field.field.block_content.category_overview.field_category_overview
+    - field.field.block_content.category_overview.field_category_overview_headline
+  module:
+    - sis_overview
+id: block_content.category_overview.default
+targetEntityType: block_content
+bundle: category_overview
+mode: default
+content:
+  field_category_overview:
+    type: category_overview_formatter
+    label: hidden
+    settings:
+      view_mode: teaser
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_category_overview_headline: true
+  langcode: true
+  search_api_excerpt: true

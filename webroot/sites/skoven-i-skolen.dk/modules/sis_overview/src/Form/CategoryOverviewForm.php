@@ -11,7 +11,7 @@ use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class OrganizationOverviewForm extends OverviewFilterForm {
+class CategoryOverviewForm extends OverviewFilterForm {
 
   static public function create(ContainerInterface $container) {
     return new static(
@@ -36,13 +36,7 @@ class OrganizationOverviewForm extends OverviewFilterForm {
       '#weight' => -100,
     ];
 
-        $form['search']['title'] = [
-          '#prefix' => '<h2>',
-          '#suffix' => '</h2>',
-          '#markup' => $this->t('Materials from @organization', [
-            '@organization' => $this->request->get('profile')->get('field_organization_address')->organization
-          ])
-        ];
+    $form['search']['title'] = $options['headline'];
 
     $form['search']['keyword'] = [
       '#type' => 'textfield',
@@ -66,6 +60,15 @@ class OrganizationOverviewForm extends OverviewFilterForm {
     return $form;
   }
 
+  protected function buildEntitiesInContent(array &$content, array $entities, array $options) {
+    $content['content'] = ['#markup' => atom_str('overview-no-results')];
+
+    if ($entities) {
+      parent::buildEntitiesInContent($content, $entities, $options);
+    }
+  }
+
+
   protected function getEntitiesForBuilding($entity_bundle, array $options, $page = 0) {
     return $this->getEntities($entity_bundle, $options, $page);
   }
@@ -74,8 +77,7 @@ class OrganizationOverviewForm extends OverviewFilterForm {
     $profile = $this->request->get('profile');
     $query = \Drupal::entityQuery('node')
       ->condition('type', 'article')
-      ->condition('status', NodeInterface::PUBLISHED)
-      ->condition('uid', $profile->get('uid')->target_id);
+      ->condition('status', NodeInterface::PUBLISHED);
 
     if ($keyword = $options['keyword']) {
       $query->condition('title', '%' . $keyword . '%', 'LIKE');
@@ -110,7 +112,6 @@ class OrganizationOverviewForm extends OverviewFilterForm {
    */
   protected function optionsFromFormState(FormStateInterface $form_state) {
     $entity_bundle = $form_state->get('entity_bundle');
-
     $options = [
       'entity_bundle' => $form_state->get('entity_bundle'),
       'fields' => $form_state->get('fields'),
@@ -121,7 +122,6 @@ class OrganizationOverviewForm extends OverviewFilterForm {
       'show_total' => $form_state->get('show_total') ?? $this->overviewManager->getShowTotal($entity_bundle),
       'page' => $form_state->getValue('page') ?? $form_state->get('page') ?? 0,
       'keyword' => $form_state->getValue('keyword') ?? $form_state->get('keyword') ?? NULL,
-      'title' => $form_state->getValue('title') ?? $form_state->get('title') ?? NULL,
     ];
 
     $this->request->query->set('page', $options['page']);
@@ -143,9 +143,6 @@ class OrganizationOverviewForm extends OverviewFilterForm {
     }
 
     return $options;
-  }
-
-  protected function buildEntitiesInContent(array &$content, array $entities, array $options) {
   }
 
 }

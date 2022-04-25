@@ -23,8 +23,11 @@ third_party_settings:
     allow_custom: true
   layout_builder_restrictions:
     allowed_block_categories:
+      - Block
+      - Bruger
       - 'Chaos Tools'
       - 'Content fields'
+      - Cookiebot
       - 'Custom block types'
       - Devel
       - Forms
@@ -34,7 +37,6 @@ third_party_settings:
       - Menus
       - Premium
       - System
-      - User
       - Webform
       - core
     entity_view_mode_restriction:
@@ -56,10 +58,12 @@ third_party_settings:
         Menus: {  }
         Premium: {  }
         System: {  }
-        User: {  }
         Webform: {  }
         core: {  }
       restricted_categories:
+        - Block
+        - Bruger
+        - Cookiebot
         - Devel
 _core:
   default_config_hash: 3gEG_f13mhXS_39_cFYNgEywgm3tCe7wzoDSIuoe18U

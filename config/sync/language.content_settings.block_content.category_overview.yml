@@ -1,0 +1,11 @@
+uuid: 7af6f41c-5868-4541-8216-dd337bc8f6d6
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.category_overview
+id: block_content.category_overview
+target_entity_type_id: block_content
+target_bundle: category_overview
+default_langcode: site_default
+language_alterable: false
