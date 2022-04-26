@@ -6,6 +6,18 @@ dependencies:
     - node.type.page
   module:
     - content_moderation
+    - workbench_email
+  enforced:
+    config:
+      0: workbench_email.workbench_email_template.article_submitted
+      2: workbench_email.workbench_email_template.article_approved
+third_party_settings:
+  workbench_email:
+    workbench_email_templates:
+      create_new_draft:
+        article_submitted: article_submitted
+      publish:
+        article_approved: article_approved
 _core:
   default_config_hash: S15d9uky9v-NcZ8f-mLyK9BwEd4XAbyd7YvqceCbgDM
 id: editorial
