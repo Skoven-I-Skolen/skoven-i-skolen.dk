@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_description
+    - field.field.node.page.field_graphics
     - field.field.node.page.field_header
     - field.field.node.page.field_hide_breadcrumb
     - field.field.node.page.field_hide_title
@@ -40,6 +41,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_graphics:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_meta_tags:
     type: metatag_empty_formatter

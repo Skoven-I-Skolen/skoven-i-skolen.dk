@@ -6,4 +6,3 @@ services:
   sis_articles.content_delivery_service:
     class: 'Drupal\sis_articles\Services\ArticleContentDeliveryService'
     arguments: ['@sis_articles.article_repository','@sis_articles.season_service']
-

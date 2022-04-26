@@ -6,6 +6,7 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Http\RequestStack;
 use Drupal\Core\Pager\PagerManager;
 use Drupal\sis_overview\Repository\TermRepository;
@@ -32,15 +33,17 @@ class TermOverviewController extends ControllerBase {
    */
   private PagerManager $pagerManager;
 
-  public function __construct(TermContentDeliveryService $termContentDelivery, TermRepository $termRepository, RequestStack $requestStack, PagerManager $pagerManager) {
+  public function __construct(EntityTypeManager $entityTypeManager, TermContentDeliveryService $termContentDelivery, TermRepository $termRepository, RequestStack $requestStack, PagerManager $pagerManager) {
     $this->termContentDelivery = $termContentDelivery;
     $this->request = $requestStack->getCurrentRequest();
     $this->termRepository = $termRepository;
     $this->pagerManager = $pagerManager;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   public static function create(ContainerInterface $container) {
     return new static(
+      $container->get('entity_type.manager'),
       $container->get('sis_overview.content_delivery'),
       $container->get('sis_overview.term_repository'),
       $container->get('request_stack'),
@@ -59,12 +62,18 @@ class TermOverviewController extends ControllerBase {
    */
   public function view(Term $taxonomy_term): array {
 
-//    if ($taxonomy_term->bundle() === 'article_types') {
-//      return $taxonomy_term->get('field_overview')->view([
-//        'label' => 'hidden',
-//        'type' => 'taxonomy_overview_formatter'
-//      ]);
-//    }
+    $fields = \Drupal::service('entity_field.manager')
+      ->getFieldDefinitions('taxonomy_term', $taxonomy_term->bundle());
+
+    /** @var \Drupal\field\Entity\FieldConfig $field */
+    foreach ($fields as $field) {
+      if ($field->getType() == 'article_filter') {
+        return $taxonomy_term->get($field->getName())->view([
+          'label' => 'hidden',
+          'type' => 'category_overview_formatter',
+        ]);
+      }
+    }
 
     $this->pagerManager
       ->createPager($this->termRepository->getNumberOfItemsWithTaxonomyTerm($taxonomy_term->id()), $this->getLimit())
@@ -86,6 +95,7 @@ class TermOverviewController extends ControllerBase {
    *
    * @param \Drupal\taxonomy\Entity\Term $taxonomy_term
    *   The taxonomy term.
+   *
    * @return AjaxResponse
    *   AjaxResponse
    */
@@ -94,7 +104,7 @@ class TermOverviewController extends ControllerBase {
 
     $ajaxResponse = new AjaxResponse();
     $ajaxResponse->addCommand(new HtmlCommand('#term_content', $build['content']))
-      ->addCommand(new ReplaceCommand('.pager',$build['pager']));
+      ->addCommand(new ReplaceCommand('.pager', $build['pager']));
     return $ajaxResponse;
   }
 

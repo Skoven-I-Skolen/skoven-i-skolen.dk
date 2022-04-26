@@ -43,7 +43,7 @@ class LexiconController extends ControllerBase {
     if(!$content = $this->lexiconContentDelivery->getArticles($this->getLetter(), $this->getLimit(), $this->getPage())) {
       $content = [
         '#theme' => 'lexicon',
-        '#articles' => $this->t('No results found')
+        '#articles' => atom_str('lexicon-no-result')
       ];
     }
 

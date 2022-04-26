@@ -36,7 +36,9 @@ class CategoryOverviewForm extends OverviewFilterForm {
       '#weight' => -100,
     ];
 
-    $form['search']['title'] = $options['headline'];
+    if ($options['headline']) {
+      $form['search']['title'] = $options['headline'];
+    }
 
     $form['search']['keyword'] = [
       '#type' => 'textfield',

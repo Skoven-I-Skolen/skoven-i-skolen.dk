@@ -1,16 +1,17 @@
-uuid: 2a2884df-0481-4a1e-be8c-d21f7a44f0e7
+uuid: 73265b12-9b20-4f51-8ee5-bd00b8b6ce1c
 langcode: da
 status: true
 dependencies:
   module:
-    - address
     - node
-id: node.field_business_card_address
-field_name: field_business_card_address
+    - taxonomy
+id: node.field_time
+field_name: field_time
 entity_type: node
-type: address
-settings: {  }
-module: address
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 1
 translatable: true

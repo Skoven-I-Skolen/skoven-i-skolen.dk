@@ -1,0 +1,7 @@
+sis_articles.add_content:
+  title: 'Add content'
+  description: 'Manage example settings for your site'
+  route_name: node.add
+  weight: -100
+  route_parameters: { node_type: 'article' }
+  menu_name: 'meta-menu'

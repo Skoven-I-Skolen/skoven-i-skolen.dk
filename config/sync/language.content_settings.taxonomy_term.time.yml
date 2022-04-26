@@ -1,0 +1,11 @@
+uuid: 7c20c73c-242e-4378-b65a-725a027f3254
+langcode: da
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.time
+id: taxonomy_term.time
+target_entity_type_id: taxonomy_term
+target_bundle: time
+default_langcode: site_default
+language_alterable: false

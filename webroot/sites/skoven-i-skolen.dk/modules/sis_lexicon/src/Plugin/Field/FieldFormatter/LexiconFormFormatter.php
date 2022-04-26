@@ -24,9 +24,6 @@ class LexiconFormFormatter extends OverviewFormFormatter {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
 
-    dump($items);
-
-
     foreach ($items as $delta => $item) {
       $options = $item->getValue();
       $options['entity_bundle'] = $items->getSetting('entity_bundle');

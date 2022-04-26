@@ -1,0 +1,21 @@
+uuid: 87eec9f3-f51c-439b-9cac-9adfa4cd53c7
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.article
+id: article_approved
+label: 'Artikel godkendt'
+subject: 'En test'
+recipient_types:
+  author:
+    id: author
+    provider: workbench_email
+    status: true
+    settings: {  }
+bundles:
+  'node:article': 'node:article'
+body:
+  value: 'Dette er en test'
+  format: plain_text
+replyTo: ''

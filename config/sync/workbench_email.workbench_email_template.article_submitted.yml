@@ -1,0 +1,19 @@
+uuid: d1094839-14f0-49b9-8e2f-cd0f19d665f6
+langcode: da
+status: true
+dependencies: {  }
+id: article_submitted
+label: 'Artikel indsendt'
+subject: 'Ny artikel: [node:title] '
+recipient_types:
+  fixed_email:
+    id: fixed_email
+    provider: workbench_email
+    status: true
+    settings:
+      recipients: pve@novicell.dk
+bundles: {  }
+body:
+  value: 'Læs artiklen [node:url]'
+  format: plain_text
+replyTo: ''

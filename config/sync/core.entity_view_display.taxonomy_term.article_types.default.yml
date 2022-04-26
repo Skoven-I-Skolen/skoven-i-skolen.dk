@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.article_types.field_link_liste_headline
     - field.field.taxonomy_term.article_types.field_overview
+    - field.field.taxonomy_term.article_types.field_overview_headline
     - taxonomy.vocabulary.article_types
   module:
     - layout_builder
@@ -43,6 +44,14 @@ content:
       view_mode: teaser
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_overview_headline:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   langcode: true

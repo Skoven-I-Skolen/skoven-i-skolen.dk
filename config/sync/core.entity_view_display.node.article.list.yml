@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.article.field_season
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
+    - field.field.node.article.field_time
     - field.field.node.article.layout_builder__layout
     - node.type.article
   module:
@@ -48,6 +49,11 @@ targetEntityType: node
 bundle: article
 mode: list
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_class:
     type: entity_reference_label
     label: hidden
@@ -98,6 +104,7 @@ hidden:
   field_media_downloads: true
   field_season: true
   field_teaching_goals: true
+  field_time: true
   langcode: true
   layout_builder__layout: true
   links: true

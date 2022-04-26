@@ -4,6 +4,7 @@ namespace Drupal\sis_overview\Form;
 
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\entity_overview\Form\OverviewFilterForm;
 use Drupal\entity_overview\OverviewManager;
 use Drupal\node\Entity\Node;
@@ -31,18 +32,19 @@ class OrganizationOverviewForm extends OverviewFilterForm {
       '#type' => 'container',
       '#attributes' => [
         'class' => ['overview__search'],
-        'placeholder' => $this->t('Search within business card')
+        'placeholder' => $this->t('Search within business card'),
       ],
       '#weight' => -100,
     ];
 
-        $form['search']['title'] = [
-          '#prefix' => '<h2>',
-          '#suffix' => '</h2>',
-          '#markup' => $this->t('Materials from @organization', [
-            '@organization' => $this->request->get('profile')->get('field_organization_address')->organization
-          ])
-        ];
+    $form['search']['title'] = [
+      '#prefix' => '<h2>',
+      '#suffix' => '</h2>',
+      '#markup' => $this->t('Materials from @organization', [
+        '@organization' => $this->request->get('profile')
+          ->get('field_organization_address')->organization,
+      ]),
+    ];
 
     $form['search']['keyword'] = [
       '#type' => 'textfield',
@@ -72,10 +74,11 @@ class OrganizationOverviewForm extends OverviewFilterForm {
 
   private function getEntities($entity_bundle, array $options, $page = 0) {
     $profile = $this->request->get('profile');
+    $target_id = $profile->get('uid')->target_id;
     $query = \Drupal::entityQuery('node')
       ->condition('type', 'article')
       ->condition('status', NodeInterface::PUBLISHED)
-      ->condition('uid', $profile->get('uid')->target_id);
+      ->condition('uid',  $target_id);
 
     if ($keyword = $options['keyword']) {
       $query->condition('title', '%' . $keyword . '%', 'LIKE');
@@ -94,11 +97,10 @@ class OrganizationOverviewForm extends OverviewFilterForm {
     // Set pagination
     if ($options['pagination']) {
       $this->request->query->set('page', $page);
-      $query->pager($options['count']);
+      $query->pager($options['count'] - 1);
     }
 
     $query->sort('title');
-
     $result = $query->execute();
     return Node::loadMultiple($result);
   }
@@ -146,6 +148,17 @@ class OrganizationOverviewForm extends OverviewFilterForm {
   }
 
   protected function buildEntitiesInContent(array &$content, array $entities, array $options) {
+    parent::buildEntitiesInContent($content, $entities, $options);
+    $profile = $this->request->get('profile');
+    array_unshift($content['content'], [
+      '#theme' => 'overview_list_item',
+      '#headline' => 'Se stedsbestemte materialer fra ' . $profile->get('field_organization_address')->organization,
+      '#link' => [
+        'uri' => Url::fromUserInput('/'),
+        'title' => 'Go to map'
+      ]
+    ]);
   }
+
 
 }

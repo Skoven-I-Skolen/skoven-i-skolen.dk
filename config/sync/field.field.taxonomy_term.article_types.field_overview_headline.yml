@@ -1,0 +1,19 @@
+uuid: 0227337b-56b4-490f-b41b-d85adf48bc3f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_overview_headline
+    - taxonomy.vocabulary.article_types
+id: taxonomy_term.article_types.field_overview_headline
+field_name: field_overview_headline
+entity_type: taxonomy_term
+bundle: article_types
+label: 'Overbliks overskrift'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

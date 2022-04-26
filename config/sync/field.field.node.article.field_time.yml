@@ -1,0 +1,29 @@
+uuid: 871d4e2c-e448-4995-8023-4c4267e6a49d
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time
+    - node.type.article
+    - taxonomy.vocabulary.time
+id: node.article.field_time
+field_name: field_time
+entity_type: node
+bundle: article
+label: Tid
+description: 'Hvor lang tid aktivitet tager'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      time: time
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

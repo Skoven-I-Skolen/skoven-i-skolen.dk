@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
     - field.field.node.page.field_description
+    - field.field.node.page.field_graphics
     - field.field.node.page.field_header
     - field.field.node.page.field_hide_breadcrumb
     - field.field.node.page.field_hide_title
@@ -29,6 +30,7 @@ hidden:
   body: true
   content_moderation_control: true
   field_description: true
+  field_graphics: true
   field_header: true
   field_hide_breadcrumb: true
   field_hide_title: true

@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: organization
-label: Organisation
+label: 'Grøn organisation'
 display_label: ''
 multiple: false
 registration: false

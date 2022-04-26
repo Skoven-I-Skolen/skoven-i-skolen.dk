@@ -1,9 +1,21 @@
 uuid: f3fff4ce-2a20-459c-98a2-5dc76f6d0623
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.almanac
+    - node.type.article
+  module:
+    - node
+    - profile
 id: organization
 label: Organisation
 weight: 6
 is_admin: null
-permissions: {  }
+permissions:
+  - 'create article content'
+  - 'create organization profile'
+  - 'delete own almanac content'
+  - 'edit own article content'
+  - 'update own organization profile'
+  - 'view own unpublished content'

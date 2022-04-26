@@ -23,10 +23,10 @@ dependencies:
     - field.field.node.article.field_season
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
+    - field.field.node.article.field_time
     - field.field.node.article.layout_builder__layout
     - node.type.article
   module:
-    - content_moderation
     - datetime
     - field_group
     - media_library
@@ -94,6 +94,7 @@ third_party_settings:
         - field_class
         - field_location
         - field_season
+        - field_time
       label: Kategorisering
       region: content
       parent_name: group_article_metadata
@@ -360,18 +361,22 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_time:
+    type: entity_reference_autocomplete_tags
+    weight: 34
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 0
     region: content
     settings:
       include_locked: true
-    third_party_settings: {  }
-  moderation_state:
-    type: moderation_state_default
-    weight: 15
-    region: content
-    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -431,3 +436,4 @@ content:
 hidden:
   body: true
   layout_builder__layout: true
+  moderation_state: true

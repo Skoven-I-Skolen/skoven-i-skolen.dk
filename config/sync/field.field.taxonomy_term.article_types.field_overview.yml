@@ -30,7 +30,11 @@ default_value:
     count: 16
     sort: newest
     pagination: false
-    facets: {  }
+    facets:
+      - field_class
+      - field_location
+      - field_season
+      - field_subject
 default_value_callback: ''
 settings: {  }
 field_type: article_filter

@@ -7,6 +7,7 @@ dependencies:
   module:
     - filter
     - media
+    - profile
     - search_api_page
     - shortcut
     - system
@@ -25,5 +26,6 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view any organization profile'
   - 'view media'
   - 'view search api pages'

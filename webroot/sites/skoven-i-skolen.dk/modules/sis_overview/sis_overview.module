@@ -19,6 +19,9 @@ function sis_overview_theme() {
   return [
     'term_overview' => [
       'variables' => ['term' => NULL, 'entities' => []]
-    ]
+    ],
+    'overview_list_item' => [
+      'variables' => ['headline' => NULL, 'link' => []]
+    ],
   ];
 }

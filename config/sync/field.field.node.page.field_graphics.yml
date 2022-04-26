@@ -1,0 +1,29 @@
+uuid: 06483dc1-1666-404f-a86c-7393f8f89374
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_graphics
+    - media.type.icon
+    - node.type.page
+id: node.page.field_graphics
+field_name: field_graphics
+entity_type: node
+bundle: page
+label: 'Top grafik'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      icon: icon
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

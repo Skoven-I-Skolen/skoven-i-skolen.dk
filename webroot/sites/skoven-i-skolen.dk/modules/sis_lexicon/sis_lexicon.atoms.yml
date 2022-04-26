@@ -27,3 +27,12 @@ atoms:
     group: Leksikon
     default:
       da: 'Find andre artikler i leksikonet'
+
+  lexicon-no-result:
+    type: textfield
+    title: No result text
+    description: Text to show if no result ins found.
+    category: Page layout
+    group: Leksikon
+    default:
+      da: 'Ingen resultater fundet'
