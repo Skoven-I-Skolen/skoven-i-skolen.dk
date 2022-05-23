@@ -22,17 +22,36 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
+{% set classes = [
   'profile',
   'profile--' ~ profile.id,
   'profile--type--' ~ profile.bundle|clean_class,
   profile.isDefault() ? 'profile--is-default',
   view_mode ? 'profile--view-mode--' ~ view_mode|clean_class,
   'clearfix',
-]
-%}
+  'container'
+] %}
 <div{{ attributes.addClass(classes) }}>
-  {{ title_suffix.contextual_links }}
-  {{ content }}
+  <div class="row">
+    <div class="col-md-8 col-xs-12">
+      <h1>{{ profile.field_organization_address.organization }}</h1>
+      {{ title_suffix.contextual_links }}
+      <div class="profile--description">
+        {{ content.field_organization_description }}
+      </div>
+    </div>
+    <div class="col-md-4 col-xs-12">
+      <div class="profile--logo">
+        {{ content.field_organization_logo }}
+      </div>
+      <div class="profile--address">
+        {{ content.field_organization_address }}
+      </div>
+    </div>
+    <div class="col-xs-12">
+    </div>
+  </div>
+</div>
+<div class="profile--overview">
+  {{ content.field_organization_overview }}
 </div>

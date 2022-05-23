@@ -3,3 +3,14 @@
 require_once 'layout_block.preprocess.inc';
 require_once 'paragraph.preprocess.inc';
 require_once 'node.preprocess.inc';
+require_once 'input.preprocess.inc';
+
+
+/**
+ * @param $suggestions
+ * @param array $variables
+ */
+function sis_theme_suggestions_fieldset_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+  $suggestions[] = 'fieldset__' . $element['#type'] . '__' . reset($element['#array_parents']);
+}

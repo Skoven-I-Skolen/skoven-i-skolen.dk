@@ -17,18 +17,38 @@
     display: inline-block;
     font-size: var(--base-font-size-small);
     text-align: center;
+    border: 1px solid var(--color-purple);
 
     &:not(:last-child) {
-      margin-right: 10px;
+      margin-right: 4px;
     }
 
     &.is-active {
-      font-weight: bold;
-    }
-  }
+      background-color: var(--color-purple);
 
-  a {
-    color: var(--color-white);
-    text-decoration: none;
+      a {
+        color: var(--color-white);
+      }
+    }
+
+    a {
+      display: block;
+      padding: 5px 11px;
+      text-decoration: none;
+    }
+
+    &--ellipsis {
+      padding: 5px 11px;
+    }
+
+    &--previous,
+    &--next {
+      border: none;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
   }
 }

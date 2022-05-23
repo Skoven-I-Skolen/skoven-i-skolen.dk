@@ -1,4 +1,6 @@
-<div class="inspiration-overview__item">
-  <div class="inspiration-overview__title">{{  headline }}</div>
-  {{ link(link.title, link.uri, { 'class':['button']} ) }}
+<div{{ attributes.addClass(['inspiration-overview__item']) }}>
+  <div class="inspiration-overview__item-inner">
+    <div class="inspiration-overview__item-title">{{  headline }}</div>
+    {{ link(link.title, link.uri, { 'class':['button', 'button--ghost']} ) }}
+  </div>
 </div>

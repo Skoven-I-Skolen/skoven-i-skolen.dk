@@ -1,0 +1,9 @@
+.organization-page {
+  &__title {
+    width: 100%;
+  }
+
+  &__description {
+    max-width: 58.3333%;
+  }
+}

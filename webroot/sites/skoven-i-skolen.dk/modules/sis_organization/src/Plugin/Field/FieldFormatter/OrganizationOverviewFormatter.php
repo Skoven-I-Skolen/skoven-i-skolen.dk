@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sis_overview\Plugin\Field\FieldFormatter;
+namespace Drupal\sis_organization\Plugin\Field\FieldFormatter;
 
 
 use Drupal\Core\Field\FieldItemListInterface;
@@ -31,7 +31,7 @@ class OrganizationOverviewFormatter extends OverviewFormFormatter {
       $options['entity_bundle'] = $items->getSetting('entity_bundle');
       $options['view_mode'] = 'list'; //$this->getSetting('view_mode');
       $elements[$delta] = \Drupal::formBuilder()
-        ->getForm('Drupal\sis_overview\Form\OrganizationOverviewForm', $options);
+        ->getForm('Drupal\sis_organization\Form\OrganizationOverviewForm', $options);
     }
 
     return $elements;

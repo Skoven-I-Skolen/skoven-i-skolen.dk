@@ -1,0 +1,11 @@
+name: SIS Organization
+description: Helper module for organizations
+package: Skoven i Skolen
+type: module
+core_version_requirement: ^8 || ^9
+
+interface translation project: sis_organization
+interface translation server pattern: modules/contrib/sis_organization/translations/%language.po
+
+dependencies:
+  - profile

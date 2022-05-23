@@ -14,14 +14,14 @@
 
 <form{{ attributes.addClass('overview-form') }}>
   <div class="container">
-    {#  {{ children }}#}
-    <div class="row">
-      <div class="col-xs-12 col-md-7">
+    {#  {{ children }} #}
+    <div class="row overview-form__header">
+      <div class="col-xs-12 col-md-8">
         <div class="overview-form__search-title">
           {{ element['search'].title }}
         </div>
       </div>
-      <div class="col-xs-12 col-md-5">
+      <div class="col-xs-12 col-md-4">
         <div class="overview-form__search-input">
           {{ element['search'].keyword }}
           {{ element['search'].search }}
@@ -31,10 +31,14 @@
     <div class="row">
       <div class="col-xs-12 col-md-3">
         <div class="overview-form__search-filters">
-          {{ element['facets'].field_class }}
-          {{ element['facets'].field_location }}
-          {{ element['facets'].field_season }}
-          {{ element['facets'].field_subject }}
+          <div class="accordion js-accordion">
+            <div class="accordion__items">
+              {{ element['facets'].field_class }}
+              {{ element['facets'].field_location }}
+              {{ element['facets'].field_season }}
+              {{ element['facets'].field_subject }}
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-xs-12 col-md-9">

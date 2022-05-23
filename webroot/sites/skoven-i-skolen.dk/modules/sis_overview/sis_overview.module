@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Template\Attribute;
+
 module_load_include('inc', 'sis_overview', 'preprocess');
 
 /**
@@ -24,4 +26,20 @@ function sis_overview_theme() {
       'variables' => ['headline' => NULL, 'link' => []]
     ],
   ];
+}
+
+/**
+ * @param $suggestions
+ * @param array $variables
+ */
+function sis_overview_theme_suggestions_input_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+
+  if (isset($element['#attributes']['data-twig-suggestion'])) {
+    $suggestions[] = 'input__' . $element['#type'] . '__' . $element['#attributes']['data-twig-suggestion'];
+  }
+}
+
+function sis_overview_preprocess_overview_list_item(&$variables) {
+  $variables['attributes'] = new Attribute();
 }

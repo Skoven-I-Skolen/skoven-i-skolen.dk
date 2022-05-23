@@ -1,0 +1,21 @@
+services:
+  sis_organization.breadcrumb:
+    class: Drupal\sis_organization\Breadcrumb\BreadcrumbBuilder
+    arguments: ['@router.admin_context', '@request_stack']
+    tags:
+      - { name: breadcrumb_builder, priority: 1004 }
+  sis_organization.page_breadcrumb:
+    class: Drupal\sis_organization\Breadcrumb\OrganizationPageBreadcrumbBuilder
+    arguments: [ '@router.admin_context', '@request_stack' ]
+    tags:
+      - { name: breadcrumb_builder, priority: 1004 }
+  sis_organization.organization_repository:
+    class: Drupal\sis_organization\Repository\OrganizationRepository
+    arguments:
+      - '@entity_type.manager'
+      - '@database'
+  sis_organization.content_delivery:
+    class: Drupal\sis_organization\Services\OrganizationContentDeliveryService
+    arguments:
+      - '@sis_organization.organization_repository'
+      - '@entity_type.manager'

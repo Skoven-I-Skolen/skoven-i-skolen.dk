@@ -1,16 +1,13 @@
 <?php
 
-namespace Drupal\sis_overview\Form;
+namespace Drupal\sis_organization\Form;
 
-use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\entity_overview\Form\OverviewFilterForm;
-use Drupal\entity_overview\OverviewManager;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 class OrganizationOverviewForm extends OverviewFilterForm {
 
@@ -47,14 +44,21 @@ class OrganizationOverviewForm extends OverviewFilterForm {
     ];
 
     $form['search']['keyword'] = [
-      '#type' => 'textfield',
+      '#type' => 'search',
       '#maxlength' => 64,
       '#size' => 64,
+      '#theme_wrappers' => [],
+      '#attributes' => [
+        'class' => []
+      ],
     ];
 
     $form['search']['search'] = [
       '#type' => 'button',
       '#value' => $this->t('Search'),
+      '#attributes' => [
+        'data-twig-suggestion' => 'search_button',
+      ],
       '#ajax' => [
         'callback' => '::contentCallback',
         'event' => 'click',
@@ -64,6 +68,8 @@ class OrganizationOverviewForm extends OverviewFilterForm {
         ],
       ],
     ];
+
+    $form['content']['pager']['#quantity'] = 5;
 
     return $form;
   }
@@ -153,6 +159,9 @@ class OrganizationOverviewForm extends OverviewFilterForm {
     array_unshift($content['content'], [
       '#theme' => 'overview_list_item',
       '#headline' => 'Se stedsbestemte materialer fra ' . $profile->get('field_organization_address')->organization,
+      '#attributes' => [
+        'class' => ['inspiration-overview__item--maplink']
+      ],
       '#link' => [
         'uri' => Url::fromUserInput('/'),
         'title' => 'Go to map'

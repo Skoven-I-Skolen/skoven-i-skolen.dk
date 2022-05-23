@@ -184,6 +184,12 @@ search-toggle:
   js:
     dist/components/js/search-toggle.js: {}
 
+overview-searchfield:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/overview-searchfield.css: {}
+
 related-articles:
   version: VERSION
   css:
@@ -287,6 +293,12 @@ inspiration-overview:
     theme:
       dist/components/css/components/03-organisms/inspiration-overview.css: {}
 
+organization-overview:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/organization-overview.css: {}
+
 local-tasks:
   version: VERSION
   css:
@@ -304,6 +316,9 @@ overview-form:
   css:
     theme:
       dist/components/css/components/03-organisms/overview-form.css: {}
+  dependencies:
+    - sis/accordion
+    - sis/pager-full
 
 search-page:
   version: VERSION
@@ -322,3 +337,17 @@ maintenance-page:
   css:
     theme:
       dist/components/css/components/03-organisms/maintenance-page.css: {}
+
+pager-full:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/pager-full.css: {}
+
+organization-page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/organization-page.css: {}
+  dependencies:
+    - sis/related-articles

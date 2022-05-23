@@ -1,0 +1,14 @@
+sis_organization.overview:
+  path: organisationer
+  defaults:
+    _controller: 'Drupal\sis_organization\Controller\OrganizationController:overview'
+    _title_callback: 'Drupal\sis_organization\Controller\OrganizationController:title'
+  requirements:
+    _access: 'TRUE'
+
+sis_organization.get:
+  path: sis/organization/get
+  defaults:
+    _controller: 'Drupal\sis_organization\Controller\OrganizationController:get'
+  requirements:
+    _access: 'TRUE'

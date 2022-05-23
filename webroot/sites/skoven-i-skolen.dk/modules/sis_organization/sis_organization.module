@@ -1,0 +1,36 @@
+<?php
+
+module_load_include('inc', 'sis_organization', 'form.alter');
+
+
+/**
+ * Implements hook_locale_translation_projects_alter().
+ *
+ * @param $projects
+ *   List of all projects
+ */
+function sis_organization_locale_translation_projects_alter(&$projects) {
+  $module_handler = \Drupal::service('module_handler');
+  $path = $module_handler->getModule('sis_organization')->getPath();
+  $projects['sis_organization']['info']['interface translation server pattern'] = $path . '/translations/%language.po';
+}
+
+function sis_organization_theme() {
+  return [
+    'page__organizations' => [
+      'render element' => 'elements',
+    ],
+    'organization_overview' => [
+      'variables' => ['term' => NULL, 'entities' => []]
+    ],
+    'organization_content_slideshow' => [
+      'render element' => 'elements',
+    ]
+  ];
+}
+
+function sis_organization_preprocess_page__organizations(&$variables) {
+  /** @var \Drupal\sis_organization\Services\OrganizationContentDeliveryService $contentDelivery */
+  $contentDelivery = \Drupal::service('sis_organization.content_delivery');
+  $variables['page']['content_slideshow'] = $contentDelivery->getRandomArticlesFromOrganization();
+}

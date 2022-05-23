@@ -1,0 +1,35 @@
+{{ attach_library('sis/organization-page') }}
+
+<div class="container">
+  {% include '@reusable-component/page-title.twig' with {
+    'attributes': create_attribute().addClass('organization-page__title'),
+    'title': page.title,
+  } %}
+  <div class="organization-page__description">
+    {{ page.description }}
+  </div>
+  {{ page.content }}
+  <div class="article-page__related section section--spacing-bottom-none">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-md-8">
+        <div class="article-page__related-header">
+          <h3>{{ atom_str('organization-page-related-headline') }}</h3>
+          <p>{{ atom_str('organization-page-related-description') }}</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <div class="swiper-navigation">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="article-page__related-items js-article-page__related-items swiper">
+          <div class="swiper-wrapper">
+            {{ page.content_slideshow }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

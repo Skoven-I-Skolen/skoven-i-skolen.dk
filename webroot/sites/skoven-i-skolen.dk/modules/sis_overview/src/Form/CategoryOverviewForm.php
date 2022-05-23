@@ -41,14 +41,21 @@ class CategoryOverviewForm extends OverviewFilterForm {
     }
 
     $form['search']['keyword'] = [
-      '#type' => 'textfield',
+      '#type' => 'search',
       '#maxlength' => 64,
       '#size' => 64,
+      '#theme_wrappers' => [],
+      '#attributes' => [
+        'class' => []
+      ],
     ];
 
     $form['search']['search'] = [
       '#type' => 'button',
       '#value' => $this->t('Search'),
+      '#attributes' => [
+        'data-twig-suggestion' => 'search_button',
+      ],
       '#ajax' => [
         'callback' => '::contentCallback',
         'event' => 'click',

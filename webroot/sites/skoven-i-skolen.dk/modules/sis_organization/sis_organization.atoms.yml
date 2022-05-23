@@ -1,0 +1,41 @@
+atoms:
+  organization-overview-headline:
+    type: textfield
+    title: Headline
+    description: The headline of the organizations overview page.
+    category: Page layout
+    group: Organizations
+    subgroup: Overview page
+    default:
+      da: ''
+  organization-overview-text:
+    type: text_format
+    title: Text
+    description: The descriptive text for the organization overview page.
+    category: Page layout
+    group: Organizations
+    subgroup: Overview page
+    options:
+      format: full_html
+    default:
+      da: '<p></p>'
+  organization-page-related-headline:
+    type: textfield
+    title: Headline
+    description: The headline of the organizations overview page related articles.
+    category: Page layout
+    group: Organizations
+    subgroup: Overview page related
+    default:
+      da: ''
+  organization-page-related-description:
+    type: text_format
+    title: Text
+    description: The descriptive text for the organizations overview page related articles.
+    category: Page layout
+    group: Organizations
+    subgroup: Overview page related
+    options:
+      format: full_html
+    default:
+      da: '<p></p>'
