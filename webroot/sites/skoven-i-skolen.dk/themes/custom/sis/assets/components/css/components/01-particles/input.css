@@ -3,7 +3,8 @@
  * Input.
  */
 
-.input {
+.input,
+.ui-autocomplete-input {
   display: block;
   width: 100%;
   height: 40px;

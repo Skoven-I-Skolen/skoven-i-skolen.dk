@@ -1,0 +1,5 @@
+.node-edit-form {
+  &__title {
+    padding: 50px 0;
+  }
+}

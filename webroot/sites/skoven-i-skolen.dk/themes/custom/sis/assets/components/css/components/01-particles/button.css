@@ -5,7 +5,7 @@
 
 /* stylelint-disable selector-class-pattern */
 .styles--preview--button,
-.button,
+.button:not(.js-hide),
 a.button {
   position: relative;
   display: inline-flex;
@@ -45,6 +45,11 @@ a.button {
   &--right {
     left: 100%;
     transform: translateX(-100%);
+  }
+
+  &--small {
+    min-height: 45px;
+    padding: 0 20px;
   }
 }
 /* stylelint-enable selector-class-pattern */

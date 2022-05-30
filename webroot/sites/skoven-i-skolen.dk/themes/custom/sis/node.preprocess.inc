@@ -43,6 +43,11 @@ function sis_preprocess_page(&$variables) {
       unset($variables['page']['pageheader']);
     }
 
+    if (substr('/node/add/article', 0,9) === '/node/add') {
+      $variables['page']['pageheader']['#attributes']['class'][] = 'node-edit-form__title';
+      unset($variables['page']['breadcrumb']);
+    }
+
     /** @var \Drupal\taxonomy\Entity\Term $term */
     if ($term = $request->get('taxonomy_term')) {
       if ($term->get('vid')->target_id === 'article_types') {

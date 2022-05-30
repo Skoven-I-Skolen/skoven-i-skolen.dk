@@ -6,6 +6,7 @@
 .premium-layout-wrapper {
   @nestedimport "./assets/components/css/components/01-particles/button.css";
   @nestedimport "./assets/components/css/components/01-particles/checkbox.css";
+  @nestedimport "./assets/components/css/components/01-particles/fieldset.css";
   @nestedimport "./assets/components/css/components/01-particles/input.css";
   @nestedimport "./assets/components/css/components/01-particles/label.css";
   @nestedimport "./assets/components/css/components/01-particles/radio.css";
@@ -18,6 +19,10 @@
     & .description {
       margin-top: 5px;
       opacity: .5;
+    }
+
+    .filter-wrapper {
+      margin-top: -15px;
     }
   }
 

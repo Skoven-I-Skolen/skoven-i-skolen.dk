@@ -260,6 +260,12 @@ burger-menu:
   js:
     dist/components/js/burger-menu.js: {}
 
+edit-form:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/edit-form.css: {}
+
 header:
   version: VERSION
   css:
