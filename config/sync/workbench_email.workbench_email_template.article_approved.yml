@@ -1,9 +1,7 @@
 uuid: 87eec9f3-f51c-439b-9cac-9adfa4cd53c7
 langcode: da
 status: true
-dependencies:
-  config:
-    - node.type.article
+dependencies: {  }
 id: article_approved
 label: 'Artikel godkendt'
 subject: 'En test'
@@ -13,9 +11,8 @@ recipient_types:
     provider: workbench_email
     status: true
     settings: {  }
-bundles:
-  'node:article': 'node:article'
+bundles: {  }
 body:
-  value: 'Dette er en test'
+  value: "Din artikel er blevet godkendt.\r\n\r\nSe den her [node:url]"
   format: plain_text
 replyTo: ''

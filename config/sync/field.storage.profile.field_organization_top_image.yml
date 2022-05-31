@@ -1,0 +1,21 @@
+uuid: e119b864-4259-4cc8-9505-f6bab785b8ad
+langcode: da
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+    - profile
+id: profile.field_organization_top_image
+field_name: field_organization_top_image
+entity_type: profile
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

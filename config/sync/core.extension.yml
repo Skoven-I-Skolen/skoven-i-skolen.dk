@@ -66,6 +66,7 @@ module:
   link: 0
   linkit: 0
   locale: 0
+  mailsystem: 0
   media: 0
   media_icons: 0
   media_library: 0
@@ -102,9 +103,11 @@ module:
   sis_almanac: 0
   sis_articles: 0
   sis_lexicon: 0
+  sis_organization: 0
   sis_overview: 0
   status_feed: 0
   styles: 0
+  swiftmailer: 0
   system: 0
   taxonomy: 0
   taxonomy_machine_name: 0

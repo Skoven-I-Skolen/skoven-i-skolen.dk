@@ -6,7 +6,7 @@ id: organization
 label: 'Grøn organisation'
 display_label: ''
 multiple: false
-registration: false
+registration: true
 roles:
   organization: organization
 allow_revisions: false

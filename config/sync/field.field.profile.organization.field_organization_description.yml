@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - limited_html_link
+      - basic_html
 id: profile.organization.field_organization_description
 field_name: field_organization_description
 entity_type: profile

@@ -1,0 +1,10 @@
+uuid: ecc1c8f8-1cd8-4901-ac55-0296b6e8fe45
+langcode: da
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.list
+label: Liste
+targetEntityType: profile
+cache: true

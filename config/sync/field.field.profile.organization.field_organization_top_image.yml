@@ -1,0 +1,46 @@
+uuid: a1ef3062-7766-41c3-89af-e1725d3aa412
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_organization_top_image
+    - paragraphs.paragraphs_type.top_image
+    - profile.type.organization
+  module:
+    - entity_reference_revisions
+id: profile.organization.field_organization_top_image
+field_name: field_organization_top_image
+entity_type: profile
+bundle: organization
+label: 'Top billede'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      top_image: top_image
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 7
+        enabled: false
+      basic_hero:
+        weight: 8
+        enabled: false
+      factbox_item:
+        weight: 9
+        enabled: false
+      inline_hero:
+        weight: 10
+        enabled: false
+      overview_element:
+        weight: 11
+        enabled: false
+      top_image:
+        weight: 12
+        enabled: true
+field_type: entity_reference_revisions
