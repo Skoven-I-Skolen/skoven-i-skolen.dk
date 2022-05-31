@@ -39,6 +39,14 @@ class LexiconOverviewForm extends OverviewFilterForm {
     );
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getFormId() {
+    return 'entity_overview_filter_lexicon_form';
+  }
+
+
   public function buildForm(array $form, FormStateInterface $form_state, $options = []) {
     $form = parent::buildForm($form, $form_state, $options);
 
@@ -72,28 +80,28 @@ class LexiconOverviewForm extends OverviewFilterForm {
     ];
 
     $form['content']['filters']['search']['keyword'] = [
-      '#type' => 'textfield',
+      '#type' => 'search',
       '#maxlength' => 64,
       '#size' => 64,
-      // Attach AJAX callback.
-      '#ajax' => [
-        'callback' => '::performSearch',
-        // Set focus to the textfield after hitting enter.
-        'disable-refocus' => FALSE,
-        // Trigger when user hits enter key.
-        'event' => 'change',
-        // Trigger after each key press.
-        // 'event' => 'keyup'
-        'progress' => [
-          'type' => 'throbber',
-          'message' => $this->t('Searching ...'),
-        ],
+      '#theme_wrappers' => [],
+      '#attributes' => [
+        'class' => []
       ],
     ];
 
     $form['content']['filters']['search']['search'] = [
-      '#type' => 'submit',
+      '#type' => 'button',
       '#value' => $this->t('Search'),
+      '#attributes' => [
+        'data-twig-suggestion' => 'search_button',
+      ],
+      '#ajax' => [
+        'callback' => '::performSearch',
+        'event' => 'click',
+        'progress' => [
+          'type' => 'throbber',
+        ],
+      ],
     ];
 
     return $form;

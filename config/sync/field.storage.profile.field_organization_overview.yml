@@ -1,12 +1,12 @@
-uuid: f5144d4c-4bf3-4d39-882b-f23e2346492d
+uuid: 83dbef01-36f5-4abb-9e09-02ad98597b5d
 langcode: da
 status: true
 dependencies:
   module:
     - entity_overview
     - profile
-id: profile.field_orgamization_overview
-field_name: field_orgamization_overview
+id: profile.field_organization_overview
+field_name: field_organization_overview
 entity_type: profile
 type: overview_filter
 settings:

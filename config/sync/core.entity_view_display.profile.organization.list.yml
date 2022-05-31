@@ -1,0 +1,61 @@
+uuid: 2048f04d-c652-4613-adf8-2719581a88b5
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.profile.list
+    - field.field.profile.organization.field_organization_address
+    - field.field.profile.organization.field_organization_description
+    - field.field.profile.organization.field_organization_email
+    - field.field.profile.organization.field_organization_graphic
+    - field.field.profile.organization.field_organization_logo
+    - field.field.profile.organization.field_organization_overview
+    - field.field.profile.organization.field_organization_phone
+    - field.field.profile.organization.field_organization_top_image
+    - field.field.profile.organization.field_organization_website
+    - profile.type.organization
+  module:
+    - address
+    - image
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: profile.organization.list
+targetEntityType: profile
+bundle: organization
+mode: list
+content:
+  field_organization_address:
+    type: address_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_organization_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_organization_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_organization_email: true
+  field_organization_graphic: true
+  field_organization_overview: true
+  field_organization_phone: true
+  field_organization_top_image: true
+  field_organization_website: true
+  search_api_excerpt: true

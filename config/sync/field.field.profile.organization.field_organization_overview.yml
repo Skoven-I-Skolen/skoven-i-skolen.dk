@@ -1,14 +1,14 @@
-uuid: fd013e2b-22f1-4bc6-a0d0-fa5fec0b9340
+uuid: 43e20ccd-a8db-4aa0-8491-e2e0c3501e88
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.profile.field_orgamization_overview
+    - field.storage.profile.field_organization_overview
     - profile.type.organization
   module:
     - entity_overview
-id: profile.organization.field_orgamization_overview
-field_name: field_orgamization_overview
+id: profile.organization.field_organization_overview
+field_name: field_organization_overview
 entity_type: profile
 bundle: organization
 label: Overblik
@@ -24,7 +24,7 @@ default_value:
       field_location: {  }
       field_season: {  }
       field_subject: {  }
-    count: 16
+    count: 5
     sort: newest
     pagination: true
     facets:
@@ -32,7 +32,6 @@ default_value:
       - field_location
       - field_season
       - field_subject
-      - sort
 default_value_callback: ''
 settings: {  }
 field_type: overview_filter

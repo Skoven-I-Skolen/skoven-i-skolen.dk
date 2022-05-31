@@ -9,7 +9,7 @@ dependencies:
     - taxonomy.vocabulary.article_types
   module:
     - layout_builder
-    - premium_articles
+    - sis_overview
     - text
 third_party_settings:
   layout_builder:
@@ -29,31 +29,17 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_link_liste_headline:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_overview:
-    type: article_filter_form
+    type: category_overview_formatter
     label: hidden
     settings:
       view_mode: teaser
     third_party_settings: {  }
     weight: 1
     region: content
-  field_overview_headline:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
 hidden:
+  field_link_liste_headline: true
+  field_overview_headline: true
   langcode: true
   layout_builder__layout: true
   search_api_excerpt: true

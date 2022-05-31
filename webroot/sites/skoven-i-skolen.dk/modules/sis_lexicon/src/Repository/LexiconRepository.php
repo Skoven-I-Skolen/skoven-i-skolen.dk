@@ -58,4 +58,20 @@ class LexiconRepository {
     return $query->execute()
       ->fetchAllKeyed(0,0);
   }
+
+  public function getTotalNumberOfArticlesByLetter(string $letter) {
+
+    $query = $this->database->select('node_field_data', 'n')->fields('n', ['nid']);
+
+    $query->leftJoin('node__field_article_type', 'a', 'n.nid = a.entity_id');
+    $query->leftJoin('taxonomy_term_field_data', 't', 'a.field_article_type_target_id = t.tid');
+
+    $query->condition('n.type', 'article')
+      ->condition('n.status', NodeInterface::PUBLISHED)
+      ->condition('n.title', strtolower($letter) . '%', 'LIKE')
+      ->condition('t.machine_name','lexicon');
+    
+    return $query->execute()
+      ->fetchAllKeyed(0,0);
+  }
 }

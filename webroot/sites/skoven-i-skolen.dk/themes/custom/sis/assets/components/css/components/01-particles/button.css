@@ -5,7 +5,7 @@
 
 /* stylelint-disable selector-class-pattern */
 .styles--preview--button,
-.button:not(.js-hide),
+.button,
 a.button {
   position: relative;
   display: inline-flex;
@@ -34,7 +34,7 @@ a.button {
   &--ghost {
     color: currentcolor;
     background-color: transparent;
-    border: 2px solid var(--theme-color);
+    border: 2px solid var(--theme-button-color);
   }
 
   &--center {
@@ -50,6 +50,10 @@ a.button {
   &--small {
     min-height: 45px;
     padding: 0 20px;
+  }
+
+  &.js-hide {
+    display: none;
   }
 }
 /* stylelint-enable selector-class-pattern */

@@ -9,15 +9,20 @@ dependencies:
     - field.field.profile.organization.field_organization_email
     - field.field.profile.organization.field_organization_graphic
     - field.field.profile.organization.field_organization_logo
+    - field.field.profile.organization.field_organization_overview
     - field.field.profile.organization.field_organization_phone
+    - field.field.profile.organization.field_organization_top_image
     - field.field.profile.organization.field_organization_website
     - profile.type.organization
     - responsive_image.styles.wide
   module:
     - address
+    - entity_reference_revisions
     - entity_overview
     - image
     - link
+    - sis_organization
+    - telephone
     - responsive_image
     - text
 id: profile.organization.default
@@ -25,34 +30,26 @@ targetEntityType: profile
 bundle: organization
 mode: default
 content:
-  field_orgamization_overview:
-    type: overview_list
-    label: hidden
-    settings:
-      view_mode: teaser
-    third_party_settings: {  }
-    weight: 8
-    region: content
   field_organization_address:
     type: address_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_organization_description:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_organization_email:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_organization_graphic:
     type: responsive_image
@@ -60,6 +57,7 @@ content:
     settings:
       responsive_image_style: wide
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
     weight: 7
     region: content
@@ -70,7 +68,15 @@ content:
       image_link: ''
       image_style: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 4
+    region: content
+  field_organization_overview:
+    type: organization_overview_formatter
+    label: hidden
+    settings:
+      view_mode: teaser
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_organization_phone:
     type: string
@@ -78,7 +84,16 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
+    region: content
+  field_organization_top_image:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_organization_website:
     type: link
@@ -90,7 +105,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true
