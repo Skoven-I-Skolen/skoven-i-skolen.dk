@@ -326,6 +326,12 @@ overview-form:
     - sis/accordion
     - sis/pager-full
 
+profile:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/profile.css: {}
+
 search-page:
   version: VERSION
   css:

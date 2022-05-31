@@ -1,0 +1,53 @@
+/**
+ * Type: Organisms.
+ * Profile.
+ */
+.profile {
+  &__page-title {
+    margin-bottom: 24px;
+  }
+
+  &__logo {
+    margin-bottom: 16px;
+
+    @media (--viewport-md-min) {
+      margin-bottom: 40px;
+    }
+
+    img {
+      max-width: 275px;
+      height: auto;
+    }
+  }
+
+  &__info,
+  &__description {
+    margin-bottom: 40px;
+
+    @media (--viewport-md-min) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__address {
+    &--row {
+      display: flex;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    &--label,
+    &--content {
+      display: flex;
+    }
+
+    &--label {
+      min-width: 120px;
+      font-weight: 700;
+    }
+
+    &--content {
+      word-break: break-all;
+    }
+  }
+}
