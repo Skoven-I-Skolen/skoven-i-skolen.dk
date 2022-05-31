@@ -1,11 +1,3 @@
-
-{%
-  set classes = [
-    'container'
-  ]
-%}
-
-
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
@@ -13,6 +5,6 @@
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-    <h1>{{ content }}</h1>
+    {{ content }}
   {% endblock %}
 </div>
