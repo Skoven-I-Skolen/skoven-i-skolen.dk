@@ -2,7 +2,11 @@
 {%- if items -%}
   <{{ list_type }}{{ attributes }}>
   {%- for item in items -%}
-    <li{{ item.attributes }}>{{ item.value }}</li>
+    {% if item.value == 'break' %}
+        <li class="lexicon__filters_item--break"></li>
+      {% else %}
+        <li{{ item.attributes }}>{{ item.value }}</li>
+    {% endif %}
   {%- endfor -%}
 </{{ list_type }}>
 {%- else -%}

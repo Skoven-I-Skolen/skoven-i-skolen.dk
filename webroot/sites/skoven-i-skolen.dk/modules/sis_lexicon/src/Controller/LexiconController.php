@@ -51,7 +51,7 @@ class LexiconController extends ControllerBase {
       $content['#pager'] = TRUE;
     }
 
-    $response->addCommand(new ReplaceCommand('#lexicon-items', $content));
+    $response->addCommand(new ReplaceCommand('#lexicon-inner', $content));
 
     return $response;
   }

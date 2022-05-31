@@ -357,3 +357,9 @@ organization-page:
       dist/components/css/components/03-organisms/organization-page.css: {}
   dependencies:
     - sis/related-articles
+
+page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/page.css: {}

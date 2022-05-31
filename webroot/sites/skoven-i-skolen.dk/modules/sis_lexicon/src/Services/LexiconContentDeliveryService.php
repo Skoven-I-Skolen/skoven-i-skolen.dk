@@ -60,6 +60,8 @@ class LexiconContentDeliveryService {
       return NULL;
     }
 
+    $numberOfArticles = $this->lexiconRepository->getTotalNumberOfArticlesByLetter($initialLetter);
+
     $nodes = Node::loadMultiple($lexiconArticlesIds);
     $lexiconArticles = $this->entityTypeManager->getViewBuilder('node')
       ->viewMultiple($nodes, 'list');

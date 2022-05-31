@@ -45,7 +45,11 @@
         {{ content.field_organization_logo }}
       </div>
       <div class="profile--address">
+        
         {{ content.field_organization_address }}
+        <div class="organization_adress__item"><span>{{ 'Email'|t }}</span>{{ profile.field_organization_email.value }}</div>
+        <div class="organization_adress__item"><span>{{ 'Website'|t }}</span>{{ profile.field_organization_website.uri }}</div>
+
       </div>
     </div>
     <div class="col-xs-12">
