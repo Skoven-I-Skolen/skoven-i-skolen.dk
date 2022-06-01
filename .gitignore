@@ -84,3 +84,7 @@ logs/*
 !*/.keep
 composer-src/
 .DS_Store
+
+# devspace branch related
+.novi/dbdumps/*
+.devspace/*
