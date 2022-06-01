@@ -1,0 +1,38 @@
+uuid: fd013e2b-22f1-4bc6-a0d0-fa5fec0b9340
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_orgamization_overview
+    - profile.type.organization
+  module:
+    - entity_overview
+id: profile.organization.field_orgamization_overview
+field_name: field_orgamization_overview
+entity_type: profile
+bundle: organization
+label: Overblik
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    fields:
+      field_article_categories: {  }
+      field_article_type: {  }
+      field_class: {  }
+      field_location: {  }
+      field_season: {  }
+      field_subject: {  }
+    count: 16
+    sort: newest
+    pagination: true
+    facets:
+      - field_class
+      - field_location
+      - field_season
+      - field_subject
+      - sort
+default_value_callback: ''
+settings: {  }
+field_type: overview_filter
