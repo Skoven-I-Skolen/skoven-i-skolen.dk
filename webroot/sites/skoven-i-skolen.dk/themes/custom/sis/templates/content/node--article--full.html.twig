@@ -82,7 +82,10 @@
       <div class="col-md-8 col-lg-7">
         <div{{ content_attributes }}>
           {% if node.field_header[0] %}
-            <h1 class="article-page__title">{{ label }}</h1>
+            {% include '@reusable-component/page-title.twig' with {
+              'attributes': create_attribute().addClass('article-page__title'),
+              'title': label,
+            } %}
           {% else %}
             {% include '@reusable-component/page-title.twig' with {
               'attributes': create_attribute().addClass('article-page__title'),
@@ -92,7 +95,9 @@
           <div class="article-page__description">
             {{ node.field_description.value|t }}
           </div>
-          {{ content|without(['field_list_date', 'field_header', 'title']) }}
+          <div class="row">
+            {{ content|without(['field_list_date', 'field_header', 'title']) }}
+          </div>
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-lg-offset-1">

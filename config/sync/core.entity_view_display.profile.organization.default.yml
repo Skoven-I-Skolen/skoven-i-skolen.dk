@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.profile.organization.field_orgamization_overview
     - field.field.profile.organization.field_organization_address
     - field.field.profile.organization.field_organization_description
     - field.field.profile.organization.field_organization_email
@@ -13,13 +14,16 @@ dependencies:
     - field.field.profile.organization.field_organization_top_image
     - field.field.profile.organization.field_organization_website
     - profile.type.organization
+    - responsive_image.styles.wide
   module:
     - address
     - entity_reference_revisions
+    - entity_overview
     - image
     - link
     - sis_organization
     - telephone
+    - responsive_image
     - text
 id: profile.organization.default
 targetEntityType: profile
@@ -48,9 +52,10 @@ content:
     weight: 1
     region: content
   field_organization_graphic:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: wide
       image_link: ''
       image_style: ''
     third_party_settings: {  }
@@ -74,10 +79,10 @@ content:
     weight: 9
     region: content
   field_organization_phone:
-    type: telephone_link
+    type: string
     label: hidden
     settings:
-      title: ''
+      link_to_entity: false
     third_party_settings: {  }
     weight: 3
     region: content
