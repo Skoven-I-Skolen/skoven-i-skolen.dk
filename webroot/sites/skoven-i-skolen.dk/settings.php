@@ -793,6 +793,9 @@ if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
   $settings['cache_prefix'] = 'sis_';
 }
 
+$settings['relewise.apikey'] = getenv('RELEWISE_APIKEY');
+$settings['relewise.dataset'] = getenv('RELEWISE_DATASET');
+
 if (file_exists($app_root . '/sites/default/settings.ddev.php') && getenv('IS_DDEV_PROJECT') == 'true') {
   if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
     $settings['redis.connection']['host'] = 'redis';

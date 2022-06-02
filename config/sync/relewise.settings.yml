@@ -1,0 +1,8 @@
+index_batch_size: '50'
+entity_bundles:
+  media: {  }
+  node:
+    - article
+    - page
+  profile: {  }
+  taxonomy_term: {  }

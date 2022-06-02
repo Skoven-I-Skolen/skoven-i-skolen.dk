@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffae6520c2f5c360e875a68c44cc1d23",
+    "content-hash": "0930e96d145449ec78150a71b5b93d22",
     "packages": [
         {
             "name": "algolia/places",
@@ -6949,6 +6949,20 @@
             "keywords": [
                 "Novicell"
             ]
+        },
+        {
+            "name": "novicell/relewise",
+            "version": "1.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.drupal.dk/php/~/up/ver_193wYl/novicellrelewise-1-0-5.zip"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Relewise",
+            "homepage": "https://www.novicell.dk"
         },
         {
             "name": "novicell/status_feed",
