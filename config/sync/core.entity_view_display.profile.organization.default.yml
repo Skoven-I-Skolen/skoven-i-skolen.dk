@@ -3,7 +3,6 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.profile.organization.field_orgamization_overview
     - field.field.profile.organization.field_organization_address
     - field.field.profile.organization.field_organization_description
     - field.field.profile.organization.field_organization_email
@@ -18,12 +17,10 @@ dependencies:
   module:
     - address
     - entity_reference_revisions
-    - entity_overview
     - image
     - link
-    - sis_organization
-    - telephone
     - responsive_image
+    - sis_organization
     - text
 id: profile.organization.default
 targetEntityType: profile

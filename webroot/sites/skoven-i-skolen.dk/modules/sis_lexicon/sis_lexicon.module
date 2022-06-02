@@ -47,8 +47,3 @@ function sis_lexicon_preprocess_block__inline_block__lexicon_teaser(&$variables)
   $variables['articles'] = $lexiconContentDeliveryService->getArticles($initialLetter);
   $variables['articles']['#letter'] = NULL;
 }
-
-
-function sis_lexicon_preprocess_lexicon(&$variables) {
-  kint($variables);
-}
