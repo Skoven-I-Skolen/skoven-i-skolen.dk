@@ -19,3 +19,8 @@ services:
     arguments:
       - '@sis_organization.organization_repository'
       - '@entity_type.manager'
+  sis_organization.theme:
+    class: Drupal\sis_organization\Theme\OrganizationThemeNegotiator
+    arguments: []
+    tags:
+      - { name: theme_negotiator, priority: 10 }

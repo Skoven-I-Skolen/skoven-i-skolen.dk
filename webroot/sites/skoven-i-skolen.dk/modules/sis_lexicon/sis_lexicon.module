@@ -20,7 +20,13 @@ function sis_lexicon_locale_translation_projects_alter(&$projects) {
 function sis_lexicon_theme() {
   return [
     'lexicon' => [
-      'variables' => ['articles' => [], 'letter' => NUll, 'pager' => FALSE]
+      'variables' => [
+        'articles' => [],
+        'letter' => NULL,
+        'pager' => FALSE,
+        'count' => 0,
+        'max_count' => 0
+      ]
     ],
     'lexicon_filters' => [
       'base hook' => 'item_list'
@@ -48,7 +54,13 @@ function sis_lexicon_preprocess_block__inline_block__lexicon_teaser(&$variables)
   $variables['articles']['#letter'] = NULL;
 }
 
-
+/**
+ * @param $variables
+ *
+ * @return void
+ */
 function sis_lexicon_preprocess_lexicon(&$variables) {
-  kint($variables);
+  if ($variables['pager']) {
+    $variables['pager'] = (bool) ($variables['count'] < $variables['max_count']);
+  }
 }

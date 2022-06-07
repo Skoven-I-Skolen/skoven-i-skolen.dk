@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffae6520c2f5c360e875a68c44cc1d23",
+    "content-hash": "339fecf22ade2a9c97fb104b3c530952",
     "packages": [
         {
             "name": "algolia/places",
@@ -4470,6 +4470,70 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/role_delegation",
                 "issues": "http://drupal.org/project/role_delegation"
+            }
+        },
+        {
+            "name": "drupal/role_theme_switcher",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/role_theme_switcher.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/role_theme_switcher-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "73a20080d8ddb1b811cdaae5dcc1c733287cb716"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1631900619",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Julien Dubreuil",
+                    "homepage": "https://www.drupal.org/u/juliend",
+                    "email": "dubreuil.julien@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Neslee Canil Pinto",
+                    "homepage": "https://www.drupal.org/u/neslee-canil-pinto",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Pravin Ajaaz",
+                    "homepage": "https://www.drupal.org/user/2910049"
+                },
+                {
+                    "name": "tiutiun",
+                    "homepage": "https://www.drupal.org/user/158669"
+                }
+            ],
+            "description": "Assign a specific theme for different roles.",
+            "homepage": "https://www.drupal.org/project/role_theme_switcher",
+            "keywords": [
+                "Drupal",
+                "Theme"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/role_theme_switcher",
+                "issues": "https://www.drupal.org/project/issues/role_theme_switcher"
             }
         },
         {
