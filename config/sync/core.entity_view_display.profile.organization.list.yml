@@ -52,6 +52,7 @@ content:
     weight: 1
     region: content
 hidden:
+  field_orgamization_overview: true
   field_organization_email: true
   field_organization_graphic: true
   field_organization_overview: true
