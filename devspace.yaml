@@ -71,7 +71,7 @@ vars:
 images:
   web:
     image: ${IMAGE_REPOSITORY}/${IMAGE_NAME}
-    dockerfile: ./.novi/docker/Dockerfile
+    dockerfile: ./.novi/docker/devspace.Dockerfile
     context: ./
     injectRestartHelper: true
     rebuildStrategy: ignoreContextChanges
