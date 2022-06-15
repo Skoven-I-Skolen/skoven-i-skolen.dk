@@ -89,10 +89,10 @@
  * @endcode
  */
 $databases = [];
-$databases['default']['default'] = array (
-  'database' => getenv('DB_SCHEMA'),
-  'username' => getenv('DB_USER'),
-  'password' => getenv('DB_PASS'),
+$databases['default']['default'] = array(
+  'database' => getenv('DB_NAME'),
+  'username' => getenv('DB_USERNAME'),
+  'password' => getenv('DB_PASSWORD'),
   'prefix' => '',
   'host' => getenv('DB_HOST'),
   'port' => getenv('DB_PORT'),
@@ -323,7 +323,7 @@ $settings['hash_salt'] = getenv('HASH_SALT');
  * After finishing the upgrade, be sure to open this file again and change the
  * TRUE back to a FALSE!
  */
-$settings['update_free_access'] = FALSE;
+$settings['update_free_access'] = false;
 
 /**
  * External access proxy settings:
@@ -720,9 +720,11 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  */
 $settings['trusted_host_patterns'] = [
   '^skoven-i-skolen\.dk',
-  '^.+\.skoven-i-skolen\.dk'
+  '^.+\.skoven-i-skolen\.dk',
+  '^.+\.novicell\.dev'
 ];
 
+$config['system.logging']['error_level']='verbose';
 /**
  * The default list of directories that will be ignored by Drupal's file API.
  *
@@ -755,7 +757,7 @@ $settings['entity_update_batch_size'] = 50;
  * well as the original entity type and field storage definitions should be
  * retained after a successful entity update process.
  */
-$settings['entity_update_backup'] = TRUE;
+$settings['entity_update_backup'] = true;
 
 /**
  * Node migration type.
@@ -768,7 +770,7 @@ $settings['entity_update_backup'] = TRUE;
  * complete node migrations. Set this to TRUE to force the use of the classic
  * node migrations.
  */
-$settings['migrate_node_migrate_type_classic'] = FALSE;
+$settings['migrate_node_migrate_type_classic'] = false;
 
 /**
  * Load local development override configuration, if available.
@@ -785,24 +787,21 @@ $settings['config_sync_directory'] = '../config/sync';
 
 $config['config_split.config_split.develop']['status'] = strtolower(getenv('CONFIG_SPLIT_DEVELOPMENT')) === 'true';
 
-//if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
-//  $settings['redis.connection']['interface'] = 'PhpRedis';
-//  $settings['redis.connection']['host'] = getenv('REDIS_HOST');
-//  $settings['redis.connection']['port'] = '6379';
-//  $settings['cache']['default'] = 'cache.backend.redis';
-//  $settings['cache_prefix'] = 'sis_';
-//}
-
-$settings['relewise.apikey'] = getenv('RELEWISE_APIKEY');
-$settings['relewise.dataset'] = getenv('RELEWISE_DATASET');
+if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
+    $settings['redis.connection']['interface'] = 'PhpRedis';
+    $settings['redis.connection']['host'] = getenv('REDIS_HOST');
+    $settings['redis.connection']['port'] = '6379';
+    $settings['cache']['default'] = 'cache.backend.redis';
+    $settings['cache_prefix'] = 'sis_';
+}
 
 if (file_exists($app_root . '/sites/default/settings.ddev.php') && getenv('IS_DDEV_PROJECT') == 'true') {
-//  if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
-//    $settings['redis.connection']['host'] = 'redis';
-//  }
-  include $app_root . '/sites/default/settings.ddev.php';
+    if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
+        $settings['redis.connection']['host'] = 'redis';
+    }
+    include $app_root . '/sites/default/settings.ddev.php';
 }
 
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-  include $app_root . '/' . $site_path . '/settings.local.php';
+    include $app_root . '/' . $site_path . '/settings.local.php';
 }
