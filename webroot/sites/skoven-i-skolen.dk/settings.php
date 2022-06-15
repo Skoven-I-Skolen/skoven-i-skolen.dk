@@ -724,7 +724,6 @@ $settings['trusted_host_patterns'] = [
   '^.+\.novicell\.dev'
 ];
 
-$config['system.logging']['error_level']='verbose';
 /**
  * The default list of directories that will be ignored by Drupal's file API.
  *
