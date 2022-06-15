@@ -91,8 +91,8 @@
 $databases = [];
 $databases['default']['default'] = array(
   'database' => getenv('DB_NAME'),
-  'username' => getenv('DB_USERNAME'),
-  'password' => getenv('DB_PASSWORD'),
+  'username' => getenv('DB_USER'),
+  'password' => getenv('DB_PASS'),
   'prefix' => '',
   'host' => getenv('DB_HOST'),
   'port' => getenv('DB_PORT'),
@@ -724,7 +724,6 @@ $settings['trusted_host_patterns'] = [
   '^.+\.novicell\.dev'
 ];
 
-$config['system.logging']['error_level']='verbose';
 /**
  * The default list of directories that will be ignored by Drupal's file API.
  *
