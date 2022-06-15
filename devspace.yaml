@@ -10,7 +10,7 @@ vars:
     question: Where is the image repository located ?
     default: registry.novicell.dev
   - name: IMAGE_NAME
-    default: sis/${NAMESPACE}
+    default: devspace/${NAMESPACE}
     source: none
   - name: PHP_VERSION
     question: What PHP version do you want to use ?
@@ -27,10 +27,10 @@ vars:
   - name: DB_VERSION
     question: What version of MariaDB do you want to use ?
     default: "10.4"
-  - name: DB_USERNAME
+  - name: DB_USER
     default: sis
     source: none
-  - name: DB_PASSWORD
+  - name: DB_PASS
     default: sispw
     source: none
   - name: DB_NAME
@@ -67,6 +67,11 @@ vars:
   - name: CONFIG_SPLIT_DEVELOPMENT
     source: env
     default: true
+
+pullSecrets:
+  - registry: registry.novicell.dev
+    username: nikolajsommerjensen
+    password: xR6L85Y2lQavB5a6xjFTscC72yIkfXjO
 
 images:
   web:
@@ -125,9 +130,9 @@ deployments:
               - name: MYSQL_DATABASE
                 value: ${DB_NAME}
               - name: MYSQL_USER
-                value: ${DB_USERNAME}
+                value: ${DB_USER}
               - name: MYSQL_PASSWORD
-                value: ${DB_PASSWORD}
+                value: ${DB_PASS}
               - name: PROJECT_NAME
                 value: ${PROJECT_NAME}
               - name: DOMAIN_NAME
@@ -223,10 +228,10 @@ deployments:
                 value: ${INGRESS_URL}
               - name: ROOT_PW
                 value: ${ROOT_PW}
-              - name: DB_USERNAME
-                value: ${DB_USERNAME}
-              - name: DB_PASSWORD
-                value: ${DB_PASSWORD}
+              - name: DB_USER
+                value: ${DB_USER}
+              - name: DB_PASS
+                value: ${DB_PASS}
               - name: DB_NAME
                 value: ${DB_NAME}
               - name: DB_HOST

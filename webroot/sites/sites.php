@@ -57,7 +57,7 @@
  */
 
 $vcluster_sites = [
-  'nsjsis.novicell.dev',
+  'nsj-sis.novicell.dev',
 ];
 
 if (in_array(getenv('DOMAIN_NAME'), $vcluster_sites)) {
