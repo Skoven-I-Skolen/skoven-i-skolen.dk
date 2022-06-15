@@ -101,5 +101,6 @@ module.exports = {
         loader: 'vue-loader',
       }
     ]
-  }
+  },
+  externals: {"drupal": "Drupal" }
 };

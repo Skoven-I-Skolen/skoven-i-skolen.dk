@@ -79,5 +79,9 @@ body.adminimal-admin-toolbar header.header {
         fill: var(--color-white);
       }
     }
+
+    form {
+      position: relative;
+    }
   }
 }

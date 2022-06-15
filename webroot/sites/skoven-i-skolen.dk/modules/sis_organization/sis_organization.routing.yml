@@ -12,3 +12,10 @@ sis_organization.get:
     _controller: 'Drupal\sis_organization\Controller\OrganizationController:get'
   requirements:
     _access: 'TRUE'
+
+sis_organization.form.ajax:
+  path: ajax/form/organization-overview
+  defaults:
+    _form: 'Drupal\sis_organization\Form\OrganizationOverviewForm'
+  requirements:
+    _access: 'TRUE'

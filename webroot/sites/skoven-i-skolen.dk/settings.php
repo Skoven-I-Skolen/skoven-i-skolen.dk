@@ -785,21 +785,21 @@ $settings['config_sync_directory'] = '../config/sync';
 
 $config['config_split.config_split.develop']['status'] = strtolower(getenv('CONFIG_SPLIT_DEVELOPMENT')) === 'true';
 
-if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
-  $settings['redis.connection']['interface'] = 'PhpRedis';
-  $settings['redis.connection']['host'] = getenv('REDIS_HOST');
-  $settings['redis.connection']['port'] = '6379';
-  $settings['cache']['default'] = 'cache.backend.redis';
-  $settings['cache_prefix'] = 'sis_';
-}
+//if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
+//  $settings['redis.connection']['interface'] = 'PhpRedis';
+//  $settings['redis.connection']['host'] = getenv('REDIS_HOST');
+//  $settings['redis.connection']['port'] = '6379';
+//  $settings['cache']['default'] = 'cache.backend.redis';
+//  $settings['cache_prefix'] = 'sis_';
+//}
 
 $settings['relewise.apikey'] = getenv('RELEWISE_APIKEY');
 $settings['relewise.dataset'] = getenv('RELEWISE_DATASET');
 
 if (file_exists($app_root . '/sites/default/settings.ddev.php') && getenv('IS_DDEV_PROJECT') == 'true') {
-  if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
-    $settings['redis.connection']['host'] = 'redis';
-  }
+//  if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
+//    $settings['redis.connection']['host'] = 'redis';
+//  }
   include $app_root . '/sites/default/settings.ddev.php';
 }
 
