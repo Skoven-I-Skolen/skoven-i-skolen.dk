@@ -9,3 +9,4 @@ interface translation server pattern: modules/contrib/sis_relewise/translations/
 
 dependencies:
   - relewise
+  - entity_overview
