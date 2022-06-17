@@ -8,7 +8,6 @@ dependencies:
     - filter
     - media
     - profile
-    - search_api_page
     - shortcut
     - system
 _core:
@@ -28,4 +27,3 @@ permissions:
   - 'use text format basic_html'
   - 'view any organization profile'
   - 'view media'
-  - 'view search api pages'

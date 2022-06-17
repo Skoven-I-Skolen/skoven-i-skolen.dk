@@ -83,7 +83,6 @@ module:
   path_alias: 0
   premium_articles: 0
   premium_core: 0
-  premium_search: 0
   premium_theme_helper: 0
   premium_tools: 0
   profile: 0
@@ -95,10 +94,6 @@ module:
   responsive_image: 0
   role_delegation: 0
   scheduled_transitions: 0
-  search_api: 0
-  search_api_db: 0
-  search_api_exclude_entity: 0
-  search_api_page: 0
   shortcut: 0
   simple_sitemap: 0
   sis_almanac: 0
