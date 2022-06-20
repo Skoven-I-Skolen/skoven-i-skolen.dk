@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+$dbFile = '/var/www/.novi/dbdumps/exported.sql';
+$dbUser = 'root';
+$dbPassword = $_SERVER['ROOT_PW'] ?? 'rootpw';
+$dbHost = $_SERVER['DB_HOST'] ?? 'mysql';
+$dbName = $_SERVER['DB_NAME'] ?? 'drupal';
+
+// Export the database for backup purposes..
+echo "### Exporting database {$dbName} .novi/dbdumps/exported.sql ###\n";
+passthru("mysqldump --column-statistics=0 -u{$dbUser} -p{$dbPassword} -h{$dbHost} {$dbName} > {$dbFile}");

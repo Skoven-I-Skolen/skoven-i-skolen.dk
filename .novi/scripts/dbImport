@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+$dbFile = '/var/www/.novi/dbdumps/dump.sql';
+$dbConfiguration = '/var/www/.novi/shared/config.sql';
+$dbUser = 'root';
+$dbPassword = $_SERVER['ROOT_PW'] ?? 'rootpw';
+$dbHost = $_SERVER['DB_HOST'] ?? 'mysql';
+$dbName = $_SERVER['DB_NAME'] ?? 'drupal';
+$lockFiles = [
+    'dbImportLock' => '/var/www/.novi/.state/dbImport.lock',
+];
+
+// Import the DB dump if the lockFile does not exist
+if (!file_exists($lockFiles['dbImportLock']) && file_exists($dbFile)) {
+    echo "### Importing database file from .novi/dbdumps/dump.sql ###\n";
+
+    passthru("mysql -u{$dbUser} -p{$dbPassword} -h{$dbHost} {$dbName} < {$dbFile}");
+    touch($lockFiles['dbImportLock']);
+} else {
+    echo "### Skipping database import ###\n";
+}
