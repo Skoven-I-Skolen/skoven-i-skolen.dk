@@ -63,15 +63,10 @@ vars:
     default: ${INGRESS_URL}
   - name: HASH_SALT
     source: env
-    default: "sdfsdfsdf"
+    default: "GPMfLDqH8hElgxoW2yNXpKookD8nzHzQf4oVEvK/2LI="
   - name: CONFIG_SPLIT_DEVELOPMENT
     source: env
     default: true
-
-pullSecrets:
-  - registry: registry.novicell.dev
-    username: nikolajsommerjensen
-    password: xR6L85Y2lQavB5a6xjFTscC72yIkfXjO
 
 images:
   web:
@@ -246,6 +241,8 @@ deployments:
                 value: ${REDIS_PORT}
               - name: ELASTICSEARCH_HOST
                 value: ${ELASTICSEARCH_HOST}
+              - name: DB_SCHEMA
+                value: ${DB_NAME}
               - name: PROJECT_NAME
                 value: ${PROJECT_NAME}
               - name: DOMAIN_NAME
