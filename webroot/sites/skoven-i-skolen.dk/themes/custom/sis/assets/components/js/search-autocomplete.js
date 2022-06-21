@@ -20,22 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
           if (!data) {
             return [];
           }
-
-          return data;
+          return data.results;
         } catch (error) {
           return error;
         }
       },
 
       // Data source 'Object' key to be searched
-      keys: ['title'],
+      keys: ['displayName'],
     },
     resultsList: {
       element: (list, data) => {
         const info = document.createElement('li');
         info.setAttribute('class', 'autoComplete_wrapper__info');
         if (data.results.length > 8) {
-          info.innerHTML = `<a href="/search" class="button">${Drupal.t('Show all results (@count)', { '@count': data.matches.length })}</a>`;
+          info.innerHTML = `<a href="/search?q=${data.query}" class="button">${Drupal.t('Show all results (@count)', { '@count': data.matches.length })}</a>`;
         }
 
         if (!data.results.length) {
