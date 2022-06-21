@@ -343,6 +343,8 @@ commands:
     command: "devspace -n ${NAMESPACE} enter --label-selector app.kubernetes.io/component=web -- zsh"
   - name: rediscli
     command: "devspace -n ${NAMESPACE} enter --label-selector app.kubernetes.io/component=redis -- redis-cli"
+  - name: drush
+    command: "devspace -n ${NAMESPACE} enter --label-selector app.kubernetes.io/component=web -- drush $@"
 hooks:
   # Upload database dump
   - upload:
