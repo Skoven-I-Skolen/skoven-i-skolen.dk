@@ -18,7 +18,7 @@
 
 .accordion-item {
   color: var(--theme-button-color);
-  border-bottom: 1px solid var(--theme-accordion-color);
+  border-bottom: 1px solid var(--theme-accordion-border-color);
 
   &.hide {
     display: none;
@@ -43,7 +43,7 @@
   &__title {
     margin-bottom: 0;
     padding-right: 20px;
-    font-weight: var(--heading-font-weight);
+    font-weight: 800;
     font-size: var(--base-font-size);
     font-family: var(--base-font-family);
     line-height: 1.3;
@@ -79,7 +79,6 @@
     word-break: break-word;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 1s;
 
     img {
       max-width: 100%;
@@ -88,7 +87,7 @@
   }
 
   &__content.active {
-    padding: 0 0 30px;
+    padding: 0 0 20px;
 
     .accordion-item__text {
       height: auto;
