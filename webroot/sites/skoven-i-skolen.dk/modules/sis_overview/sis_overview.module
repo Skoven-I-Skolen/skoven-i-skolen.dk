@@ -23,7 +23,7 @@ function sis_overview_theme() {
       'variables' => ['term' => NULL, 'entities' => []]
     ],
     'overview_list_item' => [
-      'variables' => ['headline' => NULL, 'link' => []]
+      'variables' => ['headline' => NULL, 'link' => [], 'attributes' => []]
     ],
   ];
 }
@@ -41,5 +41,5 @@ function sis_overview_theme_suggestions_input_alter(&$suggestions, array $variab
 }
 
 function sis_overview_preprocess_overview_list_item(&$variables) {
-  $variables['attributes'] = new Attribute();
+  $variables['attributes'] = new Attribute($variables['attributes']);
 }

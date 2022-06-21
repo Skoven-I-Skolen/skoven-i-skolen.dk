@@ -30,4 +30,4 @@ component-libraries:
       - assets/components/twig/03-organisms
 
 interface translation project: sis
-interface translation server pattern: sis/translations/%language.po
+interface translation server pattern: sites/skoven-i-skolen.dk/themes/custom/sis/translations/%language.po

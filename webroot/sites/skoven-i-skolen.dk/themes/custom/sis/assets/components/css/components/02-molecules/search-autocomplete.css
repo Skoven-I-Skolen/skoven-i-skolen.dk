@@ -1,0 +1,96 @@
+.header-search__input-field {
+  padding: 0 !important;
+}
+
+
+.autoComplete_wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 11px 50px 11px 20px;
+
+  > ul {
+    position: absolute;
+    min-width: 340px;
+    box-sizing: border-box;
+    right: 0;
+    padding: 0;
+    z-index: 1;
+    list-style: none;
+    border-radius: 25px;
+    background-color: #fff;
+    border: 1px solid var(--color-blue);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 10%);
+    outline: 0;
+    transition: opacity .15s ease-in-out;
+    padding: 25px 15px;
+
+    &:empty,
+    > ul[hidden] {
+      display: block;
+      opacity: 0;
+      transform: scale(0)
+    }
+
+    > li {
+      display: grid;
+      grid-column-gap: 10px;
+      grid-template-columns: 1fr auto;
+      padding: 5px 10px;
+      text-align: left;
+      color: var(--color-purple);
+      font-weight: var(--heading-font-weight);
+      font-size: var(--base-font-size-small);
+      transition: all .2s ease;
+      border-radius: 10px;
+
+      .mark {
+        background-color: transparent;
+        color: #ff7a7a;
+        font-weight: 700;
+        border-radius: 5px;
+      }
+
+      &:hover {
+        background-color: var(--color-blue-ice);
+        cursor: pointer;
+      }
+
+      &[aria-selected=true] {
+        background-color: rgba(255, 122, 122, .15)
+      }
+
+      &.autoComplete_wrapper__info {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+
+        .button {
+          min-height: 45px;
+          margin-top: 20px;
+          padding: 0 25px;
+          color: var(--color-white);
+          background-color: var(--color-green-dark);
+          cursor: pointer;
+        }
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  &__match {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__type {
+    margin-left: 10px;
+    font-size: var(--base-font-size-extra-small);
+    font-weight: var(--base-font-weight);
+    color: var(--color-purple);
+    opacity: .5;
+  }
+}

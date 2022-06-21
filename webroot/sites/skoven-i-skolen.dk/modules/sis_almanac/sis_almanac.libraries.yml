@@ -6,3 +6,4 @@ sis_almanac:
     js/sis_almanac.js: {}
   dependencies:
     - core/drupal
+    - core/jquery

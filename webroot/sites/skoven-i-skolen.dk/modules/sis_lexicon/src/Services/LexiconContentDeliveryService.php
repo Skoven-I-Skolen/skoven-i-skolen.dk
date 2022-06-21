@@ -70,6 +70,8 @@ class LexiconContentDeliveryService {
       '#theme' => 'lexicon',
       '#articles' => $lexiconArticles,
       '#letter' => $initialLetter,
+      '#count' => count($lexiconArticlesIds),
+      '#max_count' => (int) $numberOfArticles
     ];
   }
 

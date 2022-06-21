@@ -66,6 +66,8 @@ class CategoryOverviewForm extends OverviewFilterForm {
       ],
     ];
 
+    $form['content']['pager']['#quantity'] = 5;
+
     return $form;
   }
 
@@ -78,12 +80,11 @@ class CategoryOverviewForm extends OverviewFilterForm {
   }
 
 
-  protected function getEntitiesForBuilding($entity_bundle, array $options, $page = 0) {
+  public function getEntitiesForBuilding($entity_bundle, array $options, $page = 0) {
     return $this->getEntities($entity_bundle, $options, $page);
   }
 
-  private function getEntities($entity_bundle, array $options, $page = 0) {
-    $profile = $this->request->get('profile');
+  public function getEntities($entity_bundle, array $options, $page = 0) {
     $query = \Drupal::entityQuery('node')
       ->condition('type', 'article')
       ->condition('status', NodeInterface::PUBLISHED);
@@ -104,11 +105,13 @@ class CategoryOverviewForm extends OverviewFilterForm {
 
     // Set pagination
     if ($options['pagination']) {
-      $this->request->query->set('page', $page);
+      \Drupal::requestStack()->getCurrentRequest()->query->set('page', $page);
       $query->pager($options['count']);
+    } elseif (isset($options['count']) && $options['count'] > 0) {
+      $query->range($page * $options['count'], $options['count']);
     }
 
-    $query->sort('title');
+    $query->sort('title', 'ASC');
 
     $result = $query->execute();
     return Node::loadMultiple($result);

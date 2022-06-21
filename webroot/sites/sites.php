@@ -55,11 +55,14 @@
  * @see \Drupal\Core\DrupalKernel::getSitePath()
  * @see https://www.drupal.org/documentation/install/multi-site
  */
-$sites['skoven-i-skolen.dk'] = 'skoven-i-skolen.dk';
-$sites['skoven-i-skolen.localhost'] = 'skoven-i-skolen.dk';
-$sites['staging.skoven-i-skolen.drupal.dk'] = 'skoven-i-skolen.dk';
-$sites['prod.skoven-i-skolen.drupal.dk'] = 'skoven-i-skolen.dk';
+
+
+$sites[getenv('DOMAIN_NAME')] = 'skoven-i-skolen.dk';
+
+if (!empty(getenv('INGRESS_URL'))) {
+  $sites[getenv('INGRESS_URL')] = 'skoven-i-skolen.dk';
+}
 
 if (file_exists(__DIR__ . '/sites.local.php')) {
-  include __DIR__ . '/sites.local.php';
-};
+    include __DIR__ . '/sites.local.php';
+}

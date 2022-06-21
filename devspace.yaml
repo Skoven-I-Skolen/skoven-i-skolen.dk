@@ -1,0 +1,422 @@
+# This is a devspace.yaml file
+---
+version: v1beta11
+
+vars:
+  - name: NAMESPACE
+    question: What namespace is the project located in ?
+    default: sis
+  - name: IMAGE_REPOSITORY
+    question: Where is the image repository located ?
+    default: registry.novicell.dev
+  - name: IMAGE_NAME
+    default: devspace/${NAMESPACE}
+    source: none
+  - name: PHP_VERSION
+    question: What PHP version do you want to use ?
+    default: "8.0"
+  - name: INGRESS_URL
+    question: What is the ingress url ?
+    default: ${NAMESPACE}.novicell.dev
+  - name: ROOT_PW
+    default: rootpw
+    source: none
+  - name: DB_VENDOR
+    question: What db do you want to use ? (Default is mariadb)
+    default: "mariadb"
+  - name: DB_VERSION
+    question: What version of MariaDB do you want to use ?
+    default: "10.4"
+  - name: DB_USER
+    default: sis
+    source: none
+  - name: DB_PASS
+    default: sispw
+    source: none
+  - name: DB_NAME
+    default: sis_db
+    source: none
+  - name: DB_HOST
+    default: mysql.${NAMESPACE}.svc.cluster.local
+    source: none
+  - name: DB_PORT
+    default: "3306"
+    source: none
+  - name: MAILHOG_HOST
+    default: mailhog.${NAMESPACE}.svc.cluster.local
+    source: none
+  - name: REDIS_HOST
+    default: redis.${NAMESPACE}.svc.cluster.local
+    source: none
+  - name: REDIS_PORT
+    default: "6379"
+    source: none
+  - name: ELASTICSEARCH_HOST
+    default: elasticsearch.${NAMESPACE}.svc.cluster.local
+    source: none
+    # drupal specific env vars:
+  - name: PROJECT_NAME
+    source: env
+    default: "Skoven i skolen"
+  - name: DOMAIN_NAME
+    source: env
+    default: ${INGRESS_URL}
+  - name: HASH_SALT
+    source: env
+    default: "sdfsdfsdf"
+  - name: CONFIG_SPLIT_DEVELOPMENT
+    source: env
+    default: true
+
+pullSecrets:
+  - registry: registry.novicell.dev
+    username: nikolajsommerjensen
+    password: xR6L85Y2lQavB5a6xjFTscC72yIkfXjO
+
+images:
+  web:
+    image: ${IMAGE_REPOSITORY}/${IMAGE_NAME}
+    dockerfile: ./.novi/docker/devspace.Dockerfile
+    context: ./
+    injectRestartHelper: true
+    rebuildStrategy: ignoreContextChanges
+    build:
+      kaniko:
+        cache: true
+        options:
+          buildArgs:
+            PHPVERSION: ${PHP_VERSION}
+
+deployments:
+  - name: redis
+    helm:
+      componentChart: true
+      values:
+        replicas: 1
+        service:
+          ports:
+            - port: 6379
+        containers:
+          - image: library/redis:latest
+            volumeMounts:
+              - containerPath: /data
+                volume:
+                  name: redis-data
+                  subPath: /redis
+                  readOnly: false
+        volumes:
+          - name: redis-data
+            size: 5Gi
+
+  - name: mysql
+    helm:
+      componentChart: true
+      values:
+        replicas: 1
+        service:
+          ports:
+            - port: 3306
+        containers:
+          - image: karbowiak/docker-mysql:${DB_VENDOR}${DB_VERSION}
+            volumeMounts:
+              - containerPath: /var/lib/mysql
+                volume:
+                  name: mysql-data
+                  subPath: /mysql
+                  readOnly: false
+            env:
+              - name: MYSQL_ROOT_PASSWORD
+                value: ${ROOT_PW}
+              - name: MYSQL_DATABASE
+                value: ${DB_NAME}
+              - name: MYSQL_USER
+                value: ${DB_USER}
+              - name: MYSQL_PASSWORD
+                value: ${DB_PASS}
+              - name: PROJECT_NAME
+                value: ${PROJECT_NAME}
+              - name: DOMAIN_NAME
+                value: ${DOMAIN_NAME}
+              - name: HASH_SALT
+                value: ${HASH_SALT}
+        volumes:
+          - name: mysql-data
+            size: 50Gi
+
+  - name: phpmyadmin
+    helm:
+      chart:
+        repo: https://charts.bitnami.com/bitnami
+        name: phpmyadmin
+      values:
+        db:
+          host: ${DB_HOST}
+          allowArbitraryServer: false
+
+  - name: elasticsearch
+    helm:
+      componentChart: true
+      values:
+        initContainers:
+          - name: mkdir
+            image: busybox
+            volumeMounts:
+              - containerPath: /usr/share/elasticsearch/data
+                volume:
+                  name: elasticsearch-data
+                  subPath: /elasticsearch
+                  readOnly: false
+            command: ["mkdir", "-p", "/usr/share/elasticsearch/data/nodes"]
+          - name: chmod
+            image: busybox
+            volumeMounts:
+              - containerPath: /usr/share/elasticsearch/data
+                volume:
+                  name: elasticsearch-data
+                  subPath: /elasticsearch
+                  readOnly: false
+            command:
+              ["chmod", "-R", "777", "/usr/share/elasticsearch/data/nodes"]
+        replicas: 1
+        service:
+          ports:
+            - port: 9200
+            - port: 9300
+        containers:
+          - image: docker.elastic.co/elasticsearch/elasticsearch:7.16.2
+            volumeMounts:
+              - containerPath: /usr/share/elasticsearch/data
+                volume:
+                  name: elasticsearch-data
+                  subPath: /elasticsearch
+                  readOnly: false
+            env:
+              - name: discovery.type
+                value: "single-node"
+              - name: node.name
+                value: "elasticsearch"
+              - name: bootstrap.memory_lock
+                value: "true"
+              - name: ES_JAVA_OPTS
+                value: "-Xms512m -Xmx512m"
+        volumes:
+          - name: elasticsearch-data
+            size: 20Gi
+
+  - name: mailhog
+    helm:
+      componentChart: true
+      values:
+        replicas: 1
+        containers:
+          - image: mailhog/mailhog
+
+  - name: web
+    helm:
+      componentChart: true
+      values:
+        replicas: 1
+        service:
+          ports:
+            - port: 8080
+        containers:
+          - image: ${IMAGE_REPOSITORY}/${IMAGE_NAME}
+            env:
+              - name: NAMESPACE
+                value: ${NAMESPACE}
+              - name: INGRESS_URL
+                value: ${INGRESS_URL}
+              - name: ROOT_PW
+                value: ${ROOT_PW}
+              - name: DB_USER
+                value: ${DB_USER}
+              - name: DB_PASS
+                value: ${DB_PASS}
+              - name: DB_NAME
+                value: ${DB_NAME}
+              - name: DB_HOST
+                value: ${DB_HOST}
+              - name: DB_PORT
+                value: ${DB_PORT}
+              - name: MAILHOG_HOST
+                value: ${MAILHOG_HOST}
+              - name: REDIS_HOST
+                value: ${REDIS_HOST}
+              - name: REDIS_PORT
+                value: ${REDIS_PORT}
+              - name: ELASTICSEARCH_HOST
+                value: ${ELASTICSEARCH_HOST}
+              - name: PROJECT_NAME
+                value: ${PROJECT_NAME}
+              - name: DOMAIN_NAME
+                value: ${DOMAIN_NAME}
+              - name: HASH_SALT
+                value: ${HASH_SALT}
+        ingress:
+          tls: true
+          tlsClusterIssuer: letsencrypt
+          ingressClassName: nginx
+          rules:
+            - host: ${INGRESS_URL}
+
+dev:
+  ports:
+    - labelSelector:
+        app.kubernetes.io/component: web
+      forward:
+        - port: 8080
+          remotePort: 8080
+      reverseForward:
+        - port: 9000
+          remotePort: 9000
+        - port: 9003
+          remotePort: 9003
+    - labelSelector:
+        app.kubernetes.io/component: redis
+      forward:
+        - port: 6379
+          remotePort: 6379
+    - labelSelector:
+        app.kubernetes.io/component: mysql
+      forward:
+        - port: 3306
+          remotePort: 3306
+    - labelSelector:
+        app.kubernetes.io/component: mailhog
+      forward:
+        - port: 1025
+          remotePort: 1025
+        - port: 8025
+          remotePort: 8025
+    - labelSelector:
+        app.kubernetes.io/name: phpmyadmin
+        app.kubernetes.io/instance: phpmyadmin
+      forward:
+        - port: 8070
+          remotePort: 8080
+    - labelSelector:
+        app.kubernetes.io/component: elasticsearch
+      forward:
+        - port: 9300
+          remotePort: 9300
+        - port: 9200
+          remotePort: 9200
+  open:
+    - url: ${INGRESS_URL}
+  sync:
+    # Handle sync of local data to container
+    - labelSelector:
+        app.kubernetes.io/component: web
+      initialSync: preferLocal
+      waitInitialSync: true
+      polling: false
+      excludePaths:
+        - .idea/
+        - .github/
+        - .devspace/
+        - .git/
+        - vendor/
+        - .novi/dbdumps/
+      uploadExcludePaths:
+        - devspace.yaml
+      downloadExcludePaths:
+        - html/
+        - Dockerfile
+      onUpload:
+        restartContainer: false
+    # Prefer the vendor folder that the container builds versus the one we have locally
+    - labelSelector:
+        app.kubernetes.io/component: web
+      initialSync: preferRemote
+      localSubPath: vendor/
+      containerPath: vendor/
+    # Prefer the local dbDumps
+    - labelSelector:
+        app.kubernetes.io/component: web
+      initialSync: preferLocal
+      waitInitialSync: true
+      localSubPath: .novi/dbdumps
+      containerPath: .novi/dbdumps
+
+commands:
+  - name: cli
+    command: "devspace -n ${NAMESPACE} enter --label-selector app.kubernetes.io/component=web -- zsh"
+  - name: rediscli
+    command: "devspace -n ${NAMESPACE} enter --label-selector app.kubernetes.io/component=redis -- redis-cli"
+  - name: drush
+    command: "devspace -n ${NAMESPACE} enter --label-selector app.kubernetes.io/component=web -- drush $@"
+hooks:
+  # Upload database dump
+  - upload:
+      localPath: .novi/dbdumps
+      containerPath: .novi/dbdumps
+    container:
+      wait: true
+      once: true
+      labelSelector:
+        app.kubernetes.io/component: web
+    events: ["after:deploy"]
+  # Import the database if not already run
+  - command: "mysql -uroot -prootpw -h${DB_HOST} ${DB_NAME} < .novi/dbdumps/dump.sql"
+    container:
+      wait: true
+      once: true
+      labelSelector:
+        app.kubernetes.io/component: web
+    events: ["after:deploy"]
+  # Enable maintenance mode
+  - command: "/var/www/vendor/bin/drush sset system.maintenance_mode 1"
+    container:
+      wait: true
+      labelSelector:
+        app.kubernetes.io/component: web
+    events: ["after:deploy"]
+  # Update module related database tables
+  - command: "/var/www/vendor/bin/drush updatedb -y"
+    container:
+      wait: true
+      labelSelector:
+        app.kubernetes.io/component: web
+    events: ["after:deploy"]
+  # Run configuration import
+  - command: "/var/www/vendor/bin/drush cim -y"
+    container:
+      wait: true
+      labelSelector:
+        app.kubernetes.io/component: web
+    events: ["after:deploy"]
+  # Import the localization updates
+  - command: "/var/www/vendor/bin/drush locale-check && /var/www/vendor/bin/drush locale-update"
+    container:
+      wait: true
+      labelSelector:
+        app.kubernetes.io/component: web
+    events: ["after:deploy"]
+  # Install node dependencies
+  - command: "npm --prefix /var/www/webroot/sites/skoven-i-skolen.dk/themes/custom/sis/ ci /var/www/webroot/sites/skoven-i-skolen.dk/themes/custom/sis/"
+    container:
+      wait: true
+      labelSelector:
+        app.kubernetes.io/component: web
+    events: ["after:deploy"]
+  # Build styles and Javascript assets
+  - command: "npm --prefix /var/www/webroot/sites/skoven-i-skolen.dk/themes/custom/sis/ run build:prod"
+    container:
+      wait: true
+      labelSelector:
+        app.kubernetes.io/component: web
+    events: ["after:deploy"]
+  # Clear the cache
+  - command: "/var/www/vendor/bin/drush -l skoven-i-skolen.dk cr"
+    container:
+      wait: true
+      labelSelector:
+        app.kubernetes.io/component: web
+    events: ["after:deploy"]
+  # Disable maintenance mode
+  - command: "/var/www/vendor/bin/drush sset system.maintenance_mode 0"
+    container:
+      wait: true
+      labelSelector:
+        app.kubernetes.io/component: web
+    events: ["after:deploy"]

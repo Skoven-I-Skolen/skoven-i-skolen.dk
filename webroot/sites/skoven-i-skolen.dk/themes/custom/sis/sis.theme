@@ -8,6 +8,17 @@ require_once 'form-alter.inc';
 
 
 /**
+ * Implements hook_locale_translation_projects_alter().
+ *
+ * @param $projects
+ *   List of all projects
+ */
+function sis_locale_translation_projects_alter(&$projects) {
+  $theme_handler = \Drupal::service('theme_handler');
+  $path = $theme_handler->getModule('sis')->getPath();
+  $projects['sis']['info']['interface translation server pattern'] = $path . '/translations/%language.po';
+}
+/**
  * @param $suggestions
  * @param array $variables
  */

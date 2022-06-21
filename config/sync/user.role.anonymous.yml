@@ -5,7 +5,6 @@ dependencies:
   module:
     - media
     - profile
-    - search_api_page
     - system
 _core:
   default_config_hash: zClYBrQKb6sXAQHIkzrZXr1kopmPtULRPjAqGw0qVSk
@@ -18,4 +17,3 @@ permissions:
   - 'search content'
   - 'view any organization profile'
   - 'view media'
-  - 'view search api pages'

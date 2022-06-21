@@ -21,10 +21,6 @@ class OrganizationOverviewForm extends OverviewFilterForm {
   public function buildForm(array $form, FormStateInterface $form_state, array $options = []) {
     $form = parent::buildForm($form, $form_state, $options);
 
-    $form['#attributes'] = [
-      'onsubmit' => 'return false',
-    ];
-
     $form['search'] = [
       '#type' => 'container',
       '#attributes' => [
@@ -74,11 +70,20 @@ class OrganizationOverviewForm extends OverviewFilterForm {
     return $form;
   }
 
+  /**
+   * Function for retrieving the entities to be displayed. Overwrite for when a custom query is necessary.
+   *
+   * @param string $entity_bundle
+   * @param array $options
+   * @param int $page
+   *
+   * @return \Drupal\Core\Entity\EntityInterface[]
+   */
   protected function getEntitiesForBuilding($entity_bundle, array $options, $page = 0) {
     return $this->getEntities($entity_bundle, $options, $page);
   }
 
-  private function getEntities($entity_bundle, array $options, $page = 0) {
+  public function getEntities($entity_bundle, array $options, $page = 0) {
     $profile = $this->request->get('profile');
     $target_id = $profile->get('uid')->target_id;
     $query = \Drupal::entityQuery('node')
@@ -102,8 +107,10 @@ class OrganizationOverviewForm extends OverviewFilterForm {
 
     // Set pagination
     if ($options['pagination']) {
-      $this->request->query->set('page', $page);
-      $query->pager($options['count'] - 1);
+      \Drupal::requestStack()->getCurrentRequest()->query->set('page', $page);
+      $query->pager($options['count']);
+    } elseif (isset($options['count']) && $options['count'] > 0) {
+      $query->range($page * $options['count'], $options['count']);
     }
 
     $query->sort('title');
@@ -158,7 +165,9 @@ class OrganizationOverviewForm extends OverviewFilterForm {
     $profile = $this->request->get('profile');
     array_unshift($content['content'], [
       '#theme' => 'overview_list_item',
-      '#headline' => 'Se stedsbestemte materialer fra ' . $profile->get('field_organization_address')->organization,
+      '#headline' => t('See site-specific materials from @name', [
+        '@name' => $profile->get('field_organization_address')->organization
+      ]),
       '#attributes' => [
         'class' => ['inspiration-overview__item--maplink']
       ],
@@ -168,6 +177,5 @@ class OrganizationOverviewForm extends OverviewFilterForm {
       ]
     ]);
   }
-
 
 }
