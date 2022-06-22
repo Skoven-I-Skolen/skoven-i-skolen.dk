@@ -88,3 +88,4 @@ composer-src/
 # devspace branch related
 .novi/dbdumps/*
 .devspace/*
+.novi/state/*

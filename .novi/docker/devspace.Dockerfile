@@ -17,13 +17,8 @@ RUN apt update && \
 # Define the workdir
 WORKDIR /var/www
 
-ARG PHPVERSION="8.0"
-
 COPY . ./
-COPY .novi/docker/supervisor/devspace.supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY .novi/docker/nginx/devspace.nginx.conf /etc/nginx/nginx.conf
-COPY .novi/docker/nginx/devspace.default.conf /etc/nginx/conf.d/default.conf
-COPY .novi/docker/fpm/devspace.www.conf /etc/php/${PHPVERSION}/fpm/pool.d/www.conf
+COPY .novi/docker/nginx/devspace.www.conf.tmpl /etc/nginx/conf.d/www.conf.tmpl
 
 ARG PHPVERSION="8.0"
 

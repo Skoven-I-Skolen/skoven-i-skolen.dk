@@ -1,3 +1,18 @@
+map $cookie_XDEBUG_SESSION $fastcgi_pass {
+    default fpm;
+    xdebug fpm_xdebug;
+    phpstorm fpm_xdebug;
+    XDEBUG_ECLIPSE fpm_xdebug;
+}
+
+upstream fpm_xdebug {
+  server 127.0.0.1:9060;
+}
+
+upstream fpm {
+    server 127.0.0.1:9050;
+}
+
 server {
     listen 8080;
     server_name _;
@@ -94,7 +109,7 @@ server {
         fastcgi_intercept_errors on;
 
         # PHP location
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass $fastcgi_pass;
     }
 
     location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {

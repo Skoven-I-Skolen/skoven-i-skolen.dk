@@ -351,13 +351,23 @@ hooks:
       labelSelector:
         app.kubernetes.io/component: web
     events: ["after:deploy"]
-  # Import the database if not already run
-  - command: "mysql -uroot -prootpw -h${DB_HOST} ${DB_NAME} < .novi/dbdumps/dump.sql"
+  # Import SIS database if not already run
+  - command: "/bin/sh"
+    args:
+    - "-c"
+    - |
+      # Go to /var/www
+      cd /var/www
+
+      # Check if the database is already imported
+      if [ ! -f .novi/state/dbImport.lock ]; then
+        echo "Importing SIS DB dump"
+        mysql -uroot -prootpw -h${DB_HOST} ${DB_NAME} < .novi/dbdumps/dump.sql
+        touch .novi/state/dbImport.lock
+      fi
     container:
       wait: true
-      once: true
-      labelSelector:
-        app.kubernetes.io/component: web
+      imageSelector: ${IMAGE_REPOSITORY}/${IMAGE_NAME}
     events: ["after:deploy"]
   # Enable maintenance mode
   - command: "/var/www/vendor/bin/drush sset system.maintenance_mode 1"
