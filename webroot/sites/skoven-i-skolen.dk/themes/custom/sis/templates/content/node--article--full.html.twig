@@ -261,14 +261,15 @@
               Inspiration og lignende materialer
             </div>
             <div class="facts-box__content facts-box__inspiration">
-              {% for title, inspiration in inspirations %}
-                <div class="facts-box__inspiration-group">
-                  <div class="facts-box__inspiration-title">{{ title }}</div>
-                  {% for article in inspiration %}
-                    {{ article }}
-                  {% endfor %}
-                </div>
-              {% endfor %}
+{#              {% for title, inspiration in inspirations %}#}
+{#                <div class="facts-box__inspiration-group">#}
+{#                  <div class="facts-box__inspiration-title">{{ title }}</div>#}
+{#                  {% for article in inspiration %}#}
+{#                    {{ article }}#}
+{#                  {% endfor %}#}
+{#                </div>#}
+{#              {% endfor %}#}
+              {{ inspirations }}
             </div>
           </div>
         {% endif%}

@@ -11,6 +11,9 @@ function sis_articles_theme() {
     'list_element' => [
       'variables' => ['links' => [], 'article_type' => []],
     ],
+    'factbox_items' => [
+      'variables' => ['items' => []],
+    ],
   ];
 }
 
