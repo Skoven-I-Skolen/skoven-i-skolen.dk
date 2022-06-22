@@ -2,7 +2,7 @@ id: node.article
 label: Artikel
 entity_type_id: node
 bundle: article
-engine: entity_query
+engine: relewise
 fields:
   field_article_categories: checkboxes
   field_article_type: checkboxes

@@ -90,7 +90,7 @@
  */
 $databases = [];
 $databases['default']['default'] = array(
-  'database' => getenv('DB_NAME'),
+  'database' => getenv('DB_SCHEMA'),
   'username' => getenv('DB_USER'),
   'password' => getenv('DB_PASS'),
   'prefix' => '',
@@ -792,6 +792,11 @@ if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
     $settings['redis.connection']['port'] = '6379';
     $settings['cache']['default'] = 'cache.backend.redis';
     $settings['cache_prefix'] = 'sis_';
+}
+
+if (!empty(getenv('RELEWISE_APIKEY'))) {
+  $settings['relewise.apikey'] = getenv('RELEWISE_APIKEY');
+  $settings['relewise.dataset'] = getenv('RELEWISE_DATASET');
 }
 
 if (file_exists($app_root . '/sites/default/settings.ddev.php') && getenv('IS_DDEV_PROJECT') == 'true') {

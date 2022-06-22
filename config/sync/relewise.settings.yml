@@ -4,5 +4,6 @@ entity_bundles:
   node:
     - article
     - page
-  profile: {  }
+  profile:
+    - organization
   taxonomy_term: {  }

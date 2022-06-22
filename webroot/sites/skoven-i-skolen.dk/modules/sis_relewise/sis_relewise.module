@@ -24,8 +24,8 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
   if ($entity->getEntityTypeId() == 'node') {
     /** @var Node $node */
     $node = $entity;
-
     $langcode = $entity->language()->getId();
+
     if ($node->hasField('body') && !$node->get('body')
         ->isEmpty()) {
       $content->addData('body', new \Drupal\relewise\DataTypes\Multilingual($node->get('body')
@@ -43,10 +43,13 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
       $content->addData('field_article_type', $node->get('field_article_type')
         ->first()
         ->getValue()['target_id']);
-    }
-    if ($node->hasField('field_article_categories') && !$node->get('field_article_categories')
-        ->isEmpty()) {
-      $content->addData('field_article_categories', _sis_relewise_relewise_taxonomy_value($node->get('field_article_categories')));
+      $tid = $node->get('field_article_type')
+        ->first()
+        ->getValue()['target_id'];
+      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+      if ($term) {
+        $content->addData('field_article_type_label', $term->label());
+      }
     }
     if ($node->hasField('field_subject') && !$node->get('field_subject')
         ->isEmpty()) {
@@ -101,6 +104,22 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
       $content->addData('field_teaching_goals', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_teaching_goals')
         ->first()
         ->getValue()['value'], $langcode));
+    }
+  }
+  elseif ($entity->getEntityTypeId() == 'profile') {
+    /** @var \Drupal\profile\Entity\Profile $profile */
+    $profile = $entity;
+    $langcode = $entity->language()->getId();
+
+    if ($profile->hasField('field_organization_description') && !$profile->get('field_organization_description')
+        ->isEmpty()) {
+      $content->addData('field_description', new \Drupal\relewise\DataTypes\Multilingual($profile->get('field_organization_description')
+        ->first()
+        ->getValue()['value'], $langcode));
+    }
+    if ($profile->hasField('field_organization_address') && !$profile->get('field_organization_address')
+        ->isEmpty()) {
+      $content->addData('field_organization_address', $profile->get('field_organization_address')->first()->getValue()['organization'] ?? '');
     }
   }
   else {
