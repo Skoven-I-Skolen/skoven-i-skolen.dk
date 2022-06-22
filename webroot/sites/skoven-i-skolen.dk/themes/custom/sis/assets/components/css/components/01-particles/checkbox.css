@@ -33,6 +33,11 @@
     content: "";
   }
 
+  &:checked + label::before {
+    background-color: var(--theme-input-background-marked);
+  }
+
+
   &:checked + label::after,
   &:not(:checked) + label::after {
     position: absolute;
