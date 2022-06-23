@@ -96,7 +96,8 @@
         "novicell/styles": "^1.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "vlucas/phpdotenv": "^5.3",
-        "wikimedia/composer-merge-plugin": "^2.0"
+        "wikimedia/composer-merge-plugin": "^2.0",
+        "novicell/entity_overview": "1.1"
     },
     "require-dev": {
         "drupal/devel": "^4.1",
