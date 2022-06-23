@@ -190,6 +190,14 @@ overview-searchfield:
     theme:
       dist/components/css/components/02-molecules/overview-searchfield.css: {}
 
+read-more:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/read-more.css: {}
+  js:
+    dist/components/js/read-more.js: {}
+
 related-articles:
   version: VERSION
   css:
