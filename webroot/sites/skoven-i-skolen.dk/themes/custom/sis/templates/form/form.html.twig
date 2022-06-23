@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('adminimal_theme/global-styling') }}
+{{ attach_library('seven/vertical-tabs') }}
+<div class="section section--spacing-top-medium section--spacing-bottom-medium">
+  <div class="container">
+    <form{{ attributes }}>
+      {{ children }}
+    </form>
+  </div>
+</div>
