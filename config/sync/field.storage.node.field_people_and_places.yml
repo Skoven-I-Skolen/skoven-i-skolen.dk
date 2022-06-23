@@ -1,12 +1,12 @@
-uuid: 15943e4e-c291-4e5f-97b3-3ea4bfad1c46
+uuid: ca78fad6-c7a8-4d80-add4-4c3e5997a931
 langcode: da
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_class
-field_name: field_class
+id: node.field_people_and_places
+field_name: field_people_and_places
 entity_type: node
 type: entity_reference
 settings:

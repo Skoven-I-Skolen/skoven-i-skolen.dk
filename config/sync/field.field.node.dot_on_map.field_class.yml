@@ -1,0 +1,29 @@
+uuid: fd5869e7-5946-47e8-96a6-43ad554562e8
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class
+    - node.type.dot_on_map
+    - taxonomy.vocabulary.class
+id: node.dot_on_map.field_class
+field_name: field_class
+entity_type: node
+bundle: dot_on_map
+label: Klasse
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      class: class
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
