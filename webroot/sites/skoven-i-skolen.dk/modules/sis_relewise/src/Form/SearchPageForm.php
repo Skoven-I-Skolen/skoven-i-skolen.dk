@@ -71,6 +71,10 @@ class SearchPageForm extends OverviewFilterForm {
     $form['facets']['text']['#type'] = 'search';
     $form['facets']['text']['#title'] = $title;
 
+    $form['most_popular'] = [
+      '#theme' => 'sis_relewise_most_popular'
+    ];
+
     return $form;
   }
 
