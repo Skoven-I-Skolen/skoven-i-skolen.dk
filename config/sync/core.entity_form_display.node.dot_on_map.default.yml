@@ -1,0 +1,261 @@
+uuid: 4c64e79d-3b6b-48d5-adc8-00c0a2afba25
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.node.dot_on_map.body
+    - field.field.node.dot_on_map.field_class
+    - field.field.node.dot_on_map.field_contact_information
+    - field.field.node.dot_on_map.field_files
+    - field.field.node.dot_on_map.field_location
+    - field.field.node.dot_on_map.field_people_and_places
+    - field.field.node.dot_on_map.field_replant_the_planet
+    - field.field.node.dot_on_map.field_season
+    - field.field.node.dot_on_map.field_subject
+    - field.field.node.dot_on_map.field_summary
+    - node.type.dot_on_map
+  module:
+    - field_group
+    - file
+    - text
+third_party_settings:
+  field_group:
+    group_categorization:
+      children:
+        - group_class
+        - group_subject
+        - group_location
+        - group_season
+        - group_people_and_places
+        - group_replant_the_planet
+      label: Kategorisering
+      region: content
+      parent_name: group_categorization_wrapper
+      weight: 3
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_subject:
+      children:
+        - field_subject
+      label: Fag
+      region: content
+      parent_name: group_categorization
+      weight: 6
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_season:
+      children:
+        - field_season
+      label: Årstid
+      region: content
+      parent_name: group_categorization
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_class:
+      children:
+        - field_class
+      label: Klasse
+      region: content
+      parent_name: group_categorization
+      weight: 5
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_location:
+      children:
+        - field_location
+      label: Sted
+      region: content
+      parent_name: group_categorization
+      weight: 7
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_categorization_wrapper:
+      children:
+        - group_categorization
+      label: Kategorisering
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_information:
+      children:
+        - title
+        - body
+        - field_summary
+      label: Information
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_files:
+      children:
+        - field_files
+      label: Filer
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_people_and_places:
+      children:
+        - field_people_and_places
+      label: 'Mennesker & steder'
+      region: content
+      parent_name: group_categorization
+      weight: 9
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_replant_the_planet:
+      children:
+        - field_replant_the_planet
+      label: 'Genplant Planeten'
+      region: content
+      parent_name: group_categorization
+      weight: 10
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.dot_on_map.default
+targetEntityType: node
+bundle: dot_on_map
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_class:
+    type: options_buttons
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_files:
+    type: file_generic
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_location:
+    type: options_buttons
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_people_and_places:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_replant_the_planet:
+    type: options_buttons
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_season:
+    type: options_buttons
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_subject:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_summary:
+    type: string_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_contact_data: true
+  field_contact_information: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true
