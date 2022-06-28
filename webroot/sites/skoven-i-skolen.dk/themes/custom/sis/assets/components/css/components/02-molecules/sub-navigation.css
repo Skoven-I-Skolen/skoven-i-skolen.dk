@@ -20,8 +20,7 @@
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding: 48px 0;
     transition: opacity .3s;
 
     &.fade-enter,
@@ -37,7 +36,7 @@
 
   &__item {
     display: flex;
-    width: 25%;
+    width: calc(25% - 40px);
     margin: 20px 40px 20px 0;
     color: var(--color-primary);
     font-weight: 700;
