@@ -1,21 +1,26 @@
 .overview-form {
   &-contents {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (--viewport-ms-min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (--viewport-md-min) {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
     .inspiration-overview__item {
-      flex: 0 0 100%;
       height: auto;
       min-height: 100%;
       padding: var(--container-spacing-mobile);
 
       @media (--viewport-ms-min) {
-        flex: 0 0 50%;
         padding: var(--container-spacing);
       }
 
       @media (--viewport-md-min) {
-        flex: 0 0 33.3333%;
         padding: var(--container-spacing);
       }
     }
@@ -23,6 +28,7 @@
     .pager {
       width: 100%;
       margin-top: 10px;
+      grid-column: 1 / -1;
     }
   }
 
@@ -131,6 +137,23 @@
           height: 100%;
         }
       }
+    }
+  }
+
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 15px;
+
+    &-label {
+      margin-right: 13px;
+      font-size: var(--base-font-size-small);
+    }
+
+    .form-item {
+      margin-bottom: 0;
     }
   }
 }

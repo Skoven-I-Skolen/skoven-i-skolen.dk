@@ -236,7 +236,7 @@ accordion:
     theme:
       dist/components/css/components/03-organisms/accordion.css: {}
   js:
-    dist/components/js/accordion.js: {}
+    dist/components/js/accordion.js: { weight: -1 }
   dependencies:
     - core/drupal
 
@@ -335,6 +335,8 @@ overview-form:
   dependencies:
     - sis/accordion
     - sis/pager-full
+    - core/drupal.ajax
+    - sis/form-select
 
 profile:
   version: VERSION
@@ -387,3 +389,13 @@ search-autocomplete:
       dist/components/css/components/02-molecules/search-autocomplete.css: {}
   js:
     dist/components/js/search-autocomplete.js: {}
+
+form-select:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/01-particles/select.css: {}
+  js:
+    dist/components/js/select.js: {}
+  dependencies:
+    - core/drupal

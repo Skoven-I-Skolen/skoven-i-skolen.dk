@@ -49,17 +49,25 @@ class SearchPageForm extends OverviewFilterForm {
       'facets' => [
         'text',
         'sort',
-        'field_subject_area'
+        'field_article_type',
+        'field_subject',
+        'field_class',
+        'field_season',
+        'field_location',
       ],
       'fields' => [
-        'field_subject_area' => [],
+        'field_article_type' => [],
+        'field_subject' => [],
+        'field_class' => [],
+        'field_season' => [],
+        'field_location' => [],
         'term' => ''
       ],
       'pagination' => TRUE,
-      'show_total' => 'filtered',
+//      'show_total' => 'filtered',
       'count' => 15,
       'sort' => 'relevant',
-      'view_mode' => 'teaser'
+      'view_mode' => 'list'
     ];
     $form = parent::buildForm($form, $form_state, $options);
     $form['#cache']['max-age'] = 0;
@@ -70,6 +78,21 @@ class SearchPageForm extends OverviewFilterForm {
     }
     $form['facets']['text']['#type'] = 'search';
     $form['facets']['text']['#title'] = $title;
+
+    $form['keyword'] = [
+      '#markup' => $form_state->get(['fields', 'term'])
+    ];
+
+    $form['number_of_results'] = [
+      '#markup' => $this->t('@count result found', ['@count' => $this->count])
+    ];
+
+    // Remove the throbber, since its messing with our styles
+    foreach($form['facets'] as $key => $facets) {
+      if (isset($facets['#ajax'])) {
+        $form['facets'][$key]['#ajax']['progress']['type'] = 'none';
+      }
+    }
 
     return $form;
   }
@@ -187,5 +210,5 @@ class SearchPageForm extends OverviewFilterForm {
     $response->addCommand(new HtmlCommand('.article-list__filters .js-form-item-term label', $title));
     return $response;
   }
-
+  
 }

@@ -37,9 +37,10 @@ function sis_preprocess_page(&$variables) {
   }
 
   if (!$node && $request = \Drupal::requestStack()->getCurrentRequest()) {
-    $uri = $request->getRequestUri();
+    $uri = $request->getPathInfo();
 
-    if ($uri === '/organisationer') {
+    $url_filter_list = ['/organisationer','/search'];
+    if (in_array($uri, $url_filter_list)) {
       unset($variables['page']['pageheader']);
     }
 
