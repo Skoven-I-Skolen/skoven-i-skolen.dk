@@ -341,8 +341,7 @@ seasonal-wheel:
       dist/components/css/components/03-organisms/seasonal-wheel.css: {}
   js:
     dist/components/js/seasonal-wheel.js: {}
-  dependencies:
-    - sis/vue-js
+
 
 search-page:
   version: VERSION
@@ -389,7 +388,3 @@ search-autocomplete:
       dist/components/css/components/02-molecules/search-autocomplete.css: {}
   js:
     dist/components/js/search-autocomplete.js: {}
-
-vue-js:
-  js:
-    https://cdn.jsdelivr.net/npm/vue/dist/vue.js: { type: external }
