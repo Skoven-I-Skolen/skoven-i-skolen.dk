@@ -10,7 +10,6 @@ require('../../../scripts/vue.config')(Vue);
 Drupal.behaviors.accordion = {
   attach(context) {
     const accordions = document.querySelectorAll('.js-accordion:not(.loaded)');
-
     if (accordions.length === 0) {
       return;
     }
@@ -26,6 +25,22 @@ Drupal.behaviors.accordion = {
         toggleAccordionItem() {
           this.isOpen = !this.isOpen;
         },
+        expandAccordion() {
+          this.isOpen = true;
+        },
+        collapseAccordion() {
+          this.isOpen = false;
+        },
+      },
+      mounted() {
+        const btnExpand = document.getElementById('buttonExpandAll');
+        btnExpand.addEventListener('click', () => {
+          this.expandAccordion();
+        });
+        const btnCollapse = document.getElementById('buttonCollapseAll');
+        btnCollapse.addEventListener('click', () => {
+          this.collapseAccordion();
+        });
       },
       template: `
         <div class="accordion-item" v-show="!hidden">

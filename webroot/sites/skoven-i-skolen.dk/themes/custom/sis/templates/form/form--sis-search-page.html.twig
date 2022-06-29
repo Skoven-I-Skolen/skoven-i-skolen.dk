@@ -42,6 +42,14 @@
         <div class="overview-form__search-filters">
           <div class="accordion js-accordion">
             <div class="accordion__items">
+              <div class="accordion-buttons">
+                <button id="buttonExpandAll" type="button" class="accordion-button--expand button button--ghost">
+                  {{ "Expand All"|t }}
+                </button>
+                <button id="buttonCollapseAll" type="button" class="accordion-button--collapse button button--ghost">
+                  {{ "Collapse All"|t }}
+                </button>
+              </div>
               {{ element['facets'].field_article_type }}
               {{ element['facets'].field_class }}
               {{ element['facets'].field_location }}

@@ -20,3 +20,9 @@ msgstr "Se alle resultater (@count)"
 
 msgid "Found No Results for \"@query\""
 msgstr "\"@query\" gav ingen resultater"
+
+msgid "Expand All"
+msgstr "Udvid alle"
+
+msgid "Collapse All"
+msgstr "Skjul alle"
