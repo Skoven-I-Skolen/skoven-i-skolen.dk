@@ -3,17 +3,20 @@
 namespace Drupal\sis_articles\Services;
 
 use Drupal\Core\Security\TrustedCallbackInterface;
+use Drupal\node\Entity\Node;
 
 class LazyBuilderService implements TrustedCallbackInterface {
+
+  const ONE_DAY = 86400;
 
   /**
    * @param $node
    *
    * @return array
    */
-  public static function getArticleInspirationContent($node): array {
+  public static function getArticleInspirationContent($nodeId): array {
     $articleContentDeliveryService = \Drupal::service('sis_articles.content_delivery_service');
-    $inspirations = $articleContentDeliveryService->getInspirationalArticlesForCurrent($node);
+    $inspirations = $articleContentDeliveryService->getInspirationalArticlesForCurrent(Node::load($nodeId));
 
     $items = [];
     foreach ($inspirations as $title => $inspiration) {
@@ -29,7 +32,7 @@ class LazyBuilderService implements TrustedCallbackInterface {
       '#theme' => 'factbox_items',
       '#items' => $items,
       '#cache' => [
-        'max-age' => 3600,
+        'max-age' => self::ONE_DAY,
         'context' => ['url.path']
       ]
     ];
@@ -47,14 +50,7 @@ class LazyBuilderService implements TrustedCallbackInterface {
       ->getViewBuilder('node')
       ->viewMultiple($related, 'list');
 
-    return [
-      '#theme' => 'factbox_items',
-      '#items' => $items,
-      '#cache' => [
-        'max-age' => 3600,
-        'context' => ['url.path']
-      ]
-    ];
+    return $items;
   }
 
   /**
