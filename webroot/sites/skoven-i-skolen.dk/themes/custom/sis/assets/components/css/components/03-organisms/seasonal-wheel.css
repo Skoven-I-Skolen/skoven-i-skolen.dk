@@ -132,7 +132,7 @@
 .st24 {
   mask: url(#mask11_1918_128300_00000072976209487053962780000013127591289072187297_);
 }
-/* Seasonal wheel */
+/* Seasonal wheel hover effect*/
 #Layer_1 > g.st1 > path:hover,
 #Layer_1 > g.st4 > path:hover,
 #Layer_1 > g.st6 > path:hover,
@@ -145,10 +145,13 @@
 #Layer_1 > g.st20 > path:hover,
 #Layer_1 > g.st22 > path:hover,
 #Layer_1 > g.st24 > path:hover {
-  stroke: red;
-  /* glow */
-  -webkit-filter: drop-shadow(0 0 10px red);
-  filter: drop-shadow(0 0 10px red);
+
+  fill: red;
+  filter: blur(100px)
+}
+.hover-wheel {
+   fill: red;
+  filter: blur(100px)
 }
 .seasonal-wheel__wrapper {
   height: 500px;
@@ -166,23 +169,23 @@
 #seasonal-wheel-overlay {
   position: absolute;
   z-index: 1;
-  fill:transparent;
+  fill: transparent;
   cursor: pointer;
 }
 
 /* wheel knob */
 #Layer_1 > path:hover {
   stroke: red;
-  fill: #C52543;
+  fill: #c52543;
   opacity: 0.3;
-    /* glow effect around*/
-    /* -webkit-filter: drop-shadow(0 0 10px red);
+  /* glow effect around*/
+  /* -webkit-filter: drop-shadow(0 0 10px red);
     filter: drop-shadow(0 0 10px red); */
   cursor: pointer;
 }
 
 .months-wrapper {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 .headline-wrapper {
   display: flex;
@@ -190,7 +193,7 @@
 }
 .months-button {
   cursor: pointer;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 1.125rem;
   text-decoration-line: underline;
   font-style: normal;
@@ -199,4 +202,17 @@
 
 .seasonal-wheel__content {
   margin-top: 150px;
+}
+.heading-container {
+  padding-left: 0;
+}
+
+/* For the mobile devices */
+@media screen and (max-width: 768px) {
+  #seasonal-wheel-image img,
+  #seasonal-wheel-overlay svg {
+    height: 350px;
+    width: 350px;
+    margin-top: 50px;
+  }
 }
