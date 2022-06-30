@@ -38,9 +38,11 @@
     position: relative;
     display: block;
     align-items: center;
+    min-width: 175px;
+    min-height: var(--button-height);
     cursor: pointer;
-    text-decoration: none;
     overflow: hidden;
+    text-decoration: none;
     border-radius: 30px;
     padding: 16px 48px 14px 24px;
     background-color: none;
@@ -49,7 +51,6 @@
     font-family: var(--base-font-family);
     font-size: var(--base-font-size-small);
     line-height: calc(var(--button-height) * .5);
-    min-height: var(--button-height);
     border: 1px solid var(--theme-input-border-dark);
 
     &--disabled {
@@ -86,7 +87,7 @@
     min-width: 100%;
     margin-top: -1px;
     border: 1px solid var(--theme-input-border-dark);
-    border-radius: 0 0 27px  27px;
+    border-radius: 0 0 27px 27px;
     overflow: hidden;
 
     &.expanded {

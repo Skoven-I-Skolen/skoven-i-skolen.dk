@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_categories
+    - field.field.node.article.field_article_months
     - field.field.node.article.field_article_type
     - field.field.node.article.field_class
     - field.field.node.article.field_colophon
@@ -95,6 +96,7 @@ third_party_settings:
         - field_location
         - field_season
         - field_time
+        - field_article_months
       label: Kategorisering
       region: content
       parent_name: group_article_metadata
@@ -204,7 +206,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -217,6 +219,12 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_article_months:
+    type: options_buttons
+    weight: 21
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_article_type:
     type: options_select
@@ -373,7 +381,7 @@ content:
     third_party_settings: {  }
   field_time:
     type: entity_reference_autocomplete_tags
-    weight: 34
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
@@ -390,27 +398,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 15
+    weight: 16
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 12
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -424,7 +432,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -439,7 +447,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }

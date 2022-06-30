@@ -14,6 +14,25 @@
   &__items + .button {
     margin-top: 20px;
   }
+
+  &-button {
+    &__expand,
+    &__collapse {
+      &.button {
+        cursor: pointer;
+        min-height: 45px;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  &-buttons {
+    margin-top: var(--container-spacing);
+
+    .hide {
+      display: none;
+    }
+  }
 }
 
 .accordion-item {
@@ -95,14 +114,6 @@
       font-size: var(--base-font-size);
       visibility: visible;
       opacity: 1;
-      transition: none;
-    }
-  }
-
-  .accordion-button {
-    &-expand,
-    &-collapse {
-      cursor: pointer;
     }
   }
 }

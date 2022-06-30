@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.list
     - field.field.node.article.body
     - field.field.node.article.field_article_categories
+    - field.field.node.article.field_article_months
     - field.field.node.article.field_article_type
     - field.field.node.article.field_class
     - field.field.node.article.field_colophon
@@ -90,6 +91,7 @@ content:
 hidden:
   body: true
   field_article_categories: true
+  field_article_months: true
   field_article_type: true
   field_colophon: true
   field_colophon_author: true

@@ -34,11 +34,11 @@
           <div class="accordion js-accordion">
             <div class="accordion__items">
               <div class="accordion-buttons">
-                <button id="buttonExpandAll" type="button" class="accordion-button--expand button button--ghost">
-                  {{ "Expand All"|t }}
+                <button id="buttonExpandAll" type="button" class="accordion-button__expand button button--ghost">
+                  {{ "Expand All"|t }} +
                 </button>
-                <button id="buttonCollapseAll" type="button" class="accordion-button--collapse button button--ghost">
-                  {{ "Collapse All"|t }}
+                <button id="buttonCollapseAll" type="button" class="accordion-button__collapse button button--ghost hide">
+                  {{ "Collapse All"|t }} -
                 </button>
               </div>
               {{ element['facets'].field_class }}

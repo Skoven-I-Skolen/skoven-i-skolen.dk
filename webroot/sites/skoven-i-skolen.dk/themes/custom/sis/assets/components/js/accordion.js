@@ -34,12 +34,17 @@ Drupal.behaviors.accordion = {
       },
       mounted() {
         const btnExpand = document.getElementById('buttonExpandAll');
+        const btnCollapse = document.getElementById('buttonCollapseAll');
+
         btnExpand.addEventListener('click', () => {
           this.expandAccordion();
+          btnExpand.classList.add('hide');
+          btnCollapse.classList.remove('hide');
         });
-        const btnCollapse = document.getElementById('buttonCollapseAll');
         btnCollapse.addEventListener('click', () => {
           this.collapseAccordion();
+          btnCollapse.classList.add('hide');
+          btnExpand.classList.remove('hide');
         });
       },
       template: `

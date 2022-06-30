@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_categories
+    - field.field.node.article.field_article_months
     - field.field.node.article.field_article_type
     - field.field.node.article.field_class
     - field.field.node.article.field_colophon
@@ -74,6 +75,22 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          e3f33d1f-ef49-475c-b74e-19ce1120991d:
+            uuid: e3f33d1f-ef49-475c-b74e-19ce1120991d
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_article_months'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }
@@ -93,6 +110,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: -20
+    region: content
+  field_article_months:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_time:
     type: entity_reference_label

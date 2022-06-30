@@ -1,0 +1,5 @@
+name: SIS Season Wheel
+description: Receive content for the season wheel
+package: Skoven i Skolen
+type: module
+core_version_requirement: ^8 || ^9
