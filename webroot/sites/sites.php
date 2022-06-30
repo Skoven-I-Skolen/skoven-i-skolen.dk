@@ -56,11 +56,13 @@
  * @see https://www.drupal.org/documentation/install/multi-site
  */
 
+// Staging URL
+$sites['sis.staging.statens-it.dk'] = 'skoven-i-skolen.dk';
 
 $sites[getenv('DOMAIN_NAME')] = 'skoven-i-skolen.dk';
 
 if (!empty(getenv('INGRESS_URL'))) {
-  $sites[getenv('INGRESS_URL')] = 'skoven-i-skolen.dk';
+    $sites[getenv('INGRESS_URL')] = 'skoven-i-skolen.dk';
 }
 
 if (file_exists(__DIR__ . '/sites.local.php')) {

@@ -719,6 +719,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * example.org, with all subdomains included.
  */
 $settings['trusted_host_patterns'] = [
+  '^sis\.staging\.statens-it\.dk', // The actual staging URL
   '^skoven-i-skolen\.dk',
   '^.+\.skoven-i-skolen\.dk',
   '^.+\.novicell\.dev'
@@ -795,8 +796,8 @@ if (extension_loaded('redis') && !empty(getenv('REDIS_HOST'))) {
 }
 
 if (!empty(getenv('RELEWISE_APIKEY'))) {
-  $settings['relewise.apikey'] = getenv('RELEWISE_APIKEY');
-  $settings['relewise.dataset'] = getenv('RELEWISE_DATASET');
+    $settings['relewise.apikey'] = getenv('RELEWISE_APIKEY');
+    $settings['relewise.dataset'] = getenv('RELEWISE_DATASET');
 }
 
 if (file_exists($app_root . '/sites/default/settings.ddev.php') && getenv('IS_DDEV_PROJECT') == 'true') {
