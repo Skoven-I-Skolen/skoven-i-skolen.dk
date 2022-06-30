@@ -1,8 +1,7 @@
 <?php
-use Dotenv\Dotenv;
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__, 3));
+$dotenv->load();
 
-$dotenv = Dotenv::createUnsafeImmutable(__DIR__);
-$dotenv->safeLoad();
 
 // @codingStandardsIgnoreFile
 
