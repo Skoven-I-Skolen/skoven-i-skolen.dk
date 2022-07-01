@@ -13,18 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
     methods: {
       async getSeasonalArticles() {
         await axios
-          .get('/api/v1/content/seasonal-articles')
+          .get('sis/season-wheel/get/1')
           .then((response) => {
             this.seasonalWheelData = response.data;
-
+            console.log(this.seasonalWheelData);
             // Drupal handling
             // const ajaxObject = Drupal.ajax({
-            //   url: '',
+            //   url: 'sis/season-wheel/get/1',
             //   base: false,
             //   element: false,
             //   progress: false,
             // });
             // ajaxObject.success(response, status);
+            // // log
+            // console.log(response);
           })
           .catch((error) => {
             console.log(error);
@@ -123,6 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       },
     },
-    mounted() {},
+    mounted() {
+      this.getSeasonalArticles();
+    },
   });
 });
