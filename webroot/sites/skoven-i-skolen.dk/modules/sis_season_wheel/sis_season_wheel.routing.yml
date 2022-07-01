@@ -1,0 +1,7 @@
+sis.season_wheel.data:
+  path: sis/season-wheel/get/{month}
+  defaults:
+    _controller: '\Drupal\sis_season_wheel\Controller\SeasonWheelController::get'
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'

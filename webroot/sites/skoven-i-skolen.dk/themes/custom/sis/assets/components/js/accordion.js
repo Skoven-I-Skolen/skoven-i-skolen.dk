@@ -25,6 +25,27 @@ Drupal.behaviors.accordion = {
         toggleAccordionItem() {
           this.isOpen = !this.isOpen;
         },
+        expandAccordion() {
+          this.isOpen = true;
+        },
+        collapseAccordion() {
+          this.isOpen = false;
+        },
+      },
+      mounted() {
+        const btnExpand = document.getElementById('buttonExpandAll');
+        const btnCollapse = document.getElementById('buttonCollapseAll');
+
+        btnExpand.addEventListener('click', () => {
+          this.expandAccordion();
+          btnExpand.classList.add('hide');
+          btnCollapse.classList.remove('hide');
+        });
+        btnCollapse.addEventListener('click', () => {
+          this.collapseAccordion();
+          btnCollapse.classList.add('hide');
+          btnExpand.classList.remove('hide');
+        });
       },
       template: `
         <div class="accordion-item" v-show="!hidden">

@@ -24,6 +24,7 @@
 #}
 {{ attach_library('sis/profile') }}
 {{ attach_library('sis/breadcrumb') }}
+{{ attach_library('sis/read-more') }}
 {% set classes = [
   'profile',
   'profile--' ~ profile.id,
@@ -33,23 +34,30 @@
   'clearfix',
 ] %}
 <div{{ attributes.addClass(classes) }}>
-  {% if content.field_organization_graphic[0] %}
+  {% if content.field_organization_top_image[0] %}
     <div class="profile__hero">
-      {{ content.field_organization_graphic }}
+      {{ content.field_organization_top_image }}
     </div>
   {% endif %}
-  <div id="block-breadcrumbs">
-    <div class="container">
-      <div class="breadcrumb"></div>
-    </div>
-  </div>
+  {{ breadcrumb }}
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-lg-7 col-xs-12">
         <h1 class="profile__page-title">{{ profile.field_organization_address.organization }}</h1>
         {{ title_suffix.contextual_links }}
-        <div class="profile__description">
-          {{ profile.field_organization_description.value|t }}
+        <div class="profile__description read-more__content-wrapper">
+          <div class="read-more__content">
+            {% if profile.field_organization_description[0] %}
+              {{ profile.field_organization_description.value|t }}
+            {% endif %}
+          </div>
+          <a href="#" class="read-more__trigger">
+            <div class="read-more__label--expanded">{{ 'Hide'|t }}</div>
+            <div class="read-more__label--collapsed">{{ 'Read more'|t }}</div>
+            <div class="read-more__arrow">
+              <span></span>
+            </div>
+          </a>
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-lg-offset-1 col-xs-12 profile__info">

@@ -11,21 +11,30 @@
  */
 #}
 {{ attach_library('sis/overview-form') }}
+{{ attach_library('sis/search-page') }}
 
 <form{{ attributes.addClass('overview-form') }}>
   <div class="container">
-    {#  {{ children }} #}
-    <div class="row overview-form__header">
-      <div class="col-xs-12 col-md-8">
-        <div class="overview-form__search-title">
-          {{ element['search'].title }}
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="search-page__header">
+          <div class="search-page__header-inner">
+            <div class="search-page__description">
+              {{ 'Showing search results for'|t }}
+            </div>
+            <h3 class="search-page__title">
+              "{{ element.keyword }}"
+            </h3>
+            <div class="search-page__count">
+              {{ element.number_of_results }}
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="overview-form__search-input">
-          {{ element['search'].keyword }}
-          {{ element['search'].search }}
-        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 overview-form__toolbar">
+        <span class="overview-form__toolbar-label">{{ "Sorted by"|t }}:</span>{{ element['facets'].sort }}
       </div>
     </div>
     <div class="row">
@@ -41,6 +50,7 @@
                   {{ "Collapse All"|t }} -
                 </button>
               </div>
+              {{ element['facets'].field_article_type }}
               {{ element['facets'].field_class }}
               {{ element['facets'].field_location }}
               {{ element['facets'].field_season }}
@@ -51,7 +61,7 @@
       </div>
       <div class="col-xs-12 col-md-9">
         <div class="row">
-          {{ element['content'] }}
+          {{ element['content']|without('total') }}
         </div>
       </div>
     </div>

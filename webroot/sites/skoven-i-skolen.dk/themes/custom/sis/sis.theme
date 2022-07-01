@@ -29,3 +29,12 @@ function sis_theme_suggestions_fieldset_alter(&$suggestions, array $variables) {
     $suggestions[] = 'fieldset__' . $element['#type'] . '__' . reset($element['#array_parents']);
   }
 }
+
+function sis_theme_suggestions_block_alter(&$suggestions, array $variables) {
+  $element = $variables['elements'];
+
+  if(isset($element['#id']) && $element['#id'] === 'pageheader') {
+    $request = \Drupal::request()->getRequestUri();
+    $suggestions[] = $variables['theme_hook_original'] .'__'. $element['#id'] . '_' . str_replace('/','_', $request);;
+  }
+}

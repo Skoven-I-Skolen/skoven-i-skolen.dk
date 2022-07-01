@@ -34,3 +34,16 @@ function sis_organization_preprocess_page__organizations(&$variables) {
   $contentDelivery = \Drupal::service('sis_organization.content_delivery');
   $variables['page']['content_slideshow'] = $contentDelivery->getRandomArticlesFromOrganization();
 }
+
+function sis_organization_preprocess_profile__full(&$variables) {
+  $block_manager = \Drupal::service('plugin.manager.block');
+
+  // You can hard code configuration or you load from settings.
+  $config = [];
+  $plugin_block = $block_manager->createInstance('premium_breadcrumb_block', $config);
+  $breadcrumb = $plugin_block->build();
+
+  // Add the cache tags/contexts.
+  \Drupal::service('renderer')->addCacheableDependency($breadcrumb, $plugin_block);
+  return $variables['breadcrumb'] = $breadcrumb;
+}

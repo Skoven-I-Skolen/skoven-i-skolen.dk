@@ -1,0 +1,11 @@
+uuid: 245ab5fc-b79b-42f9-a9dd-f67fbc085a22
+langcode: da
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.month
+id: taxonomy_term.month
+target_entity_type_id: taxonomy_term
+target_bundle: month
+default_langcode: site_default
+language_alterable: false

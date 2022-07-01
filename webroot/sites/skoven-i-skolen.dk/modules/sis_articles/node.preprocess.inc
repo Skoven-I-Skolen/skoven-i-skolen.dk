@@ -11,7 +11,9 @@ function sis_articles_preprocess_node(&$variables) {
 
     $variables['inspirations'] = [
       '#lazy_builder' => [
-        LazyBuilderService::class . '::getArticleInspirationContent', [$variables['node']]
+        LazyBuilderService::class . '::getArticleInspirationContent', [
+          $variables['node']->id(),
+        ]
       ],
     ];
 

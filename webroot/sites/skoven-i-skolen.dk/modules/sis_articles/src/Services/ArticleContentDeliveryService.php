@@ -134,7 +134,7 @@ class ArticleContentDeliveryService {
    * @return \Drupal\Core\Entity\EntityBase[]|\Drupal\Core\Entity\EntityInterface[]|\Drupal\node\Entity\Node[]|null
    */
   public function getRelatedArticlesByFields(array $fieldNames, NodeInterface $node, int $limit = 10): ?array {
-    // Load the values of the fields and assign deom to an array
+    // Load the values of the fields and assign them to an array
     $fields = $this->getFieldValues($fieldNames, $node);
     $fields['field_season'] = $this->seasonService->getCurrentSeasonTermId();
 

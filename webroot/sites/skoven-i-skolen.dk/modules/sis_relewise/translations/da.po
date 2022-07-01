@@ -1,0 +1,31 @@
+# Danish translation of SIS Relevise
+# Copyright (c) 2021 Novicell
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SIS Relewise \n"
+"POT-Creation-Date: 2022-07-29 07:30+0000\n"
+"PO-Revision-Date: 2022-07-29 07:30+0100\n"
+"Language-Team: Danish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Last-Translator: \n"
+"Language: da\n"
+"X-Generator: Poedit 1.8.11\n"
+
+msgid "Showing search results for"
+msgstr "Viser søgeresultater for"
+
+msgid "@count result found"
+msgstr "@count resultater fundet"
+
+msgid "Sorted by"
+msgstr "Sorteret efter"
+
+msgid "Most relevant"
+msgstr "Mest relevante"
+
+msgid "Most popular"
+msgstr "Mest populære"

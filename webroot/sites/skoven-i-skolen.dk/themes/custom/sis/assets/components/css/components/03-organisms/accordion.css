@@ -14,11 +14,30 @@
   &__items + .button {
     margin-top: 20px;
   }
+
+  &-button {
+    &__expand,
+    &__collapse {
+      &.button {
+        cursor: pointer;
+        min-height: 45px;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  &-buttons {
+    margin-top: var(--container-spacing);
+
+    .hide {
+      display: none;
+    }
+  }
 }
 
 .accordion-item {
   color: var(--theme-button-color);
-  border-bottom: 1px solid var(--theme-accordion-border-color);
+  border-bottom: 1px solid var(--theme-accordion-color);
 
   &.hide {
     display: none;
@@ -43,7 +62,7 @@
   &__title {
     margin-bottom: 0;
     padding-right: 20px;
-    font-weight: 800;
+    font-weight: var(--heading-font-weight);
     font-size: var(--base-font-size);
     font-family: var(--base-font-family);
     line-height: 1.3;
@@ -87,7 +106,7 @@
   }
 
   &__content.active {
-    padding: 0 0 20px;
+    padding: 0 0 30px;
 
     .accordion-item__text {
       height: auto;
