@@ -27,7 +27,7 @@
     & + &::before {
       padding: 5px 3px;
       color: var(--color-gray);
-      content: "/";
+      content: "";
     }
   }
 

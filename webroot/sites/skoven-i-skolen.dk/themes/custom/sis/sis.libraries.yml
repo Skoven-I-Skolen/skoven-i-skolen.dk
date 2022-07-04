@@ -346,6 +346,15 @@ profile:
     theme:
       dist/components/css/components/03-organisms/profile.css: {}
 
+seasonal-wheel:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/seasonal-wheel.css: {}
+  js:
+    dist/components/js/seasonal-wheel.js: {}
+
+
 search-page:
   version: VERSION
   css:

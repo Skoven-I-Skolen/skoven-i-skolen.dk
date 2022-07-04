@@ -2,3 +2,6 @@ services:
   sis_season_wheel.content_delivery_service:
     class: 'Drupal\sis_season_wheel\Services\SeasonWheelContentDeliveryService'
     arguments: ['@sis_articles.article_repository','@entity_type.manager']
+  sis_season_wheel.repository:
+    class: 'Drupal\sis_season_wheel\Repository\SeasonWheelRepository'
+    arguments: ['@database','@entity_type.manager']

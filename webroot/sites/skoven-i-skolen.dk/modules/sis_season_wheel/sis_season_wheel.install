@@ -1,0 +1,49 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+
+function sis_season_wheel_install() {
+  sis_season_wheel_update_9001();
+}
+
+
+/**
+ * Add "Month name" terms
+ */
+function sis_season_wheel_update_9001() {
+  $vid = 'month';
+
+  $storage = \Drupal::entityTypeManager()
+    ->getStorage('taxonomy_vocabulary');
+
+  $monthMachineNames = [
+    'january',
+    'february',
+    'march',
+    'april',
+    'may',
+    'june',
+    'july',
+    'august',
+    'september',
+    'october',
+    'november',
+    'december',
+  ];
+
+  // Loop through all the months and create them, if the doesn't exist
+  foreach ($monthMachineNames as $monthMachineName) {
+    $month = $storage->loadByProperties([
+      'vid' => $vid,
+      'machine_name' => $monthMachineName,
+    ]);
+
+    if (!$month) {
+      Term::create([
+        'vid' => $vid,
+        'name' => t(ucfirst($monthMachineName)),
+        'machine_name' => $monthMachineName,
+      ])->save();
+    }
+  }
+}

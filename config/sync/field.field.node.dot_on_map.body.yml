@@ -1,0 +1,27 @@
+uuid: 34f2cd3c-ed9d-4ff3-b5df-76400b583755
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.dot_on_map
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: node.dot_on_map.body
+field_name: body
+entity_type: node
+bundle: dot_on_map
+label: Beskrivelse
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

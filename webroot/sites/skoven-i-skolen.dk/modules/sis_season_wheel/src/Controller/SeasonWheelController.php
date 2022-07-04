@@ -3,9 +3,11 @@
 namespace Drupal\sis_season_wheel\Controller;
 
 use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Link;
 use Drupal\sis_articles\Repository\ArticleRepository;
 use Drupal\sis_season_wheel\Services\SeasonWheelContentDeliveryService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -41,13 +43,42 @@ class SeasonWheelController extends ControllerBase {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function get(int $month): AjaxResponse {
+  public function get(string $month): AjaxResponse {
+    $monthTermId = $this->getMonthsIdByMachineName($month);
     $articles = $this->seasonWheelContentDeliveryService
-      ->getArticleByMonthTermId($month, 4);
+      ->getArticleByMonthTermId($monthTermId, 8);
 
     $response = new AjaxResponse();
-    $response->addCommand(new ReplaceCommand('.selector', $articles));
+    $response->addCommand(new HtmlCommand('.months-activity-cards', $articles));
+    $response->addCommand(new HtmlCommand('#month_name', t(ucfirst($month))));
+
+    // Create see all activitites link
+    $link = Link::createFromRoute(
+      t('See all activities'),
+      'entity.taxonomy_term.canonical',
+      ['taxonomy_term' => $monthTermId],
+      ['attributes' => [
+        'class' => 'seasonal-wheel__link js-seasonal-wheel__link'
+      ]]
+    )->toString();
+    $response->addCommand(new ReplaceCommand('.js-seasonal-wheel__link', $link));
     return $response;
   }
 
+  /**
+   * @param string $machineName
+   *
+   * @return int
+   */
+  public function getMonthsIdByMachineName(string $machineName): int {
+    $months = &drupal_static(__FUNCTION__, []);
+    if (!empty($months[$machineName])) {
+      return $months[$machineName];
+    }
+
+    /** @var \Drupal\sis_season_wheel\Repository\SeasonWheelRepository $repository */
+    $repository = \Drupal::service('sis_season_wheel.repository');
+    $months = $repository->getMonthsTaxonomyKeyedByMachineName();
+    return $months[$machineName];
+  }
 }

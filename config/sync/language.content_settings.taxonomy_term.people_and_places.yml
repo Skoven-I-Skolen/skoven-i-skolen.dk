@@ -1,0 +1,11 @@
+uuid: ea7f8e5b-afe6-4068-a1b5-8fd53ea43e25
+langcode: da
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.people_and_places
+id: taxonomy_term.people_and_places
+target_entity_type_id: taxonomy_term
+target_bundle: people_and_places
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,29 @@
+uuid: b84fd8ec-38e1-4230-a308-a3edd8270bd1
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_replant_the_planet
+    - node.type.dot_on_map
+    - taxonomy.vocabulary.replant_the_planet
+id: node.dot_on_map.field_replant_the_planet
+field_name: field_replant_the_planet
+entity_type: node
+bundle: dot_on_map
+label: 'Genplant Planeten'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      replant_the_planet: replant_the_planet
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
