@@ -1,0 +1,19 @@
+uuid: face63bf-bb75-4182-850f-893241963c45
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.seasonal_wheel
+    - field.storage.block_content.field_seasonal_wheel_title
+id: block_content.seasonal_wheel.field_seasonal_wheel_title
+field_name: field_seasonal_wheel_title
+entity_type: block_content
+bundle: seasonal_wheel
+label: Titel
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

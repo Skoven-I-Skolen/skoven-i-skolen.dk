@@ -1,0 +1,8 @@
+uuid: 298e9553-0b72-4956-82e2-092080a9c966
+langcode: da
+status: true
+dependencies: {  }
+name: 'Genplant Planeten'
+vid: replant_the_planet
+description: 'Bruges af prikker på kort, der kan oprettes af anonyme brugere.'
+weight: 0

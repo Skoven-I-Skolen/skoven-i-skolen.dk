@@ -1,0 +1,11 @@
+uuid: 549c40b8-78c4-45ec-a17f-bafb8d5c7467
+langcode: da
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.replant_the_planet
+id: taxonomy_term.replant_the_planet
+target_entity_type_id: taxonomy_term
+target_bundle: replant_the_planet
+default_langcode: site_default
+language_alterable: false

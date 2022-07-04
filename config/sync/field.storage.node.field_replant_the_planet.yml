@@ -1,12 +1,12 @@
-uuid: 15943e4e-c291-4e5f-97b3-3ea4bfad1c46
+uuid: 6471592a-b83f-4896-8e93-c3ebd3c14fe0
 langcode: da
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_class
-field_name: field_class
+id: node.field_replant_the_planet
+field_name: field_replant_the_planet
 entity_type: node
 type: entity_reference
 settings:

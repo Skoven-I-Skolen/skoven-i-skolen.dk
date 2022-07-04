@@ -1,0 +1,8 @@
+uuid: bbc30e02-dd82-4c29-bd94-3bcc09519467
+langcode: en
+status: true
+dependencies: {  }
+id: seasonal_wheel
+label: Årstidshjulet
+revision: 0
+description: ''

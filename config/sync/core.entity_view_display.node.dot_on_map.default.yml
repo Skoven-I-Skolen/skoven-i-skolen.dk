@@ -1,0 +1,116 @@
+uuid: 8d01e3a8-18a2-4897-8d39-bf16f63aae39
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.node.dot_on_map.body
+    - field.field.node.dot_on_map.field_class
+    - field.field.node.dot_on_map.field_contact_information
+    - field.field.node.dot_on_map.field_files
+    - field.field.node.dot_on_map.field_location
+    - field.field.node.dot_on_map.field_people_and_places
+    - field.field.node.dot_on_map.field_replant_the_planet
+    - field.field.node.dot_on_map.field_season
+    - field.field.node.dot_on_map.field_subject
+    - field.field.node.dot_on_map.field_summary
+    - node.type.dot_on_map
+  module:
+    - file
+    - text
+    - user
+id: node.dot_on_map.default
+targetEntityType: node
+bundle: dot_on_map
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_class:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_contact_data:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_contact_information:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_files:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_location:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_people_and_places:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_replant_the_planet:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_season:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_subject:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_summary:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

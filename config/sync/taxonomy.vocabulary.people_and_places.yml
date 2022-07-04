@@ -1,0 +1,8 @@
+uuid: b1edf894-b364-4f71-b389-0d6a3210822c
+langcode: da
+status: true
+dependencies: {  }
+name: 'Mennesker og steder'
+vid: people_and_places
+description: 'Bruges af prikker på kort, der kan oprettes af anonyme brugere.'
+weight: 0

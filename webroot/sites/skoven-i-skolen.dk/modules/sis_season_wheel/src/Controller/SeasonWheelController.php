@@ -3,7 +3,7 @@
 namespace Drupal\sis_season_wheel\Controller;
 
 use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\sis_articles\Repository\ArticleRepository;
@@ -43,10 +43,10 @@ class SeasonWheelController extends ControllerBase {
    */
   public function get(int $month): AjaxResponse {
     $articles = $this->seasonWheelContentDeliveryService
-      ->getArticleByMonthTermId($month, 4);
+      ->getArticleByMonthTermId($month, 8);
 
     $response = new AjaxResponse();
-    $response->addCommand(new ReplaceCommand('.selector', $articles));
+    $response->addCommand(new HtmlCommand('.months-activity-cards', $articles));
     return $response;
   }
 
