@@ -62,7 +62,6 @@ class SeasonWheelController extends ControllerBase {
       ]]
     )->toString();
     $response->addCommand(new ReplaceCommand('.js-seasonal-wheel__link', $link));
-
     return $response;
   }
 

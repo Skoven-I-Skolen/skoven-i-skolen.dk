@@ -9,14 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     delimiters: ['${', '}'],
     data: {
       seasonalWheelData: {},
+      month: '',
+      currentMonth: '',
     },
     methods: {
-      async getSeasonalArticles() {
+      async getSeasonalArticles(month) {
         await axios
-          .get('/sis/season-wheel/get/january')
+          .get(`/sis/season-wheel/get/${month}`)
           .then((response) => {
             this.seasonalWheelData = response.data;
-            console.log(this.seasonalWheelData);
 
             // Drupal handling
             const ajaxObject = Drupal.ajax({
@@ -26,18 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
               progress: false,
             });
             ajaxObject.success(this.seasonalWheelData);
-            // log
-            console.log(this.seasonalWheelData);
           })
           .catch((error) => {
             console.log(error);
           });
       },
-      seasonWheelController() {
+      getCurrentMonthArticles() {
         this.resetHover();
-        this.addHoverClasses();
+        this.addHoverClassesToCurrentMonth();
+        this.getSeasonalArticles(this.currentMonth);
       },
-      addHoverClasses() {
+      addHoverClassesToCurrentMonth() {
         // Month Hover classes
         const Jan = document.querySelector('.st24');
         const Feb = document.querySelector('.st22');
@@ -122,29 +122,107 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       getSeasonalArticlesByMonth(passedMonth) {
         this.resetHover();
-        console.log('getSeasonalArticlesByMonth', passedMonth);
-        if (passedMonth === 'Jan') {
-          console.log('hitting');
+        if (passedMonth === 'january') {
+          this.getSeasonalArticles('january');
+          // Add hover class to selected month
           const Jan = document.querySelector('.st24');
           Jan.classList.add('hover-wheel');
-        } else {
-          console.log('not hitting');
+        } else if (passedMonth === 'february') {
+          this.getSeasonalArticles('february');
+          const Feb = document.querySelector('.st22');
+          Feb.classList.add('hover-wheel');
+        } else if (passedMonth === 'march') {
+          this.getSeasonalArticles('march');
+          const March = document.querySelector('.st20');
+          March.classList.add('hover-wheel');
+        } else if (passedMonth === 'april') {
+          this.getSeasonalArticles('april');
+          const April = document.querySelector('.st18');
+          April.classList.add('hover-wheel');
+        } else if (passedMonth === 'may') {
+          this.getSeasonalArticles('may');
+          const May = document.querySelector('.st16');
+          May.classList.add('hover-wheel');
+        } else if (passedMonth === 'june') {
+          this.getSeasonalArticles('june');
+          const June = document.querySelector('.st14');
+          June.classList.add('hover-wheel');
+        } else if (passedMonth === 'july') {
+          this.getSeasonalArticles('july');
+          const July = document.querySelector('.st12');
+          July.classList.add('hover-wheel');
+        } else if (passedMonth === 'august') {
+          this.getSeasonalArticles('august');
+          const August = document.querySelector('.st10');
+          August.classList.add('hover-wheel');
+        } else if (passedMonth === 'september') {
+          this.getSeasonalArticles('september');
+          const Sept = document.querySelector('.st8');
+          Sept.classList.add('hover-wheel');
+        } else if (passedMonth === 'october') {
+          this.getSeasonalArticles('october');
+          const Oct = document.querySelector('.st6');
+          Oct.classList.add('hover-wheel');
+        } else if (passedMonth === 'november') {
+          this.getSeasonalArticles('november');
+          const Nov = document.querySelector('.st4');
+          Nov.classList.add('hover-wheel');
+        } else if (passedMonth === 'december') {
+          this.getSeasonalArticles('december');
+          const Dec = document.querySelector('.st1');
+          Dec.classList.add('hover-wheel');
         }
+      },
 
-        // @click="getSeasonalArticlesByMonth('{{ 1 }}')"    --  twig
+      // get current month
+      getCurrentMonth() {
+        const currentMonth = new Date().getMonth();
+        const currentMonthIndex = currentMonth + 1;
 
-        // TODO
-        // Get article data for each month - API CALL - then add to the DOM through drupal magic
-        // On page load get articles for current month (below Current month name)
-        // Dynamic month name On load and on click pizza wheel
-        // pizza wheel months call different months and display data below vector image line
-        // initial values on load - to always show current month's data -
-        // Mainly Month name (below wheel) and articles that load
-        // for that month (even before wheel spin)
+        if (currentMonthIndex === 1) {
+          this.currentMonth = 'january';
+          return 'january';
+        } if (currentMonthIndex === 2) {
+          this.currentMonth = 'february';
+          return 'february';
+        } if (currentMonthIndex === 3) {
+          this.currentMonth = 'march';
+          return 'march';
+        } if (currentMonthIndex === 4) {
+          this.currentMonth = 'april';
+          return 'april';
+        } if (currentMonthIndex === 5) {
+          this.currentMonth = 'may';
+          return 'may';
+        } if (currentMonthIndex === 6) {
+          this.currentMonth = 'june';
+          return 'june';
+        } if (currentMonthIndex === 7) {
+          this.currentMonth = 'july';
+          return 'july';
+        } if (currentMonthIndex === 8) {
+          this.currentMonth = 'august';
+          return 'august';
+        } if (currentMonthIndex === 9) {
+          this.currentMonth = 'september';
+          return 'september';
+        } if (currentMonthIndex === 10) {
+          this.currentMonth = 'october';
+          return 'october';
+        } if (currentMonthIndex === 11) {
+          this.currentMonth = 'november';
+          return 'november';
+        } if (currentMonthIndex === 12) {
+          this.currentMonth = 'december';
+          return 'december';
+        }
+        return this.getCurrentMonth();
       },
     },
     mounted() {
-      this.getSeasonalArticles();
+      this.getCurrentMonth();
+      console.log('Mounted Current Month is: ', this.getCurrentMonth());
+      this.getSeasonalArticles(this.getCurrentMonth());
     },
   });
 });
