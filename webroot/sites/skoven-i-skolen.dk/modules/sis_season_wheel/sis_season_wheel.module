@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_preprocess().
+ */
+function sis_season_wheel_preprocess_block__inline_block__seasonal_wheel(array &$variables) {
+  /** @var \Drupal\sis_season_wheel\Repository\SeasonWheelRepository $repository */
+  $repository = \Drupal::service('sis_season_wheel.repository');
+  $months = $repository->getMonthsTaxonomyKeyedByMachineName();
+  $currentMonth = date('F');
+
+  $variables['#attached']['drupalSettings']['seasonal_wheel']['months'] = $months;
+  $variables['#attached']['drupalSettings']['seasonal_wheel']['current_month'] = $months[strtolower($currentMonth)];
+  $variables['month_name'] = $currentMonth;
+}

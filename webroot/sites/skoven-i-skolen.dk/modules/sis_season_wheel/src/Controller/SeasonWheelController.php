@@ -41,13 +41,31 @@ class SeasonWheelController extends ControllerBase {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function get(int $month): AjaxResponse {
+  public function get(string $month): AjaxResponse {
+    $monthTermId = $this->getMonthsIdByMachineName($month);
     $articles = $this->seasonWheelContentDeliveryService
-      ->getArticleByMonthTermId($month, 8);
+      ->getArticleByMonthTermId($monthTermId, 8);
 
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('.months-activity-cards', $articles));
+//    $response->addCommand(new HtmlCommand('#month_name', ucfirst($month)));
     return $response;
   }
 
+  /**
+   * @param string $entity_bundle
+   *
+   * @return array
+   */
+  public function getMonthsIdByMachineName(string $machineName) {
+    $months = &drupal_static(__FUNCTION__, []);
+    if (!empty($months[$machineName])) {
+      return $months[$machineName];
+    }
+
+    /** @var \Drupal\sis_season_wheel\Repository\SeasonWheelRepository $repository */
+    $repository = \Drupal::service('sis_season_wheel.repository');
+    $months = $repository->getMonthsTaxonomyKeyedByMachineName();
+    return $months[$machineName];
+  }
 }

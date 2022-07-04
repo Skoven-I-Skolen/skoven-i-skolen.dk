@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     methods: {
       async getSeasonalArticles() {
         await axios
-          .get('sis/season-wheel/get/60')
+          .get('/sis/season-wheel/get/january')
           .then((response) => {
             this.seasonalWheelData = response.data;
             console.log(this.seasonalWheelData);
