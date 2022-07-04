@@ -25,10 +25,9 @@ regions:
 components:
   namespaces:
     reusable-component:
-      paths:
-        - assets/components/twig/01-particles
-        - assets/components/twig/02-molecules
-        - assets/components/twig/03-organisms
+      - assets/components/twig/01-particles
+      - assets/components/twig/02-molecules
+      - assets/components/twig/03-organisms
 
 interface translation project: sis
 interface translation server pattern: sites/skoven-i-skolen.dk/themes/custom/sis/translations/%language.po
