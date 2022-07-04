@@ -206,6 +206,11 @@
 .heading-container {
   padding-left: 0;
 }
+.months-activity-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
 
 /* For the mobile devices */
 @media screen and (max-width: 768px) {

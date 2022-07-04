@@ -48,7 +48,7 @@ class SeasonWheelController extends ControllerBase {
 
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('.months-activity-cards', $articles));
-//    $response->addCommand(new HtmlCommand('#month_name', ucfirst($month)));
+    $response->addCommand(new HtmlCommand('#month_name', ucfirst($month)));
     return $response;
   }
 
