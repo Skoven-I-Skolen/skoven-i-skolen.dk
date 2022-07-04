@@ -23,3 +23,9 @@ msgstr "Vis grafisk bund"
 
 msgid "subjects"
 msgstr "fag"
+
+msgid "View all"
+msgstr "Se alle"
+
+msgid "View less"
+msgstr "Se mindre"
