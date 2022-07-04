@@ -2,6 +2,20 @@
 
 use Drupal\Core\Link;
 
+
+/**
+ * Implements hook_locale_translation_projects_alter().
+ */
+function sis_season_wheel_locale_translation_projects_alter(&$projects) {
+  /** @var \Drupal\Core\Extension\ModuleHandlerInterface $module_handler */
+  $module_handler = \Drupal::service('module_handler');
+  $path = $module_handler->getModule('sis_season_wheel')->getPath();
+  $projects['sis_season_wheel']['info']['interface translation server pattern']
+    = $path . '/translations/%language.po';
+}
+
+
+
 /**
  * Implements hook_preprocess().
  */
