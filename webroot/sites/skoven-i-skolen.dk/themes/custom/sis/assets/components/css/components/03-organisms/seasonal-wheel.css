@@ -191,7 +191,7 @@
   display: flex;
   justify-content: space-between;
 }
-.months-button {
+.seasonal-wheel__link {
   cursor: pointer;
   font-family: "Nunito", sans-serif;
   font-size: 1.125rem;

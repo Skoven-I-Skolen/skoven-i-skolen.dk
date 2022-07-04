@@ -4,8 +4,10 @@ namespace Drupal\sis_season_wheel\Controller;
 
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Link;
 use Drupal\sis_articles\Repository\ArticleRepository;
 use Drupal\sis_season_wheel\Services\SeasonWheelContentDeliveryService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -48,16 +50,28 @@ class SeasonWheelController extends ControllerBase {
 
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('.months-activity-cards', $articles));
-//    $response->addCommand(new HtmlCommand('#month_name', ucfirst($month)));
+    $response->addCommand(new HtmlCommand('#month_name', ucfirst($month)));
+
+    // Create see all activitites link
+    $link = Link::createFromRoute(
+      t('See all activities'),
+      'entity.taxonomy_term.canonical',
+      ['taxonomy_term' => $monthTermId],
+      ['attributes' => [
+        'class' => 'seasonal-wheel__link js-seasonal-wheel__link'
+      ]]
+    )->toString();
+    $response->addCommand(new ReplaceCommand('.js-seasonal-wheel__link', $link));
+
     return $response;
   }
 
   /**
-   * @param string $entity_bundle
+   * @param string $machineName
    *
-   * @return array
+   * @return int
    */
-  public function getMonthsIdByMachineName(string $machineName) {
+  public function getMonthsIdByMachineName(string $machineName): int {
     $months = &drupal_static(__FUNCTION__, []);
     if (!empty($months[$machineName])) {
       return $months[$machineName];
