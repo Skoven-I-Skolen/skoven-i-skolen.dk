@@ -3,6 +3,7 @@
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\EntityReferenceFieldItemList;
 use Drupal\node\Entity\Node;
+use Drupal\relewise\DataTypes\Search\Sorting\Content\ContentPopularitySorting;
 
 /**
  * Implements hook_locale_translation_projects_alter().
@@ -142,4 +143,38 @@ function _sis_relewise_relewise_taxonomy_value(EntityReferenceFieldItemList $fie
     $value->addValue($term->id());
   }
   return $value;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sis_relewise_theme($existing, $type, $theme, $path) {
+  return [
+    'sis_relewise_most_popular' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * Most popular content preprocess.
+ *
+ * @param array $variables
+ *   Template variables.
+ */
+function sis_relewise_preprocess_sis_relewise_most_popular(array &$variables) {
+  $variables['cache']['max-age'] = 60*60*24;
+  /** @var \Drupal\relewise\Relewise $relewise */
+  $relewise = \Drupal::service('relewise');
+  try {
+    $result = $relewise->searchContent('', ['bundle' => ['article']], new ContentPopularitySorting(), 4);
+    $nodes = $relewise->getSearchedContent($result);
+  } catch (Exception $exception) {
+    $nodes = [];
+  }
+  if (!empty($nodes)) {
+    $variables['nodes'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('node')
+      ->viewMultiple($nodes, 'teaser');
+  }
 }

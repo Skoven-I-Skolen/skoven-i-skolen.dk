@@ -89,3 +89,4 @@ composer-src/
 .novi/dbdumps/*
 .devspace/*
 /.novi/dbdumps
+.vscode/settings.json

@@ -1,0 +1,11 @@
+uuid: a54547c5-b0c6-41a9-8915-424a958fe088
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.seasonal_wheel
+id: block_content.seasonal_wheel
+target_entity_type_id: block_content
+target_bundle: seasonal_wheel
+default_langcode: site_default
+language_alterable: false

@@ -2,8 +2,13 @@ uuid: ed44d3f7-1599-4e0a-8b19-5c15ddf6af10
 langcode: da
 status: true
 dependencies:
+  config:
+    - filter.format.basic_html
+    - node.type.dot_on_map
   module:
+    - filter
     - media
+    - node
     - profile
     - system
 _core:
@@ -14,6 +19,8 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
+  - 'create dot_on_map content'
   - 'search content'
+  - 'use text format basic_html'
   - 'view any organization profile'
   - 'view media'

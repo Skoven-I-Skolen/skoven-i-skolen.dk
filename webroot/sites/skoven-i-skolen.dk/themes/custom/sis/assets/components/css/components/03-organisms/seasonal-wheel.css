@@ -1,0 +1,218 @@
+.st0 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st1 {
+  mask: url(#mask0_1918_128300_00000020363265261175252470000010592555694487462059_);
+}
+.st2 {
+  /* fill: transparent; */
+}
+
+.st3 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000038399331562423120540000013683667708116525496_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st4 {
+  mask: url(#mask1_1918_128300_00000163038697462854632060000018238849885580844688_);
+}
+
+.st5 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000110448187830116177470000006615456331184652722_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st6 {
+  mask: url(#mask2_1918_128300_00000166637067036993254640000005350462908405127325_);
+}
+
+.st7 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000165235798874791150890000015097400734037593245_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st8 {
+  mask: url(#mask3_1918_128300_00000137104976706615404510000002565293892240450967_);
+}
+
+.st9 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000095327279112705642540000012521676214383049104_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st10 {
+  mask: url(#mask4_1918_128300_00000089559497845667715220000007369634873339556486_);
+}
+
+.st11 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000130605823622510323900000001429044703096496290_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st12 {
+  mask: url(#mask5_1918_128300_00000007395203470448760370000003602623166874429321_);
+}
+
+.st13 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000059305511941411006250000012354188638763294134_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st14 {
+  mask: url(#mask6_1918_128300_00000073696739953670769160000013861953355876736680_);
+}
+
+.st15 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000152234284181910072580000004805457634769353139_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st16 {
+  mask: url(#mask7_1918_128300_00000183214808146658946060000006054551131492933822_);
+}
+
+.st17 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000119092149389987047280000005100823418865307060_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st18 {
+  mask: url(#mask8_1918_128300_00000002376312820510485980000010620300873080711328_);
+}
+
+.st19 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000183226528574092841440000008948782408372390035_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st20 {
+  mask: url(#mask9_1918_128300_00000065784531995691059970000002826995529718019748_);
+}
+
+.st21 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000085930648742489874410000008435588053637683088_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st22 {
+  mask: url(#mask10_1918_128300_00000052783096238149542490000005044003899978243740_);
+}
+
+.st23 {
+  fill: #efe3d7;
+  filter: url(#Adobe_OpacityMaskFilter_00000159458072440644016310000017485347572777319839_);
+  stroke: #efe3d7;
+  stroke-width: 1.3669;
+  stroke-miterlimit: 10;
+}
+.st24 {
+  mask: url(#mask11_1918_128300_00000072976209487053962780000013127591289072187297_);
+}
+/* Seasonal wheel hover effect*/
+#Layer_1 > g.st1 > path:hover,
+#Layer_1 > g.st4 > path:hover,
+#Layer_1 > g.st6 > path:hover,
+#Layer_1 > g.st8 > path:hover,
+#Layer_1 > g.st10 > path:hover,
+#Layer_1 > g.st12 > path:hover,
+#Layer_1 > g.st14 > path:hover,
+#Layer_1 > g.st16 > path:hover,
+#Layer_1 > g.st18 > path:hover,
+#Layer_1 > g.st20 > path:hover,
+#Layer_1 > g.st22 > path:hover,
+#Layer_1 > g.st24 > path:hover {
+
+  fill: red;
+  filter: blur(100px)
+}
+.hover-wheel {
+   fill: red;
+  filter: blur(100px)
+}
+.seasonal-wheel__wrapper {
+  height: 500px;
+}
+#seasonal-wheel-image,
+#seasonal-wheel-overlay {
+  width: 580px;
+  height: 500px;
+  position: absolute;
+}
+
+#seasonal-wheel-image {
+  z-index: 0;
+}
+#seasonal-wheel-overlay {
+  position: absolute;
+  z-index: 1;
+  fill: transparent;
+  cursor: pointer;
+}
+
+/* wheel knob */
+#Layer_1 > path:hover {
+  stroke: red;
+  fill: #c52543;
+  opacity: 0.3;
+  /* glow effect around*/
+  /* -webkit-filter: drop-shadow(0 0 10px red);
+    filter: drop-shadow(0 0 10px red); */
+  cursor: pointer;
+}
+
+.months-wrapper {
+  margin-top: 100px;
+}
+.headline-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.months-button {
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.125rem;
+  text-decoration-line: underline;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.seasonal-wheel__content {
+  margin-top: 150px;
+}
+.heading-container {
+  padding-left: 0;
+}
+
+/* For the mobile devices */
+@media screen and (max-width: 768px) {
+  #seasonal-wheel-image img,
+  #seasonal-wheel-overlay svg {
+    height: 350px;
+    width: 350px;
+    margin-top: 50px;
+  }
+}
