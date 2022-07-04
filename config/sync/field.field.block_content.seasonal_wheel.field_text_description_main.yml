@@ -1,0 +1,25 @@
+uuid: abb58ba2-4df6-400e-b421-be6428a0b4eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.seasonal_wheel
+    - field.storage.block_content.field_text_description_main
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: block_content.seasonal_wheel.field_text_description_main
+field_name: field_text_description_main
+entity_type: block_content
+bundle: seasonal_wheel
+label: 'Text description main'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -6,39 +6,36 @@ require('../../../scripts/vue.config')(Vue);
 document.addEventListener('DOMContentLoaded', () => {
   const vm = new Vue({
     el: '.seasonal-wheel',
+    delimiters: ['${', '}'],
     data: {
       seasonalWheelData: {},
-      isLoading: false,
     },
     methods: {
       async getSeasonalArticles() {
         await axios
-          .get('sis/season-wheel/get/1')
+          .get('sis/season-wheel/get/60')
           .then((response) => {
             this.seasonalWheelData = response.data;
             console.log(this.seasonalWheelData);
+
             // Drupal handling
-            // const ajaxObject = Drupal.ajax({
-            //   url: 'sis/season-wheel/get/1',
-            //   base: false,
-            //   element: false,
-            //   progress: false,
-            // });
-            // ajaxObject.success(response, status);
-            // // log
-            // console.log(response);
+            const ajaxObject = Drupal.ajax({
+              url: '',
+              base: false,
+              element: false,
+              progress: false,
+            });
+            ajaxObject.success(this.seasonalWheelData);
+            // log
+            console.log(this.seasonalWheelData);
           })
           .catch((error) => {
             console.log(error);
           });
       },
       seasonWheelController() {
-        if (this.isLoading) {
-          console.log('isLoading');
-        } else {
-          this.resetHover();
-          this.addHoverClasses();
-        }
+        this.resetHover();
+        this.addHoverClasses();
       },
       addHoverClasses() {
         // Month Hover classes
@@ -104,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const Nov = document.querySelector('.st4');
         const Dec = document.querySelector('.st1');
 
-        //    go through all the months and add the hover classList
         const months = [
           Jan,
           Feb,
@@ -123,6 +119,28 @@ document.addEventListener('DOMContentLoaded', () => {
         months.forEach((month) => {
           month.classList.remove('hover-wheel');
         });
+      },
+      getSeasonalArticlesByMonth(passedMonth) {
+        this.resetHover();
+        console.log('getSeasonalArticlesByMonth', passedMonth);
+        if (passedMonth === 'Jan') {
+          console.log('hitting');
+          const Jan = document.querySelector('.st24');
+          Jan.classList.add('hover-wheel');
+        } else {
+          console.log('not hitting');
+        }
+
+        // @click="getSeasonalArticlesByMonth('{{ 1 }}')"    --  twig
+
+        // TODO
+        // Get article data for each month - API CALL - then add to the DOM through drupal magic
+        // On page load get articles for current month (below Current month name)
+        // Dynamic month name On load and on click pizza wheel
+        // pizza wheel months call different months and display data below vector image line
+        // initial values on load - to always show current month's data -
+        // Mainly Month name (below wheel) and articles that load
+        // for that month (even before wheel spin)
       },
     },
     mounted() {
