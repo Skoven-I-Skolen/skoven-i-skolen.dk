@@ -332,6 +332,8 @@ overview-form:
   css:
     theme:
       dist/components/css/components/03-organisms/overview-form.css: {}
+  js:
+    dist/components/js/overview-form.js: {}
   dependencies:
     - sis/accordion
     - sis/pager-full
