@@ -14,6 +14,8 @@ class ArticleRepository {
    */
   public function fetchArticlesIdsByTaxonomy(array $fields, $limit = 10): ?array {
     $query = $this->buildQuery($fields, $limit);
+    $query ->sort('title', 'ASC');
+
     return $query->execute();
   }
 
