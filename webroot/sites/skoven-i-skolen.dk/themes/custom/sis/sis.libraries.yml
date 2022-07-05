@@ -308,6 +308,9 @@ inspiration-overview:
   css:
     theme:
       dist/components/css/components/03-organisms/inspiration-overview.css: {}
+  dependencies:
+    - sis/breadcrumb
+    - sis/pager
 
 organization-overview:
   version: VERSION
