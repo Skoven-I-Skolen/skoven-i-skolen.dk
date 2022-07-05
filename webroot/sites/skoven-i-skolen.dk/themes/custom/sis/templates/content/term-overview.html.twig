@@ -1,6 +1,18 @@
 {{ attach_library('sis/inspiration-overview') }}
-<div{{ attributes.addClass('inspiration-overview') }}>
+<div class="container">
+  <div class="breadcrumb"></div>
   <div class="row">
-    {{ entities }}
+    <div class="inspiration-overview__pageheader col-xs-12">
+      {{ title_prefix }}
+      <h1  class="inspiration-overview__pageheader-headline">{{ term.label|t }}</h1>
+      {{ title_suffix }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div{{ attributes.addClass('inspiration-overview') }}>
+        {{ entities }}
+      </div>
+    </div>
   </div>
 </div>

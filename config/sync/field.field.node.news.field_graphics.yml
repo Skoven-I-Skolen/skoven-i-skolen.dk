@@ -1,0 +1,29 @@
+uuid: d53131b3-4da7-4012-af64-da952fcadeec
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_graphics
+    - media.type.icon
+    - node.type.news
+id: node.news.field_graphics
+field_name: field_graphics
+entity_type: node
+bundle: news
+label: 'Top grafik'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      icon: icon
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

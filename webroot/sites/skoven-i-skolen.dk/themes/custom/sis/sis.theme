@@ -4,6 +4,7 @@ require_once 'layout_block.preprocess.inc';
 require_once 'paragraph.preprocess.inc';
 require_once 'node.preprocess.inc';
 require_once 'input.preprocess.inc';
+require_once 'term.preprocess.inc';
 require_once 'form-alter.inc';
 
 

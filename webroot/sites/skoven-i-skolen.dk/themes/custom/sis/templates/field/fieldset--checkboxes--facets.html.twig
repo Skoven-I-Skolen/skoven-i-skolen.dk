@@ -28,7 +28,12 @@
  * @ingroup themeable
  */
 #}
-
-<accordion-item title="{{ legend.title }}">
+<accordion-item title="{{ legend.title }}"{{ element['#options']|length > 4 ? create_attribute().addClass('accordion-item__expanadable') }}>
   {{ children }}
+  {% if element['#options']|length > 4 %}
+    <div class="accordion-item__expanadable--trigger js-accordion-item__expanadable--trigger">
+      <div class="accordion-item__expanadable--trigger-expand"><span>+ {{ 'View all'|t }}</span></div>
+      <div class="accordion-item__expanadable--trigger-collapse"><span>- {{ 'View less'|t }}</span></div>
+    </div>
+  {% endif %}
 </accordion-item>

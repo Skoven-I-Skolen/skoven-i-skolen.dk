@@ -1,4 +1,8 @@
 .inspiration-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: var(--container-spacing-mobile);
+
   &__intro {
     margin-bottom: 32px;
     padding-right: var(--container-spacing-mobile);
@@ -213,6 +217,12 @@
         right: -5px;
       }
     }
+  }
+
+  &__headline {
+    margin-bottom: 24px;
+    font-size: var(--base-font-size-xxxxlarge);
+    line-height: 1.1;
   }
 }
 

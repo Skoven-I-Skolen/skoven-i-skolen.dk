@@ -308,6 +308,9 @@ inspiration-overview:
   css:
     theme:
       dist/components/css/components/03-organisms/inspiration-overview.css: {}
+  dependencies:
+    - sis/breadcrumb
+    - sis/pager
 
 organization-overview:
   version: VERSION
@@ -332,6 +335,8 @@ overview-form:
   css:
     theme:
       dist/components/css/components/03-organisms/overview-form.css: {}
+  js:
+    dist/components/js/overview-form.js: {}
   dependencies:
     - sis/accordion
     - sis/pager-full
