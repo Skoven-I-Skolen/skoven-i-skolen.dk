@@ -51,8 +51,6 @@ class SeasonWheelController extends ControllerBase {
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('.months-activity-cards', $articles));
     $response->addCommand(new HtmlCommand('#month_name', ucfirst($month)));
-<<<<<<< HEAD
-=======
 
     // Create see all activitites link
     $link = Link::createFromRoute(
@@ -65,7 +63,6 @@ class SeasonWheelController extends ControllerBase {
     )->toString();
     $response->addCommand(new ReplaceCommand('.js-seasonal-wheel__link', $link));
 
->>>>>>> fe44b5461442ec27fad64a7d33d2cb1daa70e5b5
     return $response;
   }
 
