@@ -1,0 +1,25 @@
+uuid: 82d9a1ef-332f-4af6-a10b-5239f59e5065
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_title
+    - node.type.news
+_core:
+  default_config_hash: W9wVuboE5ZzDMYCpX2u6QD_9fiLCnUQlREP9dGryJQY
+id: node.news.field_hide_title
+field_name: field_hide_title
+entity_type: node
+bundle: news
+label: 'Skjul titel'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Tilsluttet
+  off_label: Afbrudt
+field_type: boolean

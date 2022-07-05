@@ -1,0 +1,20 @@
+uuid: 83cc3501-1e30-488c-88ac-6f905eabad97
+langcode: da
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: F9lS2X3VyFwsFON4Qr-Y-pD4n9Cam3YniCuMkJGdNvM
+name: Nyhed
+type: news
+description: 'Brug <em>nyhed</em> til ar oprettet nyheder'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

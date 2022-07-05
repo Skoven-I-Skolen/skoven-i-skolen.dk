@@ -1,0 +1,25 @@
+uuid: 7a1b8611-5c41-412f-8987-fd25f88bf60f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_breadcrumb
+    - node.type.news
+_core:
+  default_config_hash: Vc2rDPs207jTX3TTgReBgmX_zI1qzeXwlhPnU346qWU
+id: node.news.field_hide_breadcrumb
+field_name: field_hide_breadcrumb
+entity_type: node
+bundle: news
+label: 'Skjul brødkrumme'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Tilsluttet
+  off_label: Afbrudt
+field_type: boolean

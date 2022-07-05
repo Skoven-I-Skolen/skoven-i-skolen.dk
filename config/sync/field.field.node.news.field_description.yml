@@ -1,0 +1,21 @@
+uuid: 20a0b4ab-f66f-4646-afa8-86a34a7f6d69
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.news
+_core:
+  default_config_hash: MnBziVj5BzIL_CO-RCGTepnBXoB8W4HTZVN72j63oN4
+id: node.news.field_description
+field_name: field_description
+entity_type: node
+bundle: news
+label: Beskrivelse
+description: 'Beskrivelsen er brugt til meta tags, søgeresultater og inline navigation'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
