@@ -1,0 +1,28 @@
+.news-page {
+  &__date {
+    margin-bottom: 5px;
+    font-weight: var(--heading-font-weight);
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+    font-size: var(--base-font-size-medium);
+  }
+
+  &__image {
+    margin-bottom: 24px;
+
+    @media (--viewport-md-min) {
+      margin-bottom: 75px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

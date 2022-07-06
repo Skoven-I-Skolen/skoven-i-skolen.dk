@@ -207,6 +207,17 @@ related-articles:
   js:
     dist/components/js/related-articles.js: {}
 
+latest-news:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/latest-news.css: {}
+      dist/components/js/related-articles.css: {}
+  js:
+    dist/components/js/latest-news.js: {}
+
+
+
 spacer:
   version: VERSION
   css:
@@ -259,6 +270,16 @@ article-page:
   css:
     theme:
       dist/components/css/components/03-organisms/article-page.css: {}
+
+news-page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/news-page.css: {}
+  dependencies:
+    - sis/article-page
+    - sis/facts-box
+    - sis/latest-news
 
 burger-menu:
   version: VERSION

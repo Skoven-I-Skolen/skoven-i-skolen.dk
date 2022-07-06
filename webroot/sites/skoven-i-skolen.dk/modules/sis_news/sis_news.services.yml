@@ -1,0 +1,7 @@
+services:
+  sis_news.news_repository:
+    class: 'Drupal\sis_news\Repository\NewsRepository'
+    arguments: ['@entity_type.manager' ]
+  sis_news.content_delivery_service:
+    class: 'Drupal\sis_news\Services\NewsContentDeliveryService'
+    arguments: ['@sis_news.news_repository','@entity_type.manager']
