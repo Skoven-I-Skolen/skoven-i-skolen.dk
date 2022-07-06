@@ -1,0 +1,21 @@
+uuid: 10ef9834-2420-4be1-9c6d-2169497b1566
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.content_hierarchy
+    - node.type.page
+  module:
+    - content_hierarchy
+id: node.page.content_hierarchy
+field_name: content_hierarchy
+entity_type: node
+bundle: page
+label: Indholdshierarki
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: content_hierarchy

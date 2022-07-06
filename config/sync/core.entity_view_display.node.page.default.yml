@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.content_hierarchy
     - field.field.node.page.field_description
     - field.field.node.page.field_graphics
     - field.field.node.page.field_header
@@ -64,6 +65,7 @@ content:
     region: content
 hidden:
   body: true
+  content_hierarchy: true
   content_moderation_control: true
   field_header: true
   field_hide_breadcrumb: true

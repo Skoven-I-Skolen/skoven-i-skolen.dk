@@ -1,0 +1,5 @@
+name: SIS News
+description: News helper module
+package: Skoven i Skolen
+type: module
+core_version_requirement: ^8 || ^9

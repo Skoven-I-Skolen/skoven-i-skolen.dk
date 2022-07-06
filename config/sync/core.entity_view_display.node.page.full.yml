@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.page.body
+    - field.field.node.page.content_hierarchy
     - field.field.node.page.field_description
     - field.field.node.page.field_graphics
     - field.field.node.page.field_header
@@ -75,6 +76,7 @@ mode: full
 content: {  }
 hidden:
   body: true
+  content_hierarchy: true
   content_moderation_control: true
   field_description: true
   field_graphics: true

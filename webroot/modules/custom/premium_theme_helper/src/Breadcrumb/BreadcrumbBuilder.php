@@ -6,7 +6,6 @@ use Drupal\content_hierarchy_breadcrumb\Breadcrumb\BreadcrumbBuilder as Hierachy
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Link;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\entity_hierarchy_breadcrumb\HierarchyBasedBreadcrumbBuilder;
 
 class BreadcrumbBuilder extends HierachyBreadcrumbBuilder {
 
@@ -36,6 +35,8 @@ class BreadcrumbBuilder extends HierachyBreadcrumbBuilder {
         Link::createFromRoute(t('Frontpage'), '<front>'),
         Link::createFromRoute('...', '<none>')
       ], $links);
+    } else {
+      array_unshift($links,  Link::createFromRoute(t('Frontpage'), '<front>'));
     }
     return $links;
   }

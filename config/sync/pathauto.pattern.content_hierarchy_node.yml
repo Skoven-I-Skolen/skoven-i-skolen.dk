@@ -1,0 +1,24 @@
+uuid: 32dc1130-0e75-4adb-a9f0-2027e4bfc95d
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+id: content_hierarchy_node
+label: 'Indholdshierarki mønster'
+type: 'canonical_entities:node'
+pattern: '[node:ancestors-joined-path]/[node:title]'
+selection_criteria:
+  7ac079bd-effd-4f9c-aedc-0a393c949f8f:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 7ac079bd-effd-4f9c-aedc-0a393c949f8f
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+      news: news
+      page: page
+selection_logic: and
+weight: 0
+relationships: {  }
