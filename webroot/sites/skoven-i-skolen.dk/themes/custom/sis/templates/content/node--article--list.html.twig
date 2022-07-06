@@ -102,9 +102,7 @@
       <div class="inspiration-overview__subject">
         {% if subject_items|length > 2 %}
           {% for item in subject_items|slice(0, 2) %}
-            <div class="inspiration-overview__subject-item">
-              {{ item.entity.name.value }}
-            </div>
+            <a class="inspiration-overview__subject-item" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{ item.entity.name.value }}</a>
           {% endfor %}
           <div class="inspiration-overview__subject-item--more-text">
             + {{ subject_items|length - 2 }} {{ 'subjects'|t }}
