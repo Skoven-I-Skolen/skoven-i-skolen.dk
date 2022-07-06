@@ -6,8 +6,6 @@ dependencies:
     - block_content.type.seasonal_wheel
     - field.field.block_content.seasonal_wheel.field_seasonal_wheel_title
     - field.field.block_content.seasonal_wheel.field_text
-    - field.field.block_content.seasonal_wheel.field_text_description_main
-    - field.field.block_content.seasonal_wheel.field_title_main
   module:
     - text
 id: block_content.seasonal_wheel.default
@@ -29,22 +27,6 @@ content:
     region: content
     settings:
       rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_text_description_main:
-    type: text_textarea
-    weight: 27
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_title_main:
-    type: string_textfield
-    weight: 26
-    region: content
-    settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
 hidden:

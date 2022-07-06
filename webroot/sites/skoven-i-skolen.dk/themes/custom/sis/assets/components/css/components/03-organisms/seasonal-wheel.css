@@ -147,20 +147,47 @@
 #Layer_1 > g.st24 > path:hover {
 
   fill: red;
-  filter: blur(100px)
+  opacity: .2;
 }
+
 .hover-wheel {
-   fill: red;
-  filter: blur(100px)
+  fill: red;
+  opacity: .2;
+
+  &:hover {
+    opacity: 1;
+  }
 }
+
 .seasonal-wheel__wrapper {
-  height: 500px;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  margin-bottom: var(--grid-section-spacing) / 2;
+
+  @media (--viewport-md-min) {
+    margin-bottom: var(--grid-section-spacing);
+  }
 }
-#seasonal-wheel-image,
+
+#seasonal-wheel-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
 #seasonal-wheel-overlay {
-  width: 580px;
-  height: 500px;
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
 }
 
 #seasonal-wheel-image {
@@ -178,19 +205,30 @@
   stroke: red;
   fill: #c52543;
   opacity: 0.3;
-  /* glow effect around*/
-  /* -webkit-filter: drop-shadow(0 0 10px red);
-    filter: drop-shadow(0 0 10px red); */
   cursor: pointer;
 }
 
-.months-wrapper {
-  margin-top: 100px;
+.months-wrapper__divider {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 2.5%;
+  margin-bottom: 18px;
+
+  & svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
+
 .headline-wrapper {
   display: flex;
   justify-content: space-between;
 }
+
 .seasonal-wheel__link {
   cursor: pointer;
   font-family: "Nunito", sans-serif;
@@ -203,21 +241,31 @@
 .seasonal-wheel__content {
   margin-top: 150px;
 }
+
 .heading-container {
   padding-left: 0;
 }
+
 .months-activity-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 36px;
+
+  @media (--viewport-ms-min) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (--viewport-sm-min) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (--viewport-md-min) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-/* For the mobile devices */
-@media screen and (max-width: 768px) {
-  #seasonal-wheel-image img,
-  #seasonal-wheel-overlay svg {
-    height: 350px;
-    width: 350px;
-    margin-top: 50px;
-  }
+.disabled{
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 1;
 }
