@@ -1,9 +1,9 @@
-uuid: 90f1e615-25bb-4b23-8771-dfab1e4a8fa7
+uuid: 4626904e-2880-4da8-8a7a-dfc3dd5b340a
 langcode: da
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.search_result
+    - core.entity_view_mode.node.list
     - field.field.node.news.body
     - field.field.node.news.content_hierarchy
     - field.field.node.news.field_description
@@ -32,11 +32,11 @@ third_party_settings:
       blacklisted_blocks: {  }
       whitelisted_blocks: {  }
 _core:
-  default_config_hash: 4O9fBpV25Rs6sfvpsd5tgENrgOe7nJsa4VvXDi8UHWM
-id: node.news.search_result
+  default_config_hash: EkzZ_188fCJTvfq6ybAbeeuQVb0BFVURkV0KcH-ighw
+id: node.news.list
 targetEntityType: node
 bundle: news
-mode: search_result
+mode: list
 content:
   field_description:
     type: basic_string
@@ -45,8 +45,12 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  links:
-    settings: {  }
+  field_list_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: list
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
@@ -59,10 +63,9 @@ hidden:
   field_header: true
   field_hide_breadcrumb: true
   field_hide_title: true
-  field_list_media: true
-  field_location: true
   field_meta_tags: true
   field_news_image: true
   field_news_inspiration: true
   langcode: true
+  links: true
   search_api_excerpt: true
