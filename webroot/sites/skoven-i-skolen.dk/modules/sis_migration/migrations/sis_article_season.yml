@@ -1,0 +1,11 @@
+id: sis_article_season
+label: 'Season term migration'
+source:
+  plugin: d7_taxonomy_term
+  bundle: season
+process:
+  tid: term_id
+  name: name
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: season

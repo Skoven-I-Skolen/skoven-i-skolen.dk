@@ -1,0 +1,27 @@
+uuid: a50563fc-34c2-453e-b550-0dfaf69a969b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_files
+    - node.type.dot_on_map
+  module:
+    - file
+id: node.dot_on_map.field_files
+field_name: field_files
+entity_type: node
+bundle: dot_on_map
+label: Filer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf docx doc png jpg jpeg gif'
+  max_filesize: '5 MB'
+  description_field: false
+field_type: file

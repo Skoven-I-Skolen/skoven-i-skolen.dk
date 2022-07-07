@@ -1,0 +1,33 @@
+uuid: 0f24a080-4ea1-483e-9841-1165da63f5a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.seasonal_wheel
+    - field.field.block_content.seasonal_wheel.field_seasonal_wheel_title
+    - field.field.block_content.seasonal_wheel.field_text
+  module:
+    - text
+id: block_content.seasonal_wheel.default
+targetEntityType: block_content
+bundle: seasonal_wheel
+mode: default
+content:
+  field_seasonal_wheel_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

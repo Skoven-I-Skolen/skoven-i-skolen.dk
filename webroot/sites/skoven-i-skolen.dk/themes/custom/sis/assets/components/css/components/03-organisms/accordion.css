@@ -98,7 +98,6 @@
     word-break: break-word;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 1s;
 
     img {
       max-width: 100%;

@@ -1,0 +1,20 @@
+uuid: ca78fad6-c7a8-4d80-add4-4c3e5997a931
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_people_and_places
+field_name: field_people_and_places
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -22,9 +22,9 @@ regions:
   footerbottom: Footer bottom
   burgermenu: Burgermenu
 
-component-libraries:
-  reusable-component:
-    paths:
+components:
+  namespaces:
+    reusable-component:
       - assets/components/twig/01-particles
       - assets/components/twig/02-molecules
       - assets/components/twig/03-organisms

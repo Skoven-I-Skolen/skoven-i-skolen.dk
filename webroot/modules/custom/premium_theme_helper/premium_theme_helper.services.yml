@@ -1,0 +1,6 @@
+services:
+  premium_theme_helper.breadcrumb:
+    class: Drupal\premium_theme_helper\Breadcrumb\BreadcrumbBuilder
+    arguments: ['@router.admin_context', '@content_hierarchy.storage', '@logger.factory']
+    tags:
+      - { name: breadcrumb_builder, priority: 1005 }

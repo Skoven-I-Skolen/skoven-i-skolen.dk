@@ -86,6 +86,15 @@
     font-size: var(--base-font-size-extra-small);
     font-family: var(--base-font-family);
     background-color: var(--color-primary);
+
+    &--news {
+      background-color: var(--color-red);
+    }
+
+    &--blog {
+      color: var(--color-purple-dark);
+      background-color: var(--color-purple);
+    }
   }
 
   &__content {
@@ -213,6 +222,13 @@
         right: -5px;
       }
     }
+  }
+
+  &__term {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--container-spacing-mobile);
+
   }
 }
 

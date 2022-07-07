@@ -207,6 +207,17 @@ related-articles:
   js:
     dist/components/js/related-articles.js: {}
 
+latest-news:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/latest-news.css: {}
+      dist/components/js/related-articles.css: {}
+  js:
+    dist/components/js/latest-news.js: {}
+
+
+
 spacer:
   version: VERSION
   css:
@@ -260,6 +271,16 @@ article-page:
     theme:
       dist/components/css/components/03-organisms/article-page.css: {}
 
+news-page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/news-page.css: {}
+  dependencies:
+    - sis/article-page
+    - sis/facts-box
+    - sis/latest-news
+
 burger-menu:
   version: VERSION
   css:
@@ -308,6 +329,9 @@ inspiration-overview:
   css:
     theme:
       dist/components/css/components/03-organisms/inspiration-overview.css: {}
+  dependencies:
+    - sis/breadcrumb
+    - sis/pager
 
 organization-overview:
   version: VERSION
@@ -332,6 +356,8 @@ overview-form:
   css:
     theme:
       dist/components/css/components/03-organisms/overview-form.css: {}
+  js:
+    dist/components/js/overview-form.js: {}
   dependencies:
     - sis/accordion
     - sis/pager-full
@@ -343,6 +369,15 @@ profile:
   css:
     theme:
       dist/components/css/components/03-organisms/profile.css: {}
+
+seasonal-wheel:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/seasonal-wheel.css: {}
+  js:
+    dist/components/js/seasonal-wheel.js: {}
+
 
 search-page:
   version: VERSION

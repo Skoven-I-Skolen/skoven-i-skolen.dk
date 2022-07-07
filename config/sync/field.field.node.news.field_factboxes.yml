@@ -1,0 +1,46 @@
+uuid: d67dfc26-c8d6-4a8a-8e62-ef11e5a7660c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_factboxes
+    - node.type.news
+    - paragraphs.paragraphs_type.factbox_item
+  module:
+    - entity_reference_revisions
+id: node.news.field_factboxes
+field_name: field_factboxes
+entity_type: node
+bundle: news
+label: Faktabokse
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      factbox_item: factbox_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 7
+        enabled: false
+      basic_hero:
+        weight: 8
+        enabled: false
+      factbox_item:
+        weight: 9
+        enabled: true
+      inline_hero:
+        weight: 10
+        enabled: false
+      overview_element:
+        weight: 11
+        enabled: false
+      top_image:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

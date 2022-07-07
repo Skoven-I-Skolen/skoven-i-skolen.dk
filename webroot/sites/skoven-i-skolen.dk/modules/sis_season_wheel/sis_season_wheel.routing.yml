@@ -5,3 +5,11 @@ sis.season_wheel.data:
   methods:  [GET]
   requirements:
     _access: 'TRUE'
+
+sis.season_wheel.random.data:
+  path: sis/season-wheel/get/random/{month}
+  defaults:
+    _controller: '\Drupal\sis_season_wheel\Controller\SeasonWheelController::getRandom'
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'

@@ -1,0 +1,10 @@
+contents_per_page_admin: '50'
+multilingual: true
+entity_bundles:
+  media: {  }
+  node:
+    - article
+    - news
+    - page
+  profile: {  }
+  taxonomy_term: {  }

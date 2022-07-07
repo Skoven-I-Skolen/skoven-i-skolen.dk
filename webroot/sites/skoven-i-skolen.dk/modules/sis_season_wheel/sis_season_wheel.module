@@ -1,0 +1,43 @@
+<?php
+
+use Drupal\Core\Link;
+
+
+/**
+ * Implements hook_locale_translation_projects_alter().
+ */
+function sis_season_wheel_locale_translation_projects_alter(&$projects) {
+  /** @var \Drupal\Core\Extension\ModuleHandlerInterface $module_handler */
+  $module_handler = \Drupal::service('module_handler');
+  $path = $module_handler->getModule('sis_season_wheel')->getPath();
+  $projects['sis_season_wheel']['info']['interface translation server pattern']
+    = $path . '/translations/%language.po';
+}
+
+
+
+/**
+ * Implements hook_preprocess().
+ */
+function sis_season_wheel_preprocess_block__inline_block__seasonal_wheel(array &$variables) {
+  /** @var \Drupal\sis_season_wheel\Repository\SeasonWheelRepository $repository */
+  $repository = \Drupal::service('sis_season_wheel.repository');
+  /** @var \Drupal\sis_season_wheel\Services\SeasonWheelContentDeliveryService $deliveryService */
+  $deliveryService  = \Drupal::service('sis_season_wheel.content_delivery_service');
+  $months = $repository->getMonthsTaxonomyKeyedByMachineName();
+  $currentMonth = date('F');
+  $currentMonthId = $months[strtolower($currentMonth)];
+
+  $variables['#attached']['drupalSettings']['seasonal_wheel']['months'] = $months;
+  $variables['#attached']['drupalSettings']['seasonal_wheel']['current_month'] = $currentMonthId;
+  $variables['see_more'] = Link::createFromRoute(
+    t('See all activities'),
+    'entity.taxonomy_term.canonical',
+    ['taxonomy_term' => $currentMonthId],
+    ['attributes' => [
+      'class' => 'seasonal-wheel__link js-seasonal-wheel__link'
+    ]]
+  );
+  $variables['month_name'] = $currentMonth;
+  $variables['content']['articles'] = $deliveryService->getArticleByMonthTermId($currentMonthId, 8);
+}

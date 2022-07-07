@@ -1,0 +1,26 @@
+uuid: 647087cd-6ac9-46b0-9bda-417efeb3d694
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.seasonal_wheel
+    - field.storage.block_content.field_text
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: block_content.seasonal_wheel.field_text
+field_name: field_text
+entity_type: block_content
+bundle: seasonal_wheel
+label: Beskrivelse
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -49,9 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
     resultItem: {
       element: (item, data) => {
         const element = item;
+        const type = data.value.data.field_article_type_label.value;
         element.innerHTML = `
             <span class="autoComplete_wrapper__match" data-href="${data.value.href}">${data.match}</span>
-            <span class="autoComplete_wrapper__type">${data.value.type}</span>`;
+            <span class="autoComplete_wrapper__type">${type}</span>`;
       },
       highlight: true,
     },

@@ -51,9 +51,7 @@ function sis_preprocess_page(&$variables) {
 
     /** @var \Drupal\taxonomy\Entity\Term $term */
     if ($term = $request->get('taxonomy_term')) {
-      if ($term->get('vid')->target_id === 'article_types') {
-        unset($variables['page']['pageheader']);
-      }
+      unset($variables['page']['pageheader']);
     }
   }
 }

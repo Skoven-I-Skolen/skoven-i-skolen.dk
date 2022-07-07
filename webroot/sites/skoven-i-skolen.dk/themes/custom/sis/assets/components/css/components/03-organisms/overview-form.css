@@ -26,9 +26,9 @@
     }
 
     .pager {
+      grid-column: 1 / -1;
       width: 100%;
       margin-top: 10px;
-      grid-column: 1 / -1;
     }
   }
 
@@ -73,8 +73,8 @@
         width: 100%;
         height: 100%;
         padding: 44px;
-        background: var(--color-blue-darker) url("../../../../images/dk-map.svg") no-repeat bottom left;
         color: var(--color-white);
+        background: var(--color-blue-darker) url("../../../../images/dk-map.svg") no-repeat bottom left;
       }
 
       .inspiration-overview__item-title {
@@ -82,8 +82,8 @@
       }
 
       .button {
-        border-color: var(--color-white);
         padding: 0 25px;
+        border-color: var(--color-white);
       }
     }
   }
@@ -160,4 +160,44 @@
   .accordion-item__text {
     transition: none;
   }
+
+  .accordion-item__expanadable {
+    .js-form-item {
+      display: none;
+
+      &:nth-child(-n+4) {
+        display: block;
+      }
+    }
+
+    &--trigger {
+      position: relative;
+
+      & span {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      &-collapse {
+        display: none;
+      }
+    }
+
+    &.expanded {
+      .js-form-item {
+        display: block;
+      }
+
+      .accordion-item__expanadable--trigger {
+        &-expand {
+          display: none;
+        }
+
+        &-collapse {
+          display: block;
+        }
+      }
+    }
+  }
 }
+

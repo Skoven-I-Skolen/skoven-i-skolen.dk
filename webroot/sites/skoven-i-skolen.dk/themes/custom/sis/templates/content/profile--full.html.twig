@@ -34,9 +34,9 @@
   'clearfix',
 ] %}
 <div{{ attributes.addClass(classes) }}>
-  {% if content.field_organization_graphic[0] %}
+  {% if content.field_organization_top_image[0] %}
     <div class="profile__hero">
-      {{ content.field_organization_graphic }}
+      {{ content.field_organization_top_image }}
     </div>
   {% endif %}
   {{ breadcrumb }}
