@@ -87,6 +87,10 @@
 .headline-wrapper {
   display: flex;
   justify-content: space-between;
+
+  & a {
+    color: #3d2859;
+  }
 }
 
 .seasonal-wheel__link {
@@ -100,10 +104,6 @@
 
 .seasonal-wheel__content {
   margin-top: 150px;
-}
-
-.heading-container {
-  padding-left: 0;
 }
 
 .months-activity-cards {
@@ -124,12 +124,6 @@
   }
 }
 
-.disabled {
-  z-index: 1;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
 /* Modal Style */
 .modal {
   position: fixed;
@@ -148,7 +142,7 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 30%);
+    background-color: rgba(0, 0, 0, 20%);
   }
 
   &__dialog {
@@ -160,7 +154,7 @@
     width: 600px;
     margin: 50px auto;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
 
     @media screen and (max-width: 992px) {
       width: 90%;
@@ -168,8 +162,16 @@
   }
 
   &__close {
+    position: absolute;
+    top: -15px;
+    left: -14px;
     width: 30px;
     height: 30px;
+    cursor: pointer;
+
+    & svg > path {
+      fill: #3d2859;
+    }
   }
 
   &__header {
@@ -180,11 +182,34 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 10px 20px;
+    padding: 5px 20px 15px;
     overflow: auto;
+
+    & .modal-image__container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    & .modal__image {
+      width: 100%;
+      height: auto;
+    }
+
+    & .modal-link__title {
+      color: #3d2859;
+    }
+  }
+
+  &__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
+/* Modal fade in-out animations */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity .2s;
@@ -195,25 +220,16 @@
   opacity: 0;
 }
 
-.modal__description {
-  /* clamp text 5 lines */
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.modal-image__container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.modal__image {
-  width: 100%;
-  height: auto;
-}
-
 .overflow-hidden {
   overflow: hidden;
+}
+
+.disabled {
+  z-index: 1;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.hidden-modal {
+  display: none;
 }
