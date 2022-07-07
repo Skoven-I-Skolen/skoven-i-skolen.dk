@@ -129,6 +129,7 @@ content:
     region: content
 hidden:
   body: true
+  content_hierarchy: true
   field_article_categories: true
   field_article_type: true
   field_class: true

@@ -17,11 +17,6 @@ project_tld: localhost
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
-hooks:
-  post-start:
-    - exec: mysql -uroot -proot -hdb -e "CREATE DATABASE IF NOT EXISTS migration CHARACTER
-        SET utf8 COLLATE utf8_general_ci; GRANT ALL ON migration.* TO 'db'@'%';"
-
 # Key features of ddev's config.yaml:
 
 # name: <projectname> # Name of the project, automatically provides

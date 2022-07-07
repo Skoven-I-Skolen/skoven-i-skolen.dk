@@ -87,6 +87,7 @@ content:
     region: content
 hidden:
   body: true
+  content_hierarchy: true
   field_article_months: true
   field_class: true
   field_colophon: true
