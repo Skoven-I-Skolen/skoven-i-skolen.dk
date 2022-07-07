@@ -1,0 +1,8 @@
+name: SIS Migration
+description: Migrate content from Drupal 7 to Drupal 9
+package: Skoven i Skolen
+type: module
+core_version_requirement: ^8 || ^9
+dependencies:
+ - migrate
+ - migrate_drupal
