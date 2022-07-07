@@ -40,48 +40,37 @@ document.addEventListener('DOMContentLoaded', () => {
         if (month === 'january') {
           const Jan = document.querySelector('.january');
           Jan.classList.add('hover-wheel');
-        }
-        if (month === 'february') {
+        } else if (month === 'february') {
           const Feb = document.querySelector('.february');
           Feb.classList.add('hover-wheel');
-        }
-        if (month === 'march') {
+        } else if (month === 'march') {
           const Mar = document.querySelector('.march');
           Mar.classList.add('hover-wheel');
-        }
-        if (month === 'april') {
+        } else if (month === 'april') {
           const Apr = document.querySelector('.april');
           Apr.classList.add('hover-wheel');
-        }
-        if (month === 'may') {
+        } else if (month === 'may') {
           const May = document.querySelector('.may');
           May.classList.add('hover-wheel');
-        }
-        if (month === 'june') {
+        } else if (month === 'june') {
           const Jun = document.querySelector('.june');
           Jun.classList.add('hover-wheel');
-        }
-        if (month === 'july') {
+        } else if (month === 'july') {
           const Jul = document.querySelector('.july');
           Jul.classList.add('hover-wheel');
-        }
-        if (month === 'august') {
+        } else if (month === 'august') {
           const Aug = document.querySelector('.august');
           Aug.classList.add('hover-wheel');
-        }
-        if (month === 'september') {
+        } else if (month === 'september') {
           const Sep = document.querySelector('.september');
           Sep.classList.add('hover-wheel');
-        }
-        if (month === 'october') {
+        } else if (month === 'october') {
           const Oct = document.querySelector('.october');
           Oct.classList.add('hover-wheel');
-        }
-        if (month === 'november') {
+        } else if (month === 'november') {
           const Nov = document.querySelector('.november');
           Nov.classList.add('hover-wheel');
-        }
-        if (month === 'december') {
+        } else if (month === 'december') {
           const Dec = document.querySelector('.december');
           Dec.classList.add('hover-wheel');
         }
@@ -318,48 +307,37 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentMonthIndex === 1) {
           this.currentMonth = 'january';
           return 'january';
-        }
-        if (currentMonthIndex === 2) {
+        } if (currentMonthIndex === 2) {
           this.currentMonth = 'february';
           return 'february';
-        }
-        if (currentMonthIndex === 3) {
+        } if (currentMonthIndex === 3) {
           this.currentMonth = 'march';
           return 'march';
-        }
-        if (currentMonthIndex === 4) {
+        } if (currentMonthIndex === 4) {
           this.currentMonth = 'april';
           return 'april';
-        }
-        if (currentMonthIndex === 5) {
+        } if (currentMonthIndex === 5) {
           this.currentMonth = 'may';
           return 'may';
-        }
-        if (currentMonthIndex === 6) {
+        } if (currentMonthIndex === 6) {
           this.currentMonth = 'june';
           return 'june';
-        }
-        if (currentMonthIndex === 7) {
+        } if (currentMonthIndex === 7) {
           this.currentMonth = 'july';
           return 'july';
-        }
-        if (currentMonthIndex === 8) {
+        } if (currentMonthIndex === 8) {
           this.currentMonth = 'august';
           return 'august';
-        }
-        if (currentMonthIndex === 9) {
+        } if (currentMonthIndex === 9) {
           this.currentMonth = 'september';
           return 'september';
-        }
-        if (currentMonthIndex === 10) {
+        } if (currentMonthIndex === 10) {
           this.currentMonth = 'october';
           return 'october';
-        }
-        if (currentMonthIndex === 11) {
+        } if (currentMonthIndex === 11) {
           this.currentMonth = 'november';
           return 'november';
-        }
-        if (currentMonthIndex === 12) {
+        } if (currentMonthIndex === 12) {
           this.currentMonth = 'december';
           return 'december';
         }
