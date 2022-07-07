@@ -22,6 +22,8 @@ function sis_season_wheel_locale_translation_projects_alter(&$projects) {
 function sis_season_wheel_preprocess_block__inline_block__seasonal_wheel(array &$variables) {
   /** @var \Drupal\sis_season_wheel\Repository\SeasonWheelRepository $repository */
   $repository = \Drupal::service('sis_season_wheel.repository');
+  /** @var \Drupal\sis_season_wheel\Services\SeasonWheelContentDeliveryService $deliveryService */
+  $deliveryService  = \Drupal::service('sis_season_wheel.content_delivery_service');
   $months = $repository->getMonthsTaxonomyKeyedByMachineName();
   $currentMonth = date('F');
   $currentMonthId = $months[strtolower($currentMonth)];
@@ -37,4 +39,5 @@ function sis_season_wheel_preprocess_block__inline_block__seasonal_wheel(array &
     ]]
   );
   $variables['month_name'] = $currentMonth;
+  $variables['content']['articles'] = $deliveryService->getArticleByMonthTermId($currentMonthId, 8);
 }
