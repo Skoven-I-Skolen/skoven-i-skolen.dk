@@ -34,7 +34,6 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
-  devel_generate: 0
   dynamic_color: 0
   dynamic_entity_reference: 0
   dynamic_key_value: 0
@@ -101,6 +100,7 @@ module:
   sis_almanac: 0
   sis_articles: 0
   sis_lexicon: 0
+  sis_news: 0
   sis_organization: 0
   sis_overview: 0
   sis_relewise: 0

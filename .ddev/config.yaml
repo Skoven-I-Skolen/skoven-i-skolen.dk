@@ -17,7 +17,6 @@ project_tld: localhost
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
-
 # Key features of ddev's config.yaml:
 
 # name: <projectname> # Name of the project, automatically provides

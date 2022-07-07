@@ -452,5 +452,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  content_hierarchy: true
   layout_builder__layout: true
   moderation_state: true

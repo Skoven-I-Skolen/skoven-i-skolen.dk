@@ -1,0 +1,11 @@
+id: sis_article_class
+label: 'Class term migration'
+source:
+  plugin: d7_taxonomy_term
+  bundle: glade
+process:
+  tid: term_id
+  name: name
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: class
