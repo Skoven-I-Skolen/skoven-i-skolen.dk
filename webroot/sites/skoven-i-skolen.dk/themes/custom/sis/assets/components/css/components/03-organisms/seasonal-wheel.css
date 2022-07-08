@@ -127,79 +127,79 @@
     z-index: 9;
     overflow-x: hidden;
     overflow-y: auto;
+  }
 
-    &__backdrop {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 1;
-      background-color: rgba(0 0 0 / 20%);
+  .modal__backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0 0 0 / 20%);
+  }
+
+  .modal__dialog {
+    position: relative;
+    top: 55%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+
+    @media screen and (max-width: 992px) {
+      width: 90%;
     }
+  }
 
-    &__dialog {
+  .modal__close {
+    position: absolute;
+    top: -15px;
+    left: -14px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    & svg > path {
+      fill: #3d2859;
+    }
+  }
+
+  .modal__header {
+    padding: 15px 0 0 15px;
+  }
+
+  .modal__body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 5px 20px 15px;
+    overflow: auto;
+
+    & .modal-image__container {
       position: relative;
-      top: 55%;
-      z-index: 2;
       display: flex;
       flex-direction: column;
-      width: 600px;
-      margin: 50px auto;
-      background-color: #fff;
-      border-radius: 10px;
-
-      @media screen and (max-width: 992px) {
-        width: 90%;
-      }
     }
 
-    &__close {
-      position: absolute;
-      top: -15px;
-      left: -14px;
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-
-      & svg > path {
-        fill: #3d2859;
-      }
+    & .modal__image {
+      width: 100%;
+      height: auto;
     }
 
-    &__header {
-      padding: 15px 0 0 15px;
+    & .modal-link__title {
+      color: #3d2859;
     }
+  }
 
-    &__body {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      padding: 5px 20px 15px;
-      overflow: auto;
-
-      & .modal-image__container {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-      }
-
-      & .modal__image {
-        width: 100%;
-        height: auto;
-      }
-
-      & .modal-link__title {
-        color: #3d2859;
-      }
-    }
-
-    &__description {
-      display: -webkit-box;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
+  .modal__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   /* Modal fade in-out animations */
