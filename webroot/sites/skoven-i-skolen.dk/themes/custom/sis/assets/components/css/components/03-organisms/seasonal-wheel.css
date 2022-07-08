@@ -1,22 +1,23 @@
 /* Seasonal wheel hover effect */
-.red-knob,
-.seasonal-wheel-month-selector {
-  & > path:hover {
+.seasonal-wheel {
+  .red-knob,
+  .seasonal-wheel-month-selector {
+    & > path:hover {
+      opacity: .2;
+      fill: red;
+    }
+  }
+
+  .seasonal-wheel-month-selector:hover {
     opacity: .2;
     fill: red;
   }
-}
-/* seasonal-wheel-month-selector */
-.hover-wheel {
-  opacity: .2;
-  fill: red;
 
-  &:hover {
-    opacity: 1;
+  .hover-wheel {
+    opacity: .2;
+    fill: red;
   }
-}
 
-.seasonal-wheel {
   &__wrapper {
     position: relative;
     width: 100%;
@@ -29,11 +30,9 @@
     }
   }
 
-  /* &__image {
+  &__image {
     position: relative;
     z-index: 0;
-    width: 100%;
-    height: auto;
 
     & img {
       width: 100%;
@@ -50,77 +49,9 @@
     height: 100%;
     cursor: pointer;
     fill: transparent;
-  } */
-
-  /* &__link {
-  font-weight: 800;
-  font-size: 1.125rem;
-  font-family: Nunito, sans-serif;
-  font-style: normal;
-  text-decoration-line: underline;
-  cursor: pointer;
-}
-
-  &__content {
-  margin-top: 150px;
-  } */
-}
-.seasonal-wheel__image {
-  position: relative;
-  z-index: 0;
-  width: 100%;
-  height: auto;
-
-  & img {
-    width: 100%;
-    height: auto;
   }
-}
 
-.seasonal-wheel__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  fill: transparent;
-}
-/* wheel knob */
-.red-knob:hover {
-  cursor: pointer;
-  opacity: .3;
-  fill: #c52543;
-  stroke: red;
-}
-
-.months-wrapper__divider {
-  position: relative;
-  width: 100%;
-  height: 0;
-  margin-bottom: 18px;
-  padding-bottom: 2.5%;
-
-  & svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.headline-wrapper {
-  display: flex;
-  justify-content: space-between;
-
-  & a {
-    color: #3d2859;
-  }
-}
-
-&__link {
+  &__link {
     font-weight: 800;
     font-size: 1.125rem;
     font-family: Nunito, sans-serif;
@@ -133,130 +64,167 @@
     margin-top: 150px;
   }
 
-.months-activity-cards {
-  display: grid;
-  grid-gap: 36px;
-  grid-template-columns: repeat(1, 1fr);
+  /* wheel knob */
 
-  @media (--viewport-ms-min) {
-    grid-template-columns: repeat(2, 1fr);
+  .red-knob:hover {
+    cursor: pointer;
+    opacity: .3;
+    fill: #c52543;
+    stroke: red;
   }
 
-  @media (--viewport-sm-min) {
-    grid-template-columns: repeat(3, 1fr);
+  .months-wrapper__divider {
+    position: relative;
+    width: 100%;
+    height: 0;
+    margin-bottom: 18px;
+    padding-bottom: 2.5%;
+
+    & svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  @media (--viewport-md-min) {
-    grid-template-columns: repeat(4, 1fr);
+  .headline-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    & a {
+      color: #3d2859;
+    }
   }
-}
 
-/* Modal Style */
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9;
-  overflow-x: hidden;
-  overflow-y: auto;
+  .months-activity-cards {
+    display: grid;
+    grid-gap: 36px;
+    grid-template-columns: repeat(1, 1fr);
 
-  &__backdrop {
+    @media (--viewport-ms-min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (--viewport-sm-min) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (--viewport-md-min) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* Modal Style */
+
+  .modal {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1;
-    background-color: rgba(0 0 0 / 20%);
-  }
+    z-index: 9;
+    overflow-x: hidden;
+    overflow-y: auto;
 
-  &__dialog {
-    position: relative;
-    top: 55%;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
-    border-radius: 10px;
-
-    @media screen and (max-width: 992px) {
-      width: 90%;
+    &__backdrop {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background-color: rgba(0 0 0 / 20%);
     }
-  }
 
-  &__close {
-    position: absolute;
-    top: -15px;
-    left: -14px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-
-    & svg > path {
-      fill: #3d2859;
-    }
-  }
-
-  &__header {
-    padding: 15px 0 0 15px;
-  }
-
-  &__body {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 5px 20px 15px;
-    overflow: auto;
-
-    & .modal-image__container {
+    &__dialog {
       position: relative;
+      top: 55%;
+      z-index: 2;
       display: flex;
       flex-direction: column;
+      width: 600px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 10px;
+
+      @media screen and (max-width: 992px) {
+        width: 90%;
+      }
     }
 
-    & .modal__image {
-      width: 100%;
-      height: auto;
+    &__close {
+      position: absolute;
+      top: -15px;
+      left: -14px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+
+      & svg > path {
+        fill: #3d2859;
+      }
     }
 
-    & .modal-link__title {
-      color: #3d2859;
+    &__header {
+      padding: 15px 0 0 15px;
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 5px 20px 15px;
+      overflow: auto;
+
+      & .modal-image__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      & .modal__image {
+        width: 100%;
+        height: auto;
+      }
+
+      & .modal-link__title {
+        color: #3d2859;
+      }
+    }
+
+    &__description {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   }
 
-  &__description {
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
+  /* Modal fade in-out animations */
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .2s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .overflow-hidden {
     overflow: hidden;
   }
-}
 
-/* Modal fade in-out animations */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .2s;
-}
+  .disabled {
+    z-index: 1;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.disabled {
-  z-index: 1;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.hidden-modal {
-  display: none;
+  .hidden-modal {
+    display: none;
+  }
 }
