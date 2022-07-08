@@ -1,21 +1,12 @@
 /* Seasonal wheel hover effect */
-.red-knob > path:hover,
-.december > path:hover,
-.november > path:hover,
-.october > path:hover,
-.september > path:hover,
-.august > path:hover,
-.july > path:hover,
-.june > path:hover,
-.may > path:hover,
-.april > path:hover,
-.march > path:hover,
-.february > path:hover,
-.january > path:hover {
-  opacity: .2;
-  fill: red;
+.red-knob,
+.seasonal-wheel-month-selector {
+  & > path:hover {
+    opacity: .2;
+    fill: red;
+  }
 }
-
+/* seasonal-wheel-month-selector */
 .hover-wheel {
   opacity: .2;
   fill: red;
@@ -25,18 +16,55 @@
   }
 }
 
-.seasonal-wheel__wrapper {
-  position: relative;
-  width: 100%;
-  height: 0;
-  margin-bottom: var(--grid-section-spacing) / 2;
-  padding-bottom: 100%;
+.seasonal-wheel {
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    margin-bottom: var(--grid-section-spacing) / 2;
+    padding-bottom: 100%;
 
-  @media (--viewport-md-min) {
-    margin-bottom: var(--grid-section-spacing);
+    @media (--viewport-md-min) {
+      margin-bottom: var(--grid-section-spacing);
+    }
   }
+
+  /* &__image {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    fill: transparent;
+  } */
+
+  /* &__link {
+  font-weight: 800;
+  font-size: 1.125rem;
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  text-decoration-line: underline;
+  cursor: pointer;
 }
 
+  &__content {
+  margin-top: 150px;
+  } */
+}
 .seasonal-wheel__image {
   position: relative;
   z-index: 0;
@@ -59,7 +87,6 @@
   cursor: pointer;
   fill: transparent;
 }
-
 /* wheel knob */
 .red-knob:hover {
   cursor: pointer;
@@ -93,18 +120,18 @@
   }
 }
 
-.seasonal-wheel__link {
-  font-weight: 800;
-  font-size: 1.125rem;
-  font-family: Nunito, sans-serif;
-  font-style: normal;
-  text-decoration-line: underline;
-  cursor: pointer;
-}
+&__link {
+    font-weight: 800;
+    font-size: 1.125rem;
+    font-family: Nunito, sans-serif;
+    font-style: normal;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
 
-.seasonal-wheel__content {
-  margin-top: 150px;
-}
+  &__content {
+    margin-top: 150px;
+  }
 
 .months-activity-cards {
   display: grid;
@@ -142,7 +169,7 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 20%);
+    background-color: rgba(0 0 0 / 20%);
   }
 
   &__dialog {
