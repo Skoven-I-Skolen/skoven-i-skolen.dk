@@ -65,9 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // remove hidden class from modal to show it -
             // this is used as workaround because of modal flicering on page load
-            document
-              .querySelector('.hidden-modal')
-              .classList.remove('hidden-modal');
+            document.querySelector('.hidden-modal').classList.remove('hidden-modal');
           });
         }, 1200);
       },

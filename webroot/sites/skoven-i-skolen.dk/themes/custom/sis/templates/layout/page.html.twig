@@ -100,6 +100,37 @@
             <div class="col-xs-12 col-sm-6 col-md-3">
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="footer__some__header">
+               <h4>{{ footer_col2_header }}</h4>
+              </div>
+              <div class="footer__some__icons">
+                <a href='{{ facebook_link }}'>
+                  <div class="footer__facebook__wrapper">
+                  {% include '@reusable-component/svg-icon.twig' with {
+                    'attributes': '',
+                    'svgIconName': 'facebook'
+                  } %}
+                  </div>
+                </a>
+                 <a href='{{ instagram_link }}'>
+                  <div class="footer__instagram__wrapper">
+                      {% include '@reusable-component/svg-icon.twig' with {
+                    'attributes': '',
+                    'svgIconName': 'instagram'
+                  } %}
+                  </div>
+                </a>
+              </div>
+              <h5 class="footer__col2__description">{{ footer_col2_text }}</h5>
+              <div class="footer__col2__button__wrapper">
+                <a href='{{ col_2_button_link }}'>
+                  <div class="footer__col2__button">
+                    <div class="footer__col2__button__name">
+                      {{ col_2_button_name }}
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
               {{ almanac }}

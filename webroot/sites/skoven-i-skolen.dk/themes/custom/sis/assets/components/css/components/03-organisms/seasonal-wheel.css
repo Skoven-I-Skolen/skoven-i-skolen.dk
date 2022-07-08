@@ -214,10 +214,6 @@
     opacity: 0;
   }
 
-  .overflow-hidden {
-    overflow: hidden;
-  }
-
   .disabled {
     z-index: 1;
     cursor: not-allowed;
@@ -227,4 +223,8 @@
   .hidden-modal {
     display: none;
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
