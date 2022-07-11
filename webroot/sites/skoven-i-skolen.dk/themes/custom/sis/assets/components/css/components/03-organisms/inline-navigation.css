@@ -44,6 +44,24 @@
     }
   }
 
+  .flickity-button,
+  .flickity-button:hover {
+    background: var(--color-pink);
+  }
+
+  .flickity-prev-next-button {
+    width: 40px;
+    height: 40px;
+
+    .flickity-button-icon {
+      top: 27.5%;
+      left: 27.5%;
+      width: 45%;
+      height: 45%;
+      fill: var(--color-purple-dark);
+    }
+  }
+
   .flickity-button:disabled {
     opacity: 0;
   }
