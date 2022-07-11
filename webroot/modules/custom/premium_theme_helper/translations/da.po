@@ -29,3 +29,9 @@ msgstr "Se alle"
 
 msgid "View less"
 msgstr "Se mindre"
+
+msgid "Showing"
+msgstr "Viser"
+
+msgid "out of"
+msgstr "ud af"
