@@ -18,6 +18,54 @@
     }
   }
 
+  &__some__header {
+    margin-left: 3px;
+  }
+
+  &__some__icons {
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    margin-left: 3px;
+
+    & > a:not(:first-child) {
+      margin-left: 19px;
+    }
+  }
+
+  &__facebook__wrapper, &__instagram__wrapper {
+   & .icon {
+    height: 39px;
+    width: 39px;
+   }
+  }
+
+  &__col2__description {
+    margin-left: 3px;
+    font-size: 18px;
+  }
+
+  &__col2__button {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 15px 45px;
+    border: 2px solid #fff;
+    border-radius: 58px;
+  }
+
+  & a {
+    font-weight: 800;
+    font-size: 18px;
+    font-style: normal;
+    text-decoration: none;
+  }
+
   &__inner {
     position: relative;
 

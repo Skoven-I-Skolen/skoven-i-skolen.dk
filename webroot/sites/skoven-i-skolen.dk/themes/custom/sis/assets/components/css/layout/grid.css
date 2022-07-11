@@ -14,6 +14,10 @@
     padding-bottom: var(--grid-section-spacing);
   }
 
+  &-form {
+    z-index: 1;
+  }
+
   &__inner {
     padding-top: calc(var(--grid-section-spacing-mobile) * .5);
 

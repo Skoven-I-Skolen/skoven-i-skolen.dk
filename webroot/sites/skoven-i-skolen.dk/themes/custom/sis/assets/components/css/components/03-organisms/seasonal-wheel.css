@@ -1,71 +1,216 @@
 /* Seasonal wheel hover effect */
-.red-knob > path:hover,
-.december > path:hover,
-.november > path:hover,
-.october > path:hover,
-.september > path:hover,
-.august > path:hover,
-.july > path:hover,
-.june > path:hover,
-.may > path:hover,
-.april > path:hover,
-.march > path:hover,
-.february > path:hover,
-.january > path:hover {
-  opacity: .2;
-  fill: red;
-}
-
-.hover-wheel {
-  opacity: .2;
-  fill: red;
-
-  &:hover {
-    opacity: 1;
+.seasonal-wheel {
+  .red-knob,
+  .seasonal-wheel-month-selector {
+    & > path:hover {
+      opacity: .2;
+      fill: red;
+    }
   }
-}
 
-.seasonal-wheel__wrapper {
-  position: relative;
-  width: 100%;
-  height: 0;
-  margin-bottom: var(--grid-section-spacing) / 2;
-  padding-bottom: 100%;
-
-  @media (--viewport-md-min) {
-    margin-bottom: var(--grid-section-spacing);
+  .seasonal-wheel-month-selector:hover {
+    opacity: .2;
+    fill: red;
   }
-}
 
-.seasonal-wheel__image {
-  position: relative;
-  z-index: 0;
-  width: 100%;
-  height: auto;
+  .hover-wheel {
+    opacity: .2;
+    fill: red;
+  }
 
-  & img {
+  &__wrapper {
+    position: relative;
     width: 100%;
-    height: auto;
+    height: 0;
+    margin-bottom: var(--grid-section-spacing) / 2;
+    padding-bottom: 100%;
+
+    @media (--viewport-md-min) {
+      margin-bottom: var(--grid-section-spacing);
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 0;
+
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    fill: transparent;
+  }
+
+  &__link {
+    font-weight: 800;
+    font-size: 1.125rem;
+    font-family: Nunito, sans-serif;
+    font-style: normal;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+
+  &__content {
+    margin-top: 150px;
+  }
+
+  /* wheel knob */
+
+  .red-knob:hover {
+    cursor: pointer;
+    opacity: .3;
+    fill: #c52543;
+    stroke: red;
+  }
+
+  .headline-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    & a {
+      color: #3d2859;
+    }
+  }
+
+  .months-activity-cards {
+    display: grid;
+    grid-gap: 36px;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (--viewport-ms-min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (--viewport-sm-min) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (--viewport-md-min) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* Modal Style */
+
+  .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .modal__backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0 0 0 / 20%);
+  }
+
+  .modal__dialog {
+    position: relative;
+    top: 55%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+
+    @media screen and (max-width: 992px) {
+      width: 90%;
+    }
+  }
+
+  .modal__close {
+    position: absolute;
+    top: -15px;
+    left: -14px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    & svg > path {
+      fill: #3d2859;
+    }
+  }
+
+  .modal__header {
+    padding: 15px 0 0 15px;
+  }
+
+  .modal__body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 5px 20px 15px;
+    overflow: auto;
+
+    & .modal-image__container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    & .modal__image {
+      width: 100%;
+      height: auto;
+    }
+
+    & .modal-link__title {
+      color: #3d2859;
+    }
+  }
+
+  .modal__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Modal fade in-out animations */
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .2s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .disabled {
+    z-index: 1;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .hidden-modal {
+    display: none;
   }
 }
 
-.seasonal-wheel__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  fill: transparent;
-}
-
-/* wheel knob */
-.red-knob:hover {
-  cursor: pointer;
-  opacity: .3;
-  fill: #c52543;
-  stroke: red;
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .months-wrapper__divider {
@@ -82,138 +227,4 @@
     width: 100%;
     height: 100%;
   }
-}
-
-.headline-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
-.seasonal-wheel__link {
-  font-weight: 800;
-  font-size: 1.125rem;
-  font-family: Nunito, sans-serif;
-  font-style: normal;
-  text-decoration-line: underline;
-  cursor: pointer;
-}
-
-.seasonal-wheel__content {
-  margin-top: 150px;
-}
-
-.heading-container {
-  padding-left: 0;
-}
-
-.months-activity-cards {
-  display: grid;
-  grid-gap: 36px;
-  grid-template-columns: repeat(1, 1fr);
-
-  @media (--viewport-ms-min) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (--viewport-sm-min) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (--viewport-md-min) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.disabled {
-  z-index: 1;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-/* Modal Style */
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9;
-  overflow-x: hidden;
-  overflow-y: auto;
-
-  &__backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 30%);
-  }
-
-  &__dialog {
-    position: relative;
-    top: 55%;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
-    border-radius: 5px;
-
-    @media screen and (max-width: 992px) {
-      width: 90%;
-    }
-  }
-
-  &__close {
-    width: 30px;
-    height: 30px;
-  }
-
-  &__header {
-    padding: 15px 0 0 15px;
-  }
-
-  &__body {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 10px 20px;
-    overflow: auto;
-  }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .2s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.modal__description {
-  /* clamp text 5 lines */
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.modal-image__container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.modal__image {
-  width: 100%;
-  height: auto;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }

@@ -1,4 +1,8 @@
 .inspiration-overview {
+  &__pageheader-headline {
+    margin-bottom: 24px;
+  }
+
   &__intro {
     margin-bottom: 32px;
     padding-right: var(--container-spacing-mobile);

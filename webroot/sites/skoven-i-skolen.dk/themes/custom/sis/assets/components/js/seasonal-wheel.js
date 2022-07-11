@@ -30,11 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             ajaxObject.success(this.seasonalWheelData);
           })
-          .catch((error) => {
-          });
+          .catch((error) => error.response);
         this.addHoverEffectOnCurrentMonth(month);
         this.currentlySelectedMonth = month;
       },
+
+      // Sets highlight effect on current month card
+      addHoverEffectOnCurrentMonth(month) {
+        if (month) {
+          const currentMonth = document.querySelector(`.${month}`);
+          currentMonth.classList.add('hover-wheel');
+        }
+      },
+
       getCurrentMonthRandomArticle() {
         this.disableClick();
         this.resetHover();
@@ -54,8 +62,74 @@ document.addEventListener('DOMContentLoaded', () => {
             // dynamically attach link to image
             const linkImage = document.querySelector('.modal-link__image');
             linkImage.href = this.randomMonthData.url;
+
+            // remove hidden class from modal to show it -
+            // this is used as workaround because of modal flicering on page load
+            document.querySelector('.hidden-modal').classList.remove('hidden-modal');
           });
         }, 1200);
+      },
+
+      // disable click event on all months and red button for x seconds
+      disableClick() {
+        const months = [
+          document.querySelector('.january'),
+          document.querySelector('.february'),
+          document.querySelector('.march'),
+          document.querySelector('.april'),
+          document.querySelector('.may'),
+          document.querySelector('.june'),
+          document.querySelector('.july'),
+          document.querySelector('.august'),
+          document.querySelector('.september'),
+          document.querySelector('.october'),
+          document.querySelector('.november'),
+          document.querySelector('.december'),
+          document.querySelector('.red-knob'),
+        ];
+        months.forEach((month) => {
+          month.classList.add('disabled');
+        });
+        setTimeout(() => {
+          months.forEach((month) => {
+            month.classList.remove('disabled');
+          });
+        }, 1300);
+      },
+
+      resetHover() {
+        // Month Hover classes
+        const Jan = document.querySelector('.january');
+        const Feb = document.querySelector('.february');
+        const March = document.querySelector('.march');
+        const April = document.querySelector('.april');
+        const May = document.querySelector('.may');
+        const June = document.querySelector('.june');
+        const July = document.querySelector('.july');
+        const August = document.querySelector('.august');
+        const Sept = document.querySelector('.september');
+        const Oct = document.querySelector('.october');
+        const Nov = document.querySelector('.november');
+        const Dec = document.querySelector('.december');
+
+        const months = [
+          Jan,
+          Feb,
+          March,
+          April,
+          May,
+          June,
+          July,
+          August,
+          Sept,
+          Oct,
+          Nov,
+          Dec,
+        ];
+        // remove all classes from the hover classList
+        months.forEach((month) => {
+          month.classList.remove('hover-wheel');
+        });
       },
 
       addHoverClassesToCurrentMonth() {
@@ -113,113 +187,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       },
 
-      resetHover() {
-        // Month Hover classes
-        const Jan = document.querySelector('.january');
-        const Feb = document.querySelector('.february');
-        const March = document.querySelector('.march');
-        const April = document.querySelector('.april');
-        const May = document.querySelector('.may');
-        const June = document.querySelector('.june');
-        const July = document.querySelector('.july');
-        const August = document.querySelector('.august');
-        const Sept = document.querySelector('.september');
-        const Oct = document.querySelector('.october');
-        const Nov = document.querySelector('.november');
-        const Dec = document.querySelector('.december');
-
-        const months = [
-          Jan,
-          Feb,
-          March,
-          April,
-          May,
-          June,
-          July,
-          August,
-          Sept,
-          Oct,
-          Nov,
-          Dec,
-        ];
-        // remove all classes from the hover classList
-        months.forEach((month) => {
-          month.classList.remove('hover-wheel');
-        });
+      async getRandomArticleForCurrentMonth() {
+        await axios
+          .get(`/sis/season-wheel/get/random/${this.currentMonth}`)
+          .then((response) => {
+            this.randomMonthData = response.data;
+          })
+          .catch((error) => error.response);
       },
 
       getSeasonalArticlesByMonth(passedMonth) {
-        // dont call if the same month is clicked
+        // dont call if the same month is selected twice
         if (passedMonth === this.currentlySelectedMonth) {
           return;
         }
 
         this.resetHover();
-        // Add hover class to selected month
-        if (passedMonth === 'january') {
-          this.getSeasonalArticles('january');
-          const Jan = document.querySelector('.january');
-          Jan.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'january';
-        } else if (passedMonth === 'february') {
-          this.getSeasonalArticles('february');
-          const Feb = document.querySelector('.february');
-          Feb.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'february';
-        } else if (passedMonth === 'march') {
-          this.getSeasonalArticles('march');
-          const March = document.querySelector('.march');
-          March.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'march';
-        } else if (passedMonth === 'april') {
-          this.getSeasonalArticles('april');
-          const April = document.querySelector('.april');
-          April.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'april';
-        } else if (passedMonth === 'may') {
-          this.getSeasonalArticles('may');
-          const May = document.querySelector('.may');
-          May.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'may';
-        } else if (passedMonth === 'june') {
-          this.getSeasonalArticles('june');
-          const June = document.querySelector('.june');
-          June.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'june';
-        } else if (passedMonth === 'july') {
-          this.getSeasonalArticles('july');
-          const July = document.querySelector('.july');
-          July.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'july';
-        } else if (passedMonth === 'august') {
-          this.getSeasonalArticles('august');
-          const August = document.querySelector('.august');
-          August.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'august';
-        } else if (passedMonth === 'september') {
-          this.getSeasonalArticles('september');
-          const Sept = document.querySelector('.september');
-          Sept.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'september';
-        } else if (passedMonth === 'october') {
-          this.getSeasonalArticles('october');
-          const Oct = document.querySelector('.october');
-          Oct.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'october';
-        } else if (passedMonth === 'november') {
-          this.getSeasonalArticles('november');
-          const Nov = document.querySelector('.november');
-          Nov.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'november';
-        } else if (passedMonth === 'december') {
-          this.getSeasonalArticles('december');
-          const Dec = document.querySelector('.december');
-          Dec.classList.add('hover-wheel');
-          this.currentlySelectedMonth = 'december';
+
+        if (passedMonth) {
+          this.getSeasonalArticles(passedMonth);
+          const currentMonth = document.querySelector(`.${passedMonth}`);
+          currentMonth.classList.add('hover-wheel');
+          this.currentlySelectedMonth = passedMonth;
         }
       },
 
-      // get current month
       getCurrentMonth() {
         const currentMonth = new Date().getMonth();
         const currentMonthIndex = currentMonth + 1;
@@ -275,116 +267,32 @@ document.addEventListener('DOMContentLoaded', () => {
         return this.getCurrentMonth();
       },
 
-      // disable click event on all months and red button for x seconds
-      disableClick() {
-        const months = [
-          document.querySelector('.january'),
-          document.querySelector('.february'),
-          document.querySelector('.march'),
-          document.querySelector('.april'),
-          document.querySelector('.may'),
-          document.querySelector('.june'),
-          document.querySelector('.july'),
-          document.querySelector('.august'),
-          document.querySelector('.september'),
-          document.querySelector('.october'),
-          document.querySelector('.november'),
-          document.querySelector('.december'),
-          document.querySelector('.red-knob'),
-        ];
-        months.forEach((month) => {
-          month.classList.add('disabled');
-        });
-        setTimeout(() => {
-          months.forEach((month) => {
-            month.classList.remove('disabled');
-          });
-        }, 1300);
-      },
-
-      // Sets highlight effect on current month card
-      addHoverEffectOnCurrentMonth(month) {
-        if (month === 'january') {
-          const Jan = document.querySelector('.january');
-          Jan.classList.add('hover-wheel');
-        }
-        if (month === 'february') {
-          const Feb = document.querySelector('.february');
-          Feb.classList.add('hover-wheel');
-        }
-        if (month === 'march') {
-          const Mar = document.querySelector('.march');
-          Mar.classList.add('hover-wheel');
-        }
-        if (month === 'april') {
-          const Apr = document.querySelector('.april');
-          Apr.classList.add('hover-wheel');
-        }
-        if (month === 'may') {
-          const May = document.querySelector('.may');
-          May.classList.add('hover-wheel');
-        }
-        if (month === 'june') {
-          const Jun = document.querySelector('.june');
-          Jun.classList.add('hover-wheel');
-        }
-        if (month === 'july') {
-          const Jul = document.querySelector('.july');
-          Jul.classList.add('hover-wheel');
-        }
-        if (month === 'august') {
-          const Aug = document.querySelector('.august');
-          Aug.classList.add('hover-wheel');
-        }
-        if (month === 'september') {
-          const Sep = document.querySelector('.september');
-          Sep.classList.add('hover-wheel');
-        }
-        if (month === 'october') {
-          const Oct = document.querySelector('.october');
-          Oct.classList.add('hover-wheel');
-        }
-        if (month === 'november') {
-          const Nov = document.querySelector('.november');
-          Nov.classList.add('hover-wheel');
-        }
-        if (month === 'december') {
-          const Dec = document.querySelector('.december');
-          Dec.classList.add('hover-wheel');
-        }
-      },
-
-      async getRandomArticleForCurrentMonth() {
-        await axios
-          .get(`/sis/season-wheel/get/random/${this.currentMonth}`)
-          .then((response) => {
-            this.randomMonthData = response.data;
-            // dynamically attach link to title
-            const linkTitle = document.querySelector('.modal-link__title');
-            linkTitle.href = this.randomMonthData.url;
-
-            // dynamically attach link to image
-            const linkImage = document.querySelector('.modal-link__image');
-            linkImage.href = this.randomMonthData.url;
-
-            // dynamically attach image to modal
-            const modalImage = document.querySelector('.modal__image');
-            modalImage.src = this.randomMonthData.image;
-          })
-          .catch((error) => {
-          });
-      },
       closeModal() {
         this.showModal = false;
         document.querySelector('body').classList.remove('overflow-hidden');
       },
+
       openModal() {
         this.showModal = true;
         document.querySelector('body').classList.add('overflow-hidden');
       },
+
+      onKeyPress(e) {
+        if (e.keyCode === 27) {
+          this.closeModal();
+        }
+      },
     },
+
     mounted() {
-      // this.getSeasonalArticles(this.getCurrentMonth());
+      this.getCurrentMonth();
+      this.addHoverEffectOnCurrentMonth(this.currentMonth);
+    },
+    created() {
+      window.addEventListener('keyup', this.onKeyPress);
+    },
+    beforeDestroy() {
+      window.removeEventListener('keyup', this.onKeyPress);
     },
   });
 });
