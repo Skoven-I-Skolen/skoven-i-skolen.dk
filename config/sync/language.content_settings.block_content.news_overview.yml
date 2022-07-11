@@ -1,0 +1,11 @@
+uuid: bc7af631-a9f5-4bec-a8e8-55eb03973462
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.news_overview
+id: block_content.news_overview
+target_entity_type_id: block_content
+target_bundle: news_overview
+default_langcode: site_default
+language_alterable: false

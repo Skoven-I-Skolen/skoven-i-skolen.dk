@@ -1,4 +1,4 @@
-uuid: 093bb957-0e4b-4161-85d5-a22c1bc78b9d
+uuid: 018b45be-d256-491d-bd76-415c87bbbd25
 langcode: da
 status: true
 dependencies:
@@ -7,8 +7,6 @@ dependencies:
     - node.type.article
   module:
     - layout_builder
-_core:
-  default_config_hash: yiakhqXt73mNDoJ9YDOLtnDi2-amxMDSKnRtRmGikVQ
 id: node.article.layout_builder__layout
 field_name: layout_builder__layout
 entity_type: node

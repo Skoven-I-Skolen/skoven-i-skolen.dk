@@ -1,0 +1,8 @@
+id: node.news
+label: Nyhed
+entity_type_id: node
+bundle: news
+engine: entity_query
+fields: {  }
+sort_field: created
+show_total: ''

@@ -364,6 +364,20 @@ overview-form:
     - core/drupal.ajax
     - sis/form-select
 
+news-form:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/news-form.css: {}
+  js:
+    dist/components/js/overview-form.js: {}
+  dependencies:
+    - sis/accordion
+    - sis/pager-full
+    - core/drupal.ajax
+    - sis/form-select
+
+
 profile:
   version: VERSION
   css:
