@@ -1,0 +1,8 @@
+uuid: e627b125-95c5-4272-80be-9567aac37513
+langcode: da
+status: true
+dependencies: {  }
+id: news_overview
+label: Nyhedsoversigt
+revision: 0
+description: ''

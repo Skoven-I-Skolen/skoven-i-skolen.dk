@@ -73,22 +73,6 @@
     stroke: red;
   }
 
-  .months-wrapper__divider {
-    position: relative;
-    width: 100%;
-    height: 0;
-    margin-bottom: 18px;
-    padding-bottom: 2.5%;
-
-    & svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
   .headline-wrapper {
     display: flex;
     justify-content: space-between;
@@ -214,10 +198,6 @@
     opacity: 0;
   }
 
-  .overflow-hidden {
-    overflow: hidden;
-  }
-
   .disabled {
     z-index: 1;
     cursor: not-allowed;
@@ -226,5 +206,25 @@
 
   .hidden-modal {
     display: none;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.months-wrapper__divider {
+  position: relative;
+  width: 100%;
+  height: 0;
+  margin-bottom: 18px;
+  padding-bottom: 2.5%;
+
+  & svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }

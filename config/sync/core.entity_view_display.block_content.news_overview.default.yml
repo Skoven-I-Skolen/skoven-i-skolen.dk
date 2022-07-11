@@ -1,0 +1,24 @@
+uuid: 59301a47-66bf-436c-9529-a07baa23a051
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.news_overview
+    - field.field.block_content.news_overview.field_news_overview
+  module:
+    - sis_news
+id: block_content.news_overview.default
+targetEntityType: block_content
+bundle: news_overview
+mode: default
+content:
+  field_news_overview:
+    type: news_overview_formatter
+    label: hidden
+    settings:
+      view_mode: teaser
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

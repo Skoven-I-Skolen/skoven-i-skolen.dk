@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_months
     - field.field.node.article.field_article_type
@@ -31,6 +32,7 @@ dependencies:
     - layout_builder
     - layout_builder_restrictions
     - layout_discovery
+    - text
     - user
 third_party_settings:
   layout_builder:
@@ -49,18 +51,8 @@ third_party_settings:
           column_show_graphic_bottom: medium
           column_width: normal
         components:
-          46c9e775-ac98-445c-9357-dd45a80771cc:
-            uuid: 46c9e775-ac98-445c-9357-dd45a80771cc
-            region: content
-            configuration:
-              id: 'extra_field_block:node:article:content_moderation_control'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 0
-            additional: {  }
-          53381bc9-e84c-459b-a4c3-6832b0698260:
-            uuid: 53381bc9-e84c-459b-a4c3-6832b0698260
+          a965b1ab-0ee9-46bd-8d45-653a135b38a6:
+            uuid: a965b1ab-0ee9-46bd-8d45-653a135b38a6
             region: content
             configuration:
               id: 'field_block:node:article:field_time'
@@ -73,10 +65,10 @@ third_party_settings:
                 settings:
                   link: true
                 third_party_settings: {  }
-            weight: 1
+            weight: 0
             additional: {  }
-          e3f33d1f-ef49-475c-b74e-19ce1120991d:
-            uuid: e3f33d1f-ef49-475c-b74e-19ce1120991d
+          8ba46729-ddf6-41e0-ba4f-aa17acd79654:
+            uuid: 8ba46729-ddf6-41e0-ba4f-aa17acd79654
             region: content
             configuration:
               id: 'field_block:node:article:field_article_months'
@@ -88,6 +80,21 @@ third_party_settings:
                 label: above
                 settings:
                   link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          1533fd31-a685-4bd4-8130-df51502c2535:
+            uuid: 1533fd31-a685-4bd4-8130-df51502c2535
+            region: content
+            configuration:
+              id: 'field_block:node:article:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
                 third_party_settings: {  }
             weight: 2
             additional: {  }
@@ -106,6 +113,13 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
@@ -117,7 +131,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_time:
     type: entity_reference_label
@@ -125,10 +139,9 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
-  body: true
   content_hierarchy: true
   field_article_categories: true
   field_article_type: true

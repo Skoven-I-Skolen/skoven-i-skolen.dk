@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_months
     - field.field.node.article.field_article_type

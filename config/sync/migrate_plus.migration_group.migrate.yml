@@ -1,0 +1,15 @@
+uuid: 246a5dcd-30cd-41b0-af2e-79d1bf48bf39
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - sis_migrate
+id: migrate
+label: 'Sis Imports'
+description: 'Migration of SIS content.'
+source_type: 'Drupal 7'
+module: null
+shared_configuration:
+  source:
+    key: default

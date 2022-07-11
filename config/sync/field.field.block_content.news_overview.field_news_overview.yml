@@ -1,0 +1,28 @@
+uuid: 8c9be2e0-339a-47c2-b963-cd6a08ffe960
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.news_overview
+    - field.storage.block_content.field_news_overview
+  module:
+    - entity_overview
+id: block_content.news_overview.field_news_overview
+field_name: field_news_overview
+entity_type: block_content
+bundle: news_overview
+label: Nyhedsoversigt
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    fields:
+      owner: ''
+    count: 5
+    sort: newest
+    pagination: false
+    facets: {  }
+default_value_callback: ''
+settings: {  }
+field_type: overview_filter

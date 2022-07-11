@@ -1,0 +1,122 @@
+uuid: 6bde9326-41e6-4c5d-be1e-04530fa3d897
+langcode: en
+status: true
+dependencies: {  }
+id: articles
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: {  }
+migration_group: migrate
+label: Articles
+source:
+  plugin: sis_article_node
+  node_type: article
+  key: migrate
+process:
+  title: title
+  created: created
+  updated: updated
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+  body/value: body/0/value
+  body/summary: body/0/summary
+  field_subject/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: subjects
+    -
+      plugin: entity_generate
+      source: subjects
+      value_key: name
+      bundle_key: vid
+      bundle: subjects
+      entity_type: taxonomy_term
+      ignore_case: true
+  field_colophon_author:
+    plugin: callback
+    callable:
+      - \Drupal\sis_migration\Services\MigrateService
+      - extractAuthor
+    source: field_sis_boxout_colophon
+  field_colophon_photographer:
+    plugin: callback
+    callable:
+      - \Drupal\sis_migration\Services\MigrateService
+      - extractPhotographer
+    source: field_sis_boxout_colophon
+  field_colophon_editor:
+    plugin: callback
+    callable:
+      - \Drupal\sis_migration\Services\MigrateService
+      - extractEditor
+    source: field_sis_boxout_colophon
+  field_equipment/format:
+    plugin: default_value
+    default_value: basic_html
+  field_equipment/value: field_sis_boxout_gear/0/value
+  field_class:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: class
+    -
+      plugin: entity_generate
+      source: class
+      value_key: name
+      bundle_key: vid
+      bundle: class
+      entity_type: taxonomy_term
+      ignore_case: true
+  field_colophon/format:
+    plugin: default_value
+    default_value: basic_html
+  field_colophon/value: field_sis_boxout_colophon/0/value
+  field_list_date:
+    plugin: format_date
+    from_format: U
+    to_format: 'Y-m-d\TH:i:s'
+    source: created
+  field_description: body/0/summary
+  field_location:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: location
+    -
+      plugin: entity_generate
+      source: location
+      value_key: name
+      bundle_key: vid
+      bundle: location
+      entity_type: taxonomy_term
+      ignore_case: true
+  field_article_type:
+    plugin: callback
+    callable:
+      - \Drupal\sis_migration\Services\MigrateService
+      - mapCategoriesToArticleTypes
+    source: article_type
+  field_teaching_goals/format:
+    plugin: default_value
+    default_value: basic_html
+  field_teaching_goals/value: field_sis_article_purpose/0/value
+  field_season:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: season
+    -
+      plugin: entity_generate
+      source: season
+      value_key: name
+      bundle_key: vid
+      bundle: season
+      entity_type: taxonomy_term
+      ignore_case: true
+destination:
+  plugin: 'entity:node'
+  default_bundle: article
+migration_dependencies: null
