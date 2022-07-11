@@ -26,7 +26,7 @@ Drupal.behaviors.imageSlideshow = {
           // options
           cellAlign: 'left',
           contain: true,
-          pageDots: false,
+          pageDots: true,
           prevNextButtons: false,
           fade: true,
           wrapAround: true,
