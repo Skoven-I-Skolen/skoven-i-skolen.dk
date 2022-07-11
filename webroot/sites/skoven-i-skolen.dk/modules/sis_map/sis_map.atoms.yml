@@ -1,0 +1,38 @@
+atoms:
+  map-title:
+    type: textfield
+    title: Kort titel
+    description: Titlen på kortet, vist over beskrivelsen
+    category: Kort
+    group: Kort
+    default:
+      da: 'Kort'
+
+  map-add-idea-button-text:
+    type: textfield
+    title: Tekst på knappen over kortet
+    description: Teksten på knappen vist over kortet
+    category: Kort
+    group: Kort
+    default:
+      da: 'Læg en ide på kortet'
+
+  map-add-idea-button-link:
+    type: textfield
+    title: Knap link
+    description: Linket til knappen vist over kortet
+    category: Kort
+    group: Kort
+    default:
+      da: '/node/add/dot_on_map'
+
+  map-description:
+    type: text_format
+    title: Tekst over kortet
+    description: Beskrivelsen vist over kortet
+    category: Kort
+    group: Kort
+    options:
+      format: full_html
+    default:
+      da: '<p>På kortet kan du finde mennesker og steder som støtter udeskole lokalt. Du kan også finde eller dele ideer til aktiviteter og undervisningsforløb, der er knyttet til steder på kortet.</p>'

@@ -107,6 +107,7 @@ module:
   sis_articles: 0
   sis_lexicon: 0
   sis_migration: 0
+  sis_map: 0
   sis_news: 0
   sis_organization: 0
   sis_overview: 0
