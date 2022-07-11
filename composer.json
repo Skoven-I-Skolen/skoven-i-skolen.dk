@@ -87,6 +87,7 @@
         "drush/drush": "^10.0",
         "novicell/atoms": "^1.0",
         "novicell/content_hierarchy": "^1.0",
+        "novicell/dds_dawa": "^1.1",
         "novicell/drupal-premium-theme": "^1.0",
         "novicell/dynamic_key_value": "^1.0",
         "novicell/entity_overview": "^1.1",
