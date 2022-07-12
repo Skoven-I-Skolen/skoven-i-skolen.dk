@@ -6,7 +6,8 @@
 
     &__input-field {
       position: relative;
-      width: 100%;
+      margin: auto !important;
+      width: 50%;
       height: 42px;
       padding: 11px 50px 11px 20px;
       background: var(--color-white);
