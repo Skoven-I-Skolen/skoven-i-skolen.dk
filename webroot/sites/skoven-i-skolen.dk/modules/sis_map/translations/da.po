@@ -1,0 +1,16 @@
+# Danish translation of SiS Map  (all releases)
+# Copyright (c) 2022 Novicell
+#
+msgid "Address"
+msgstr "Addresse"
+
+msgid "Latitude"
+msgstr "Breddegrad"
+
+msgid "Longitude"
+msgstr "Længde"
+
+msgid "Display map helpers"
+msgstr "Vis korthjælpere"
+
+

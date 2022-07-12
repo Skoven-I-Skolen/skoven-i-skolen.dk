@@ -1,15 +1,14 @@
-uuid: 310ffe04-8ff9-4d87-a540-0c165ce54c32
+uuid: d2f3ccb1-ce5b-4fbb-9a7d-7d9df909f5e1
 langcode: da
 status: true
 dependencies:
   module:
-    - node
-id: node.field_summary
-field_name: field_summary
-entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
+    - user
+id: user.field_email
+field_name: field_email
+entity_type: user
+type: email
+settings: {  }
 module: core
 locked: false
 cardinality: 1

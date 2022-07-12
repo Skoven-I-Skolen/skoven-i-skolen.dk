@@ -10,7 +10,15 @@
  */
 #}
 {{ attach_library('sis/maintenance-page') }}
-
+<div{{ create_attribute().addClass('header-inner__maintenance') }}>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <img class="logo__image" src="/{{ directory }}/logo.svg" alt="Hjem">
+            </div>
+          </div>
+        </div>
+      </div>
 <div class="premium-layout-wrapper">
   <div class="layout-container">
 
@@ -18,7 +26,7 @@
       <main role="main" vocab="http://schema.org" typeof="WebPageElement" property="mainContentOfPage">
         <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
         <div class="layout-content">
-          {{ page.content }}
+        <h3>{{ page.content }}</h3>
         </div>{# /.layout-content #}
       </main>
     {% endblock %}
@@ -46,9 +54,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-md-4 footer__bottom-logo">
-              <a class="logo" href="/" title="Hjem" rel="home">
                 <img class="logo__image" src="/{{ directory }}/logo.svg" alt="Hjem">
-              </a>
             </div>
             <div class="col-xs-12 col-md-4 footer__bottom-address">
               Ledreborg Alle 2A, 4320 Lejre

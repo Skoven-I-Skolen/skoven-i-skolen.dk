@@ -3,6 +3,31 @@
  * Maintenance page.
  */
 
+body {
+  padding-top: 0;
+}
+
+.header-inner__maintenance {
+  background-color: #00687f;
+}
+
+.premium-layout-wrapper {
+  margin: 0;
+
+  & .layout-container {
+    margin: 0;
+  }
+}
+
+.layout-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 30px 0;
+}
+
 .maintenance {
   margin-top: 40px;
   margin-bottom: 100px;
@@ -24,4 +49,11 @@
   &__content {
     font-size: var(--base-font-size);
   }
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
