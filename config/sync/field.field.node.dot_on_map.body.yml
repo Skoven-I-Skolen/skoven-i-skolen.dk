@@ -16,7 +16,7 @@ field_name: body
 entity_type: node
 bundle: dot_on_map
 label: Beskrivelse
-description: ''
+description: 'En længere beskrivelse af arrangementet.'
 required: false
 translatable: true
 default_value: {  }

@@ -1,0 +1,25 @@
+uuid: 9bfc11d0-56aa-4d71-9707-fe6a0b435dec
+langcode: da
+status: true
+dependencies:
+  module:
+    - sis_map
+    - system
+  theme:
+    - sis
+id: mapblock
+theme: sis
+region: content
+weight: 0
+provider: null
+plugin: map_block
+settings:
+  id: map_block
+  label: 'Map Block'
+  label_display: '0'
+  provider: sis_map
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /kort

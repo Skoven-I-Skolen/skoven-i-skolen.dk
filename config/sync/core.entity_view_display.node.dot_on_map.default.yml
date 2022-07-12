@@ -13,6 +13,9 @@ dependencies:
     - field.field.node.dot_on_map.field_season
     - field.field.node.dot_on_map.field_subject
     - field.field.node.dot_on_map.field_summary
+    - field.field.node.dot_on_map.lat
+    - field.field.node.dot_on_map.lon
+    - field.field.node.dot_on_map.sis_map_address_dawa
     - node.type.dot_on_map
   module:
     - file
@@ -105,7 +108,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 107
     region: content
   links:
     settings: {  }
@@ -114,3 +117,6 @@ content:
     region: content
 hidden:
   langcode: true
+  lat: true
+  lon: true
+  sis_map_address_dawa: true

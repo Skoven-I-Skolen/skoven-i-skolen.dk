@@ -1,16 +1,16 @@
-uuid: 310ffe04-8ff9-4d87-a540-0c165ce54c32
+uuid: a541102c-549d-4765-9a9b-59b301213828
 langcode: da
 status: true
 dependencies:
   module:
+    - dds_dawa
     - node
-id: node.field_summary
-field_name: field_summary
+id: node.sis_map_address_dawa
+field_name: sis_map_address_dawa
 entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
-module: core
+type: dawa_address_autocomplete
+settings: {  }
+module: dds_dawa
 locked: false
 cardinality: 1
 translatable: true

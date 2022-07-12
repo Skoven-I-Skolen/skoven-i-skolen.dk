@@ -1,0 +1,34 @@
+uuid: 9ba616c4-cfe1-44a8-8012-00cf55b2ef31
+langcode: da
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: prik_paa_kort
+label: 'Prik på kort'
+type: 'canonical_entities:node'
+pattern: '/prik/[node:title]'
+selection_criteria:
+  79e4c62d-8a18-4853-b032-3436b6176be1:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 79e4c62d-8a18-4853-b032-3436b6176be1
+    context_mapping:
+      node: node
+    bundles:
+      dot_on_map: dot_on_map
+  a8d3a4f6-5308-41c8-8640-e368ee50677c:
+    id: language
+    negate: false
+    uuid: a8d3a4f6-5308-41c8-8640-e368ee50677c
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      da: da
+      en: en
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Sprog
