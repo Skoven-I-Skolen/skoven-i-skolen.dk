@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
+    - field.field.user.user.field_description
+    - field.field.user.user.field_email
+    - field.field.user.user.field_full_name
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -52,4 +55,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  field_description: true
+  field_email: true
+  field_full_name: true
   langcode: true
