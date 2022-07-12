@@ -1,0 +1,34 @@
+uuid: c1adb468-31c2-4200-a201-91ba7238acfe
+langcode: da
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: blogs
+label: Blogs
+type: 'canonical_entities:node'
+pattern: '/blogs/[node:title]'
+selection_criteria:
+  6b050276-0e24-4a0b-b512-846724f08055:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 6b050276-0e24-4a0b-b512-846724f08055
+    context_mapping:
+      node: node
+    bundles:
+      blog_post: blog_post
+  9c2f0475-b7e6-40fd-9a44-40df8f7945e5:
+    id: language
+    negate: false
+    uuid: 9c2f0475-b7e6-40fd-9a44-40df8f7945e5
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      da: da
+      en: en
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Sprog

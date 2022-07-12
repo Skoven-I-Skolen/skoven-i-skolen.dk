@@ -105,6 +105,7 @@ module:
   simple_sitemap: 0
   sis_almanac: 0
   sis_articles: 0
+  sis_blog_post: 0
   sis_lexicon: 0
   sis_migration: 0
   sis_map: 0

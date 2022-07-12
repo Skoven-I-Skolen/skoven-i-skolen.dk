@@ -95,6 +95,12 @@ button-preview:
       dist/components/css/preview/button.css: {}
 
 # Molecules.
+blog-post:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/blog-post.css: {}
+
 breadcrumb:
   version: VERSION
   css:
