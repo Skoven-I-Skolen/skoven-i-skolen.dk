@@ -1,0 +1,27 @@
+uuid: 007acfa5-33da-49a6-9562-65f31d513729
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.blog_post
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: node.blog_post.body
+field_name: body
+entity_type: node
+bundle: blog_post
+label: Beskrivelse
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
