@@ -1,0 +1,20 @@
+uuid: 8f75c6c6-c72a-485f-b388-e58f9d9d4c65
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_summary
+  module:
+    - user
+id: user.user.field_summary
+field_name: field_summary
+entity_type: user
+bundle: user
+label: Resumé
+description: 'Skriv et kort resumé om dig selv. Det vil blive vist på hver blogside, du udgiver, og muligvis på andre relaterede blogsider.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

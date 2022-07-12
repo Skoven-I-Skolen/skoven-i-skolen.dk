@@ -1,0 +1,19 @@
+uuid: f79551f0-74b0-4307-8271-658529132fcf
+langcode: da
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_summary
+field_name: field_summary
+entity_type: user
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
