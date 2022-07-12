@@ -10,7 +10,7 @@ field_name: field_contact_information
 entity_type: node
 bundle: dot_on_map
 label: Kontaktdata
-description: ''
+description: 'Dine kontaktoplysninger, såsom telefonnummer, e-mail og postadresse.'
 required: false
 translatable: false
 default_value: {  }

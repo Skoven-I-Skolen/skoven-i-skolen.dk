@@ -1,0 +1,19 @@
+uuid: a79bed0c-b553-4aeb-81e9-a718d66b4cfa
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.lon
+    - node.type.dot_on_map
+id: node.dot_on_map.lon
+field_name: lon
+entity_type: node
+bundle: dot_on_map
+label: Længde
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

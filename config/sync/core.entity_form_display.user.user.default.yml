@@ -3,11 +3,13 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_description
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
     - path
+    - text
     - user
 _core:
   default_config_hash: Tii0Ca3OF32lLDp9WN3el1Q1cy2MFIxUUCraMzIZxRA
@@ -22,6 +24,14 @@ content:
   contact:
     weight: 5
     region: content
+  field_description:
+    type: text_textarea
+    weight: 31
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   language:
     weight: 0
     region: content
@@ -44,3 +54,4 @@ content:
     third_party_settings: {  }
 hidden:
   langcode: true
+  organization_profiles: true

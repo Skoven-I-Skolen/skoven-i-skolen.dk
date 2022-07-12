@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "37064c1cc600f76ea282e7fce0dca011",
+    "content-hash": "fc21232a09acbd188deea3d32e887d60",
     "packages": [
         {
             "name": "algolia/places",
@@ -7102,6 +7102,26 @@
             ]
         },
         {
+            "name": "novicell/dds_dawa",
+            "version": "1.1.21",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.drupal.dk/php/~/up/ver_1pP9t7/novicelldds_dawa-1-1-21.zip"
+            },
+            "require": {
+                "drupal/core": "^8.7|^9.0"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Novicell DAWA module",
+            "homepage": "https://www.novicell.dk",
+            "keywords": [
+                "Novicell"
+            ]
+        },
+        {
             "name": "novicell/drupal-premium-theme",
             "version": "1.0.13",
             "dist": {
@@ -12050,5 +12070,5 @@
     "platform-overrides": {
         "php": "8.0"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

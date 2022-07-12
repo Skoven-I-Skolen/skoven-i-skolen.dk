@@ -33,4 +33,14 @@
   <ul class="inline-navigation__list js-inline-navigation-slider">
     {{ content }}
   </ul>
+  <div class="inline-navigation__pager-count">
+    {{ 'Showing'|t }}
+    <span class="inline-navigation__pager-count--showing">
+      <span class="inline-navigation__pager-count--showing-xs">1</span>
+      <span class="inline-navigation__pager-count--showing-ms">2</span>
+    </span>
+    {{ 'out of'|t }}
+    <span class="inline-navigation__pager-count--total">{{ content|length }}
+    </span>
+  </div>
 </div>

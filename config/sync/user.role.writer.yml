@@ -1,0 +1,18 @@
+uuid: e1855673-8a7d-44e7-ad4e-4149aa4c00b0
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.blog_post
+  module:
+    - node
+id: writer
+label: Skribent
+weight: 7
+is_admin: null
+permissions:
+  - 'create blog_post content'
+  - 'delete blog_post revisions'
+  - 'delete own blog_post content'
+  - 'edit own blog_post content'
+  - 'view blog_post revisions'

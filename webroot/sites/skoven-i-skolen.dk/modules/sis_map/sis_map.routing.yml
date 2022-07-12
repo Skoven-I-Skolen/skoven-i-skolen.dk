@@ -1,0 +1,7 @@
+sis_map.settings:
+  path: '/admin/map/settings'
+  defaults:
+    _form: '\Drupal\sis_map\Form\SettingsForm'
+    _title: 'SiS MAP Settings'
+  requirements:
+    _permission: 'administer content'
