@@ -41,7 +41,7 @@ settings:
           name: Media
           items:
             - Blockquote
-            - DrupalImage
+            - DrupalMediaLibrary
             - Table
             - HorizontalRule
         -
