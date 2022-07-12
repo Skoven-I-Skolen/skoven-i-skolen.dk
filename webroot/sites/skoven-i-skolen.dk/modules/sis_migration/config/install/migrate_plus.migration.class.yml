@@ -1,8 +1,12 @@
-id: sis_article_class
+id: class
 label: 'Class term migration'
+migration_tags: {}
+migration_group: migrate
+
 source:
   plugin: d7_taxonomy_term
-  bundle: glade
+  bundle: grade
+  key: migrate
 process:
   tid: term_id
   name: name

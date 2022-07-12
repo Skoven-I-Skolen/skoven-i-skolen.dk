@@ -1,8 +1,12 @@
-id: sis_article_subject
+id: subject
 label: 'Subject term migration'
+migration_tags: {}
+migration_group: migrate
+
 source:
   plugin: d7_taxonomy_term
   bundle: class
+  key: migrate
 process:
   tid: term_id
   name: name

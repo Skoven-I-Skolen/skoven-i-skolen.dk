@@ -1,0 +1,13 @@
+uuid: 73fd6dcd-472a-40ea-bd89-2a586fe3a2f3
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.search_field
+id: block_content.search_field.default
+targetEntityType: block_content
+bundle: search_field
+mode: default
+content: {  }
+hidden:
+  langcode: true

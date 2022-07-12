@@ -448,3 +448,9 @@ form-select:
     dist/components/js/select.js: {}
   dependencies:
     - core/drupal
+
+searchfield:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/searchfield.css: {}

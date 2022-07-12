@@ -1,0 +1,27 @@
+uuid: 4ef1ac33-3d63-4332-9248-bc1d4f366036
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.search_field
+id: block_content.search_field.default
+targetEntityType: block_content
+bundle: search_field
+mode: default
+content:
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }
