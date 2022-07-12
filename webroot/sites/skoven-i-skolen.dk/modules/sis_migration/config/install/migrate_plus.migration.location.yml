@@ -1,8 +1,12 @@
-id: sis_article_location
+id: location
 label: 'Location term migration'
+migration_tags: {}
+migration_group: migrate
+
 source:
   plugin: d7_taxonomy_term
   bundle: place
+  key: migrate
 process:
   tid: term_id
   name: name

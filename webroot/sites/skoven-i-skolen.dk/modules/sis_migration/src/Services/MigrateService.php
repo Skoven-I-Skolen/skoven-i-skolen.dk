@@ -31,7 +31,7 @@ class MigrateService {
     preg_match('/' . $prefix . ': ([^\n\r]*)/', $data, $matches);
 
     if (isset($matches[1])) {
-      return $matches[1];
+      return strip_tags($matches[1]);
     }
 
     return NULL;

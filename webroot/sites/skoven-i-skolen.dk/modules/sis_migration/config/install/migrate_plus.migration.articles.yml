@@ -17,19 +17,15 @@ process:
     default_value: basic_html
   'body/value': body/0/value
   'body/summary': body/0/summary
-  'field_subject/target_id':
+  field_subject:
     -
       plugin: skip_on_empty
       method: process
-      source: subjects
+      source: field_taxonomy_class/0/tid
     -
-      plugin: entity_generate
-      source: subjects
-      value_key: name
-      bundle_key: vid
-      bundle: subjects
-      entity_type: taxonomy_term
-      ignore_case: true
+      plugin: migration_lookup
+      source: field_taxonomy_class/0/tid
+      migration: subject
 #  field_media_downloads:
   field_colophon_author:
     plugin: callback
@@ -57,15 +53,11 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: class
+      source: field_taxonomy_grade/0/tid
     -
-      plugin: entity_generate
-      source: class
-      value_key: name
-      bundle_key: vid
-      bundle: class
-      entity_type: taxonomy_term
-      ignore_case: true
+      plugin: migration_lookup
+      source: field_taxonomy_grade/0/tid
+      migration: class
   'field_colophon/format':
     plugin: default_value
     default_value: basic_html
@@ -89,15 +81,11 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: location
+      source: field_taxonomy_place/0/tid
     -
-      plugin: entity_generate
-      source: location
-      value_key: name
-      bundle_key: vid
-      bundle: location
-      entity_type: taxonomy_term
-      ignore_case: true
+      plugin: migration_lookup
+      source: field_taxonomy_place/0/tid
+      migration: location
 #  field_time:
   field_article_type:
     plugin: callback
@@ -113,16 +101,17 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: season
+      source: field_taxonomy_season/0/tid
     -
-      plugin: entity_generate
-      source: season
-      value_key: name
-      bundle_key: vid
-      bundle: season
-      entity_type: taxonomy_term
-      ignore_case: true
-
+      plugin: migration_lookup
+      source: field_taxonomy_season/0/tid
+      migration: season
 destination:
   plugin: entity:node
   default_bundle: article
+migration_dependencies:
+  required:
+    - class
+    - subject
+    - location
+    - season
