@@ -1,26 +1,4 @@
 atoms:
-  footer-col1-header:
-    type: textfield
-    title: Header
-    description: The header in the footer column.
-    category: Page layout
-    group: Footer
-    subgroup: Column 1
-    default:
-      da: ''
-
-  footer-col1-text:
-    type: text_format
-    title: Text
-    description: The text in the footer column.
-    category: Page layout
-    group: Footer
-    subgroup: Column 1
-    options:
-      format: full_html
-    default:
-      da: ''
-
   footer-col2-header:
     type: textfield
     title: Header
@@ -28,6 +6,7 @@ atoms:
     category: Page layout
     group: Footer
     subgroup: Column 2
+    weight: 1
     default:
       da: ''
 
@@ -38,54 +17,23 @@ atoms:
     category: Page layout
     group: Footer
     subgroup: Column 2
+    weight: 4
     options:
       format: full_html
-    default:
-      da: '<p></p>'
-
-  footer-col3-header:
-    type: textfield
-    title: Header
-    description: The header in the footer column.
-    category: Page layout
-    group: Footer
-    subgroup: Column 3
     default:
       da: ''
 
-  footer-col3-text:
-    type: text_format
-    title: Text
-    description: The text in the footer column.
+  footer-col2-button-link:
+    type: link
+    title: Button link
+    url: Url
+    description: Button name and link
     category: Page layout
     group: Footer
-    subgroup: Column 3
-    options:
-      format: full_html
-    default:
-      da: '<p></p>'
-
-  footer-col4-header:
-    type: textfield
-    title: Header
-    description: The header in the footer column.
-    category: Page layout
-    group: Footer
-    subgroup: Column 4
+    subgroup: Column 2
+    weight: 5
     default:
       da: ''
-
-  footer-col4-text:
-    type: text_format
-    title: Text
-    description: The text in the footer column.
-    category: Page layout
-    group: Footer
-    subgroup: Column 4
-    options:
-      format: full_html
-    default:
-      da: '<p></p>'
 
   facebook-link:
     type: url
@@ -94,6 +42,7 @@ atoms:
     category: Page layout
     group: Footer
     subgroup: Column 2
+    weight: 2
     default:
       da: ''
 
@@ -104,16 +53,6 @@ atoms:
     category: Page layout
     group: Footer
     subgroup: Column 2
-    default:
-      da: ''
-
-  col-2-button-link:
-    type: link
-    title: Button link
-    url: Url
-    description: Button name and link
-    category: Page layout
-    group: Footer
-    subgroup: Column 2
+    weight: 3
     default:
       da: ''
