@@ -55,6 +55,9 @@ function sis_preprocess_page(&$variables) {
     }
   }
 
+  $variables['footer_col1_header'] = atom_str('footer-col1-header');
+
+
   $variables['footer_col2_header'] = atom_str('footer-col2-header');
 
   $variables['facebook_link'] = atom_str('facebook-link');

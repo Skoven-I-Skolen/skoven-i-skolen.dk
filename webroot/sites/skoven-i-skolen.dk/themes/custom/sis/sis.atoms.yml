@@ -19,7 +19,7 @@ atoms:
     options:
       format: full_html
     default:
-      da: '<p></p>'
+      da: ''
 
   footer-col2-header:
     type: textfield
@@ -88,7 +88,7 @@ atoms:
       da: '<p></p>'
 
   facebook-link:
-    type: textfield
+    type: url
     title: Facebook link
     description: The link to the Facebook page.
     category: Page layout
@@ -98,7 +98,7 @@ atoms:
       da: ''
 
   instagram-link:
-    type: textfield
+    type: url
     title: instagram link
     description: The link to the instagram page.
     category: Page layout
@@ -107,20 +107,11 @@ atoms:
     default:
       da: ''
 
-  col-2-button-name:
-    type: textfield
-    title: Button name
-    description: Name of the button
-    category: Page layout
-    group: Footer
-    subgroup: Column 2
-    default:
-      da: ''
-
   col-2-button-link:
-    type: textfield
+    type: link
     title: Button link
-    description: The link to the page.
+    url: Url
+    description: Button name and link
     category: Page layout
     group: Footer
     subgroup: Column 2

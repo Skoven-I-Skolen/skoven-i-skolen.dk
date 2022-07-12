@@ -98,6 +98,16 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="footer__latest__header">
+                <h4>{{ footer_col1_header }}</h4>
+            
+
+        {# {% if atom('burger-menu-all-articles-link').0['#url'] and atom('burger-menu-all-articles-link').0['#title'] %}
+        
+        {% endif %} #}
+
+
+              </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
               <div class="footer__some__header">
@@ -124,9 +134,15 @@
               <h5 class="footer__col2__description">{{ footer_col2_text }}</h5>
               <div class="footer__col2__button__wrapper">
                 <a href='{{ col_2_button_link }}'>
+
+
+                {# FIX HERE #}
+                {# {% if atom('col-2-button-link').0['#url'] and atom('col-2-button-link').0['#title'] endif %} #}
+
+
                   <div class="footer__col2__button">
                     <div class="footer__col2__button__name">
-                      {{ col_2_button_name }}
+                      {# {{ col_2_button_name }} #}
                     </div>
                   </div>
                 </a>
