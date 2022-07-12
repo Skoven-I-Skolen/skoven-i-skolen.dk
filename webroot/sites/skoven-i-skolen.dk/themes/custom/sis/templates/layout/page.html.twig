@@ -98,55 +98,39 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="footer__latest__header">
-                <h4>{{ footer_col1_header }}</h4>
-            
-
-        {# {% if atom('burger-menu-all-articles-link').0['#url'] and atom('burger-menu-all-articles-link').0['#title'] %}
-        
-        {% endif %} #}
-
-
-              </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="footer__some__header">
-               <h4>{{ footer_col2_header }}</h4>
+              <div class="footer-some-header">
+                {% if atom('footer-col2-header') %}
+                  <h4>{{ atom('footer-col2-header') }}</h4>
+                {% endif %}
               </div>
-              <div class="footer__some__icons">
-                <a href='{{ facebook_link }}'>
-                  <div class="footer__facebook__wrapper">
-                  {% include '@reusable-component/svg-icon.twig' with {
-                    'attributes': '',
-                    'svgIconName': 'facebook'
-                  } %}
-                  </div>
-                </a>
-                 <a href='{{ instagram_link }}'>
-                  <div class="footer__instagram__wrapper">
-                      {% include '@reusable-component/svg-icon.twig' with {
-                    'attributes': '',
-                    'svgIconName': 'instagram'
-                  } %}
-                  </div>
-                </a>
+              <div class="footer-some-icons">
+                {% if atom('facebook-link').0['#markup'] %}
+                  <a href="{{ atom('facebook-link').0['#markup'] }}" class="footer-some-icons__icon" target="_blank">
+                    {% include '@reusable-component/svg-icon.twig' with {
+                      'attributes': '',
+                      'svgIconName': 'facebook'
+                    } %}
+                  </a>
+                {% endif %}
+                {% if atom('instagram-link').0['#markup'] %}
+                  <a href="{{ atom('instagram-link').0['#markup'] }}" class="footer-some-icons__icon" target="_blank">
+                    {% include '@reusable-component/svg-icon.twig' with {
+                      'attributes': '',
+                      'svgIconName': 'instagram'
+                    } %}
+                  </a>
+                {% endif %}
               </div>
-              <h5 class="footer__col2__description">{{ footer_col2_text }}</h5>
-              <div class="footer__col2__button__wrapper">
-                <a href='{{ col_2_button_link }}'>
-
-
-                {# FIX HERE #}
-                {# {% if atom('col-2-button-link').0['#url'] and atom('col-2-button-link').0['#title'] endif %} #}
-
-
-                  <div class="footer__col2__button">
-                    <div class="footer__col2__button__name">
-                      {# {{ col_2_button_name }} #}
-                    </div>
-                  </div>
+              {% if atom('footer-col2-text') %}
+                <h5 class="footer__col2__description">{{ atom('footer-col2-text') }}</h5>
+              {% endif %}
+              {% if atom('footer-col2-button-link').0['#url'] and atom('footer-col2-button-link').0['#title'] %}
+                <a href="{{ atom('footer-col2-button-link').0['#url'] }}" class="button button--ghost" target="{{ atom('footer-col2-button-link').0['#attributes']['target'] }}">
+                  {{ atom('footer-col2-button-link').0['#title'] }}
                 </a>
-              </div>
+              {% endif %}
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
               {{ almanac }}
