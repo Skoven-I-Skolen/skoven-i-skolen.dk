@@ -98,7 +98,9 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-3">
-              <h4>{{ atom('footer-col1-header') }}</h4>
+              {% if atom('footer-col1-header') %}
+                <h4>{{ atom('footer-col1-header') }}</h4>
+              {% endif %}
               {{ latest_news }}
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
