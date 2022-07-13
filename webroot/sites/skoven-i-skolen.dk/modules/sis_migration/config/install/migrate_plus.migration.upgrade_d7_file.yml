@@ -6,7 +6,7 @@ source:
   plugin: d7_file
   scheme: public
   constants:
-    source_base_path: 'https://skoven-i-skolen.dk'
+    source_base_path: 'https://www.skoven-i-skolen.dk'
   key: migrate
 process:
   fid: fid

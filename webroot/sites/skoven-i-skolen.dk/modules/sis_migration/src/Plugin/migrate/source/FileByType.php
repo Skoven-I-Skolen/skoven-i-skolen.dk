@@ -23,21 +23,22 @@ class FileByType extends File {
 
     // Filter by file type, if configured.
     if (isset($this->configuration['type'])) {
-      $query->condition('f.type', $this->configuration['type']);
+      $query->condition('f.filemime', $this->configuration['type'], 'IN');
     }
 
     // Get the alt text, if configured.
     if (isset($this->configuration['get_alt'])) {
-      $alt_alias = $query->addJoin('left', 'field_data_field_file_image_alt_text', 'alt', 'f.fid = %alias.entity_id');
-      $query->addField($alt_alias, 'field_file_image_alt_text_value', 'alt');
+      $alt_alias = $query->addJoin('left', 'field_data_field_sis_article_image', 'alt', 'f.fid = %alias.field_sis_article_image_fid');
+      $query->addField($alt_alias, 'field_sis_article_image_alt', 'alt');
     }
 
     // Get the title text, if configured.
     if (isset($this->configuration['get_title'])) {
-      $title_alias = $query->addJoin('left', 'field_data_field_file_image_title_text', 'title', 'f.fid = %alias.entity_id');
-      $query->addField($title_alias, 'field_file_image_title_text_value', 'title');
+      $title_alias = $query->addJoin('left', 'field_data_field_sis_article_image', 'title', 'f.fid = %alias.field_sis_article_image_fid');
+      $query->addField($title_alias, 'field_sis_article_image_title', 'title');
     }
 
+    $query->addTag('debug');
     return $query;
   }
 
