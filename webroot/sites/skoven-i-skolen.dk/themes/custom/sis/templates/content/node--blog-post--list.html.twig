@@ -67,24 +67,30 @@
  *
  */
 #}
-{{ attach_library('sis/page') }}
-<article{{ attributes.addClass(classes) }}>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7 col-xs-12">
-        {% if node.field_header[0] is empty %}
-          {% include '@reusable-component/page-title.twig' with {
-            'attributes': create_attribute().addClass('page__title'),
-            'title': content.title,
-          } %}
-        <div class="page__description">
-          {{ node.field_description.value }}
-        </div>
+{{ attach_library('sis/inspiration-overview') }}
+
+<div class="inspiration-overview__item">
+  <div class="inspiration-overview__item-inner">
+    <a href="{{ url }}" class="inspiration-overview__item-link">
+      <div class="inspiration-overview__image">
+        {% if content.field_list_media %}
+          {{ content.field_list_media }}
         {% endif %}
+        <div class="inspiration-overview__type inspiration-overview__type--blog">
+          {{ 'Blog'|t }}
+        </div>
       </div>
-    </div>
+      <div class="inspiration-overview__title inspiration-overview__title--authoring-information">
+        {{ authoring_information }}
+      </div>
+      <div class="inspiration-overview__title inspiration-overview__title--blog-post">
+        {{ label }}
+      </div>
+      <div class="inspiration-overview__content">
+        <div class="inspiration-overview__description">
+          {{ node.body.summary }}
+        </div>
+      </div>
+    </a>
   </div>
-  <div{{ content_attributes }}>
-    {{ content|without(['field_list_date', 'field_header', 'title']) }}
-  </div>
-</article>
+</div>

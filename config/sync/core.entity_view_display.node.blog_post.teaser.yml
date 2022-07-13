@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_list_media
     - node.type.blog_post
   module:
     - text
@@ -28,4 +29,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_list_media: true
   langcode: true

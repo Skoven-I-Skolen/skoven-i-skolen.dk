@@ -70,6 +70,7 @@
 
 {{ attach_library('sis/news-page') }}
 {{ attach_library('sis/blog-post') }}
+{{ attach_library('sis_blog_post/sis_blog_post') }}
 
 {% set classes = [
   'news-page',
@@ -98,61 +99,56 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-4 col-lg-4 col-lg-offset-1">
-        <a class="author-information" href="/test">
-          <div class="facts-box">
-            <div class="facts-box__content">
-              <div class="facts-box__content-item">
-                <div class="facts-box__content-item-label facts-box__content-item-label-author-image">
-                  {% if current_writer.user_picture %}
-                    <img src="{{ current_writer.user_picture }}"/>
-                  {% endif %}
-                </div>
-                <div class="facts-box__content-item-value facts-box__content-item-value-author-full-name">
-                  {% if current_writer.field_full_name %}
-                    <h5>{{ current_writer.field_full_name }}</h5>
-                  {% endif %}
-                  {% if current_writer.field_summary %}
-                    {{ current_writer.field_summary }}
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        {% if other_writers %}
-        <h3>Andre Skribenter</h3>
-          {% for writer in other_writers %}
-            <a class="author-information" href="{{ writer.url }}">
-            <div class="facts-box">
-              <div class="facts-box__content">
-                <div class="facts-box__content-item">
-                  <div class="facts-box__content-item-label facts-box__content-item-label-author-image">
-                    {% if writer.user_picture %}
-                      <img src="{{ writer.user_picture }}"/>
-                    {% endif %}
-                  </div>
-                  <div class="facts-box__content-item-value facts-box__content-item-value-author-full-name">
-                    {% if writer.field_full_name %}
-                      <h5>{{ writer.field_full_name }}</h5>
-                    {% endif %}
-                    {% if writer.field_summary %}
-                      {{ writer.field_summary }}
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
-            </div>
-            </a>
-          {% endfor %}
+        {% if current_writer %}
+          {{ current_writer }}
         {% endif %}
-        <h3>Se alle skribenter V</h3>
+        {% if other_writers %}
+          <h3>Andre Skribenter</h3>
+            {% for writer in other_writers %}
+              {{ writer }}
+            {% endfor %}
+          {% endif %}
+        <div class="view-all-writers-link">
+          <h4>Se alle skribenter</h4>
+          {% include '@reusable-component/svg-icon.twig' with {
+            'attributes': '',
+            'svgIconName': 'carret'
+          } %}
+        </div>
       </div>
     </div>
+
+    <div class="blog-post--view-all-writers">
+      <div class="blog-post--view-all-writers--title">
+        <h3>Alle skribenter</h3>
+        <div class="hide-all-writers-link">
+          <h4>Lukke
+            {% include '@reusable-component/svg-icon.twig' with {
+              'attributes': '',
+              'svgIconName': 'carret'
+            } %}</h4>
+
+        </div>
+      </div>
+      <div class="row all-writers">
+        {% for writer in all_writers %}
+        <div class="col-xs-12 col-md-4 col-lg-4">
+            {{ writer }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if other_blog_posts %}
     <div class="news-page__latest section section--spacing-bottom-none">
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-8">
           <div class="news-page__latest-header">
-            <h3>{{ 'Alle blongindlæg af '|t ~ current_writer.field_full_name }}</h3>
+            {% if current_writer['#user'].field_full_name.value %}
+              <h3>{{ 'Andre blogindlæg af '|t ~  current_writer['#user'].field_full_name.value}}</h3>
+              {% else %}
+                <h3>{{ 'Andre blogindlæg'|t }}</h3>
+            {% endif %}
           </div>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4">
@@ -164,11 +160,12 @@
         <div class="col-xs-12">
           <div class="news-page__latest-items js-news-page__latest-items swiper">
             <div class="swiper-wrapper">
-              aaa
+                {{ other_blog_posts }}
             </div>
           </div>
         </div>
       </div>
     </div>
+    {% endif %}
   </div>
 </article>

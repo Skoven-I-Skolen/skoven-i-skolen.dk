@@ -1,0 +1,20 @@
+uuid: 533d3b84-259e-4df1-9408-d568f319510b
+langcode: da
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_max_elements
+field_name: field_max_elements
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

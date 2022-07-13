@@ -3,6 +3,10 @@
   background-color: var(--color-white);
   box-shadow: 0 4px 30px rgb(131 131 131 / 25%);
 
+  &.fixed-height {
+   height: 160px;
+  }
+
   &__title {
     padding: 6px 15px;
     color: var(--color-purple);

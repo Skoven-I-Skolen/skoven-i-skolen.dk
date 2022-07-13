@@ -15,24 +15,6 @@ function sis_preprocess_node(&$variables) {
     ];
   }
 
-  if ($node->get('type')->getString() === 'blog_post') {
-    $author = $node->getOwner();
-    $variables['other_writers'] = \Drupal::service('sis_blog_post.content_delivery_service')
-      ->getWriters(NULL, $node->getOwnerId());
-    $variables['current_writer'] = \Drupal::service('sis_blog_post.content_delivery_service')
-      ->getWriters($node->getOwnerId(), NULL);
-    if (is_array($variables['current_writer'])) {
-      $variables['current_writer'] = reset($variables['current_writer']);
-    }
-    $creation_date = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'custom', 'd M Y');
-    $authoring_information = t('Af ') .
-      ($variables['current_writer']['field_full_name'] ?? $author->get('name')->getString()) . ' | ' . strtolower($creation_date);
-    $variables['authoring_information'] = [
-      '#type' => 'markup',
-      '#markup' => $authoring_information,
-    ];
-  }
-
   if (!$node && $request = \Drupal::requestStack()->getCurrentRequest()) {
     /** @var \Drupal\taxonomy\Entity\Term $term */
     if ($term = $request->get('taxonomy_term')) {
