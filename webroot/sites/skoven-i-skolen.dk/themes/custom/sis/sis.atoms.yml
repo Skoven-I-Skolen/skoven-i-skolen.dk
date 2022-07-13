@@ -1,4 +1,15 @@
 atoms:
+  footer-col1-header:
+    type: textfield
+    title: Header
+    description: The header in the footer column.
+    category: Page layout
+    group: Footer
+    subgroup: Column 1
+    weight: 1
+    default:
+      da: ''
+
   footer-col2-header:
     type: textfield
     title: Header

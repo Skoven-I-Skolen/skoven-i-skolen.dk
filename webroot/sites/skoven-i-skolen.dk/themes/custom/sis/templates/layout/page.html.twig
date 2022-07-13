@@ -98,6 +98,15 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="footer-news-header">
+                {% if atom('footer-col1-header') %}
+                  <h4>{{ atom('footer-col1-header') }}</h4>
+                {% endif %}
+                 <div class="footer-col1-latest-articles">
+                  <span class="footer-col1-latest-articles__content-type">-Content type-</span> <br>
+                  <a class="footer-col1-latest-articles__article-name" href="">-Article name-</a>
+                </div>
+              </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
               <div class="footer-some-header">

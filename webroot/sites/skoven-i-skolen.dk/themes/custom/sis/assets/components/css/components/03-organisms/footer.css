@@ -6,6 +6,20 @@
 .footer {
   position: relative;
 
+  & .footer-col1-latest-articles {
+    margin-bottom: 16px;
+
+    &__content-type {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    &__article-name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
   &__graphic {
     position: relative;
     z-index: -1;
@@ -33,10 +47,10 @@
     }
 
     &__icon {
-     & .icon {
-      height: 39px;
-      width: 39px;
-     }
+      & .icon {
+        width: 39px;
+        height: 39px;
+      }
     }
   }
 
