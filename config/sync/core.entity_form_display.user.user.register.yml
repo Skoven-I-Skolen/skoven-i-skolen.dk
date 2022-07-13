@@ -7,6 +7,7 @@ dependencies:
     - field.field.user.user.field_description
     - field.field.user.user.field_email
     - field.field.user.user.field_full_name
+    - field.field.user.user.field_summary
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -58,4 +59,5 @@ hidden:
   field_description: true
   field_email: true
   field_full_name: true
+  field_summary: true
   langcode: true

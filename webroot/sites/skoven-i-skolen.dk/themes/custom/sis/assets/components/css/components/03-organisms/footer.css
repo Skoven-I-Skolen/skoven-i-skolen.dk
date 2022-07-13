@@ -6,6 +6,20 @@
 .footer {
   position: relative;
 
+  & .footer-col1-latest-articles {
+    margin-bottom: 16px;
+
+    &__content-type {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    &__article-name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
   &__graphic {
     position: relative;
     z-index: -1;
@@ -18,11 +32,11 @@
     }
   }
 
-  &__some__header {
+  &-some-header {
     margin-left: 3px;
   }
 
-  &__some__icons {
+  &-some-icons {
     display: flex;
     margin-top: 16px;
     margin-bottom: 20px;
@@ -31,13 +45,13 @@
     & > a:not(:first-child) {
       margin-left: 19px;
     }
-  }
 
-  &__facebook__wrapper, &__instagram__wrapper {
-   & .icon {
-    height: 39px;
-    width: 39px;
-   }
+    &__icon {
+      & .icon {
+        width: 39px;
+        height: 39px;
+      }
+    }
   }
 
   &__col2__description {
