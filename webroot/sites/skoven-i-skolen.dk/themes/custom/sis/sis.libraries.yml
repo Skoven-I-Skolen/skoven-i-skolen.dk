@@ -460,3 +460,10 @@ searchfield:
   css:
     theme:
       dist/components/css/components/02-molecules/searchfield.css: {}
+
+user-page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/user-page.css: {}
+

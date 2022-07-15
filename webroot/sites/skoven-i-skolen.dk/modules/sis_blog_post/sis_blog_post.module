@@ -2,6 +2,7 @@
 
 \Drupal::moduleHandler()->loadInclude('sis_blog_post', 'inc', 'node.preprocess');
 \Drupal::moduleHandler()->loadInclude('sis_blog_post', 'inc', 'block.preprocess');
+\Drupal::moduleHandler()->loadInclude('sis_blog_post', 'inc', 'user.preprocess');
 
 /**
  * Implements hook_theme_suggestions_user_alter().
