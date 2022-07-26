@@ -1,0 +1,21 @@
+uuid: 37eb1c80-4427-48a0-bf4f-07a6f59eb609
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.season
+  module:
+    - media_icons
+id: taxonomy_term.season.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
+bundle: season
+label: Ikon
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: icon_field

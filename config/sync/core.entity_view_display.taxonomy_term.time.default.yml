@@ -1,0 +1,33 @@
+uuid: 9efcc450-a3c9-4a14-b40b-f9d71e266654
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.time.field_icon
+    - taxonomy.vocabulary.time
+  module:
+    - media_icons
+    - text
+id: taxonomy_term.time.default
+targetEntityType: taxonomy_term
+bundle: time
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon:
+    type: icon_formatter
+    label: above
+    settings:
+      height: 100
+      width: 100
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

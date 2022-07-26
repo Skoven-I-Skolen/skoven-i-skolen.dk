@@ -1,0 +1,21 @@
+uuid: c12a4135-4683-43e7-8996-581bac72d052
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.location
+  module:
+    - media_icons
+id: taxonomy_term.location.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
+bundle: location
+label: Ikon
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: icon_field

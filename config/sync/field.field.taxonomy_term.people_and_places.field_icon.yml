@@ -1,0 +1,21 @@
+uuid: 5f3879ff-2999-4e26-90db-946afdc65562
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.people_and_places
+  module:
+    - media_icons
+id: taxonomy_term.people_and_places.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
+bundle: people_and_places
+label: Ikon
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: icon_field

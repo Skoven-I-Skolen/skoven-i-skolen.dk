@@ -1,0 +1,33 @@
+uuid: 1f28698f-3ded-4842-a502-1fee442670db
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.replant_the_planet.field_icon
+    - taxonomy.vocabulary.replant_the_planet
+  module:
+    - media_icons
+    - text
+id: taxonomy_term.replant_the_planet.default
+targetEntityType: taxonomy_term
+bundle: replant_the_planet
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon:
+    type: icon_formatter
+    label: above
+    settings:
+      height: 100
+      width: 100
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
