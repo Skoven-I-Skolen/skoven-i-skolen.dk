@@ -1,5 +1,7 @@
 <?php
 
+\Drupal::moduleHandler()->loadInclude('sis_map', 'inc', 'block.preprocess');
+
 function sis_map_theme() {
   return [
     'map' => [
