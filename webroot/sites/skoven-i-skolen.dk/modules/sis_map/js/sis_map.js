@@ -9,7 +9,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
     // Format the icons array to add the actual .svg file paths.
     Object.keys(settings.sis_map.icons).forEach(function (filterName) {
         let iconName = settings.sis_map.icons[filterName];
-        settings.sis_map.icons[filterName] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
+        settings.sis_map.icons[formatDataType(filterName)] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
       }
     );
     settings.sis_map.icons['default'] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/stedsbaserede-materialer.svg';
@@ -24,7 +24,6 @@ Drupal.behaviors.sis_map_okapi_integration = {
     });
 
     function applyFilter(category, value, status) {
-      console.log(category + value + status);
       if (status) {
         // Add a filter.
         if (!filters[category]) {
@@ -89,10 +88,14 @@ Drupal.behaviors.sis_map_okapi_integration = {
     }
 
     function renderMapMarker(marker) {
-      console.log(marker);
+      let lastSelectedFilter = (Object.keys(filters)[Object.keys(filters).length - 1]);
+      let dataType = 'default';
+      if (marker['filters'][lastSelectedFilter] && settings.sis_map.icons[marker['filters'][lastSelectedFilter][0]]) {
+        dataType = marker['filters'][lastSelectedFilter][0];
+      }
       let m = document.createElement('span');
       m.setAttribute('class', 'geomarker');
-      m.setAttribute('data-type', 'sis_marker');
+      m.setAttribute('data-type', formatDataType(dataType));
       m.setAttribute('data-title', marker['node']['title'][0]['value']);
       var address = '';
       if (marker['address']) {
@@ -105,12 +108,13 @@ Drupal.behaviors.sis_map_okapi_integration = {
       if (marker['node']['field_summary'][0] && marker['node']['field_summary'][0]['value']) {
         description += marker['node']['field_summary'][0]['value'] + '<br>';
       }
-      else {
-        console.log("summary not found");
-      }
 
       if (address) {
         description += 'Addresse: <br>' + address;
+      }
+
+      if (marker['url']) {
+        description += '<br><a href="' + marker['url'] + '">' + Drupal.t('Se mere') + '</a>';
       }
 
       if (marker['lat'] && marker['lon']) {
@@ -235,6 +239,10 @@ Drupal.behaviors.sis_map_okapi_integration = {
       });
     }
 
+    function formatDataType(type) {
+      return type.replaceAll(' ', '-');
+    }
+
     function buildMap() {
       if (document.getElementById('map')) {
         document.getElementById('map').remove();
@@ -253,7 +261,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
 
       document.querySelector('.map-container').prepend(m);
       autoZoom = true;
-      var map = new okapi.Initialize([]);
+      var map = new okapi.Initialize({icons: settings.sis_map.icons});
     }
 
     buildMap();
