@@ -214,7 +214,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
           var count = 0;
           resultList[key].forEach(function (element) {
             var link = document.createElement('a');
-            link.setAttribute('href', element['node']['title'][0]['value']);
+            link.setAttribute('href', element['url']);
             var item = document.createElement('div');
             item.classList.add('result-list-item');
             item.setAttribute('name', key);
