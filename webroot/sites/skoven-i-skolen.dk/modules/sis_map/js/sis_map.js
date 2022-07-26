@@ -163,7 +163,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
           var categoryIcon = document.createElement('img');
           categoryIcon.classList.add('result-list-category-title-icon');
           if (settings.sis_map.icons[key.split(', ')[0]]) {
-            categoryIcon.src = settings.sis_map.icons[key.split(', ')[0]];
+            categoryIcon.src = settings.sis_map.icons[formatDataType(key.split(', ')[0])];
           }
           else {
             categoryIcon.src = settings.sis_map.icons['default'];
