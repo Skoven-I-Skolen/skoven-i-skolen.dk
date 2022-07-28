@@ -3,77 +3,83 @@
  * Burger menu.
  */
 
-import Vue from 'vue';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-require('../../../scripts/vue.config')(Vue);
-
-Drupal.behaviors.burgerMenu = {
-  attach(context) {
-    const burgerMenu = document.getElementById('js-burger-menu');
-    const showSubNavigationClass = 'open-sub-navigation';
-    if (!burgerMenu || burgerMenu.classList.contains('loaded')) {
-      return;
-    }
-    burgerMenu.classList.add('loaded');
-
-    const vm = new Vue({
-      delimiters: ['${', '}'],
-      el: burgerMenu,
-      data: {
-        isOpen: false,
-      },
-      mounted() {
-        const burger = document.getElementById('js-burger');
-        if (burger) {
-          burger.addEventListener('click', () => {
-            this.openBurgerMenu();
-          });
-        }
-      },
-      methods: {
-        triggerSubNavigation(e) {
-          e.preventDefault();
-          const trigger = e.currentTarget;
-          const parent = trigger.closest('.js-burger-menu-list-item');
-          this.hideSubNavigations(parent);
-
-          parent.classList.toggle(showSubNavigationClass);
-        },
-        openBurgerMenu() {
-          this.isOpen = true;
-          document.body.classList.add('no-scroll');
-          document.addEventListener('keydown', this.handleEsc);
-          document.addEventListener('click', this.handleClickOutside);
-        },
-        closeBurgerMenu() {
-          this.isOpen = false;
-          document.removeEventListener('keydown', this.handleEsc);
-          document.removeEventListener('click', this.handleClickOutside);
-          document.body.classList.remove('no-scroll');
-        },
-        hideSubNavigations(parent) {
-          const items = document.querySelectorAll('.js-burger-menu-list-item');
-          for (let i = 0; i < items.length; i += 1) {
-            if (parent !== items[i]) {
-              items[i].classList.remove(showSubNavigationClass);
-            }
-          }
-        },
-        handleEsc(e) {
-          if (e.keyCode === 27) {
-            this.closeBurgerMenu();
-          }
-        },
-        handleClickOutside(e) {
-          const burgerMenuElem = document.getElementById('js-burger-menu');
-          const burgerElem = document.getElementById('js-burger');
-          const isClickInside = burgerMenuElem.contains(e.target) || burgerElem.contains(e.target);
-
-          if (!isClickInside) {
-            this.closeBurgerMenu();
-          }
-        },
-      },
+const burgerNext = () => {
+  const burgerNavLevel = document.querySelectorAll('.burger-nav-item--arrow-right');
+  for (let i = 0; i < burgerNavLevel.length; i += 1) {
+    const target = burgerNavLevel[i];
+    const targetList = target.nextElementSibling;
+    const parentList = targetList.parentNode.parentNode;
+    target.addEventListener('click', () => {
+      targetList.classList.add('burger-nav__open');
+      parentList.classList.add('burger-nav__parent');
     });
-  },
+  }
 };
+
+const burgerPrev = () => {
+  const burgerNavLevel = document.querySelectorAll('.burger-nav-item--arrow-left');
+  for (let i = 0; i < burgerNavLevel.length; i += 1) {
+    const target = burgerNavLevel[i];
+    const targetList = target.parentNode.parentNode.parentNode;
+    const parentList = target.parentNode;
+    target.addEventListener('click', () => {
+      targetList.classList.remove('burger-nav__parent');
+      parentList.classList.remove('burger-nav__parent', 'burger-nav__open');
+    });
+  }
+};
+
+const burgerReset = () => {
+  const burgerNavs = document.querySelectorAll('.burger-nav');
+  setTimeout(() => {
+    for (let i = 0; i < burgerNavs.length; i += 1) {
+      burgerNavs[i].classList.remove('burger-nav__parent', 'burger-nav__open');
+    }
+    burgerNavs[0].classList.add('burger-nav__open');
+  }, 300);
+  enableBodyScroll(document.getElementById('burger-menu'));
+};
+
+const mobileNav = () => {
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const mobileNavigation = document.getElementById('burger-menu--overlay');
+  const mobileNavigationClose = document.getElementById('burger-menu--close');
+
+  hamburgerIcon.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (hamburgerIcon.classList.contains('hamburger-icon--open')) {
+      hamburgerIcon.classList.remove('hamburger-icon--open');
+      mobileNavigation.classList.remove('burger-menu--overlay__active');
+      burgerReset();
+    } else {
+      hamburgerIcon.classList.add('hamburger-icon--open');
+      mobileNavigation.classList.add('burger-menu--overlay__active');
+      disableBodyScroll(document.getElementById('burger-menu'));
+    }
+  });
+
+  mobileNavigation.addEventListener('click', (e) => {
+    const burgerMenu = document.getElementById('burger-menu');
+    if (e.offsetX > burgerMenu.offsetWidth && hamburgerIcon.classList.contains('hamburger-icon--open')) {
+      hamburgerIcon.classList.remove('hamburger-icon--open');
+      mobileNavigation.classList.remove('burger-menu--overlay__active');
+      burgerReset();
+    }
+  });
+
+  mobileNavigationClose.addEventListener('click', (e) => {
+    if (hamburgerIcon.classList.contains('hamburger-icon--open')) {
+      hamburgerIcon.classList.remove('hamburger-icon--open');
+      mobileNavigation.classList.remove('burger-menu--overlay__active');
+      burgerReset();
+    }
+  });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  mobileNav();
+  burgerNext();
+  burgerPrev();
+});

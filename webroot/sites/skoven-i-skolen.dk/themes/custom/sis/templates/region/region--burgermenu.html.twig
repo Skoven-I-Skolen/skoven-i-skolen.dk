@@ -15,25 +15,19 @@
  */
 #}
 {{ attach_library('sis/burger-menu') }}
-
-<nav :class="{ 'burger-menu--open': isOpen }" class="burger-menu" id="js-burger-menu">
-  <div @click="closeBurgerMenu()" class="burger-menu__close">
-    <div class="burger-menu__close-label">{{ 'Close (Esc)'|t }}</div>
-    {% include '@reusable-component/svg-icon.twig' with {
-      'attributes': '',
-      'svgIconName': 'close'
-    } %}
-  </div>
-  <div class="container">
+<div id="burger-menu--overlay" class="burger-menu--overlay js-burger-menu--overlay">
+  <div id="burger-menu" class="burger-menu">
+    <div id="burger-menu--close" class="burger-menu--close">
+      <span></span>
+      <span></span>
+    </div>
     <div class="burger-menu__inner">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-lg-6">
-          {{ elements.mainnavigation_bm }}
-        </div>
-        <div class="col-xs-12 col-md-4">
-          {{ elements.metamenu_bm }}
-        </div>
+      <div class="burger-menu__main">
+        {{ elements.mainnavigation_bm }}
+      </div>
+      <div class="burger-menu__meta">
+        {{ elements.metamenu_bm }}
       </div>
     </div>
   </div>
-</nav>
+</div>
