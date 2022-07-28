@@ -2,17 +2,22 @@ Drupal.behaviors.sis_map_okapi_integration = {
   attach: function (context, settings) {
 
     var filters = [];
-    let markers = settings.sis_map.markers;
+    let markers = [];
+    if (settings.sis_map) {
+      markers = settings.sis_map.markers;
+    }
     var autoZoom = false;
     const TOKEN = '9f667a80fc5d9b3f0f8dac7ae6492048';
 
-    // Format the icons array to add the actual .svg file paths.
-    Object.keys(settings.sis_map.icons).forEach(function (filterName) {
-        let iconName = settings.sis_map.icons[filterName];
-        settings.sis_map.icons[formatDataType(filterName)] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
-      }
-    );
+    if (settings.sis_map) {
+      // Format the icons array to add the actual .svg file paths.
+      Object.keys(settings.sis_map.icons).forEach(function (filterName) {
+          let iconName = settings.sis_map.icons[filterName];
+          settings.sis_map.icons[formatDataType(filterName)] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
+        }
+      );
     settings.sis_map.icons['default'] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/stedsbaserede-materialer.svg';
+   }
 
     // Add "checked" event to each filter checkbox.
     document.querySelectorAll('.filter-checkbox').forEach(function (element) {
@@ -109,24 +114,23 @@ Drupal.behaviors.sis_map_okapi_integration = {
         description += marker['node']['field_summary'][0]['value'] + '<br>';
       }
 
-      if (address) {
-        description += 'Addresse: <br>' + address;
-      }
-
-      if (marker['url']) {
-        description += '<br><a href="' + marker['url'] + '">' + Drupal.t('Se mere') + '</a>';
-      }
-
       if (marker['lat'] && marker['lon']) {
         m.setAttribute('data-lat', marker['lat']);
         m.setAttribute('data-lon', marker['lon']);
-        m.setAttribute('data-description', description);
+        description += '<br>Breddegrad: ' + marker['lat'] + "<br>Længdegrad: " + marker['lon'];
+
       }
 
-      else if (address) {
+      if (address) {
         m.setAttribute('data-address', address);
-        m.setAttribute('data-description', description);
+        description += '<br>Addresse:<br>' + address;
       }
+
+      if (marker['url']) {
+        description += '<br><br><a href="' + marker['url'] + '">' + Drupal.t('Se mere') + '</a>';
+      }
+
+      m.setAttribute('data-description', description);
 
       let markersDiv = document.querySelector('.markers');
       markersDiv.appendChild(m);
@@ -256,12 +260,21 @@ Drupal.behaviors.sis_map_okapi_integration = {
       }
       m.setAttribute('data-token', TOKEN);
       m.setAttribute('data-show-popup', true);
-      m.setAttribute('data-zoomslider', Boolean(settings.sis_map.display_map_helpers));
-      m.setAttribute('data-layerswitcher', Boolean(settings.sis_map.display_map_helpers));
+      if (settings.sis_map) {
+        m.setAttribute('data-zoomslider', Boolean(settings.sis_map.display_map_helpers));
+        m.setAttribute('data-layerswitcher', Boolean(settings.sis_map.display_map_helpers));
+      }
 
       document.querySelector('.map-container').prepend(m);
       autoZoom = true;
-      var map = new okapi.Initialize({icons: settings.sis_map.icons});
+
+      if (settings.sis_map) {
+        var map = new okapi.Initialize({icons: settings.sis_map.icons});
+      }
+
+      else {
+        var map = new okapi.Initialize({});
+      }
     }
 
     buildMap();

@@ -70,6 +70,7 @@
 
 {{ attach_library('sis/article-page') }}
 {{ attach_library('sis/facts-box') }}
+{{ attach_library('sis_map/sis_map') }}
 
 {% set classes = [
   'article-page'
@@ -94,75 +95,136 @@
           <div class="article-page__description">
             {{ node.field_summary.value }}
           </div>
-          <div class="article-page__description">
+          <div class="article-page__content">
             {{ content.body }}
           </div>
-          <div class="article-page__description">
-            <h4>Addresse</h4>
-            <div>{{ node.sis_map_address_dawa.value }}</div>
-          </div>
-          <div class="article-page__description">
-            <h4>Kontaktdata</h4>
-            <div>{{ node.field_contact_information.value }}</div>
-          </div>
+
+          {% if node.sis_map_address_dawa.value or (node.lat.value and node.lon.value) %}
+            <span
+              class="geomarker"
+              data-type="default"
+              data-title="{{ node.title.value }}"
+              {% if node.lat.value and node.lon.value %}
+                data-lat="{{ node.lat.value }}"
+                data-lon="{{ node.lon.value }}"
+                data-description="Breddegrad: {{ node.lat.value }}<br>Længde: {{ node.lon.value }}"
+                >
+                {% elseif node.sis_map_address_dawa.value %}
+                  data-address="{{ node.sis_map_address_dawa.value }}"
+                  data-description="Addresse: {{ node.sis_map_address_dawa.value }}"
+                >
+              {% endif %}
+            </span>
+            <div class="map-container">
+              <div
+               id="map"
+               class="geomap"
+               data-type="default"
+               data-zoom="auto"
+               data-center="auto"
+               data-token="9f667a80fc5d9b3f0f8dac7ae6492048">
+              </div>
+            </div>
+          {% endif %}
+
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-lg-offset-1">
-        {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] %}
+        {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] or node.sis_map_address_dawa.value %}
           <div class="facts-box">
             <div class="facts-box__title">
-              Hvem, hvad, hvor
-            </div>
-            <div class="facts-box__content">
-              {% if node.field_subject[0] %}
+                Hvem, hvad, hvor
+              </div>
+              <div class="facts-box__content">
+                {% if node.field_subject[0] %}
+                  <div class="facts-box__content-item">
+                    <div class="facts-box__content-item-label">
+                      Fag
+                    </div>
+                    <div class="facts-box__content-item-value">
+                      {{ node.field_subject.entity.name.value }}
+                    </div>
+                  </div>
+                {% endif %}
+                {% if node.field_class[0] %}
+                  <div class="facts-box__content-item">
+                    <div class="facts-box__content-item-label">
+                      Klasse
+                    </div>
+                    <div class="facts-box__content-item-value">
+                      {% for class in node.field_class %}
+                        {{ class.entity.name.value }}{{ loop.index != node.field_class|length ? ', ' : '' }}
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+                {% if node.field_location[0] %}
+                  <div class="facts-box__content-item">
+                    <div class="facts-box__content-item-label">
+                      Sted
+                    </div>
+                    <div class="facts-box__content-item-value">
+                      {% for location in node.field_location %}
+                        {{ location.entity.name.value }}{{ loop.index != node.field_location|length ? ', ' : '' }}
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+                {% if node.field_season[0] %}
+                  <div class="facts-box__content-item">
+                    <div class="facts-box__content-item-label">
+                      &Aring;rstid
+                    </div>
+                    <div class="facts-box__content-item-value">
+                      {% for season in node.field_season %}
+                        {{ season.entity.name.value }}{{ loop.index != node.field_season|length ? ', ' : '' }}
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+                {% if node.sis_map_address_dawa.value %}
+                  <div class="facts-box__content-item">
+                    <div class="facts-box__content-item-label">
+                      Addresse
+                    </div>
+                    <div class="facts-box__content-item-value">
+                      {{ node.sis_map_address_dawa.value }}
+                    </div>
+                  </div>
+                {% endif %}
+                {% if node.lat.value and node.lon.value %}
+                  <div class="facts-box__content-item">
+                    <div class="facts-box__content-item-label">
+                      Breddegr.
+                    </div>
+                    <div class="facts-box__content-item-value">
+                      {{ node.lat.value }}
+                    </div>
+                  </div>
                 <div class="facts-box__content-item">
                   <div class="facts-box__content-item-label">
-                    Fag
+                    Længde
                   </div>
                   <div class="facts-box__content-item-value">
-                    {{ node.field_subject.entity.name.value }}
+                    {{ node.lon.value }}
                   </div>
-                </div>
-              {% endif %}
-              {% if node.field_class[0] %}
-                <div class="facts-box__content-item">
-                  <div class="facts-box__content-item-label">
-                    Klasse
-                  </div>
-                  <div class="facts-box__content-item-value">
-                    {% for class in node.field_class %}
-                      {{ class.entity.name.value }}{{ loop.index != node.field_class|length ? ', ' : '' }}
-                    {% endfor %}
-                  </div>
-                </div>
-              {% endif %}
-              {% if node.field_location[0] %}
-                <div class="facts-box__content-item">
-                  <div class="facts-box__content-item-label">
-                    Sted
-                  </div>
-                  <div class="facts-box__content-item-value">
-                    {% for location in node.field_location %}
-                      {{ location.entity.name.value }}{{ loop.index != node.field_location|length ? ', ' : '' }}
-                    {% endfor %}
-                  </div>
-                </div>
-              {% endif %}
-              {% if node.field_season[0] %}
-                <div class="facts-box__content-item">
-                  <div class="facts-box__content-item-label">
-                    &Aring;rstid
-                  </div>
-                  <div class="facts-box__content-item-value">
-                    {% for season in node.field_season %}
-                      {{ season.entity.name.value }}{{ loop.index != node.field_season|length ? ', ' : '' }}
-                    {% endfor %}
-                  </div>
-                </div>
-              {% endif %}
+                {% endif %}
+              </div>
             </div>
           </div>
         {% endif %}
+
+        {% if node.field_contact_information.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Kontaktdata
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_contact_information.value }}
+            </div>
+          </div>
+        {% endif %}
+
         {% if node.field_files[0] %}
           <div class="facts-box">
             <div class="facts-box__title">
