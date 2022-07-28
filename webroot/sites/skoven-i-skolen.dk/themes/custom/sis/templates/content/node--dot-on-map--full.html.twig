@@ -111,7 +111,7 @@
                 >
                 {% elseif node.sis_map_address_dawa.value %}
                   data-address="{{ node.sis_map_address_dawa.value }}"
-                  data-description="Addresse: {{ node.sis_map_address_dawa.value }}"
+                  data-description="Addresse:{{ node.sis_map_address_dawa.value }}"
                 >
               {% endif %}
             </span>
@@ -122,6 +122,7 @@
                data-type="default"
                data-zoom="auto"
                data-center="auto"
+               data-layerswitcher="true"
                data-token="9f667a80fc5d9b3f0f8dac7ae6492048">
               </div>
             </div>
@@ -184,33 +185,21 @@
                 {% endif %}
                 {% if node.sis_map_address_dawa.value %}
                   <div class="facts-box__content-item">
-                    <div class="facts-box__content-item-label">
-                      Addresse
-                    </div>
-                    <div class="facts-box__content-item-value">
-                      {{ node.sis_map_address_dawa.value }}
-                    </div>
+                    <div class="facts-box__content-item-label">Addresse</div>
+                    <div class="facts-box__content-item-value">{{ node.sis_map_address_dawa.value }}</div>
                   </div>
                 {% endif %}
                 {% if node.lat.value and node.lon.value %}
-                  <div class="facts-box__content-item">
-                    <div class="facts-box__content-item-label">
-                      Breddegr.
-                    </div>
-                    <div class="facts-box__content-item-value">
-                      {{ node.lat.value }}
-                    </div>
-                  </div>
                 <div class="facts-box__content-item">
-                  <div class="facts-box__content-item-label">
-                    Længde
-                  </div>
-                  <div class="facts-box__content-item-value">
-                    {{ node.lon.value }}
-                  </div>
-                {% endif %}
-              </div>
-            </div>
+                  <div class="facts-box__content-item-label">Breddegr.</div>
+                  <div class="facts-box__content-item-value">{{ node.lat.value }}</div>
+                </div>
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">Længde</div>
+                  <div class="facts-box__content-item-value">{{ node.lon.value }}</div>
+                </div>
+              {% endif %}
+          </div>
           </div>
         {% endif %}
 

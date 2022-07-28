@@ -1,12 +1,12 @@
 Drupal.behaviors.sis_map_okapi_integration = {
   attach: function (context, settings) {
-
+    var defaultDotIcon = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/stedsbaserede-materialer.svg';
     var filters = [];
     let markers = [];
+    var autoZoom = false;
     if (settings.sis_map) {
       markers = settings.sis_map.markers;
     }
-    var autoZoom = false;
     const TOKEN = '9f667a80fc5d9b3f0f8dac7ae6492048';
 
     if (settings.sis_map) {
@@ -16,7 +16,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
           settings.sis_map.icons[formatDataType(filterName)] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
         }
       );
-    settings.sis_map.icons['default'] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/stedsbaserede-materialer.svg';
+    settings.sis_map.icons['default'] = defaultDotIcon;
    }
 
     // Add "checked" event to each filter checkbox.
@@ -264,6 +264,15 @@ Drupal.behaviors.sis_map_okapi_integration = {
         m.setAttribute('data-zoomslider', Boolean(settings.sis_map.display_map_helpers));
         m.setAttribute('data-layerswitcher', Boolean(settings.sis_map.display_map_helpers));
       }
+      else {
+        // These default values apply when we're embedding the map on a node page, with a single map dot,
+        // and not as a block with multiple filters.
+        m.setAttribute('data-zoomslider', "true");
+        m.setAttribute('data-layerswitcher', "true");
+        m.setAttribute('data-center', 'auto');
+        m.setAttribute('data-zoom', 'auto');
+        m.setAttribute('data-background', 'orto_foraar');
+      }
 
       document.querySelector('.map-container').prepend(m);
       autoZoom = true;
@@ -273,7 +282,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
       }
 
       else {
-        var map = new okapi.Initialize({});
+        var map = new okapi.Initialize({icons: {'default':defaultDotIcon}});
       }
     }
 
