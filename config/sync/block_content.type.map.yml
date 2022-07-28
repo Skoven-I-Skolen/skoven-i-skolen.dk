@@ -1,0 +1,8 @@
+uuid: 6ab66388-5460-4a06-b973-a2edfbc6c84c
+langcode: da
+status: true
+dependencies: {  }
+id: map
+label: Kort
+revision: 0
+description: ''

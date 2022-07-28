@@ -1,0 +1,11 @@
+uuid: db08cf05-bf3f-457a-910d-37a43f264952
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.map
+id: block_content.map
+target_entity_type_id: block_content
+target_bundle: map
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,33 @@
+uuid: cb3a31f6-8b4a-4081-aa51-048f82571649
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.people_and_places.field_icon
+    - taxonomy.vocabulary.people_and_places
+  module:
+    - media_icons
+    - text
+id: taxonomy_term.people_and_places.default
+targetEntityType: taxonomy_term
+bundle: people_and_places
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon:
+    type: icon_formatter
+    label: above
+    settings:
+      height: 100
+      width: 100
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

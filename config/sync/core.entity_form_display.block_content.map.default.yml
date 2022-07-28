@@ -1,0 +1,14 @@
+uuid: f339e193-d07d-4871-ba86-91bb26f32776
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.map
+id: block_content.map.default
+targetEntityType: block_content
+bundle: map
+mode: default
+content: {  }
+hidden:
+  info: true
+  langcode: true
