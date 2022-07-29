@@ -42,14 +42,11 @@ settings:
           name: Tools
           items:
             - Source
+            - Table
   plugins:
-    language:
-      language_list: un
     drupallink:
       linkit_enabled: true
       linkit_profile: default
-    stylescombo:
-      styles: ''
 image_upload:
   status: true
   scheme: public
