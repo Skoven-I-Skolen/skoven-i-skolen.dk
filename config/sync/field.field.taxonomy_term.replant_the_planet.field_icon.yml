@@ -1,4 +1,4 @@
-uuid: 475a3e18-8aa5-427c-a7c4-732f808fdbbd
+uuid: 4baab430-8a70-4a4e-97e9-5c3dd9f9edb2
 langcode: da
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: taxonomy_term.replant_the_planet.field_icon
 field_name: field_icon
 entity_type: taxonomy_term
 bundle: replant_the_planet
-label: Ikon
+label: Icon
 description: ''
 required: false
 translatable: true

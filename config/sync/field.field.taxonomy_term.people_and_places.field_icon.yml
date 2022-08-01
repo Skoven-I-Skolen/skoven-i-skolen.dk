@@ -1,4 +1,4 @@
-uuid: 5f3879ff-2999-4e26-90db-946afdc65562
+uuid: 849b81ca-598d-4aeb-b142-4c2055dc0b72
 langcode: da
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: taxonomy_term.people_and_places.field_icon
 field_name: field_icon
 entity_type: taxonomy_term
 bundle: people_and_places
-label: Ikon
+label: Icon
 description: ''
 required: false
 translatable: true

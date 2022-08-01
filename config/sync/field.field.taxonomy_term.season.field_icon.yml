@@ -1,4 +1,4 @@
-uuid: 37eb1c80-4427-48a0-bf4f-07a6f59eb609
+uuid: e42ce45b-cbf9-454d-8fdb-2f9fd5ddf0b7
 langcode: da
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: taxonomy_term.season.field_icon
 field_name: field_icon
 entity_type: taxonomy_term
 bundle: season
-label: Ikon
+label: Icon
 description: ''
 required: false
 translatable: true

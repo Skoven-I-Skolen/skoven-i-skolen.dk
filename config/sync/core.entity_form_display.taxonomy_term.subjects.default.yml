@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.subjects.field_icon
+    - field.field.taxonomy_term.subjects.field_ikon
     - taxonomy.vocabulary.subjects
   module:
     - media_icons
@@ -25,6 +25,14 @@ content:
   field_icon:
     type: icon_widget
     weight: 1
+    region: content
+    settings:
+      height: 64
+      width: 64
+    third_party_settings: {  }
+  field_ikon:
+    type: icon_widget
+    weight: 6
     region: content
     settings:
       height: 64

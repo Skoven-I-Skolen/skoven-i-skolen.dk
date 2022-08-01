@@ -1,4 +1,4 @@
-uuid: c12a4135-4683-43e7-8996-581bac72d052
+uuid: 110b1f79-867c-4df0-b395-c0da7b1054d5
 langcode: da
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: taxonomy_term.location.field_icon
 field_name: field_icon
 entity_type: taxonomy_term
 bundle: location
-label: Ikon
+label: Icon
 description: ''
 required: false
 translatable: true

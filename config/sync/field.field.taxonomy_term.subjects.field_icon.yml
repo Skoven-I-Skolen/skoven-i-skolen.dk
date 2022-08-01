@@ -1,4 +1,4 @@
-uuid: 1407d362-c314-4ac2-8b0d-c4572a8cd5bb
+uuid: 589777d1-e692-4703-85e5-bfa037d00344
 langcode: da
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: taxonomy_term.subjects.field_icon
 field_name: field_icon
 entity_type: taxonomy_term
 bundle: subjects
-label: Ikon
+label: Icon
 description: ''
 required: false
 translatable: false
