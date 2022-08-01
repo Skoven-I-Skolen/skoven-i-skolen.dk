@@ -24,7 +24,7 @@ content:
     third_party_settings: {  }
   field_icon:
     type: icon_widget
-    weight: 6
+    weight: 1
     region: content
     settings:
       height: 64

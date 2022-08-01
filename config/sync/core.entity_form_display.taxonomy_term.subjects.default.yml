@@ -1,9 +1,9 @@
-uuid: f8d5dec9-026f-4355-acb4-935356ba4ced
+uuid: 0c06c81f-b69c-4163-8680-b27fa7daa500
 langcode: da
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.subjects.field_ikon
+    - field.field.taxonomy_term.subjects.field_icon
     - taxonomy.vocabulary.subjects
   module:
     - media_icons
@@ -25,14 +25,6 @@ content:
   field_icon:
     type: icon_widget
     weight: 1
-    region: content
-    settings:
-      height: 64
-      width: 64
-    third_party_settings: {  }
-  field_ikon:
-    type: icon_widget
-    weight: 6
     region: content
     settings:
       height: 64
