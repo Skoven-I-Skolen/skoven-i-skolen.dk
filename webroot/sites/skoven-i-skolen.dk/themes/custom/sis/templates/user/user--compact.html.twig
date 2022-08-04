@@ -1,0 +1,19 @@
+<div class="facts-box">
+  <div class="facts-box__content">
+    <div class="facts-box__content-item">
+      <div class="facts-box__content-item-label facts-box__content-item-label-author-image">
+        {% if content.user_picture %}
+          {{ content.user_picture }}
+        {% endif %}
+      </div>
+      <div class="facts-box__content-item-value facts-box__content-item-value-author-full-name">
+        {% if content.field_full_name %}
+          <h5>{{ content.field_full_name }}</h5>
+        {% endif %}
+        {% if user.field_summary.value %}
+          {{ user.field_summary.value[:225] ~ (user.field_summary.value|length > 225 ? '...') }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

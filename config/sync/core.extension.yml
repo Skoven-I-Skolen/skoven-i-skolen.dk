@@ -35,6 +35,8 @@ module:
   datetime: 0
   dblog: 0
   dds_dawa: 0
+  devel: 0
+  devel_generate: 0
   dynamic_color: 0
   dynamic_entity_reference: 0
   dynamic_key_value: 0
@@ -71,6 +73,7 @@ module:
   media: 0
   media_icons: 0
   media_library: 0
+  media_library_bulk_upload: 0
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
@@ -107,8 +110,8 @@ module:
   sis_articles: 0
   sis_blog_post: 0
   sis_lexicon: 0
-  sis_migration: 0
   sis_map: 0
+  sis_migration: 0
   sis_news: 0
   sis_organization: 0
   sis_overview: 0
@@ -130,6 +133,7 @@ module:
   view_unpublished: 0
   views_ui: 0
   webform: 0
+  webform_devel: 0
   webp: 0
   workbench_email: 0
   workflows: 0

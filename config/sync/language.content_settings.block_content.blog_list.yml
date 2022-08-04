@@ -1,0 +1,11 @@
+uuid: c733d9d7-7a5e-41a0-919e-9c46c6e7f638
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.blog_list
+id: block_content.blog_list
+target_entity_type_id: block_content
+target_bundle: blog_list
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,11 @@
+/**
+ * Type: Organisms.
+ * User page.
+ */
+.user-page {
+  margin-top: 50px;
+  &--user-profile-full-picture {
+    margin-top: 25px;
+     text-align: right;
+  }
+}

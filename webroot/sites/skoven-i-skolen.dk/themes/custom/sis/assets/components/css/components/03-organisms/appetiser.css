@@ -50,6 +50,7 @@
   }
 
   &__title {
+    margin-bottom: 15px;
     font-weight: 900;
     font-size: var(--base-font-size-xxlarge);
     line-height: 1.1;
@@ -60,6 +61,7 @@
   }
 
   &__description {
+    margin-bottom: 35px;
     font-size: var(--base-font-size-medium);
     font-family: var(--heading-font-family);
     line-height: 1.3;

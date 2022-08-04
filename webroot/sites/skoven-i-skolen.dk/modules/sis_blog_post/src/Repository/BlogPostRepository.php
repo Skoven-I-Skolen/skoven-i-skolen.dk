@@ -2,8 +2,7 @@
 
 namespace Drupal\sis_blog_post\Repository;
 
-use Drupal\file\Entity\File;
-use Drupal\user\Entity\User;
+use Drupal\node\NodeInterface;
 
 class BlogPostRepository {
 
@@ -18,31 +17,26 @@ class BlogPostRepository {
     if ($exception) {
       $writers->condition('uid', $exception, '!=');
     }
-    $writers = $writers->execute();
 
-    $writers_array = [];
-    foreach ($writers as $writer) {
-      $writer = User::load($writer);
-      $writers_array[$writer->id()]['url'] = $writer->toUrl()->toString();
-      if ($writer->hasField('field_full_name')) {
-        $writers_array[$writer->id()]['field_full_name'] = $writer->get('field_full_name')->getString();
-      }
-      if ($writer->hasField('field_summary')) {
-        $writers_array[$writer->id()]['field_summary'] = $writer->get('field_summary')->getString();
-      }
-      if ($writer->hasField('user_picture')) {
-        $media_id = NULL;
-        if ($writer->get('user_picture')->first()) {
-          $media_id = $writer->get('user_picture')->first()->target_id;
-        }
-        if ($media_id) {
-          $file = File::load($media_id);
-          if ($file) {
-            $writers_array[$writer->id()]['user_picture'] = $file->createFileUrl();
-          }
-        }
-      }
-    }
-    return $writers_array;
+    return $writers->execute();
+  }
+
+  public function getBlogPosts($limit) {
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'blog_post')
+      ->condition('status', NodeInterface::PUBLISHED)
+      ->range(0, $limit)
+      ->sort('created', 'DESC');
+    return $query->execute();
+  }
+
+  public function getBlogPostsByAuthor($author_ids) {
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'blog_post')
+      ->condition('status', NodeInterface::PUBLISHED)
+      ->condition('uid', $author_ids)
+      ->range(0, 12)
+      ->sort('created', 'DESC');
+    return $query->execute();
   }
 }

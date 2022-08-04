@@ -1,0 +1,25 @@
+uuid: e52eabd5-5275-482f-afc5-da9b83430971
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.blog_list
+    - field.storage.block_content.field_max_elements
+id: block_content.blog_list.field_max_elements
+field_name: field_max_elements
+entity_type: block_content
+bundle: blog_list
+label: 'Maksimalt antal elementer'
+description: 'Definer det maksimale antal blogindlæg, der vil blive vist.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 4
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

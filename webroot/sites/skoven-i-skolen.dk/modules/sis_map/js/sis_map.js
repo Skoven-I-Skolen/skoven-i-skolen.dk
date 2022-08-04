@@ -1,18 +1,23 @@
 Drupal.behaviors.sis_map_okapi_integration = {
   attach: function (context, settings) {
-
+    var defaultDotIcon = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/stedsbaserede-materialer.svg';
     var filters = [];
-    let markers = settings.sis_map.markers;
+    let markers = [];
     var autoZoom = false;
+    if (settings.sis_map) {
+      markers = settings.sis_map.markers;
+    }
     const TOKEN = '9f667a80fc5d9b3f0f8dac7ae6492048';
 
-    // Format the icons array to add the actual .svg file paths.
-    Object.keys(settings.sis_map.icons).forEach(function (filterName) {
-        let iconName = settings.sis_map.icons[filterName];
-        settings.sis_map.icons[filterName] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
-      }
-    );
-    settings.sis_map.icons['default'] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/stedsbaserede-materialer.svg';
+    if (settings.sis_map) {
+      // Format the icons array to add the actual .svg file paths.
+      Object.keys(settings.sis_map.icons).forEach(function (filterName) {
+          let iconName = settings.sis_map.icons[filterName];
+          settings.sis_map.icons[formatDataType(filterName)] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
+        }
+      );
+    settings.sis_map.icons['default'] = defaultDotIcon;
+   }
 
     // Add "checked" event to each filter checkbox.
     document.querySelectorAll('.filter-checkbox').forEach(function (element) {
@@ -24,7 +29,6 @@ Drupal.behaviors.sis_map_okapi_integration = {
     });
 
     function applyFilter(category, value, status) {
-      console.log(category + value + status);
       if (status) {
         // Add a filter.
         if (!filters[category]) {
@@ -89,10 +93,14 @@ Drupal.behaviors.sis_map_okapi_integration = {
     }
 
     function renderMapMarker(marker) {
-      console.log(marker);
+      let lastSelectedFilter = (Object.keys(filters)[Object.keys(filters).length - 1]);
+      let dataType = 'default';
+      if (marker['filters'][lastSelectedFilter] && settings.sis_map.icons[marker['filters'][lastSelectedFilter][0]]) {
+        dataType = marker['filters'][lastSelectedFilter][0];
+      }
       let m = document.createElement('span');
       m.setAttribute('class', 'geomarker');
-      m.setAttribute('data-type', 'sis_marker');
+      m.setAttribute('data-type', formatDataType(dataType));
       m.setAttribute('data-title', marker['node']['title'][0]['value']);
       var address = '';
       if (marker['address']) {
@@ -105,24 +113,24 @@ Drupal.behaviors.sis_map_okapi_integration = {
       if (marker['node']['field_summary'][0] && marker['node']['field_summary'][0]['value']) {
         description += marker['node']['field_summary'][0]['value'] + '<br>';
       }
-      else {
-        console.log("summary not found");
-      }
-
-      if (address) {
-        description += 'Addresse: <br>' + address;
-      }
 
       if (marker['lat'] && marker['lon']) {
         m.setAttribute('data-lat', marker['lat']);
         m.setAttribute('data-lon', marker['lon']);
-        m.setAttribute('data-description', description);
+        description += '<br>Breddegrad: ' + marker['lat'] + "<br>Længdegrad: " + marker['lon'];
+
       }
 
-      else if (address) {
+      if (address) {
         m.setAttribute('data-address', address);
-        m.setAttribute('data-description', description);
+        description += '<br>Addresse:<br>' + address;
       }
+
+      if (marker['url']) {
+        description += '<br><br><a href="' + marker['url'] + '">' + Drupal.t('Se mere') + '</a>';
+      }
+
+      m.setAttribute('data-description', description);
 
       let markersDiv = document.querySelector('.markers');
       markersDiv.appendChild(m);
@@ -159,7 +167,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
           var categoryIcon = document.createElement('img');
           categoryIcon.classList.add('result-list-category-title-icon');
           if (settings.sis_map.icons[key.split(', ')[0]]) {
-            categoryIcon.src = settings.sis_map.icons[key.split(', ')[0]];
+            categoryIcon.src = settings.sis_map.icons[formatDataType(key.split(', ')[0])];
           }
           else {
             categoryIcon.src = settings.sis_map.icons['default'];
@@ -210,7 +218,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
           var count = 0;
           resultList[key].forEach(function (element) {
             var link = document.createElement('a');
-            link.setAttribute('href', element['node']['title'][0]['value']);
+            link.setAttribute('href', element['url']);
             var item = document.createElement('div');
             item.classList.add('result-list-item');
             item.setAttribute('name', key);
@@ -235,6 +243,10 @@ Drupal.behaviors.sis_map_okapi_integration = {
       });
     }
 
+    function formatDataType(type) {
+      return type.replaceAll(' ', '-');
+    }
+
     function buildMap() {
       if (document.getElementById('map')) {
         document.getElementById('map').remove();
@@ -248,12 +260,30 @@ Drupal.behaviors.sis_map_okapi_integration = {
       }
       m.setAttribute('data-token', TOKEN);
       m.setAttribute('data-show-popup', true);
-      m.setAttribute('data-zoomslider', Boolean(settings.sis_map.display_map_helpers));
-      m.setAttribute('data-layerswitcher', Boolean(settings.sis_map.display_map_helpers));
+      if (settings.sis_map) {
+        m.setAttribute('data-zoomslider', Boolean(settings.sis_map.display_map_helpers));
+        m.setAttribute('data-layerswitcher', Boolean(settings.sis_map.display_map_helpers));
+      }
+      else {
+        // These default values apply when we're embedding the map on a node page, with a single map dot,
+        // and not as a block with multiple filters.
+        m.setAttribute('data-zoomslider', "true");
+        m.setAttribute('data-layerswitcher', "true");
+        m.setAttribute('data-center', 'auto');
+        m.setAttribute('data-zoom', 'auto');
+        m.setAttribute('data-background', 'orto_foraar');
+      }
 
       document.querySelector('.map-container').prepend(m);
       autoZoom = true;
-      var map = new okapi.Initialize([]);
+
+      if (settings.sis_map) {
+        var map = new okapi.Initialize({icons: settings.sis_map.icons});
+      }
+
+      else {
+        var map = new okapi.Initialize({icons: {'default':defaultDotIcon}});
+      }
     }
 
     buildMap();

@@ -1,0 +1,30 @@
+uuid: 1bd7df83-8f29-4009-93f8-7485c0a8cd52
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.blog_list
+    - field.field.block_content.blog_list.field_max_elements
+id: block_content.blog_list.default
+targetEntityType: block_content
+bundle: blog_list
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_max_elements:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

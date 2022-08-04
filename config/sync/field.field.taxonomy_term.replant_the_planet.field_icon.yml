@@ -1,0 +1,21 @@
+uuid: 4baab430-8a70-4a4e-97e9-5c3dd9f9edb2
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.replant_the_planet
+  module:
+    - media_icons
+id: taxonomy_term.replant_the_planet.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
+bundle: replant_the_planet
+label: Icon
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: icon_field

@@ -39,3 +39,11 @@ function sis_theme_suggestions_block_alter(&$suggestions, array $variables) {
     $suggestions[] = $variables['theme_hook_original'] .'__'. $element['#id'] . '_' . str_replace('/','_', $request);;
   }
 }
+
+function sis_theme_suggestions_menu_alter(&$suggestions, array $variables) {
+  if (isset($variables['attributes']['region'])) {
+    $suggestion = 'menu__' . $variables['menu_name'] . '__' . $variables['attributes']['region'];
+    $suggestion = str_replace('-', '_', $suggestion);
+    $suggestions[] = $suggestion;
+  }
+}

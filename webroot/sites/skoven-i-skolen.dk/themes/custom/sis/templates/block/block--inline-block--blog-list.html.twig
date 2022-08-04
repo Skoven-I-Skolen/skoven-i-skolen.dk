@@ -1,0 +1,25 @@
+{{ attach_library('sis/news-page') }}
+{{ attach_library('sis/blog-post') }}
+{{ attach_library('sis_blog_post/sis_blog_post') }}
+
+<div{{ attributes.addClass(['news-page__latest']) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-8">
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+      <div class="swiper-navigation">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="news-page__latest-items js-news-page__latest-items swiper">
+        <div class="swiper-wrapper">
+          {{ latest_four_blog_posts }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

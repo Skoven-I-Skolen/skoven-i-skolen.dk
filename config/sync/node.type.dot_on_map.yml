@@ -13,6 +13,6 @@ name: 'Prik på kort'
 type: dot_on_map
 description: 'Brug "prik på kortet" for at vise prikker på kortet.'
 help: ''
-new_revision: true
+new_revision: false
 preview_mode: 1
 display_submitted: true

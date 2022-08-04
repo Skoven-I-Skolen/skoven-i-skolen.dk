@@ -2,6 +2,7 @@
 
 namespace Drupal\sis_articles\Services;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\sis_articles\Repository\ArticleRepository;
@@ -12,9 +13,15 @@ class ArticleContentDeliveryService {
 
   private SeasonService $seasonService;
 
-  public function __construct(ArticleRepository $articleRepository, SeasonService $seasonService) {
+  /**
+   * @var \Drupal\Core\Entity\EntityViewBuilder
+   */
+  private EntityTypeManagerInterface $entityTypeManager;
+
+  public function __construct(ArticleRepository $articleRepository, SeasonService $seasonService, EntityTypeManagerInterface $entityTypeManager) {
     $this->articleRepository = $articleRepository;
     $this->seasonService = $seasonService;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   /**
@@ -111,6 +118,21 @@ class ArticleContentDeliveryService {
    */
   public function getArticleRepository(): ArticleRepository {
     return $this->articleRepository;
+  }
+
+  /**
+   * Get a list of rendered articles created by a specific user.
+   *
+   * @param int $user_id
+   *   Array containing the name of the field to get data for.
+   */
+  public function getArticlesByUser($user_id): array {
+    // Fetch the article ids created by the user ID.
+    if ($articleIds = $this->articleRepository->fetchArticleIdsByUser($user_id)) {
+      $articles = Node::loadMultiple($articleIds);
+      return $this->entityTypeManager->getViewBuilder('node')->viewMultiple($articles, 'list');
+    }
+    return [];
   }
 
   /**

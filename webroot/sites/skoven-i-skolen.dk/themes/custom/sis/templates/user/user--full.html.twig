@@ -1,0 +1,89 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+
+{{ attach_library('sis/news-page') }}
+{{ attach_library('sis/user-page') }}
+{{ attach_library('sis/lexicon') }}
+
+{% set classes = [
+  'user-page',
+] %}
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 col-lg-2 user-page--user-profile-full-picture">
+        {{ content.user_picture }}
+      </div>
+      <div class="col-md-8 col-lg-8">
+        <h2>{{ content.field_full_name }}</h2>
+        <div>{{ content.field_description }}</div>
+        <div>{{ content.field_contact_information }}</div>
+      </div>
+    </div>
+    {% if blog_posts_by_writer %}
+      <div class="news-page__latest section section--spacing-bottom-none">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-8">
+            <div class="news-page__latest-header">
+              <h3>{{ 'Seneste blogindlæg'|t }}</h3>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="swiper-navigation">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="news-page__latest-items js-news-page__latest-items swiper">
+              <div class="swiper-wrapper">
+                {{ blog_posts_by_writer }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if articles_by_writer %}
+      <div class="news-page__latest section section--spacing-bottom-none">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-8">
+            <div class="news-page__latest-header">
+              <h3>{{ 'Seneste artikler'|t }}</h3>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="swiper-navigation">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="news-page__latest-items js-news-page__latest-items swiper">
+              <div class="swiper-wrapper">
+                {{ articles_by_writer }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</article>

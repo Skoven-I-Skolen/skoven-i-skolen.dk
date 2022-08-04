@@ -19,6 +19,13 @@ class ArticleRepository {
     return $query->execute();
   }
 
+  public function fetchArticleIdsByUser(int $user_id) {
+    $query = $this->buildQuery([
+      'uid' => $user_id,
+      ],[]);
+    return $query->execute();
+  }
+
   public function fetchRandomArticlesIdsByTaxonomy(array $fields, $limit = 10): ?array {
     $query = $this->buildQuery($fields, $limit);
     $query->addTag('sort_by_random');

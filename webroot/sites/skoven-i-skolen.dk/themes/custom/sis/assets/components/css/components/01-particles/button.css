@@ -37,6 +37,12 @@ a.button {
     border: 2px solid var(--theme-button-color);
   }
 
+  &--green {
+    color: var(--color-white);
+    background-color: var(--color-green-dark);
+    border: 2px solid var(--color-green-dark);
+  }
+
   &--center {
     left: 50%;
     transform: translateX(-50%);

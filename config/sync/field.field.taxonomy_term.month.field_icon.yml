@@ -1,0 +1,21 @@
+uuid: 81e5e8b9-6433-4c35-8cb2-06e981ec7d90
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.month
+  module:
+    - media_icons
+id: taxonomy_term.month.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
+bundle: month
+label: Ikon
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: icon_field

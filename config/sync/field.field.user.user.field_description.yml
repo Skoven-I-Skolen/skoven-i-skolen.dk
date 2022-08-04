@@ -5,8 +5,12 @@ dependencies:
   config:
     - field.storage.user.field_description
   module:
+    - allowed_formats
     - text
     - user
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
 id: user.user.field_description
 field_name: field_description
 entity_type: user

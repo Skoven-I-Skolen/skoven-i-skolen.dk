@@ -1,0 +1,21 @@
+uuid: dee3c16d-2ca8-4db7-92f7-4ca054af1eca
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.time
+  module:
+    - media_icons
+id: taxonomy_term.time.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
+bundle: time
+label: Ikon
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: icon_field
