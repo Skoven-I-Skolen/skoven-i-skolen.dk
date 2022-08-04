@@ -10,6 +10,8 @@ source:
    - 'image/gif'
    - 'image/jpeg'
    - 'image/png'
+   - 'image/tiff'
+   - 'image/x-ms-bmp'
   get_alt: true
   get_title: true
   constants:

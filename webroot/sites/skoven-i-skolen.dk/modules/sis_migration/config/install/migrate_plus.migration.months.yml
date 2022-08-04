@@ -1,0 +1,31 @@
+id: months
+label: 'Month term migration'
+migration_tags: {}
+migration_group: migrate
+
+source:
+  plugin: d7_taxonomy_term
+  bundle: sis_season_month
+  key: migrate
+process:
+  tid: term_id
+  name: name
+  machine_name:
+    plugin: static_map
+    source: name
+    map:
+      Januar: january
+      Februar: february
+      Marts: march
+      April: april
+      Maj: may
+      Juni: june
+      Juli: july
+      August: august
+      September: september
+      Oktober: october
+      November: november
+      December: December
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: month

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc21232a09acbd188deea3d32e887d60",
+    "content-hash": "e5e2d1e5d03d2dab84f07bde66d22fce",
     "packages": [
         {
             "name": "algolia/places",
@@ -79,7 +79,7 @@
             "version": "3.6.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "e786e3d9707ffd9b0dd330ca135b66344dcef85a"
             },
             "dist": {
@@ -3744,26 +3744,26 @@
         },
         {
             "name": "drupal/mailsystem",
-            "version": "4.3.0",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/mailsystem.git",
-                "reference": "8.x-4.3"
+                "reference": "8.x-4.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/mailsystem-8.x-4.3.zip",
-                "reference": "8.x-4.3",
-                "shasum": "1a74016e268ff207535be5d5e42ac8f72ac89050"
+                "url": "https://ftp.drupal.org/files/projects/mailsystem-8.x-4.4.zip",
+                "reference": "8.x-4.4",
+                "shasum": "49b2e9efd090cdb4a282c7638b1c76d6723c47b6"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9"
+                "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-4.3",
-                    "datestamp": "1586203024",
+                    "version": "8.x-4.4",
+                    "datestamp": "1657576306",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3772,7 +3772,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -3878,17 +3878,17 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "1.19.0",
+            "version": "1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/metatag.git",
-                "reference": "8.x-1.19"
+                "reference": "8.x-1.20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.19.zip",
-                "reference": "8.x-1.19",
-                "shasum": "d70f59c034e971885ed4969a11bb392f6ab447ee"
+                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.20.zip",
+                "reference": "8.x-1.20",
+                "shasum": "f9b0019bad629a734da588f64839abdcb076f3d8"
             },
             "require": {
                 "drupal/core": "^9",
@@ -3907,8 +3907,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.19",
-                    "datestamp": "1641496014",
+                    "version": "8.x-1.20",
+                    "datestamp": "1657722289",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3988,6 +3988,66 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/migrate_file",
                 "issues": "https://www.drupal.org/project/issues/migrate_file"
+            }
+        },
+        {
+            "name": "drupal/migrate_manifest",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migrate_manifest.git",
+                "reference": "3.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_manifest-3.0.2.zip",
+                "reference": "3.0.2",
+                "shasum": "05e9daabfe100caf6c0977a5a81fcfaec3d37bb7"
+            },
+            "require": {
+                "drupal/core": "^9.1"
+            },
+            "conflict": {
+                "drush/drush": "<10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.2",
+                    "datestamp": "1627500287",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^10"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "James Gilliland",
+                    "homepage": "https://www.drupal.org/u/neclimdul",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Andrew Jungklaus",
+                    "homepage": "https://www.drupal.org/u/lostkangaroo",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Supports the running of migrations using a structured manifest file.",
+            "homepage": "https://www.drupal.org/project/migrate_manifest",
+            "support": {
+                "source": "https://cgit.drupalcode.org/migrate_manifest",
+                "issues": "https://www.drupal.org/project/issues/migrate_manifest",
+                "irc": "irc://irc.freenode.org/drupal-migrate"
             }
         },
         {
@@ -12070,5 +12130,5 @@
     "platform-overrides": {
         "php": "8.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

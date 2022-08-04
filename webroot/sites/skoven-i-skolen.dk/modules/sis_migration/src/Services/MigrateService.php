@@ -55,12 +55,15 @@ class MigrateService {
       case 221:
         $type = 'bog';
         break;
+      case 223:
+        $type = 'aarstidshjul';
+        break;
       case 224:
         $type = 'lexicon';
         break;
       case 234:
-      case 232:
         $type = 'viden_om_udeskole';
+        break;
     }
 
     $article_type = \Drupal::entityQuery('taxonomy_term')

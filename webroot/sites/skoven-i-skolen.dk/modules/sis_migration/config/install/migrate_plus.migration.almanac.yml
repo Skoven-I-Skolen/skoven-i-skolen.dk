@@ -1,0 +1,23 @@
+id: almanac
+label: Almanac
+migration_tags: {}
+migration_group: migrate
+
+source:
+  plugin: d7_node
+  node_type: almanac
+  key: migrate
+
+process:
+  title: title
+  created: created
+  updated: updated
+  'field_almanac_content/format':
+    plugin: default_value
+    default_value: limited_html_link
+  'field_almanac_content/value': body/0/value
+  field_almanac_day: field_day
+  field_almanac_month: field_month
+destination:
+  plugin: entity:node
+  default_bundle: almanac

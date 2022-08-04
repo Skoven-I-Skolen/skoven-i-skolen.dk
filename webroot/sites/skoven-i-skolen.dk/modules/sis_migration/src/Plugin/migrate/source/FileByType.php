@@ -37,8 +37,7 @@ class FileByType extends File {
       $title_alias = $query->addJoin('left', 'field_data_field_sis_article_image', 'title', 'f.fid = %alias.field_sis_article_image_fid');
       $query->addField($title_alias, 'field_sis_article_image_title', 'title');
     }
-
-    $query->addTag('debug');
+    $query->groupBy('f.fid');
     return $query;
   }
 

@@ -18,7 +18,12 @@ class ArticleNode extends Node {
     $category_term = $row->getSourceProperty('field_taxonomy_category');
     if (!empty($category_term)) {
       $parentId = array_column($category_term, 'tid', 'IN');
-      while ($parentId != 207) {
+
+      if(!$parentId) {
+        return FALSE;
+      }
+
+      while (($parentId != 207 && $parentId != 580)) {
         $query = $this->select('taxonomy_term_data', 'ttd')
           ->fields('tth', ['tid', 'parent']);
 
@@ -28,6 +33,11 @@ class ArticleNode extends Node {
           ->fetchAllKeyed();
 
         $parentId = reset($result);
+
+        // If we hit the old categories just stop.
+        if($parentId == 208 || $parentId == 228 || $parentId == 232 || $parentId == 231 || $parentId == 233) {
+          return FALSE;
+        }
       }
 
       $row->setSourceProperty('article_type', array_key_first($result));
