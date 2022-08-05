@@ -1,0 +1,16 @@
+atoms:
+  text-of-button-below-fact-boxes:
+    type: textfield
+    title: Tekst på knappen under faktabokse
+    description: Tekst på knappen under faktabokse på artikler. Hvis den er tom, vil knappen blive deaktiveret.
+    category: Artikel sider
+    default:
+      da: 'Del en ide'
+
+  link-of-button-below-fact-boxes:
+    type: url
+    title: Link til knappen under faktabokse
+    description: Link til knappen under faktabokse på artikler.
+    category: Artikel sider
+    default:
+      da: '/del'
