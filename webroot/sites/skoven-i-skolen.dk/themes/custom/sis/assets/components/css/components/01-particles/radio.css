@@ -39,7 +39,7 @@
     left: 4px;
     width: 10px;
     height: 10px;
-    background: var(--theme-input-color-marked);
+    background: var(--theme-input-background-marked);
     border-radius: 100%;
     transition: all .2s ease;
     content: "";
