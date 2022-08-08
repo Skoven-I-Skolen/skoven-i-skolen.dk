@@ -3,7 +3,6 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.month.field_ikon
     - taxonomy.vocabulary.month
   module:
     - media_icons
