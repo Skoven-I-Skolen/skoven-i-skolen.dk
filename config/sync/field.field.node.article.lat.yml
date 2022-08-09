@@ -1,0 +1,19 @@
+uuid: 30dad1a0-d076-48f5-9970-db8cf8a48324
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.lat
+    - node.type.article
+id: node.article.lat
+field_name: lat
+entity_type: node
+bundle: article
+label: Latitude
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

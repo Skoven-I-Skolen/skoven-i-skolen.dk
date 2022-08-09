@@ -5,7 +5,12 @@ available_filters:
   - field_replant_the_planet
   - field_season
   - field_subject
+  - field_article_categories
+  - field_article_months
+  - field_article_type
+  - field_time
 enabled_content_types:
+  article: article
   dot_on_map: dot_on_map
 enabled_filters:
   field_class: field_class

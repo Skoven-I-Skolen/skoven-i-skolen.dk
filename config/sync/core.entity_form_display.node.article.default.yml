@@ -27,10 +27,14 @@ dependencies:
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
+    - field.field.node.article.lat
     - field.field.node.article.layout_builder__layout
+    - field.field.node.article.lon
+    - field.field.node.article.sis_map_address_dawa
     - node.type.article
   module:
     - datetime
+    - dds_dawa
     - field_group
     - file
     - media_library
@@ -189,6 +193,22 @@ third_party_settings:
         show_empty_fields: false
         id: ''
         formatter: closed
+        description: ''
+        required_fields: true
+    group_geolokation:
+      children:
+        - sis_map_address_dawa
+        - lat
+        - lon
+      label: Geolokation
+      region: content
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
         description: ''
         required_fields: true
 _core:
@@ -387,9 +407,25 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  lat:
+    type: string_textfield
+    weight: 18
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  lon:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -400,16 +436,22 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  sis_map_address_dawa:
+    type: dawa_address_autocomplete_widget
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 16
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 13
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -438,7 +480,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
