@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
+    - field.field.node.article.field_files
     - field.field.node.article.field_graphics
     - field.field.node.article.field_header
     - field.field.node.article.field_list_date
@@ -31,6 +32,7 @@ dependencies:
   module:
     - datetime
     - field_group
+    - file
     - media_library
     - paragraphs_asymmetric_translation_widgets
     - path
@@ -92,8 +94,8 @@ third_party_settings:
         width_breakpoint: 640
     group_categorization:
       children:
-        - field_subject
         - field_class
+        - field_subject
         - field_location
         - field_season
         - field_time
@@ -134,7 +136,7 @@ third_party_settings:
       label: Kolofon
       region: content
       parent_name: group_article_metadata
-      weight: 24
+      weight: 25
       format_type: tab
       format_settings:
         classes: ''
@@ -149,7 +151,7 @@ third_party_settings:
       label: Undervisningsmål
       region: content
       parent_name: group_article_metadata
-      weight: 25
+      weight: 26
       format_type: tab
       format_settings:
         classes: ''
@@ -164,7 +166,7 @@ third_party_settings:
       label: Faktabokse
       region: content
       parent_name: group_article_metadata
-      weight: 26
+      weight: 27
       format_type: tab
       format_settings:
         classes: ''
@@ -176,10 +178,11 @@ third_party_settings:
     group_files:
       children:
         - field_media_downloads
+        - field_files
       label: Filer
       region: content
       parent_name: group_article_metadata
-      weight: 27
+      weight: 28
       format_type: tab
       format_settings:
         classes: ''
@@ -207,7 +210,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -223,7 +226,7 @@ content:
     third_party_settings: {  }
   field_article_months:
     type: options_buttons
-    weight: 21
+    weight: 35
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -234,14 +237,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_class:
-    type: entity_reference_autocomplete_tags
-    weight: 17
+    type: options_buttons
+    weight: 30
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_colophon:
     type: text_textarea
@@ -261,7 +260,7 @@ content:
     third_party_settings: {  }
   field_colophon_editor:
     type: string_textfield
-    weight: 30
+    weight: 31
     region: content
     settings:
       size: 60
@@ -269,7 +268,7 @@ content:
     third_party_settings: {  }
   field_colophon_photographer:
     type: string_textfield
-    weight: 31
+    weight: 32
     region: content
     settings:
       size: 60
@@ -302,6 +301,13 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: _none
+    third_party_settings: {  }
+  field_files:
+    type: file_generic
+    weight: 34
+    region: content
+    settings:
+      progress_indicator: throbber
     third_party_settings: {  }
   field_graphics:
     type: media_library_widget
@@ -336,14 +342,10 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_location:
-    type: entity_reference_autocomplete_tags
-    weight: 18
+    type: options_buttons
+    weight: 32
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_media_downloads:
     type: media_library_widget
@@ -353,42 +355,30 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_season:
-    type: entity_reference_autocomplete_tags
-    weight: 19
+    type: options_buttons
+    weight: 33
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_subject:
-    type: entity_reference_autocomplete_tags
-    weight: 16
+    type: options_buttons
+    weight: 31
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_teaching_goals:
     type: text_textarea
-    weight: 25
+    weight: 35
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_time:
-    type: entity_reference_autocomplete_tags
-    weight: 20
+    type: options_buttons
+    weight: 34
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -405,7 +395,7 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 12
+    weight: 11
     region: content
     settings:
       display_label: true
@@ -433,7 +423,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

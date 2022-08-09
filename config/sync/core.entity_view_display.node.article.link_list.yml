@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
+    - field.field.node.article.field_files
     - field.field.node.article.field_graphics
     - field.field.node.article.field_header
     - field.field.node.article.field_list_date
@@ -41,8 +42,8 @@ third_party_settings:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
       allowed_layouts: {  }
-      blacklisted_blocks: {  }
-      whitelisted_blocks: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
       restricted_categories: {  }
 _core:
   default_config_hash: MPH0xWosBjCbxPv7RhMaPznJBnPAJT06vK8GDR7H2AE
@@ -70,6 +71,7 @@ hidden:
   field_description: true
   field_equipment: true
   field_factboxes: true
+  field_files: true
   field_graphics: true
   field_header: true
   field_list_date: true
