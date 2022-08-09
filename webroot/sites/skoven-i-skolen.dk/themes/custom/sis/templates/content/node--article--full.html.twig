@@ -241,17 +241,26 @@
             </div>
           </div>
         {% endif %}
-        {% if node.field_media_downloads[0] %}
+        {% if node.field_media_downloads[0] or node.field_files[0] %}
           <div class="facts-box">
             <div class="facts-box__title">
               Filer
             </div>
             <div class="facts-box__content">
-              {% for file in node.field_media_downloads %}
-                <div class="facts-box__content-item">
-                  <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
-                </div>
-              {% endfor %}
+              {% if node.field_media_downloads[0] %}
+                {% for file in node.field_media_downloads %}
+                  <div class="facts-box__content-item">
+                    <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
+                  </div>
+                {% endfor %}
+              {% endif %}
+              {% if node.field_files[0] %}
+                {% for file in node.field_files %}
+                  <div class="facts-box__content-item">
+                    <a href="{{ file_url(file.entity.uri.value) }}" target="_blank"> {{ file.entity.filename.value }}</a>
+                  </div>
+                {% endfor %}
+              {% endif %}
             </div>
           </div>
         {% endif %}
