@@ -13,3 +13,11 @@ sis_articles.debug:
     _title: 'Debug controler'
   requirements:
     _permission: 'access content'
+
+sis_articles.create_content_form:
+  path: '/del'
+  defaults:
+    _form: '\Drupal\sis_articles\Form\AddContentForm'
+    _title: 'Hvad vil du oprette?'
+  requirements:
+    _permission: 'create article content'
