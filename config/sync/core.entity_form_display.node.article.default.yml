@@ -87,7 +87,7 @@ third_party_settings:
       label: 'Artikel metadata'
       region: content
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: tabs
       format_settings:
         classes: ''
@@ -97,20 +97,22 @@ third_party_settings:
         width_breakpoint: 640
     group_categorization:
       children:
-        - group_kategorier
+        - group_fag
+        - group_klasse
+        - group_sted
+        - group_aarstid
+        - group_tid
+        - group_maa
       label: Kategorisering
       region: content
-      parent_name: ''
-      weight: 7
-      format_type: fieldset
+      parent_name: group_kategorisering
+      weight: 8
+      format_type: tabs
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        description: ''
-        required_fields: true
-        formatter: closed
-        direction: vertical
+        direction: horizontal
         width_breakpoint: 640
     group_colophon:
       children:
@@ -212,8 +214,8 @@ third_party_settings:
         - field_class
       label: Klasse
       region: content
-      parent_name: group_kategorier
-      weight: 21
+      parent_name: group_categorization
+      weight: 16
       format_type: tab
       format_settings:
         classes: ''
@@ -227,8 +229,8 @@ third_party_settings:
         - field_subject
       label: Fag
       region: content
-      parent_name: group_kategorier
-      weight: 22
+      parent_name: group_categorization
+      weight: 15
       format_type: tab
       format_settings:
         classes: ''
@@ -242,8 +244,8 @@ third_party_settings:
         - field_location
       label: Sted
       region: content
-      parent_name: group_kategorier
-      weight: 23
+      parent_name: group_categorization
+      weight: 17
       format_type: tab
       format_settings:
         classes: ''
@@ -257,8 +259,8 @@ third_party_settings:
         - field_season
       label: Årstid
       region: content
-      parent_name: group_kategorier
-      weight: 24
+      parent_name: group_categorization
+      weight: 18
       format_type: tab
       format_settings:
         classes: ''
@@ -272,8 +274,8 @@ third_party_settings:
         - field_time
       label: Tid
       region: content
-      parent_name: group_kategorier
-      weight: 25
+      parent_name: group_categorization
+      weight: 19
       format_type: tab
       format_settings:
         classes: ''
@@ -287,14 +289,28 @@ third_party_settings:
         - field_article_months
       label: Måneder
       region: content
-      parent_name: group_kategorier
-      weight: 26
+      parent_name: group_categorization
+      weight: 20
       format_type: tab
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
         formatter: closed
+        description: ''
+        required_fields: true
+    group_kategorisering:
+      children:
+        - group_categorization
+      label: Kategorisering
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
         description: ''
         required_fields: true
 _core:
@@ -316,7 +332,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -390,7 +406,7 @@ content:
     third_party_settings: {  }
   field_equipment:
     type: text_textarea
-    weight: 26
+    weight: 10
     region: content
     settings:
       rows: 5
@@ -474,7 +490,7 @@ content:
     third_party_settings: {  }
   field_teaching_goals:
     type: text_textarea
-    weight: 13
+    weight: 15
     region: content
     settings:
       rows: 5
@@ -495,7 +511,7 @@ content:
     third_party_settings: {  }
   lat:
     type: string_textfield
-    weight: 18
+    weight: 19
     region: content
     settings:
       size: 60
@@ -503,7 +519,7 @@ content:
     third_party_settings: {  }
   lon:
     type: string_textfield
-    weight: 19
+    weight: 20
     region: content
     settings:
       size: 60
@@ -551,13 +567,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
