@@ -6,3 +6,7 @@ services:
   sis_articles.content_delivery_service:
     class: 'Drupal\sis_articles\Services\ArticleContentDeliveryService'
     arguments: ['@sis_articles.article_repository','@sis_articles.season_service', '@entity_type.manager']
+  sis_articles.breadcrumb:
+    class: Drupal\sis_articles\Breadcrumb\ArticleBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 1004 }

@@ -23,6 +23,9 @@ class LexiconController extends ControllerBase {
     $this->request = $requestStack->getCurrentRequest();
   }
 
+  /**
+   * {@inheritDoc}
+   */
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('sis_lexicon.content_delivery'),

@@ -31,7 +31,7 @@ process:
     from_format: 'U'
     to_format: 'Y-m-d\TH:i:s'
     source: created
-  field_description: body/0/summary
+  field_description: field_sis_news_body/0/summary
   field_list_media:
     - plugin: skip_on_empty
       method: process

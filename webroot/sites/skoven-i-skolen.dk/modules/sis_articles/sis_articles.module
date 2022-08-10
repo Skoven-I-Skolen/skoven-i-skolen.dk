@@ -25,7 +25,7 @@ function sis_articles_preprocess_list_element(&$variables) {
 
   if ($fieldParent->hasField('field_show_link_list') && $fieldParent->get('field_show_link_list')->value) {
     foreach (Element::children($variables['links']) as $key) {
-      $variables['children'] = $variables['links'][$key];
+      $variables['children'][] = $variables['links'][$key];
     }
 
     $variables['list_headline'] = $fieldParent->get('field_link_list_headline')->value;

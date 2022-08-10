@@ -99,6 +99,16 @@ process:
     to_format: 'Y-m-d\TH:i:s'
     source: created
   field_description: body/0/summary
+  field_article_image:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_sis_article_image/0/fid
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_file_to_media_image
+      source: field_sis_article_image/0/fid
+      no_stub: true
   field_list_media:
     - plugin: skip_on_empty
       method: process
@@ -160,6 +170,10 @@ process:
           migration: articles
           source: target_id
           no_stub: true
+  moderation_state:
+    plugin: static_map
+      0: draft
+      1: published
 destination:
   plugin: entity:node
   default_bundle: article

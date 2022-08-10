@@ -18,12 +18,13 @@ function sis_overview_locale_translation_projects_alter(&$projects) {
 
 
 function sis_overview_theme() {
+
   return [
     'term_overview' => [
-      'variables' => ['term' => NULL, 'entities' => []]
+      'variables' => ['term' => NULL, 'entities' => []],
     ],
     'overview_list_item' => [
-      'variables' => ['headline' => NULL, 'link' => [], 'attributes' => []]
+      'variables' => ['headline' => NULL, 'link' => [], 'attributes' => []],
     ],
   ];
 }
@@ -42,4 +43,14 @@ function sis_overview_theme_suggestions_input_alter(&$suggestions, array $variab
 
 function sis_overview_preprocess_overview_list_item(&$variables) {
   $variables['attributes'] = new Attribute($variables['attributes']);
+}
+
+function sis_overview_entity_overview_count_options_alter(&$options, &$context) {
+  $options = [
+    4 => '4',
+    8 => '8',
+    12 => '12',
+    16 => '16',
+    20 => '20',
+  ];
 }

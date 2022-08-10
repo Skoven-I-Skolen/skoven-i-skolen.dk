@@ -43,7 +43,3 @@ process:
       - '@_redirect'
 destination:
   plugin: entity:redirect
-migration_dependencies:
-  required:
-    - articles
-    - news

@@ -95,9 +95,10 @@
           <div class="article-page__description">
             {{ node.field_description.value|t }}
           </div>
-          <div class="row">
-            {{ content|without(['field_list_date', 'field_header', 'title']) }}
+          <div class="article-page__image">
+            {{ content.field_article_image }}
           </div>
+          {{ content|without(['field_list_date', 'field_header', 'title','field_article_image']) }}
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-lg-offset-1">
