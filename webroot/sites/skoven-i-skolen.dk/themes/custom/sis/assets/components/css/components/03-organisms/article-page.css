@@ -64,35 +64,36 @@
 
 @media print {
   @page {
-    size: A4;
+    size: a4;
+    /* stylelint-disable */
     margin: 1.5cm;
+    /* stylelint-enable */
   }
 
   body {
-    background: #fff;
     padding: 0;
+    background: #fff;
   }
 
   .facts-box {
-    box-shadow: none;
-    padding: 0;
+    display: grid;
     margin: 0;
     margin-bottom: 0;
-    display: grid;
+    padding: 0;
+    box-shadow: none;
 
     &__title {
       display: block;
-      word-break: break-word;
-      padding: 0;
       margin: 0;
+      padding: 0;
+      word-break: break-word;
     }
 
-    /* ISSUE IS HERE - MAYBE */
     &__content {
       display: block;
-      word-break: break-word;
       margin: 0;
       padding: 0;
+      word-break: break-word;
     }
 
     &__content-item {
@@ -114,26 +115,13 @@
   .container,
   .article-page,
   .row,
-  .facts-box,
-  .article-content-wrapper,
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  img,
-  picture {
+  .facts-box {
     break-inside: avoid;
     margin: 0;
     padding: 0;
   }
 
-  .article-page__description {
-    break-inside: avoid;
-  }
-
+  /* stylelint-disable */
   #block-tabs,
   #block-pageheader,
   .status-messages,
@@ -145,6 +133,7 @@
   svg {
     display: none;
   }
+  /* stylelint-enable */
 
   .layout__region {
     .paragraph {
@@ -156,8 +145,8 @@
 
   .article-content-sidebar,
   .article-content-wrapper {
-    width: 100%;
     display: block;
+    width: 100%;
   }
 
   .facts-box,
@@ -169,5 +158,11 @@
   .article-content-sidebar {
     margin: 0;
     padding: 0;
+  }
+
+  .article-content-wrapper {
+    img {
+      width: 50%;
+    }
   }
 }
