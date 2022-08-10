@@ -114,4 +114,8 @@
       }
     }
   }
+
+  @media print {
+    display: none;
+  }
 }

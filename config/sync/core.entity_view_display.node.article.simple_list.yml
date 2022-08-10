@@ -27,7 +27,6 @@ dependencies:
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
-    - field.field.node.article.layout_builder__layout
     - node.type.article
   module:
     - layout_builder
@@ -88,6 +87,5 @@ hidden:
   field_teaching_goals: true
   field_time: true
   langcode: true
-  layout_builder__layout: true
   links: true
   search_api_excerpt: true

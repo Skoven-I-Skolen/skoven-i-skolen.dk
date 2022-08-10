@@ -22,6 +22,11 @@
   &__description {
     margin-bottom: 24px;
     font-size: var(--base-font-size-medium);
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   &__image {
@@ -31,5 +36,138 @@
       max-width: 100%;
       height: auto;
     }
+  }
+}
+
+.print-button {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+
+  a {
+    display: flex;
+    text-decoration: none;
+  }
+
+  &__text {
+    padding-left: 10px;
+    font-weight: 700;
+  }
+
+  .icon--printer {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* PRINT */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 1.5cm;
+  }
+
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .facts-box {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+    display: grid;
+
+    &__title {
+      display: block;
+      word-break: break-word;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* ISSUE IS HERE - MAYBE */
+    &__content {
+      display: block;
+      word-break: break-word;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__content-item {
+      display: block;
+    }
+  }
+
+  .container,
+  .section {
+    padding: 0;
+  }
+
+  section,
+  section > div,
+  .layout,
+  .facts-box__title,
+  .section,
+  .layout__region,
+  .container,
+  .article-page,
+  .row,
+  .facts-box,
+  .article-content-wrapper,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  img,
+  picture {
+    break-inside: avoid;
+    margin: 0;
+    padding: 0;
+  }
+
+  .article-page__description {
+    break-inside: avoid;
+  }
+
+  #block-tabs,
+  #block-pageheader,
+  .status-messages,
+  .article-page__hero,
+  .article-page__related,
+  .facts-box__button-below-wrapper,
+  .print-button,
+  .facts-box__inspiration-title:after,
+  svg {
+    display: none;
+  }
+
+  .layout__region {
+    .paragraph {
+      picture {
+        display: none;
+      }
+    }
+  }
+
+  .article-content-sidebar,
+  .article-content-wrapper {
+    width: 100%;
+    display: block;
+  }
+
+  .facts-box,
+  .facts-box__title,
+  .facts-box__content,
+  .facts-box__content-item,
+  .facts-box__content-item-label,
+  .facts-box__content-item-value,
+  .article-content-sidebar {
+    margin: 0;
+    padding: 0;
   }
 }

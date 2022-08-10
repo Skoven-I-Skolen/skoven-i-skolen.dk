@@ -26,79 +26,16 @@ dependencies:
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
-    - field.field.node.article.layout_builder__layout
     - node.type.article
   module:
     - layout_builder
     - layout_builder_restrictions
-    - layout_discovery
     - text
     - user
 third_party_settings:
   layout_builder:
-    enabled: true
+    enabled: false
     allow_custom: false
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-          column_widths: null
-          color_theme: none
-          column_spacing_top: medium
-          column_spacing_bottom: medium
-          column_show_graphic_top: medium
-          column_show_graphic_bottom: medium
-          column_width: normal
-        components:
-          a965b1ab-0ee9-46bd-8d45-653a135b38a6:
-            uuid: a965b1ab-0ee9-46bd-8d45-653a135b38a6
-            region: content
-            configuration:
-              id: 'field_block:node:article:field_time'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          8ba46729-ddf6-41e0-ba4f-aa17acd79654:
-            uuid: 8ba46729-ddf6-41e0-ba4f-aa17acd79654
-            region: content
-            configuration:
-              id: 'field_block:node:article:field_article_months'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          1533fd31-a685-4bd4-8130-df51502c2535:
-            uuid: 1533fd31-a685-4bd4-8130-df51502c2535
-            region: content
-            configuration:
-              id: 'field_block:node:article:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-        third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
@@ -163,6 +100,5 @@ hidden:
   field_subject: true
   field_teaching_goals: true
   langcode: true
-  layout_builder__layout: true
   links: true
   search_api_excerpt: true

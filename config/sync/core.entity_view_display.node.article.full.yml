@@ -27,69 +27,24 @@ dependencies:
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
-    - field.field.node.article.layout_builder__layout
     - node.type.article
   module:
     - entity_reference_revisions
     - layout_builder
     - layout_builder_restrictions
-    - layout_discovery
     - text
     - user
 third_party_settings:
   layout_builder:
-    enabled: true
-    allow_custom: true
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-          column_widths: null
-          color_theme: none
-          column_spacing_top: medium
-          column_spacing_bottom: medium
-          column_show_graphic_top: medium
-          column_show_graphic_bottom: medium
-          column_width: normal
-        components:
-          b65f8f78-3e30-4da5-bdad-2224e1247302:
-            uuid: b65f8f78-3e30-4da5-bdad-2224e1247302
-            region: content
-            configuration:
-              id: 'field_block:node:article:field_header'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: hidden
-                settings:
-                  view_mode: default
-                  link: ''
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          5d5c585f-f756-42eb-8e23-8f6fd9352db0:
-            uuid: 5d5c585f-f756-42eb-8e23-8f6fd9352db0
-            region: content
-            configuration:
-              id: 'field_block:node:article:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-        third_party_settings: {  }
+    enabled: false
+    allow_custom: false
   layout_builder_restrictions:
     allowed_block_categories:
+      - Block
+      - Bruger
       - 'Chaos Tools'
       - 'Content fields'
+      - Cookiebot
       - 'Custom block types'
       - Devel
       - Forms
@@ -98,20 +53,15 @@ third_party_settings:
       - 'Lists (Views)'
       - Menus
       - Premium
+      - Skoven-i-Skolen
       - System
-      - User
       - Webform
       - core
     entity_view_mode_restriction:
-      allowed_layouts:
-        - layout_onecol
-        - layout_twocol_section
-        - layout_threecol_section
+      allowed_layouts: {  }
       blacklisted_blocks:
-        'Custom block types':
-          - basic
-        'Inline blocks':
-          - 'inline_block:basic'
+        'Custom block types': {  }
+        'Inline blocks': {  }
       whitelisted_blocks:
         'Chaos Tools': {  }
         'Content fields': {  }
@@ -121,11 +71,14 @@ third_party_settings:
         Menus: {  }
         Premium: {  }
         System: {  }
-        User: {  }
         Webform: {  }
         core: {  }
       restricted_categories:
+        - Block
+        - Bruger
+        - Cookiebot
         - Devel
+        - Skoven-i-Skolen
 _core:
   default_config_hash: 7OjcNSYQFZAAnCZrnyJg7utryjfmQoO33tkSTWehRNI
 id: node.article.full
@@ -135,22 +88,15 @@ mode: full
 content:
   body:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
     weight: -20
-    region: content
-  field_description:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
     region: content
   field_header:
     type: entity_reference_revisions_entity_view
@@ -171,6 +117,7 @@ hidden:
   field_colophon_author: true
   field_colophon_editor: true
   field_colophon_photographer: true
+  field_description: true
   field_equipment: true
   field_factboxes: true
   field_graphics: true
