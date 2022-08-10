@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
+    - field.field.node.article.field_files
     - field.field.node.article.field_graphics
     - field.field.node.article.field_header
     - field.field.node.article.field_list_date
@@ -27,7 +28,10 @@ dependencies:
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
+    - field.field.node.article.lat
     - field.field.node.article.layout_builder__layout
+    - field.field.node.article.lon
+    - field.field.node.article.sis_map_address_dawa
     - node.type.article
   module:
     - layout_builder
@@ -41,8 +45,8 @@ third_party_settings:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
       allowed_layouts: {  }
-      blacklisted_blocks: {  }
-      whitelisted_blocks: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
       restricted_categories: {  }
 _core:
   default_config_hash: MPH0xWosBjCbxPv7RhMaPznJBnPAJT06vK8GDR7H2AE
@@ -77,6 +81,7 @@ hidden:
   field_description: true
   field_equipment: true
   field_factboxes: true
+  field_files: true
   field_graphics: true
   field_header: true
   field_list_date: true
@@ -88,6 +93,9 @@ hidden:
   field_teaching_goals: true
   field_time: true
   langcode: true
+  lat: true
   layout_builder__layout: true
   links: true
+  lon: true
   search_api_excerpt: true
+  sis_map_address_dawa: true

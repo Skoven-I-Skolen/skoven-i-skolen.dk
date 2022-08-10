@@ -103,6 +103,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
       m.setAttribute('data-type', formatDataType(dataType));
       m.setAttribute('data-title', marker['node']['title'][0]['value']);
       var address = '';
+
       if (marker['address']) {
         // The dawa address comes in the format "HASH, Address",
         // we need to split the string to the get the actual address.
@@ -110,15 +111,21 @@ Drupal.behaviors.sis_map_okapi_integration = {
       }
 
       var description = '';
-      if (marker['node']['field_summary'][0] && marker['node']['field_summary'][0]['value']) {
-        description += marker['node']['field_summary'][0]['value'] + '<br>';
+
+      if (marker['node']['field_summary'] && marker['node']['field_summary'][0]
+        && marker['node']['field_summary'][0]['value']) {
+        description += marker['node']['field_summary'][0]['value'].substring(0, 60) + '...'; + '<br>';
+      }
+
+      else if (marker['node']['body'] && marker['node']['body'][0]
+        && marker['node']['body'][0]['summary']) {
+        description += marker['node']['body'][0]['summary'].substring(0, 60) + '...'; + '<br>';
       }
 
       if (marker['lat'] && marker['lon']) {
         m.setAttribute('data-lat', marker['lat']);
         m.setAttribute('data-lon', marker['lon']);
         description += '<br>Breddegrad: ' + marker['lat'] + "<br>Længdegrad: " + marker['lon'];
-
       }
 
       if (address) {
@@ -127,7 +134,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
       }
 
       if (marker['url']) {
-        description += '<br><br><a href="' + marker['url'] + '">' + Drupal.t('Se mere') + '</a>';
+        description += '<br><a href="' + marker['url'] + '">' + Drupal.t('Se mere') + '</a>';
       }
 
       m.setAttribute('data-description', description);

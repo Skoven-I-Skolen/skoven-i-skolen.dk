@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - node.type.article
     - node.type.dot_on_map
   module:
     - filter
@@ -19,6 +20,7 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
+  - 'create article content'
   - 'create dot_on_map content'
   - 'search content'
   - 'use text format basic_html'

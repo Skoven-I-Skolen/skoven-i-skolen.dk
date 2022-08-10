@@ -198,14 +198,18 @@ class MapManager {
         $url = $this->urlGenerator
           ->generateFromRoute('entity.node.canonical', ['node' => $node->get('nid')->getString()], ['absolute' => TRUE]);
 
-        $map_marker_array[$node->get('nid')->getString()] = [
-          'node' => $node->toArray(),
-          'filters' => $map_marker_filters,
-          'address' => $node->get(self::ADDRESS_FIELD_NAME)->getString() ?? NULL,
-          'lat' => $node->get(self::LATITUDE_FIELD_NAME)->getString() ?? NULL,
-          'lon' => $node->get(self::LONGITUDE_FIELD_NAME)->getString() ?? NULL,
-          'url' => $url,
-        ];
+        if (($node->get(self::LATITUDE_FIELD_NAME)->getString() && $node->get(self::LONGITUDE_FIELD_NAME)->getString()) ||
+          $node->get(self::ADDRESS_FIELD_NAME)->getString()) {
+          // Add marker to final array only if it has geographical data.
+          $map_marker_array[$node->get('nid')->getString()] = [
+            'node' => $node->toArray(),
+            'filters' => $map_marker_filters,
+            'address' => $node->get(self::ADDRESS_FIELD_NAME)->getString() ?? NULL,
+            'lat' => $node->get(self::LATITUDE_FIELD_NAME)->getString() ?? NULL,
+            'lon' => $node->get(self::LONGITUDE_FIELD_NAME)->getString() ?? NULL,
+            'url' => $url,
+          ];
+        }
       }
     }
 

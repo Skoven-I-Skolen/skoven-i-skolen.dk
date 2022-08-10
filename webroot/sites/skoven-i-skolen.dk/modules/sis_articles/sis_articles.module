@@ -36,3 +36,26 @@ function sis_articles_preprocess_list_element(&$variables) {
 function sis_articles_query_sort_by_random_alter(AlterableInterface $query) {
   $query->orderRandom();
 }
+
+function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'node_article_form') {
+
+    if ($article_type = Drupal::requestStack()->getCurrentRequest()->get('type')) {
+      if (!isset($form['field_article_type']['widget']['#options'])) {
+        return;
+      }
+      foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
+        if ($value === $article_type) {
+          $form['field_article_type']['widget']['#default_value'] = $key;
+        }
+        else {
+          unset($form['field_article_type']['widget']['#options'][$key]);
+        }
+      }
+    }
+
+    if (\Drupal::currentUser()->id() === 0 && isset($form['field_media_downloads']['#access'])) {
+      $form['field_media_downloads']['#access'] = FALSE;
+    }
+  }
+}
