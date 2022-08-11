@@ -24,7 +24,6 @@ dependencies:
     - layout_builder
     - media
     - media_icons
-    - menu_link_content
     - node
     - paragraphs
     - path

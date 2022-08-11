@@ -35,8 +35,6 @@ module:
   datetime: 0
   dblog: 0
   dds_dawa: 0
-  devel: 0
-  devel_generate: 0
   dynamic_color: 0
   dynamic_entity_reference: 0
   dynamic_key_value: 0
@@ -81,6 +79,7 @@ module:
   migrate: 0
   migrate_drupal: 0
   migrate_file: 0
+  migrate_manifest: 0
   migrate_plus: 0
   migrate_tools: 0
   mysql: 0
@@ -133,7 +132,6 @@ module:
   view_unpublished: 0
   views_ui: 0
   webform: 0
-  webform_devel: 0
   webp: 0
   workbench_email: 0
   workflows: 0

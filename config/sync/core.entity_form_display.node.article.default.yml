@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
+    - field.field.node.article.field_article_image
     - field.field.node.article.field_article_months
+    - field.field.node.article.field_article_related
     - field.field.node.article.field_article_type
     - field.field.node.article.field_class
     - field.field.node.article.field_colophon
@@ -28,11 +30,13 @@ dependencies:
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
     - field.field.node.article.lat
-    - field.field.node.article.layout_builder__layout
     - field.field.node.article.lon
     - field.field.node.article.sis_map_address_dawa
     - node.type.article
+    - workflows.workflow.editorial
   module:
+    - content_hierarchy
+    - content_moderation
     - datetime
     - dds_dawa
     - field_group
@@ -79,6 +83,7 @@ third_party_settings:
     group_article_metadata:
       children:
         - group_list
+        - group_categorization
         - group_colophon
         - group_article_colophon
         - group_teaching_goals
@@ -87,7 +92,7 @@ third_party_settings:
       label: 'Artikel metadata'
       region: content
       parent_name: ''
-      weight: 9
+      weight: 8
       format_type: tabs
       format_settings:
         classes: ''
@@ -97,30 +102,31 @@ third_party_settings:
         width_breakpoint: 640
     group_categorization:
       children:
-        - group_fag
-        - group_klasse
-        - group_sted
-        - group_aarstid
-        - group_tid
-        - group_maa
+        - field_subject
+        - field_class
+        - field_location
+        - field_season
+        - field_time
+        - field_article_months
       label: Kategorisering
       region: content
-      parent_name: group_kategorisering
-      weight: 8
-      format_type: tabs
+      parent_name: group_article_metadata
+      weight: 23
+      format_type: tab
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        direction: horizontal
-        width_breakpoint: 640
+        formatter: closed
+        description: ''
+        required_fields: true
     group_colophon:
       children:
         - field_equipment
       label: Grej
       region: content
       parent_name: group_article_metadata
-      weight: 23
+      weight: 24
       format_type: tab
       format_settings:
         classes: ''
@@ -180,7 +186,6 @@ third_party_settings:
     group_files:
       children:
         - field_media_downloads
-        - field_files
       label: Filer
       region: content
       parent_name: group_article_metadata
@@ -209,110 +214,111 @@ third_party_settings:
         id: ''
         description: ''
         required_fields: true
-    group_klasse:
-      children:
-        - field_class
-      label: Klasse
-      region: content
-      parent_name: group_categorization
-      weight: 16
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_fag:
-      children:
-        - field_subject
-      label: Fag
-      region: content
-      parent_name: group_categorization
-      weight: 15
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_sted:
-      children:
-        - field_location
-      label: Sted
-      region: content
-      parent_name: group_categorization
-      weight: 17
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_aarstid:
-      children:
-        - field_season
-      label: Årstid
-      region: content
-      parent_name: group_categorization
-      weight: 18
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_tid:
-      children:
-        - field_time
-      label: Tid
-      region: content
-      parent_name: group_categorization
-      weight: 19
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_maa:
-      children:
-        - field_article_months
-      label: Måneder
-      region: content
-      parent_name: group_categorization
-      weight: 20
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_kategorisering:
-      children:
-        - group_categorization
-      label: Kategorisering
-      region: content
-      parent_name: ''
-      weight: 7
-      format_type: fieldset
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        description: ''
-        required_fields: true
+      group_klasse:
+        children:
+          - field_class
+        label: Klasse
+        region: content
+        parent_name: group_categorization
+        weight: 16
+        format_type: tab
+        format_settings:
+          classes: ''
+          show_empty_fields: false
+          id: ''
+          formatter: closed
+          description: ''
+          required_fields: true
+      group_fag:
+        children:
+          - field_subject
+        label: Fag
+        region: content
+        parent_name: group_categorization
+        weight: 15
+        format_type: tab
+        format_settings:
+          classes: ''
+          show_empty_fields: false
+          id: ''
+          formatter: closed
+          description: ''
+          required_fields: true
+      group_sted:
+        children:
+          - field_location
+        label: Sted
+        region: content
+        parent_name: group_categorization
+        weight: 17
+        format_type: tab
+        format_settings:
+          classes: ''
+          show_empty_fields: false
+          id: ''
+          formatter: closed
+          description: ''
+          required_fields: true
+      group_aarstid:
+        children:
+          - field_season
+        label: Årstid
+        region: content
+        parent_name: group_categorization
+        weight: 18
+        format_type: tab
+        format_settings:
+          classes: ''
+          show_empty_fields: false
+          id: ''
+          formatter: closed
+          description: ''
+          required_fields: true
+      group_tid:
+        children:
+          - field_time
+        label: Tid
+        region: content
+        parent_name: group_categorization
+        weight: 19
+        format_type: tab
+        format_settings:
+          classes: ''
+          show_empty_fields: false
+          id: ''
+          formatter: closed
+          description: ''
+          required_fields: true
+      group_maa:
+        children:
+          - field_article_months
+        label: Måneder
+        region: content
+        parent_name: group_categorization
+        weight: 20
+        format_type: tab
+        format_settings:
+          classes: ''
+          show_empty_fields: false
+          id: ''
+          formatter: closed
+          description: ''
+          required_fields: true
+      group_kategorisering:
+        children:
+          - group_categorization
+        label: Kategorisering
+        region: content
+        parent_name: ''
+        weight: 7
+        format_type: fieldset
+        format_settings:
+          classes: ''
+          show_empty_fields: false
+          id: ''
+          description: ''
+          required_fields: true
+
 _core:
   default_config_hash: lCMS9iqusl8ppbYxINj_SRny0NNOhS2IAGuGG9i0r6c
 id: node.article.default
@@ -322,7 +328,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 7
     region: content
     settings:
       rows: 9
@@ -330,9 +336,15 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
+  content_hierarchy:
+    type: content_hierarchy_modal
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -346,11 +358,28 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_article_image:
+    type: media_library_widget
+    weight: 6
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_article_months:
     type: options_buttons
-    weight: 20
+    weight: 21
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_article_related:
+    type: entity_reference_autocomplete
+    weight: 17
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_article_type:
     type: options_select
@@ -359,10 +388,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_class:
-    type: options_buttons
-    weight: 15
+    type: entity_reference_autocomplete_tags
+    weight: 17
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_colophon:
     type: text_textarea
@@ -382,7 +415,7 @@ content:
     third_party_settings: {  }
   field_colophon_editor:
     type: string_textfield
-    weight: 31
+    weight: 30
     region: content
     settings:
       size: 60
@@ -390,7 +423,7 @@ content:
     third_party_settings: {  }
   field_colophon_photographer:
     type: string_textfield
-    weight: 32
+    weight: 31
     region: content
     settings:
       size: 60
@@ -398,7 +431,7 @@ content:
     third_party_settings: {  }
   field_description:
     type: string_textarea
-    weight: 16
+    weight: 15
     region: content
     settings:
       rows: 3
@@ -406,7 +439,7 @@ content:
     third_party_settings: {  }
   field_equipment:
     type: text_textarea
-    weight: 10
+    weight: 26
     region: content
     settings:
       rows: 5
@@ -414,7 +447,7 @@ content:
     third_party_settings: {  }
   field_factboxes:
     type: paragraphs_classic_asymmetric
-    weight: 17
+    weight: 32
     region: content
     settings:
       title: Faktaboks
@@ -423,13 +456,6 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: _none
-    third_party_settings: {  }
-  field_files:
-    type: file_generic
-    weight: 18
-    region: content
-    settings:
-      progress_indicator: throbber
     third_party_settings: {  }
   field_graphics:
     type: media_library_widget
@@ -458,49 +484,65 @@ content:
     third_party_settings: {  }
   field_list_media:
     type: media_library_widget
-    weight: 15
+    weight: 14
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_location:
-    type: options_buttons
-    weight: 17
+    type: entity_reference_autocomplete_tags
+    weight: 18
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_media_downloads:
     type: media_library_widget
-    weight: 17
+    weight: 33
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_season:
-    type: options_buttons
-    weight: 18
+    type: entity_reference_autocomplete_tags
+    weight: 19
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_subject:
-    type: options_buttons
+    type: entity_reference_autocomplete_tags
     weight: 16
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_teaching_goals:
     type: text_textarea
-    weight: 15
+    weight: 25
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_time:
-    type: options_buttons
-    weight: 19
+    type: entity_reference_autocomplete_tags
+    weight: 20
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -509,51 +551,35 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
-  lat:
-    type: string_textfield
-    weight: 19
+  moderation_state:
+    type: moderation_state_default
+    weight: 18
     region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  lon:
-    type: string_textfield
-    weight: 20
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 13
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
-  sis_map_address_dawa:
-    type: dawa_address_autocomplete_widget
-    weight: 17
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 17
+    weight: 16
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 14
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -567,13 +593,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -582,11 +608,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  content_hierarchy: true
-  layout_builder__layout: true
-  moderation_state: true
+hidden: {  }

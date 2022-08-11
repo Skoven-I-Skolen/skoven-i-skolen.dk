@@ -13,7 +13,7 @@ source:
   plugin: d7_file
   scheme: public
   constants:
-    source_base_path: 'https://skoven-i-skolen.dk'
+    source_base_path: 'https://www.skoven-i-skolen.dk'
   key: migrate
 process:
   fid: fid
@@ -28,7 +28,7 @@ process:
     -
       plugin: urlencode
   uri:
-    plugin: download
+    plugin: file_copy
     source:
       - '@source_full_path'
       - uri
