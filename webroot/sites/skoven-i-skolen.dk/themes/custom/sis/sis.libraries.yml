@@ -190,6 +190,12 @@ search-toggle:
   js:
     dist/components/js/search-toggle.js: {}
 
+section-bg-graphics:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/section-bg-graphics.css: {}
+
 slider-pager-count:
   version: VERSION
   css:
