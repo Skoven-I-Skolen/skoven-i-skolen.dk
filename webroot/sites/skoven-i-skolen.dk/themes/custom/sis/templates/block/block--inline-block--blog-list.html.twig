@@ -1,5 +1,6 @@
 {{ attach_library('sis/news-page') }}
 {{ attach_library('sis/blog-post') }}
+{{ attach_library('sis/slider-pager-count') }}
 {{ attach_library('sis_blog_post/sis_blog_post') }}
 
 <div{{ attributes.addClass(['news-page__latest']) }}>
@@ -19,6 +20,17 @@
         <div class="swiper-wrapper">
           {{ latest_four_blog_posts }}
         </div>
+      </div>
+      <div class="slider-pager-count">
+        {{ 'Showing'|t }}
+        <span class="slider-pager-count--showing">
+          <span class="ms-hidden sm-hidden md-hidden lg-hidden xl-hidden">1</span>
+          <span class="xs-hidden md-hidden lg-hidden xl-hidden">2</span>
+          <span class="xs-hidden ms-hidden sm-hidden lg-hidden xl-hidden">3</span>
+          <span class="xs-hidden ms-hidden sm-hidden md-hidden">4</span>
+        </span>
+        {{ 'out of'|t }}
+        <span class="slider-pager-count--total">{{ latest_four_blog_posts_count }}</span>
       </div>
     </div>
   </div>
