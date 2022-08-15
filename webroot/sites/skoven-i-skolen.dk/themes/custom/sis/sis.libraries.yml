@@ -190,6 +190,12 @@ search-toggle:
   js:
     dist/components/js/search-toggle.js: {}
 
+slider-pager-count:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/slider-pager-count.css: {}
+
 overview-searchfield:
   version: VERSION
   css:
