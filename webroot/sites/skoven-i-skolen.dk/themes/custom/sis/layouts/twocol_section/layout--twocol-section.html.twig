@@ -24,14 +24,22 @@
   'section',
   'section--spacing-top-' ~ settings.column_spacing_top,
   'section--spacing-bottom-' ~ settings.column_spacing_bottom,
-  settings.color_theme ? 'section--place-top'
+  settings.color_theme ? 'section--place-top',
+  settings.section_bg_graphics != 'none' ? 'section--background-graphics'
 ] %}
 
 {% if settings.color_theme is not empty %}
   {{ attach_library('sis/' ~ settings.color_theme) }}
 {% endif %}
 
+{% if settings.section_bg_graphics != 'none' %}
+  {{ attach_library('sis/section-bg-graphics') }}
+{% endif %}
+
 <section {{ attributes.addClass(classes) }}>
+  {% if settings.section_bg_graphics != 'none' %}
+    <img src="/{{ directory }}/dist/images/{{ settings.section_bg_graphics }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ settings.section_bg_graphics }} section-bg-graphics__position--{{ settings.section_bg_graphics_position }}" />
+  {% endif %}
   {% if settings.color_theme %}
     <svg class="section__graphics-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1440 30" xml:space="preserve">
       <path d="M1440,30V1.3l-240.4,12.3L950.4,0L939,9l-22.9-2.9L801.7,16.5l-625.5-2.9L164.8,3l-87.7,7.5L0,1.3V30H1440z"/>
