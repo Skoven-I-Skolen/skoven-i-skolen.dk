@@ -1,0 +1,31 @@
+uuid: 64b3d925-ad78-4ba5-a2f2-214e437798af
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.entity_slideshow
+    - field.storage.block_content.field_entity_slideshow_items
+    - node.type.article
+    - node.type.blog_post
+id: block_content.entity_slideshow.field_entity_slideshow_items
+field_name: field_entity_slideshow_items
+entity_type: block_content
+bundle: entity_slideshow
+label: Elementer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      blog_post: blog_post
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

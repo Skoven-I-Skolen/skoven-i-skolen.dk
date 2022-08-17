@@ -17,7 +17,7 @@ provider: null
 plugin: premium_breadcrumb_block
 settings:
   id: premium_breadcrumb_block
-  label: Brødkrummer
+  label: Breadcrumbs
   label_display: '0'
   provider: premium_core
 visibility:

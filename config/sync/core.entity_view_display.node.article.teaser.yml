@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
+    - field.field.node.article.field_files
     - field.field.node.article.field_graphics
     - field.field.node.article.field_header
     - field.field.node.article.field_list_date
@@ -29,6 +30,9 @@ dependencies:
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
+    - field.field.node.article.lat
+    - field.field.node.article.lon
+    - field.field.node.article.sis_map_address_dawa
     - node.type.article
   module:
     - datetime
@@ -100,6 +104,7 @@ hidden:
   field_colophon_photographer: true
   field_equipment: true
   field_factboxes: true
+  field_files: true
   field_graphics: true
   field_header: true
   field_location: true
@@ -109,5 +114,8 @@ hidden:
   field_teaching_goals: true
   field_time: true
   langcode: true
+  lat: true
   links: true
+  lon: true
   search_api_excerpt: true
+  sis_map_address_dawa: true

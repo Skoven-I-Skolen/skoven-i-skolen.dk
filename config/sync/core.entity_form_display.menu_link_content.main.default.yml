@@ -5,11 +5,10 @@ dependencies:
   config:
     - field.field.menu_link_content.main.field_menu_description
     - field.field.menu_link_content.main.field_menu_icon
-    - system.menu.main
   module:
     - link
     - media_icons
-    - menu_item_extras
+    - menu_link_content
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
 bundle: main
@@ -47,9 +46,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   view_mode:
-    type: menu_item_extras_view_mode_selector_select
-    weight: 3
+    type: string_textfield
+    weight: 21
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden: {  }

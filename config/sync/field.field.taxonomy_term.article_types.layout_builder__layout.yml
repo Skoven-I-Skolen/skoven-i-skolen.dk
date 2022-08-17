@@ -1,0 +1,21 @@
+uuid: 73ceb797-f6dc-4688-958b-70d7d6b85ae9
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.layout_builder__layout
+    - taxonomy.vocabulary.article_types
+  module:
+    - layout_builder
+id: taxonomy_term.article_types.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: taxonomy_term
+bundle: article_types
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

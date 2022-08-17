@@ -3,18 +3,111 @@ langcode: da
 status: true
 dependencies:
   config:
+    - block_content.type.entity_slideshow
     - field.field.taxonomy_term.article_types.field_link_liste_headline
     - field.field.taxonomy_term.article_types.field_overview
     - field.field.taxonomy_term.article_types.field_overview_headline
+    - field.field.taxonomy_term.article_types.layout_builder__layout
     - taxonomy.vocabulary.article_types
   module:
     - layout_builder
+    - layout_discovery
     - sis_overview
     - text
 third_party_settings:
   layout_builder:
-    enabled: false
-    allow_custom: false
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: ''
+          color_theme: {  }
+          column_spacing_top: medium
+          column_spacing_bottom: medium
+          column_show_graphic_top: null
+          column_show_graphic_bottom: null
+          column_width: normal
+        components:
+          fb8737f2-eec6-4124-88cc-5c73bef202b9:
+            uuid: fb8737f2-eec6-4124-88cc-5c73bef202b9
+            region: content
+            configuration:
+              id: 'inline_block:entity_slideshow'
+              label: 'Inline block'
+              label_display: ''
+              provider: layout_builder
+              view_mode: full
+              context_mapping: {  }
+              block_revision_id: 72
+              block_serialized: null
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: ''
+          color_theme: {  }
+          column_spacing_top: medium
+          column_spacing_bottom: medium
+          column_show_graphic_top: null
+          column_show_graphic_bottom: null
+          column_width: normal
+        components:
+          520504c6-53ce-41ea-b594-c9f0ae94885d:
+            uuid: 520504c6-53ce-41ea-b594-c9f0ae94885d
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:article_types:description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          column_widths: null
+          color_theme: none
+          column_spacing_top: medium
+          column_spacing_bottom: medium
+          column_show_graphic_top: medium
+          column_show_graphic_bottom: medium
+          column_width: normal
+        components:
+          151b447e-d0f4-411f-bcb2-8c6a68e54cd4:
+            uuid: 151b447e-d0f4-411f-bcb2-8c6a68e54cd4
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:article_types:field_overview'
+              label: Overblik
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: category_overview_formatter
+                label: hidden
+                settings:
+                  view_mode: teaser
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: 6Wlnj1o559jP7-D3eY2z3YPa1GgpHY9k5J4StKsAkao
 id: taxonomy_term.article_types.default

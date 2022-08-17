@@ -6,6 +6,7 @@ dependencies:
     - field.field.taxonomy_term.article_types.field_link_liste_headline
     - field.field.taxonomy_term.article_types.field_overview
     - field.field.taxonomy_term.article_types.field_overview_headline
+    - field.field.taxonomy_term.article_types.layout_builder__layout
     - taxonomy.vocabulary.article_types
   module:
     - path
@@ -81,4 +82,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true

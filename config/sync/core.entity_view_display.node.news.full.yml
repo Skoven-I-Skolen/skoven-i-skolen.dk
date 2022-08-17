@@ -47,6 +47,11 @@ third_party_settings:
       - core
     entity_view_mode_restriction:
       allowed_layouts: {  }
+      restricted_categories:
+        - Block
+        - Bruger
+        - Cookiebot
+        - Devel
       blacklisted_blocks:
         'Custom block types': {  }
         'Inline blocks': {  }
@@ -61,11 +66,6 @@ third_party_settings:
         System: {  }
         Webform: {  }
         core: {  }
-      restricted_categories:
-        - Block
-        - Bruger
-        - Cookiebot
-        - Devel
 _core:
   default_config_hash: 3gEG_f13mhXS_39_cFYNgEywgm3tCe7wzoDSIuoe18U
 id: node.news.full

@@ -27,9 +27,10 @@ default_value:
       field_location: {  }
       field_season: {  }
       field_subject: {  }
+      text: ''
     count: 16
     sort: newest
-    pagination: false
+    pagination: true
     facets:
       - field_class
       - field_location

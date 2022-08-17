@@ -318,7 +318,6 @@ third_party_settings:
           id: ''
           description: ''
           required_fields: true
-
 _core:
   default_config_hash: lCMS9iqusl8ppbYxINj_SRny0NNOhS2IAGuGG9i0r6c
 id: node.article.default
@@ -613,5 +612,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  content_hierarchy: true
-  moderation_state: true
+  field_files: true
+  lat: true
+  lon: true
+  sis_map_address_dawa: true

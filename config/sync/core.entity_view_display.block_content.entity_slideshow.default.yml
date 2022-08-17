@@ -1,0 +1,43 @@
+uuid: 979255ec-021f-4c0c-8d65-924a67bc9e12
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.entity_slideshow
+    - field.field.block_content.entity_slideshow.field_entity_slideshow_items
+    - field.field.block_content.entity_slideshow.field_entity_slideshow_term
+    - field.field.block_content.entity_slideshow.field_slideshow_autoplay
+id: block_content.entity_slideshow.default
+targetEntityType: block_content
+bundle: entity_slideshow
+mode: default
+content:
+  field_entity_slideshow_items:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: list
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_entity_slideshow_term:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_slideshow_autoplay:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
