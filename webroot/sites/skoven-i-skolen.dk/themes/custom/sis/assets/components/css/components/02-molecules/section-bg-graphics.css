@@ -10,8 +10,20 @@
     z-index: -1;
     display: none;
 
+    .section & {
+      top: 30px;
+
+      @media (--viewport-xl-min) {
+        top: 50px;
+      }
+    }
+
     @media (--viewport-sm-min) {
       display: block;
+    }
+
+    &--birds {
+      width: 253px;
     }
 
     &--branches {
@@ -37,6 +49,10 @@
 
   &__position {
     &--right {
+      &.section-bg-graphics__image--birds {
+        right: -27px;
+      }
+
       &.section-bg-graphics__image--branches {
         right: -100px;
       }
@@ -60,6 +76,10 @@
 
     &--left {
       transform: scaleX(-1);
+
+      &.section-bg-graphics__image--birds {
+        left: -27px;
+      }
 
       &.section-bg-graphics__image--branches {
         left: -100px;

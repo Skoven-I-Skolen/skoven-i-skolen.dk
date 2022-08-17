@@ -69,6 +69,7 @@ class BaseLayout extends MultiWidthLayoutBase {
       '#title' => $this->t('Section background graphics'),
       '#options' => [
         'none' => $this->t('None'),
+        'birds' => $this->t('Birds'),
         'branches' => $this->t('Branches'),
         'deer' => $this->t('Deer'),
         'reeds' => $this->t('Reeds'),
