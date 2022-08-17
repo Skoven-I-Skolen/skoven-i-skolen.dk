@@ -25,8 +25,13 @@
     list-style: none;
 
     & + &::before {
-      padding: 5px 3px;
-      color: var(--color-gray);
+      display: inherit;
+      width: 6px;
+      height: 6px;
+      margin: 0 4px 2px;
+      border-top: 2px solid #3d2959;
+      border-right: 2px solid #3d2959;
+      transform: rotate(45deg);
       content: "";
     }
   }
