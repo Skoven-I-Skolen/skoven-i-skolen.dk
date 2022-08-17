@@ -169,6 +169,37 @@ class ArticleContentDeliveryService {
   }
 
   /**
+   * Get articles by article type.
+   *
+   * @param int $termId
+   *   The taxonomy term is representing the article type.
+   * @param int $limit
+   *   The number of items to return (default is 4)
+   * @param string $viewMode
+   *   The view mode to use when rendering the articles (default is "list")
+   *
+   * @return array
+   *   A array of renderable articles.
+   */
+  public function getArticlesByType($termId, int $limit = 4, string $viewMode = 'list'): array {
+
+    $fields = [
+      'field_article_type' => $termId,
+    ];
+
+    // Fetch the related article ids based the current filter fields.
+    if ($articleIds = $this->articleRepository->fetchArticlesIdsByTaxonomy($fields, $limit)) {
+      $articles = Node::loadMultiple($articleIds);
+
+      return $this->entityTypeManager
+        ->getViewBuilder('node')
+        ->viewMultiple($articles,  $viewMode);
+    }
+
+    return [];
+  }
+
+  /**
    * Fetch random articles by field values
    *
    * @param array $fieldNames
@@ -195,14 +226,18 @@ class ArticleContentDeliveryService {
   }
 
   /**
-   * @param \Drupal\node\NodeInterface $currentNode
+   * @param \Drupal\node\NodeInterface|null $currentNode
    * @param array|null $articleIds
    *
    * @return \Drupal\Core\Entity\EntityBase[]|\Drupal\Core\Entity\EntityInterface[]|\Drupal\node\Entity\Node[]|null
    */
-  public function loadArticles(NodeInterface $currentNode, ?array $articleIds): ?array {
+  public function loadArticles(?NodeInterface $currentNode, ?array $articleIds): ?array {
     if (empty($articleIds)) {
       return NULL;
+    }
+
+    if (empty($currentNode)) {
+      return Node::loadMultiple($articleIds);
     }
 
     // We du not want to show the current node as related So we remove it
@@ -211,7 +246,6 @@ class ArticleContentDeliveryService {
     }
 
     return Node::loadMultiple($articleIds);
-
   }
 
 }

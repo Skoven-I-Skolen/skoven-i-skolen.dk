@@ -39,6 +39,7 @@
 
     &--ellipsis {
       padding: 5px 11px;
+      border: 0;
     }
 
     &--previous,

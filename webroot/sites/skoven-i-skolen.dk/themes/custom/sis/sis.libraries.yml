@@ -142,6 +142,17 @@ image-slideshow:
   dependencies:
     - core/drupal
 
+entity-slideshow:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/entity-slideshow.css: {}
+      dist/components/css/components/03-organisms/entity-slideshow.css: {}
+  js:
+    dist/components/js/entity-slideshow.js: {}
+  dependencies:
+    - core/drupal
+
 inline-navigation-item:
   version: VERSION
   css:
@@ -337,7 +348,7 @@ inspiration-overview:
       dist/components/css/components/03-organisms/inspiration-overview.css: {}
   dependencies:
     - sis/breadcrumb
-    - sis/pager
+    - sis/pager-full
 
 organization-overview:
   version: VERSION

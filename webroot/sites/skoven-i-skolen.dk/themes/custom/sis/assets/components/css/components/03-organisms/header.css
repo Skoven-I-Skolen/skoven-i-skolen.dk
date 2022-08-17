@@ -3,10 +3,6 @@
  * Header.
  */
 
-/* When user is logged in, we remove fixed from header */
-body.adminimal-admin-toolbar header.header {
-  position: relative;
-}
 
 .header {
   position: fixed;
@@ -20,8 +16,12 @@ body.adminimal-admin-toolbar header.header {
   background-color: var(--color-primary);
   box-shadow: 0 25px 75px rgb(0 0 0 / 10%);
 
-  &__inner {
+  /* When user is logged in, we remove fixed from header */
+  .adminimal-admin-toolbar & {
     position: relative;
+  }
+
+  &__inner {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
