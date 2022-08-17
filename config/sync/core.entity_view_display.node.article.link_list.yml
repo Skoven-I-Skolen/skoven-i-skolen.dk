@@ -27,6 +27,8 @@ dependencies:
     - field.field.node.article.field_location
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_season
+    - field.field.node.article.field_section_bg_graphics
+    - field.field.node.article.field_section_bg_graphics_pos
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
@@ -85,6 +87,8 @@ hidden:
   field_location: true
   field_media_downloads: true
   field_season: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
   field_subject: true
   field_teaching_goals: true
   field_time: true

@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_list_media
+    - field.field.node.blog_post.field_section_bg_graphics
+    - field.field.node.blog_post.field_section_bg_graphics_pos
     - node.type.blog_post
   module:
     - text
@@ -30,4 +32,6 @@ content:
     region: content
 hidden:
   field_list_media: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
   langcode: true

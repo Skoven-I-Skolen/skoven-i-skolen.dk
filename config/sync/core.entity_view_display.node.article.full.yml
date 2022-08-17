@@ -27,6 +27,8 @@ dependencies:
     - field.field.node.article.field_location
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_season
+    - field.field.node.article.field_section_bg_graphics
+    - field.field.node.article.field_section_bg_graphics_pos
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
@@ -46,8 +48,11 @@ third_party_settings:
     allow_custom: false
   layout_builder_restrictions:
     allowed_block_categories:
+      - Block
+      - Bruger
       - 'Chaos Tools'
       - 'Content fields'
+      - Cookiebot
       - 'Custom block types'
       - Devel
       - Forms
@@ -56,6 +61,7 @@ third_party_settings:
       - 'Lists (Views)'
       - Menus
       - Premium
+      - Skoven-i-Skolen
       - System
       - User
       - Webform
@@ -84,6 +90,12 @@ third_party_settings:
         User: {  }
         Webform: {  }
         core: {  }
+      restricted_categories:
+        - Block
+        - Bruger
+        - Cookiebot
+        - Devel
+        - Skoven-i-Skolen
 _core:
   default_config_hash: 7OjcNSYQFZAAnCZrnyJg7utryjfmQoO33tkSTWehRNI
 id: node.article.full
@@ -138,6 +150,8 @@ hidden:
   field_location: true
   field_media_downloads: true
   field_season: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
   field_subject: true
   field_teaching_goals: true
   field_time: true

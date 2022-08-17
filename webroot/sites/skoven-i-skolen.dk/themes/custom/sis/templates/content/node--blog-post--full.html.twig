@@ -71,10 +71,14 @@
 {{ attach_library('sis/news-page') }}
 {{ attach_library('sis/blog-post') }}
 {{ attach_library('sis_blog_post/sis_blog_post') }}
+{% if node.field_section_bg_graphics.value %}
+  {{ attach_library('sis/section-bg-graphics') }}
+{% endif %}
 
 {% set classes = [
   'news-page',
-  'blog-post'
+  'blog-post',
+  node.field_section_bg_graphics.value ? 'section--background-graphics' : '',
 ] %}
 
 {% if authoring_information %}
@@ -84,6 +88,9 @@
 {% endif %}
 
 <article{{ attributes.addClass(classes) }}>
+  {% if node.field_section_bg_graphics.value %}
+    <img src="/{{ directory }}/dist/images/{{ node.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ node.field_section_bg_graphics.value }} section-bg-graphics__position--{{ node.field_section_bg_graphics_pos.value }}" />
+  {% endif %}
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-8 col-lg-7">
