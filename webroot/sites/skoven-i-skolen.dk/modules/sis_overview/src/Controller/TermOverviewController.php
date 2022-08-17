@@ -102,7 +102,7 @@ class TermOverviewController extends ControllerBase {
     $build = $this->view($taxonomy_term);
 
     $ajaxResponse = new AjaxResponse();
-    $ajaxResponse->addCommand(new HtmlCommand('#term_content', $build['content']))
+    $ajaxResponse->addCommand(new HtmlCommand('.js-term-overview', $build['content']))
       ->addCommand(new ReplaceCommand('.pager', $build['pager']));
     return $ajaxResponse;
   }
@@ -113,7 +113,7 @@ class TermOverviewController extends ControllerBase {
    * @return int
    *   The limit.
    */
-  private function getLimit() {
+  public function getLimit() {
     return $this->request->get('limit', self::DEFAULT_LIMIT);
   }
 
@@ -124,7 +124,7 @@ class TermOverviewController extends ControllerBase {
    * @return int
    *   The limit.
    */
-  private function getPage() {
+  public function getPage() {
     return $this->request->get('page', 0);
   }
 

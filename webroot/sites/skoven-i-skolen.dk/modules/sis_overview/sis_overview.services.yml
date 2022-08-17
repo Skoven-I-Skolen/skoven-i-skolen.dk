@@ -16,3 +16,8 @@ services:
     class: '\Drupal\sis_overview\EventSubscriber\ProfileLabelEventSubscriber'
     tags:
       - { name: 'event_subscriber' }
+  sis_overview.term_breadcrumb:
+    class: Drupal\sis_overview\Breadcrumb\TermBreadcrumbBuilder
+    arguments: [ '@router.admin_context', '@request_stack' ]
+    tags:
+      - { name: breadcrumb_builder, priority: 1004 }

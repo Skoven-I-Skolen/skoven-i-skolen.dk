@@ -23,14 +23,25 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
+
+{{ attach_library('sis/term-page') }}
+
+{#{% set description = {#}
+{#  '#type':   'processed_text',#}
+{#  '#text':    term.description.value ? 'ddd',#}
+{#  '#format':  term.description.format ? '',#}
+{#} %}#}
+
 {{ breadcrumb }}
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
       {{ title_prefix }}
-      <h1>{{ name }}</h1>
+      <h1>{{ term.name.value }}</h1>
       {{ title_suffix }}
-      {{ content.description }}
+      <div class="term__description">
+        {{ content.description }}
+      </div>
     </div>
   </div>
 </div>

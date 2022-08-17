@@ -1,0 +1,5 @@
+.term {
+  &__description {
+    margin-bottom: 80px;
+  }
+}

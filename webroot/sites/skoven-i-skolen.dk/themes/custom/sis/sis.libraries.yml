@@ -484,3 +484,9 @@ user-page:
     theme:
       dist/components/css/components/03-organisms/user-page.css: {}
 
+
+term-page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/term-page.css: {}
