@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
+    - field.field.node.article.field_files
     - field.field.node.article.field_graphics
     - field.field.node.article.field_header
     - field.field.node.article.field_list_date
@@ -26,9 +27,14 @@ dependencies:
     - field.field.node.article.field_location
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_season
+    - field.field.node.article.field_section_bg_graphics
+    - field.field.node.article.field_section_bg_graphics_pos
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
+    - field.field.node.article.lat
+    - field.field.node.article.lon
+    - field.field.node.article.sis_map_address_dawa
     - node.type.article
   module:
     - entity_reference_revisions
@@ -61,6 +67,12 @@ third_party_settings:
       - core
     entity_view_mode_restriction:
       allowed_layouts: {  }
+      restricted_categories:
+        - Block
+        - Bruger
+        - Cookiebot
+        - Devel
+        - Skoven-i-Skolen
       blacklisted_blocks:
         'Custom block types': {  }
         'Inline blocks': {  }
@@ -75,12 +87,6 @@ third_party_settings:
         System: {  }
         Webform: {  }
         core: {  }
-      restricted_categories:
-        - Block
-        - Bruger
-        - Cookiebot
-        - Devel
-        - Skoven-i-Skolen
 _core:
   default_config_hash: 7OjcNSYQFZAAnCZrnyJg7utryjfmQoO33tkSTWehRNI
 id: node.article.full
@@ -128,16 +134,22 @@ hidden:
   field_description: true
   field_equipment: true
   field_factboxes: true
+  field_files: true
   field_graphics: true
   field_list_date: true
   field_list_media: true
   field_location: true
   field_media_downloads: true
   field_season: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
   field_subject: true
   field_teaching_goals: true
   field_time: true
   langcode: true
+  lat: true
   layout_builder__layout: true
   links: true
+  lon: true
   search_api_excerpt: true
+  sis_map_address_dawa: true
