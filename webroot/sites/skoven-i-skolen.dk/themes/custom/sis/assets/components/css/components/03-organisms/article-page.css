@@ -22,6 +22,11 @@
   &__description {
     margin-bottom: 24px;
     font-size: var(--base-font-size-medium);
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   &__image {
@@ -30,6 +35,134 @@
     img {
       max-width: 100%;
       height: auto;
+    }
+  }
+}
+
+.print-button {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+
+  a {
+    display: flex;
+    text-decoration: none;
+  }
+
+  &__text {
+    padding-left: 10px;
+    font-weight: 700;
+  }
+
+  .icon--printer {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* PRINT */
+
+@media print {
+  @page {
+    size: a4;
+    /* stylelint-disable */
+    margin: 1.5cm;
+    /* stylelint-enable */
+  }
+
+  body {
+    padding: 0;
+    background: #fff;
+  }
+
+  .facts-box {
+    display: grid;
+    margin: 0;
+    margin-bottom: 0;
+    padding: 0;
+    box-shadow: none;
+
+    &__title {
+      display: block;
+      margin: 0;
+      padding: 0;
+      word-break: break-word;
+    }
+
+    &__content {
+      display: block;
+      margin: 0;
+      padding: 0;
+      word-break: break-word;
+    }
+
+    &__content-item {
+      display: block;
+    }
+  }
+
+  .container,
+  .section {
+    padding: 0;
+  }
+
+  section,
+  section > div,
+  .layout,
+  .facts-box__title,
+  .section,
+  .layout__region,
+  .container,
+  .article-page,
+  .row,
+  .facts-box {
+    break-inside: avoid;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* stylelint-disable */
+  #block-tabs,
+  #block-pageheader,
+  .status-messages,
+  .article-page__hero,
+  .article-page__related,
+  .facts-box__button-below-wrapper,
+  .print-button,
+  .facts-box__inspiration-title:after,
+  svg {
+    display: none;
+  }
+  /* stylelint-enable */
+
+  .layout__region {
+    .paragraph {
+      picture {
+        display: none;
+      }
+    }
+  }
+
+  .article-content-sidebar,
+  .article-content-wrapper {
+    display: block;
+    width: 100%;
+  }
+
+  .facts-box,
+  .facts-box__title,
+  .facts-box__content,
+  .facts-box__content-item,
+  .facts-box__content-item-label,
+  .facts-box__content-item-value,
+  .article-content-sidebar {
+    margin: 0;
+    padding: 0;
+  }
+
+  .article-content-wrapper {
+    img {
+      width: 50%;
     }
   }
 }

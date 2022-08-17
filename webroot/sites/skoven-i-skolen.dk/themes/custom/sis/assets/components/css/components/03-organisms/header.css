@@ -42,6 +42,10 @@
       height: var(--header-height);
     }
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 .header-search {

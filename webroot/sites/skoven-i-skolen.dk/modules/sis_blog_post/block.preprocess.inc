@@ -9,7 +9,7 @@ function sis_blog_post_preprocess_block__inline_block__blog_list(&$variables) {
       $max_elements = $value;
     }
   }
-
+  $variables['latest_four_blog_posts_count'] = $max_elements;
   $variables['latest_four_blog_posts'] = \Drupal::service('sis_blog_post.content_delivery_service')
     ->getBlogPosts($max_elements);
 }

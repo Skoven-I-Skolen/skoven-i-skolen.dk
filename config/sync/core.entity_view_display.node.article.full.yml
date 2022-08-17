@@ -42,8 +42,11 @@ third_party_settings:
     allow_custom: false
   layout_builder_restrictions:
     allowed_block_categories:
+      - Block
+      - Bruger
       - 'Chaos Tools'
       - 'Content fields'
+      - Cookiebot
       - 'Custom block types'
       - Devel
       - Forms
@@ -52,20 +55,15 @@ third_party_settings:
       - 'Lists (Views)'
       - Menus
       - Premium
+      - Skoven-i-Skolen
       - System
-      - User
       - Webform
       - core
     entity_view_mode_restriction:
-      allowed_layouts:
-        - layout_onecol
-        - layout_twocol_section
-        - layout_threecol_section
+      allowed_layouts: {  }
       blacklisted_blocks:
-        'Custom block types':
-          - basic
-        'Inline blocks':
-          - 'inline_block:basic'
+        'Custom block types': {  }
+        'Inline blocks': {  }
       whitelisted_blocks:
         'Chaos Tools': {  }
         'Content fields': {  }
@@ -75,11 +73,14 @@ third_party_settings:
         Menus: {  }
         Premium: {  }
         System: {  }
-        User: {  }
         Webform: {  }
         core: {  }
       restricted_categories:
+        - Block
+        - Bruger
+        - Cookiebot
         - Devel
+        - Skoven-i-Skolen
 _core:
   default_config_hash: 7OjcNSYQFZAAnCZrnyJg7utryjfmQoO33tkSTWehRNI
 id: node.article.full
@@ -92,7 +93,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_article_image:
     type: entity_reference_entity_view

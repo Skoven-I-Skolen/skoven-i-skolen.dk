@@ -79,7 +79,7 @@
 <article{{ attributes.addClass(classes) }}>
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-lg-7">
+      <div class="col-md-8 col-lg-7 article-content-wrapper">
         <div{{ content_attributes }}>
           {% if node.field_header[0] %}
             {% include '@reusable-component/page-title.twig' with {
@@ -93,15 +93,21 @@
             } %}
           {% endif %}
           <div class="article-page__description">
-            {{ node.field_description.value|t }}
-          </div>
-          <div class="article-page__image">
-            {{ content.field_article_image }}
+            {{ content.body }}
           </div>
           {{ content|without(['field_list_date', 'field_header', 'title','field_article_image']) }}
         </div>
       </div>
-      <div class="col-md-4 col-lg-4 col-lg-offset-1">
+      <div class="col-md-4 col-lg-4 col-lg-offset-1 article-content-sidebar">
+        <div class="print-button">
+          <a href="#" onclick="window.print()">
+            {% include '@reusable-component/svg-icon.twig' with {
+              'attributes': '',
+              'svgIconName': 'printer'
+            } %}
+              <span class="print-button__text">Print</span>
+          </a>
+        </div>
         {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] %}
           <div class="facts-box">
             <div class="facts-box__title">
@@ -271,14 +277,6 @@
               Inspiration og lignende materialer
             </div>
             <div class="facts-box__content facts-box__inspiration">
-{#              {% for title, inspiration in inspirations %}#}
-{#                <div class="facts-box__inspiration-group">#}
-{#                  <div class="facts-box__inspiration-title">{{ title }}</div>#}
-{#                  {% for article in inspiration %}#}
-{#                    {{ article }}#}
-{#                  {% endfor %}#}
-{#                </div>#}
-{#              {% endfor %}#}
               {{ inspirations }}
             </div>
           </div>
