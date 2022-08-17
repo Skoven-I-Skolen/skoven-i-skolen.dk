@@ -1,0 +1,111 @@
+/**
+ * Type: Molecules.
+ * Section graphics.
+ */
+
+.section-bg-graphics {
+  &__image {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    display: none;
+
+    .section & {
+      top: 30px;
+
+      @media (--viewport-xl-min) {
+        top: 50px;
+      }
+    }
+
+    @media (--viewport-sm-min) {
+      display: block;
+    }
+
+    &--birds {
+      width: 253px;
+    }
+
+    &--branches {
+      width: 350px;
+    }
+
+    &--deer {
+      width: 180px;
+    }
+
+    &--reeds {
+      width: 240px;
+    }
+
+    &--sea {
+      width: 265px;
+    }
+
+    &--wind {
+      width: 425px;
+    }
+  }
+
+  &__position {
+    &--right {
+      &.section-bg-graphics__image--birds {
+        right: -27px;
+      }
+
+      &.section-bg-graphics__image--branches {
+        right: -100px;
+      }
+
+      &.section-bg-graphics__image--deer {
+        right: -10px;
+      }
+
+      &.section-bg-graphics__image--reeds {
+        right: -80px;
+      }
+
+      &.section-bg-graphics__image--sea {
+        right: -25px;
+      }
+
+      &.section-bg-graphics__image--wind {
+        right: 0;
+      }
+    }
+
+    &--left {
+      transform: scaleX(-1);
+
+      &.section-bg-graphics__image--birds {
+        left: -27px;
+      }
+
+      &.section-bg-graphics__image--branches {
+        left: -100px;
+      }
+
+      &.section-bg-graphics__image--deer {
+        left: -10px;
+      }
+
+      &.section-bg-graphics__image--reeds {
+        left: -80px;
+      }
+
+      &.section-bg-graphics__image--sea {
+        left: -25px;
+      }
+
+      &.section-bg-graphics__image--wind {
+        left: 0;
+      }
+    }
+  }
+}
+
+.section--background-graphics {
+  @media (--viewport-sm-min) {
+    overflow: hidden;
+  }
+}

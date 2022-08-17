@@ -26,6 +26,8 @@ dependencies:
     - field.field.node.article.field_location
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_season
+    - field.field.node.article.field_section_bg_graphics
+    - field.field.node.article.field_section_bg_graphics_pos
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
@@ -38,9 +40,7 @@ dependencies:
     - content_hierarchy
     - content_moderation
     - datetime
-    - dds_dawa
     - field_group
-    - file
     - media_library
     - paragraphs_asymmetric_translation_widgets
     - path
@@ -111,7 +111,7 @@ third_party_settings:
       label: Kategorisering
       region: content
       parent_name: group_article_metadata
-      weight: 23
+      weight: 22
       format_type: tab
       format_settings:
         classes: ''
@@ -200,13 +200,13 @@ third_party_settings:
         required_fields: true
     group_geolokation:
       children:
-        - sis_map_address_dawa
         - lat
         - lon
+        - sis_map_address_dawa
       label: Geolokation
       region: content
       parent_name: ''
-      weight: 18
+      weight: 19
       format_type: fieldset
       format_settings:
         classes: ''
@@ -337,7 +337,7 @@ content:
     third_party_settings: {  }
   content_hierarchy:
     type: content_hierarchy_modal
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -366,7 +366,7 @@ content:
     third_party_settings: {  }
   field_article_months:
     type: options_buttons
-    weight: 21
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -388,7 +388,7 @@ content:
     third_party_settings: {  }
   field_class:
     type: entity_reference_autocomplete_tags
-    weight: 17
+    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -446,7 +446,7 @@ content:
     third_party_settings: {  }
   field_factboxes:
     type: paragraphs_classic_asymmetric
-    weight: 32
+    weight: 19
     region: content
     settings:
       title: Faktaboks
@@ -465,7 +465,7 @@ content:
     third_party_settings: {  }
   field_header:
     type: paragraphs_classic_asymmetric
-    weight: 16
+    weight: 36
     region: content
     settings:
       title: 'Page header'
@@ -490,7 +490,7 @@ content:
     third_party_settings: {  }
   field_location:
     type: entity_reference_autocomplete_tags
-    weight: 18
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
@@ -507,13 +507,25 @@ content:
     third_party_settings: {  }
   field_season:
     type: entity_reference_autocomplete_tags
-    weight: 19
+    weight: 21
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_section_bg_graphics:
+    type: options_select
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_section_bg_graphics_pos:
+    type: options_select
+    weight: 22
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_subject:
     type: entity_reference_autocomplete_tags
@@ -535,7 +547,7 @@ content:
     third_party_settings: {  }
   field_time:
     type: entity_reference_autocomplete_tags
-    weight: 20
+    weight: 22
     region: content
     settings:
       match_operator: CONTAINS

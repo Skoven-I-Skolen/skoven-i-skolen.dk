@@ -1,0 +1,21 @@
+uuid: ba47b6cc-593f-4e27-ae61-4913b6a245eb
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_bg_graphics
+    - node.type.blog_post
+  module:
+    - options
+id: node.blog_post.field_section_bg_graphics
+field_name: field_section_bg_graphics
+entity_type: node
+bundle: blog_post
+label: 'Baggrunds grafik'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

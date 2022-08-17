@@ -1,0 +1,27 @@
+uuid: e15f1011-1b79-4cd7-94cd-a65e26998f25
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_section_bg_graphics_pos
+field_name: field_section_bg_graphics_pos
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: right
+      label: Højre
+    -
+      value: left
+      label: Venstre
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
