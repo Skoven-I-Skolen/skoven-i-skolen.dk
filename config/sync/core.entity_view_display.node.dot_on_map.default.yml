@@ -11,6 +11,8 @@ dependencies:
     - field.field.node.dot_on_map.field_people_and_places
     - field.field.node.dot_on_map.field_replant_the_planet
     - field.field.node.dot_on_map.field_season
+    - field.field.node.dot_on_map.field_section_bg_graphics
+    - field.field.node.dot_on_map.field_section_bg_graphics_pos
     - field.field.node.dot_on_map.field_subject
     - field.field.node.dot_on_map.field_summary
     - field.field.node.dot_on_map.lat
@@ -31,7 +33,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_class:
     type: entity_reference_label
@@ -39,7 +46,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_contact_data:
     type: basic_string
@@ -69,7 +76,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_people_and_places:
     type: entity_reference_label
@@ -77,7 +84,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_replant_the_planet:
     type: entity_reference_label
@@ -101,21 +108,23 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_summary:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 107
+    weight: 11
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
   langcode: true
   lat: true
   lon: true

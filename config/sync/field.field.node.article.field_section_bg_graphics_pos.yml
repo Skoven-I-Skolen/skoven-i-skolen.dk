@@ -1,0 +1,23 @@
+uuid: be0b1ed6-5f99-4cca-b84f-140c35b3cf2b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_bg_graphics_pos
+    - node.type.article
+  module:
+    - options
+id: node.article.field_section_bg_graphics_pos
+field_name: field_section_bg_graphics_pos
+entity_type: node
+bundle: article
+label: 'Baggrunds grafik position'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: right
+default_value_callback: ''
+settings: {  }
+field_type: list_string

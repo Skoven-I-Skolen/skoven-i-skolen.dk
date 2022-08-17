@@ -63,6 +63,37 @@ class BaseLayout extends MultiWidthLayoutBase {
       '#description' => $this->t('Choose column spacing for this layout.'),
     ];
 
+    $form['section_bg_graphics'] = [
+      '#type' => 'select',
+      '#multiple' => FALSE,
+      '#title' => $this->t('Section background graphics'),
+      '#options' => [
+        'none' => $this->t('None'),
+        'birds' => $this->t('Birds'),
+        'branches' => $this->t('Branches'),
+        'deer' => $this->t('Deer'),
+        'reeds' => $this->t('Reeds'),
+        'sea' => $this->t('Sea'),
+        'wind' => $this->t('Wind'),
+      ],
+      '#default_value' => $this->configuration['section_bg_graphics'] ?? 'none',
+      '#description' => $this->t('Choose section background graphics.'),
+      '#weight' => 10,
+    ];
+
+    $form['section_bg_graphics_position'] = [
+      '#type' => 'select',
+      '#multiple' => FALSE,
+      '#title' => $this->t('Section background graphics position'),
+      '#options' => [
+        'right' => $this->t('Right'),
+        'left' => $this->t('Left'),
+      ],
+      '#default_value' => $this->configuration['section_bg_graphics_position'] ?? 'right',
+      '#description' => $this->t('Choose section background graphics position.'),
+      '#weight' => 11,
+    ];
+
     return $form;
   }
 
@@ -76,6 +107,8 @@ class BaseLayout extends MultiWidthLayoutBase {
     $this->configuration['column_spacing_bottom'] = $form_state->getValue('column_spacing_bottom');
     $this->configuration['column_show_graphic_top'] = $form_state->getValue('column_show_graphic_top');
     $this->configuration['column_show_graphic_bottom'] = $form_state->getValue('column_show_graphic_bottom');
+    $this->configuration['section_bg_graphics'] = $form_state->getValue('section_bg_graphics');
+    $this->configuration['section_bg_graphics_position'] = $form_state->getValue('section_bg_graphics_position');
   }
 
   /**
@@ -88,6 +121,8 @@ class BaseLayout extends MultiWidthLayoutBase {
     $configuration['column_spacing_bottom'] = 'medium';
     $configuration['column_show_graphic_top'] = 'medium';
     $configuration['column_show_graphic_bottom'] = 'medium';
+    $configuration['section_bg_graphics'] = 'none';
+    $configuration['section_bg_graphics_position'] = 'right';
     return $configuration;
   }
 

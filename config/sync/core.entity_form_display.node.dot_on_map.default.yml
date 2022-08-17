@@ -11,6 +11,8 @@ dependencies:
     - field.field.node.dot_on_map.field_people_and_places
     - field.field.node.dot_on_map.field_replant_the_planet
     - field.field.node.dot_on_map.field_season
+    - field.field.node.dot_on_map.field_section_bg_graphics
+    - field.field.node.dot_on_map.field_section_bg_graphics_pos
     - field.field.node.dot_on_map.field_subject
     - field.field.node.dot_on_map.field_summary
     - field.field.node.dot_on_map.lat
@@ -258,6 +260,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_section_bg_graphics:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_section_bg_graphics_pos:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_subject:
     type: options_buttons
     weight: 5
@@ -282,7 +296,7 @@ content:
     third_party_settings: {  }
   lon:
     type: string_textfield
-    weight: 10
+    weight: 12
     region: content
     settings:
       size: 60

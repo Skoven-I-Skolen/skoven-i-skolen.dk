@@ -1,0 +1,21 @@
+uuid: 1b5c442e-2c13-4799-98c1-0947a7ef02e4
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_bg_graphics
+    - node.type.dot_on_map
+  module:
+    - options
+id: node.dot_on_map.field_section_bg_graphics
+field_name: field_section_bg_graphics
+entity_type: node
+bundle: dot_on_map
+label: 'Baggrunds grafik'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
