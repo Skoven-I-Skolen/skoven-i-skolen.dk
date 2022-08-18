@@ -17,3 +17,20 @@ Drupal.behaviors.overviewFormFilters = {
     overviewFilters(document.querySelectorAll('.accordion-item__expanadable:not(.loaded)'));
   },
 };
+
+// Mobile modal open close
+const filterOpen = document.querySelector('.js-overview-form__toolbar__filter-button');
+const filterWrapper = document.querySelector('.js-overview-form__search-filters');
+const filterClose = document.querySelector('.js-search-filters-close');
+
+filterOpen.addEventListener('click', (e) => {
+  if (filterWrapper.classList.contains('overview-form__search-filters--active')) {
+    filterWrapper.classList.remove('overview-form__search-filters--active');
+  } else {
+    filterWrapper.classList.add('overview-form__search-filters--active');
+  }
+});
+
+filterClose.addEventListener('click', (e) => {
+  filterWrapper.classList.remove('overview-form__search-filters--active');
+});
