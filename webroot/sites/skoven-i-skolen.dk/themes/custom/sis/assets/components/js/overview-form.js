@@ -1,3 +1,5 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
 function overviewFilters(filterWrappers) {
   if (filterWrappers.length === 0) {
     return;
@@ -28,9 +30,14 @@ filterOpen.addEventListener('click', (e) => {
     filterWrapper.classList.remove('overview-form__search-filters--active');
   } else {
     filterWrapper.classList.add('overview-form__search-filters--active');
+    disableBodyScroll(filterWrapper);
+    filterWrapper.closest('section').classList.add('section--no-z-index');
   }
 });
+console.log(filterWrapper.closest('section'));
 
 filterClose.addEventListener('click', (e) => {
   filterWrapper.classList.remove('overview-form__search-filters--active');
+  enableBodyScroll(filterWrapper);
+  filterWrapper.closest('section').classList.remove('section--no-z-index');
 });
