@@ -10,6 +10,7 @@ dependencies:
     - node.type.blog_post
   module:
     - content_moderation
+    - media_library
     - path
     - text
 id: node.blog_post.default
@@ -32,6 +33,13 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_list_media:
+    type: media_library_widget
+    weight: 13
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
@@ -108,5 +116,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_list_media: true
+hidden: {  }
