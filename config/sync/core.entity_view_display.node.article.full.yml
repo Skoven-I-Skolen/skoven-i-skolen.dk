@@ -71,8 +71,6 @@ third_party_settings:
         - layout_onecol
         - layout_twocol_section
         - layout_threecol_section
-      restricted_categories:
-        - Devel
       blacklisted_blocks:
         'Custom block types':
           - basic
