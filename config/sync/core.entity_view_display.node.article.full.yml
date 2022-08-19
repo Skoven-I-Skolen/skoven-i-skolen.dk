@@ -71,6 +71,12 @@ third_party_settings:
         - layout_onecol
         - layout_twocol_section
         - layout_threecol_section
+      restricted_categories:
+        - Block
+        - Bruger
+        - Cookiebot
+        - Devel
+        - Skoven-i-Skolen
       blacklisted_blocks:
         'Custom block types':
           - basic
@@ -88,12 +94,6 @@ third_party_settings:
         User: {  }
         Webform: {  }
         core: {  }
-      restricted_categories:
-        - Block
-        - Bruger
-        - Cookiebot
-        - Devel
-        - Skoven-i-Skolen
 _core:
   default_config_hash: 7OjcNSYQFZAAnCZrnyJg7utryjfmQoO33tkSTWehRNI
 id: node.article.full
