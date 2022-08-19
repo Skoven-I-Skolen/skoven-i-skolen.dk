@@ -146,8 +146,8 @@ entity-slideshow:
   version: VERSION
   css:
     theme:
-      dist/components/css/components/02-molecules/entity-slideshow.css: {}
       dist/components/css/components/03-organisms/entity-slideshow.css: {}
+      dist/components/js/entity-slideshow.css: {}
   js:
     dist/components/js/entity-slideshow.js: {}
   dependencies:

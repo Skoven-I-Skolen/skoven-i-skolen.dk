@@ -29,16 +29,15 @@
 
 {% set autoplay = content['#block_content'].field_slideshow_autoplay.value == 1 %}
 
-<div{{ attributes.addClass('entity-slideshow-wrapper').addClass('js-entity-slideshow-wrapper').setAttribute('data-autoplay', autoplay ? 'true' : 'false') }}>
+<div{{ attributes.addClass(['entity-slideshow-wrapper', 'js-entity-slideshow-wrapper', 'swiper']).setAttribute('data-autoplay', autoplay ? 'true' : 'false') }}>
   {{ title_prefix }}
   {{ title_suffix }}
-  <ul class="entity-slideshow js-entity-slideshow">
+  <div class="entity-slideshow swiper-wrapper">
     {% for item in items %}
-      <li class="entity-slideshow-slide">
+      <div class="swiper-slide entity-slideshow-slide">
         {{ item }}
-      </li>
+      </div>
     {% endfor %}
-  </ul>
-  <ul class="entity-slideshow-navigation js-entity-slideshow-navigation">
-  </ul>
+  </div>
+  <div class="entity-slideshow-pagination swiper-pagination"></div>
 </div>
