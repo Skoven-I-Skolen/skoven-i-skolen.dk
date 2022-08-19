@@ -73,7 +73,7 @@
   <div class="entity-slideshow__item-inner">
     <a href="{{ url }}" class="entity-slideshow__item-link">
       <div class="entity-slideshow__image">
-        <img src="{{ file_url(node.field_list_media.entity.field_media_image.entity.uri.value) }}">
+        {{ article_image }}
         <div class="entity-slideshow__type">
           {{ node.field_article_type.entity.name.value }}
         </div>
