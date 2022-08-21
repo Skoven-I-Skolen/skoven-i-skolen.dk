@@ -69,10 +69,10 @@ content:
     region: content
   field_list_date:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: news_date
     third_party_settings: {  }
     weight: 7
     region: content
