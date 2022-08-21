@@ -67,3 +67,13 @@ function sis_preprocess_node__article(&$variables) {
     $variables['article_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($node->get('field_article_image')->entity, $image_style);
   }
 }
+
+function sis_preprocess_node__blog_post(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'] ?? NULL;
+  $image_style = 'full_width_16_9';
+
+  if ($node->hasField('field_list_media') && !$node->get('field_list_media')->isEmpty() && !is_null($node->get('field_list_media')->entity)) {
+    $variables['blog_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($node->get('field_list_media')->entity, $image_style);
+  }
+}
