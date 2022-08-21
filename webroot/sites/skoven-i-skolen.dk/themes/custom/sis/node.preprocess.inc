@@ -58,7 +58,7 @@ function sis_preprocess_page(&$variables) {
   }
 }
 
-function sis_preprocess_node__article(&$variables) {
+function sis_preprocess_node__article__slideshow(&$variables) {
   /** @var \Drupal\node\Entity\Node $node */
   $node = $variables['node'] ?? NULL;
   $image_style = 'full_width_16_9';
@@ -68,7 +68,7 @@ function sis_preprocess_node__article(&$variables) {
   }
 }
 
-function sis_preprocess_node__blog_post(&$variables) {
+function sis_preprocess_node__blog_post__slideshow(&$variables) {
   /** @var \Drupal\node\Entity\Node $node */
   $node = $variables['node'] ?? NULL;
   $image_style = 'full_width_16_9';
@@ -78,7 +78,7 @@ function sis_preprocess_node__blog_post(&$variables) {
   }
 }
 
-function sis_preprocess_node__news(&$variables) {
+function sis_preprocess_node__news__slideshow(&$variables) {
   /** @var \Drupal\node\Entity\Node $node */
   $node = $variables['node'] ?? NULL;
   $image_style = 'full_width_16_9';
