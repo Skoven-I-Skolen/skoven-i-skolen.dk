@@ -131,6 +131,10 @@
     padding-left: 25px;
     font-size: var(--base-font-size-extra-small);
 
+    &--no-icon {
+      padding-left: 0;
+    }
+
     .icon {
       position: absolute;
       top: 50%;
