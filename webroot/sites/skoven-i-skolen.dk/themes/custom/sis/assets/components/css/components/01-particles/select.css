@@ -8,16 +8,16 @@
   width: 100%;
   height: 40px;
   padding: 0 40px 0 15px;
-  color: var(--theme-color);
+  color: #333;
   font-size: var(--base-font-size);
   font-family: var(--base-font-family);
   line-height: 1;
   vertical-align: bottom;
-  background-color: var(--theme-background-color);
+  background-color: #fff;
 
   /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
   background-image: none;
-  border: 1px solid var(--theme-input-border-color);
+  border: 1px solid #c0c0c0;
   border-radius: 0;
 
   &:focus {
@@ -49,9 +49,12 @@
     line-height: calc(var(--button-height) * .5);
     text-decoration: none;
     background-color: none;
-    border: 1px solid var(--theme-input-border-dark);
-    border-radius: 30px;
+    border: 1px solid #c0c0c0;
     cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
 
     &--disabled {
       width: 100%;
@@ -71,8 +74,6 @@
     }
 
     &.is-selected {
-      border-radius: 27px 27px 0 0;
-
       .icon {
         transform: rotate(180deg) translateY(50%);
       }
@@ -87,9 +88,8 @@
     min-width: 100%;
     margin-top: -1px;
     overflow: hidden;
-    background-color: var(--color-white);
-    border: 1px solid var(--theme-input-border-dark);
-    border-radius: 0 0 27px 27px;
+    background-color: #fff;
+    border: 1px solid #c0c0c0;
     opacity: 0;
 
     &.expanded {
@@ -105,12 +105,13 @@
       font-size: var(--base-font-size-small);
       line-height: calc(var(--button-height) * .5);
       text-decoration: none;
-      background-color: var(--color-white);
-      border-top: 1px solid var(--theme-input-border-dark);
+      background-color: #fff;
+      border-top: 1px solid #c0c0c0;
       cursor: pointer;
 
       &:hover {
         background-color: var(--color-pink);
+        text-decoration: none;
       }
 
       &.is-active {
