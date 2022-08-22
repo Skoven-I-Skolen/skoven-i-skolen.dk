@@ -7,6 +7,7 @@ dependencies:
     - field.storage.block_content.field_entity_slideshow_items
     - node.type.article
     - node.type.blog_post
+    - node.type.news
 id: block_content.entity_slideshow.field_entity_slideshow_items
 field_name: field_entity_slideshow_items
 entity_type: block_content
@@ -23,6 +24,7 @@ settings:
     target_bundles:
       article: article
       blog_post: blog_post
+      news: news
     sort:
       field: _none
       direction: ASC

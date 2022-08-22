@@ -1,8 +1,9 @@
-uuid: 3877ea5b-dac6-4136-8ed7-c4394494bc68
+uuid: 2dffcc0c-8907-4df1-8efa-109ba260d753
 langcode: da
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.slideshow
     - field.field.node.news.body
     - field.field.node.news.content_hierarchy
     - field.field.node.news.field_description
@@ -38,10 +39,10 @@ third_party_settings:
       whitelisted_blocks: {  }
 _core:
   default_config_hash: EkzZ_188fCJTvfq6ybAbeeuQVb0BFVURkV0KcH-ighw
-id: node.news.default
+id: node.news.slideshow
 targetEntityType: node
 bundle: news
-mode: default
+mode: slideshow
 content:
   field_description:
     type: basic_string
@@ -69,10 +70,10 @@ content:
     region: content
   field_list_date:
     type: datetime_default
-    label: hidden
+    label: above
     settings:
       timezone_override: ''
-      format_type: news_date
+      format_type: medium
     third_party_settings: {  }
     weight: 7
     region: content

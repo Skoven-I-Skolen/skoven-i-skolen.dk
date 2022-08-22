@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\node\Entity\Node;
+
 /**
  * Appetizer layout block preprocess.
  *
@@ -32,7 +34,6 @@ function sis_preprocess_block__inline_block__appetizer(array &$variables) {
   }
 }
 
-
 function sis_preprocess_block__inline_block__button(array &$variables) {
   /** @var \Drupal\block_content\Entity\BlockContent $block_content */
   $block_content = $variables['content']['#block_content'];
@@ -42,3 +43,36 @@ function sis_preprocess_block__inline_block__button(array &$variables) {
   }
 }
 
+/**
+ * Entity slideshow layout block preprocess.
+ *
+ * @param array $variables
+ *   Template variables.
+ */
+function sis_preprocess_block__inline_block__entity_slideshow(array &$variables) {
+  /** @var \Drupal\block_content\Entity\BlockContent $block */
+  $block = $variables['elements']['content']['#block_content'];
+  $nodes = [];
+  $node_ids = [];
+  if ($block->hasField('field_entity_slideshow_items')) {
+    foreach ($block->get('field_entity_slideshow_items') as $value) {
+      $node_ids[] = $value->target_id;
+    }
+    $nodes = Node::loadMultiple($node_ids);
+  }
+
+  if (!empty($nodes)) {
+    $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
+    $rendered_nodes = [];
+    /** @var \Drupal\node\Entity\Node $node */
+    foreach ($nodes as $node) {
+      if ($node->access()) {
+        $rendered_nodes[] = $view_builder->view($node, 'slideshow');
+      }
+    }
+    $variables['items'] = $rendered_nodes;
+  }
+  else {
+    $variables['items'] = [];
+  }
+}

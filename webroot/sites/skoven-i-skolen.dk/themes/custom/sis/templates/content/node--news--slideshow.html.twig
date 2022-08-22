@@ -73,45 +73,23 @@
     <div class="entity-slideshow__item-inner">
       <a href="{{ url }}" class="entity-slideshow__item-link">
         <div class="entity-slideshow__image">
-          {{ article_image }}
-          <div class="entity-slideshow__type">
-            {{ node.field_article_type.entity.name.value }}
+          {{ news_image }}
+          <div class="entity-slideshow__type entity-slideshow__type--news">
+            {{ node.type.entity.label }}
           </div>
         </div>
         <div class="entity-slideshow__content-wrapper">
           <div class="entity-slideshow__content">
-            {% if node.field_class.entity.name.value|length > 0 %}
-              <div class="entity-slideshow__class">
-                {% include '@reusable-component/svg-icon.twig' with {
-                  'attributes': '',
-                  'svgIconName': 'reading'
-                } %}
-                {{ node.field_class.entity.name.value }}
-              </div>
-            {% endif %}
+            <div class="entity-slideshow__class entity-slideshow__class--no-icon">
+              {{ node.field_list_date.value|date('U')|format_date("news_date") }}
+            </div>
             <div class="entity-slideshow__title">
               {{ node.label }}
             </div>
             <div class="entity-slideshow__description">
-              {{ node.field_description.value }}
+              {{ node.body.summary }}
             </div>
           </div>
-          {% if subject_items|length > 0 %}
-            <div class="entity-slideshow__subject">
-              {% if subject_items|length > 2 %}
-                {% for item in subject_items|slice(0, 2) %}
-                  {% if item.entity.tid.value %}
-                    <a class="entity-slideshow__subject-item" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{ item.entity.name.value }}</a>
-                  {% endif %}
-                {% endfor %}
-                <div class="entity-slideshow__subject-item--more-text">
-                  + {{ subject_items|length - 2 }} {{ 'subjects'|t }}
-                </div>
-              {% else %}
-                <a class="entity-slideshow__subject-item" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term':  node.field_subject.entity.tid.value}) }}">{{  node.field_subject.entity.name.value }}</a>
-              {% endif %}
-            </div>
-          {% endif %}
         </div>
       </a>
     </div>
