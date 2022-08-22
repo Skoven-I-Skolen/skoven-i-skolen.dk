@@ -88,7 +88,7 @@ content:
     type: entity_reference_entity_view
     label: above
     settings:
-      view_mode: default
+      view_mode: entity_slideshow
       link: false
     third_party_settings: {  }
     weight: 6
