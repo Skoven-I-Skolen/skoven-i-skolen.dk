@@ -13,6 +13,7 @@ dependencies:
     - field.field.paragraph.inline_hero.field_title
     - paragraphs.paragraphs_type.inline_hero
   module:
+    - options
     - styles
     - text
 _core:
@@ -27,9 +28,9 @@ content:
     label: hidden
     settings:
       view_mode: default
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   field_cta:
     type: styles_link_target
@@ -41,7 +42,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_dynamic_height:
     type: boolean
@@ -51,7 +52,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 7
     region: content
   field_overlay:
     type: boolean
@@ -61,23 +62,36 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_text:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 5
+    region: content
+  field_text_color:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_text_position:
     type: styles_class
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 6
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
-  field_text_color: true
-  field_title: true
   search_api_excerpt: true
