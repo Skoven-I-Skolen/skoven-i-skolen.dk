@@ -27,6 +27,8 @@ dependencies:
     - field.field.node.article.field_location
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_season
+    - field.field.node.article.field_section_bg_graphics
+    - field.field.node.article.field_section_bg_graphics_pos
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
@@ -60,7 +62,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: full_width_16_9
+      view_mode: entity_slideshow
       link: false
     third_party_settings: {  }
     weight: 1

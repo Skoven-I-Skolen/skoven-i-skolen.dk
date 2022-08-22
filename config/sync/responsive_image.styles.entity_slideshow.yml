@@ -1,0 +1,60 @@
+uuid: c2da2c77-b40d-4bf0-a5c0-2dc8e4717da8
+langcode: da
+status: true
+dependencies:
+  config:
+    - image.style.entity_slideshow_lg
+    - image.style.entity_slideshow_md
+    - image.style.entity_slideshow_sm
+    - image.style.entity_slideshow_xl
+    - image.style.entity_slideshow_xs
+    - image.style.entity_slideshow_xs_x2
+    - image.style.entity_slideshow_xxs
+    - image.style.entity_slideshow_xxs_x2
+  theme:
+    - sis
+id: entity_slideshow
+label: 'Entity slideshow'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: entity_slideshow_xl
+    breakpoint_id: sis.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: entity_slideshow_lg
+    breakpoint_id: sis.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: entity_slideshow_md
+    breakpoint_id: sis.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: entity_slideshow_sm
+    breakpoint_id: sis.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: entity_slideshow_xs
+    breakpoint_id: sis.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: entity_slideshow_xs_x2
+    breakpoint_id: sis.xs
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: entity_slideshow_xxs
+    breakpoint_id: sis.xxs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: entity_slideshow_xxs_x2
+    breakpoint_id: sis.xxs
+    multiplier: 2x
+breakpoint_group: sis
+fallback_image_style: entity_slideshow_xxs

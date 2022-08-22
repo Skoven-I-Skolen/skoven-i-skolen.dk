@@ -1,0 +1,10 @@
+uuid: a9fe736f-d907-4a67-8f0d-e7687b62ccd4
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+id: media.entity_slideshow
+label: 'Entity slideshow'
+targetEntityType: media
+cache: true

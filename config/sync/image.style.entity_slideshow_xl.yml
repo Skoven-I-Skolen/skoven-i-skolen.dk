@@ -1,0 +1,18 @@
+uuid: ad1943ca-f7a5-4cd4-9a64-e5957e88f931
+langcode: da
+status: true
+dependencies:
+  module:
+    - focal_point
+name: entity_slideshow_xl
+label: 'Entity slideshow (XL)'
+effects:
+  68ee20e9-1ab8-4f7d-a354-8781650d235b:
+    uuid: 68ee20e9-1ab8-4f7d-a354-8781650d235b
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1524
+      height: 572
+      crop_type: focal_point
+pipeline: __default__
