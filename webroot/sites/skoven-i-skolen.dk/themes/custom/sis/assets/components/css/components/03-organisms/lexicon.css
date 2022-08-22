@@ -154,5 +154,19 @@
       }
     }
   }
+
+  .overview-form {
+    &-contents {
+      grid-template-columns: 1fr;
+
+      @media (--viewport-ms-min) {
+        grid-template-columns: 1fr;
+      }
+
+      @media (--viewport-md-min) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 }
 

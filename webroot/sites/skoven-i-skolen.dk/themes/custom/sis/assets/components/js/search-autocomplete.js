@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     resultItem: {
       element: (item, data) => {
+        console.log(data);
         const element = item;
         const type = data.value.data.field_article_type_label.value;
         element.innerHTML = `

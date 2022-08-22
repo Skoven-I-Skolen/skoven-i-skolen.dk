@@ -28,10 +28,17 @@
 
   &-buttons {
     margin-top: var(--container-spacing);
+    border-bottom: 1px solid var(--color-purple);
+    padding-bottom: 10px;
 
     .hide {
       display: none;
     }
+  }
+
+  &-button {
+    padding: 0;
+    font-family: var(--base-font-family);
   }
 }
 

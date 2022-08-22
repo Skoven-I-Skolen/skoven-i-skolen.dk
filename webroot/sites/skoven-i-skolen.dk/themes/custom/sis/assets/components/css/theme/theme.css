@@ -96,12 +96,25 @@
 
   .pager {
     &__item {
-      background-color: var(--theme-color);
-      box-shadow: 0 2px 0 0 var(--theme-color);
+      border: 1px solid var(--theme-color);
+
+      &--ellipsis,
+      &--previous,
+      &--next {
+        border: none;
+      }
+
+      .is-ative {
+        a {
+          color: var(--color-white);
+        }
+      }
     }
 
     a {
       color: var(--theme-link-color);
     }
+
+
   }
 }

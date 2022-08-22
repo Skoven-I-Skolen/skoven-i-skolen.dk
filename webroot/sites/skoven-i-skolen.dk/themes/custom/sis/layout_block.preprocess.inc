@@ -31,3 +31,14 @@ function sis_preprocess_block__inline_block__appetizer(array &$variables) {
     $variables['media'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($block->get('field_appetizer_image')->entity, $image_style);
   }
 }
+
+
+function sis_preprocess_block__inline_block__button(array &$variables) {
+  /** @var \Drupal\block_content\Entity\BlockContent $block_content */
+  $block_content = $variables['content']['#block_content'];
+
+  if(!$block_content->get('field_button_alignment')->isEmpty()) {
+    $variables['attributes']['class'][] = 'button-alignment--' .$block_content->get('field_button_alignment')->value;
+  }
+}
+

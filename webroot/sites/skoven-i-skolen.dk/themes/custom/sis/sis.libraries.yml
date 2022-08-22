@@ -496,3 +496,9 @@ term-page:
   css:
     theme:
       dist/components/css/components/03-organisms/term-page.css: {}
+
+button-block:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/button-block.css: {}
