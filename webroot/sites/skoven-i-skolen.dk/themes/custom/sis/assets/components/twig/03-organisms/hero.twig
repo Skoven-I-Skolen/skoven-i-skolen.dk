@@ -23,8 +23,8 @@
     <div class="row">
       <div class="{{ hero_position }}">
         <div class="hero__content">
-          {% if title %}
-            <h1>{{ title }}</h1>
+          {% if content.field_title %}
+            <div class="hero__content-title hero__title">{{ content.field_title }}</div>
           {% endif %}
           {% if text %}
             <div class="hero__content-text">

@@ -34,7 +34,6 @@ filterOpen.addEventListener('click', (e) => {
     filterWrapper.closest('section').classList.add('section--no-z-index');
   }
 });
-console.log(filterWrapper.closest('section'));
 
 filterClose.addEventListener('click', (e) => {
   filterWrapper.classList.remove('overview-form__search-filters--active');

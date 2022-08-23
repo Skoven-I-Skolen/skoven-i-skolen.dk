@@ -5,41 +5,47 @@ function dropdownSelect(wrapper) {
       const dropdownTrigger = element.firstElementChild;
       const dropdownMenu = element.lastElementChild;
       const selectList = element.previousElementSibling;
-      element.classList.add('loaded');
+      const selectListParent = selectList.parentNode.parentNode;
 
-      if (dropdownTrigger) {
-        dropdownTrigger.addEventListener('click', (e) => {
-          e.preventDefault();
-          if (dropdownTrigger.classList.contains('is-selected')) {
-            dropdownTrigger.classList.remove('is-selected');
-            dropdownMenu.classList.remove('expanded');
-          } else {
-            dropdownTrigger.classList.add('is-selected');
-            dropdownMenu.classList.add('expanded');
-          }
-        });
-      }
+      if (selectListParent.classList.contains('layout-builder-configure-section')) {
+        element.remove();
+      } else {
+        element.classList.add('loaded');
 
-      if (dropdownMenu) {
-        for (let j = 0; j < dropdownMenu.children.length; j += 1) {
-          dropdownMenu.children[j].addEventListener('click', (e) => {
+        if (dropdownTrigger) {
+          dropdownTrigger.addEventListener('click', (e) => {
             e.preventDefault();
-            for (let k = 0; k < selectList.children.length; k += 1) {
-              if (selectList.children[k].value === dropdownMenu.children[j].dataset.id) {
-                selectList.options[k].selected = true;
-                if ('createEvent' in document) {
-                  const evt = document.createEvent('HTMLEvents');
-                  evt.initEvent('change', false, true);
-                  selectList.dispatchEvent(evt);
-                } else {
-                  selectList.fireEvent('onchange');
+            if (dropdownTrigger.classList.contains('is-selected')) {
+              dropdownTrigger.classList.remove('is-selected');
+              dropdownMenu.classList.remove('expanded');
+            } else {
+              dropdownTrigger.classList.add('is-selected');
+              dropdownMenu.classList.add('expanded');
+            }
+          });
+        }
+
+        if (dropdownMenu) {
+          for (let j = 0; j < dropdownMenu.children.length; j += 1) {
+            dropdownMenu.children[j].addEventListener('click', (e) => {
+              e.preventDefault();
+              for (let k = 0; k < selectList.children.length; k += 1) {
+                if (selectList.children[k].value === dropdownMenu.children[j].dataset.id) {
+                  selectList.options[k].selected = true;
+                  if ('createEvent' in document) {
+                    const evt = document.createEvent('HTMLEvents');
+                    evt.initEvent('change', false, true);
+                    selectList.dispatchEvent(evt);
+                  } else {
+                    selectList.fireEvent('onchange');
+                  }
                 }
               }
-            }
-            dropdownTrigger.classList.remove('is-selected');
-            dropdownMenu.classList.remove('expanded');
-            dropdownTrigger.querySelector('span').innerText = dropdownMenu.children[j].text;
-          });
+              dropdownTrigger.classList.remove('is-selected');
+              dropdownMenu.classList.remove('expanded');
+              dropdownTrigger.querySelector('span').innerText = dropdownMenu.children[j].text;
+            });
+          }
         }
       }
     }
