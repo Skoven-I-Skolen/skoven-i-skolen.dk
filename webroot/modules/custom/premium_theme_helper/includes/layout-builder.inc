@@ -153,5 +153,24 @@ function premium_theme_helper_form_alter(array &$form, FormStateInterface $form_
     'layout_builder_update_block',
   ])) {
     $form['#attached']['library'][] = 'premium_core/dialog';
+    $form['settings']['block_form']['#process'][] = '_inline_block_form_alter';
   }
+}
+
+function _inline_block_form_alter(array $form, FormStateInterface $form_state) {
+  if (isset($form['field_entity_type'])) {
+    $form['field_entity_slideshow_term']['#states'] = [
+      'visible' => [
+        ':input[name="settings[block_form][field_entity_type]"]' => ['value' => 'article']
+      ]
+    ];
+
+    $form['field_entity_slideshow_items']['#states'] = [
+      'visible' => [
+        ':input[name="settings[block_form][field_entity_type]"]' => ['value' => '_none']
+      ]
+    ];
+  }
+
+  return $form;
 }

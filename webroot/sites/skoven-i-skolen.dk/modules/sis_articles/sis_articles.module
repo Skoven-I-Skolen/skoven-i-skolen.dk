@@ -4,7 +4,6 @@ use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Render\Element;
 
 \Drupal::moduleHandler()->loadInclude('sis_articles', 'inc', 'node.preprocess');
-\Drupal::moduleHandler()->loadInclude('sis_articles', 'inc', 'block.preprocess');
 \Drupal::moduleHandler()->loadInclude('sis_articles', 'inc', 'user.preprocess');
 
 function sis_articles_theme() {

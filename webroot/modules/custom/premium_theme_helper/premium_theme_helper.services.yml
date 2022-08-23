@@ -4,3 +4,8 @@ services:
     arguments: ['@router.admin_context', '@content_hierarchy.storage', '@logger.factory']
     tags:
       - { name: breadcrumb_builder, priority: 1005 }
+  premium_theme_helper.entity_slideshow_repository:
+    class: 'Drupal\premium_theme_helper\Repository\EntitySlideshowRepository'
+  premium_theme_helper.content_delivery_service:
+    class: Drupal\premium_theme_helper\Services\EntitySlideshowContentDeliveryService
+    arguments: ['@premium_theme_helper.entity_slideshow_repository', '@sis_articles.article_repository', '@entity_type.manager']
