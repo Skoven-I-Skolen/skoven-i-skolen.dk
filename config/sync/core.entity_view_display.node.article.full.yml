@@ -106,7 +106,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_article_image:
     type: entity_reference_entity_view
@@ -114,6 +114,13 @@ content:
     settings:
       view_mode: full_width_16_9
       link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
@@ -138,7 +145,6 @@ hidden:
   field_colophon_author: true
   field_colophon_editor: true
   field_colophon_photographer: true
-  field_description: true
   field_equipment: true
   field_factboxes: true
   field_files: true

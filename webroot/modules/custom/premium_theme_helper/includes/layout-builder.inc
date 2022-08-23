@@ -158,16 +158,16 @@ function premium_theme_helper_form_alter(array &$form, FormStateInterface $form_
 }
 
 function _inline_block_form_alter(array $form, FormStateInterface $form_state) {
-  if (isset($form['field_entity_type'])) {
+  if (isset($form['field_entity_bundle'])) {
     $form['field_entity_slideshow_term']['#states'] = [
       'visible' => [
-        ':input[name="settings[block_form][field_entity_type]"]' => ['value' => 'article']
+        ':input[name="settings[block_form][field_entity_bundle]"]' => ['value' => 'article']
       ]
     ];
 
     $form['field_entity_slideshow_items']['#states'] = [
       'visible' => [
-        ':input[name="settings[block_form][field_entity_type]"]' => ['value' => '_none']
+        ':input[name="settings[block_form][field_entity_bundle]"]' => ['value' => '_none']
       ]
     ];
   }

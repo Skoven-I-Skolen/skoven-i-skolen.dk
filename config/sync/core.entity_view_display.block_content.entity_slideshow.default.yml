@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.entity_slideshow
+    - field.field.block_content.entity_slideshow.field_entity_bundle
     - field.field.block_content.entity_slideshow.field_entity_slideshow_items
     - field.field.block_content.entity_slideshow.field_entity_slideshow_term
     - field.field.block_content.entity_slideshow.field_slideshow_autoplay
@@ -12,6 +13,14 @@ targetEntityType: block_content
 bundle: entity_slideshow
 mode: default
 content:
+  field_entity_bundle:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_entity_slideshow_items:
     type: entity_reference_entity_view
     label: hidden

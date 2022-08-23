@@ -99,7 +99,10 @@
             } %}
           {% endif %}
           <div class="article-page__description">
-            {{ content.body }}
+            {{ content.field_description }}
+          </div>
+          <div class="article-page__image">
+            {{ content.field_article_image }}
           </div>
           {{ content|without(['field_list_date', 'field_header', 'title','field_article_image']) }}
         </div>

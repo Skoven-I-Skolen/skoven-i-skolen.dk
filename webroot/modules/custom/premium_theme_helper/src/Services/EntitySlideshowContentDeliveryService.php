@@ -46,7 +46,7 @@ class EntitySlideshowContentDeliveryService {
   function getEntitiesForSlideshow(BlockContent $blockContent) {
     $fields = [];
     $entityIds = [];
-    $bundle = $blockContent->get('field_entity_type')->target_id;
+    $bundle = $blockContent->get('field_entity_bundle')->target_id;
 
     // If not bundle has selected, its possible individual entities (nodes)
     if ($bundle === '_none' && !$blockContent->get('field_entity_slideshow_items')

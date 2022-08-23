@@ -26,14 +26,16 @@ third_party_settings:
           context_mapping: {  }
           column_widths: ''
           color_theme: {  }
-          column_spacing_top: medium
-          column_spacing_bottom: medium
+          column_spacing_top: none
+          column_spacing_bottom: none
           column_show_graphic_top: null
           column_show_graphic_bottom: null
+          section_bg_graphics: none
+          section_bg_graphics_position: right
           column_width: normal
         components:
-          fb8737f2-eec6-4124-88cc-5c73bef202b9:
-            uuid: fb8737f2-eec6-4124-88cc-5c73bef202b9
+          fc9b2a87-296e-482f-a062-8cb7fa8a8803:
+            uuid: fc9b2a87-296e-482f-a062-8cb7fa8a8803
             region: content
             configuration:
               id: 'inline_block:entity_slideshow'
@@ -42,7 +44,7 @@ third_party_settings:
               provider: layout_builder
               view_mode: full
               context_mapping: {  }
-              block_revision_id: 72
+              block_revision_id: 59
               block_serialized: null
             weight: 0
             additional: {  }
@@ -54,42 +56,16 @@ third_party_settings:
           context_mapping: {  }
           column_widths: ''
           color_theme: {  }
-          column_spacing_top: medium
+          column_spacing_top: small
           column_spacing_bottom: medium
           column_show_graphic_top: null
           column_show_graphic_bottom: null
+          section_bg_graphics: none
+          section_bg_graphics_position: right
           column_width: normal
         components:
-          520504c6-53ce-41ea-b594-c9f0ae94885d:
-            uuid: 520504c6-53ce-41ea-b594-c9f0ae94885d
-            region: content
-            configuration:
-              id: 'field_block:taxonomy_term:article_types:description'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-          column_widths: null
-          color_theme: none
-          column_spacing_top: medium
-          column_spacing_bottom: medium
-          column_show_graphic_top: medium
-          column_show_graphic_bottom: medium
-          column_width: normal
-        components:
-          151b447e-d0f4-411f-bcb2-8c6a68e54cd4:
-            uuid: 151b447e-d0f4-411f-bcb2-8c6a68e54cd4
+          59aee05a-7e67-4a36-b2af-9ef7b9071bc7:
+            uuid: 59aee05a-7e67-4a36-b2af-9ef7b9071bc7
             region: content
             configuration:
               id: 'field_block:taxonomy_term:article_types:field_overview'

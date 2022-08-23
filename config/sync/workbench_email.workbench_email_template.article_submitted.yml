@@ -7,6 +7,7 @@ dependencies:
     - user.role.webmaster
 id: article_submitted
 label: 'Artikel indsendt'
+format: null
 subject: 'Ny artikel: [node:title] '
 recipient_types:
   roles_with_access:
