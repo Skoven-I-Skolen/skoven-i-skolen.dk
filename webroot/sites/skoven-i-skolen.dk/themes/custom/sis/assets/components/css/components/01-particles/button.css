@@ -12,7 +12,7 @@ a.button {
   align-items: center;
   justify-content: center;
   min-height: 55px;
-  padding: 0 55px;
+  padding: 0 40px;
   overflow: hidden;
   color: var(--theme-button-color);
   font-weight: 800;

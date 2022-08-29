@@ -57,9 +57,9 @@
   .input,
   .textarea,
   .select {
-    color: var(--theme-color);
-    background-color: var(--theme-background-color);
-    border-color: var(--theme-input-border);
+    color: var(--theme-background-color);
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
 
     &:focus {
       border-color: var(--theme-color);
