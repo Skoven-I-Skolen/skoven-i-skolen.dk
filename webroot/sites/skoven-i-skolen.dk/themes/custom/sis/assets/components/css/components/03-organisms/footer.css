@@ -65,6 +65,12 @@
     }
   }
 
+  form.newsletter-form {
+    .field-item {
+      margin-bottom: 12px;
+    }
+  }
+
   &__bottom {
     position: relative;
     padding-top: 24px;

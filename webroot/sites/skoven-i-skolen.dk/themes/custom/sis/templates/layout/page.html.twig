@@ -140,6 +140,26 @@
               {{ almanac }}
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
+              <h4>Tilmeld dig nyhedsbrevet</h4>
+              <form action="https://np-skjoldundernes-land.uxmail.io/handlers/post/" method="post" target="_blank" class="newsletter-form">
+                <input type="hidden" name="optin_scheme" value="single" />
+                <input type="hidden" name="action" value="subscribe" />
+                <input type="hidden" name="lists" value="70677" />
+                <div class="field-items">
+                  <div class="field-item field-name">
+                    <input type="text" name="data_Navn" placeholder="Navn" class="input" required />
+                  </div>
+                  <div class="field-item field-email">
+                    <input type="text" name="email_address" placeholder="E-mail adresse" class="input" required />
+                  </div>
+                  <div class="field-item field-gdpr">
+                    <label><input type="checkbox" value="gdpr" required /> Jeg accepterer hermed Skoven i Skolens <a href="" target="_blank">Regler og Vilkår</a></label>
+                  </div>
+                  <div class="field-item">
+                    <input type="submit" value="Tilmeld" class="button" />
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
