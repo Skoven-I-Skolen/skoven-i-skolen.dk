@@ -116,6 +116,7 @@ module:
   sis_overview: 0
   sis_relewise: 0
   sis_season_wheel: 0
+  smtp: 0
   status_feed: 0
   styles: 0
   swiftmailer: 0

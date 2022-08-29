@@ -81,6 +81,7 @@
         "drupal/search_api_exclude_entity": "^1.0",
         "drupal/search_api_page": "^1.0@beta",
         "drupal/simple_sitemap": "^3.0",
+        "drupal/smtp": "^1.1",
         "drupal/swiftmailer": "^2.2",
         "drupal/taxonomy_machine_name": "^1.0@beta",
         "drupal/view_unpublished": "^1.0",
