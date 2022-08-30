@@ -1,0 +1,13 @@
+uuid: 3b8dcffb-5f8a-4264-80cd-b86219090d55
+langcode: da
+status: true
+dependencies:
+  config:
+    - oembed_providers.provider.twentythree
+id: sis_custom
+label: 'SiS Custom'
+description: 'Videoer fra TwentyThree, Youtube og Vimeo'
+providers:
+  - TwentyThree
+  - Vimeo
+  - YouTube

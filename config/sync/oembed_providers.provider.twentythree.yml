@@ -1,0 +1,16 @@
+uuid: 743f8d74-f37c-47a6-bfb6-49a6e2c9624a
+langcode: da
+status: true
+dependencies: {  }
+id: twentythree
+label: TwentyThree
+provider_url: 'https://video.twentythree.com'
+endpoints:
+  -
+    schemes:
+      - 'https://video.twentythree.com'
+    url: 'https://video.twentythree.com/oembed'
+    discovery: true
+    formats:
+      json: true
+      xml: true
