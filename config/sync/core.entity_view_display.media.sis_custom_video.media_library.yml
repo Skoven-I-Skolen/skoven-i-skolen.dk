@@ -1,0 +1,33 @@
+uuid: 4319bce9-396e-4db3-a3e2-ff1f609e2ffe
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.sis_custom_video.field_media_oembed_sis_custom
+    - image.style.medium
+    - media.type.sis_custom_video
+  module:
+    - image
+id: media.sis_custom_video.media_library
+targetEntityType: media
+bundle: sis_custom_video
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_oembed_sis_custom: true
+  langcode: true
+  name: true
+  uid: true

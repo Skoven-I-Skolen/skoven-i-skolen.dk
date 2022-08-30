@@ -66,6 +66,7 @@
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",
         "drupal/noreferrer": "^1.0",
+        "drupal/oembed_providers": "^2.1",
         "drupal/paragraphs": "^1.0",
         "drupal/paragraphs_asymmetric_translation_widgets": "^1.0@beta",
         "drupal/pathauto": "1.9.0 as 1.10.0",
@@ -193,7 +194,8 @@
                 "(#2999491) Allow creation of reuseable inline blocks": "https://www.drupal.org/files/issues/2020-05-21/2999491--reusable-title-display--49.patch",
                 "(#3080606) Reorder Layout Builder sections": "https://www.drupal.org/files/issues/2020-06-18/3080606-reorder-layout-sections-43.patch",
                 "(#2985882) Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch",
-                "(#2780839) Optimize migration of specific source IDs for SQL sources": "https://www.drupal.org/files/issues/2022-04-25/2780839-9.4.x-optimize-migrate-source-filter-53.patch"
+                "(#2780839) Optimize migration of specific source IDs for SQL sources": "https://www.drupal.org/files/issues/2022-04-25/2780839-9.4.x-optimize-migrate-source-filter-53.patch",
+                "(#3278959) oEmbed resource version as float throws exception": "https://www.drupal.org/files/issues/2022-08-30/media-float-version-3278959-8.patch"
             },
             "drupal/paragraphs": {
                 "(#2901390) Integrity constraint violation: 1048 Column 'langcode' cannot be null": "https://www.drupal.org/files/issues/2020-06-25/paragraphs-2901390-51.patch"

@@ -1,0 +1,11 @@
+uuid: feefebf2-96fb-4969-9499-0c3a62d5608e
+langcode: da
+status: true
+dependencies:
+  config:
+    - media.type.sis_custom_video
+id: media.sis_custom_video
+target_entity_type_id: media
+target_bundle: sis_custom_video
+default_langcode: site_default
+language_alterable: false

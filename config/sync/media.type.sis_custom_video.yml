@@ -1,0 +1,22 @@
+uuid: 51124761-51f9-473e-a5e0-916924b8d806
+langcode: da
+status: true
+dependencies:
+  config:
+    - oembed_providers.bucket.sis_custom
+  module:
+    - oembed_providers
+id: sis_custom_video
+label: 'TwentyThree, Youtube, Vimeo'
+description: 'Videoer fra TwentyThree, Youtube og Vimeo.'
+source: 'oembed:sis_custom'
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_oembed_sis_custom
+  thumbnails_directory: 'public://oembed_thumbnails/[date:custom:Y-m]'
+  providers:
+    - TwentyThree
+    - Vimeo
+    - YouTube
+field_map: {  }
