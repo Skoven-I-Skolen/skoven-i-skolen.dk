@@ -67,3 +67,27 @@ atoms:
     weight: 3
     default:
       da: ''
+
+  footer-col4-text:
+    type: textfield
+    title: Nyhedsbrev GDPR tekst
+    description: ''
+    category: Page layout
+    group: Footer
+    subgroup: Column 4
+    weight: 6
+    default:
+      da: ''
+
+  footer-col4-link:
+    type: link
+    title: Nyhedsbrev GDPR link
+    description: ''
+    category: Page layout
+    group: Footer
+    subgroup: Column 4
+    weight: 7
+    options:
+      external: FALSE
+    default:
+      da: ''

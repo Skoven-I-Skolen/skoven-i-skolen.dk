@@ -68,6 +68,47 @@
   form.newsletter-form {
     .field-item {
       margin-bottom: 12px;
+
+      &.field-gdpr {
+        input[type="checkbox"] {
+         display: none;
+        }
+
+        label {
+          position: relative;
+          display: block;
+          padding-left: 35px;
+          cursor: pointer;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 25px;
+            height: 25px;
+            background: var(--color-white);
+            border-radius: 4px;
+            content: "";
+          }
+
+          & span {
+            position: absolute;
+            top: 6px;
+            left: 3px;
+            display: none;
+            width: 19px;
+            height: 10px;
+            border-bottom: 3px solid var(--color-purple);
+            border-left: 3px solid var(--color-purple);
+            transform: rotate(-45deg) scale(1);
+            content: "";
+          }
+        }
+
+        input[type="checkbox"]:checked + span {
+          display: block;
+        }
+      }
     }
   }
 
