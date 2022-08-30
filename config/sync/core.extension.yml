@@ -85,6 +85,7 @@ module:
   mysql: 0
   node: 0
   noreferrer: 0
+  oembed_providers: 0
   options: 0
   page_cache: 0
   paragraphs_asymmetric_translation_widgets: 0
