@@ -6,7 +6,7 @@ dependencies:
     - block_content.type.article_form
     - field.field.block_content.article_form.field_articles_form
   module:
-    - premium_articles
+    - entity_overview
 _core:
   default_config_hash: EKUJek_bjvzk_qfS39BkSKMXeT5sF5rorCC1Ddf67AI
 id: block_content.article_form.default
@@ -15,7 +15,7 @@ bundle: article_form
 mode: default
 content:
   field_articles_form:
-    type: article_filter_widget
+    type: overview_filter_widget
     weight: 0
     region: content
     settings: {  }

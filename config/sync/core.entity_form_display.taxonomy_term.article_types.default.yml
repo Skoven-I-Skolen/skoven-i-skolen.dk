@@ -10,7 +10,7 @@ dependencies:
     - taxonomy.vocabulary.article_types
   module:
     - path
-    - premium_articles
+    - entity_overview
     - text
 _core:
   default_config_hash: TVYAGctAu7bmQ6SO7VhW1jRQlLtsTH0BbvuXlI3S-dE
@@ -36,7 +36,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_overview:
-    type: article_filter_widget
+    type: overview_filter_widget
     weight: 4
     region: content
     settings: {  }

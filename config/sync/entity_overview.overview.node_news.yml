@@ -1,0 +1,13 @@
+uuid: 19ab264a-7015-4287-99d9-3248866de98c
+langcode: da
+status: true
+dependencies: {  }
+id: node_news
+label: Nyhed
+entity_bundles:
+  node:
+    - news
+fields: {  }
+engine_id: relewise
+sort_field: created
+show_total: ''

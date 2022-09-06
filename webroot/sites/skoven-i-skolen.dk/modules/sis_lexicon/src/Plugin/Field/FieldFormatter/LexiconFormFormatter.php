@@ -2,6 +2,7 @@
 namespace Drupal\sis_lexicon\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\entity_overview\OverviewFilter;
 use Drupal\entity_overview\Plugin\Field\FieldFormatter\OverviewFormFormatter;
 use Drupal\premium_articles\Plugin\Field\FieldFormatter\ArticleListFormatter;
 
@@ -25,10 +26,15 @@ class LexiconFormFormatter extends OverviewFormFormatter {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      $options = $item->getValue();
-      $options['entity_bundle'] = $items->getSetting('entity_bundle');
-      $options['view_mode'] = $this->getSetting('view_mode');
-      $elements[$delta] = \Drupal::formBuilder()->getForm('Drupal\sis_lexicon\Form\LexiconOverviewForm', $options);
+      $overview_id = $items->getSetting('overview');
+      if (empty($overview_id)) {
+        $entity_bundle = $items->getSetting('entity_bundle');
+        $overview_id = str_replace('node.', '', $entity_bundle);
+      }
+      $filter = new OverviewFilter($overview_id, $item->getValue());
+      $filter->setViewMode($this->getSetting('view_mode'));
+
+      $elements[$delta] = \Drupal::formBuilder()->getForm('Drupal\sis_lexicon\Form\LexiconOverviewForm', $filter);
     }
 
     return $elements;

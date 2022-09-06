@@ -2,7 +2,7 @@
 
 use Drupal\Core\Template\Attribute;
 
-module_load_include('inc', 'sis_overview', 'preprocess');
+\Drupal::moduleHandler()->loadInclude('sis_overview', 'inc', 'preprocess');
 
 /**
  * Implements hook_locale_translation_projects_alter().

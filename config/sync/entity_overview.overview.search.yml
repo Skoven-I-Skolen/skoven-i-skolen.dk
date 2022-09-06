@@ -1,0 +1,21 @@
+uuid: 40fe2c18-0546-4391-b21d-a535a11c4b45
+langcode: da
+status: true
+dependencies: {  }
+id: search
+label: Søgning
+entity_bundles:
+  node:
+    - article
+  profile:
+    - organization
+fields:
+  text: textfield
+  field_article_type: checkboxes
+  field_class: checkboxes
+  field_location: checkboxes
+  field_season: checkboxes
+  field_subject: checkboxes
+engine_id: relewise
+sort_field: created
+show_total: results

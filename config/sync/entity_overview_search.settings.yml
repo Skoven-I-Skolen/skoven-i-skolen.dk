@@ -1,0 +1,24 @@
+overview: search
+filter:
+  overview: search
+  fields:
+    text: ''
+    field_article_type: {  }
+    field_class: {  }
+    field_location: {  }
+    field_season: {  }
+    field_subject: {  }
+  facets:
+    - sort
+    - text
+    - field_article_type
+    - field_class
+    - field_location
+    - field_season
+    - field_subject
+  sort: newest
+  count: 4
+  pagination: false
+  page: 0
+  show_total: results
+  view_mode: list

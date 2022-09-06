@@ -6,6 +6,7 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\entity_overview\Form\OverviewFilterForm;
+use Drupal\entity_overview\OverviewFilter;
 use Drupal\entity_overview\OverviewManager;
 use Drupal\entity_overview\Services\OverviewFormStateService;
 use Drupal\node\Entity\Node;
@@ -47,8 +48,8 @@ class LexiconOverviewForm extends OverviewFilterForm {
   }
 
 
-  public function buildForm(array $form, FormStateInterface $form_state, $options = []) {
-    $form = parent::buildForm($form, $form_state, $options);
+  public function buildForm(array $form, FormStateInterface $form_state, OverviewFilter $filter = NULL) {
+    $form = parent::buildForm($form, $form_state, $filter);
 
     $form['#attributes'] = [
       'onsubmit' => 'return false',
@@ -129,11 +130,9 @@ class LexiconOverviewForm extends OverviewFilterForm {
   }
 
   /**
-   * @param array $content
-   * @param Node[] $nodes
-   * @param array $options
+   * @inheritDoc
    */
-  protected function buildEntitiesInContent(array &$content, array $entities, array $options) {
+  protected function buildEntitiesInContent(array &$content, array $entities, OverviewFilter $filter) {
     $content['content']['articles'] = $this->getContentDelivery()
       ->getArticles('A', self::DEFAULT_LIMIT);
     $content['content']['articles']['#theme'] = 'lexicon';
@@ -146,7 +145,7 @@ class LexiconOverviewForm extends OverviewFilterForm {
       return $this->lexiconContentDelivery;
     }
 
-    return \Drupal::service('sis_lexicon.content_delivery');
+    return $this->lexiconContentDelivery = \Drupal::service('sis_lexicon.content_delivery');
   }
 
 }

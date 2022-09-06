@@ -45,7 +45,7 @@
             <input {{ create_attribute().addClass('input')
               .setAttribute('type', 'search').setAttribute('aria-label', 'Search'|t).setAttribute('required', 'required')
               .setAttribute('placeholder', 'Search the entire site'|t)
-              .setAttribute('name', 'term')
+              .setAttribute('name', 'text')
               .setAttribute('id', 'js-header-search-input') }}>
             <button {{ create_attribute().setAttribute('type', 'submit').addClass('header-search__submit') }}>
               {% include '@reusable-component/svg-icon.twig' with {

@@ -1,7 +1,0 @@
-sis_relewise.search:
-  path: '/search'
-  defaults:
-    _form: '\Drupal\sis_relewise\Form\SearchPageForm'
-    _title: 'Search'
-  requirements:
-    _access: 'TRUE'

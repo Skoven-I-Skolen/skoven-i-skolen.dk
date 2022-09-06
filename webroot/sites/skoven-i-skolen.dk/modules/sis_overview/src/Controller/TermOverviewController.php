@@ -67,7 +67,7 @@ class TermOverviewController extends ControllerBase {
 
     /** @var \Drupal\field\Entity\FieldConfig $field */
     foreach ($fields as $field) {
-      if ($field->getType() == 'article_filter') {
+      if ($field->getType() == 'overview_filter') {
         return \Drupal::entityTypeManager()
           ->getViewBuilder('taxonomy_term')
           ->view($taxonomy_term);

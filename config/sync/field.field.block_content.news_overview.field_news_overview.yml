@@ -19,8 +19,9 @@ default_value:
   -
     fields:
       owner: ''
-    count: 5
-    sort: newest
+      text: ''
+    count: 16
+    sort: popular
     pagination: false
     facets: {  }
 default_value_callback: ''
