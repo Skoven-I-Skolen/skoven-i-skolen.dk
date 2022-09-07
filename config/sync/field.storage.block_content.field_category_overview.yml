@@ -10,8 +10,8 @@ field_name: field_category_overview
 entity_type: block_content
 type: overview_filter
 settings:
-  entity_bundle: node.article
   allow_facets: 1
+  overview: node_article
 module: entity_overview
 locked: false
 cardinality: 1

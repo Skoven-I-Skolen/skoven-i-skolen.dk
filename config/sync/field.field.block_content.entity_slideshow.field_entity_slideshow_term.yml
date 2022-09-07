@@ -1,0 +1,29 @@
+uuid: baed4963-8880-40e3-8d39-3df626488202
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.entity_slideshow
+    - field.storage.block_content.field_entity_slideshow_term
+    - taxonomy.vocabulary.article_types
+id: block_content.entity_slideshow.field_entity_slideshow_term
+field_name: field_entity_slideshow_term
+entity_type: block_content
+bundle: entity_slideshow
+label: Kategori
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_types: article_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

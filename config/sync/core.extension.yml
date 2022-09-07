@@ -34,6 +34,7 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  dds_dawa: 0
   dynamic_color: 0
   dynamic_entity_reference: 0
   dynamic_key_value: 0
@@ -43,6 +44,7 @@ module:
   entity: 0
   entity_clone: 0
   entity_overview: 0
+  entity_overview_search: 0
   entity_reference_revisions: 0
   entity_usage: 0
   field: 0
@@ -70,13 +72,21 @@ module:
   media: 0
   media_icons: 0
   media_library: 0
+  media_library_bulk_upload: 0
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
+  migrate: 0
+  migrate_drupal: 0
+  migrate_file: 0
+  migrate_manifest: 0
+  migrate_plus: 0
+  migrate_tools: 0
   mysql: 0
   node: 0
   noreferrer: 0
+  oembed_providers: 0
   options: 0
   page_cache: 0
   paragraphs_asymmetric_translation_widgets: 0
@@ -99,12 +109,16 @@ module:
   simple_sitemap: 0
   sis_almanac: 0
   sis_articles: 0
+  sis_blog_post: 0
   sis_lexicon: 0
+  sis_map: 0
+  sis_migration: 0
   sis_news: 0
   sis_organization: 0
   sis_overview: 0
   sis_relewise: 0
   sis_season_wheel: 0
+  smtp: 0
   status_feed: 0
   styles: 0
   swiftmailer: 0

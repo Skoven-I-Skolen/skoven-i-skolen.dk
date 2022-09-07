@@ -1,4 +1,4 @@
-uuid: 030dab7f-9092-467d-847b-001b7f6f2240
+uuid: 0f7e00f7-9a38-4bf6-8773-f27417648ce7
 langcode: da
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_summary
 entity_type: node
 bundle: dot_on_map
 label: Resumé
-description: ''
+description: 'Du kan skrive en kort beskrivelse af begivenheden, som vil blive vist på en popup.'
 required: false
 translatable: false
 default_value: {  }

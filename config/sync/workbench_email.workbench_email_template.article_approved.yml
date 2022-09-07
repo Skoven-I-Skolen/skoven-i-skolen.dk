@@ -4,6 +4,7 @@ status: true
 dependencies: {  }
 id: article_approved
 label: 'Artikel godkendt'
+format: null
 subject: 'En test'
 recipient_types:
   author:

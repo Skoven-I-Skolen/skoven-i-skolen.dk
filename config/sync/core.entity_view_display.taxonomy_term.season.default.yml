@@ -1,0 +1,33 @@
+uuid: b8d74858-22c0-421c-824e-98920949afb6
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.season.field_icon
+    - taxonomy.vocabulary.season
+  module:
+    - media_icons
+    - text
+id: taxonomy_term.season.default
+targetEntityType: taxonomy_term
+bundle: season
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon:
+    type: icon_formatter
+    label: above
+    settings:
+      height: 100
+      width: 100
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

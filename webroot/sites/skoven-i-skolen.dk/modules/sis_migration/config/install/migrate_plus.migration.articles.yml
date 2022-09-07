@@ -1,0 +1,190 @@
+id: articles
+label: Articles
+migration_tags: {}
+migration_group: migrate
+
+source:
+  plugin: sis_article_node
+  node_type: article
+  key: migrate
+
+process:
+  title: title
+  created: created
+  updated: updated
+  'body/format':
+    plugin: default_value
+    default_value: basic_html
+  'body/value':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body/0/value
+    -
+      plugin: str_replace
+      search: '/sites/default/files/'
+      replace: '/sites/skoven-i-skolen.dk/files/'
+      source: body/0/value
+  'body/summary': body/0/summary
+  field_subject:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_taxonomy_class/0/tid
+    -
+      plugin: migration_lookup
+      source: field_taxonomy_class/0/tid
+      migration: subject
+  field_media_downloads:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_sis_article_image/0/fid
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_file_to_media_document
+      source: field_sis_article_image/0/fid
+      no_stub: true
+#  field_colophon_author:
+#    plugin: callback
+#    callable:
+#      - '\Drupal\sis_migration\Services\MigrateService'
+#      - extractAuthor
+#    source: field_sis_boxout_colophon
+#  field_colophon_photographer:
+#    plugin: callback
+#    callable:
+#      - '\Drupal\sis_migration\Services\MigrateService'
+#      - extractPhotographer
+#    source: field_sis_boxout_colophon
+#  field_colophon_editor:
+#    plugin: callback
+#    callable:
+#      - '\Drupal\sis_migration\Services\MigrateService'
+#      - extractEditor
+#    source: field_sis_boxout_colophon
+  'field_equipment/format':
+    plugin: default_value
+    default_value: basic_html
+  'field_equipment/value': field_sis_boxout_gear/0/value
+  field_class:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_taxonomy_grade/0/tid
+    -
+      plugin: sub_process
+      source: field_taxonomy_grade
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: class
+          source: tid
+  'field_colophon/format':
+    plugin: default_value
+    default_value: basic_html
+  'field_colophon/value':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_sis_boxout_colophon/0/value
+    -
+      plugin: str_replace
+      search: '/sites/default/files/'
+      replace: '/sites/skoven-i-skolen.dk/files/'
+      source: field_sis_boxout_colophon/0/value
+  field_list_date:
+    plugin: format_date
+    from_format: 'U'
+    to_format: 'Y-m-d\TH:i:s'
+    source: created
+  field_description: body/0/summary
+  field_article_image:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_sis_article_image/0/fid
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_file_to_media_image
+      source: field_sis_article_image/0/fid
+      no_stub: true
+  field_list_media:
+    - plugin: skip_on_empty
+      method: process
+      source: field_sis_article_image/0/fid
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_file_to_media_image
+      source: field_sis_article_image/0/fid
+      no_stub: true
+  field_article_months:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_sis_season_month/0/tid
+    -
+      plugin: migration_lookup
+      source: field_sis_season_month/0/tid
+      migration: months
+  field_location:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_taxonomy_place/0/tid
+    -
+      plugin: migration_lookup
+      source: field_taxonomy_place/0/tid
+      migration: location
+#  field_time:
+  field_article_type:
+    plugin: callback
+    callable:
+      - '\Drupal\sis_migration\Services\MigrateService'
+      - mapCategoriesToArticleTypes
+    source: article_type
+  'field_teaching_goals/format':
+    plugin: default_value
+    default_value: basic_html
+  'field_teaching_goals/value': field_sis_article_purpose/0/value
+  field_season:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_taxonomy_season/0/tid
+    -
+      plugin: migration_lookup
+      source: field_taxonomy_season/0/tid
+      migration: season
+  field_article_related:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_related_articles/0/target_id
+    -
+      plugin: sub_process
+      source: field_related_articles
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: articles
+          source: target_id
+          no_stub: true
+  moderation_state:
+    plugin: static_map
+    source: status
+    map:
+      0: draft
+      1: published
+destination:
+  plugin: entity:node
+  default_bundle: article
+migration_dependencies:
+  required:
+    - class
+    - subject
+    - location
+    - season
+    - upgrade_d7_file_to_media_image
+    - upgrade_d7_file_to_media_document
+    - upgrade_d7_file_to_media_audio

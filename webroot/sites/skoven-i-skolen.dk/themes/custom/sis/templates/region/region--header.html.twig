@@ -31,7 +31,7 @@
     <div class="header__inner">
       {{ elements.site_branding }}
       {{ elements.mainnavigation }}
-      <div class="burger" id="js-burger">
+      <div class="burger hamburger-icon" id="hamburger-icon">
         <div class="burger__lines">
           <span></span>
           <span></span>
@@ -43,9 +43,9 @@
         <form action="/search" method="get">
           <div class="header-search__input-field">
             <input {{ create_attribute().addClass('input')
-              .setAttribute('type', 'search').setAttribute('aria-label', 'Search'|t)
+              .setAttribute('type', 'search').setAttribute('aria-label', 'Search'|t).setAttribute('required', 'required')
               .setAttribute('placeholder', 'Search the entire site'|t)
-              .setAttribute('name', 'term')
+              .setAttribute('name', 'text')
               .setAttribute('id', 'js-header-search-input') }}>
             <button {{ create_attribute().setAttribute('type', 'submit').addClass('header-search__submit') }}>
               {% include '@reusable-component/svg-icon.twig' with {

@@ -1,0 +1,6 @@
+services:
+  sis_blog_post.blog_post_repository:
+    class: 'Drupal\sis_blog_post\Repository\BlogPostRepository'
+  sis_blog_post.content_delivery_service:
+    class: 'Drupal\sis_blog_post\Services\BlogPostContentDeliveryService'
+    arguments: ['@sis_blog_post.blog_post_repository','@entity_type.manager']

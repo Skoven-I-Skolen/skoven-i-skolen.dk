@@ -1,0 +1,15 @@
+id: season
+label: 'Season term migration'
+migration_tags: {}
+migration_group: migrate
+
+source:
+  plugin: d7_taxonomy_term
+  bundle: season
+  key: migrate
+process:
+  tid: term_id
+  name: name
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: season

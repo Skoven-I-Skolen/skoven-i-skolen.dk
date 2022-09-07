@@ -5,3 +5,7 @@ services:
   sis_news.content_delivery_service:
     class: 'Drupal\sis_news\Services\NewsContentDeliveryService'
     arguments: ['@sis_news.news_repository','@entity_type.manager']
+  sis_news.breadcrumb:
+    class: Drupal\sis_news\Breadcrumb\NewsBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 1004 }

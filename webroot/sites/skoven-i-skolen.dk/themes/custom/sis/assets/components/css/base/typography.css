@@ -44,5 +44,17 @@ p {
 }
 
 .large-text {
+  font-size: var(--base-font-size-large);
+}
+
+.xlarge-text {
   font-size: var(--base-font-size-xlarge);
+}
+
+.headline {
+  font-weight: var(--heading-font-weight);
+  font-size: var(--base-font-size-xxxxlarge);
+  font-family: var(--heading-font-family);
+  line-height: 1;
+  text-align: center;
 }

@@ -1,0 +1,8 @@
+uuid: ab0feb53-c40f-43e5-85e0-9d60af163775
+langcode: da
+status: true
+dependencies: {  }
+id: search_field
+label: Søgefelt
+revision: 0
+description: 'A block that contains a search field.'

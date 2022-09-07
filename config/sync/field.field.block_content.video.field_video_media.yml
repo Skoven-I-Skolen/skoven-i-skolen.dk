@@ -5,7 +5,7 @@ dependencies:
   config:
     - block_content.type.video
     - field.storage.block_content.field_video_media
-    - media.type.remote_video
+    - media.type.sis_custom_video
 _core:
   default_config_hash: Ws4Wla5G1UQoD-tFeguWYkYgB-VEZAHvwIZ69QRaAiQ
 id: block_content.video.field_video_media
@@ -22,9 +22,10 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      remote_video: remote_video
+      sis_custom_video: sis_custom_video
     sort:
       field: _none
+      direction: ASC
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: sis_custom_video
 field_type: entity_reference

@@ -11,12 +11,16 @@ dependencies:
     - field.field.node.news.field_header
     - field.field.node.news.field_hide_breadcrumb
     - field.field.node.news.field_hide_title
+    - field.field.node.news.field_list_date
     - field.field.node.news.field_list_media
     - field.field.node.news.field_meta_tags
     - field.field.node.news.field_news_image
     - field.field.node.news.field_news_inspiration
+    - field.field.node.news.field_section_bg_graphics
+    - field.field.node.news.field_section_bg_graphics_pos
     - node.type.news
   module:
+    - datetime
     - entity_reference_revisions
     - layout_builder
     - layout_builder_restrictions
@@ -63,6 +67,15 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_list_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: news_date
+    third_party_settings: {  }
+    weight: 7
+    region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: hidden
@@ -101,5 +114,7 @@ hidden:
   field_hide_breadcrumb: true
   field_hide_title: true
   field_list_media: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
   langcode: true
   search_api_excerpt: true

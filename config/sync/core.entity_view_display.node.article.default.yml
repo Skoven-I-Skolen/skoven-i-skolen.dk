@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
+    - field.field.node.article.field_article_image
     - field.field.node.article.field_article_months
+    - field.field.node.article.field_article_related
     - field.field.node.article.field_article_type
     - field.field.node.article.field_class
     - field.field.node.article.field_colophon
@@ -15,6 +18,7 @@ dependencies:
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
+    - field.field.node.article.field_files
     - field.field.node.article.field_graphics
     - field.field.node.article.field_header
     - field.field.node.article.field_list_date
@@ -22,83 +26,31 @@ dependencies:
     - field.field.node.article.field_location
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_season
+    - field.field.node.article.field_section_bg_graphics
+    - field.field.node.article.field_section_bg_graphics_pos
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
-    - field.field.node.article.layout_builder__layout
+    - field.field.node.article.lat
+    - field.field.node.article.lon
+    - field.field.node.article.sis_map_address_dawa
     - node.type.article
   module:
     - layout_builder
     - layout_builder_restrictions
-    - layout_discovery
+    - text
     - user
 third_party_settings:
   layout_builder:
-    enabled: true
+    enabled: false
     allow_custom: false
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-          column_widths: null
-          color_theme: none
-          column_spacing_top: medium
-          column_spacing_bottom: medium
-          column_show_graphic_top: medium
-          column_show_graphic_bottom: medium
-          column_width: normal
-        components:
-          46c9e775-ac98-445c-9357-dd45a80771cc:
-            uuid: 46c9e775-ac98-445c-9357-dd45a80771cc
-            region: content
-            configuration:
-              id: 'extra_field_block:node:article:content_moderation_control'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 0
-            additional: {  }
-          53381bc9-e84c-459b-a4c3-6832b0698260:
-            uuid: 53381bc9-e84c-459b-a4c3-6832b0698260
-            region: content
-            configuration:
-              id: 'field_block:node:article:field_time'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          e3f33d1f-ef49-475c-b74e-19ce1120991d:
-            uuid: e3f33d1f-ef49-475c-b74e-19ce1120991d
-            region: content
-            configuration:
-              id: 'field_block:node:article:field_article_months'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-        third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
       allowed_layouts: {  }
+      restricted_categories: {  }
       blacklisted_blocks: {  }
       whitelisted_blocks: {  }
-      restricted_categories: {  }
 _core:
   default_config_hash: MPH0xWosBjCbxPv7RhMaPznJBnPAJT06vK8GDR7H2AE
 id: node.article.default
@@ -106,10 +58,26 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
+    region: content
+  field_article_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_article_months:
     type: entity_reference_label
@@ -119,18 +87,10 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_time:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
-  body: true
   content_hierarchy: true
   field_article_categories: true
+  field_article_related: true
   field_article_type: true
   field_class: true
   field_colophon: true
@@ -140,6 +100,7 @@ hidden:
   field_description: true
   field_equipment: true
   field_factboxes: true
+  field_files: true
   field_graphics: true
   field_header: true
   field_list_date: true
@@ -147,9 +108,14 @@ hidden:
   field_location: true
   field_media_downloads: true
   field_season: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
   field_subject: true
   field_teaching_goals: true
+  field_time: true
   langcode: true
-  layout_builder__layout: true
+  lat: true
   links: true
+  lon: true
   search_api_excerpt: true
+  sis_map_address_dawa: true

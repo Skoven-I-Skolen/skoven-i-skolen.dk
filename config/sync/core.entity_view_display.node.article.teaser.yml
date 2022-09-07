@@ -5,8 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
+    - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
+    - field.field.node.article.field_article_image
     - field.field.node.article.field_article_months
+    - field.field.node.article.field_article_related
     - field.field.node.article.field_article_type
     - field.field.node.article.field_class
     - field.field.node.article.field_colophon
@@ -16,6 +19,7 @@ dependencies:
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
+    - field.field.node.article.field_files
     - field.field.node.article.field_graphics
     - field.field.node.article.field_header
     - field.field.node.article.field_list_date
@@ -23,10 +27,14 @@ dependencies:
     - field.field.node.article.field_location
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_season
+    - field.field.node.article.field_section_bg_graphics
+    - field.field.node.article.field_section_bg_graphics_pos
     - field.field.node.article.field_subject
     - field.field.node.article.field_teaching_goals
     - field.field.node.article.field_time
-    - field.field.node.article.layout_builder__layout
+    - field.field.node.article.lat
+    - field.field.node.article.lon
+    - field.field.node.article.sis_map_address_dawa
     - node.type.article
   module:
     - datetime
@@ -88,7 +96,9 @@ content:
 hidden:
   body: true
   content_hierarchy: true
+  field_article_image: true
   field_article_months: true
+  field_article_related: true
   field_class: true
   field_colophon: true
   field_colophon_author: true
@@ -96,15 +106,20 @@ hidden:
   field_colophon_photographer: true
   field_equipment: true
   field_factboxes: true
+  field_files: true
   field_graphics: true
   field_header: true
   field_location: true
   field_media_downloads: true
   field_season: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
   field_subject: true
   field_teaching_goals: true
   field_time: true
   langcode: true
-  layout_builder__layout: true
+  lat: true
   links: true
+  lon: true
   search_api_excerpt: true
+  sis_map_address_dawa: true

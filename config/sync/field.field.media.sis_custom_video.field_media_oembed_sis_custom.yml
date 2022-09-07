@@ -1,0 +1,19 @@
+uuid: 58de1101-2153-430a-9dce-4976185bedb4
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_oembed_sis_custom
+    - media.type.sis_custom_video
+id: media.sis_custom_video.field_media_oembed_sis_custom
+field_name: field_media_oembed_sis_custom
+entity_type: media
+bundle: sis_custom_video
+label: 'SiS Custom URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

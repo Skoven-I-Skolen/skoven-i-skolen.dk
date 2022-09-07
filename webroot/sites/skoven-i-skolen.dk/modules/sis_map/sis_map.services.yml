@@ -1,0 +1,9 @@
+services:
+  sis_map.manager:
+    class: 'Drupal\sis_map\MapManager'
+    arguments:
+      - '@config.factory'
+      - '@entity_field.manager'
+      - '@entity_type.manager'
+      - '@url_generator'
+

@@ -26,6 +26,7 @@
  */
 #}
 {{ attach_library('sis/inline-navigation') }}
+{{ attach_library('sis/slider-pager-count') }}
 
 <div{{ attributes.addClass('inline-navigation') }}>
   {{ title_prefix }}
@@ -33,4 +34,13 @@
   <ul class="inline-navigation__list js-inline-navigation-slider">
     {{ content }}
   </ul>
+  <div class="slider-pager-count sm-hidden md-hidden lg-hidden xl-hidden">
+    {{ 'Showing'|t }}
+    <span class="slider-pager-count--showing">
+      <span class="ms-hidden sm-hidden md-hidden lg-hidden xl-hidden">1</span>
+      <span class="xs-hidden sm-hidden md-hidden lg-hidden xl-hidden">2</span>
+    </span>
+    {{ 'out of'|t }}
+    <span class="slider-pager-count--total">{{ content|length }}</span>
+  </div>
 </div>

@@ -87,7 +87,7 @@
 
     &::after {
       position: absolute;
-      top: calc(50% + 3px);
+      top: calc(50% + 10px);
       bottom: 0;
       left: -3%;
       width: 106%;

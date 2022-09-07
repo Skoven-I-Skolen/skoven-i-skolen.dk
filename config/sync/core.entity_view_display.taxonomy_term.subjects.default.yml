@@ -1,0 +1,33 @@
+uuid: 8deee6e2-bca3-4fd2-ad5f-1dca53a5bde0
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.subjects.field_icon
+    - taxonomy.vocabulary.subjects
+  module:
+    - media_icons
+    - text
+id: taxonomy_term.subjects.default
+targetEntityType: taxonomy_term
+bundle: subjects
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon:
+    type: icon_formatter
+    label: above
+    settings:
+      height: 100
+      width: 100
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

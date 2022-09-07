@@ -4,7 +4,9 @@ namespace Drupal\sis_organization\Plugin\Field\FieldFormatter;
 
 
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\entity_overview\OverviewFilter;
 use Drupal\entity_overview\Plugin\Field\FieldFormatter\OverviewFormFormatter;
+use Drupal\sis_overview\Form\CategoryOverviewForm;
 
 /**
  * Plugin implementation of the 'overview_filter_form' formatter.
@@ -27,11 +29,16 @@ class OrganizationOverviewFormatter extends OverviewFormFormatter {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      $options = $item->getValue();
-      $options['entity_bundle'] = $items->getSetting('entity_bundle');
-      $options['view_mode'] = 'list'; //$this->getSetting('view_mode');
+      $overview_id = $items->getSetting('overview');
+      if (empty($overview_id)) {
+        $entity_bundle = $items->getSetting('entity_bundle');
+        $overview_id = str_replace('node.', '', $entity_bundle);
+      }
+      $filter = new OverviewFilter($overview_id, $item->getValue());
+      $filter->setViewMode('list');
+
       $elements[$delta] = \Drupal::formBuilder()
-        ->getForm('Drupal\sis_organization\Form\OrganizationOverviewForm', $options);
+        ->getForm('Drupal\sis_organization\Form\OrganizationOverviewForm', $filter);
     }
 
     return $elements;

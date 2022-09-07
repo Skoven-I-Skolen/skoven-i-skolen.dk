@@ -1,0 +1,18 @@
+available_filters:
+  - field_class
+  - field_location
+  - field_people_and_places
+  - field_replant_the_planet
+  - field_season
+  - field_subject
+enabled_content_types:
+  dot_on_map: dot_on_map
+enabled_filters:
+  field_class: field_class
+  field_location: field_location
+  field_people_and_places: field_people_and_places
+  field_replant_the_planet: field_replant_the_planet
+  field_season: field_season
+  field_subject: field_subject
+display_map_helpers: 0
+max_visible_filters: '5'

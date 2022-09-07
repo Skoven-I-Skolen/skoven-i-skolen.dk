@@ -1,0 +1,38 @@
+uuid: d37a5d16-b9f0-4bda-b912-1115957a0e32
+langcode: en
+status: true
+dependencies: {  }
+id: month
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: {  }
+migration_group: migrate
+label: 'Month term migration'
+source:
+  plugin: d7_taxonomy_term
+  bundle: sis_season_month
+  key: migrate
+process:
+  tid: term_id
+  name: name
+  machine_name:
+    plugin: static_map
+    source: name
+    map:
+      Januar: january
+      Februar: february
+      Marts: march
+      April: april
+      Maj: may
+      Juni: june
+      Juli: july
+      August: august
+      Septemper: september
+      Oktober: october
+      November: november
+      December: December
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: month
+migration_dependencies: null

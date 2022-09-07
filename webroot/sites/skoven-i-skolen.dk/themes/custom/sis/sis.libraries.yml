@@ -95,6 +95,12 @@ button-preview:
       dist/components/css/preview/button.css: {}
 
 # Molecules.
+blog-post:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/blog-post.css: {}
+
 breadcrumb:
   version: VERSION
   css:
@@ -133,6 +139,17 @@ image-slideshow:
       dist/components/js/image-slideshow.css: {}
   js:
     dist/components/js/image-slideshow.js: {}
+  dependencies:
+    - core/drupal
+
+entity-slideshow:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/entity-slideshow.css: {}
+      dist/components/js/entity-slideshow.css: {}
+  js:
+    dist/components/js/entity-slideshow.js: {}
   dependencies:
     - core/drupal
 
@@ -183,6 +200,18 @@ search-toggle:
       dist/components/css/components/02-molecules/search-toggle.css: {}
   js:
     dist/components/js/search-toggle.js: {}
+
+section-bg-graphics:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/section-bg-graphics.css: {}
+
+slider-pager-count:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/slider-pager-count.css: {}
 
 overview-searchfield:
   version: VERSION
@@ -331,7 +360,7 @@ inspiration-overview:
       dist/components/css/components/03-organisms/inspiration-overview.css: {}
   dependencies:
     - sis/breadcrumb
-    - sis/pager
+    - sis/pager-full
 
 organization-overview:
   version: VERSION
@@ -363,6 +392,20 @@ overview-form:
     - sis/pager-full
     - core/drupal.ajax
     - sis/form-select
+
+news-form:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/news-form.css: {}
+  js:
+    dist/components/js/overview-form.js: {}
+  dependencies:
+    - sis/accordion
+    - sis/pager-full
+    - core/drupal.ajax
+    - sis/form-select
+
 
 profile:
   version: VERSION
@@ -434,3 +477,28 @@ form-select:
     dist/components/js/select.js: {}
   dependencies:
     - core/drupal
+
+searchfield:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/searchfield.css: {}
+
+user-page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/user-page.css: {}
+
+
+term-page:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/term-page.css: {}
+
+button-block:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/button-block.css: {}

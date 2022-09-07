@@ -8,16 +8,16 @@
   width: 100%;
   height: 40px;
   padding: 0 40px 0 15px;
-  line-height: 1;
+  color: #333;
   font-size: var(--base-font-size);
   font-family: var(--base-font-family);
-  color: var(--theme-color);
-  background-color: var(--theme-background-color);
+  line-height: 1;
+  vertical-align: bottom;
+  background-color: #fff;
 
   /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
   background-image: none;
-  border: 1px solid var(--theme-input-border-color);
-  vertical-align: bottom;
+  border: 1px solid #c0c0c0;
   border-radius: 0;
 
   &:focus {
@@ -28,9 +28,9 @@
 
 .premium-dropdown {
   &--wrapper {
-    display: flex;
     position: relative;
     z-index: 1;
+    display: flex;
     flex-direction: column;
   }
 
@@ -40,18 +40,21 @@
     align-items: center;
     min-width: 175px;
     min-height: var(--button-height);
-    cursor: pointer;
-    overflow: hidden;
-    text-decoration: none;
-    border-radius: 30px;
     padding: 16px 48px 14px 24px;
-    background-color: none;
-    color: currentColor;
+    overflow: hidden;
+    color: currentcolor;
     font-weight: var(--button-font-weight);
-    font-family: var(--base-font-family);
     font-size: var(--base-font-size-small);
+    font-family: var(--base-font-family);
     line-height: calc(var(--button-height) * .5);
-    border: 1px solid var(--theme-input-border-dark);
+    text-decoration: none;
+    background-color: none;
+    border: 1px solid #c0c0c0;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
 
     &--disabled {
       width: 100%;
@@ -63,15 +66,14 @@
     .icon {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
       right: 24px;
       width: 14px;
       height: 8px;
+      transform: translateY(-50%);
       transition: all .3s;
     }
 
     &.is-selected {
-      border-radius: 27px 27px 0 0;
       .icon {
         transform: rotate(180deg) translateY(50%);
       }
@@ -83,12 +85,12 @@
     top: 100%;
     left: 0;
     display: none;
-    opacity: 0;
     min-width: 100%;
     margin-top: -1px;
-    border: 1px solid var(--theme-input-border-dark);
-    border-radius: 0 0 27px 27px;
     overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #c0c0c0;
+    opacity: 0;
 
     &.expanded {
       display: block;
@@ -98,17 +100,18 @@
     &-item {
       display: block;
       width: 100%;
-      line-height: calc(var(--button-height) * .5);
       min-height: var(--button-height);
       padding: 16px 24px 14px;
       font-size: var(--base-font-size-small);
-      border-top: 1px solid var(--theme-input-border-dark);
-      cursor: pointer;
+      line-height: calc(var(--button-height) * .5);
       text-decoration: none;
-      background-color: var(--color-white);
+      background-color: #fff;
+      border-top: 1px solid #c0c0c0;
+      cursor: pointer;
 
       &:hover {
         background-color: var(--color-pink);
+        text-decoration: none;
       }
 
       &.is-active {

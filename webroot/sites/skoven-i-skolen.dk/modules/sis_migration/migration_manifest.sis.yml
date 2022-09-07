@@ -1,0 +1,13 @@
+- upgrade_d7_file
+- upgrade_d7_file_to_media_image
+- upgrade_d7_file_to_media_document
+- upgrade_d7_file_to_media_audio
+- subject
+- class
+- location
+- months
+- season
+- almanac
+- articles
+- news
+- alias_to_redirects

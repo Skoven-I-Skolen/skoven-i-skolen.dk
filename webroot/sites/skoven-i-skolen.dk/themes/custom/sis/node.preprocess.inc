@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\file\Entity\File;
+
 function sis_preprocess_node(&$variables) {
   /** @var \Drupal\node\Entity\Node $node */
   $node = $variables['node'];
@@ -53,5 +55,35 @@ function sis_preprocess_page(&$variables) {
     if ($term = $request->get('taxonomy_term')) {
       unset($variables['page']['pageheader']);
     }
+  }
+}
+
+function sis_preprocess_node__article__slideshow(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'] ?? NULL;
+  $image_style = 'entity_slideshow';
+
+  if ($node->hasField('field_article_image') && !$node->get('field_article_image')->isEmpty() && !is_null($node->get('field_article_image')->entity)) {
+    $variables['article_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($node->get('field_article_image')->entity, $image_style);
+  }
+}
+
+function sis_preprocess_node__blog_post__slideshow(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'] ?? NULL;
+  $image_style = 'entity_slideshow';
+
+  if ($node->hasField('field_list_media') && !$node->get('field_list_media')->isEmpty() && !is_null($node->get('field_list_media')->entity)) {
+    $variables['blog_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($node->get('field_list_media')->entity, $image_style);
+  }
+}
+
+function sis_preprocess_node__news__slideshow(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'] ?? NULL;
+  $image_style = 'entity_slideshow';
+
+  if ($node->hasField('field_news_image') && !$node->get('field_news_image')->isEmpty() && !is_null($node->get('field_news_image')->entity)) {
+    $variables['news_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($node->get('field_news_image')->entity, $image_style);
   }
 }

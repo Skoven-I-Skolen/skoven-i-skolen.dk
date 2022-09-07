@@ -1,3 +1,4 @@
 <?php
 
-  \Drupal::moduleHandler()->loadInclude('sis_news', 'inc', 'node.preprocess');
+\Drupal::moduleHandler()->loadInclude('sis_news', 'inc', 'node.preprocess');
+

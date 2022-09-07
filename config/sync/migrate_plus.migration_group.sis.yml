@@ -1,0 +1,10 @@
+uuid: 2e119f9a-de2f-4f75-b0a8-c1636ad9dbaa
+langcode: da
+status: true
+dependencies: {  }
+id: sis
+label: sis
+description: ''
+source_type: null
+module: null
+shared_configuration: null

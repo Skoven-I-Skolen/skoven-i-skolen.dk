@@ -3,19 +3,17 @@
 namespace Drupal\sis_migration\Services;
 
 class MigrateService {
-  public static function extractAuthor(string $data): string {
-    return self::extractFromPrefix('Forfatter', $data);
+
+  public static function extractAuthor(array $data): ?string {
+    return self::extractFromPrefix('Forfatter', $data['value']);
   }
 
-  public static function extractEditor(string $data): string {
-    return self::extractFromPrefix('Redaktør', $data);
+  public static function extractEditor(array $data): ?string {
+    return self::extractFromPrefix('Redaktør', $data['value']);
   }
 
-  public static function extractPhotographer(string $data): string {
-    return self::extractFromPrefix('Foto', $data);
-  }
-
-  public static function getMonth(string $data): int {
+  public static function extractPhotographer(array $data): ?string {
+    return self::extractFromPrefix('Foto', $data['value']);
   }
 
   /**
@@ -25,11 +23,57 @@ class MigrateService {
    *   The prefix-
    * @param string $data
    *  The data to search within-
+   *
    * @return mixed
    *  The extracted value.
    */
-  protected static function extractFromPrefix(string $prefix, string $data) {
-    preg_match('/'. $prefix .': ([^\n\r]*)/g', $data, $matches);
-    return $matches[1];
+  protected static function extractFromPrefix(string $prefix, string $data): ?string {
+    preg_match('/' . $prefix . ': ([^\n\r]*)/', $data, $matches);
+
+    if (isset($matches[1])) {
+      return strip_tags($matches[1]);
+    }
+
+    return NULL;
   }
+
+  public static function mapCategoriesToArticleTypes(int $typeId) {
+    $type = '';
+    switch ($typeId) {
+      case 215:
+        $type = 'aktivitet';
+        break;
+      case 216:
+        $type = 'undervisningsforloeb';
+        break;
+      case 217:
+        $type = 'tema';
+        break;
+      case 220:
+        $type = 'skovmad';
+        break;
+      case 221:
+        $type = 'bog';
+        break;
+      case 223:
+        $type = 'aarstidshjul';
+        break;
+      case 224:
+        $type = 'lexicon';
+        break;
+      case 234:
+        $type = 'viden_om_udeskole';
+        break;
+    }
+
+    $article_type = \Drupal::entityQuery('taxonomy_term')
+      ->condition('machine_name', $type)
+      ->condition('vid', 'article_types')
+      ->execute();
+
+    if(!empty($article_type)) {
+      return reset($article_type);
+    }
+  }
+
 }

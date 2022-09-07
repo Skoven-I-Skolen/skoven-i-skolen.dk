@@ -11,3 +11,10 @@ function sis_news_preprocess_node(&$variables) {
     }
   }
 }
+
+
+function sis_news_preprocess_page(&$variables) {
+  /** @var \Drupal\sis_almanac\Services\AlmanacContentDeliveryService $almanacContentDeliveryService */
+  $newsContentDeliveryService = \Drupal::service('sis_news.content_delivery_service');
+  $variables['latest_news'] = $newsContentDeliveryService->getLatestNewsAsSimplelist();
+}

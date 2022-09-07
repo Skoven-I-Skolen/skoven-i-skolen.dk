@@ -6,7 +6,7 @@ dependencies:
     - field.storage.taxonomy_term.field_overview
     - taxonomy.vocabulary.article_types
   module:
-    - premium_articles
+    - entity_overview
 _core:
   default_config_hash: nM896UBRgXfJNwLA5uJ0dRXqx7UpOlypwq_29J21X9s
 id: taxonomy_term.article_types.field_overview
@@ -19,22 +19,23 @@ required: false
 translatable: true
 default_value:
   -
-    element_id_field: field_article_type
     fields:
-      field_article_type: ''
+      text: ''
       field_article_categories: {  }
+      field_article_type: {  }
       field_class: {  }
       field_location: {  }
       field_season: {  }
       field_subject: {  }
     count: 16
     sort: newest
-    pagination: false
+    pagination: true
     facets:
+      - text
       - field_class
       - field_location
       - field_season
       - field_subject
 default_value_callback: ''
 settings: {  }
-field_type: article_filter
+field_type: overview_filter

@@ -1,0 +1,8 @@
+uuid: 85d16b17-192b-4ca7-9181-320bbe214278
+langcode: da
+status: true
+dependencies: {  }
+id: blog_list
+label: 'Blog liste'
+revision: 0
+description: 'Viser de seneste fire blogsider i træk.'

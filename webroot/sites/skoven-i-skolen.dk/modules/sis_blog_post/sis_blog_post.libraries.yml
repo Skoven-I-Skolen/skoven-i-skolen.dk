@@ -1,0 +1,5 @@
+sis_blog_post:
+  js:
+    js/sis_blog_post.js: {}
+  dependencies:
+    - core/drupal

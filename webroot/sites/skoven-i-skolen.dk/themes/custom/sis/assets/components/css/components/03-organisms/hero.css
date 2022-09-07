@@ -168,6 +168,14 @@
   .section__graphics-bottom {
     display: none;
   }
+
+  &--inverted {
+    color: white;
+  }
+
+  &__content-title {
+    font-size: 36px;
+  }
 }
 
 #block-pageheader .hero {

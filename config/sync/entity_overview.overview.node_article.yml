@@ -1,0 +1,21 @@
+uuid: dc546d23-0531-4810-95ed-14a7b2dffaec
+langcode: da
+status: true
+dependencies: {  }
+id: node_article
+label: Artikel
+entity_bundles:
+  node:
+    - article
+fields:
+  owner: entity_autocomplete
+  text: textfield
+  field_article_categories: checkboxes
+  field_article_type: checkboxes
+  field_class: checkboxes
+  field_location: checkboxes
+  field_season: checkboxes
+  field_subject: checkboxes
+engine_id: relewise
+sort_field: changed
+show_total: ''

@@ -1,0 +1,21 @@
+uuid: 289e095d-3e71-43de-82fe-4cc1fd8d9c72
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_bg_graphics
+    - node.type.news
+  module:
+    - options
+id: node.news.field_section_bg_graphics
+field_name: field_section_bg_graphics
+entity_type: node
+bundle: news
+label: 'Baggrunds grafik'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

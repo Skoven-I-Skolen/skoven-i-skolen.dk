@@ -21,9 +21,18 @@
           {{ element['search'].title }}
         </div>
       </div>
-      <div class="col-xs-12 col-md-4">
+      <div class="col-xs-12 col-md-4 filter-mobile-wrapper">
+        <div class="overview-form__toolbar">
+          <span class="overview-form__toolbar__filter-button js-overview-form__toolbar__filter-button">
+            {% include '@reusable-component/svg-icon.twig' with {
+                    'attributes': '',
+                    'svgIconName': 'filter-icon'
+                  } %}
+            {{ "Filter"|t }}
+          </span>
+        </div>
         <div class="overview-form__search-input">
-          {{ element['search'].keyword }}
+          {{ element['facets'].text }}
           {{ element['search'].search }}
         </div>
       </div>
@@ -31,12 +40,23 @@
     <div class="row">
       <div class="col-xs-12 col-md-3">
         <div class="overview-form__search-filters js-overview-form__search-filters">
+          <div class="overview-form__search-filters__mobile-header">
+            <div>
+              {{ "Filter"|t }}
+            </div>
+            <div class="js-search-filters-close">
+              {% include '@reusable-component/svg-icon.twig' with {
+                'attributes': '',
+                'svgIconName': 'close'
+              } %}
+            </div>
+          </div>
           <div class="accordion js-accordion">
             <div class="accordion-buttons">
-              <button id="buttonExpandAll" type="button" class="accordion-button__expand button button--ghost">
+              <button id="buttonExpandAll" type="button" class="accordion-button accordion-button__expand">
                 {{ "Expand All"|t }} +
               </button>
-              <button id="buttonCollapseAll" type="button" class="accordion-button__collapse button button--ghost hide">
+              <button id="buttonCollapseAll" type="button" class="accordion-button accordion-button__collapse hide">
                 {{ "Collapse All"|t }} -
               </button>
             </div>

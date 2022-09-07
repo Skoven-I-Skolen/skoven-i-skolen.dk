@@ -71,15 +71,21 @@
 {{ attach_library('sis/article-page') }}
 {{ attach_library('sis/facts-box') }}
 {{ attach_library('sis/related-articles') }}
+{% if node.field_section_bg_graphics.value %}
+  {{ attach_library('sis/section-bg-graphics') }}
+{% endif %}
 
 {% set classes = [
-  'article-page'
+  'article-page',
+  node.field_section_bg_graphics.value ? 'section--background-graphics' : '',
 ] %}
-
 <article{{ attributes.addClass(classes) }}>
+  {% if node.field_section_bg_graphics.value %}
+    <img src="/{{ directory }}/dist/images/{{ node.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ node.field_section_bg_graphics.value }} section-bg-graphics__position--{{ node.field_section_bg_graphics_pos.value }}" />
+  {% endif %}
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-lg-7">
+      <div class="col-md-8 col-lg-7 article-content-wrapper">
         <div{{ content_attributes }}>
           {% if node.field_header[0] %}
             {% include '@reusable-component/page-title.twig' with {
@@ -93,14 +99,24 @@
             } %}
           {% endif %}
           <div class="article-page__description">
-            {{ node.field_description.value|t }}
+            {{ content.field_description }}
           </div>
-          <div class="row">
-            {{ content|without(['field_list_date', 'field_header', 'title']) }}
+          <div class="article-page__image">
+            {{ content.field_article_image }}
           </div>
+          {{ content|without(['field_list_date', 'field_header', 'title','field_article_image']) }}
         </div>
       </div>
-      <div class="col-md-4 col-lg-4 col-lg-offset-1">
+      <div class="col-md-4 col-lg-4 col-lg-offset-1 article-content-sidebar">
+        <div class="print-button">
+          <a href="#" onclick="window.print()">
+            {% include '@reusable-component/svg-icon.twig' with {
+              'attributes': '',
+              'svgIconName': 'printer'
+            } %}
+              <span class="print-button__text">Print</span>
+          </a>
+        </div>
         {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] %}
           <div class="facts-box">
             <div class="facts-box__title">
@@ -241,17 +257,26 @@
             </div>
           </div>
         {% endif %}
-        {% if node.field_media_downloads[0] %}
+        {% if node.field_media_downloads[0] or node.field_files[0] %}
           <div class="facts-box">
             <div class="facts-box__title">
               Filer
             </div>
             <div class="facts-box__content">
-              {% for file in node.field_media_downloads %}
-                <div class="facts-box__content-item">
-                  <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
-                </div>
-              {% endfor %}
+              {% if node.field_media_downloads[0] %}
+                {% for file in node.field_media_downloads %}
+                  <div class="facts-box__content-item">
+                    <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
+                  </div>
+                {% endfor %}
+              {% endif %}
+              {% if node.field_files[0] %}
+                {% for file in node.field_files %}
+                  <div class="facts-box__content-item">
+                    <a href="{{ file_url(file.entity.uri.value) }}" target="_blank"> {{ file.entity.filename.value }}</a>
+                  </div>
+                {% endfor %}
+              {% endif %}
             </div>
           </div>
         {% endif %}
@@ -261,18 +286,17 @@
               Inspiration og lignende materialer
             </div>
             <div class="facts-box__content facts-box__inspiration">
-{#              {% for title, inspiration in inspirations %}#}
-{#                <div class="facts-box__inspiration-group">#}
-{#                  <div class="facts-box__inspiration-title">{{ title }}</div>#}
-{#                  {% for article in inspiration %}#}
-{#                    {{ article }}#}
-{#                  {% endfor %}#}
-{#                </div>#}
-{#              {% endfor %}#}
               {{ inspirations }}
             </div>
           </div>
-        {% endif%}
+        {% endif %}
+        <div class="facts-box__button-below-wrapper">
+          {% if atom_str('text-of-button-below-fact-boxes') %}
+            <a href="{{ atom_str('link-of-button-below-fact-boxes') }}" target="_blank">
+              <button type="button" class="facts-box__button-below button button--green">{{ atom('text-of-button-below-fact-boxes') }}</button>
+            </a>
+          {% endif %}
+        </div>
       </div>
     </div>
     {% if related %}

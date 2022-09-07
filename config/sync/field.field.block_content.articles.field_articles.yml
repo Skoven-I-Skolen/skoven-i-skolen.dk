@@ -6,7 +6,7 @@ dependencies:
     - block_content.type.articles
     - field.storage.block_content.field_articles
   module:
-    - premium_articles
+    - entity_overview
 _core:
   default_config_hash: 8lnXdEMYABRqcwywWmjmwgDgk-sjlbLdSjtW5hKbxiQ
 id: block_content.articles.field_articles
@@ -28,4 +28,4 @@ default_value:
     facets: {  }
 default_value_callback: ''
 settings: {  }
-field_type: article_filter
+field_type: overview_filter

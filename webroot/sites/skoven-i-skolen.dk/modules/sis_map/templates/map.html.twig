@@ -1,0 +1,144 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - filters: The map filters.
+ * - map_markers: All the map markers that should be rendered on this block.
+ * @see template_preprocess_block()
+ */
+#}
+
+{% set button_classes = [
+  'button',
+  'above-map-button',
+] %}
+
+{% set max_visible_filters_per_category = max_visible_filters %}
+
+<div class="markers"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-lg-7 col-xs-12">
+      <h1>{{ map_title }}</h1>
+      {{ description_above_map }}
+    </div>
+    <div class="col-md-8 col-lg-7 col-xs-12">
+      <a class="map-button" href="{{ button_link }}">
+        <button {{ create_attribute().addClass(button_classes) }}>
+            {{ button_text }}
+        </button>
+      </a>
+      <div class="map-container"></div>
+      <div class="result-list"></div>
+    </div>
+    <div class="col-md-3 col-lg-3 col-xs-12 filters">
+      <div class="same-line-text-and-icon">
+        <div class="text">
+          <h5>Stedsbaserede materialer</h5>
+        </div>
+        <div class="icon">
+          {% include '@reusable-component/svg-icon.twig' with {
+            'attributes': '',
+            'svgIconName': 'stedsbaserede-materialer'
+          } %}
+        </div>
+      </div>
+      {% for key,value in filters %}
+        {% if key != 'Mennesker og steder' and key != 'Genplant Planeten' %}
+          <div class="same-line-text-and-icon category-name" name="{{ key }}">
+            <div class="text">
+              <p>{{ key }}</p>
+            </div>
+            <div class="icon small">
+              {% include '@reusable-component/svg-icon.twig' with {
+                'attributes': '',
+                'svgIconName': 'carret'
+              } %}
+            </div>
+          </div>
+          <div class="filter-checkbox-list" name="filters for {{ key }}">
+          <input class="filter-checkbox js-see-all-checkbox form-checkbox checkbox" type="checkbox" id='see-all-checkbox-{{ key }}' value="see-all-{{ key }}">
+          <label class="filter-checkbox-label see-all-checkbox-label option label no-margin" for="see-all-checkbox-{{ key }}">Vælg alle</label>
+          {% set count = 0 %}
+          {% for k,v in value %}
+            <div class="same-line-text-and-icon {{ (count >= max_visible_filters_per_category) ? 'can-be-hidden is-hidden' : '' }}">
+              <input class="filter-checkbox form-checkbox checkbox" type="checkbox" id="{{ v }}" name="{{ key }}" value="{{ v }}">
+              <label class="filter-checkbox-label option label no-margin" for="{{ v }}"> {{ v }}</label>
+              <div class="icon js-filter-icon">
+                {% include '@reusable-component/svg-icon.twig' with {
+                  'attributes': '',
+                  'svgIconName': icons[v]
+                } %}
+              </div>
+            </div>
+            {% set count = count + 1 %}
+          {% endfor %}
+          {% if count > max_visible_filters_per_category %}
+            <div class="see-all-filters-link">+ Se alle valg</div>
+          {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+      {% for key,value in filters %}
+        {% if key == 'Mennesker og steder' or key == 'Genplant Planeten' %}
+          <div class="filter-separator"></div>
+          <div class="same-line-text-and-icon category-name" name="{{ key }}">
+            <div class="text">
+              <h5>{{ key }}</h5>
+            </div>
+            <div class="icon small">
+              {% include '@reusable-component/svg-icon.twig' with {
+                'attributes': '',
+                'svgIconName': 'carret'
+              } %}
+            </div>
+          </div>
+          <div class="filter-checkbox-list" name="filters for {{ key }}">
+            <input class="filter-checkbox js-see-all-checkbox form-checkbox checkbox" type="checkbox" id='see-all-checkbox-{{ key }}' value="see-all-{{ key }}">
+            <label class="filter-checkbox-label see-all-checkbox-label option label" for="see-all-checkbox-{{ key }}">Vælg alle</label>
+            {% set count = 0 %}
+            {% for k,v in value %}
+             <div class="same-line-text-and-icon {{ (count >= max_visible_filters_per_category) ? 'can-be-hidden is-hidden' : '' }}">
+             <input class="filter-checkbox form-checkbox checkbox" type="checkbox" id="{{ v }}" name="{{ key }}" value="{{ v }}">
+             <label class="filter-checkbox-label option label" for="{{ v }}"> {{ v }}</label>
+             <div class="icon js-filter-icon">
+                {% include '@reusable-component/svg-icon.twig' with {
+                  'attributes': '',
+                  'svgIconName': icons[v]
+                } %}
+             </div>
+            </div>
+              {% set count = count + 1 %}
+            {% endfor %}
+            {% if count > max_visible_filters_per_category %}
+              <div class="see-all-filters-link">+ Se alle valg</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+      <div class="filter-separator"></div>
+    </div>
+  </div>
+</div>
+
+
+

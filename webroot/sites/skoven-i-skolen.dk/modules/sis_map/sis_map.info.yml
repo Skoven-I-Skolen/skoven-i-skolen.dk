@@ -1,0 +1,11 @@
+name: SIS Map
+description: Module to display dots on a map
+package: Skoven i Skolen
+type: module
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - dds_dawa
+
+interface translation project: sis_map
+interface translation server pattern: modules/contrib/sis_map/translations/%language.po

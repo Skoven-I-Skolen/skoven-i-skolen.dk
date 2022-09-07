@@ -1,0 +1,121 @@
+uuid: 2dffcc0c-8907-4df1-8efa-109ba260d753
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.slideshow
+    - field.field.node.news.body
+    - field.field.node.news.content_hierarchy
+    - field.field.node.news.field_description
+    - field.field.node.news.field_factboxes
+    - field.field.node.news.field_graphics
+    - field.field.node.news.field_header
+    - field.field.node.news.field_hide_breadcrumb
+    - field.field.node.news.field_hide_title
+    - field.field.node.news.field_list_date
+    - field.field.node.news.field_list_media
+    - field.field.node.news.field_meta_tags
+    - field.field.node.news.field_news_image
+    - field.field.node.news.field_news_inspiration
+    - field.field.node.news.field_section_bg_graphics
+    - field.field.node.news.field_section_bg_graphics_pos
+    - node.type.news
+  module:
+    - datetime
+    - entity_reference_revisions
+    - layout_builder
+    - layout_builder_restrictions
+    - metatag
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      blacklisted_blocks: {  }
+      whitelisted_blocks: {  }
+_core:
+  default_config_hash: EkzZ_188fCJTvfq6ybAbeeuQVb0BFVURkV0KcH-ighw
+id: node.news.slideshow
+targetEntityType: node
+bundle: news
+mode: slideshow
+content:
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_factboxes:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_graphics:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_list_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_news_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: entity_slideshow
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_news_inspiration:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: simple_list
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  content_hierarchy: true
+  content_moderation_control: true
+  field_header: true
+  field_hide_breadcrumb: true
+  field_hide_title: true
+  field_list_media: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
+  langcode: true
+  search_api_excerpt: true

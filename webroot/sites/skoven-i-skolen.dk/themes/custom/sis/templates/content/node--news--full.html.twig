@@ -69,12 +69,19 @@
 #}
 
 {{ attach_library('sis/news-page') }}
+{% if node.field_section_bg_graphics.value %}
+  {{ attach_library('sis/section-bg-graphics') }}
+{% endif %}
 
 {% set classes = [
-  'news-page'
+  'news-page',
+  node.field_section_bg_graphics.value ? 'section--background-graphics' : '',
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
+  {% if node.field_section_bg_graphics.value %}
+    <img src="/{{ directory }}/dist/images/{{ node.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ node.field_section_bg_graphics.value }} section-bg-graphics__position--{{ node.field_section_bg_graphics_pos.value }}" />
+  {% endif %}
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-8 col-lg-7">
@@ -94,7 +101,7 @@
             } %}
           {% endif %}
           <div class="news-page__description">
-            {{ node.field_description.value|t }}
+            {{ node.field_description.value }}
           </div>
           <div class="news-page__image">
             {{ content.field_news_image }}

@@ -3,8 +3,8 @@
 use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Render\Element;
 
-module_load_include('inc', 'sis_articles', 'node.preprocess');
-module_load_include('inc', 'sis_articles', 'block.preprocess');
+\Drupal::moduleHandler()->loadInclude('sis_articles', 'inc', 'node.preprocess');
+\Drupal::moduleHandler()->loadInclude('sis_articles', 'inc', 'user.preprocess');
 
 function sis_articles_theme() {
   return [
@@ -24,7 +24,7 @@ function sis_articles_preprocess_list_element(&$variables) {
 
   if ($fieldParent->hasField('field_show_link_list') && $fieldParent->get('field_show_link_list')->value) {
     foreach (Element::children($variables['links']) as $key) {
-      $variables['children'] = $variables['links'][$key];
+      $variables['children'][] = $variables['links'][$key];
     }
 
     $variables['list_headline'] = $fieldParent->get('field_link_list_headline')->value;
@@ -34,4 +34,27 @@ function sis_articles_preprocess_list_element(&$variables) {
 
 function sis_articles_query_sort_by_random_alter(AlterableInterface $query) {
   $query->orderRandom();
+}
+
+function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'node_article_form') {
+
+    if ($article_type = Drupal::requestStack()->getCurrentRequest()->get('type')) {
+      if (!isset($form['field_article_type']['widget']['#options'])) {
+        return;
+      }
+      foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
+        if ($value === $article_type) {
+          $form['field_article_type']['widget']['#default_value'] = $key;
+        }
+        else {
+          unset($form['field_article_type']['widget']['#options'][$key]);
+        }
+      }
+    }
+
+    if (\Drupal::currentUser()->id() === 0 && isset($form['field_media_downloads']['#access'])) {
+      $form['field_media_downloads']['#access'] = FALSE;
+    }
+  }
 }

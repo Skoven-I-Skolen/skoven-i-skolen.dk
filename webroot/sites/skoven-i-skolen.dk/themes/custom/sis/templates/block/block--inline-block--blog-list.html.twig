@@ -1,0 +1,37 @@
+{{ attach_library('sis/news-page') }}
+{{ attach_library('sis/blog-post') }}
+{{ attach_library('sis/slider-pager-count') }}
+{{ attach_library('sis_blog_post/sis_blog_post') }}
+
+<div{{ attributes.addClass(['news-page__latest']) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-8">
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+      <div class="swiper-navigation">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="news-page__latest-items js-news-page__latest-items swiper">
+        <div class="swiper-wrapper">
+          {{ latest_four_blog_posts }}
+        </div>
+      </div>
+      <div class="slider-pager-count">
+        {{ 'Showing'|t }}
+        <span class="slider-pager-count--showing">
+          <span class="ms-hidden sm-hidden md-hidden lg-hidden xl-hidden">1</span>
+          <span class="xs-hidden md-hidden lg-hidden xl-hidden">2</span>
+          <span class="xs-hidden ms-hidden sm-hidden lg-hidden xl-hidden">3</span>
+          <span class="xs-hidden ms-hidden sm-hidden md-hidden">4</span>
+        </span>
+        {{ 'out of'|t }}
+        <span class="slider-pager-count--total">{{ latest_four_blog_posts_count }}</span>
+      </div>
+    </div>
+  </div>
+</div>

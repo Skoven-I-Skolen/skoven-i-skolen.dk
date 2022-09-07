@@ -3,6 +3,8 @@ langcode: da
 status: true
 dependencies:
   config:
+    - node.type.article
+    - node.type.dot_on_map
     - node.type.page
   module:
     - content_moderation
@@ -75,5 +77,7 @@ type_settings:
       weight: 1
   entity_types:
     node:
+      - article
+      - dot_on_map
       - page
   default_moderation_state: draft

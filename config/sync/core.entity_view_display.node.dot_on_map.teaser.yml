@@ -12,8 +12,13 @@ dependencies:
     - field.field.node.dot_on_map.field_people_and_places
     - field.field.node.dot_on_map.field_replant_the_planet
     - field.field.node.dot_on_map.field_season
+    - field.field.node.dot_on_map.field_section_bg_graphics
+    - field.field.node.dot_on_map.field_section_bg_graphics_pos
     - field.field.node.dot_on_map.field_subject
     - field.field.node.dot_on_map.field_summary
+    - field.field.node.dot_on_map.lat
+    - field.field.node.dot_on_map.lon
+    - field.field.node.dot_on_map.sis_map_address_dawa
     - node.type.dot_on_map
   module:
     - text
@@ -31,6 +36,11 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -44,6 +54,11 @@ hidden:
   field_people_and_places: true
   field_replant_the_planet: true
   field_season: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
   field_subject: true
   field_summary: true
   langcode: true
+  lat: true
+  lon: true
+  sis_map_address_dawa: true

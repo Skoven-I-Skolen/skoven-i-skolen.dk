@@ -7,6 +7,7 @@ use Drupal\media_library\MediaLibraryState;
 use Drupal\views\ViewExecutable;
 
 require_once __DIR__ . '/includes/layout-builder.inc';
+\Drupal::moduleHandler()->loadInclude('premium_theme_helper', 'inc', 'block.preprocess');
 
 /**
  * Alter the list of projects to be updated by locale's interface translation.
@@ -35,6 +36,7 @@ require_once __DIR__ . '/includes/layout-builder.inc';
  * @see locale_translation_project_list()
  * @ingroup interface_translation_properties
  */
+
 function premium_theme_helper_locale_translation_projects_alter(array &$projects) {
   $module_handler = \Drupal::service('module_handler');
   $path = $module_handler->getModule('premium_theme_helper')->getPath();

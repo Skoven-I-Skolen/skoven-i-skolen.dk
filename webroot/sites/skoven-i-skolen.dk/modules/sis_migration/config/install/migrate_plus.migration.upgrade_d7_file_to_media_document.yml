@@ -1,0 +1,39 @@
+id: upgrade_d7_file_to_media_document
+migration_tags: {}
+migration_group: migrate
+
+label: 'Migrate Media image entities'
+source:
+  plugin: d7_file_by_type
+  scheme: public
+  type:
+   - 'application/xml'
+   - 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+   - 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+   - 'application/vnd.ms-excel'
+   - 'application/pdf'
+   - 'application/msword'
+  get_alt: true
+  get_title: true
+  constants:
+    source_base_path: 'https://www.skoven-i-skolen.dk'
+  key: migrate
+process:
+  field_media_document/target_id:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_file
+      source: fid
+    -
+      plugin: skip_on_empty
+      method: row
+  status: status
+  created: timestamp
+  changed: timestamp
+  uid: uid
+destination:
+  plugin: 'entity:media'
+  default_bundle: document
+migration_dependencies:
+  required:
+    - upgrade_d7_file

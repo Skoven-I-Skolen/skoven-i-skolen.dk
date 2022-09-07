@@ -9,7 +9,16 @@
 
   &__image {
     display: block;
-    height: 43px;
+    width: 154px;
+    height: auto;
     margin: 0 auto;
+
+    @media (--viewport-ms-min) {
+      width: 134px;
+    }
+
+    @media (--viewport-sm-min) {
+      width: 194px;
+    }
   }
 }

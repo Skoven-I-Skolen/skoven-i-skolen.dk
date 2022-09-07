@@ -1,0 +1,35 @@
+uuid: 1d433f3c-6d03-4e9d-bbc0-359f2d9ed8aa
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.blog_list
+    - field.field.block_content.blog_list.field_max_elements
+id: block_content.blog_list.default
+targetEntityType: block_content
+bundle: blog_list
+mode: default
+content:
+  field_max_elements:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

@@ -6,7 +6,7 @@ dependencies:
     - block_content.type.article_form
     - field.storage.block_content.field_articles_form
   module:
-    - premium_articles
+    - entity_overview
 _core:
   default_config_hash: uD6wXf0xRYUOVitiSB1xFEVCuS3Bo9d_BCwYUEtTVlk
 id: block_content.article_form.field_articles_form
@@ -30,4 +30,4 @@ default_value:
       - sort
 default_value_callback: ''
 settings: {  }
-field_type: article_filter
+field_type: overview_filter

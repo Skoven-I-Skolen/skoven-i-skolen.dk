@@ -1,0 +1,17 @@
+sis_map:
+  css:
+    theme:
+      css/sis_map.css: {}
+  js:
+    js/sis_map.js: {}
+  dependencies:
+    - core/drupal
+    - sis_map/okapi
+
+okapi:
+  js:
+    https://okapi.dataforsyningen.dk/lib/okapi-1.5.0.min.js: { type: external, minified: true }
+  css:
+    theme:
+      https://okapi.dataforsyningen.dk/lib/okapi-1.5.0.min.css: { type: external, minified: true }
+

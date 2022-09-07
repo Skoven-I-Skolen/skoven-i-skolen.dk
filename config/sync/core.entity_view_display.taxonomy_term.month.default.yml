@@ -1,0 +1,33 @@
+uuid: 66db94cd-cf59-4ba3-ab2b-f2fd8fada01d
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.month.field_icon
+    - taxonomy.vocabulary.month
+  module:
+    - media_icons
+    - text
+id: taxonomy_term.month.default
+targetEntityType: taxonomy_term
+bundle: month
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon:
+    type: icon_formatter
+    label: above
+    settings:
+      height: 100
+      width: 100
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

@@ -15,6 +15,6 @@ effects:
     weight: 1
     data:
       width: 1200
-      height: 1126
+      height: 675
       crop_type: focal_point
 pipeline: __default__

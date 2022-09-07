@@ -1,0 +1,8 @@
+uuid: 29e47b7d-53b3-4f34-8b8b-b676a3a07529
+langcode: da
+status: true
+dependencies: {  }
+id: entity_slideshow
+label: 'Entity slideshow'
+revision: 0
+description: ''

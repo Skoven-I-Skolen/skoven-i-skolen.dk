@@ -26,19 +26,19 @@ class NewsRepository {
    * @return array
    *   Array if node ids.
    */
-  public function getLatestNews(NodeInterface $node = NULL): array {
+  public function getLatestNews(NodeInterface $node = NULL, $limit = 12): array {
     $query = \Drupal::entityQuery('node')
       ->condition('type', 'news')
       ->condition('status', NodeInterface::PUBLISHED)
-      ->range(0, 12)
+      ->range(0, $limit)
       ->sort('created', 'DESC');
+
 
     // If node is provided, filter if from the result.
     if ($node) {
-//      $query->condition('nid', $node->id(), '!=');
+      $query->condition('nid', $node->id(), '!=');
     }
     return $query->execute();
-
   }
 
 }
