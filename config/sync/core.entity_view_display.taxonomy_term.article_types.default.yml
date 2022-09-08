@@ -48,6 +48,37 @@ third_party_settings:
               block_serialized: null
             weight: 0
             additional: {  }
+          bcc7ed6e-007c-41aa-a88e-c1345648df7d:
+            uuid: bcc7ed6e-007c-41aa-a88e-c1345648df7d
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:article_types:description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          b6d789f6-2ba7-46a9-978f-d445e8e12a0b:
+            uuid: b6d789f6-2ba7-46a9-978f-d445e8e12a0b
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:article_types:field_overview'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: category_overview_formatter
+                label: hidden
+                settings:
+                  view_mode: teaser
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
