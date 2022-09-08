@@ -40,7 +40,9 @@ dependencies:
     - content_hierarchy
     - content_moderation
     - datetime
+    - dds_dawa
     - field_group
+    - file
     - media_library
     - paragraphs_asymmetric_translation_widgets
     - path
@@ -53,7 +55,7 @@ third_party_settings:
       label: 'Page header'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: fieldset
       format_settings:
         classes: ''
@@ -92,7 +94,7 @@ third_party_settings:
       label: 'Artikel metadata'
       region: content
       parent_name: ''
-      weight: 8
+      weight: 7
       format_type: tabs
       format_settings:
         classes: ''
@@ -200,13 +202,13 @@ third_party_settings:
         required_fields: true
     group_geolokation:
       children:
+        - sis_map_address_dawa
         - lat
         - lon
-        - sis_map_address_dawa
       label: Geolokation
       region: content
       parent_name: ''
-      weight: 19
+      weight: 18
       format_type: fieldset
       format_settings:
         classes: ''
@@ -327,7 +329,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 7
+    weight: 6
     region: content
     settings:
       rows: 9
@@ -337,19 +339,19 @@ content:
     third_party_settings: {  }
   content_hierarchy:
     type: content_hierarchy_modal
-    weight: 20
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_categories:
     type: entity_reference_autocomplete_tags
-    weight: 3
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -359,7 +361,7 @@ content:
     third_party_settings: {  }
   field_article_image:
     type: media_library_widget
-    weight: 6
+    weight: 5
     region: content
     settings:
       media_types: {  }
@@ -372,19 +374,13 @@ content:
     third_party_settings: {  }
   field_article_related:
     type: entity_reference_autocomplete
-    weight: 17
+    weight: 16
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_article_type:
-    type: options_select
-    weight: 2
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_class:
     type: entity_reference_autocomplete_tags
@@ -456,9 +452,16 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
+  field_files:
+    type: file_generic
+    weight: 22
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
   field_graphics:
     type: media_library_widget
-    weight: 5
+    weight: 4
     region: content
     settings:
       media_types: {  }
@@ -517,13 +520,13 @@ content:
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
-    weight: 21
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   field_section_bg_graphics_pos:
     type: options_select
-    weight: 22
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -562,35 +565,57 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  lat:
+    type: string_textfield
+    weight: 24
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  lon:
+    type: string_textfield
+    weight: 25
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 18
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 12
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  sis_map_address_dawa:
+    type: dawa_address_autocomplete_widget
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 16
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 13
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -604,13 +629,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 8
     region: content
     settings:
       match_operator: CONTAINS
@@ -619,12 +644,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_files: true
-  lat: true
-  lon: true
-  sis_map_address_dawa: true
+  field_article_type: true
