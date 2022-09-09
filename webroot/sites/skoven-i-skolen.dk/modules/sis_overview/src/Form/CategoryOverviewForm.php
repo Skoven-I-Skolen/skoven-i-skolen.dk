@@ -29,16 +29,18 @@ class CategoryOverviewForm extends OverviewFilterForm {
       $form['search']['title'] = $headline;
     }
 
-    $form['facets']['text'] += [
-      '#type' => 'search',
-      '#title' => '',
-      '#maxlength' => 64,
-      '#size' => 64,
-      '#theme_wrappers' => [],
-      '#attributes' => [
-        'class' => []
-      ],
-    ];
+    if (isset($form['facets']['text'])) {
+      $form['facets']['text'] += [
+        '#type' => 'search',
+        '#title' => '',
+        '#maxlength' => 64,
+        '#size' => 64,
+        '#theme_wrappers' => [],
+        '#attributes' => [
+          'class' => []
+        ],
+      ];
+    }
 
     $form['search']['search'] = [
       '#type' => 'button',
