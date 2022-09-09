@@ -7460,10 +7460,10 @@
         },
         {
             "name": "novicell/entity_overview",
-            "version": "2.0.7",
+            "version": "2.0.10",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_1baBPM/novicellentity_overview-2-0-7.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_1cXWuu/novicellentity_overview-2-0-10.zip"
             },
             "require": {
                 "drupal/html5history": "^1.0"
@@ -7567,10 +7567,10 @@
         },
         {
             "name": "novicell/relewise",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_LzLdG/novicellrelewise-2-0-3.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_hG9ln/novicellrelewise-2-0-4.zip"
             },
             "type": "drupal-module",
             "license": [
