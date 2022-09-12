@@ -47,6 +47,11 @@
 
   &__inner {
     position: relative;
+    padding-bottom: 0;
+
+    @media (--viewport-md-min) {
+      padding-bottom: var(--grid-section-spacing);
+    }
 
     & h2 {
       font-size: var(--base-font-size-xlarge);
@@ -54,6 +59,14 @@
 
     &.section.theme a {
       color: var(--color-white);
+    }
+
+    .col-xs-12 {
+      margin-bottom: 50px;
+
+      @media (--viewport-md-min) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -71,7 +84,7 @@
 
       &.field-gdpr {
         input[type="checkbox"] {
-         display: none;
+          display: none;
         }
 
         label {
