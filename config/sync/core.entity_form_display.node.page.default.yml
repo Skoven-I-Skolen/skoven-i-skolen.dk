@@ -42,6 +42,7 @@ third_party_settings:
         weight: 0
     group_page_settings:
       children:
+        - field_hide_title
         - field_hide_breadcrumb
       label: Sideindstillinger
       region: content
@@ -94,7 +95,7 @@ content:
     third_party_settings: {  }
   field_header:
     type: paragraphs_classic_asymmetric
-    weight: 17
+    weight: 1
     region: content
     settings:
       title: Paragraph
@@ -106,7 +107,14 @@ content:
     third_party_settings: {  }
   field_hide_breadcrumb:
     type: boolean_checkbox
-    weight: 15
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_hide_title:
+    type: boolean_checkbox
+    weight: 0
     region: content
     settings:
       display_label: true
@@ -124,6 +132,7 @@ content:
     region: content
     settings:
       sidebar: true
+      use_details: true
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -195,5 +204,4 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
-  field_hide_title: true
   layout_builder__layout: true

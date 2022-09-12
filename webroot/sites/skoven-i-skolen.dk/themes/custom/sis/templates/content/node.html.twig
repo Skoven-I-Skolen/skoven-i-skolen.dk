@@ -72,7 +72,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7 col-xs-12">
-        {% if node.field_header[0] is empty %}
+        {% if node.field_hide_title.value %}
+        {% elseif node.field_header[0] is empty %}
           {% include '@reusable-component/page-title.twig' with {
             'attributes': create_attribute().addClass('page__title'),
             'title': content.title,
