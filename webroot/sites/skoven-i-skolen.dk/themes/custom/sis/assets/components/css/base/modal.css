@@ -34,6 +34,11 @@
       }
     }
   }
+
+  .section-form {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 }
 
 .layout-builder .layout-builder__add-section {
