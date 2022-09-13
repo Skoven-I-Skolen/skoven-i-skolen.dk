@@ -3,3 +3,4 @@ _core:
 langcode: da
 ignored_config_entities:
   - sis_articles.settings
+  - smtp.settings
