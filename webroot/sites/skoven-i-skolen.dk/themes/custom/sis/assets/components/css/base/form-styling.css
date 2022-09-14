@@ -34,6 +34,10 @@
     }
   }
 
+  .layout-container {
+    margin: 0;
+  }
+
   .user-pass,
   .user-login-form {
     max-width: 816px;
