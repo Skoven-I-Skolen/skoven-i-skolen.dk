@@ -18,7 +18,7 @@
   background-image: none;
 
   /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
-  border: 1px solid var(--theme-background-color);
+  border: 1px solid var(--theme-input-border);
   border-radius: 50px;
   appearance: none;
 

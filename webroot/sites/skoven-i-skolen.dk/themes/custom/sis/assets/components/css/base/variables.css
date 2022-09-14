@@ -44,7 +44,7 @@
   --theme-divider-background-color: var(--color-black);
   --theme-accordion-color: var(--color-purple);
   --theme-accordion-border-color: rgba(61 41 89 / 30%);
-  --theme-input-border: var(--color-purple);
+  --theme-input-border: silver;
   --theme-input-border-dark: var(--color-purple);
   --theme-input-color-marked: var(--color-white);
   --theme-input-background-marked: var(--color-purple);
