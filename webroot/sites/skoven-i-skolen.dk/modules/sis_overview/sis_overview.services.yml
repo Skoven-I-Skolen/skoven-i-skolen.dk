@@ -21,3 +21,6 @@ services:
     arguments: [ '@router.admin_context', '@request_stack' ]
     tags:
       - { name: breadcrumb_builder, priority: 1004 }
+  sis_overview.term_overview:
+    class: Drupal\sis_overview\Controller\TermOverviewController
+    arguments: [ '@entity_type.manager', '@sis_overview.content_delivery', '@sis_overview.term_repository', '@request_stack', '@pager.manager']

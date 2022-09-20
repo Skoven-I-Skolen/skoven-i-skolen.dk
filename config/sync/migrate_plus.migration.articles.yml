@@ -19,7 +19,7 @@ process:
   updated: updated
   body/format:
     plugin: default_value
-    default_value: basic_html
+    default_value: full_html
   body/value:
     -
       plugin: skip_on_empty
@@ -37,9 +37,13 @@ process:
       method: process
       source: field_taxonomy_class/0/tid
     -
-      plugin: migration_lookup
-      source: field_taxonomy_class/0/tid
-      migration: subject
+      plugin: sub_process
+      source: field_taxonomy_class
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: subject
+          source: tid
   field_media_downloads:
     -
       plugin: skip_on_empty
@@ -121,9 +125,13 @@ process:
       method: process
       source: field_taxonomy_place/0/tid
     -
-      plugin: migration_lookup
-      source: field_taxonomy_place/0/tid
-      migration: location
+      plugin: sub_process
+      source: field_taxonomy_place
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: location
+          source: tid
   field_article_type:
     plugin: callback
     callable:
@@ -140,9 +148,13 @@ process:
       method: process
       source: field_taxonomy_season/0/tid
     -
-      plugin: migration_lookup
-      source: field_taxonomy_season/0/tid
-      migration: season
+      plugin: sub_process
+      source: field_taxonomy_season
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: season
+          source: tid
   field_article_related:
     -
       plugin: skip_on_empty

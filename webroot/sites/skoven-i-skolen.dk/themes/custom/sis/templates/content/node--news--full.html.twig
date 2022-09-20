@@ -101,13 +101,13 @@
             } %}
           {% endif %}
           <div class="news-page__description">
-            {{ node.field_description.value }}
+            {{ node.body.summary }}
           </div>
           <div class="news-page__image">
             {{ content.field_news_image }}
           </div>
           <div class="news-page__content">
-            {{ content|without(['field_list_date', 'field_header', 'title', 'field_news_image']) }}
+            {{ content|without(['field_list_date', 'field_header', 'title', 'field_news_image', 'field_description']) }}
           </div>
         </div>
       </div>
@@ -134,6 +134,16 @@
               </div>
             </div>
           {% endfor %}
+        {% endif %}
+        {% if inspirations %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Inspiration og lignende materialer
+            </div>
+            <div class="facts-box__content facts-box__inspiration">
+              {{ inspirations }}
+            </div>
+          </div>
         {% endif %}
       </div>
     </div>

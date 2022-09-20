@@ -1,4 +1,13 @@
 .news-page {
+  &__content {
+    h2 {
+      font-size: var(--base-font-size-xxlarge) !important;
+    }
+    h3 {
+      font-size: var(--base-font-size-xlarge) !important;
+    }
+  }
+
   &__date {
     margin-bottom: 5px;
     font-weight: var(--heading-font-weight);
@@ -15,7 +24,7 @@
 
   &__image {
     margin-bottom: 24px;
-
+    text-align: center;
     @media (--viewport-md-min) {
       margin-bottom: 75px;
     }

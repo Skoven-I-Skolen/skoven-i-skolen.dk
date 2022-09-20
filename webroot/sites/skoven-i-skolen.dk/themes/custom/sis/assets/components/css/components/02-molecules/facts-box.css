@@ -4,15 +4,16 @@
   box-shadow: 0 4px 30px rgb(131 131 131 / 25%);
 
   &.fixed-height {
-   height: 160px;
+    height: 160px;
   }
 
   &__button-below-wrapper {
     display: flex;
     justify-content: center;
+
     a {
-      text-decoration: none;
       min-width: 70%;
+      text-decoration: none;
     }
   }
 
@@ -61,7 +62,9 @@
 
     &-author-image {
       width: 85px;
+      max-height: 85px;
       margin-right: 20px;
+      overflow: hidden;
 
       img {
         width: 100%;

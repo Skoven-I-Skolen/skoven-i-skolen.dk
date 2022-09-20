@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{% set button_classes = [
+  'button',
+  'above-map-button',
+  'button--green',
+] %}
+{{ attach_library('sis/news-page') }}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div class="row">
+      <div class="col-md-12 col-lg-12 col-xs-12"><h1>{{ content.field_title }}</h1></div>
+      <div class="col-md-12 col-lg-8 col-xs-12">{{ content.field_description }}</div>
+      <div class="col-md-12 col-lg-4 col-xs-12 ">
+          <button {{ create_attribute().addClass(button_classes) }}>
+              {{ content.field_link }}
+          </button>
+      </div>
+    </div>
+    {% if terms_16 %}
+      {{ terms_16.content|without('title') }}
+      {{ terms_16.pager }}
+    {% endif %}
+    {% if terms_4 %}
+      {{ attach_library('sis/news-page') }}
+      <div class="news-page__latest section section--spacing-top-none section--spacing-bottom-none">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-8">
+            <div class="news-page__latest-header">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="swiper-navigation">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="news-page__latest-items js-news-page__latest-items swiper">
+              <div class="swiper-wrapper">
+                {{ terms_4 }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endblock %}
+</div>

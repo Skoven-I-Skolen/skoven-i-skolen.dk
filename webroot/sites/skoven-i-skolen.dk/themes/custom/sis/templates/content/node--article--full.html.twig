@@ -104,7 +104,7 @@
           <div class="article-page__image">
             {{ content.field_article_image }}
           </div>
-          {{ content|without(['field_list_date', 'field_header', 'title','field_article_image']) }}
+          {{ content|without(['field_list_date', 'field_header', 'title','field_article_image', 'field_description']) }}
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-lg-offset-1 article-content-sidebar">
@@ -129,7 +129,9 @@
                     Fag
                   </div>
                   <div class="facts-box__content-item-value">
-                    {{ node.field_subject.entity.name.value }}
+                    {% for subject in node.field_subject %}
+                      {{ subject.entity.name.value }}{{ loop.index != node.field_subject|length ? ', ' : '' }}
+                    {% endfor %}
                   </div>
                 </div>
               {% endif %}

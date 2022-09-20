@@ -382,6 +382,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_article_type:
+    type: options_select
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_class:
     type: entity_reference_autocomplete_tags
     weight: 19
@@ -648,5 +654,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_article_type: true
+hidden: {  }

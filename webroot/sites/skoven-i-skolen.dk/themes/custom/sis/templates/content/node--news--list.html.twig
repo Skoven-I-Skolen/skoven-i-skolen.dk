@@ -70,13 +70,15 @@
 {{ attach_library('sis/inspiration-overview') }}
 <div class="inspiration-overview__item">
   <div class="inspiration-overview__item-inner">
-    <a href="{{ url }}" class="inspiration-overview__item-link">
-      <div class="inspiration-overview__image">
-        {{ content.field_list_media }}
-        <div class="inspiration-overview__type inspiration-overview__type--news">
-          {{ 'News'|t }}
+    <div class="inspiration-overview__item-link">
+      <a href="{{ url }}">
+        <div class="inspiration-overview__image">
+          {{ content.field_list_media }}
+          <div class="inspiration-overview__type inspiration-overview__type--news">
+            {{ 'News'|t }}
+          </div>
         </div>
-      </div>
+      </a>
       <div class="inspiration-overview__content">
         <div class="inspiration-overview__title">
           {{ label }}
@@ -85,6 +87,6 @@
           {{ content.field_description }}
         </div>
       </div>
-    </a>
+    </div>
   </div>
 </div>

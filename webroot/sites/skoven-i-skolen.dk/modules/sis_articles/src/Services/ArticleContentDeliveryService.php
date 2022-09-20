@@ -13,6 +13,15 @@ class ArticleContentDeliveryService {
 
   private SeasonService $seasonService;
 
+  private $fieldNameToVidMapping = [
+    'field_class' => 'class',
+    'field_subject' => 'subjects',
+    'field_location' => 'location',
+    'field_season' => 'season',
+    'field_time' => 'time',
+    'field_article_months' => 'month',
+  ];
+
   /**
    * @var \Drupal\Core\Entity\EntityViewBuilder
    */
@@ -57,6 +66,38 @@ class ArticleContentDeliveryService {
       }
     }
     return $inspirational;
+  }
+
+  public function getRandomInspirationalArticles() {
+    $inspiration = [];
+
+    $fields = [
+      'field_class',
+      'field_subject',
+    ];
+
+    foreach ($fields as $field) {
+      $terms = $this->entityTypeManager
+        ->getStorage('taxonomy_term')
+        ->loadTree($this->fieldNameToVidMapping[$field]);
+      $random_term = $terms[array_rand($terms)];
+      $nodes = $this->entityTypeManager
+        ->getStorage('node')
+        ->loadByProperties([$field => $random_term->tid]);
+
+      if ($nodes) {
+        if (count($nodes) > 1) {
+          $random_keys = array_rand($nodes, 2);
+          $inspiration[$random_term->name][] = $nodes[$random_keys[0]];
+          $inspiration[$random_term->name][] = $nodes[$random_keys[1]];
+        }
+        else {
+          $random_keys = array_rand($nodes);
+          $inspiration[$random_term->name][] = $nodes[$random_keys];
+        }
+      }
+    }
+    return $inspiration;
   }
 
   /**

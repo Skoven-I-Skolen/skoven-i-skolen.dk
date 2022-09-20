@@ -76,4 +76,8 @@ class MigrateService {
     }
   }
 
+  public static function mapTaxonomyTerms($something) {
+    $a = 0;
+  }
+
 }

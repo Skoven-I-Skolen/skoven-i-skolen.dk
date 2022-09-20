@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.content_hierarchy
+    - field.field.node.news.field_article_categories
     - field.field.node.news.field_description
     - field.field.node.news.field_factboxes
     - field.field.node.news.field_graphics
@@ -37,7 +38,7 @@ third_party_settings:
       label: 'Page header'
       region: hidden
       parent_name: ''
-      weight: 20
+      weight: 21
       format_type: fieldset
       format_settings:
         classes: ''
@@ -299,6 +300,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_article_categories: true
   field_header: true
   field_hide_title: true
   langcode: true
