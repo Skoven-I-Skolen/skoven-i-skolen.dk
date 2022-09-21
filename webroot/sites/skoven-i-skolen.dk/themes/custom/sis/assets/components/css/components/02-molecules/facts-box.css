@@ -106,7 +106,14 @@
     }
 
     &__type {
-      font-size: var(--base-font-size-small);
+      a {
+        font-size: var(--base-font-size-small);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     &__link {
