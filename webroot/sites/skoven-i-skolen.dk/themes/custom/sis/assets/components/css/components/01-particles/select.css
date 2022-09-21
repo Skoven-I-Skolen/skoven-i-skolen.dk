@@ -48,7 +48,7 @@
     font-family: var(--base-font-family);
     line-height: calc(var(--button-height) * .5);
     text-decoration: none;
-    background-color: none;
+    background-color: var(--color-white);
     border: 1px solid #c0c0c0;
     cursor: pointer;
 
@@ -88,7 +88,7 @@
     min-width: 100%;
     margin-top: -1px;
     overflow: hidden;
-    background-color: #fff;
+    background-color: var(--color-white);
     border: 1px solid #c0c0c0;
     opacity: 0;
 
@@ -129,7 +129,12 @@
   }
 }
 
-.filter-wrapper {
+.field--widget-options-select {
   position: relative;
-  z-index: 2;
+  z-index: 4;
+}
+
+.js-form-type-select {
+  position: relative;
+  z-index: 3;
 }

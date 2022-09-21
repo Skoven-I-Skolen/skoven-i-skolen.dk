@@ -15,12 +15,25 @@ function dropdownSelect(wrapper) {
         if (dropdownTrigger) {
           dropdownTrigger.addEventListener('click', (e) => {
             e.preventDefault();
+
+            const selectLists = document.querySelectorAll('.premium-dropdown--wrapper.loaded');
+            let parentIndex = 4;
+
+            for (let j = 0; j < selectLists.length; j += 1) {
+              const selectListEl = selectLists[j];
+              const selectListElPrev = selectListEl.previousElementSibling;
+              const selectListElPrevParentParent = selectListElPrev.parentNode.parentNode;
+              selectListElPrevParentParent.style.zIndex = 4;
+            }
+
             if (dropdownTrigger.classList.contains('is-selected')) {
               dropdownTrigger.classList.remove('is-selected');
               dropdownMenu.classList.remove('expanded');
             } else {
               dropdownTrigger.classList.add('is-selected');
               dropdownMenu.classList.add('expanded');
+              parentIndex += 1;
+              selectListParent.style.zIndex = parentIndex;
             }
           });
         }
