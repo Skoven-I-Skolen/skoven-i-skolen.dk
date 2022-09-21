@@ -26,11 +26,11 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    height: 120px;
+    height: var(--header-height-mobile);
 
     @media (--viewport-ms-min) {
       flex-wrap: nowrap;
-      height: var(--header-height-mobile);
+      height: var(--header-height);
 
       .burger {
         order: 2;
@@ -39,7 +39,6 @@
 
     @media (--viewport-md-min) {
       justify-content: flex-end;
-      height: var(--header-height);
     }
   }
 

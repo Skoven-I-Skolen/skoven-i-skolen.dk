@@ -7,7 +7,7 @@
   display: none;
   background-color: var(--color-blue-light);
 
-  @media (--viewport-md-min) {
+  @media (--viewport-lg-min) {
     display: block;
   }
 
