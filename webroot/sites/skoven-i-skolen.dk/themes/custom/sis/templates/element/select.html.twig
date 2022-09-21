@@ -1,6 +1,6 @@
 {{ attach_library('sis/form-select') }}
 
-{% set selected_option = '' %}
+{% set selected_option = '- None -' |t %}
 {% apply spaceless %}
   <select{{ attributes.addClass('hidden') }}>
     {% for option in options %}
