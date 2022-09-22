@@ -11,6 +11,8 @@ dependencies:
     - field.field.profile.organization.field_organization_overview
     - field.field.profile.organization.field_organization_phone
     - field.field.profile.organization.field_organization_website
+    - field.field.profile.organization.field_section_bg_graphics
+    - field.field.profile.organization.field_section_bg_graphics_pos
     - field.field.profile.organization.field_top_image
     - image.style.thumbnail
     - profile.type.organization
@@ -98,6 +100,18 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_section_bg_graphics:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_section_bg_graphics_pos:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_top_image:
     type: media_library_widget

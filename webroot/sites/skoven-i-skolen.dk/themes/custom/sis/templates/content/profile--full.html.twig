@@ -33,83 +33,93 @@
   view_mode ? 'profile--view-mode--' ~ view_mode|clean_class,
   'clearfix',
 ] %}
+
+{% if profile.field_section_bg_graphics.value %}
+  {{ attach_library('sis/section-bg-graphics') }}
+{% endif %}
+
 <div{{ attributes.addClass(classes) }}>
   {% if content.field_top_image[0] %}
     <div class="profile__hero">
       {{ content.field_top_image }}
     </div>
   {% endif %}
-  {{ breadcrumb }}
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-lg-7 col-xs-12">
-        <h1 class="profile__page-title">{{ profile.field_organization_address.organization }}</h1>
-        {{ title_suffix.contextual_links }}
-        <div class="profile__description read-more__content-wrapper">
-          <div class="read-more__content">
-            {% if profile.field_organization_description[0] %}
-              {{ profile.field_organization_description.value|t }}
+  <div class="profile__content{{ profile.field_section_bg_graphics.value ? ' section section--background-graphics' : '' }}">
+    {% if profile.field_section_bg_graphics.value %}
+      <img src="/{{ directory }}/dist/images/{{ profile.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ profile.field_section_bg_graphics.value }} section-bg-graphics__position--{{ profile.field_section_bg_graphics_pos.value }}" />
+    {% endif %}
+    {{ breadcrumb }}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-lg-7 col-xs-12">
+          <h1 class="profile__page-title">{{ profile.field_organization_address.organization }}</h1>
+          {{ title_suffix.contextual_links }}
+          <div class="profile__description read-more__content-wrapper">
+            <div class="read-more__content">
+              {% if profile.field_organization_description[0] %}
+                {{ profile.field_organization_description.value|t }}
+              {% endif %}
+            </div>
+            <a href="#" class="read-more__trigger">
+              <div class="read-more__label--expanded">{{ 'Hide'|t }}</div>
+              <div class="read-more__label--collapsed">{{ 'Read more'|t }}</div>
+              <div class="read-more__arrow">
+                <span></span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4 col-lg-offset-1 col-xs-12 profile__info">
+          <div class="profile__logo">
+            {{ content.field_organization_logo }}
+          </div>
+          <div class="profile__address">
+            <div class="profile__address--row">
+              <div class="profile__address--label">
+                Adresse
+              </div>
+              <div class="profile__address--content">
+                {{ profile.field_organization_address.address_line1 }}, {{ profile.field_organization_address.postal_code }} {{ profile.field_organization_address.locality }}
+              </div>
+            </div>
+            {% if profile.field_organization_phone[0] %}
+              <div class="profile__address--row">
+                <div class="profile__address--label">
+                  Telefon
+                </div>
+                <div class="profile__address--content">
+                  {{ profile.field_organization_phone.value }}
+                </div>
+              </div>
+            {% endif %}
+            {% if profile.field_organization_email[0] %}
+              <div class="profile__address--row">
+                <div class="profile__address--label">
+                  E-mail
+                </div>
+                <div class="profile__address--content">
+                  <a href="mailto:{{ profile.field_organization_email.value }}">{{ profile.field_organization_email.value }}</a>
+                </div>
+              </div>
+            {% endif %}
+            {% if profile.field_organization_website[0] %}
+              <div class="profile__address--row">
+                <div class="profile__address--label">
+                  Hjemmeside
+                </div>
+                <div class="profile__address--content">
+                  <a href="{{ profile.field_organization_website.uri }}" target="_blank">{{ profile.field_organization_website.uri }}</a>
+                </div>
+              </div>
             {% endif %}
           </div>
-          <a href="#" class="read-more__trigger">
-            <div class="read-more__label--expanded">{{ 'Hide'|t }}</div>
-            <div class="read-more__label--collapsed">{{ 'Read more'|t }}</div>
-            <div class="read-more__arrow">
-              <span></span>
-            </div>
-          </a>
         </div>
-      </div>
-      <div class="col-md-4 col-lg-4 col-lg-offset-1 col-xs-12 profile__info">
-        <div class="profile__logo">
-          {{ content.field_organization_logo }}
+        <div class="col-xs-12">
         </div>
-        <div class="profile__address">
-          <div class="profile__address--row">
-            <div class="profile__address--label">
-              Adresse
-            </div>
-            <div class="profile__address--content">
-              {{ profile.field_organization_address.address_line1 }}, {{ profile.field_organization_address.postal_code }} {{ profile.field_organization_address.locality }}
-            </div>
-          </div>
-          {% if profile.field_organization_phone[0] %}
-            <div class="profile__address--row">
-              <div class="profile__address--label">
-                Telefon
-              </div>
-              <div class="profile__address--content">
-                {{ profile.field_organization_phone.value }}
-              </div>
-            </div>
-          {% endif %}
-          {% if profile.field_organization_email[0] %}
-            <div class="profile__address--row">
-              <div class="profile__address--label">
-                E-mail
-              </div>
-              <div class="profile__address--content">
-                <a href="mailto:{{ profile.field_organization_email.value }}">{{ profile.field_organization_email.value }}</a>
-              </div>
-            </div>
-          {% endif %}
-          {% if profile.field_organization_website[0] %}
-            <div class="profile__address--row">
-              <div class="profile__address--label">
-                Hjemmeside
-              </div>
-              <div class="profile__address--content">
-                <a href="{{ profile.field_organization_website.uri }}" target="_blank">{{ profile.field_organization_website.uri }}</a>
-              </div>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-      <div class="col-xs-12">
       </div>
     </div>
   </div>
-  </div>
+</div>
 <div class="profile__overview">
   {{ content.field_organization_overview }}
 </div>
