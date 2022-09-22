@@ -1,0 +1,20 @@
+uuid: 9296695a-8fb3-4822-9eda-a2652ed38533
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+    - profile
+id: profile.field_top_image
+field_name: field_top_image
+entity_type: profile
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

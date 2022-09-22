@@ -3,23 +3,20 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.profile.organization.field_orgamization_overview
     - field.field.profile.organization.field_organization_address
     - field.field.profile.organization.field_organization_description
     - field.field.profile.organization.field_organization_email
-    - field.field.profile.organization.field_organization_graphic
     - field.field.profile.organization.field_organization_logo
     - field.field.profile.organization.field_organization_overview
     - field.field.profile.organization.field_organization_phone
-    - field.field.profile.organization.field_organization_top_image
     - field.field.profile.organization.field_organization_website
+    - field.field.profile.organization.field_top_image
     - profile.type.organization
-    - responsive_image.styles.wide
   module:
     - address
-    - entity_reference_revisions
     - image
     - link
-    - responsive_image
     - sis_organization
     - text
 id: profile.organization.default
@@ -48,16 +45,6 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_organization_graphic:
-    type: responsive_image
-    label: hidden
-    settings:
-      responsive_image_style: wide
-      image_link: ''
-      image_style: ''
-    third_party_settings: {  }
-    weight: 7
-    region: content
   field_organization_logo:
     type: image
     label: hidden
@@ -85,15 +72,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_organization_top_image:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 8
-    region: content
   field_organization_website:
     type: link
     label: hidden
@@ -105,6 +83,15 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_top_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: hero
+      link: false
+    third_party_settings: {  }
+    weight: 10
     region: content
 hidden:
   field_orgamization_overview: true
