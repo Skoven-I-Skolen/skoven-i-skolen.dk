@@ -1,0 +1,23 @@
+uuid: 3a1c563d-c6ef-4728-8cb1-8caad1679f5c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_section_bg_graphics_pos
+    - profile.type.organization
+  module:
+    - options
+id: profile.organization.field_section_bg_graphics_pos
+field_name: field_section_bg_graphics_pos
+entity_type: profile
+bundle: organization
+label: 'Baggrunds grafik position'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: right
+default_value_callback: ''
+settings: {  }
+field_type: list_string

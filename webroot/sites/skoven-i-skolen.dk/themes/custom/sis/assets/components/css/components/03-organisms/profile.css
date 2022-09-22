@@ -3,6 +3,17 @@
  * Profile.
  */
 .profile {
+  &__hero {
+    img {
+      display: block;
+    }
+  }
+
+  &__content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   &__page-title {
     margin-bottom: 24px;
   }

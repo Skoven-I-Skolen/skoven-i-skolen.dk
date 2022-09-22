@@ -1,0 +1,21 @@
+uuid: 3fc3ff48-26eb-4a34-a7bb-ad9b1adef34d
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_section_bg_graphics
+    - profile.type.organization
+  module:
+    - options
+id: profile.organization.field_section_bg_graphics
+field_name: field_section_bg_graphics
+entity_type: profile
+bundle: organization
+label: 'Baggrunds grafik'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

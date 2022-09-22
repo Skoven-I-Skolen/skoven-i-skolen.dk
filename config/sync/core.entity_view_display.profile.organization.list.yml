@@ -12,6 +12,8 @@ dependencies:
     - field.field.profile.organization.field_organization_overview
     - field.field.profile.organization.field_organization_phone
     - field.field.profile.organization.field_organization_website
+    - field.field.profile.organization.field_section_bg_graphics
+    - field.field.profile.organization.field_section_bg_graphics_pos
     - field.field.profile.organization.field_top_image
     - profile.type.organization
   module:
@@ -59,5 +61,7 @@ hidden:
   field_organization_overview: true
   field_organization_phone: true
   field_organization_website: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
   field_top_image: true
   search_api_excerpt: true

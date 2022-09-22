@@ -1,0 +1,39 @@
+uuid: 51cc99af-4c36-4cb4-b674-97cacb42bc46
+langcode: da
+status: true
+dependencies:
+  module:
+    - options
+    - profile
+id: profile.field_section_bg_graphics
+field_name: field_section_bg_graphics
+entity_type: profile
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: birds
+      label: Fugle
+    -
+      value: branches
+      label: Grene
+    -
+      value: sea
+      label: Hav
+    -
+      value: deer
+      label: Hjort
+    -
+      value: reeds
+      label: Siv
+    -
+      value: wind
+      label: Vind
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
