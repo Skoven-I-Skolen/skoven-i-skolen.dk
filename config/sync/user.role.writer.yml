@@ -3,7 +3,9 @@ langcode: da
 status: true
 dependencies:
   config:
+    - node.type.article
     - node.type.blog_post
+    - node.type.dot_on_map
   module:
     - node
 id: writer
@@ -11,7 +13,8 @@ label: Blogger
 weight: 7
 is_admin: null
 permissions:
-  - 'create blog_post content'
+  - 'create article content'
+  - 'create dot_on_map content'
   - 'delete blog_post revisions'
   - 'delete own blog_post content'
   - 'edit own blog_post content'

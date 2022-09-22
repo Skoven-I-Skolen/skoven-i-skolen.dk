@@ -39,7 +39,6 @@ dependencies:
     - node.type.article
     - workflows.workflow.editorial
   module:
-    - content_hierarchy
     - content_moderation
     - datetime
     - dds_dawa
@@ -213,7 +212,7 @@ third_party_settings:
       label: Geolokation
       region: content
       parent_name: ''
-      weight: 17
+      weight: 16
       format_type: fieldset
       format_settings:
         classes: ''
@@ -342,12 +341,6 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  content_hierarchy:
-    type: content_hierarchy_modal
-    weight: 18
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 8
@@ -367,19 +360,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_article_related:
-    type: entity_reference_autocomplete
-    weight: 15
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_article_type:
     type: options_select
-    weight: 21
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -535,13 +518,13 @@ content:
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
-    weight: 19
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_section_bg_graphics_pos:
     type: options_select
-    weight: 20
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -598,7 +581,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -664,4 +647,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  content_hierarchy: true
   field_article_categories: true
+  field_article_related: true

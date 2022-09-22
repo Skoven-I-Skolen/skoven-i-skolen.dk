@@ -11,7 +11,7 @@ field_name: field_graphics
 entity_type: node
 bundle: article
 label: 'Top grafik'
-description: ''
+description: 'Et billede, der vises øverst i din artikel.'
 required: false
 translatable: false
 default_value: {  }

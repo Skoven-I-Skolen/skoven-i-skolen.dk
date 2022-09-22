@@ -12,7 +12,7 @@ field_name: sis_map_address_dawa
 entity_type: node
 bundle: article
 label: Address
-description: ''
+description: 'Det gør det muligt at geolokalisere denne artikel. Hvis det ikke er knyttet til en placering, skal du lade det stå tomt. Hvis der ikke indtastes nogen adresse, vil nedenstående koordinater blive brugt'
 required: false
 translatable: true
 default_value: {  }

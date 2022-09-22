@@ -101,6 +101,7 @@ module:
   promote_disable: 0
   rdf: 0
   redirect: 0
+  redirect_404: 0
   redis: 0
   relewise: 0
   responsive_image: 0
