@@ -50,6 +50,7 @@
         "drupal/entity_usage": "^2.0-beta3",
         "drupal/field_group": "^3.0",
         "drupal/focal_point": "^1.0",
+        "drupal/honeypot": "^2.1",
         "drupal/hreflang": "^1.0",
         "drupal/imageapi_optimize": "^4.0@beta",
         "drupal/inline_block_title_automatic": "^1.0",
