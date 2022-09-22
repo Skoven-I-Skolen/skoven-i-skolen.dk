@@ -4,7 +4,8 @@ use Drupal\sis_articles\Services\LazyBuilderService;
 
 function sis_articles_preprocess_node(&$variables) {
 
-  if ($variables['node']->bundle() === 'article' && $variables['view_mode'] === 'full') {
+  if (($variables['node']->bundle() === 'article' ||  $variables['node']->bundle() === 'news' )
+    && $variables['view_mode'] === 'full') {
     /** @var \Drupal\sis_articles\Services\ArticleContentDeliveryService $contentDelivery */
     $contentDelivery = \Drupal::service('sis_articles.content_delivery_service');
     $related = $contentDelivery->getRelatedArticles($variables['node']);

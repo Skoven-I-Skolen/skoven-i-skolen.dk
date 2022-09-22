@@ -34,6 +34,7 @@ class BlogPostContentDeliveryService {
     $users_view = [];
     if ($results = $this->blogPostRepository->getWriters($target_id, $exception)) {
       $users = User::loadMultiple($results);
+      shuffle($users);
       foreach ($users as $user) {
         $users_view[] = $this->entityTypeManager->getViewBuilder('user')->view($user, 'compact');
       }
@@ -42,9 +43,12 @@ class BlogPostContentDeliveryService {
     return [];
   }
 
-  public function getBlogPostsByAuthor($author_ids) {
+  public function getBlogPostsByAuthor($author_ids, $current_node = NULL) {
     if ($posts = $this->blogPostRepository->getBlogPostsByAuthor($author_ids)) {
       $nodes = Node::loadMultiple($posts);
+      if ($current_node) {
+        unset($nodes[$current_node]);
+      }
       return $this->entityTypeManager->getViewBuilder('node')->viewMultiple($nodes, 'list');
     }
     return [];

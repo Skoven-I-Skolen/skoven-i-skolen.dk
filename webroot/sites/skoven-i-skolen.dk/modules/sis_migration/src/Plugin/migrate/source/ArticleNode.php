@@ -36,7 +36,9 @@ class ArticleNode extends Node {
 
         // If we hit the old categories just stop.
         if($parentId == 208 || $parentId == 228 || $parentId == 232 || $parentId == 231 || $parentId == 233 || $parentId == 510) {
-          return FALSE;
+          if ($category_term[0]['tid'] != 512){
+            return FALSE;
+          }
         }
       }
 

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.content_hierarchy
+    - field.field.node.news.field_article_categories
     - field.field.node.news.field_description
     - field.field.node.news.field_factboxes
     - field.field.node.news.field_graphics
@@ -43,6 +44,14 @@ targetEntityType: node
 bundle: news
 mode: default
 content:
+  field_article_categories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
   field_description:
     type: basic_string
     label: above

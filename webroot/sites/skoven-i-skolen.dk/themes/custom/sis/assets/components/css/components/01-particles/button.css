@@ -25,6 +25,11 @@ a.button {
   border-radius: 50px;
   cursor: pointer;
 
+   a {
+     text-decoration: none;
+     color: white;
+   }
+
   &[disabled],
   [disabled] & {
     opacity: .6;

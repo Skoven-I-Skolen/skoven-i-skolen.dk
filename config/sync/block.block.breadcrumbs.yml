@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - premium_core
-    - system
   theme:
     - sis
 _core:
@@ -17,11 +16,7 @@ provider: null
 plugin: premium_breadcrumb_block
 settings:
   id: premium_breadcrumb_block
-  label: Breadcrumbs
+  label: Brødkrummer
   label_display: '0'
   provider: premium_core
-visibility:
-  request_path:
-    id: request_path
-    negate: true
-    pages: '/blogs/*'
+visibility: {  }

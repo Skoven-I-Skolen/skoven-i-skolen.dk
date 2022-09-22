@@ -31,7 +31,7 @@ class NewsBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
     $links = [
       Link::createFromRoute($this->t('Home'), '<front>'),
-      Link::createFromRoute($this->t('News', [], ['context' => 'breadcrumb']), 'entity.node.canonical', ['node' => 1]),
+      Link::createFromRoute($this->t('Nyheder', [], ['context' => 'breadcrumb']), 'entity.node.canonical', ['node' => 1]),
       Link::createFromRoute($route_entity->label(), '<none>'),
     ];
 

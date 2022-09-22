@@ -1,0 +1,21 @@
+uuid: 6c9b7d4b-96bf-4473-95f7-44aeaedf426d
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.news_overview
+    - field.storage.block_content.field_title
+id: block_content.news_overview.field_title
+field_name: field_title
+entity_type: block_content
+bundle: news_overview
+label: Titel
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: Nyheder
+default_value_callback: ''
+settings: {  }
+field_type: string

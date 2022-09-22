@@ -19,7 +19,7 @@ process:
   updated: updated
   body/format:
     plugin: default_value
-    default_value: basic_html
+    default_value: full_html
   body/value:
     -
       plugin: skip_on_empty
@@ -51,11 +51,11 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: field_sis_article_image/0/fid
+      source: field_sis_news_image/0/fid
     -
       plugin: migration_lookup
       migration: upgrade_d7_file_to_media_image
-      source: field_sis_article_image/0/fid
+      source: field_sis_news_image/0/fid
       no_stub: true
 destination:
   plugin: 'entity:node'

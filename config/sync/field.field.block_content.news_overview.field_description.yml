@@ -1,0 +1,19 @@
+uuid: c4a19e89-48a8-4018-bf7a-8a94502ee161
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.news_overview
+    - field.storage.block_content.field_description
+id: block_content.news_overview.field_description
+field_name: field_description
+entity_type: block_content
+bundle: news_overview
+label: Beskrivelse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

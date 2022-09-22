@@ -24,7 +24,6 @@ use Drupal\taxonomy\Entity\Term;
  */
 class CategoryOverviewFormatter extends OverviewFormFormatter {
 
-
   /**
    * {@inheritdoc}
    */

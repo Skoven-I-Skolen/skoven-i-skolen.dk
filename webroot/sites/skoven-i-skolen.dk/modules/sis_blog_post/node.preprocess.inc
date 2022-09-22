@@ -23,8 +23,9 @@ function sis_blog_post_preprocess_node(&$variables) {
           }
         }
       }
+      $current_node = $variables['node']->get('nid')->getString();
       $variables['other_blog_posts'] = \Drupal::service('sis_blog_post.content_delivery_service')
-        ->getBlogPostsByAuthor([$variables['node']->getOwnerId()]);
+        ->getBlogPostsByAuthor([$variables['node']->getOwnerId()], $current_node);
     }
 
     $creation_date = \Drupal::service('date.formatter')

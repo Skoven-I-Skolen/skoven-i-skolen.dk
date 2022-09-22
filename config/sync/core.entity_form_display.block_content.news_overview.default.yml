@@ -4,19 +4,47 @@ status: true
 dependencies:
   config:
     - block_content.type.news_overview
-    - field.field.block_content.news_overview.field_news_overview
+    - field.field.block_content.news_overview.field_description
+    - field.field.block_content.news_overview.field_link
+    - field.field.block_content.news_overview.field_show_four_items
+    - field.field.block_content.news_overview.field_title
   module:
-    - entity_overview
+    - link
 id: block_content.news_overview.default
 targetEntityType: block_content
 bundle: news_overview
 mode: default
 content:
-  field_news_overview:
-    type: overview_filter_widget
-    weight: 26
+  field_description:
+    type: string_textarea
+    weight: 27
     region: content
-    settings: {  }
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 30
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_show_four_items:
+    type: boolean_checkbox
+    weight: 29
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 31
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   info:
     type: string_textfield

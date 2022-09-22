@@ -60,7 +60,11 @@ class TermOverviewController extends ControllerBase {
    * @return array
    *   Array of entites to render
    */
-  public function view(Term $taxonomy_term): array {
+  public function view(Term $taxonomy_term, bool $small = FALSE): array {
+
+    if ($this->request->get('small')) {
+      $small = (bool)$this->request->get('small');
+    }
 
     $fields = \Drupal::service('entity_field.manager')
       ->getFieldDefinitions('taxonomy_term', $taxonomy_term->bundle());
@@ -80,6 +84,11 @@ class TermOverviewController extends ControllerBase {
 
     $build['content'] = $this->termContentDelivery
       ->getEntitiesByTerm($taxonomy_term, $this->getLimit(), $this->getPage());
+
+    if ($small) {
+      $build['content']['#theme'] = 'term_overview_small';
+      $build['content']['#is_small'] = TRUE;
+    }
 
     $build['pager'] = [
       '#type' => 'pager',

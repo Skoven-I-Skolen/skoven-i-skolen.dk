@@ -38,7 +38,7 @@ class MigrateService {
   }
 
   public static function mapCategoriesToArticleTypes(int $typeId) {
-    $type = '';
+    $type = 'kopiark';
     switch ($typeId) {
       case 215:
         $type = 'aktivitet';
@@ -63,6 +63,9 @@ class MigrateService {
         break;
       case 234:
         $type = 'viden_om_udeskole';
+        break;
+      default:
+        $type = 'kopiark';
         break;
     }
 
