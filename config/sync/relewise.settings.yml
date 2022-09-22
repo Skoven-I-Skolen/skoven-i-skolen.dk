@@ -1,9 +1,6 @@
-index_batch_size: '50'
+index_batch_size: '200'
 entity_bundles:
-  media: {  }
   node:
     - article
-    - page
   profile:
     - organization
-  taxonomy_term: {  }

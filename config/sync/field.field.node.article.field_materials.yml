@@ -1,18 +1,16 @@
-uuid: 57329b9e-720e-45ef-aafb-de1d63f4529f
+uuid: ecd35e85-ed80-41c1-890f-51317e2cd66d
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_media_downloads
+    - field.storage.node.field_materials
     - media.type.document
-    - media.type.remote_video
-    - media.type.video
     - node.type.article
-id: node.article.field_media_downloads
-field_name: field_media_downloads
+id: node.article.field_materials
+field_name: field_materials
 entity_type: node
 bundle: article
-label: Media
+label: Materialer
 description: ''
 required: false
 translatable: false
@@ -23,11 +21,9 @@ settings:
   handler_settings:
     target_bundles:
       document: document
-      remote_video: remote_video
-      video: video
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: document
+    auto_create_bundle: ''
 field_type: entity_reference

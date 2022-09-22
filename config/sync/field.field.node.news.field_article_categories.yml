@@ -7,7 +7,7 @@ dependencies:
     - node.type.news
     - taxonomy.vocabulary.article_categories
   content:
-    - 'taxonomy_term:article_categories:70bb89f9-ac63-4b52-b84c-cac8a053b495'
+    - 'taxonomy_term:article_categories:c2a8260b-9125-4060-968a-77b5c30ff263'
 id: node.news.field_article_categories
 field_name: field_article_categories
 entity_type: node
@@ -18,7 +18,7 @@ required: false
 translatable: true
 default_value:
   -
-    target_uuid: 70bb89f9-ac63-4b52-b84c-cac8a053b495
+    target_uuid: c2a8260b-9125-4060-968a-77b5c30ff263
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

@@ -1,0 +1,20 @@
+uuid: 6c758e77-86ee-403b-9e44-45661a5d65a3
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_copy_sheet
+field_name: field_copy_sheet
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 10
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

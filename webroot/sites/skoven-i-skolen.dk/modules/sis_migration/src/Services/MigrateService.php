@@ -38,7 +38,7 @@ class MigrateService {
   }
 
   public static function mapCategoriesToArticleTypes(int $typeId) {
-    $type = '';
+    $type = 'kopiark';
     switch ($typeId) {
       case 215:
         $type = 'aktivitet';
@@ -64,6 +64,9 @@ class MigrateService {
       case 234:
         $type = 'viden_om_udeskole';
         break;
+      default:
+        $type = 'kopiark';
+        break;
     }
 
     $article_type = \Drupal::entityQuery('taxonomy_term')
@@ -74,10 +77,6 @@ class MigrateService {
     if(!empty($article_type)) {
       return reset($article_type);
     }
-  }
-
-  public static function mapTaxonomyTerms($something) {
-    $a = 0;
   }
 
 }

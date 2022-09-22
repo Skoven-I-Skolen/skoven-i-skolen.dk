@@ -85,8 +85,13 @@ function sis_preprocess_block__inline_block__news_overview(array &$variables) {
     $variables['terms_4'] = $latest_news;
   }
   else {
+    $news_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+      ->loadByProperties(['machine_name' => 'news']);
+    if (!$news_term) {
+      return;
+    }
     $variables['terms_16'] = Drupal::service('sis_overview.term_overview')
-      ->view(Term::load(307), TRUE);
+      ->view(array_shift($news_term), TRUE);
     $variables['terms_16']['pager']['#route_parameters']['small'] = TRUE;
   }
 }

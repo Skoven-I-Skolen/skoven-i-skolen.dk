@@ -10,4 +10,4 @@ entity_bundles:
 fields: {  }
 engine_id: relewise
 sort_field: created
-show_total: ''
+show_total: results

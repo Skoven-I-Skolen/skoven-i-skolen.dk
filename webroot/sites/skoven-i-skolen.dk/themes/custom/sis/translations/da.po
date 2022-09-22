@@ -26,3 +26,6 @@ msgstr "Udvid alle"
 
 msgid "Collapse All"
 msgstr "Skjul alle"
+
+msgid "News"
+msgstr "Nyheder"

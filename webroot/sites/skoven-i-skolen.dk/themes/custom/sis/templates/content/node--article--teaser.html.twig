@@ -68,20 +68,30 @@
  */
 #}
 {{ attach_library('sis/inspiration-overview') }}
+
+{% set subject_items = content.field_subject['#items'] %}
+
 <div class="inspiration-overview__item">
   <div class="inspiration-overview__item-inner">
-    <div class="inspiration-overview__item-link">
-      <a href="{{ url }}">
-        <div class="inspiration-overview__image">
-          {{ content.field_list_media }}
-          <a href="/nyhedoversigt">
-            <div class="inspiration-overview__type inspiration-overview__type--news">
-              {{ 'Nyhed'|t }}
-            </div>
-          </a>
-        </div>
-      </a>
+    <a href="{{ url }}" class="inspiration-overview__item-link">
+      <div class="inspiration-overview__image">
+        {{ content.field_list_media }}
+        <a href="/{{ url|split('/')[1] }}">
+          <div class="inspiration-overview__type">
+            {{ node.field_article_type.entity.name.value }}
+          </div>
+        </a>
+      </div>
       <div class="inspiration-overview__content">
+        {% if content.field_class[0]|length > 0 %}
+          <div class="inspiration-overview__class">
+            {% include '@reusable-component/svg-icon.twig' with {
+              'attributes': '',
+              'svgIconName': 'reading'
+            } %}
+            {{ content.field_class }}
+          </div>
+        {% endif %}
         <div class="inspiration-overview__title">
           {{ label }}
         </div>
@@ -89,6 +99,22 @@
           {{ content.field_description }}
         </div>
       </div>
-    </div>
+    </a>
+    {% if subject_items|length > 0 %}
+      <div class="inspiration-overview__subject">
+        {% if subject_items|length > 2 %}
+          {% for item in subject_items|slice(0, 2) %}
+            {% if item.entity.tid.value %}
+              <a class="inspiration-overview__subject-item" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{ item.entity.name.value }}</a>
+            {% endif %}
+          {% endfor %}
+          <div class="inspiration-overview__subject-item--more-text">
+            + {{ subject_items|length - 2 }} {{ 'subjects'|t }}
+          </div>
+        {% else %}
+          {{ content.field_subject }}
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 </div>

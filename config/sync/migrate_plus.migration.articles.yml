@@ -30,6 +30,16 @@ process:
       search: /sites/default/files/
       replace: /sites/skoven-i-skolen.dk/files/
       source: body/0/value
+    -
+      plugin: str_replace
+      search: /sites/default/files/migrated/
+      replace: /sites/skoven-i-skolen.dk/files/migrated/
+      source: body/0/value
+    -
+      plugin: str_replace
+      search: skoven-i-skolen.ditnyewebsite.dk
+      replace: skoven-i-skolen.dk
+      source: body/0/value
   body/summary: body/0/summary
   field_subject:
     -
@@ -44,16 +54,32 @@ process:
           plugin: migration_lookup
           migration: subject
           source: tid
-  field_media_downloads:
+  field_copy_sheet:
     -
       plugin: skip_on_empty
       method: process
-      source: field_sis_article_image/0/fid
+      source: field_sis_copy_material/0/fid
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_file_to_media_document
-      source: field_sis_article_image/0/fid
-      no_stub: true
+      plugin: sub_process
+      source: field_sis_copy_material
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_file_to_media_document
+          source: fid
+  field_materials:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_sis_materials/0/fid
+    -
+      plugin: sub_process
+      source: field_sis_materials
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_file_to_media_document
+          source: fid
   field_equipment/format:
     plugin: default_value
     default_value: basic_html

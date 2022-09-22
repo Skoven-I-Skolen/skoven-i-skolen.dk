@@ -64,7 +64,10 @@ class CategoryOverviewForm extends OverviewFilterForm {
   }
 
   protected function buildEntitiesInContent(array &$content, array $entities, OverviewFilter $filter) {
-    $content['content'] = atom('overview-no-results');
+    $content['content'] = [
+      '#type' => 'markup',
+      '#markup' => t('Ingen resultater fundet'),
+    ];
 
     if ($entities) {
       parent::buildEntitiesInContent($content, $entities, $filter);
