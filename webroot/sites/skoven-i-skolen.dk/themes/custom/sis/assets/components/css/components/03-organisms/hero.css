@@ -14,11 +14,11 @@
   overflow: hidden;
 
   & h1 {
+    display: inline-block;
     font-size: var(--base-font-size-xxxlarge);
 
     @media (--viewport-md-min) {
       max-width: 500px;
-      margin: 0 auto 20px;
       font-size: var(--base-font-size-xxxxxlarge);
     }
   }
@@ -108,11 +108,18 @@
     .hero__description {
       text-align: center;
     }
+
+    @media (--viewport-md-min) {
+      h1 {
+        margin: 0 auto 20px;
+      }
+    }
   }
 
   &--right {
     .hero__content {
       align-items: flex-end;
+      text-align: right;
     }
 
     .hero__title,
