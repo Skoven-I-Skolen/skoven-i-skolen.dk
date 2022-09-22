@@ -104,7 +104,7 @@
   }
 }
 
-.section--background-graphics {
+.section--background-graphics:not(.theme) {
   @media (--viewport-sm-min) {
     overflow: hidden;
   }
