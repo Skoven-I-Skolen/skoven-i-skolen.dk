@@ -13,11 +13,18 @@ h6 {
   margin-bottom: 10px;
   font-weight: var(--heading-font-weight);
   font-family: var(--heading-font-family);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 h1 {
-  font-size: var(--base-font-size-xxxlarge);
+  font-size: var(--base-font-size-xxlarge);
   line-height: 1;
+
+  @media (--viewport-ms-min) {
+    font-size: var(--base-font-size-xxxlarge)
+  }
 
   @media (--viewport-sm-min) {
     font-size: var(--base-font-size-xxxxlarge)
@@ -25,8 +32,12 @@ h1 {
 }
 
 h2 {
-  font-size: var(--base-font-size-xxlarge);
+  font-size: var(--base-font-size-xlarge);
   line-height: 1.2;
+
+  @media (--viewport-ms-min) {
+    font-size: var(--base-font-size-xxxlarge)
+  }
 
   @media (--viewport-sm-min) {
     font-size: var(--base-font-size-xxxlarge)
@@ -34,8 +45,12 @@ h2 {
 }
 
 h3 {
-  font-size: var(--base-font-size-xlarge);
+  font-size: var(--base-font-size-large);
   line-height: 1.2;
+
+  @media (--viewport-ms-min) {
+    font-size: var(--base-font-size-xlarge)
+  }
 
   @media (--viewport-sm-min) {
     font-size: var(--base-font-size-xxlarge)
