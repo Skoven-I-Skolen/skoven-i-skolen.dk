@@ -71,6 +71,7 @@
 {{ attach_library('sis/news-page') }}
 {{ attach_library('sis/blog-post') }}
 {{ attach_library('sis_blog_post/sis_blog_post') }}
+{{ attach_library('sis/slider-pager-count') }}
 {% if node.field_section_bg_graphics.value %}
   {{ attach_library('sis/section-bg-graphics') }}
 {% endif %}
@@ -170,6 +171,25 @@
                 {{ other_blog_posts }}
             </div>
           </div>
+          {% if other_blog_posts_count > 0 %}
+            <div class="slider-pager-count{{ other_blog_posts_count > 1 ? ' md-hidden lg-hidden xl-hidden' }}{{ other_blog_posts_count > 2 ? ' ms-hidden sm-hidden lg-hidden xl-hidden' }}{{ other_blog_posts_count > 3 ? ' ms-hidden sm-hidden md-hidden' }}">
+              {{ 'Showing'|t }}
+              <span class="slider-pager-count--showing">
+                <span class="ms-hidden sm-hidden md-hidden lg-hidden xl-hidden">1</span>
+                {% if other_blog_posts_count > 1 %}
+                  <span class="xs-hidden md-hidden lg-hidden xl-hidden">2</span>
+                {% endif %}
+                {% if other_blog_posts_count > 2 %}
+                  <span class="xs-hidden ms-hidden sm-hidden lg-hidden xl-hidden">3</span>
+                {% endif %}
+                {% if other_blog_posts_count > 3 %}
+                  <span class="xs-hidden ms-hidden sm-hidden md-hidden">4</span>
+                {% endif %}
+              </span>
+              {{ 'out of'|t }}
+              <span class="slider-pager-count--total">{{ other_blog_posts_count }}</span>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
