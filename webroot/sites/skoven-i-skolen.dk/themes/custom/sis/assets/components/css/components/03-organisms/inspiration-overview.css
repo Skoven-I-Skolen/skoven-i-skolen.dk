@@ -108,6 +108,7 @@
     display: flex;
     flex-direction: column;
     padding: 15px 20px 8px;
+    color: var(--color-purple);
   }
 
   &__class {
@@ -172,6 +173,10 @@
       font-family: var(--base-font-family);
       text-decoration: none;
       background-color: var(--color-yellow);
+
+      .section.theme & {
+        color: var(--color-purple);
+      }
     }
 
     &-item--more-text {

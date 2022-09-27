@@ -76,10 +76,6 @@
   .headline-wrapper {
     display: flex;
     justify-content: space-between;
-
-    & a {
-      color: #3d2859;
-    }
   }
 
   .months-activity-cards {
