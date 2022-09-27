@@ -53,11 +53,27 @@
   }
 
   &__title {
-    font-size: var(--base-font-size-xxxxxlarge);
+    font-size: var(--base-font-size-xxlarge);
+
+    @media (--viewport-ms-min) {
+      font-size: var(--base-font-size-xxxlarge);
+    }
+
+    @media (--viewport-sm-min) {
+      font-size: var(--base-font-size-xxxxlarge);
+    }
   }
 
   &__description {
-    font-size: var(--base-font-size-xxlarge);
+    font-size: var(--base-font-size-large);
+
+    @media (--viewport-ms-min) {
+      font-size: var(--base-font-size-xlarge);
+    }
+
+    @media (--viewport-sm-min) {
+      font-size: var(--base-font-size-xxlarge);
+    }
   }
 }
 

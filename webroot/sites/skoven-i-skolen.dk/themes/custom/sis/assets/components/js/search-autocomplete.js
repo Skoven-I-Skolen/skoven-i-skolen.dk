@@ -7,8 +7,9 @@ import AutoComplete from '@tarekraafat/autocomplete.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const autoCompleteJS = new AutoComplete({
-    placeHolder: 'Search entire site',
+    placeHolder: Drupal.t('Search entire site'),
     selector: '#js-header-search-input',
+    submit: true,
     data: {
       src: async (query) => {
         try {
