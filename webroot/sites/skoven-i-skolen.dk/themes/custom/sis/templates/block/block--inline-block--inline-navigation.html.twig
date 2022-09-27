@@ -34,13 +34,23 @@
   <ul class="inline-navigation__list js-inline-navigation-slider">
     {{ content }}
   </ul>
-  <div class="slider-pager-count sm-hidden md-hidden lg-hidden xl-hidden">
-    {{ 'Showing'|t }}
-    <span class="slider-pager-count--showing">
-      <span class="ms-hidden sm-hidden md-hidden lg-hidden xl-hidden">1</span>
-      <span class="xs-hidden sm-hidden md-hidden lg-hidden xl-hidden">2</span>
-    </span>
-    {{ 'out of'|t }}
-    <span class="slider-pager-count--total">{{ content|length }}</span>
-  </div>
+  {% if content|length > 0 %}
+    <div class="slider-pager-count sm-hidden md-hidden lg-hidden xl-hidden">
+      {{ 'Showing'|t }}
+      <span class="slider-pager-count--showing">
+        <span class="ms-hidden sm-hidden md-hidden lg-hidden xl-hidden">1</span>
+        {% if content|length > 1 %}
+          <span class="xs-hidden md-hidden lg-hidden xl-hidden">2</span>
+        {% endif %}
+        {% if content|length > 2 %}
+          <span class="xs-hidden ms-hidden sm-hidden lg-hidden xl-hidden">3</span>
+        {% endif %}
+        {% if content|length > 3 %}
+          <span class="xs-hidden ms-hidden sm-hidden md-hidden">4</span>
+        {% endif %}
+      </span>
+      {{ 'out of'|t }}
+      <span class="slider-pager-count--total">{{ content|length }}</span>
+    </div>
+  {% endif %}
 </div>
