@@ -25,6 +25,14 @@ function sis_blog_post_preprocess_node(&$variables) {
       }
       $variables['other_blog_posts'] = \Drupal::service('sis_blog_post.content_delivery_service')
         ->getBlogPostsByAuthor([$variables['node']->getOwnerId()]);
+
+      $other_blog_posts_count = 0;
+      foreach ($variables['other_blog_posts'] as $key => $blog_post) {
+        if (is_numeric($key)) {
+          $other_blog_posts_count++;
+        }
+      }
+      $variables['other_blog_posts_count'] = $other_blog_posts_count;
     }
 
     $creation_date = \Drupal::service('date.formatter')
