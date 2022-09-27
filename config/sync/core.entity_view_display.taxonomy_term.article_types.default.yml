@@ -11,6 +11,7 @@ dependencies:
     - taxonomy.vocabulary.article_types
   module:
     - layout_builder
+    - layout_builder_restrictions
     - layout_discovery
     - sis_overview
     - text
@@ -115,6 +116,28 @@ third_party_settings:
             weight: 1
             additional: {  }
         third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories:
+        - Block
+        - Bruger
+        - 'Chaos Tools'
+        - 'Content fields'
+        - Cookiebot
+        - Devel
+        - Forms
+        - Help
+        - 'Lists (Views)'
+        - Menus
+        - Premium
+        - Skoven-i-Skolen
+        - System
+        - Webform
+        - core
 _core:
   default_config_hash: 6Wlnj1o559jP7-D3eY2z3YPa1GgpHY9k5J4StKsAkao
 id: taxonomy_term.article_types.default

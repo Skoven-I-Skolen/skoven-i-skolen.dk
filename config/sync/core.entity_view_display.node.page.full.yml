@@ -38,6 +38,7 @@ third_party_settings:
       - 'Lists (Views)'
       - Menus
       - Premium
+      - Skoven-i-Skolen
       - System
       - Webform
       - core
@@ -46,11 +47,24 @@ third_party_settings:
         - layout_onecol
         - layout_twocol_section
         - layout_threecol_section
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
       restricted_categories:
         - Block
         - Bruger
+        - 'Chaos Tools'
+        - 'Content fields'
         - Cookiebot
         - Devel
+        - Forms
+        - Help
+        - 'Lists (Views)'
+        - Menus
+        - Premium
+        - Skoven-i-Skolen
+        - System
+        - Webform
+        - core
       blacklisted_blocks:
         'Custom block types':
           - basic
