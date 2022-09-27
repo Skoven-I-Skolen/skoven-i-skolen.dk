@@ -144,6 +144,16 @@
     }
 
     &-logo {
+      display: flex;
+
+      .logo {
+        margin-left: auto;
+
+        @media (--viewport-md-min) {
+          margin-left: 0;
+        }
+      }
+
       .logo__image {
         height: 41px;
         margin: 0;
