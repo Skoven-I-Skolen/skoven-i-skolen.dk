@@ -92,6 +92,12 @@
     border: 1px solid #c0c0c0;
     opacity: 0;
 
+    .js-text-format-wrapper & {
+      position: relative;
+      top: auto;
+      left: auto;
+    }
+
     &.expanded {
       display: block;
       opacity: 1;
@@ -110,8 +116,8 @@
       cursor: pointer;
 
       &:hover {
-        background-color: var(--color-pink);
         text-decoration: none;
+        background-color: var(--color-pink);
       }
 
       &.is-active {
