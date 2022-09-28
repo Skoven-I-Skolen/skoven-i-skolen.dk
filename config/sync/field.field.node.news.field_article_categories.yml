@@ -1,0 +1,33 @@
+uuid: 8b664f3e-37e9-44e6-82dc-c2f1ff80e5b6
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_categories
+    - node.type.news
+    - taxonomy.vocabulary.article_categories
+  content:
+    - 'taxonomy_term:article_categories:c2a8260b-9125-4060-968a-77b5c30ff263'
+id: node.news.field_article_categories
+field_name: field_article_categories
+entity_type: node
+bundle: news
+label: Kategorier
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: c2a8260b-9125-4060-968a-77b5c30ff263
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_categories: article_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

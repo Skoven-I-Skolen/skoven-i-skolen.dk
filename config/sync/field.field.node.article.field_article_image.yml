@@ -11,7 +11,7 @@ field_name: field_article_image
 entity_type: node
 bundle: article
 label: 'Article image'
-description: ''
+description: 'Et billede vist i begyndelsen af artiklen, under resuméet og før teksten.'
 required: false
 translatable: false
 default_value: {  }

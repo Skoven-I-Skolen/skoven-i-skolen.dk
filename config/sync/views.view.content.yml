@@ -2,8 +2,15 @@ uuid: 4a413a9f-02da-4af8-9ed6-2555a68ced50
 langcode: da
 status: true
 dependencies:
+  config:
+    - taxonomy.vocabulary.class
+    - taxonomy.vocabulary.location
+    - taxonomy.vocabulary.people_and_places
+    - taxonomy.vocabulary.season
+    - taxonomy.vocabulary.subjects
   module:
     - node
+    - taxonomy
     - user
 _core:
   default_config_hash: EY-z421FF3Y34e-7DRQS59P7C4g7QcCH2eNKoXqEqjw
@@ -461,6 +468,266 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+        field_subject_target_id:
+          id: field_subject_target_id
+          table: node__field_subject
+          field: field_subject_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_subject_target_id_op
+            label: Fag
+            description: ''
+            use_operator: false
+            operator: field_subject_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_subject_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              webmaster: '0'
+              monitor: '0'
+              organization: '0'
+              writer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: subjects
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_class_target_id:
+          id: field_class_target_id
+          table: node__field_class
+          field: field_class_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_class_target_id_op
+            label: Klasse
+            description: ''
+            use_operator: false
+            operator: field_class_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_class_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              webmaster: '0'
+              monitor: '0'
+              organization: '0'
+              writer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: class
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_location_target_id:
+          id: field_location_target_id
+          table: node__field_location
+          field: field_location_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_location_target_id_op
+            label: Sted
+            description: ''
+            use_operator: false
+            operator: field_location_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_location_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              webmaster: '0'
+              monitor: '0'
+              organization: '0'
+              writer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: location
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_season_target_id:
+          id: field_season_target_id
+          table: node__field_season
+          field: field_season_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_season_target_id_op
+            label: Årstid
+            description: ''
+            use_operator: false
+            operator: field_season_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_season_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              webmaster: '0'
+              monitor: '0'
+              organization: '0'
+              writer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: season
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_people_and_places_target_id:
+          id: field_people_and_places_target_id
+          table: node__field_people_and_places
+          field: field_people_and_places_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_people_and_places_target_id_op
+            label: 'Mennesker & steder'
+            description: ''
+            use_operator: false
+            operator: field_people_and_places_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_people_and_places_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              webmaster: '0'
+              monitor: '0'
+              organization: '0'
+              writer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: people_and_places
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:

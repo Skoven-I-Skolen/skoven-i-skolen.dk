@@ -104,7 +104,7 @@
           <div class="article-page__image">
             {{ content.field_article_image }}
           </div>
-          {{ content|without(['field_list_date', 'field_header', 'title','field_article_image']) }}
+          {{ content|without(['field_list_date', 'field_header', 'title','field_article_image', 'field_description']) }}
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-lg-offset-1 article-content-sidebar">
@@ -129,7 +129,9 @@
                     Fag
                   </div>
                   <div class="facts-box__content-item-value">
-                    {{ node.field_subject.entity.name.value }}
+                    {% for subject in node.field_subject %}
+                      {{ subject.entity.name.value }}{{ loop.index != node.field_subject|length ? ', ' : '' }}
+                    {% endfor %}
                   </div>
                 </div>
               {% endif %}
@@ -257,25 +259,59 @@
             </div>
           </div>
         {% endif %}
-        {% if node.field_media_downloads[0] or node.field_files[0] %}
+        {% if node.field_media_downloads[0] or node.field_files[0] or node.field_copy_sheet[0] or node.field_materials[0 ]%}
           <div class="facts-box">
             <div class="facts-box__title">
               Filer
             </div>
             <div class="facts-box__content">
-              {% if node.field_media_downloads[0] %}
-                {% for file in node.field_media_downloads %}
-                  <div class="facts-box__content-item">
-                    <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
-                  </div>
+              {% if node.field_materials[0] %}
+                <strong>Materialer:</strong><br>
+                <ul>
+                {% for file in node.field_materials %}
+                  <li>
+                    <div class="facts-box__content-item">
+                      <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
+                    </div>
+                  </li>
                 {% endfor %}
+                </ul><br>
+              {% endif %}
+              {% if node.field_media_downloads[0] %}
+                <strong>Media:</strong><br>
+                <ul>
+                {% for file in node.field_media_downloads %}
+                  <li>
+                    <div class="facts-box__content-item">
+                      <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
+                    </div>
+                  </li>
+                {% endfor %}
+               </ul><br>
+              {% endif %}
+              {% if node.field_copy_sheet[0] %}
+                <strong>Kopiark:</strong><br>
+                <ul>
+                {% for file in node.field_copy_sheet %}
+                  <li>
+                    <div class="facts-box__content-item">
+                      <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank"> {{ file.entity.name.value|slice(0, 40) }}</a>
+                    </div>
+                  </li>
+                {% endfor %}
+                </ul><br>
               {% endif %}
               {% if node.field_files[0] %}
+                <strong>Filer:</strong><br>
+                <ul>
                 {% for file in node.field_files %}
-                  <div class="facts-box__content-item">
-                    <a href="{{ file_url(file.entity.uri.value) }}" target="_blank"> {{ file.entity.filename.value }}</a>
-                  </div>
+                  <li>
+                    <div class="facts-box__content-item">
+                      <a href="{{ file_url(file.entity.uri.value) }}" target="_blank"> {{ file.entity.filename.value }}</a>
+                    </div>
+                  </li>
                 {% endfor %}
+                </ul><br>
               {% endif %}
             </div>
           </div>

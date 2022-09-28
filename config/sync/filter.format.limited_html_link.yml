@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 name: 'Begrænset HTML med link'
 format: limited_html_link
-weight: 0
+weight: -10
 filters:
   filter_html:
     id: filter_html

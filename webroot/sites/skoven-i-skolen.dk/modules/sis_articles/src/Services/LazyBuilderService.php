@@ -4,6 +4,8 @@ namespace Drupal\sis_articles\Services;
 
 use Drupal\Core\Security\TrustedCallbackInterface;
 use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Plugin\views\argument\Taxonomy;
 
 class LazyBuilderService implements TrustedCallbackInterface {
 
@@ -16,7 +18,20 @@ class LazyBuilderService implements TrustedCallbackInterface {
    */
   public static function getArticleInspirationContent($nodeId): array {
     $articleContentDeliveryService = \Drupal::service('sis_articles.content_delivery_service');
-    $inspirations = $articleContentDeliveryService->getInspirationalArticlesForCurrent(Node::load($nodeId));
+    $node = Node::load($nodeId);
+    if ($type_term = $node->hasField('field_article_type')) {
+      $article_type = $node->get('field_article_type')->getString();
+      $type_term = Term::load($article_type);
+    }
+    if ($type_term) {
+      $type_term = $type_term->get('machine_name')->getString();
+    }
+    if ($node->getType() === 'news' || $type_term === 'lexicon') {
+      $inspirations = $articleContentDeliveryService->getRandomInspirationalArticles();
+    }
+    else {
+      $inspirations = $articleContentDeliveryService->getInspirationalArticlesForCurrent($node);
+    }
 
     $items = [];
     foreach ($inspirations as $title => $inspiration) {

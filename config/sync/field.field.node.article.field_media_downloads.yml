@@ -12,7 +12,7 @@ id: node.article.field_media_downloads
 field_name: field_media_downloads
 entity_type: node
 bundle: article
-label: Filer
+label: Media
 description: ''
 required: false
 translatable: false

@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\taxonomy\Entity\Term;
+
 require_once 'layout_block.preprocess.inc';
 require_once 'paragraph.preprocess.inc';
 require_once 'node.preprocess.inc';
@@ -45,5 +47,51 @@ function sis_theme_suggestions_menu_alter(&$suggestions, array $variables) {
     $suggestion = 'menu__' . $variables['menu_name'] . '__' . $variables['attributes']['region'];
     $suggestion = str_replace('-', '_', $suggestion);
     $suggestions[] = $suggestion;
+  }
+}
+
+function sis_preprocess_block(&$variables) {
+  if($variables['plugin_id'] === 'premium_breadcrumb_block') {
+    $variables['#cache']['max-age'] = 0;
+  }
+}
+
+function sis_preprocess_breadcrumb(&$variables) {
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    if ($node->getType() === 'blog_post') {
+      $variables['breadcrumb'][1]['url'] = '/';
+      $variables['breadcrumb'][] = [
+        'text' => $node->getTitle(),
+        ];
+    }
+    if ($node->getType() === 'news') {
+      $variables['breadcrumb'][1]['url'] = '/nyhedoversigt';
+    }
+    if (count($variables['breadcrumb']) === 1) {
+      $variables['breadcrumb'][] = [
+        'text' => $node->getTitle(),
+      ];
+    }
+  }
+}
+
+function sis_preprocess_block__inline_block__news_overview(array &$variables) {
+  $show_four_items = (bool) $variables['content']['#block_content']->get('field_show_four_items')->first()->value;
+  if ($show_four_items) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $latest_news = Drupal::service('sis_news.content_delivery_service')->getLatestNews($node);
+    $variables['terms_4'] = $latest_news;
+  }
+  else {
+    $news_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+      ->loadByProperties(['machine_name' => 'news']);
+    if (!$news_term) {
+      return;
+    }
+    $variables['terms_16'] = Drupal::service('sis_overview.term_overview')
+      ->view(array_shift($news_term), TRUE);
+    $variables['terms_16']['pager']['#route_parameters']['small'] = TRUE;
   }
 }

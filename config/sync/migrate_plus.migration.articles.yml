@@ -19,7 +19,7 @@ process:
   updated: updated
   body/format:
     plugin: default_value
-    default_value: basic_html
+    default_value: full_html
   body/value:
     -
       plugin: skip_on_empty
@@ -30,6 +30,16 @@ process:
       search: /sites/default/files/
       replace: /sites/skoven-i-skolen.dk/files/
       source: body/0/value
+    -
+      plugin: str_replace
+      search: /sites/default/files/migrated/
+      replace: /sites/skoven-i-skolen.dk/files/migrated/
+      source: body/0/value
+    -
+      plugin: str_replace
+      search: skoven-i-skolen.ditnyewebsite.dk
+      replace: skoven-i-skolen.dk
+      source: body/0/value
   body/summary: body/0/summary
   field_subject:
     -
@@ -37,19 +47,39 @@ process:
       method: process
       source: field_taxonomy_class/0/tid
     -
-      plugin: migration_lookup
-      source: field_taxonomy_class/0/tid
-      migration: subject
-  field_media_downloads:
+      plugin: sub_process
+      source: field_taxonomy_class
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: subject
+          source: tid
+  field_copy_sheet:
     -
       plugin: skip_on_empty
       method: process
-      source: field_sis_article_image/0/fid
+      source: field_sis_copy_material/0/fid
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_file_to_media_document
-      source: field_sis_article_image/0/fid
-      no_stub: true
+      plugin: sub_process
+      source: field_sis_copy_material
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_file_to_media_document
+          source: fid
+  field_materials:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_sis_materials/0/fid
+    -
+      plugin: sub_process
+      source: field_sis_materials
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_file_to_media_document
+          source: fid
   field_equipment/format:
     plugin: default_value
     default_value: basic_html
@@ -121,9 +151,13 @@ process:
       method: process
       source: field_taxonomy_place/0/tid
     -
-      plugin: migration_lookup
-      source: field_taxonomy_place/0/tid
-      migration: location
+      plugin: sub_process
+      source: field_taxonomy_place
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: location
+          source: tid
   field_article_type:
     plugin: callback
     callable:
@@ -140,9 +174,13 @@ process:
       method: process
       source: field_taxonomy_season/0/tid
     -
-      plugin: migration_lookup
-      source: field_taxonomy_season/0/tid
-      migration: season
+      plugin: sub_process
+      source: field_taxonomy_season
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: season
+          source: tid
   field_article_related:
     -
       plugin: skip_on_empty

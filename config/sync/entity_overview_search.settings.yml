@@ -17,7 +17,7 @@ filter:
     - field_season
     - field_subject
   sort: newest
-  count: 4
+  count: 16
   pagination: false
   page: 0
   show_total: results

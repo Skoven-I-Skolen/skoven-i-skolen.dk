@@ -1,0 +1,29 @@
+uuid: ecd35e85-ed80-41c1-890f-51317e2cd66d
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_materials
+    - media.type.document
+    - node.type.article
+id: node.article.field_materials
+field_name: field_materials
+entity_type: node
+bundle: article
+label: Materialer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -13,7 +13,7 @@ _core:
   default_config_hash: svejBAiBwALaC_w177xrfxgSohJVRMBWC8o2kfKabLs
 name: 'Fuld HTML'
 format: full_html
-weight: 2
+weight: -9
 filters:
   filter_align:
     id: filter_align

@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - node.type.article
     - node.type.dot_on_map
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - filter
     - media
     - node
@@ -19,8 +22,10 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
+  - 'create article content'
   - 'create dot_on_map content'
   - 'search content'
+  - 'use editorial transition create_new_draft'
   - 'use text format basic_html'
   - 'view any organization profile'
   - 'view media'

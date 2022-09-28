@@ -17,5 +17,5 @@ fields:
   field_season: checkboxes
   field_subject: checkboxes
 engine_id: relewise
-sort_field: created
+sort_field: field_list_date
 show_total: results

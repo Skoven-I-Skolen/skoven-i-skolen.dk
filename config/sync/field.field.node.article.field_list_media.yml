@@ -13,7 +13,7 @@ field_name: field_list_media
 entity_type: node
 bundle: article
 label: 'Liste media'
-description: ''
+description: 'Billede vist på søgeresultater og andre lister.'
 required: true
 translatable: true
 default_value: {  }

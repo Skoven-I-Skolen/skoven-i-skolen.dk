@@ -3,9 +3,11 @@ langcode: da
 status: true
 dependencies:
   config:
-    - node.type.almanac
     - node.type.article
+    - node.type.dot_on_map
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - node
     - profile
 id: organization
@@ -14,8 +16,11 @@ weight: 6
 is_admin: null
 permissions:
   - 'create article content'
-  - 'create organization profile'
-  - 'delete own almanac content'
+  - 'create dot_on_map content'
+  - 'delete any article content'
+  - 'delete own article content'
+  - 'delete own dot_on_map content'
   - 'edit own article content'
   - 'update own organization profile'
+  - 'use editorial transition create_new_draft'
   - 'view own unpublished content'

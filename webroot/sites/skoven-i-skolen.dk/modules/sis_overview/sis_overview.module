@@ -23,6 +23,9 @@ function sis_overview_theme() {
     'term_overview' => [
       'variables' => ['term' => NULL, 'entities' => []],
     ],
+    'term_overview_small' => [
+      'variables' => ['term' => NULL, 'entities' => [], 'is_small' => FALSE],
+    ],
     'overview_list_item' => [
       'variables' => ['headline' => NULL, 'link' => [], 'attributes' => []],
     ],

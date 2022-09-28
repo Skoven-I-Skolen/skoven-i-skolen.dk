@@ -112,10 +112,11 @@
         {% endif %}
         {% if other_writers %}
           <h3>Andre Skribenter</h3>
-            {% for writer in other_writers %}
+            {% for writer in other_writers|slice(0, 3) %}
               {{ writer }}
             {% endfor %}
           {% endif %}
+        {% if all_writers|length > 0 %}
         <div class="view-all-writers-link">
           <h4>Se alle skribenter</h4>
           {% include '@reusable-component/svg-icon.twig' with {
@@ -123,9 +124,11 @@
             'svgIconName': 'carret'
           } %}
         </div>
+        {% endif %}
       </div>
     </div>
 
+    {% if all_writers %}
     <div class="blog-post--view-all-writers">
       <div class="blog-post--view-all-writers--title">
         <h3>Alle skribenter</h3>
@@ -146,6 +149,7 @@
         {% endfor %}
       </div>
     </div>
+    {% endif %}
 
     {% if other_blog_posts %}
     <div class="news-page__latest section section--spacing-bottom-none">

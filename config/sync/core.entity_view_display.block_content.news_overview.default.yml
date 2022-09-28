@@ -4,21 +4,44 @@ status: true
 dependencies:
   config:
     - block_content.type.news_overview
-    - field.field.block_content.news_overview.field_news_overview
+    - field.field.block_content.news_overview.field_description
+    - field.field.block_content.news_overview.field_link
+    - field.field.block_content.news_overview.field_show_four_items
+    - field.field.block_content.news_overview.field_title
   module:
-    - sis_news
+    - link
 id: block_content.news_overview.default
 targetEntityType: block_content
 bundle: news_overview
 mode: default
 content:
-  field_news_overview:
-    type: news_overview_formatter
+  field_description:
+    type: basic_string
     label: hidden
-    settings:
-      view_mode: teaser
+    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
+  field_show_four_items: true
   langcode: true

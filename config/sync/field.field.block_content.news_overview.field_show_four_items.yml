@@ -1,0 +1,23 @@
+uuid: b4e1efec-6470-4094-9937-a08a1fbccd07
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.news_overview
+    - field.storage.block_content.field_show_four_items
+id: block_content.news_overview.field_show_four_items
+field_name: field_show_four_items
+entity_type: block_content
+bundle: news_overview
+label: 'Vis kun 4 elementer (ugen paginering)'
+description: 'Hvis det ikke er markeret, vil 16 elementer blive vist.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Tilsluttet
+  off_label: Afbrudt
+field_type: boolean

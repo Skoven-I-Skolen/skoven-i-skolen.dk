@@ -11,3 +11,20 @@
 - articles
 - news
 - alias_to_redirects
+
+
+ddev drush migrate:rollback alias_to_redirects
+
+ddev drush migrate:rollback upgrade_d7_file
+ddev drush migrate:rollback  upgrade_d7_file_to_media_image
+ddev drush migrate:rollback  upgrade_d7_file_to_media_document
+ddev drush migrate:rollback  upgrade_d7_file_to_media_audio
+ddev drush migrate:rollback  subject
+ddev drush migrate:rollback  class
+ddev drush migrate:rollback  location
+ddev drush migrate:rollback  months
+ddev drush migrate:rollback  season
+ddev drush migrate:rollback  almanac
+ddev drush migrate:rollback  articles
+ddev drush migrate:rollback  news
+ddev drush migrate:rollback alias_to_redirects

@@ -54,6 +54,7 @@ module:
   filter: 0
   focal_point: 0
   help: 0
+  honeypot: 0
   hreflang: 0
   html5history: 0
   image: 0
@@ -101,6 +102,7 @@ module:
   promote_disable: 0
   rdf: 0
   redirect: 0
+  redirect_404: 0
   redis: 0
   relewise: 0
   responsive_image: 0

@@ -128,14 +128,11 @@ process:
       source: field_sis_season_month/0/tid
       migration: months
   field_location:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_taxonomy_place/0/tid
-    -
-      plugin: migration_lookup
-      source: field_taxonomy_place/0/tid
-      migration: location
+    plugin: callback
+      callable:
+        - '\Drupal\sis_migration\Services\MigrateService'
+        - mapTaxonomyTerms
+      source: field_taxonomy_place
 #  field_time:
   field_article_type:
     plugin: callback

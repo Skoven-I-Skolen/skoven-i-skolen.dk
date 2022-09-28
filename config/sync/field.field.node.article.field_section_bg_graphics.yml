@@ -12,7 +12,7 @@ field_name: field_section_bg_graphics
 entity_type: node
 bundle: article
 label: 'Baggrunds grafik'
-description: ''
+description: 'Et billede vist øverst i baggrunden.'
 required: false
 translatable: false
 default_value: {  }
