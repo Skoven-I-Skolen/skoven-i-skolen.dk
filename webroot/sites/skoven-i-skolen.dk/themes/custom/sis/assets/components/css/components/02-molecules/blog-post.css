@@ -69,7 +69,6 @@
     margin-left: 5%;
     padding: 15px;
     padding-left: 50px;
-    box-shadow: 0 4px 30px hsl(0deg 0% 51.4% / 25%);
 
     @media (--viewport-md-min) {
       max-width: 58%;
