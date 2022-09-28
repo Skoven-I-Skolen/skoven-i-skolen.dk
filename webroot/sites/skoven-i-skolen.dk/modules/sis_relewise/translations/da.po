@@ -29,3 +29,11 @@ msgstr "Mest relevante"
 
 msgid "Most popular"
 msgstr "Mest populære"
+
+msgid "Search the entire site"
+msgstr "Søg på hele sitet"
+
+msgid "Search entire site"
+msgstr "Søg på hele sitet"
+
+
