@@ -50,6 +50,7 @@ third_party_settings:
       denylisted_blocks:
         'Inline blocks':
           - 'inline_block:accordion'
+          - 'inline_block:quote'
       allowlisted_blocks: {  }
       restricted_categories:
         - Block
