@@ -47,7 +47,9 @@ third_party_settings:
         - layout_onecol
         - layout_twocol_section
         - layout_threecol_section
-      denylisted_blocks: {  }
+      denylisted_blocks:
+        'Inline blocks':
+          - 'inline_block:accordion'
       allowlisted_blocks: {  }
       restricted_categories:
         - Block
