@@ -32,7 +32,7 @@
 
 <section {{ attributes.addClass(classes) }}>
   {% if settings.section_bg_graphics != 'none' %}
-    <img src="/{{ directory }}/dist/images/{{ settings.section_bg_graphics }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ settings.section_bg_graphics }} section-bg-graphics__position--{{ settings.section_bg_graphics_position }}" />
+<img src="/{{ directory }}/dist/images/{{ settings.section_bg_graphics }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ settings.section_bg_graphics }} section-bg-graphics__position--{{ settings.section_bg_graphics_position }}" alt="{{ settings.section_bg_graphics|t }}"/>
   {% endif %}
   {% if settings.color_theme %}
     <svg class="section__graphics-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1440 30" xml:space="preserve">

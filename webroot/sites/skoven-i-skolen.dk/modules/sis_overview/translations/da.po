@@ -9,3 +9,39 @@ msgstr "Alle @type sider"
 
 msgid "Materials from @organization"
 msgstr "Materialer fra @organization"
+
+msgid "Birds"
+msgstr "Fugle"
+
+msgid "Branches"
+msgstr "Grene"
+
+msgid "Deer"
+msgstr "Hjort"
+
+msgid "Reeds"
+msgstr "Dunhammer"
+
+msgid "Sea"
+msgstr "hav"
+
+msgid "Wind"
+msgstr "Vind"
+
+msgid "birds"
+msgstr "Fugle"
+
+msgid "branches"
+msgstr "Grene"
+
+msgid "deer"
+msgstr "Hjort"
+
+msgid "reeds"
+msgstr "Dunhammer"
+
+msgid "sea"
+msgstr "hav"
+
+msgid "wind"
+msgstr "Vind"

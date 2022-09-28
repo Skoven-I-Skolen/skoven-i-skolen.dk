@@ -90,7 +90,7 @@
     ] %}
 
     <footer class="footer">
-      <img class="footer__graphic" src="/{{ directory }}/dist/images/footer-graphic.svg" />
+      <img class="footer__graphic" src="/{{ directory }}/dist/images/footer-graphic.svg"  alt="Footer Grafik"/>
       <div{{ create_attribute().addClass(['footer__inner', 'section', 'theme', 'theme-green']) }}>
         <svg class="section__graphics-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1440 30" xml:space="preserve">
           <path d="M1440,30V1.3l-240.4,12.3L950.4,0L939,9l-22.9-2.9L801.7,16.5l-625.5-2.9L164.8,3l-87.7,7.5L0,1.3V30H1440z"/>
@@ -111,7 +111,7 @@
               </div>
               <div class="footer-some-icons">
                 {% if atom('facebook-link').0['#markup'] %}
-                  <a href="{{ atom('facebook-link').0['#markup'] }}" class="footer-some-icons__icon" target="_blank">
+                  <a href="{{ atom('facebook-link').0['#markup'] }}" class="footer-some-icons__icon" target="_blank" alt="facebook">
                     {% include '@reusable-component/svg-icon.twig' with {
                       'attributes': '',
                       'svgIconName': 'facebook'
@@ -119,7 +119,7 @@
                   </a>
                 {% endif %}
                 {% if atom('instagram-link').0['#markup'] %}
-                  <a href="{{ atom('instagram-link').0['#markup'] }}" class="footer-some-icons__icon" target="_blank">
+                  <a href="{{ atom('instagram-link').0['#markup'] }}" class="footer-some-icons__icon" target="_blank" alt="instagram">
                     {% include '@reusable-component/svg-icon.twig' with {
                       'attributes': '',
                       'svgIconName': 'instagram'
