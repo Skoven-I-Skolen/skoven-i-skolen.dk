@@ -74,8 +74,12 @@
   }
 
   .headline-wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: block;
+
+    @media (--viewport-md-min) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   .months-activity-cards {
@@ -96,13 +100,13 @@
     }
   }
 
-.read-more {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-}
-  /* Modal Style */
+  .read-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
 
+  /* Modal Style */
   .modal {
     position: fixed;
     top: 0;
@@ -170,21 +174,20 @@
       flex-direction: column;
     }
 
+    .modal-image__container--textbox {
+      max-height: 300px;
+    }
+
     & .modal__image {
       width: 100%;
       height: auto;
+      max-height: 300px;
+      object-fit: contain;
     }
 
     & .modal-link__title {
       color: #3d2859;
     }
-  }
-
-  .modal__description {
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 
   /* Modal fade in-out animations */
