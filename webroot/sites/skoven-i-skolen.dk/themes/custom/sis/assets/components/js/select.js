@@ -5,7 +5,11 @@ function dropdownSelect(wrapper) {
       const dropdownTrigger = element.firstElementChild;
       const dropdownMenu = element.lastElementChild;
       const selectList = element.previousElementSibling;
-      const selectListParent = selectList.parentNode.parentNode;
+      let selectListParent = selectList.parentNode.parentNode;
+
+      if (selectListParent.classList.contains('fieldset-wrapper')) {
+        selectListParent = selectList.parentNode;
+      }
 
       if (selectListParent.classList.contains('layout-builder-configure-section')) {
         element.remove();
@@ -22,7 +26,11 @@ function dropdownSelect(wrapper) {
             for (let j = 0; j < selectLists.length; j += 1) {
               const selectListEl = selectLists[j];
               const selectListElPrev = selectListEl.previousElementSibling;
-              const selectListElPrevParentParent = selectListElPrev.parentNode.parentNode;
+              let selectListElPrevParentParent = selectListElPrev.parentNode.parentNode;
+
+              if (selectListElPrevParentParent.classList.contains('fieldset-wrapper')) {
+                selectListElPrevParentParent = selectListElPrev.parentNode;
+              }
               selectListElPrevParentParent.style.zIndex = 4;
             }
 
