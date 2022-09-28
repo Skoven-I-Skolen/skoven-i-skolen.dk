@@ -25,23 +25,7 @@ third_party_settings:
     allow_custom: true
   layout_builder_restrictions:
     allowed_block_categories:
-      - Block
-      - Bruger
-      - 'Chaos Tools'
-      - 'Content fields'
-      - Cookiebot
-      - 'Custom block types'
-      - Devel
-      - Forms
-      - Help
-      - 'Inline blocks'
-      - 'Lists (Views)'
-      - Menus
-      - Premium
-      - Skoven-i-Skolen
-      - System
-      - Webform
-      - core
+      - Inline blocks
     entity_view_mode_restriction:
       allowed_layouts:
         - layout_onecol
@@ -55,13 +39,14 @@ third_party_settings:
       restricted_categories:
         - Block
         - Bruger
-        - 'Chaos Tools'
-        - 'Content fields'
+        - Chaos Tools
+        - Content fields
         - Cookiebot
+        - Custom block types
         - Devel
         - Forms
         - Help
-        - 'Lists (Views)'
+        - Lists (Views)
         - Menus
         - Premium
         - Skoven-i-Skolen
