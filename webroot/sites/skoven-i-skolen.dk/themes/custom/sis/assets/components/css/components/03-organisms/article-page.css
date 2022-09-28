@@ -1,6 +1,9 @@
 .article-page {
   &__image {
     text-align: center;
+    img {
+      max-height: 250px;
+    }
   }
   &__hero {
     width: 100%;

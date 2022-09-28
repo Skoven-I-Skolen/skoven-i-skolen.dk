@@ -1,0 +1,8 @@
+.media-library-item__preview {
+  min-height: 185px;
+  background-image: url("/sites/skoven-i-skolen.dk/themes/custom/sis/dist/images/file.svg");
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position-y: 50%;
+  background-position-x: 50%;
+}

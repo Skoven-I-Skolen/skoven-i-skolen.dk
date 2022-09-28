@@ -380,6 +380,12 @@ lexicon:
     theme:
       dist/components/css/components/03-organisms/lexicon.css: {}
 
+media-library:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/media-library.css: {}
+
 overview-form:
   version: VERSION
   css:
