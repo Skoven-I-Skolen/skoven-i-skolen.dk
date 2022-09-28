@@ -52,6 +52,7 @@
 
 .js-text-format-wrapper {
   .filter-wrapper {
+    margin: -0.75em 0 0;
     overflow: visible;
   }
 }
