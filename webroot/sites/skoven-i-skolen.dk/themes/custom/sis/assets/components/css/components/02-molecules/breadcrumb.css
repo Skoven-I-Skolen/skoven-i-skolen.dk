@@ -41,7 +41,7 @@
     display: inline-block;
     color: var(--color-gray);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color .2s;
 
     &--active {
       color: var(--color-black);
@@ -58,6 +58,7 @@
   &::after {
     content: '...';
   }
+
   & a {
     display: none;
   }
@@ -66,6 +67,7 @@
     &::after {
       content: '';
     }
+
     & a {
       display: inline-block;
     }
