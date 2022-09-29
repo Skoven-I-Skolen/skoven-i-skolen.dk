@@ -1,7 +1,7 @@
 _core:
   default_config_hash: 9bVDfWSa_In6VzTXmy04jJ_3ZQobihKjO9isuuUCPaw
 langcode: da
-protect_all_forms: false
+protect_all_forms: true
 unprotected_forms:
   - user_login_form
   - search_form

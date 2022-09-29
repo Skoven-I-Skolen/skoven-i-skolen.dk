@@ -24,4 +24,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/profile/*\r\n/kort\r\n/blogs/*\r\n/user/*\r\n/prik/*\r\n/del\r\n/nyhed*"
+    pages: "/profile/*\r\n/kort\r\n/blogs/*\r\n/user/*\r\n/prik/*\r\n/del\r\n/nyhed*\r\n/newsletter/*"

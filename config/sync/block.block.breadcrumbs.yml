@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - premium_core
+    - system
   theme:
     - sis
 _core:
@@ -19,4 +20,8 @@ settings:
   label: Brødkrummer
   label_display: '0'
   provider: premium_core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/newsletter/*'

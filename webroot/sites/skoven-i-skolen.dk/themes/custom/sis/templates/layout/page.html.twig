@@ -143,10 +143,11 @@
 
               {% if atom('footer-col4-link').0['#url'] %}
                 <h4>Tilmeld dig nyhedsbrevet</h4>
-                <form action="https://np-skjoldundernes-land.uxmail.io/handlers/post/" method="post" target="_blank" class="newsletter-form">
+                <form action="/newsletter/subscribe" method="post" target="_blank" class="newsletter-form">
                   <input type="hidden" name="optin_scheme" value="single" />
                   <input type="hidden" name="action" value="subscribe" />
                   <input type="hidden" name="lists" value="70430" />
+                  <input type="hidden" name="secret" value="" />
                   <div class="field-items">
                     <div class="field-item field-name">
                       <input type="text" name="data_Navn" placeholder="Navn" class="input" required />

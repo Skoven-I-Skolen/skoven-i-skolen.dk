@@ -1,0 +1,7 @@
+sis_news.subscribe_newsletter:
+  path: /newsletter/subscribe
+  defaults:
+    _controller: 'Drupal\sis_news\Controller\NewsletterController:subscribe'
+  requirements:
+    _access: 'TRUE'
+
