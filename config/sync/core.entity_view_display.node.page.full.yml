@@ -35,6 +35,7 @@ third_party_settings:
         'Inline blocks':
           - 'inline_block:accordion'
           - 'inline_block:quote'
+          - 'inline_block:basic'
       allowlisted_blocks: {  }
       restricted_categories:
         - Block
