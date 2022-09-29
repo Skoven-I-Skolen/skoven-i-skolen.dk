@@ -31,7 +31,7 @@ class TermRepository {
       ->fields('ti', ['nid'])
       ->condition('ti.tid', $termIds, 'IN');
     $query->leftJoin('node_field_data', 'n', 'ti.nid = n.nid');
-    $query->orderBy('n.title', 'ASC')
+    $query->orderBy('n.created', 'DESC')
       ->distinct(TRUE);
 
     if ($limit > 0) {
