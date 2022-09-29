@@ -3,14 +3,11 @@ langcode: da
 status: true
 dependencies:
   config:
-    - block_content.type.entity_slideshow
     - field.field.taxonomy_term.article_types.field_link_liste_headline
     - field.field.taxonomy_term.article_types.field_overview
     - field.field.taxonomy_term.article_types.field_overview_headline
     - taxonomy.vocabulary.article_types
   module:
-    - layout_builder
-    - layout_discovery
     - sis_overview
     - text
 _core:
@@ -31,7 +28,7 @@ content:
     type: category_overview_formatter
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: list
     third_party_settings: {  }
     weight: 1
     region: content
