@@ -25,11 +25,6 @@
  * @see template_preprocess_block()
  */
 #}
-{% set button_classes = [
-  'button',
-  'above-map-button',
-  'button--green',
-] %}
 {{ attach_library('sis/news-page') }}
 <div{{ attributes }}>
   {{ title_prefix }}
@@ -42,9 +37,11 @@
       <div class="col-md-12 col-lg-12 col-xs-12"><h1>{{ content.field_title }}</h1></div>
       <div class="col-md-12 col-lg-8 col-xs-12">{{ content.field_description }}</div>
       <div class="col-md-12 col-lg-4 col-xs-12 ">
-          <button {{ create_attribute().addClass(button_classes) }}>
-              {{ content.field_link }}
-          </button>
+        {% if content.field_link.0['#url'] %}
+          <a href="{{ content.field_link.0['#url'] }}" class="button button--green">
+              {{ content.field_link.0['#title'] }}
+          </a>
+        {% endif %}
       </div>
     </div>
     {% if terms_16 %}
@@ -53,7 +50,7 @@
     {% endif %}
     {% if terms_4 %}
       {{ attach_library('sis/news-page') }}
-      <div class="news-page__latest section section--spacing-top-none section--spacing-bottom-none">
+      <div class="news-page__latest section section--spacing-top-small section--spacing-bottom-none">
         <div class="row">
           <div class="col-xs-12 col-sm-8 col-md-8">
             <div class="news-page__latest-header">

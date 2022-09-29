@@ -31,7 +31,7 @@ class NewsContentDeliveryService {
    * @return array
    *   Array of rendered news items.
    */
-  public function getLatestNews(NodeInterface $node): array {
+  public function getLatestNews(?NodeInterface $node): array {
     if ($latest = $this->newsRepository->getLatestNews($node)) {
       $nodes = Node::loadMultiple($latest);
       return $this->entityViewBuilder->viewMultiple($nodes,'list');
