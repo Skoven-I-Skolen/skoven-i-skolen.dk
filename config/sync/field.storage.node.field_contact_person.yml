@@ -1,12 +1,12 @@
-uuid: d45c082f-bf89-471c-8da5-3538723ad4bc
+uuid: 056029ff-ff20-418a-bfdc-70da6eda23a4
 langcode: da
 status: true
 dependencies:
   module:
     - node
     - text
-id: node.field_time
-field_name: field_time
+id: node.field_contact_person
+field_name: field_contact_person
 entity_type: node
 type: text_long
 settings: {  }

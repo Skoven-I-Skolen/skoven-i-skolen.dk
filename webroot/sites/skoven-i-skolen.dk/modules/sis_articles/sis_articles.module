@@ -54,7 +54,12 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
 
     if (\Drupal::currentUser()->id() === 0 && isset($form['field_media_downloads']['#access'])) {
+      // Hide fields that are not relevant for anonymous users.
+      $form['moderation_state']['#access'] = FALSE;
+      $form['revision_information']['#access'] = FALSE;
+      $form['revision_log']['#access'] = FALSE;
       $form['field_media_downloads']['#access'] = FALSE;
+      $form['field_article_type']['#access'] = FALSE;
     }
   }
 

@@ -259,6 +259,16 @@
             </div>
           </div>
         {% endif %}
+        {% if node.field_time.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Tid
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_time.value|t }}
+            </div>
+          </div>
+        {% endif %}
         {% if node.field_media_downloads[0] or node.field_files[0] or node.field_copy_sheet[0] or node.field_materials[0 ]%}
           <div class="facts-box">
             <div class="facts-box__title">
@@ -316,6 +326,26 @@
             </div>
           </div>
         {% endif %}
+        {% if node.field_institution.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Institution
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_institution.value|t }}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_contact_person.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Kontaktperson
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_contact_person.value|t }}
+            </div>
+          </div>
+        {% endif %}
         {% if inspirations %}
           <div class="facts-box">
             <div class="facts-box__title">
@@ -326,6 +356,7 @@
             </div>
           </div>
         {% endif %}
+
         <div class="facts-box__button-below-wrapper">
           {% if atom_str('text-of-button-below-fact-boxes') %}
             <a href="{{ atom_str('link-of-button-below-fact-boxes') }}" target="_blank">

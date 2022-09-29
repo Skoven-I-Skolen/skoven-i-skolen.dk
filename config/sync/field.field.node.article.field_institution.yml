@@ -1,25 +1,27 @@
-uuid: 52646395-0421-4f93-ab14-93afe049faf1
+uuid: f93572e2-86ec-4201-9ab3-d2464236d7f6
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_time
+    - field.storage.node.field_institution
     - node.type.article
   module:
     - allowed_formats
     - text
 third_party_settings:
   allowed_formats:
-    allowed_formats: {  }
-id: node.article.field_time
-field_name: field_time
+    allowed_formats:
+      - limited_html_link
+      - basic_html
+id: node.article.field_institution
+field_name: field_institution
 entity_type: node
 bundle: article
-label: Tid
+label: Institution
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: text

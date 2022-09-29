@@ -1,21 +1,23 @@
-uuid: 52646395-0421-4f93-ab14-93afe049faf1
+uuid: ed6cf121-630b-43c0-9714-6a029647e8a4
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_time
+    - field.storage.node.field_contact_person
     - node.type.article
   module:
     - allowed_formats
     - text
 third_party_settings:
   allowed_formats:
-    allowed_formats: {  }
-id: node.article.field_time
-field_name: field_time
+    allowed_formats:
+      - limited_html_link
+      - basic_html
+id: node.article.field_contact_person
+field_name: field_contact_person
 entity_type: node
 bundle: article
-label: Tid
+label: Kontaktperson
 description: ''
 required: false
 translatable: false

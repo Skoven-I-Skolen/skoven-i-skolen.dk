@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.article.field_colophon_author
     - field.field.node.article.field_colophon_editor
     - field.field.node.article.field_colophon_photographer
+    - field.field.node.article.field_contact_person
     - field.field.node.article.field_copy_sheet
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
@@ -22,6 +23,7 @@ dependencies:
     - field.field.node.article.field_files
     - field.field.node.article.field_graphics
     - field.field.node.article.field_header
+    - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
     - field.field.node.article.field_list_media
     - field.field.node.article.field_location
@@ -92,6 +94,8 @@ third_party_settings:
         - group_teaching_goals
         - group_factboxes
         - group_files
+        - group_tid
+        - group_contact
       label: 'Artikel metadata'
       region: content
       parent_name: ''
@@ -105,12 +109,7 @@ third_party_settings:
         width_breakpoint: 640
     group_categorization:
       children:
-        - field_subject
-        - field_class
-        - field_location
-        - field_season
-        - field_time
-        - field_article_months
+        - group_categories
       label: Kategorisering
       region: content
       parent_name: group_article_metadata
@@ -123,6 +122,8 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+        direction: vertical
+        width_breakpoint: 640
     group_colophon:
       children:
         - field_equipment
@@ -212,7 +213,7 @@ third_party_settings:
       label: Geolokation
       region: content
       parent_name: ''
-      weight: 16
+      weight: 17
       format_type: fieldset
       format_settings:
         classes: ''
@@ -324,6 +325,130 @@ third_party_settings:
           id: ''
           description: ''
           required_fields: true
+    group_contact:
+      children:
+        - field_contact_person
+        - field_institution
+      label: Kontakt
+      region: content
+      parent_name: group_article_metadata
+      weight: 11
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_tid:
+      children:
+        - field_time
+      label: Tid
+      region: content
+      parent_name: group_article_metadata
+      weight: 10
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_subject:
+      children:
+        - field_subject
+      label: Fag
+      region: content
+      parent_name: group_categories
+      weight: 29
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_location:
+      children:
+        - field_location
+      label: Sted
+      region: content
+      parent_name: group_categories
+      weight: 30
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_class:
+      children:
+        - field_class
+      label: Klasse
+      region: content
+      parent_name: group_categories
+      weight: 31
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_season:
+      children:
+        - field_season
+      label: Årstid
+      region: content
+      parent_name: group_categories
+      weight: 32
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_month:
+      children:
+        - field_article_months
+      label: Måned
+      region: content
+      parent_name: group_categories
+      weight: 33
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_categories:
+      children:
+        - group_subject
+        - group_location
+        - group_class
+        - group_season
+        - group_month
+      label: Kategorier
+      region: hidden
+      parent_name: group_categorization
+      weight: 13
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: vertical
+        width_breakpoint: 640
 _core:
   default_config_hash: lCMS9iqusl8ppbYxINj_SRny0NNOhS2IAGuGG9i0r6c
 id: node.article.default
@@ -356,25 +481,21 @@ content:
     third_party_settings: {  }
   field_article_months:
     type: options_buttons
-    weight: 22
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_type:
     type: options_select
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   field_class:
-    type: entity_reference_autocomplete_tags
-    weight: 17
+    type: options_buttons
+    weight: 15
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_colophon:
     type: text_textarea
@@ -394,7 +515,7 @@ content:
     third_party_settings: {  }
   field_colophon_editor:
     type: string_textfield
-    weight: 31
+    weight: 30
     region: content
     settings:
       size: 60
@@ -402,10 +523,18 @@ content:
     third_party_settings: {  }
   field_colophon_photographer:
     type: string_textfield
-    weight: 32
+    weight: 31
     region: content
     settings:
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact_person:
+    type: text_textarea
+    weight: 41
+    region: content
+    settings:
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_copy_sheet:
@@ -469,6 +598,14 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
+  field_institution:
+    type: text_textfield
+    weight: 43
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_list_date:
     type: datetime_default
     weight: 13
@@ -483,14 +620,10 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_location:
-    type: entity_reference_autocomplete_tags
-    weight: 18
+    type: options_buttons
+    weight: 16
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_materials:
     type: media_library_widget
@@ -507,36 +640,28 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_season:
-    type: entity_reference_autocomplete_tags
-    weight: 19
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_section_bg_graphics:
-    type: options_select
+    type: options_buttons
     weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_section_bg_graphics_pos:
+  field_section_bg_graphics:
     type: options_select
     weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_subject:
-    type: entity_reference_autocomplete_tags
-    weight: 16
+  field_section_bg_graphics_pos:
+    type: options_select
+    weight: 19
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
+    third_party_settings: {  }
+  field_subject:
+    type: options_buttons
+    weight: 14
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_teaching_goals:
     type: text_textarea
@@ -547,13 +672,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_time:
-    type: entity_reference_autocomplete_tags
-    weight: 20
+    type: text_textarea
+    weight: 0
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   langcode:
@@ -565,7 +688,7 @@ content:
     third_party_settings: {  }
   lat:
     type: string_textfield
-    weight: 40
+    weight: 39
     region: content
     settings:
       size: 60
@@ -581,19 +704,19 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
@@ -606,14 +729,14 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 14
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -642,7 +765,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
