@@ -3,7 +3,6 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.profile.organization.field_orgamization_overview
     - field.field.profile.organization.field_organization_address
     - field.field.profile.organization.field_organization_description
     - field.field.profile.organization.field_organization_email
@@ -127,5 +126,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_orgamization_overview: true
   is_default: true

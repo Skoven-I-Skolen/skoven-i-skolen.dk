@@ -32,8 +32,10 @@
           </span>
         </div>
         <div class="overview-form__search-input">
-          {{ element['facets'].text }}
-          {{ element['search'].search }}
+          {% if element['facets'].text %}
+            {{ element['facets'].text }}
+            {{ element['search'].search }}
+          {% endif %}
         </div>
       </div>
     </div>

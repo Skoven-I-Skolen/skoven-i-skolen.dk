@@ -8,6 +8,7 @@ entity_bundles:
   node:
     - article
 fields:
+  owner: entity_autocomplete
   text: textfield
   field_article_type: checkboxes
   field_class: checkboxes

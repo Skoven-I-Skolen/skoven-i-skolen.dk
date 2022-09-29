@@ -3,7 +3,6 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.profile.organization.field_orgamization_overview
     - field.field.profile.organization.field_organization_address
     - field.field.profile.organization.field_organization_description
     - field.field.profile.organization.field_organization_email
@@ -62,7 +61,7 @@ content:
     type: organization_overview_formatter
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: list
     third_party_settings: {  }
     weight: 6
     region: content
@@ -96,7 +95,6 @@ content:
     weight: 7
     region: content
 hidden:
-  field_orgamization_overview: true
   field_section_bg_graphics: true
   field_section_bg_graphics_pos: true
   search_api_excerpt: true

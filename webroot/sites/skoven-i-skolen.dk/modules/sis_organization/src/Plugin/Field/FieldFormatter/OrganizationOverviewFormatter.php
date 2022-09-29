@@ -35,6 +35,11 @@ class OrganizationOverviewFormatter extends OverviewFormFormatter {
         $overview_id = str_replace('node.', '', $entity_bundle);
       }
       $filter = new OverviewFilter($overview_id, $item->getValue());
+      /** @var \Drupal\profile\Entity\Profile $profile */
+      $profile = $items->getEntity();
+      if (!empty($profile) && $profile->getEntityTypeId() == 'profile') {
+        $filter->setFieldValue('owner', $profile->getOwnerId());
+      }
       $filter->setViewMode('list');
 
       $elements[$delta] = \Drupal::formBuilder()

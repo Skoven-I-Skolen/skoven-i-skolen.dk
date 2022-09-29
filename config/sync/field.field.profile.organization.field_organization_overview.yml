@@ -13,21 +13,23 @@ entity_type: profile
 bundle: organization
 label: Overblik
 description: ''
-required: false
+required: true
 translatable: false
 default_value:
   -
     fields:
-      field_article_categories: {  }
+      owner: ''
+      text: ''
       field_article_type: {  }
       field_class: {  }
       field_location: {  }
       field_season: {  }
       field_subject: {  }
-    count: 5
+    count: 12
     sort: newest
     pagination: true
     facets:
+      - text
       - field_class
       - field_location
       - field_season
