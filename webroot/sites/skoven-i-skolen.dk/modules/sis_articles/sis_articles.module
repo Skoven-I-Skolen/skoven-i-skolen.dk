@@ -53,18 +53,20 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
       }
     }
 
-    if (\Drupal::currentUser()->id() === 0 && isset($form['field_media_downloads']['#access'])) {
+    if (\Drupal::currentUser()->id() === 0) {
       // Hide fields that are not relevant for anonymous users.
-      $form['moderation_state']['#access'] = FALSE;
-      $form['revision_information']['#access'] = FALSE;
-      $form['revision_log']['#access'] = FALSE;
-      $form['field_media_downloads']['#access'] = FALSE;
-      $form['field_article_type']['#access'] = FALSE;
+      if ($form['revision_information']['#access']) {
+        $form['revision_information']['#access'] = FALSE;
+      }
+      if ($form['moderation_state']['#access']) {
+        $form['moderation_state']['#access'] = FALSE;
+      }
+      if ($form['revision_log']['#access']) {
+        $form['revision_log']['#access'] = FALSE;
+      }
+      if ($form['field_article_type']['#access']) {
+        $form['field_article_type']['#access'] = FALSE;
+      }
     }
   }
-
-  else if ($form_id === 'views_form_media_library_page' || 'views_form_media_library_widget_document') {
-    $form['#attached']['library'][] = 'sis/media-library';
-  }
-
 }
