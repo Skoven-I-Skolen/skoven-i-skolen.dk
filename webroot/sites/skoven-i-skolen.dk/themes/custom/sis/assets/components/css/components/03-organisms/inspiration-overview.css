@@ -276,11 +276,6 @@
       grid-gap: var(--container-spacing);
     }
 
-    @media (--viewport-md-min) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: var(--container-spacing);
-    }
-
     @media (--viewport-lg-min) {
       grid-template-columns: repeat(4, 1fr);
     }
