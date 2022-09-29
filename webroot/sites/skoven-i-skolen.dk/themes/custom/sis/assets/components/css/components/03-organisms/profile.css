@@ -4,6 +4,14 @@
  */
 .profile {
   &__hero {
+    & .paragraph--type--top-image {
+      picture {
+        img {
+          width: 100%;
+        }
+      }
+    }
+
     img {
       display: block;
     }
@@ -16,6 +24,7 @@
 
   &__page-title {
     margin-bottom: 24px;
+    hyphens: auto;
   }
 
   &__logo {
