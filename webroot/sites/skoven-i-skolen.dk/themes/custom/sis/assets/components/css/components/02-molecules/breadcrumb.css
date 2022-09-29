@@ -32,7 +32,7 @@
       border-top: 2px solid #3d2959;
       border-right: 2px solid #3d2959;
       transform: rotate(45deg);
-      content: "";
+      content: '';
     }
   }
 
@@ -41,7 +41,7 @@
     display: inline-block;
     color: var(--color-gray);
     text-decoration: none;
-    transition: color .2s;
+    transition: color 0.2s;
 
     &--active {
       color: var(--color-black);
@@ -51,5 +51,23 @@
 
   @media print {
     display: none;
+  }
+}
+
+.breadcrumb__item:first-child {
+  &::after {
+    content: '...';
+  }
+  & a {
+    display: none;
+  }
+
+  @media (--viewport-sm-min) {
+    &::after {
+      content: '';
+    }
+    & a {
+      display: inline-block;
+    }
   }
 }
