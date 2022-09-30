@@ -41,6 +41,7 @@ class OrganizationOverviewForm extends OverviewFilterForm {
         '#size' => 64,
         '#theme_wrappers' => [],
         '#attributes' => [
+          'placeholder' => 'Søg i visitkort',
           'class' => []
         ],
       ];
