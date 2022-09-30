@@ -7,7 +7,7 @@ function sis_preprocess_pager(&$variables) {
 
   $pager = $pager_manager->getPager($element);
 
-  if ($pager_max = $pager->getTotalPages()) {
+  if ($pager && $pager_max = $pager->getTotalPages()) {
     $variables['items']['last']['page_number'] = $pager_max;
   }
 }
