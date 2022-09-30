@@ -5,11 +5,13 @@ dependencies:
   config:
     - node.type.blog_post
   module:
+    - metatag
     - node
 id: blogger
 label: Blogger
 weight: 8
 is_admin: null
 permissions:
+  - 'administer meta tags'
   - 'create blog_post content'
   - 'view own unpublished content'
