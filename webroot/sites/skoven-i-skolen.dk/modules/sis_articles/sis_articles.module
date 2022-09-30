@@ -69,4 +69,8 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
       }
     }
   }
+
+  else if ($form_id === 'views_form_media_library_page' || 'views_form_media_library_widget_document') {
+    $form['#attached']['library'][] = 'sis/media-library';
+  }
 }
