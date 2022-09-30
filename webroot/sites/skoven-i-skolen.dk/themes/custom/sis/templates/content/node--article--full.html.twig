@@ -207,6 +207,16 @@
             </div>
           {% endfor %}
         {% endif %}
+        {% if node.field_time.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Tid
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_time.value|t }}
+            </div>
+          </div>
+        {% endif %}
         {% if node.field_teaching_goals.value %}
           <div class="facts-box">
             <div class="facts-box__title">
@@ -256,16 +266,6 @@
                   </div>
                 </div>
               {% endif %}
-            </div>
-          </div>
-        {% endif %}
-        {% if node.field_time.value %}
-          <div class="facts-box">
-            <div class="facts-box__title">
-              Tid
-            </div>
-            <div class="facts-box__content">
-              {{ node.field_time.value|t }}
             </div>
           </div>
         {% endif %}

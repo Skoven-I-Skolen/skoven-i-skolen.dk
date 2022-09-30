@@ -195,6 +195,30 @@ process:
           migration: articles
           source: target_id
           no_stub: true
+  field_time/format:
+    plugin: default_value
+    default_value: basic_html
+  field_time/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_sis_boxout_time/0/value
+  field_contact_person/format:
+    plugin: default_value
+    default_value: basic_html
+  field_contact_person/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_sis_contact_person/0/value
+  field_institution/format:
+    plugin: default_value
+    default_value: basic_html
+  field_institution/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_sis_institution/0/value
   moderation_state:
     plugin: default_value
     default_value: published
