@@ -41,6 +41,7 @@ dependencies:
     - layout_builder
     - media
     - media_icons
+    - metatag
     - media_library_bulk_upload
     - node
     - oembed_providers
@@ -80,6 +81,7 @@ permissions:
   - 'add scheduled transitions node page'
   - 'administer atoms'
   - 'administer menu'
+  - 'administer meta tags'
   - 'administer nodes'
   - 'administer oembed providers'
   - 'administer profile'

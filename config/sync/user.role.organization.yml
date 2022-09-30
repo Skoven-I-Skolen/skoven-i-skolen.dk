@@ -8,6 +8,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - content_moderation
+    - metatag
     - node
     - profile
 id: organization
@@ -15,6 +16,7 @@ label: Organisation
 weight: 6
 is_admin: null
 permissions:
+  - 'administer meta tags'
   - 'create article content'
   - 'create dot_on_map content'
   - 'delete any article content'

@@ -42,6 +42,7 @@ dependencies:
     - media
     - media_icons
     - media_library_bulk_upload
+    - metatag
     - node
     - paragraphs
     - path
@@ -77,6 +78,7 @@ permissions:
   - 'add scheduled transitions node page'
   - 'administer atoms'
   - 'administer menu'
+  - 'administer meta tags'
   - 'administer nodes'
   - 'administer profile'
   - 'administer profile types'
