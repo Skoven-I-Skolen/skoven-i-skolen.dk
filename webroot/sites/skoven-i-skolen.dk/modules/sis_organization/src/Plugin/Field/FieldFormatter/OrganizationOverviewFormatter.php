@@ -40,7 +40,6 @@ class OrganizationOverviewFormatter extends OverviewFormFormatter {
       if (!empty($profile) && $profile->getEntityTypeId() == 'profile') {
         $filter->setFieldValue('owner', $profile->getOwnerId());
       }
-      $filter->setViewMode('list');
 
       $elements[$delta] = \Drupal::formBuilder()
         ->getForm('Drupal\sis_organization\Form\OrganizationOverviewForm', $filter);

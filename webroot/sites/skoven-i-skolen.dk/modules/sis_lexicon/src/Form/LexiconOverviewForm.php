@@ -49,6 +49,11 @@ class LexiconOverviewForm extends OverviewFilterForm {
 
 
   public function buildForm(array $form, FormStateInterface $form_state, OverviewFilter $filter = NULL) {
+    if (!is_null($filter)) {
+      $facets = $filter->getFacets();
+      $facets[] = 'letter';
+      $filter->setFacets($facets);
+    }
     $form = parent::buildForm($form, $form_state, $filter);
 
     $form['#attributes'] = [
@@ -69,64 +74,7 @@ class LexiconOverviewForm extends OverviewFilterForm {
     $form['content']['filters']['filter'] = $this->getContentDelivery()
       ->getFilters(self::DEFAULT_LIMIT, 0, ['query' => ['pager' => TRUE]]);
 
-    /**
-     * Add the search field and button
-     */
-
-    $form['content']['filters']['search'] = [
-      '#type' => 'container',
-      '#attributes' => [
-        'class' => ['lexicon__search']
-      ]
-    ];
-
-    $form['content']['filters']['search']['keyword'] = [
-      '#type' => 'search',
-      '#maxlength' => 64,
-      '#size' => 64,
-      '#theme_wrappers' => [],
-      '#attributes' => [
-        'class' => []
-      ],
-    ];
-
-    $form['content']['filters']['search']['search'] = [
-      '#type' => 'button',
-      '#value' => $this->t('Search'),
-      '#attributes' => [
-        'data-twig-suggestion' => 'search_button',
-      ],
-      '#ajax' => [
-        'callback' => '::performSearch',
-        'event' => 'click',
-        'progress' => [
-          'type' => 'throbber',
-        ],
-      ],
-    ];
-
     return $form;
-  }
-
-  public function performSearch($form, $form_state) {
-    $keyword = $form_state->getValue('keyword');
-    $response = new AjaxResponse();
-
-    if (empty($keyword)) {
-      return $response;
-    }
-
-    if (!$content = $this->getContentDelivery()
-      ->getArticlesByKeyword($keyword)) {
-      $content = [
-        '#theme' => 'lexicon_search',
-        '#articles' => 'No results found',
-      ];
-    }
-
-    $response->addCommand(new ReplaceCommand('#lexicon-items', $content));
-
-    return $response;
   }
 
   /**
