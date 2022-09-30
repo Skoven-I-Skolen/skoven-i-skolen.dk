@@ -1,4 +1,10 @@
 .news-page {
+  & .facts-box {
+    &__content-item {
+     display: block;
+    }
+  }
+
   &__content {
     h2 {
       font-size: var(--base-font-size-xxlarge) !important;
