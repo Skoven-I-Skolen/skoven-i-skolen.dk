@@ -68,12 +68,6 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
         ->isEmpty()) {
       $content->addData('field_location', _sis_relewise_relewise_taxonomy_value($node->get('field_location')));
     }
-    if ($node->hasField('field_time') && !$node->get('field_time')
-        ->isEmpty()) {
-      $content->addData('field_time', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_time')
-        ->first()
-        ->getValue()['value'], $langcode));
-    }
     if ($node->hasField('field_season') && !$node->get('field_season')
         ->isEmpty()) {
       $content->addData('field_season', _sis_relewise_relewise_taxonomy_value($node->get('field_season')));
