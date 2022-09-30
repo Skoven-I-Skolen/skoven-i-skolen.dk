@@ -5,6 +5,8 @@ namespace Drupal\sis_overview\Form;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\entity_overview\Form\OverviewFilterForm;
 use Drupal\entity_overview\OverviewFilter;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Plugin\views\wizard\TaxonomyTerm;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class CategoryOverviewForm extends OverviewFilterForm {
@@ -40,6 +42,11 @@ class CategoryOverviewForm extends OverviewFilterForm {
           'class' => []
         ],
       ];
+      if (!empty($filter->getFieldValue('field_article_type'))) {
+        $tid = $filter->getFieldValue('field_article_type');
+        $term = Term::load($tid[0]);
+        $form['facets']['text']['#attributes']['placeholder'] = $this->t('Search in') . ' ' . strtolower($term->label());
+      }
     }
 
     $form['search']['search'] = [
