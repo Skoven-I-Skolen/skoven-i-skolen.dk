@@ -8,6 +8,11 @@ function overviewFilters(filterWrappers) {
     filterWrappers[i].classList.add('loaded');
     const trigger = filterWrappers[i].querySelector('.js-accordion-item__expanadable--trigger');
 
+    // pass prop - need id
+    // need to pass props id to accordionjs item (fix it)
+
+    console.log('no of elements', i, filterWrappers[i]);
+
     trigger.addEventListener('click', (e) => {
       filterWrappers[i].classList.toggle('expanded');
     });
