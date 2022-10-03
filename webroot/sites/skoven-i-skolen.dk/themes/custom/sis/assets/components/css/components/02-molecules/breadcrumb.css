@@ -54,22 +54,3 @@
   }
 }
 
-.breadcrumb__item:first-child {
-  &::after {
-    content: '...';
-  }
-
-  & a {
-    display: none;
-  }
-
-  @media (--viewport-sm-min) {
-    &::after {
-      content: '';
-    }
-
-    & a {
-      display: inline-block;
-    }
-  }
-}
