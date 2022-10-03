@@ -1,4 +1,31 @@
 .news-page {
+  .swiper-pagination-wrapper {
+    display: flex;
+
+    .swiper-pagination-title {
+      font-size: 14px;
+      margin-right: 55px;
+
+      @media(--viewport-md-max) {
+        margin-right: 54px;
+      }
+    }
+  }
+
+  .swiper-pagination-fraction {
+    right: 105px;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    font-size: 14px;
+  }
+
+  & .facts-box {
+    &__content-item {
+      display: block;
+    }
+  }
+
   &__content {
     h2 {
       font-size: var(--base-font-size-xxlarge) !important;

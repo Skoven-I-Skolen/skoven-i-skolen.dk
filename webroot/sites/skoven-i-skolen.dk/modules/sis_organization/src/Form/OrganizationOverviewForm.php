@@ -81,7 +81,7 @@ class OrganizationOverviewForm extends OverviewFilterForm {
       ],
       '#link' => [
         'uri' => Url::fromUserInput('/'),
-        'title' => 'Go to map'
+        'title' => t('Go to map')
       ]
     ]);
   }

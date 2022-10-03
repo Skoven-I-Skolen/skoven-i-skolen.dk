@@ -1,3 +1,6 @@
+.swiper-pagination-lock {
+  display: block !important;
+}
 .organization-page {
   &__title {
     width: 100%;
