@@ -166,7 +166,11 @@
 
     &-links {
       font-size: var(--base-font-size-small);
-      text-align: right;
+      text-align: center;
+
+      @media(--viewport-sm-min) {
+        text-align: right;
+      }
 
       ul {
         margin: 0;

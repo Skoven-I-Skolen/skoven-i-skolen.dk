@@ -1,4 +1,25 @@
 .article-page__related {
+  .swiper-pagination-wrapper {
+    display: flex;
+
+    .swiper-pagination-title {
+      margin-right: 55px;
+      font-size: 14px;
+
+       @media(--viewport-md-max) {
+        margin-right: 54px;
+      }
+    }
+  }
+
+  .swiper-pagination-fraction {
+    right: 105px;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    font-size: 14px;
+  }
+
   &-header {
     margin-bottom: 20px;
 
@@ -60,7 +81,7 @@
       width: 12px;
       height: 12px;
       transform: translate(-50%, -50%) rotate(45deg);
-      content: "";
+      content: '';
     }
 
     .swiper-button-prev::after {
@@ -75,7 +96,6 @@
       border-right: 2px solid #fff;
     }
   }
-
 
   .inspiration-overview__item {
     flex: 0 0 100%;
