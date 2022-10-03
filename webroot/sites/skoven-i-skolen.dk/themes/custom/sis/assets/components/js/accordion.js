@@ -78,9 +78,6 @@ Drupal.behaviors.accordion = {
             this.showAllHiddenItems = true;
           },
         },
-        mounted() {
-          console.log('mounted', accordionItem);
-        },
       });
     }
   },
