@@ -56,3 +56,13 @@
     overflow: visible;
   }
 }
+
+.js-media-library-item-preview {
+  img {
+    width: 15.5rem;
+    max-width: 15.5rem;
+    height: 10.5rem;
+    max-height: 10.5rem;
+    object-fit: cover;
+  }
+}
