@@ -116,6 +116,7 @@
     z-index: 9;
     overflow-x: hidden;
     overflow-y: auto;
+    color: #3d2859;
   }
 
   .modal__backdrop {

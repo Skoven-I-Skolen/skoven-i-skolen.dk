@@ -105,4 +105,8 @@
     width: 100%;
     height: auto;
   }
+
+  .inspiration-overview__title {
+    color: var(--color-purple);
+  }
 }

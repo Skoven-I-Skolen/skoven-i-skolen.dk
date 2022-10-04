@@ -6,7 +6,7 @@
 .slider-pager-count {
   padding-right: var(--container-spacing);
   padding-left: var(--container-spacing);
-  color: var(--color-purple);
+  color: var(--theme-link-color);
   font-size: var(--base-font-size-small);
   text-align: center;
 
