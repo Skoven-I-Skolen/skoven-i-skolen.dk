@@ -23,3 +23,6 @@ msgstr "Se stedsbestemte materialer fra @name"
 
 msgid "Go to map"
 msgstr "Gå til kortet"
+
+msgid "Latest news"
+msgstr "Sidste nyt"
