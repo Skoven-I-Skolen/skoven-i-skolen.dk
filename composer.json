@@ -67,7 +67,6 @@
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",
         "drupal/mobile_detect": "^3.0",
-        "drupal/mobile_detect_twig_extensions": "^1.5",
         "drupal/noreferrer": "^1.0",
         "drupal/oembed_providers": "^2.1",
         "drupal/paragraphs": "^1.0",
