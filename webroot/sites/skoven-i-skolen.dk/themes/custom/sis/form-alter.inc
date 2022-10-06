@@ -11,3 +11,12 @@ use Drupal\Core\Form\FormStateInterface;
 function sis_form_node_article_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   $form['#attached']['library'][] = 'sis/edit-form';
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function sis_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+//  if ($form_id === 'layout_builder_update_block') {
+//    $a = 0;
+//  }
+}

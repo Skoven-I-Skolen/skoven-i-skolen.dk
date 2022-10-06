@@ -1,0 +1,56 @@
+uuid: e35878ae-c6ad-430c-a00b-9a17119bba99
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.slideshow
+    - field.field.node.almanac.field_almanac_content
+    - field.field.node.almanac.field_almanac_day
+    - field.field.node.almanac.field_almanac_month
+    - node.type.almanac
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.almanac.slideshow
+targetEntityType: node
+bundle: almanac
+mode: slideshow
+content:
+  field_almanac_content:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_almanac_day:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_almanac_month:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

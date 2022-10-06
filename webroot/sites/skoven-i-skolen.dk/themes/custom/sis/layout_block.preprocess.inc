@@ -50,29 +50,48 @@ function sis_preprocess_block__inline_block__button(array &$variables) {
  *   Template variables.
  */
 function sis_preprocess_block__inline_block__entity_slideshow(array &$variables) {
-//  /** @var \Drupal\block_content\Entity\BlockContent $block */
-//  $block = $variables['elements']['content']['#block_content'];
-//  $nodes = [];
-//  $node_ids = [];
-//  if ($block->hasField('field_entity_slideshow_items')) {
-//    foreach ($block->get('field_entity_slideshow_items') as $value) {
-//      $node_ids[] = $value->target_id;
-//    }
-//    $nodes = Node::loadMultiple($node_ids);
-//  }
-//
-//  if (!empty($nodes)) {
-//    $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
-//    $rendered_nodes = [];
-//    /** @var \Drupal\node\Entity\Node $node */
-//    foreach ($nodes as $node) {
-//      if ($node->access()) {
-//        $rendered_nodes[] = $view_builder->view($node, 'slideshow');
-//      }
-//    }
-//    $variables['items'] = $rendered_nodes;
-//  }
-//  else {
-//    $variables['items'] = [];
-//  }
+  /** @var \Drupal\block_content\Entity\BlockContent $block */
+  $block = $variables['elements']['content']['#block_content'];
+  $nodes = [];
+  $node_ids = [];
+  if ($block->hasField('field_entity_slideshow_items')) {
+    foreach ($block->get('field_entity_slideshow_items') as $value) {
+      $node_ids[] = $value->target_id;
+    }
+    $nodes = Node::loadMultiple($node_ids);
+  }
+
+  if (!empty($nodes)) {
+    $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
+    $rendered_nodes = [];
+    /** @var \Drupal\node\Entity\Node $node */
+    foreach ($nodes as $node) {
+      if ($node->access()) {
+        $rendered_nodes[] = $view_builder->view($node, 'slideshow');
+      }
+    }
+    $variables['manually_selected_nodes'] = $rendered_nodes;
+  }
+  else {
+    $variables['items'] = [];
+  }
+}
+
+function sis_preprocess_block__inline_block__news_overview(array &$variables) {
+  $show_four_items = (bool) $variables['content']['#block_content']->get('field_show_four_items')->first()->value;
+  if ($show_four_items) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $latest_news = Drupal::service('sis_news.content_delivery_service')->getLatestNews($node);
+    $variables['terms_4'] = $latest_news;
+  }
+  else {
+    $news_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
+      ->loadByProperties(['machine_name' => 'news']);
+    if (!$news_term) {
+      return;
+    }
+    $variables['terms_16'] = Drupal::service('sis_overview.term_overview')
+      ->view(array_shift($news_term), TRUE);
+    $variables['terms_16']['pager']['#route_parameters']['small'] = TRUE;
+  }
 }

@@ -87,3 +87,14 @@ function sis_preprocess_node__news__slideshow(&$variables) {
     $variables['news_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($node->get('field_news_image')->entity, $image_style);
   }
 }
+
+function sis_preprocess_node__page__slideshow(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'] ?? NULL;
+  $image_style = 'entity_slideshow';
+
+  if ($node->hasField('field_list_media') && !$node->get('field_list_media')->isEmpty() && !is_null($node->get('field_list_media')->entity)) {
+    $variables['page_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($node->get('field_list_media')->entity, $image_style);
+  }
+}
+

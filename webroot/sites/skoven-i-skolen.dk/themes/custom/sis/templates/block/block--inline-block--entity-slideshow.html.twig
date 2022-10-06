@@ -33,11 +33,19 @@
   {{ title_prefix }}
   {{ title_suffix }}
   <div class="entity-slideshow swiper-wrapper">
-    {% for item in items %}
-      <div class="swiper-slide entity-slideshow-slide">
-        {{ item }}
-      </div>
-    {% endfor %}
+    {% if manually_selected_nodes %}
+      {% for item in manually_selected_nodes %}
+        <div class="swiper-slide {{ manually_selected_nodes|length > 1 ? 'entity-slideshow-slide' : '' }}">
+          {{ item }}
+        </div>
+      {% endfor %}
+      {% else %}
+      {% for item in items %}
+          <div class="swiper-slide entity-slideshow-slide">
+            {{ item }}
+          </div>
+        {% endfor %}
+    {% endif %}
   </div>
   <div class="entity-slideshow-pagination swiper-pagination"></div>
 </div>
