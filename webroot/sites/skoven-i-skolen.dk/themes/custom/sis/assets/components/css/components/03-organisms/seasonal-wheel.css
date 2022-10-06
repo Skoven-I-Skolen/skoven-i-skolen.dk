@@ -3,18 +3,18 @@
   .red-knob,
   .seasonal-wheel-month-selector {
     & > path:hover {
-      opacity: .2;
+      opacity: 0.2;
       fill: red;
     }
   }
 
   .seasonal-wheel-month-selector:hover {
-    opacity: .2;
+    opacity: 0.2;
     fill: red;
   }
 
   .hover-wheel {
-    opacity: .2;
+    opacity: 0.2;
     fill: red;
   }
 
@@ -68,7 +68,7 @@
 
   .red-knob:hover {
     cursor: pointer;
-    opacity: .3;
+    opacity: 0.3;
     fill: #c52543;
     stroke: red;
   }
@@ -195,7 +195,7 @@
 
   .fade-enter-active,
   .fade-leave-active {
-    transition: opacity .2s;
+    transition: opacity 0.2s;
   }
 
   .fade-enter,
@@ -218,18 +218,45 @@
   overflow: hidden;
 }
 
-.months-wrapper__divider {
-  position: relative;
-  width: 100%;
-  height: 0;
-  margin-bottom: 18px;
-  padding-bottom: 2.5%;
+.months-wrapper {
+  /* padding-top: 12.5rem;
 
-  & svg {
-    position: absolute;
-    top: 0;
-    left: 0;
+  @media (--viewport-sm-max) {
+    padding-top: 350px;
+  }
+  @media (--viewport-lg-min) {
+    padding-top: 400px;
+  } */
+
+  &__divider {
+    position: relative;
+    width: 100%;
+    height: 0;
+    margin-bottom: 18px;
+    padding-bottom: 2.5%;
+
+    & svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.seasonal-wheel-bg {
+  width: 100%;
+  margin-top: -3rem;
+
+  @media (--viewport-sm-min) {
+    z-index: -5;
     width: 100%;
     height: 100%;
+    margin-top: -25rem;
+  }
+
+  img {
+    width: inherit;
   }
 }
