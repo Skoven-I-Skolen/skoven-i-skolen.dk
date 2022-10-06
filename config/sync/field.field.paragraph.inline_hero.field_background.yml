@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_background
     - media.type.image
-    - media.type.remote_video
+    - media.type.sis_custom_video
     - paragraphs.paragraphs_type.inline_hero
 _core:
   default_config_hash: SY_rH3-fTDtQ5JPnVu47fH-EvZRxJSVuX_mqNt1Hegc
@@ -24,7 +24,7 @@ settings:
   handler_settings:
     target_bundles:
       image: image
-      remote_video: remote_video
+      sis_custom_video: sis_custom_video
     sort:
       field: _none
       direction: ASC
