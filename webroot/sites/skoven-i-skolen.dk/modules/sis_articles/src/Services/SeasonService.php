@@ -66,15 +66,18 @@ class SeasonService {
    *  - 4 = autumn
    */
   private function calculateSeasons(string $month): int {
-    $month = intval($month);
-    $seasons = [
-      self::WINTER,
-      self::SPRING,
-      self::SUMMER,
-      self::AUTUMN,
-      self::WINTER,
-    ];
-    return $seasons[$month / 3];
+    if (in_array($month, [3, 4, 5, 6])) {
+      return self::SPRING;
+    }
+    if (in_array($month, [7, 8, 9])) {
+      return self::SUMMER;
+    }
+    if (in_array($month, [10, 11])) {
+      return self::AUTUMN;
+    }
+    else {
+      return self::WINTER;
+    }
   }
 
   /**
