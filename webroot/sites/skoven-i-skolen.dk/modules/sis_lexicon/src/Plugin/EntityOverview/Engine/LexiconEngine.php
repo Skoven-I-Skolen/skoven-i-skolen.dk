@@ -46,6 +46,33 @@ class LexiconEngine extends EntityQueryEngine {
   /**
    * @inheritDoc
    */
+  public function getResultsCount(OverviewFilter $filter) {
+    $overview = $filter->getOverview();
+    $keys = $this->entityTypeManager->getDefinition($this->getEntityTypeID($overview))->getKeys();
+    $query = $this->entityTypeManager->getStorage($this->getEntityTypeID($overview))->getQuery()
+      ->condition($keys['bundle'], $this->getBundles($overview), 'IN')
+      ->condition('status', 1)
+      ->count();
+    foreach ($filter->getFieldValues() as $field_name => $value) {
+      if (empty($value)) {
+        continue;
+      }
+      if ($field_name == 'text') {
+        $query->condition($keys['label'], $value, 'CONTAINS');
+      } elseif ($field_name == 'letter') {
+        $query->condition($keys['label'], $value, 'STARTS_WITH');
+      } elseif (is_array($value)) {
+        $query->condition($field_name, $value, 'IN');
+      } else {
+        $query->condition($field_name, $value);
+      }
+    }
+    return $query->execute();
+  }
+
+  /**
+   * @inheritDoc
+   */
   public function getResult(OverviewFilter $filter) {
     $overview = $filter->getOverview();
     $storage = $this->entityTypeManager->getStorage($this->getEntityTypeID($overview));

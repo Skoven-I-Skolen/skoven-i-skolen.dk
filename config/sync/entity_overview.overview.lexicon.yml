@@ -1,0 +1,19 @@
+uuid: af68b56d-24fa-4252-85ca-e504707eebec
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.article
+  module:
+    - node
+id: lexicon
+label: Lexicon
+entity_bundles:
+  node:
+    - article
+fields:
+  text: search
+  letter: radios
+engine_id: lexicon
+sort_field: field_list_date
+show_total: ''
