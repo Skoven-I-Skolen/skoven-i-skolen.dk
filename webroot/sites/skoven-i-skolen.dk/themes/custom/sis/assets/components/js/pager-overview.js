@@ -2,30 +2,40 @@ import Vue from 'vue';
 
 require('../../../scripts/vue.config')(Vue);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const vm = new Vue({
-    el: '.js-pager',
-    delimiters: ['${', '}'],
-    data: {
-      seasonalWheelData: {},
-      month: '',
-      currentMonth: '',
-      currentlySelectedMonth: '',
-      randomMonthData: {},
-      showModal: false,
-    },
-    methods: {
-      sendToTop() {
-        window.scrollTo({
-          top: 600,
-          behavior: 'smooth',
-        });
+Drupal.behaviors.pageUp = {
+  attach(context, settings) {
+    const vm = new Vue({
+      el: '.js-pager',
+      delimiters: ['${', '}'],
+      data: {
       },
-    },
+      methods: {
+        // Scroll to class
+        scrollToClass() {
+          const el = document.querySelector('.overview-form__header');
+          console.log('scrollToClass');
+          el.scrollIntoView({
+          });
+        },
+      },
 
-    mounted() {
-      // this.sendToTop();
-      // console.log('mounted');
-    },
-  });
-});
+      mounted() {
+        // check url to have page
+        const url = window.location.href;
+        if (url.indexOf('page') > -1) {
+          this.scrollToClass();
+        } else {
+          console.log('no page');
+        }
+      },
+    });
+  },
+};
+
+// Drupal.behaviors.pageUp = {
+//   attach(context) {
+//     document.addEventListener('DOMContentLoaded', () => {
+
+//     });
+//   },
+// };
