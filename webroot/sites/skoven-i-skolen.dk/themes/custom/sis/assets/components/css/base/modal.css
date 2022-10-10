@@ -57,7 +57,11 @@
   }
 }
 
-.js-media-library-item-preview {
+.js-media-library-views-form {
+  .js-media-library-item {
+    display: inline-table !important;
+  }
+
   img {
     width: 15.5rem;
     max-width: 15.5rem;

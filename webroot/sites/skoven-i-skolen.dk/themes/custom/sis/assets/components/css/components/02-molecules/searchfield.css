@@ -22,7 +22,7 @@
       }
 
       @media (--viewport-ms-min) {
-        max-width: 210px;
+        max-width: 410px;
       }
     }
 

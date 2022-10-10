@@ -13,7 +13,7 @@ a.button {
   justify-content: center;
   min-height: 55px;
   padding: 0 40px;
-  overflow: hidden;
+  overflow: visible;
   color: var(--theme-button-color);
   font-weight: 800;
   font-size: var(--base-font-size);
@@ -40,6 +40,7 @@ a.button {
     color: currentcolor;
     background-color: transparent;
     border: 2px solid var(--theme-button-color);
+    overflow: visible !important;
   }
 
   &--green {

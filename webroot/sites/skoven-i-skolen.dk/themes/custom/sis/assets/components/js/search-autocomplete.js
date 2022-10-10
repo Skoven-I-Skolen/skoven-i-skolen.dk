@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Data source 'Object' key to be searched
       keys: ['displayName'],
     },
+
     resultsList: {
       element: (list, data) => {
         const info = document.createElement('li');

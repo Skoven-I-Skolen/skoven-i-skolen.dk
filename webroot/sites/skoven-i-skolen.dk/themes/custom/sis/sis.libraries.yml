@@ -484,6 +484,13 @@ form-select:
   dependencies:
     - core/drupal
 
+pager-overview:
+  version: VERSION
+  js:
+    dist/components/js/pager-overview.js: {}
+  dependencies:
+    - core/drupal
+
 searchfield:
   version: VERSION
   css:

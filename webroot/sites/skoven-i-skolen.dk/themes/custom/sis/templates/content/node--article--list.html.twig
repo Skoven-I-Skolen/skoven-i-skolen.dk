@@ -73,7 +73,7 @@
 
 <div class="inspiration-overview__item">
   <div class="inspiration-overview__item-inner">
-    <a href="{{ url }}" class="inspiration-overview__item-link">
+    <a href="{{ url }}" class="inspiration-overview__item-link" aria-label="{{ node.field_article_type.entity.name.value }}">
       <div class="inspiration-overview__image">
         {{ content.field_list_media }}
         <a href="/{{ url|split('/')[1] }}" aria-label="{{ node.field_article_type.entity.name.value }}">

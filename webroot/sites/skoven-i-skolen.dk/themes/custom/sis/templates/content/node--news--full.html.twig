@@ -112,6 +112,16 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-4 col-lg-4 col-lg-offset-1">
+<div class="print-button">
+	<a href="#" onclick="window.print()">
+		{% include '@reusable-component/svg-icon.twig' with {
+              'attributes': '',
+              'svgIconName': 'printer'
+            } %}
+		<span class="print-button__text">Print</span>
+	</a>
+</div>
+
         {% if node.field_factboxes.value %}
           {% for factboxe in node.field_factboxes %}
             <div class="facts-box">

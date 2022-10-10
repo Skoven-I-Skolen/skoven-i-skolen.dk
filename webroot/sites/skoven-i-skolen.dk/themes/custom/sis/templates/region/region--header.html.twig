@@ -41,15 +41,17 @@
       </div>
       <div class="header-search js-header-search">
         <form action="/search" method="get" aria-label="search">
-          <div class="header-search__input-field">
+          <div class="header-search__input-field" id="Search">
             <input {{ create_attribute().addClass('input')
               .setAttribute('type', 'search').setAttribute('aria-label', 'Search'|t).setAttribute('required', 'required')
               .setAttribute('placeholder', 'Search the entire site'|t)
               .setAttribute('name', 'text')
+              .setAttribute('aria-label', 'Search')
               .setAttribute('id', 'js-header-search-input') }}
-              aria-label="Search"
+              aria-labelledby="searchbutton"
               >
-            <button {{ create_attribute().setAttribute('type', 'submit').addClass('header-search__submit') }} alt="search">
+
+            <button {{ create_attribute().setAttribute('type', 'submit').addClass('header-search__submit') }} aria-label="search">
               {% include '@reusable-component/svg-icon.twig' with {
                 'attributes': '',
                 'svgIconName': 'search'

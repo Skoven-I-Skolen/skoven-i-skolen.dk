@@ -182,3 +182,7 @@
     font-size: var(--base-font-size-xlarge) !important;
   }
 }
+
+.contextual-region {
+  overflow: visible;
+}
