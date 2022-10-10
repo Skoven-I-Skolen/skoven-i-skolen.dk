@@ -24,10 +24,23 @@ class LexiconOverviewForm extends OverviewFilterForm {
   }
 
 
-  public function buildForm(array $form, FormStateInterface $form_state, OverviewFilter $filter = NULL) {
-    $form = parent::buildForm($form, $form_state, $filter);
-
-    return $form;
+  /**
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return array
+   */
+  public function buildContents(FormStateInterface $form_state) {
+    $content = parent::buildContents($form_state);
+    if (!empty($form_state->get('letter'))) {
+      $letter['letter'] = [
+        '#type' => 'container',
+        '#attributes' => ['class' => ['lexicon_content__letter']]
+      ];
+      $letter['letter']['value'] = [
+        '#markup' => strtoupper($form_state->get('letter'))
+      ];
+    }
+    return $letter + $content;
   }
 
 }

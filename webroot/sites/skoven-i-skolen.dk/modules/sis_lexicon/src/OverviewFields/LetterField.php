@@ -53,6 +53,7 @@ class LetterField implements OverviewFieldInfoInterface {
   public function getFieldFormElement(OverviewFilter $filter): array {
     return [
       '#type' => 'radios',
+      '#attributes' => ['class' => ['lexicon__letters']],
       '#title' => $this->label(),
       '#options' => $this->getOptions(),
       '#default_value' => $filter->getFieldValue($this->id()) ?? ''
