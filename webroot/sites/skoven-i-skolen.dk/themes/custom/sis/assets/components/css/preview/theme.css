@@ -19,6 +19,7 @@
       color: var(--theme-color);
       background-color: transparent;
       border-color: var(--theme-button-background-color);
+      overflow: visible !important;
     }
   }
 

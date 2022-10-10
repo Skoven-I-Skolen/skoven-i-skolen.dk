@@ -1,4 +1,29 @@
 .news-page__latest {
+  .swiper-pagination-lock {
+    display: block !important;
+  }
+
+  .swiper-pagination-wrapper {
+    display: flex;
+
+    .swiper-pagination-title {
+      margin-right: 55px;
+      font-size: 14px;
+
+      @media (--viewport-md-max) {
+        margin-right: 54px;
+      }
+    }
+  }
+
+  .swiper-pagination-fraction {
+    right: 120px;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    font-size: 14px;
+  }
+
   &-header {
     display: flex;
     align-items: flex-end;

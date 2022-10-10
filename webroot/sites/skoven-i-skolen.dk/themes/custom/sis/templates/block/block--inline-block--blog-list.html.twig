@@ -10,25 +10,11 @@
 		<div class="col-xs-12 col-sm-8 col-md-8"></div>
 		<div class="col-xs-12 col-sm-4 col-md-4">
 			<div class="swiper-navigation">
-				{% if latest_four_blog_posts_count > 0 %}
-					<div class="slider-pager-count">
-						{{ 'Showing'|t }}
-						<span class="slider-pager-count--showing">
-							<span class="ms-hidden sm-hidden md-hidden lg-hidden xl-hidden">1</span>
-							{% if latest_four_blog_posts_count > 1 %}
-								<span class="xs-hidden md-hidden lg-hidden xl-hidden">2</span>
-							{% endif %}
-							{% if latest_four_blog_posts_count > 2 %}
-								<span class="xs-hidden ms-hidden sm-hidden lg-hidden xl-hidden">3</span>
-							{% endif %}
-							{% if latest_four_blog_posts_count > 3 %}
-								<span class="xs-hidden ms-hidden sm-hidden md-hidden">4</span>
-							{% endif %}
-						</span>
-						{{ 'out of'|t }}
-						<span class="slider-pager-count--total">{{ latest_four_blog_posts_count }}</span>
-					</div>
-				{% endif %}
+				<div class="swiper-pagination-wrapper">
+					<div class="swiper-pagination-title">
+						Viser:</div>
+					<div class="swiper-pagination"></div>
+				</div>
 				<div class="swiper-button-prev"></div>
 				<div class="swiper-button-next"></div>
 			</div>

@@ -111,7 +111,7 @@
               </div>
               <div class="footer-some-icons">
                 {% if atom('facebook-link').0['#markup'] %}
-                  <a href="{{ atom('facebook-link').0['#markup'] }}" class="footer-some-icons__icon" target="_blank" alt="facebook">
+                  <a href="{{ atom('facebook-link').0['#markup'] }}" class="footer-some-icons__icon" target="_blank" aria-label="facebook">
                     {% include '@reusable-component/svg-icon.twig' with {
                       'attributes': '',
                       'svgIconName': 'facebook'
@@ -119,7 +119,7 @@
                   </a>
                 {% endif %}
                 {% if atom('instagram-link').0['#markup'] %}
-                  <a href="{{ atom('instagram-link').0['#markup'] }}" class="footer-some-icons__icon" target="_blank" alt="instagram">
+                  <a href="{{ atom('instagram-link').0['#markup'] }}" class="footer-some-icons__icon" target="_blank" aria-label="instagram">
                     {% include '@reusable-component/svg-icon.twig' with {
                       'attributes': '',
                       'svgIconName': 'instagram'
@@ -146,7 +146,7 @@
                 <form action="/newsletter/subscribe" method="post" target="_blank" class="newsletter-form">
                   <input type="hidden" name="optin_scheme" value="single" />
                   <input type="hidden" name="action" value="subscribe" />
-                  <input type="hidden" name="lists" value="70430" />
+                  <input type="hidden" name="lists" value="74511" />
                   <input type="hidden" name="secret" value="" />
                   <div class="field-items">
                     <div class="field-item field-name">
