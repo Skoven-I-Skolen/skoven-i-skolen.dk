@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5813f76da71490e7b86bf429f48089b4",
+    "content-hash": "e3693398b90d73752a95ebbd799b81ce",
     "packages": [
         {
             "name": "algolia/places",
@@ -7709,10 +7709,10 @@
         },
         {
             "name": "novicell/entity_overview",
-            "version": "2.0.11",
+            "version": "2.1.4",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_1h9Au8/novicellentity_overview-2-0-11.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_K2pZX/novicellentity_overview-2-1-4.zip"
             },
             "require": {
                 "drupal/html5history": "^1.0"
@@ -12702,7 +12702,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4||^8.0",
+        "php": "^8.0",
         "ext-json": "*",
         "ext-pdo": "*"
     },

@@ -14,8 +14,32 @@
 
 <form{{ attributes.addClass('overview-form') }}>
   <div class="container">
+    <div class="row overview-form__header">
+      <div class="col-xs-12 col-md-8">
+        <div class="overview-form__search-title">
+          {{ element['facets'].letter }}
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4 filter-mobile-wrapper">
+        <div class="overview-form__toolbar">
+          <span class="overview-form__toolbar__filter-button js-overview-form__toolbar__filter-button">
+            {% include '@reusable-component/svg-icon.twig' with {
+              'attributes': '',
+              'svgIconName': 'filter-icon'
+            } %}
+            {{ "Filter"|t }}
+          </span>
+        </div>
+        <div class="overview-form__search-input">
+          {% if element['facets'].text %}
+            {{ element['facets'].text }}
+            {{ element['search'].search }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 col-md-12">
         <div class="row">
           {{ element['content'] }}
         </div>
