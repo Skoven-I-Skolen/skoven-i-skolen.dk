@@ -5,8 +5,7 @@ type: module
 core_version_requirement: ^8 || ^9
 
 dependencies:
-  - taxonomy_machine_name
-  - premium_articles
+  - entity_overview:entity_overview
 
 interface translation project: sis_lexicon
-interface translation server pattern: modules/contrib/sis_lexicon/translations/%language.po
+interface translation server pattern: modules/custom/sis_lexicon/translations/%language.po

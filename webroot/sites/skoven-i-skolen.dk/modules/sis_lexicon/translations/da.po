@@ -1,8 +1,8 @@
 # Danish translation of Sis Lexicon (all releases)
 # Copyright (c) 2021 Novicell
 #
-msgid ""
-msgstr ""
+msgid "Initial letter"
+msgstr "Start bogstav"
 
 msgid "Show all lexicon articles with the letter @letter"
 msgstr "Vis alle leksikonartikler med bogstavet @letter"

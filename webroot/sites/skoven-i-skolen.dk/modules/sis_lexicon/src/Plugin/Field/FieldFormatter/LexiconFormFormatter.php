@@ -27,10 +27,6 @@ class LexiconFormFormatter extends OverviewFormFormatter {
 
     foreach ($items as $delta => $item) {
       $overview_id = $items->getSetting('overview');
-      if (empty($overview_id)) {
-        $entity_bundle = $items->getSetting('entity_bundle');
-        $overview_id = str_replace('node.', '', $entity_bundle);
-      }
       $filter = new OverviewFilter($overview_id, $item->getValue());
       $filter->setViewMode($this->getSetting('view_mode'));
 
