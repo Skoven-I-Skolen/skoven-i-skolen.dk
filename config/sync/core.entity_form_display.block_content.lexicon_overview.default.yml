@@ -6,14 +6,14 @@ dependencies:
     - block_content.type.lexicon_overview
     - field.field.block_content.lexicon_overview.field_lexicon_overview
   module:
-    - sis_lexicon
+    - entity_overview
 id: block_content.lexicon_overview.default
 targetEntityType: block_content
 bundle: lexicon_overview
 mode: default
 content:
   field_lexicon_overview:
-    type: lexicon_overview_widget
+    type: overview_filter_widget
     weight: 27
     region: content
     settings: {  }

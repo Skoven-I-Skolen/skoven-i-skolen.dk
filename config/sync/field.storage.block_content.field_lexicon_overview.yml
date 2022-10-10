@@ -10,8 +10,8 @@ field_name: field_lexicon_overview
 entity_type: block_content
 type: overview_filter
 settings:
-  allow_facets: 0
-  overview: node_article
+  overview: lexicon
+  allow_facets: 1
   entity_bundle: ''
 module: entity_overview
 locked: false

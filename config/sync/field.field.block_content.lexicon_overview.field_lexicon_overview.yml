@@ -18,17 +18,14 @@ translatable: false
 default_value:
   -
     fields:
-      field_article_categories: {  }
-      field_article_type:
-        - '15'
-      field_class: {  }
-      field_location: {  }
-      field_season: {  }
-      field_subject: {  }
-    count: 8
+      text: ''
+      letter: ''
+    count: 16
     sort: newest
-    pagination: false
-    facets: {  }
+    pagination: true
+    facets:
+      - text
+      - letter
 default_value_callback: ''
 settings: {  }
 field_type: overview_filter
