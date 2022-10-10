@@ -39,8 +39,10 @@ class LexiconOverviewForm extends OverviewFilterForm {
       $letter['letter']['value'] = [
         '#markup' => strtoupper($form_state->get('letter'))
       ];
+      return $letter + $content;
+    } else {
+      return $content;
     }
-    return $letter + $content;
   }
 
 }
