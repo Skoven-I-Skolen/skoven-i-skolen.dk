@@ -145,13 +145,17 @@ hidden:
   field_colophon_author: true
   field_colophon_editor: true
   field_colophon_photographer: true
+  field_contact_person: true
+  field_copy_sheet: true
   field_equipment: true
   field_factboxes: true
   field_files: true
   field_graphics: true
+  field_institution: true
   field_list_date: true
   field_list_media: true
   field_location: true
+  field_materials: true
   field_media_downloads: true
   field_season: true
   field_section_bg_graphics: true
