@@ -30,7 +30,7 @@ class LexiconOverviewForm extends OverviewFilterForm {
     $form = parent::buildForm($form, $form_state, $filter);
     unset($form['facets']['letter']['#title']);
     unset($form['facets']['text']['#title']);
-    $form['facets']['text']['#attributes']['placeholder'] = 'Søg i lexicon';
+    $form['facets']['text']['#attributes']['placeholder'] = 'Søg i leksikon';
     return $form;
   }
 

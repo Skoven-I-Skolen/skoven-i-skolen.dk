@@ -18,9 +18,11 @@
  * @see template_preprocess_overview_content()
  */
 #}
+{{ attach_library('sis/overview-lexicon') }}
+
 <div{{ attributes }}>
-  {{ content.letter }}
   {% if content.content %}
+    {{ content.letter }}
     <div class="overview-form-contents__content">
       {{ content.content }}
     </div>
