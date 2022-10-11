@@ -1,4 +1,160 @@
 .lexicon {
+  &-teaser {
+    .section--fullwidth & {
+        padding-right: var(--container-spacing-mobile);
+        padding-left: var(--container-spacing-mobile);
+
+        @media (--viewport-md-min) {
+          padding-right: var(--container-spacing);
+          padding-left: var(--container-spacing);
+        }
+    }
+
+    &__title {
+       margin-bottom: 12px;
+     }
+
+    &__description {
+       padding-bottom: 24px;
+       font-size: var(--base-font-size-large);
+     }
+
+    &__articles {
+      .lexicon__letter {
+        display: none;
+      }
+
+      .lexicon__items {
+        row-gap: var(--gutter-width-mobile);
+
+        @media (--viewport-md-min) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+
+  &__filter-wrapper {
+     display: grid;
+     align-items: flex-end;
+     width: 100%;
+     margin-bottom: 58px;
+
+  @media (--viewport-md-min) {
+    grid-template-columns: auto 400px;
+  }
+
+  .lexicon__search {
+    position: relative;
+    height: 49px;
+    margin-bottom: 22px;
+
+  input[type="search"] {
+    height: 100%;
+    border-color: var(--theme-input-border-dark);
+    border-radius: 25px;
+  }
+
+  .button {
+    position: absolute;
+    top: 5px;
+    right: 4px;
+    width: 50px;
+    height: 40px;
+    min-height: 39px;
+    padding: 0;
+    background-color: transparent;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+  }
+  }
+  }
+
+  &__filters {
+     margin-bottom: 36px;
+
+  @media (--viewport-md-min) {
+    margin-bottom: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    word-break: break-word;
+    list-style-type: none;
+
+  li {
+    position: relative;
+    float: left;
+    margin-right: 18px;
+    margin-bottom: 12px;
+
+  a {
+    font-weight: var(--base-font-weight);
+    font-size: var(--base-font-size-xlarge);
+    font-family: var(--heading-font-family);
+
+  @media (--viewport-md-min) {
+    font-size: var(--base-font-size-xxlarge);
+  }
+  }
+
+  @media (--viewport-md-min) {
+  &:nth-child(15) {
+    clear: left;
+  }
+  }
+  }
+  }
+  }
+
+  &__items {
+     display: grid;
+     grid-template-columns: repeat(1, 1fr);
+     column-gap: var(--gutter-width-mobile);
+
+  @media (--viewport-md-min) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--gutter-width);
+  }
+
+  @media (--viewport-lg-min) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .inspiration-overview__item {
+    height: auto;
+    padding-right: 0;
+    padding-left: 0;
+
+  .inspiration-overview__content {
+    padding-bottom: 36px;
+  }
+
+  &-inner {
+     height: 100%;
+   }
+  }
+  }
+
+  &__more_link {
+     margin-top: 39px;
+
+  a.button {
+    padding: 18px 61px 18px 23px;
+
+  svg {
+    position: absolute;
+    right: 23px;
+    width: 14px;
+    height: 8px;
+  }
+  }
+  }
+
   .overview-form {
     &-contents {
        display: grid;

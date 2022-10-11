@@ -1,0 +1,13 @@
+sis_lexicon.get_articles:
+  path: sis/lexicon/get
+  defaults:
+    _controller: 'Drupal\sis_lexicon\Controller\LexiconController::get'
+  requirements:
+    _access: 'TRUE'
+
+sis_lexicon.search_articles:
+  path: sis/lexicon/search
+  defaults:
+    _controller: 'Drupal\sis_lexicon\Controller\LexiconController::search'
+  requirements:
+    _access: 'TRUE'

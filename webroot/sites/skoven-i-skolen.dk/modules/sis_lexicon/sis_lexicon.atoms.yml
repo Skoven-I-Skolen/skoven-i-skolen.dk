@@ -1,0 +1,38 @@
+atoms:
+  lexicon-block-headline:
+    type: textfield
+    title: Title
+    description: The title showen in the block.
+    category: Page layout
+    group: Leksikon
+    default:
+      da: 'Leksikon'
+
+  lexicon-block-description:
+    type: text_format
+    title: Text
+    description: The title description in the block.
+    category: Page layout
+    group: Leksikon
+    options:
+      format: full_html
+    default:
+      da: '<p>I leksikon kan du finde viden om skov, natur, dyr, planter og meget andet.</p>'
+
+  lexicon-block-filter-headline:
+    type: textfield
+    title: Header
+    description: The the headline above the filter.
+    category: Page layout
+    group: Leksikon
+    default:
+      da: 'Find andre artikler i leksikonet'
+
+  lexicon-no-result:
+    type: textfield
+    title: No result text
+    description: Text to show if no result ins found.
+    category: Page layout
+    group: Leksikon
+    default:
+      da: 'Ingen resultater fundet'
