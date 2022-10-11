@@ -7709,10 +7709,10 @@
         },
         {
             "name": "novicell/entity_overview",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_16ATKa/novicellentity_overview-2-2-0.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_1u1iJ/novicellentity_overview-2-2-1.zip"
             },
             "require": {
                 "drupal/html5history": "^1.0"
