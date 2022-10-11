@@ -56,17 +56,3 @@
     overflow: visible;
   }
 }
-
-.js-media-library-views-form {
-  .js-media-library-item {
-    display: inline-table !important;
-  }
-
-  img {
-    width: 15.5rem;
-    max-width: 15.5rem;
-    height: 10.5rem;
-    max-height: 10.5rem;
-    object-fit: cover;
-  }
-}
