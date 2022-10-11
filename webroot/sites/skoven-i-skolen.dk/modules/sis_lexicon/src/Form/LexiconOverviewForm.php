@@ -23,21 +23,30 @@ class LexiconOverviewForm extends OverviewFilterForm {
     return 'entity_overview_filter_lexicon_form';
   }
 
+  /**
+   * @inheritDoc
+   */
+  public function buildForm(array $form, FormStateInterface $form_state, OverviewFilter $filter = NULL) {
+    $form = parent::buildForm($form, $form_state, $filter);
+    unset($form['facets']['letter']['#title']);
+    unset($form['facets']['text']['#title']);
+    $form['facets']['text']['#attributes']['placeholder'] = 'Søg i lexicon';
+    return $form;
+  }
 
   /**
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *
-   * @return array
+   * @inheritDoc
    */
   public function buildContents(FormStateInterface $form_state) {
     $content = parent::buildContents($form_state);
-    if (!empty($form_state->get('letter'))) {
+    $filter = OverviewFilter::createFromFormState($this->filter, $form_state);
+    if (!empty($filter->getFieldValue('letter'))) {
       $letter['letter'] = [
         '#type' => 'container',
         '#attributes' => ['class' => ['lexicon_content__letter']]
       ];
       $letter['letter']['value'] = [
-        '#markup' => strtoupper($form_state->get('letter'))
+        '#markup' => strtoupper($filter->getFieldValue('letter'))
       ];
       return $letter + $content;
     } else {

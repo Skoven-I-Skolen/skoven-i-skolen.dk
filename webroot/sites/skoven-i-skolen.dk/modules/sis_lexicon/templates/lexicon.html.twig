@@ -1,0 +1,23 @@
+<div id="lexicon-inner" class="lexicon__inner">
+  {% if letter %}
+    <div class="lexicon__letter">
+      <h2>{{ letter }}</h2>
+    </div>
+  {% endif %}
+
+  <div class="lexicon__items">
+    {{ articles }}
+  </div>
+
+  {% if pager %}
+    <div class="lexicon__more_link">
+      <a href="{{ path('sis_lexicon.get_articles', {'letter': letter, 'limit': 0, 'page': 0}) }}" id="lexicon_more-link"
+         class="use-ajax button button--ghost button--center">{{ 'Show all lexicon articles with the letter @letter'|t({'@letter': letter}) }}
+        {% include '@reusable-component/svg-icon.twig' with {
+          'attributes': '',
+          'svgIconName': 'carret'
+        } %}
+      </a>
+    </div>
+  {% endif %}
+</div>

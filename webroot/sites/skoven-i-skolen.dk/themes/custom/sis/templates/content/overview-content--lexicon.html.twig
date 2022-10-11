@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display the content of an overview form.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - overview_filter: The OverviewFilter settings for this display of content.
+ * - overview_id: The id of Overview object used for this display of content.
+ * - has_pagination: Whether this overview uses pagination.
+ * - content: The child elements of the form.
+ *   Most common child elements include:
+ *   - content: The actual entity results of the overview.
+ *   - no_results: The message shown when there are no results.
+ *   - pager: The pager used for pagination.
+ *   - total: The text showing how many results was found.
+ *
+ * @see template_preprocess_overview_content()
+ */
+#}
+<div{{ attributes }}>
+  {{ content.letter }}
+  {% if content.content %}
+    <div class="overview-form-contents__content">
+      {{ content.content }}
+    </div>
+  {% endif %}
+  {% if content.no_results %}
+    <div class="overview-form-contents__no_results">
+      {{ content.no_results }}
+    </div>
+  {% endif %}
+  {{ content|without(['content', 'no_results', 'letter']) }}
+</div>
