@@ -26,3 +26,6 @@ msgstr "Gå til kortet"
 
 msgid "Latest news"
 msgstr "Sidste nyt"
+
+msgid "Business Card"
+msgstr "Visitkort"

@@ -3,6 +3,18 @@
   background-color: var(--color-white);
   box-shadow: 0 4px 30px rgb(131 131 131 / 25%);
 
+  table {
+    border: 1px solid black;
+  }
+
+  tr {
+    border: 1px solid black;
+  }
+
+  td {
+    border: 1px solid black;
+  }
+
   &.fixed-height {
     height: 160px;
   }

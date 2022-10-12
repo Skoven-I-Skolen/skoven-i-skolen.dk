@@ -3,6 +3,8 @@ langcode: da
 status: true
 dependencies:
   module:
+    - mobile_detect
+    - system
     - user
   theme:
     - adminimal_theme
@@ -19,4 +21,12 @@ settings:
   label: 'Log ind'
   label_display: visible
   provider: user
-visibility: {  }
+visibility:
+  mobile_detect_device_type:
+    id: mobile_detect_device_type
+    negate: null
+    devices: {  }
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/node/add/*'

@@ -19,8 +19,10 @@ dependencies:
     - field.field.node.dot_on_map.lon
     - field.field.node.dot_on_map.sis_map_address_dawa
     - node.type.dot_on_map
+    - workflows.workflow.editorial
   module:
     - allowed_formats
+    - content_moderation
     - dds_dawa
     - field_group
     - file
@@ -302,6 +304,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   sis_map_address_dawa:
     type: dawa_address_autocomplete_widget
     weight: 8
@@ -320,7 +328,6 @@ hidden:
   created: true
   field_contact_data: true
   langcode: true
-  moderation_state: true
   path: true
   promote: true
   status: true

@@ -52,21 +52,40 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
         }
       }
     }
+  }
 
-    if (\Drupal::currentUser()->id() === 0) {
-      // Hide fields that are not relevant for anonymous users.
-      if ($form['revision_information']['#access']) {
-        $form['revision_information']['#access'] = FALSE;
-      }
-      if ($form['moderation_state']['#access']) {
-        $form['moderation_state']['#access'] = FALSE;
-      }
-      if ($form['revision_log']['#access']) {
-        $form['revision_log']['#access'] = FALSE;
-      }
-      if ($form['field_article_type']['#access']) {
-        $form['field_article_type']['#access'] = FALSE;
-      }
+  $roles = Drupal::currentUser()->getRoles();
+  if (in_array('anonymous', $roles) || in_array('organization', $roles)) {
+    // Hide fields that are not relevant for anonymous users and organizations.
+    if (isset($form['revision_information']['#access'])) {
+      $form['revision_information']['#access'] = FALSE;
+    }
+    if (isset($form['moderation_state']['#access'])) {
+      $form['moderation_state']['#access'] = FALSE;
+    }
+    if (isset($form['revision_log']['#access'])) {
+      $form['revision_log']['#access'] = FALSE;
+    }
+    if (isset($form["field_graphics"]['#access'])) {
+      $form["field_graphics"]["#access"] = FALSE;
+    }
+    if (isset($form["field_header"]['#access'])) {
+      $form["field_header"]['#access'] = FALSE;
+    }
+    if (isset($form["revision_information"]['#access'])) {
+      $form["revision_information"]['#access'] = FALSE;
+    }
+    if (isset($form['meta']['#access'])) {
+      $form['meta']['#access'] = FALSE;
+    }
+    if (isset($form['field_organization_overview']['#access'])) {
+      $form['field_organization_overview']['#access'] = FALSE;
+    }
+    if (isset($form['field_section_bg_graphics']['#access'])) {
+      $form['field_section_bg_graphics']['#access'] = FALSE;
+    }
+    if (isset($form['field_section_bg_graphics_pos']['#access'])) {
+      $form['field_section_bg_graphics_pos']['#access'] = FALSE;
     }
   }
 

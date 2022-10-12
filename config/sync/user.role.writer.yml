@@ -8,6 +8,7 @@ dependencies:
     - node.type.dot_on_map
   module:
     - node
+    - system
 id: writer
 label: Blogger
 weight: 7
@@ -19,3 +20,4 @@ permissions:
   - 'delete own blog_post content'
   - 'edit own blog_post content'
   - 'view blog_post revisions'
+  - 'view the administration theme'

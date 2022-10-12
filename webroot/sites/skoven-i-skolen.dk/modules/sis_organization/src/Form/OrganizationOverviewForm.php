@@ -2,6 +2,7 @@
 
 namespace Drupal\sis_organization\Form;
 
+use Drupal\block\BlockViewBuilder;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\entity_overview\Form\OverviewFilterForm;
@@ -71,19 +72,22 @@ class OrganizationOverviewForm extends OverviewFilterForm {
   protected function buildEntitiesInContent(array &$content, array $entities, OverviewFilter $filter) {
     parent::buildEntitiesInContent($content, $entities, $filter);
     $profile = $this->request->get('profile');
-    array_unshift($content['content'], [
-      '#theme' => 'overview_list_item',
-      '#headline' => t('See site-specific materials from @name', [
-        '@name' => $profile->get('field_organization_address')->organization
-      ]),
-      '#attributes' => [
-        'class' => ['inspiration-overview__item--maplink']
-      ],
-      '#link' => [
-        'uri' => Url::fromUserInput('/'),
-        'title' => t('Go to map')
-      ]
-    ]);
+    $dots_on_map = \Drupal::service('sis_map.manager')->loadMapMarkers($profile->get('uid')->getString());
+    if (count($dots_on_map) > 0) {
+      array_unshift($content['content'], [
+        '#theme' => 'overview_list_item',
+        '#headline' => t('See site-specific materials from @name', [
+          '@name' => $profile->get('field_organization_address')->organization
+        ]),
+        '#attributes' => [
+          'class' => ['inspiration-overview__item--maplink']
+        ],
+        '#link' => [
+          'uri' => Url::fromUserInput('/'),
+          'title' => t('Go to map')
+        ]
+      ]);
+    }
   }
 
 }
