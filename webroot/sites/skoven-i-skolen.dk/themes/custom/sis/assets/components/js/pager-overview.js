@@ -31,11 +31,3 @@ Drupal.behaviors.pageUp = {
     });
   },
 };
-
-// Drupal.behaviors.pageUp = {
-//   attach(context) {
-//     document.addEventListener('DOMContentLoaded', () => {
-
-//     });
-//   },
-// };

@@ -1,78 +1,75 @@
 .lexicon {
   .overview-form {
- .overview-form__header {
-    justify-content: space-between;
-  }
+    .overview-form__header {
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  #edit-letter {
-    display: flex;
-    flex-wrap: wrap;
+    #edit-letter {
+      display: flex;
+      flex-wrap: wrap;
 
-    label {
-      padding-left: 18px;
-      color: var(--link-color);
-      font-size: var(--base-font-size-xlarge);
-      text-decoration: underline;
-      font-family: var(--heading-font-family);
+      label {
+        padding-left: 18px;
+        color: var(--link-color);
+        font-size: var(--base-font-size-xlarge);
+        text-decoration: underline;
+        font-family: var(--heading-font-family);
+        text-underline-offset: 6px;
 
-      @media (--viewport-md-min) {
-        font-size: var(--base-font-size-xxlarge);
+        @media (--viewport-md-min) {
+          font-size: var(--base-font-size-xxlarge);
+        }
+      }
+
+      .radio:not(:checked) + label:before {
+        display: none;
+      }
+
+      .radio:checked + label:before,
+      .radio:checked + label:after {
+        display: none;
       }
     }
 
-    .radio:not(:checked) + label:before {
-      display: none;
-    }
+    .overview-form-contents {
+      display: block;
 
-    .radio:checked + label:before,
-    .radio:checked + label:after {
-      display: none;
-    }
-  }
+      &__content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
 
-  .overview-form-contents {
-    display: block;
+        @media (--viewport-sm-min) {
+          grid-template-columns: repeat(2, 1fr);
+        }
 
-    &__content {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
+        @media (--viewport-md-min) {
+          grid-template-columns: repeat(3, 1fr);
+        }
 
-      @media (--viewport-md-min) {
-        grid-template-columns: repeat(3, 1fr);
+        @media (--viewport-lg-min) {
+          grid-template-columns: repeat(4, 1fr);
+        }
       }
 
-      @media (--viewport-lg-min) {
-        grid-template-columns: repeat(4, 1fr);
+      /* Currently selected letter */
+      .lexicon_content__letter {
+        font-weight: bold;
+        font-size: var(--base-font-size-xlarge);
+        padding-left: 14px;
+
+        @media (--viewport-md-min) {
+          font-size: var(--base-font-size-xxxlarge);
+        }
       }
     }
-
-    /* Currently selected letter */
-    .lexicon_content__letter {
-      font-weight: bold;
-      font-size: var(--base-font-size-xlarge);
-      padding-left: 14px;
-
-      @media (--viewport-md-min) {
-        font-size: var(--base-font-size-xxxlarge);
-      }
-    }
-  }
-
-  /*   
-  ::before,
-  ::after {
-    display: none;
   }
 }
 
-input[type="radio"]:checked + label {
-  color: white !important;
-  background-color: var(--color-orange);
-  border-radius: 100px;
-}
- */
+/* Leksicon overview - Teaser block */
 
-  /* &-teaser {
+.lexicon {
+  &-teaser {
     .section--fullwidth & {
       padding-right: var(--container-spacing-mobile);
       padding-left: var(--container-spacing-mobile);
@@ -105,9 +102,9 @@ input[type="radio"]:checked + label {
         }
       }
     }
-  } */
+  }
 
-  /* &__filter-wrapper {
+  &__filter-wrapper {
     display: grid;
     align-items: flex-end;
     width: 100%;
@@ -144,9 +141,9 @@ input[type="radio"]:checked + label {
         }
       }
     }
-  } */
+  }
 
-  /* &__filters {
+  &__filters {
     margin-bottom: 36px;
 
     @media (--viewport-md-min) {
@@ -169,6 +166,7 @@ input[type="radio"]:checked + label {
           font-weight: var(--base-font-weight);
           font-size: var(--base-font-size-xlarge);
           font-family: var(--heading-font-family);
+          text-underline-offset: 6px;
 
           @media (--viewport-md-min) {
             font-size: var(--base-font-size-xxlarge);
@@ -182,9 +180,9 @@ input[type="radio"]:checked + label {
         }
       }
     }
-  } */
+  }
 
-  /* &__items {
+  &__items {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     column-gap: var(--gutter-width-mobile);
@@ -211,9 +209,9 @@ input[type="radio"]:checked + label {
         height: 100%;
       }
     }
-  } */
+  }
 
-  /* &__more_link {
+  &__more_link {
     margin-top: 39px;
 
     a.button {
@@ -226,9 +224,9 @@ input[type="radio"]:checked + label {
         height: 8px;
       }
     }
-  } */
+  }
 
-  /* .overview-form {
+  .overview-form {
     &-contents {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -243,6 +241,5 @@ input[type="radio"]:checked + label {
         grid-template-columns: repeat(4, 1fr);
       }
     }
-  } */
-}
+  }
 }
