@@ -67,4 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     },
   });
+  const autoCompleteWrapper = document.querySelector('.autoComplete_wrapper');
+  autoCompleteWrapper.setAttribute('aria-labelledby', 'search');
+  autoCompleteWrapper.lastChild.setAttribute('aria-labelledby', 'search');
 });
