@@ -41,8 +41,8 @@ dependencies:
     - layout_builder
     - media
     - media_icons
-    - metatag
     - media_library_bulk_upload
+    - metatag
     - node
     - oembed_providers
     - paragraphs

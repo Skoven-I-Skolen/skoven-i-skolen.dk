@@ -11,6 +11,7 @@ dependencies:
     - metatag
     - node
     - profile
+    - system
 id: organization
 label: Organisation
 weight: 6
@@ -26,3 +27,4 @@ permissions:
   - 'update own organization profile'
   - 'use editorial transition create_new_draft'
   - 'view own unpublished content'
+  - 'view the administration theme'

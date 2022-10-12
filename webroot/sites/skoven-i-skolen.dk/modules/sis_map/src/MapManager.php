@@ -159,7 +159,7 @@ class MapManager {
     return $icons;
   }
 
-  public function loadMapMarkers(): array {
+  public function loadMapMarkers(string $author_id = NULL): array {
 
     $enabled_filters = $this->configurationFactory
       ->get(self::CONFIG_KEY)
@@ -172,9 +172,13 @@ class MapManager {
     $map_marker_array = [];
 
     foreach ($enabled_content_types as $bundle) {
+      $params = ['type' => $bundle, 'status' => 1];
+      if ($author_id) {
+        $params['uid'] = $author_id;
+      }
       $all_nodes = $this->entityTypeManager
         ->getStorage('node')
-        ->loadByProperties(['type' => $bundle, 'status' => 1]);
+        ->loadByProperties($params);
       foreach($all_nodes as $node) {
         $map_marker_filters = [];
         if ($node->hasField(self::ADDRESS_FIELD_NAME)) {
