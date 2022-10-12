@@ -20,7 +20,6 @@ dependencies:
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
-    - field.field.node.article.field_graphics
     - field.field.node.article.field_header
     - field.field.node.article.field_list_date
     - field.field.node.article.field_list_media
@@ -82,7 +81,6 @@ hidden:
   field_equipment: true
   field_factboxes: true
   field_files: true
-  field_graphics: true
   field_header: true
   field_institution: true
   field_list_date: true

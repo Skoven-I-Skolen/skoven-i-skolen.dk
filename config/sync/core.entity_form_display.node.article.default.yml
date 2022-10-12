@@ -21,7 +21,6 @@ dependencies:
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
-    - field.field.node.article.field_graphics
     - field.field.node.article.field_header
     - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
@@ -578,13 +577,6 @@ content:
     region: content
     settings:
       progress_indicator: throbber
-    third_party_settings: {  }
-  field_graphics:
-    type: media_library_widget
-    weight: 3
-    region: content
-    settings:
-      media_types: {  }
     third_party_settings: {  }
   field_header:
     type: paragraphs_classic_asymmetric
