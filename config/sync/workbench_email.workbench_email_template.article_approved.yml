@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: article_approved
 label: 'Artikel godkendt'
-format: null
-subject: 'En test'
+format: plain_text
+subject: 'Artikel godkendt'
 recipient_types:
   author:
     id: author
@@ -16,4 +16,4 @@ bundles: {  }
 body:
   value: "Din artikel er blevet godkendt.\r\n\r\nSe den her [node:url]"
   format: plain_text
-replyTo: ''
+replyTo: skoven-i-skolen@nst.dk
