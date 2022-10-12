@@ -84,7 +84,9 @@
           {{ profile.field_organization_address.organization }}
         </div>
         <div class="organization-overview__description">
-          {{ content.field_organization_description }}
+          {% if content.field_organization_description.0['#text'] %}
+            {{ content.field_organization_description.0['#text']|striptags }}
+          {% endif %}
         </div>
       </div>
     </a>
