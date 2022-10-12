@@ -80,4 +80,10 @@ function sis_preprocess_breadcrumb(&$variables) {
   }
 }
 
-
+function sis_preprocess_menu_local_tasks(&$variables) {
+  $roles = Drupal::currentUser()->getRoles();
+  if (in_array('organization', $roles)) {
+    // Hide the "view" link on the user profile menu tab.
+    unset($variables['primary']['entity.user.canonical']);
+  }
+}

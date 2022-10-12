@@ -66,9 +66,6 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     if (isset($form['revision_log']['#access'])) {
       $form['revision_log']['#access'] = FALSE;
     }
-//    if ($form['field_article_type']['#access']) {
-//      $form['field_article_type']['#access'] = FALSE;
-//    }
     if (isset($form["field_graphics"]['#access'])) {
       $form["field_graphics"]["#access"] = FALSE;
     }
@@ -78,11 +75,19 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     if (isset($form["revision_information"]['#access'])) {
       $form["revision_information"]['#access'] = FALSE;
     }
-    if (isset($form['meta'])) {
-      unset($form['meta']);
+    if (isset($form['meta']['#access'])) {
+      $form['meta']['#access'] = FALSE;
+    }
+    if (isset($form['field_organization_overview']['#access'])) {
+      $form['field_organization_overview']['#access'] = FALSE;
+    }
+    if (isset($form['field_section_bg_graphics']['#access'])) {
+      $form['field_section_bg_graphics']['#access'] = FALSE;
+    }
+    if (isset($form['field_section_bg_graphics_pos']['#access'])) {
+      $form['field_section_bg_graphics_pos']['#access'] = FALSE;
     }
   }
-
 
   else if ($form_id === 'views_form_media_library_page' || 'views_form_media_library_widget_document') {
     $form['#attached']['library'][] = 'sis/media-library';
