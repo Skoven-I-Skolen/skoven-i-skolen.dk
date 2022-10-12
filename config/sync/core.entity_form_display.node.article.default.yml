@@ -58,7 +58,7 @@ third_party_settings:
       label: 'Page header'
       region: content
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: fieldset
       format_settings:
         classes: ''
@@ -74,20 +74,19 @@ third_party_settings:
         - field_description
       label: Listevisning
       region: content
-      parent_name: group_article_metadata
-      weight: 3
-      format_type: tab
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        formatter: closed
         description: 'Bruges hvis artiklen bliver vist i en liste'
         required_fields: true
+        formatter: closed
         open: false
     group_article_metadata:
       children:
-        - group_list
         - group_categorization
         - group_colophon
         - group_article_colophon
@@ -98,8 +97,8 @@ third_party_settings:
         - group_contact
       label: 'Artikel metadata'
       region: content
-      parent_name: ''
-      weight: 6
+      parent_name: group_side_boxes
+      weight: 9
       format_type: tabs
       format_settings:
         classes: ''
@@ -213,7 +212,7 @@ third_party_settings:
       label: Geolokation
       region: content
       parent_name: ''
-      weight: 17
+      weight: 19
       format_type: fieldset
       format_settings:
         classes: ''
@@ -449,6 +448,20 @@ third_party_settings:
         id: ''
         direction: vertical
         width_breakpoint: 640
+    group_side_boxes:
+      children:
+        - group_article_metadata
+      label: 'Indhold vist på sideboksene'
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: 'Dette indhold vil blive vist i boksere til højre på siden.'
+        required_fields: true
 _core:
   default_config_hash: lCMS9iqusl8ppbYxINj_SRny0NNOhS2IAGuGG9i0r6c
 id: node.article.default
@@ -458,7 +471,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 5
+    weight: 6
     region: content
     settings:
       rows: 9
@@ -468,13 +481,13 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_image:
     type: media_library_widget
-    weight: 4
+    weight: 5
     region: content
     settings:
       media_types: {  }
@@ -487,7 +500,7 @@ content:
     third_party_settings: {  }
   field_article_type:
     type: options_select
-    weight: 20
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -581,7 +594,7 @@ content:
     third_party_settings: {  }
   field_graphics:
     type: media_library_widget
-    weight: 3
+    weight: 4
     region: content
     settings:
       media_types: {  }
@@ -647,13 +660,13 @@ content:
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
-    weight: 18
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   field_section_bg_graphics_pos:
     type: options_select
-    weight: 19
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -704,19 +717,19 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 16
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 11
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -729,14 +742,14 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 15
+    weight: 17
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 12
+    weight: 14
     region: content
     settings:
       display_label: true
@@ -750,13 +763,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 9
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -765,7 +778,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
