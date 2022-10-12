@@ -22,11 +22,13 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
+  - 'access user profiles'
   - 'create article content'
   - 'create dot_on_map content'
   - 'search content'
   - 'use editorial transition create_new_draft'
   - 'use text format basic_html'
   - 'view any organization profile'
+  - 'view any profile'
   - 'view media'
   - 'view the administration theme'
