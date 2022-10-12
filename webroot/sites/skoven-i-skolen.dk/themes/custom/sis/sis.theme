@@ -69,6 +69,9 @@ function sis_preprocess_breadcrumb(&$variables) {
     if ($node->getType() === 'news') {
       $variables['breadcrumb'][1]['url'] = '/nyhedoversigt';
     }
+    if ($node->getType() === 'blog_post') {
+      $variables['breadcrumb'][1]['url'] = '/blogs';
+    }
     if (count($variables['breadcrumb']) === 1) {
       $variables['breadcrumb'][] = [
         'text' => $node->getTitle(),
