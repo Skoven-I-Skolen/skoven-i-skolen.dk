@@ -219,15 +219,6 @@
 }
 
 .months-wrapper {
-  /* padding-top: 12.5rem;
-
-  @media (--viewport-sm-max) {
-    padding-top: 350px;
-  }
-  @media (--viewport-lg-min) {
-    padding-top: 400px;
-  } */
-
   &__divider {
     position: relative;
     width: 100%;
@@ -239,7 +230,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 100% !important;
       height: 100%;
     }
   }

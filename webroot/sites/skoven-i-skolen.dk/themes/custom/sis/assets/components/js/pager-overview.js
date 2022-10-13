@@ -13,7 +13,6 @@ Drupal.behaviors.pageUp = {
         // Scroll to class
         scrollToClass() {
           const el = document.querySelector('.overview-form__header');
-          console.log('scrollToClass');
           el.scrollIntoView({
           });
         },
@@ -24,8 +23,6 @@ Drupal.behaviors.pageUp = {
         const url = window.location.href;
         if (url.indexOf('page') > -1) {
           this.scrollToClass();
-        } else {
-          console.log('no page');
         }
       },
     });

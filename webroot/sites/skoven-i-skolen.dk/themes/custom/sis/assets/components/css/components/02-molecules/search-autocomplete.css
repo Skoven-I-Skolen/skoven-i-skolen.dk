@@ -27,6 +27,7 @@
     @media(--viewport-sm-max) {
       right: 0;
       left: 0;
+      min-width: 100%;
     }
 
 
