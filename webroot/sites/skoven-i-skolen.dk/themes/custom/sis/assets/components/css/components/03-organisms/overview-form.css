@@ -1,4 +1,11 @@
 .overview-form {
+  &__search-input {
+    button {
+      svg {
+        display: none;
+      }
+    }
+  }
   &-contents {
     display: grid;
     grid-template-columns: 1fr;

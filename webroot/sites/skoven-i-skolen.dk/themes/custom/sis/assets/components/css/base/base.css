@@ -108,3 +108,7 @@ table {
     height: auto;
   }
 }
+
+#media-library-view .views-row .views-field-media-library-select-form {
+  z-index: 999;
+}

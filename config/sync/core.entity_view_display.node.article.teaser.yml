@@ -16,14 +16,18 @@ dependencies:
     - field.field.node.article.field_colophon_author
     - field.field.node.article.field_colophon_editor
     - field.field.node.article.field_colophon_photographer
+    - field.field.node.article.field_contact_person
+    - field.field.node.article.field_copy_sheet
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
     - field.field.node.article.field_header
+    - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
     - field.field.node.article.field_list_media
     - field.field.node.article.field_location
+    - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_season
     - field.field.node.article.field_section_bg_graphics
@@ -48,7 +52,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 1
     region: content
   field_article_categories:
     type: entity_reference_label
@@ -56,7 +60,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   field_article_type:
     type: entity_reference_label
@@ -64,14 +68,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   field_description:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   field_list_date:
     type: datetime_time_ago
@@ -81,7 +85,7 @@ content:
       past_format: '@interval ago'
       granularity: 2
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_list_media:
     type: entity_reference_entity_view
@@ -90,7 +94,16 @@ content:
       view_mode: inline_navigation
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 4
+    region: content
+  field_subject:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   body: true
@@ -116,7 +129,6 @@ hidden:
   field_season: true
   field_section_bg_graphics: true
   field_section_bg_graphics_pos: true
-  field_subject: true
   field_teaching_goals: true
   field_time: true
   langcode: true

@@ -6,6 +6,7 @@
   position: relative;
   display: inline-block;
   padding: 11px 50px 11px 20px;
+  width: 100%;
 
   > ul {
     position: absolute;
@@ -26,6 +27,7 @@
     @media(--viewport-sm-max) {
       right: 0;
       left: 0;
+      min-width: 100%;
     }
 
 
