@@ -36,3 +36,11 @@ atoms:
     group: Leksikon
     default:
       da: 'Ingen resultater fundet'
+
+  lexicon-main-page:
+    type: url
+    title: Overview page
+    description: Url to where the main overview page for the lexicon resides
+    category: Page layout
+    group: Leksikon
+    default:

@@ -1,6 +1,8 @@
 <?php
 
 use Drupal\Core\Render\Element;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Implements hook_locale_translation_projects_alter().
@@ -62,5 +64,22 @@ function sis_lexicon_preprocess_block__inline_block__lexicon_teaser(&$variables)
 function sis_lexicon_preprocess_lexicon(&$variables) {
   if ($variables['pager']) {
     $variables['pager'] = (bool) ($variables['count'] < $variables['max_count']);
+  }
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function sis_lexicon_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($view_mode == 'full' && $entity->getEntityTypeId() == 'taxonomy_term') {
+    /** @var \Drupal\taxonomy\Entity\Term $term */
+    $term = $entity;
+    if ($term->getName() == 'Leksikon') {
+      $url = atom_view('lexicon-main-page')->toValue();
+      if ($url) {
+        $redirect = new RedirectResponse($url->toString());
+        $redirect->send();
+      }
+    }
   }
 }
