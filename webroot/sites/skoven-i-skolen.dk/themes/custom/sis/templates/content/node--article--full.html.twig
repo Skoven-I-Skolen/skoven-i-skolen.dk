@@ -223,7 +223,14 @@
               Undervisningsm&aring;l
             </div>
             <div class="facts-box__content">
-              {{ node.field_teaching_goals.value|t }}
+              {{ content.field_teaching_goals }}
+              {# {{ content.field_teaching_goals|render|striptags|length }} #}
+              {% if content.field_teaching_goals|render|striptags|length > 300 %}
+                <div class="facts-box__content--read-more">
+                  <a class="read-more-link">L&aelig;s mere</a>
+                </div>
+              {% endif %}
+
             </div>
           </div>
         {% endif %}
