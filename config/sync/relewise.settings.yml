@@ -2,5 +2,6 @@ index_batch_size: '200'
 entity_bundles:
   node:
     - article
+    - page
   profile:
     - organization
