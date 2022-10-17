@@ -222,16 +222,14 @@
             <div class="facts-box__title">
               Undervisningsm&aring;l
             </div>
-            <div class="facts-box__content">
+            <div class="facts-box__content undervi-box">
               {{ content.field_teaching_goals }}
-              {# {{ content.field_teaching_goals|render|striptags|length }} #}
+            </div>
               {% if content.field_teaching_goals|render|striptags|length > 300 %}
-                <div class="facts-box__content--read-more">
+                <div class="facts-box__content undervi-box--read-more">
                   <a class="read-more-link">L&aelig;s mere</a>
                 </div>
               {% endif %}
-
-            </div>
           </div>
         {% endif %}
         {% if node.field_colophon[0] or node.field_colophon_author[0] or node.field_colophon_editor[0] or node.field_colophon_photographer[0] %}

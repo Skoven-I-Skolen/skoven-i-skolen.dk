@@ -186,3 +186,36 @@
 .contextual-region {
   overflow: visible;
 }
+
+.undervi-box {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  height: 300px;
+
+  &--read-more {
+    font-weight: 700;
+    display: block;
+
+    a {
+    color: var(--color-purple);
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+    }
+
+    ::after {
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid var(--color-purple);
+      border-right: 2px solid var(--color-purple);
+      transform: rotate(45deg);
+      content: '';
+      margin-left: 6px;
+      margin-top: 9px;
+    }
+  }
+}
