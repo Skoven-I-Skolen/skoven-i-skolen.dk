@@ -7816,10 +7816,10 @@
         },
         {
             "name": "novicell/relewise",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_2cErNS/novicellrelewise-2-0-6.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_28OzKf/novicellrelewise-2-0-7.zip"
             },
             "type": "drupal-module",
             "license": [
