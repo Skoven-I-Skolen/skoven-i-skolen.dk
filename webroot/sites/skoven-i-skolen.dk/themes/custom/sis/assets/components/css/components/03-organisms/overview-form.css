@@ -1,5 +1,13 @@
 .overview-form {
   &__search-input {
+    .lexicon-search-wrapper {
+      @media (--viewport-sm-max) {
+        width: 270px;
+      }
+      @media (--viewport-md-max) {
+        width: 100%;
+      }
+    }
     button {
       svg {
         display: none;
@@ -164,7 +172,7 @@
       font-size: var(--base-font-size-small);
 
       @media (--viewport-ms-max) {
-       display: none;
+        display: none;
       }
     }
 
@@ -250,24 +258,23 @@
 }
 
 @media (--viewport-ms-max) {
-    .overview-form__search-filters__mobile-header {
-      display: flex;
-      position: -webkit-sticky; /* Safari */
-      position: sticky;
-      background-color: var(--color-blue);
-      color: white;
-      padding: 20px;
-      font-size: var(--base-font-size-medium);
-      font-weight: 800;
-      justify-content: space-between;
+  .overview-form__search-filters__mobile-header {
+    display: flex;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    background-color: var(--color-blue);
+    color: white;
+    padding: 20px;
+    font-size: var(--base-font-size-medium);
+    font-weight: 800;
+    justify-content: space-between;
 
-      & .icon--close {
-        height: 20px;
-        width: 20px;
-        fill: white;
-      }
+    & .icon--close {
+      height: 20px;
+      width: 20px;
+      fill: white;
     }
-
+  }
   .overview-form__search-filters {
     z-index: 1000;
     background: white;
@@ -300,5 +307,15 @@
 
   .filter-mobile-wrapper {
     display: flex;
+  }
+}
+
+.overview-form__search-facets {
+  margin-top: -12px;
+  margin-left: auto;
+  max-width: none;
+
+  @media (--viewport-ms-min) {
+    max-width: 300px;
   }
 }

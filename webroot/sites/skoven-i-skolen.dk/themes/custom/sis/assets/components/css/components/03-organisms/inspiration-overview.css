@@ -165,6 +165,13 @@
     }
   }
 
+  &__date {
+    font-size: var(--base-font-size-extra-small);
+    font-family: var(--base-font-family);
+    color: var(--color-purple);
+    margin-bottom: 4px;
+  }
+
   &__description {
     display: -webkit-box; /* stylelint-disable-line */
     margin-bottom: 8px;
