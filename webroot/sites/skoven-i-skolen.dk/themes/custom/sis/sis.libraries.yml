@@ -515,3 +515,13 @@ button-block:
   css:
     theme:
       dist/components/css/components/02-molecules/button-block.css: {}
+
+modal-article:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/modal-article.css: {}
+  js:
+    dist/components/js/modal-article.js: {}
+  dependencies:
+    - core/drupal
