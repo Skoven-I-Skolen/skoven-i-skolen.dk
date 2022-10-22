@@ -25,6 +25,7 @@
   .slider-pager-count {
     display: flex;
     width: auto;
+    padding-right: 15px;
   }
 
   .swiper-navigation {
