@@ -17,12 +17,22 @@ function addSlider() {
   for (let i = 0; i < inlineNavigations.length; i += 1) {
     const current = inlineNavigations[i];
     current.classList.add('loaded');
+    const sliderPagerTotal = current.parentNode.querySelector('.slider-pager-count').lastElementChild;
+    const sliderPagerShowing = current.parentNode.querySelector('.slider-pager-count').firstElementChild;
     setTimeout(() => {
       const currentFlkty = new Flickity(current, {
         cellAlign: 'left',
         contain: true,
         cellSelector: '.inline-navigation-item',
         pageDots: false,
+        on: {
+          ready() {
+            const sliderWidth = this.size.width;
+            const slideWidth = this.slides[0].outerWidth;
+            sliderPagerTotal.innerHTML = this.slides.length;
+            sliderPagerShowing.innerHTML = Math.round(sliderWidth / slideWidth);
+          },
+        },
       });
       flkty.push(currentFlkty);
     });

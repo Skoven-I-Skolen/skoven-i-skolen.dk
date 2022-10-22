@@ -22,6 +22,11 @@
     }
   }
 
+  .slider-pager-count {
+    display: flex;
+    width: auto;
+  }
+
   .swiper-navigation {
     display: flex;
     align-items: center;

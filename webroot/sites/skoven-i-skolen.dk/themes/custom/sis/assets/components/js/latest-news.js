@@ -13,6 +13,8 @@ Drupal.behaviors.latestNews = {
     for (let i = 0; i < slideLists.length; i += 1) {
       const slideList = slideLists[i];
       slideList.classList.add('loaded');
+      const sliderPagerTotal = slideList.parentNode.querySelector('.slider-pager-count').lastElementChild;
+      const sliderPagerShowing = slideList.parentNode.querySelector('.slider-pager-count').firstElementChild;
       // Build slider
       const swiper = new Swiper(slideList.querySelector('.js-news-page__latest-items'), {
         modules: [Navigation, Lazy],
@@ -25,6 +27,15 @@ Drupal.behaviors.latestNews = {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
           disabledClass: 'swiper-button-disabled',
+        },
+        on: {
+          init() {
+            sliderPagerTotal.innerHTML = this.slides.length;
+            sliderPagerShowing.innerHTML = Math.round(this.width / this.slides[0].swiperSlideSize);
+          },
+          resize() {
+            sliderPagerShowing.innerHTML = Math.round(this.width / this.slides[0].swiperSlideSize);
+          },
         },
       });
     }
