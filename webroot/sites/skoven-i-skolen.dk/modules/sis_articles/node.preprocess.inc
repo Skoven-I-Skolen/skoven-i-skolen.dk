@@ -22,6 +22,7 @@ function sis_articles_preprocess_node(&$variables) {
       $variables['related'] = Drupal::entityTypeManager()
         ->getViewBuilder('node')
         ->viewMultiple($related, 'list');
+      $variables['related_count'] = count($related);
     }
   }
 }

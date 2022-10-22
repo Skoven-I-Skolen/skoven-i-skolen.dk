@@ -71,47 +71,46 @@
 {{ attach_library('sis/article-page') }}
 {{ attach_library('sis/facts-box') }}
 {{ attach_library('sis/related-articles') }}
-{{ attach_library('sis/modal-article') }}
 {% if node.field_section_bg_graphics.value %}
-	{{ attach_library('sis/section-bg-graphics') }}
+  {{ attach_library('sis/section-bg-graphics') }}
 {% endif %}
 
 {% set classes = [
   'article-page',
   node.field_section_bg_graphics.value ? 'section--background-graphics' : '',
 ] %}
-<article{{attributes.addClass(classes)}}>
-	{% if node.field_section_bg_graphics.value %}
-		<img src="/{{ directory }}/dist/images/{{ node.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ node.field_section_bg_graphics.value }} section-bg-graphics__position--{{ node.field_section_bg_graphics_pos.value }}"/>
-	{% endif %}
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-lg-7 article-content-wrapper">
-				<div{{content_attributes}}>
-					{% if node.field_header[0] %}
-						{% include '@reusable-component/page-title.twig' with {
+<article{{ attributes.addClass(classes) }}>
+  {% if node.field_section_bg_graphics.value %}
+    <img src="/{{ directory }}/dist/images/{{ node.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ node.field_section_bg_graphics.value }} section-bg-graphics__position--{{ node.field_section_bg_graphics_pos.value }}" />
+  {% endif %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-lg-7 article-content-wrapper">
+        <div{{ content_attributes }}>
+          {% if node.field_header[0] %}
+            {% include '@reusable-component/page-title.twig' with {
               'attributes': create_attribute().addClass('article-page__title'),
               'title': label,
             } %}
-					{% else %}
-						{% include '@reusable-component/page-title.twig' with {
+          {% else %}
+            {% include '@reusable-component/page-title.twig' with {
               'attributes': create_attribute().addClass('article-page__title'),
               'title': content.title,
             } %}
-					{% endif %}
-					<div class="article-page__description">
-						{{ content.field_description }}
-					</div>
-					<div class="article-page__image">
-						{{ content.field_article_image }}
-					</div>
-					{{ content|without(['field_list_date', 'field_header', 'title','field_article_image', 'field_description']) }}
-				</div>
-			</div>
-			<div class="col-md-4 col-lg-4 col-lg-offset-1 article-content-sidebar">
-				<div class="print-button">
-					<a href="#" onclick="window.print()">
-						{% include '@reusable-component/svg-icon.twig' with {
+          {% endif %}
+          <div class="article-page__description">
+            {{ content.field_description }}
+          </div>
+          <div class="article-page__image">
+            {{ content.field_article_image }}
+          </div>
+          {{ content|without(['field_list_date', 'field_header', 'title','field_article_image']) }}
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-4 col-lg-offset-1 article-content-sidebar">
+        <div class="print-button">
+          <a href="#" onclick="window.print()">
+            {% include '@reusable-component/svg-icon.twig' with {
               'attributes': '',
               'svgIconName': 'printer'
             } %}
@@ -386,11 +385,11 @@
 					<div class="col-xs-12 col-sm-4 col-md-4">
 
 						<div class="swiper-navigation">
-							<div class="swiper-pagination-wrapper">
-								<div class="swiper-pagination-title">
-									Viser:</div>
-								<div class="swiper-pagination"></div>
-							</div>
+              {% if related_count > 0 %}
+                <div class="slider-pager-count">
+                  {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
+                </div>
+              {% endif %}
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
 						</div>
