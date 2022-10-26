@@ -319,3 +319,29 @@
     max-width: 300px;
   }
 }
+
+.overview-form {
+  .button {
+    display: none;
+  }
+}
+
+.overview-form {
+  .container {
+    .custom-accordion-wrapper {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
+    }
+
+    .custom-accordion-wrapper-button {
+        margin-top: 40px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 300px;
+
+      }
+  }
+}

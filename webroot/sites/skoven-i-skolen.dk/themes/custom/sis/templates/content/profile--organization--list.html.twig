@@ -85,7 +85,7 @@
         </div>
         <div class="organization-overview__description">
           {% if content.field_organization_description.0['#text'] %}
-            {{ content.field_organization_description.0['#text']|striptags }}
+            {{ content.field_organization_description.0['#text'] | replace({'&nbsp;' : ''})|raw|striptags }}
           {% endif %}
         </div>
       </div>

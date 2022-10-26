@@ -13,13 +13,12 @@
 {{ attach_library('sis/overview-form') }}
 
 <form{{attributes.addClass('overview-form')}}>
-	<div
-		class="container">
+	<div class="container">
 		<div class="row overview-form__header overview-form__heading-facets">
 			<div class="col-xs-12 col-md-8 ">
-        <div class="overview-form__search-facets">
-          {{ element['facets'].sort }}
-        </div>
+				<div class="overview-form__search-facets">
+					{{ element['facets'].sort }}
+				</div>
 				<div class="overview-form__search-title">
 					{{ element['search'].title }}
 				</div>
@@ -73,8 +72,13 @@
 							{{ element['facets'].field_season }}
 							{{ element['facets'].field_subject }}
 						</div>
+
+						<div class="custom-accordion-wrapper">
+							<a href="/del" class="button button--green custom-accordion-wrapper-button">Del en ide</a>
+						</div>
 					</div>
 				</div>
+
 			</div>
 			<div class="col-xs-12 col-md-9">
 				<div class="row">
