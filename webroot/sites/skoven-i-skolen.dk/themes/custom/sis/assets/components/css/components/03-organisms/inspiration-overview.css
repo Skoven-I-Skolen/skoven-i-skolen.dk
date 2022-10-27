@@ -30,16 +30,14 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 44px;
-    padding-right: var(--container-spacing-mobile);
-    padding-left: var(--container-spacing-mobile);
+    padding: var(--container-spacing-mobile);
     overflow: hidden;
 
     @media (--viewport-ms-min) {
       flex: 0 0 50%;
       width: 100%;
       max-width: 100%;
-      padding-right: var(--container-spacing);
-      padding-left: var(--container-spacing);
+      padding: var(--container-spacing);
     }
 
     @media (--viewport-md-min) {
