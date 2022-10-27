@@ -2,21 +2,24 @@
   & .facts-box {
     &__content-item {
       display: block;
+
       &.user {
         display: flex;
+
         a {
-          text-decoration: none;
           color: var(--color-purple);
+          text-decoration: none;
         }
       }
     }
   }
 
   &__content {
-    h2 {
+    & h2 {
       font-size: var(--base-font-size-xxlarge) !important;
     }
-    h3 {
+
+    & h3 {
       font-size: var(--base-font-size-xlarge) !important;
     }
   }
@@ -38,6 +41,7 @@
   &__image {
     margin-bottom: 24px;
     text-align: center;
+
     @media (--viewport-md-min) {
       margin-bottom: 75px;
     }

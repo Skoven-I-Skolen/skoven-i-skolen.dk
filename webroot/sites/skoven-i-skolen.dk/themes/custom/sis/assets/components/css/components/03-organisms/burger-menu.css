@@ -66,7 +66,7 @@
   overflow: hidden;
   overflow-y: auto;
   background: var(--color-gray-light);
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 10%);
+  box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
   transform: translate3d(100%, 0, 0);
 
   @media (--viewport-ms-min) {
@@ -290,7 +290,7 @@
   padding: 0 7px 0 8px;
   background: var(--color-pink);
   border-radius: 50%;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 10%);
+  box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
   cursor: pointer;
 
   @media (--viewport-md-min) {

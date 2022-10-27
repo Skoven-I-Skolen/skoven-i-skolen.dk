@@ -18,10 +18,10 @@
     background-color: var(--theme-button-background-color);
 
     &--ghost {
+      overflow: visible !important;
       color: var(--theme-color);
       background-color: transparent;
       border-color: var(--theme-color);
-      overflow: visible !important;
     }
   }
 

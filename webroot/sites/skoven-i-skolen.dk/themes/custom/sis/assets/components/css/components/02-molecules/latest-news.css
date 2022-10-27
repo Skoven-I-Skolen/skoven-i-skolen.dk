@@ -4,7 +4,7 @@
     align-items: flex-end;
     height: 100%;
 
-    h3 {
+    & h3 {
       margin: 0;
     }
   }

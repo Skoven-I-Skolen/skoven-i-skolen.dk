@@ -1,19 +1,47 @@
 .overview-form {
   &__search-input {
+    position: relative;
+    width: 100%;
+    height: 49px;
+
+    input[type="search"] {
+      height: 53px;
+      border-color: var(--theme-input-border-dark);
+      border-radius: 25px;
+    }
+
+    & button.button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 70px;
+      height: 49px;
+      min-height: 49px;
+      padding: 15px 0;
+      background-color: transparent;
+
+      svg {
+        height: 100%;
+      }
+    }
+
     .lexicon-search-wrapper {
       @media (--viewport-sm-max) {
         width: 270px;
       }
+
       @media (--viewport-md-max) {
         width: 100%;
       }
     }
-    button {
+
+    & button {
       svg {
         display: none;
       }
     }
   }
+
   &-contents {
     display: grid;
     grid-template-columns: 1fr;
@@ -51,7 +79,7 @@
     justify-content: center;
     padding: 48px;
     background-color: var(--color-blue);
-    background-image: url('../../../../../dist/images/goto-map-cta-bg.svg');
+    background-image: url("../../../../../dist/images/goto-map-cta-bg.svg");
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: contain;
@@ -89,8 +117,7 @@
         height: 100%;
         padding: 44px;
         color: var(--color-white);
-        background: var(--color-blue-darker)
-          url('../../../../images/dk-map.svg') no-repeat bottom left;
+        background: var(--color-blue-darker) url("../../../../images/dk-map.svg") no-repeat bottom left;
       }
 
       .inspiration-overview__item-title {
@@ -110,6 +137,40 @@
 
   &__search {
     &-filters {
+      @media (--viewport-ms-max) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        background: white;
+
+        &--active {
+          display: block;
+        }
+
+        .accordion-buttons {
+          display: none;
+        }
+
+        .accordion {
+          position: absolute;
+          top: 68px;
+          bottom: 0;
+          width: 100%;
+          padding: 0 20px 20px;
+          overflow: auto;
+          overflow-x: hidden;
+          overflow-y: scroll;
+        }
+
+        .filter-mobile-wrapper {
+          display: flex;
+        }
+      }
+
       & legend {
         display: block;
         width: 100%;
@@ -127,40 +188,13 @@
         }
       }
     }
-
-    &-input {
-      position: relative;
-      width: 100%;
-      height: 49px;
-
-      input[type='search'] {
-        height: 53px;
-        border-color: var(--theme-input-border-dark);
-        border-radius: 25px;
-      }
-
-      & button.button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 70px;
-        height: 49px;
-        min-height: 49px;
-        padding: 15px 0;
-        background-color: transparent;
-
-        svg {
-          height: 100%;
-        }
-      }
-    }
   }
 
   &__toolbar {
     display: flex;
     align-items: center;
-    width: 100%;
     justify-content: space-between;
+    width: 100%;
     margin-bottom: 15px;
 
     @media (--viewport-sm-min) {
@@ -181,10 +215,10 @@
     }
 
     &__filter-button {
-      margin-right: 20px;
+      position: relative;
       display: block;
       align-items: center;
-      position: relative;
+      margin-right: 20px;
       padding: 16px 24px 14px 62px;
       color: currentcolor;
       font-weight: var(--button-font-weight);
@@ -201,10 +235,10 @@
 
     .icon--filter-icon {
       position: absolute;
+      top: 50%;
+      left: 24px;
       width: 21px;
       height: 21px;
-      left: 24px;
-      top: 50%;
       transform: translateY(-50%);
     }
   }
@@ -251,82 +285,11 @@
       }
     }
   }
-}
 
-.overview-form__search-filters__mobile-header {
-  display: none;
-}
-
-@media (--viewport-ms-max) {
-  .overview-form__search-filters__mobile-header {
-    display: flex;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    background-color: var(--color-blue);
-    color: white;
-    padding: 20px;
-    font-size: var(--base-font-size-medium);
-    font-weight: 800;
-    justify-content: space-between;
-
-    & .icon--close {
-      height: 20px;
-      width: 20px;
-      fill: white;
-    }
-  }
-  .overview-form__search-filters {
-    z-index: 1000;
-    background: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
-
-    &--active {
-      display: block;
-    }
-
-    .accordion-buttons {
-      display: none;
-    }
-
-    .accordion {
-      padding: 0 20px 20px;
-      overflow: auto;
-      top: 68px;
-      bottom: 0;
-      position: absolute;
-      overflow-y: scroll;
-      width: 100%;
-      overflow-x: hidden;
-    }
-  }
-
-  .filter-mobile-wrapper {
-    display: flex;
-  }
-}
-
-.overview-form__search-facets {
-  margin-top: -12px;
-  margin-left: auto;
-  max-width: none;
-
-  @media (--viewport-ms-min) {
-    max-width: 300px;
-  }
-}
-
-.overview-form {
   .button {
     display: none;
   }
-}
 
-.overview-form {
   .container {
     .custom-accordion-wrapper {
       display: flex;
@@ -335,13 +298,44 @@
     }
 
     .custom-accordion-wrapper-button {
-        margin-top: 40px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      margin-top: 40px;
+      text-align: center;
+    }
+  }
 
+  &__search-filters__mobile-header {
+    display: none;
+
+    @media (--viewport-ms-max) {
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      color: white;
+      font-weight: 800;
+      font-size: var(--base-font-size-medium);
+      background-color: var(--color-blue);
+
+      & .icon--close {
+        width: 20px;
+        height: 20px;
+        fill: white;
       }
+    }
+  }
+}
+
+.overview-form__search-facets {
+  max-width: none;
+  margin-top: -12px;
+  margin-left: auto;
+
+  @media (--viewport-ms-min) {
+    max-width: 300px;
   }
 }

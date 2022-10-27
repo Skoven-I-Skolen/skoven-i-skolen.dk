@@ -3,18 +3,18 @@
   .red-knob,
   .seasonal-wheel-month-selector {
     & > path:hover {
-      opacity: 0.2;
+      opacity: .2;
       fill: red;
     }
   }
 
   .seasonal-wheel-month-selector:hover {
-    opacity: 0.2;
+    opacity: .2;
     fill: red;
   }
 
   .hover-wheel {
-    opacity: 0.2;
+    opacity: .2;
     fill: red;
   }
 
@@ -68,7 +68,7 @@
 
   .red-knob:hover {
     cursor: pointer;
-    opacity: 0.3;
+    opacity: .3;
     fill: #c52543;
     stroke: red;
   }
@@ -126,7 +126,7 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    background-color: rgba(0 0 0 / 20%);
+    background-color: rgb(0 0 0 / 20%);
   }
 
   .modal__dialog {
@@ -195,7 +195,7 @@
 
   .fade-enter-active,
   .fade-leave-active {
-    transition: opacity 0.2s;
+    transition: opacity .2s;
   }
 
   .fade-enter,

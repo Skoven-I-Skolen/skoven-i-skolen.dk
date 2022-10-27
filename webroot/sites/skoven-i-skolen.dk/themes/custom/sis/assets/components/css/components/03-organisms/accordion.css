@@ -16,29 +16,27 @@
   }
 
   &-button {
+    padding: 0;
+    font-family: var(--base-font-family);
+
     &__expand,
     &__collapse {
       &.button {
-        cursor: pointer;
         min-height: 45px;
         padding: 0 20px;
+        cursor: pointer;
       }
     }
   }
 
   &-buttons {
     margin-top: var(--container-spacing);
-    border-bottom: 1px solid var(--color-purple);
     padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-purple);
 
     .hide {
       display: none;
     }
-  }
-
-  &-button {
-    padding: 0;
-    font-family: var(--base-font-family);
   }
 }
 

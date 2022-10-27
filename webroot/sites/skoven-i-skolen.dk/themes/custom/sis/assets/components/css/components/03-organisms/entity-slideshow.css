@@ -108,8 +108,8 @@
     }
 
     &--page {
-       background-color: var(--color-red);
-     }
+      background-color: var(--color-red);
+    }
   }
 
   &__content {
@@ -232,10 +232,10 @@
       margin-right: 8px;
       margin-bottom: 8px;
       padding: 5px 0;
+      color: #fff;
       font-weight: 600;
       font-size: var(--base-font-size-extra-small);
       font-family: var(--base-font-family);
-      color: #fff;
     }
   }
 
