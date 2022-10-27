@@ -11,6 +11,11 @@
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4">
       <div class="swiper-navigation">
+        {% if latest_four_blog_posts_count > 0 %}
+          <div class="slider-pager-count">
+            {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
+          </div>
+        {% endif %}
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
@@ -21,11 +26,6 @@
           {{ latest_four_blog_posts }}
         </div>
       </div>
-      {% if latest_four_blog_posts_count > 0 %}
-        <div class="slider-pager-count">
-          {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
-        </div>
-      {% endif %}
     </div>
   </div>
 </div>

@@ -13,8 +13,8 @@ Drupal.behaviors.latestNews = {
     for (let i = 0; i < slideLists.length; i += 1) {
       const slideList = slideLists[i];
       slideList.classList.add('loaded');
-      const sliderPagerTotal = slideList.parentNode.querySelector('.slider-pager-count').lastElementChild;
-      const sliderPagerShowing = slideList.parentNode.querySelector('.slider-pager-count').firstElementChild;
+      const sliderPagerTotal = slideList.querySelector('.slider-pager-count--total');
+      const sliderPagerShowing = slideList.querySelector('.slider-pager-count--showing');
       // Build slider
       const swiper = new Swiper(slideList.querySelector('.js-news-page__latest-items'), {
         modules: [Navigation, Lazy],
@@ -30,11 +30,21 @@ Drupal.behaviors.latestNews = {
         },
         on: {
           init() {
+            const slidesShowing = Math.round(this.width / this.slides[0].swiperSlideSize);
             sliderPagerTotal.innerHTML = this.slides.length;
-            sliderPagerShowing.innerHTML = Math.round(this.width / this.slides[0].swiperSlideSize);
+            if (this.slides.length < slidesShowing) {
+              sliderPagerShowing.innerHTML = this.slides.length;
+            } else {
+              sliderPagerShowing.innerHTML = slidesShowing;
+            }
           },
           resize() {
-            sliderPagerShowing.innerHTML = Math.round(this.width / this.slides[0].swiperSlideSize);
+            const slidesShowing = Math.round(this.width / this.slides[0].swiperSlideSize);
+            if (this.slides.length < slidesShowing) {
+              sliderPagerShowing.innerHTML = this.slides.length;
+            } else {
+              sliderPagerShowing.innerHTML = slidesShowing;
+            }
           },
         },
       });
