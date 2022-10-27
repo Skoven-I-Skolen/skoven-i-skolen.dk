@@ -1,0 +1,16 @@
+uuid: c0653169-6605-4ac3-943b-fd4956c96086
+langcode: da
+status: true
+dependencies: {  }
+name: medium_xs
+label: 'Mellem (XS)'
+effects:
+  0d55d8cf-cae7-459b-bc86-0e58b937deb0:
+    uuid: 0d55d8cf-cae7-459b-bc86-0e58b937deb0
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: false
+pipeline: __default__

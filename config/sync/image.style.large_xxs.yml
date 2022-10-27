@@ -1,0 +1,16 @@
+uuid: dfa8290a-0fd3-425b-a64c-9dbac4fa8285
+langcode: da
+status: true
+dependencies: {  }
+name: large_xxs
+label: 'Stor (XXS)'
+effects:
+  733b589f-c82d-40e4-8573-77669b5c507c:
+    uuid: 733b589f-c82d-40e4-8573-77669b5c507c
+    id: image_scale
+    weight: 1
+    data:
+      width: 432
+      height: null
+      upscale: false
+pipeline: __default__

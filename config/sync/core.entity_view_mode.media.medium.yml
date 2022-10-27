@@ -1,0 +1,10 @@
+uuid: c8a16203-a80c-4df9-8cd5-cdff754b7cf8
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+id: media.medium
+label: Mellem
+targetEntityType: media
+cache: true

@@ -1,0 +1,16 @@
+uuid: 264a0037-fd90-4ef6-ad1b-15c40ce8d224
+langcode: da
+status: true
+dependencies: {  }
+name: small
+label: 'Lille (LG)'
+effects:
+  7f06a5b2-5d66-487a-baab-edf91afdfb17:
+    uuid: 7f06a5b2-5d66-487a-baab-edf91afdfb17
+    id: image_scale
+    weight: 1
+    data:
+      width: 292
+      height: null
+      upscale: false
+pipeline: __default__

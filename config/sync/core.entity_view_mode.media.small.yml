@@ -1,0 +1,10 @@
+uuid: 14fe7e7e-3919-4b54-aa71-fd0f7cf55e1d
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+id: media.small
+label: Lille
+targetEntityType: media
+cache: true
