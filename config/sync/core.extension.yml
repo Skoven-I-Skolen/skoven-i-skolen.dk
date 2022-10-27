@@ -85,6 +85,7 @@ module:
   migrate_manifest: 0
   migrate_plus: 0
   migrate_tools: 0
+  mobile_detect: 0
   mysql: 0
   node: 0
   noreferrer: 0
