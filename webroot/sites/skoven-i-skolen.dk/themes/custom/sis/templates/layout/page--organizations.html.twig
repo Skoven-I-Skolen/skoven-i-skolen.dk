@@ -22,11 +22,11 @@
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<div class="swiper-navigation">
-						<div class="swiper-pagination-wrapper">
-							<div class="swiper-pagination-title">
-								Viser:</div>
-							<div class="swiper-pagination"></div>
-						</div>
+            {% if page.content_slideshow %}
+              <div class="slider-pager-count">
+                {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
+              </div>
+            {% endif %}
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
 					</div>

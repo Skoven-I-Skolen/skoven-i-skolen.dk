@@ -1,25 +1,4 @@
 .article-page__related {
-  .swiper-pagination-wrapper {
-    display: flex;
-
-    .swiper-pagination-title {
-      margin-right: 55px;
-      font-size: 14px;
-
-       @media(--viewport-md-max) {
-        margin-right: 54px;
-      }
-    }
-  }
-
-  .swiper-pagination-fraction {
-    right: 105px;
-    bottom: auto;
-    left: auto;
-    width: auto;
-    font-size: 14px;
-  }
-
   &-header {
     margin-bottom: 20px;
 

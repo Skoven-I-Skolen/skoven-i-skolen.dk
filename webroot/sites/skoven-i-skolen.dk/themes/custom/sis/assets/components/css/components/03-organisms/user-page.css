@@ -3,31 +3,8 @@
  * User page.
  */
 .user-page {
-  .swiper-pagination-lock {
-    display: block !important;
-  }
-  .swiper-pagination-wrapper {
-    display: flex;
-
-    .swiper-pagination-title {
-      margin-right: 55px;
-      font-size: 14px;
-
-      @media (--viewport-md-max) {
-        margin-right: 54px;
-      }
-    }
-  }
-
-  .swiper-pagination-fraction {
-    right: 105px;
-    bottom: auto;
-    left: auto;
-    width: auto;
-    font-size: 14px;
-  }
-
   margin-top: 50px;
+
   &--user-profile-full-picture {
     margin-top: 25px;
     text-align: right;
