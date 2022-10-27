@@ -8,6 +8,8 @@
   --theme-color: #fff;
   --theme-button-background-color: var(--color-pink);
   --theme-button-color: var(--color-purple);
+  --theme-arrow-background-color: var(--color-pink);
+  --theme-arrow-color: var(--color-purple);
   --theme-link-color: #ffefe5;
   --theme-divider-background-color: #ffefe5;
   --theme-accordion-color: var(--color-white);
