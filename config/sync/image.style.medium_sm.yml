@@ -1,0 +1,16 @@
+uuid: 314c9783-c611-48ce-a616-d806c3226e51
+langcode: da
+status: true
+dependencies: {  }
+name: medium_sm
+label: 'Mellem (SM)'
+effects:
+  9175c8b1-d87f-4515-a195-e17abefbd2ba:
+    uuid: 9175c8b1-d87f-4515-a195-e17abefbd2ba
+    id: image_scale
+    weight: 1
+    data:
+      width: 630
+      height: null
+      upscale: false
+pipeline: __default__

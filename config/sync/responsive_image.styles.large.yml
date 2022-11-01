@@ -1,0 +1,59 @@
+uuid: 5d74c2d8-079c-45ca-b6da-a9b1418b351b
+langcode: da
+status: true
+dependencies:
+  config:
+    - image.style.large_lg
+    - image.style.large_md
+    - image.style.large_sm
+    - image.style.large_xs
+    - image.style.large_xs_x2
+    - image.style.large_xxs
+    - image.style.large_xxs_x2
+  theme:
+    - sis
+id: large
+label: Stor
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: large_lg
+    breakpoint_id: sis.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_lg
+    breakpoint_id: sis.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_md
+    breakpoint_id: sis.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_sm
+    breakpoint_id: sis.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_xs
+    breakpoint_id: sis.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_xs_x2
+    breakpoint_id: sis.xs
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_xxs
+    breakpoint_id: sis.xxs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_xxs_x2
+    breakpoint_id: sis.xxs
+    multiplier: 2x
+breakpoint_group: sis
+fallback_image_style: large_xxs

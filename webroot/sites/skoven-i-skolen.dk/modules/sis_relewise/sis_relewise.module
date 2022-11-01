@@ -102,6 +102,13 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
         ->first()
         ->getValue()['value'], $langcode));
     }
+    if ($node->hasField('field_list_date') && !$node->get('field_list_date')
+        ->isEmpty()) {
+      $dateformat = new \Drupal\Core\Datetime\DrupalDateTime($node->get('field_list_date')
+        ->first()
+        ->getValue()['value']);
+      $content->addData('field_list_date', $dateformat->getTimestamp());
+    }
   }
   elseif ($entity->getEntityTypeId() == 'profile') {
     /** @var \Drupal\profile\Entity\Profile $profile */

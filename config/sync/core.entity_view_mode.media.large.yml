@@ -1,0 +1,10 @@
+uuid: d9de8a0f-0246-4a6f-97fc-7afd09617410
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+id: media.large
+label: Stor
+targetEntityType: media
+cache: true

@@ -5,8 +5,8 @@
 .ui-dialog:not(.ui-dialog-position-side) {
   /* stylelint-disable */
   top: 50% !important;
-  height: 80% !important;
   left: 50% !important;
+  height: 80% !important;
   transform: translate(-50%, -50%);
 
   .ui-dialog-content {
@@ -52,7 +52,7 @@
 
 .js-text-format-wrapper {
   .filter-wrapper {
-    margin: -0.75em 0 0;
+    margin: -.75em 0 0;
     overflow: visible;
   }
 }

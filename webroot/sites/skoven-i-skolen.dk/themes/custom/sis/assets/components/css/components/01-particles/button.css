@@ -25,10 +25,10 @@ a.button {
   border-radius: 50px;
   cursor: pointer;
 
-   a {
-     text-decoration: none;
-     color: white;
-   }
+  a {
+    color: white;
+    text-decoration: none;
+  }
 
   &[disabled],
   [disabled] & {
@@ -37,10 +37,10 @@ a.button {
   }
 
   &--ghost {
+    overflow: visible !important;
     color: currentcolor;
     background-color: transparent;
     border: 2px solid var(--theme-button-color);
-    overflow: visible !important;
   }
 
   &--green {

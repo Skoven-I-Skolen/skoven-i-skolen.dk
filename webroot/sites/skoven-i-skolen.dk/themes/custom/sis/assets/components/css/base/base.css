@@ -72,7 +72,7 @@ figure {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
-    transition: opacity 0.2s;
+    transition: opacity .2s;
   }
 
   figcaption {
@@ -87,8 +87,8 @@ figure {
 }
 
 table {
-  border-collapse: collapse !important;
   width: 100% !important;
+  border-collapse: collapse !important;
 }
 
 #drupal-modal .section {
@@ -107,4 +107,8 @@ table {
     width: 100%;
     height: auto;
   }
+}
+
+#media-library-view .views-row .views-field-media-library-select-form {
+  z-index: 999;
 }

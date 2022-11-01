@@ -107,12 +107,11 @@
   height: 27px;
 }
 
-.same-line-text-and-icon .small svg{
+.same-line-text-and-icon .small svg {
   flex: 10%;
   width: 14px;
   height: 8px;
 }
-
 
 .inverted {
   transform: rotate(180deg);
@@ -138,7 +137,7 @@
   flex: 75%;
 }
 
-.is-even{
+.is-even {
   background: rgba(202, 224, 234, 0.2);
 }
 
@@ -189,12 +188,29 @@
 
 .above-map-button {
   margin: 0px 0 30px 0;
+  background: var(--color-green-dark) !important;
+  color: var(--color-white) !important;
 }
 
 .map-button {
   text-decoration: none;
+  margin-top: 58px;
 }
 
 .see-all-checkbox {
   margin-bottom: 10px;
+}
+
+/* padding on sides on small viewport */
+@media (max-width: 1590px) {
+  main, #block-breadcrumbs {
+ padding-left: 100px;
+  padding-right: var(--container-spacing);
+  }
+  @media (max-width: 900px) {
+    main, #block-breadcrumbs {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }

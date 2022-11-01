@@ -27,10 +27,6 @@
   @media (--viewport-ms-min) {
     width: 50%;
     padding: var(--container-spacing);
-
-    .layout--twocol & {
-
-    }
   }
 
   @media (--viewport-sm-min) {

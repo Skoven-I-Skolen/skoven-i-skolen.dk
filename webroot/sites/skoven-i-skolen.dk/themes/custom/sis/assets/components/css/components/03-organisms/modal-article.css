@@ -1,0 +1,69 @@
+/* create a modal box */
+
+.js-modal-article {
+  /* modal overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgb(255 255 255 / 75%);
+  backdrop-filter: blur(3px);
+
+  &__content {
+    /* modal content */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    height: 95%;
+    padding: 30px;
+    overflow: auto;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgb(131 131 131 / 25%);
+    transform: translate(-50%, -50%);
+
+    @media (--viewport-sm-min) {
+      width: 70%;
+      height: 60%;
+    }
+
+    &__header {
+      /* docked at the top */
+      position: sticky;
+      top: 0;
+      text-align: end;
+
+      &__close-button {
+        svg {
+          width: 44px;
+          height: 44px;
+          margin-top: -15px;
+          margin-right: -17px;
+          cursor: pointer;
+        }
+
+        a {
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+
+    /* content container */
+    &__main {
+      padding: 0 34px;
+    }
+  }
+}
+
+.is-active {
+  display: block;
+}
+
+.is-locked {
+  overflow: hidden;
+}

@@ -8,6 +8,8 @@
   --theme-color: var(--color-purple);
   --theme-button-background-color: var(--color-green-dark);
   --theme-button-color: #fff;
+  --theme-arrow-background-color: var(--color-green);
+  --theme-arrow-color: var(--color-white);
   --theme-link-color: #232323;
   --theme-divider-background-color: #232323;
   --theme-input-border: #232323;

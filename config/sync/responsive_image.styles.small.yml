@@ -1,0 +1,59 @@
+uuid: de78cb6b-b05c-45a6-8584-d0f58b3dd0e8
+langcode: da
+status: true
+dependencies:
+  config:
+    - image.style.large_xxs
+    - image.style.large_xxs_x2
+    - image.style.small
+    - image.style.small_md
+    - image.style.small_sm
+    - image.style.small_xs
+    - image.style.small_xs_x2
+  theme:
+    - sis
+id: small
+label: Lille
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: small
+    breakpoint_id: sis.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: small
+    breakpoint_id: sis.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_md
+    breakpoint_id: sis.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_sm
+    breakpoint_id: sis.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_xs
+    breakpoint_id: sis.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_xs_x2
+    breakpoint_id: sis.xs
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_xxs
+    breakpoint_id: sis.xxs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_xxs_x2
+    breakpoint_id: sis.xxs
+    multiplier: 2x
+breakpoint_group: sis
+fallback_image_style: large_xxs

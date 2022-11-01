@@ -1,20 +1,35 @@
 .lexicon {
-  .overview-form {
-    .overview-form__header {
-      justify-content: space-between;
-      align-items: center;
+  &-contents {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: var(--gutter-width-mobile);
+
+    @media (--viewport-md-min) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: var(--gutter-width);
     }
 
-    #edit-letter {
+    @media (--viewport-lg-min) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .overview-form {
+    .overview-form__header {
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    & #edit-letter {
       display: flex;
       flex-wrap: wrap;
 
       label {
         padding-left: 18px;
-        color: var(--link-color);
+        color: var(--theme-link-color);
         font-size: var(--base-font-size-xlarge);
-        text-decoration: underline;
         font-family: var(--heading-font-family);
+        text-decoration: underline;
         text-underline-offset: 6px;
 
         @media (--viewport-md-min) {
@@ -22,12 +37,12 @@
         }
       }
 
-      .radio:not(:checked) + label:before {
+      .radio:not(:checked) + label::before {
         display: none;
       }
 
-      .radio:checked + label:before,
-      .radio:checked + label:after {
+      .radio:checked + label::before,
+      .radio:checked + label::after {
         display: none;
       }
     }
@@ -51,24 +66,20 @@
           grid-template-columns: repeat(4, 1fr);
         }
       }
-
-      /* Currently selected letter */
-      .lexicon_content__letter {
-        font-weight: bold;
-        font-size: var(--base-font-size-xlarge);
-        padding-left: 14px;
-
-        @media (--viewport-md-min) {
-          font-size: var(--base-font-size-xxxlarge);
-        }
-      }
     }
   }
-}
 
-/* Leksicon overview - Teaser block */
+  /* Currently selected letter */
+  &_content__letter {
+    padding-left: 14px;
+    font-weight: bold;
+    font-size: var(--base-font-size-xlarge);
 
-.lexicon {
+    @media (--viewport-md-min) {
+      font-size: var(--base-font-size-xxxlarge);
+    }
+  }
+
   &-teaser {
     .section--fullwidth & {
       padding-right: var(--container-spacing-mobile);
@@ -119,7 +130,7 @@
       height: 49px;
       margin-bottom: 22px;
 
-      input[type='search'] {
+      input[type="search"] {
         height: 100%;
         border-color: var(--theme-input-border-dark);
         border-radius: 25px;
@@ -222,23 +233,6 @@
         right: 23px;
         width: 14px;
         height: 8px;
-      }
-    }
-  }
-
-  .overview-form {
-    &-contents {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      column-gap: var(--gutter-width-mobile);
-
-      @media (--viewport-md-min) {
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: var(--gutter-width);
-      }
-
-      @media (--viewport-lg-min) {
-        grid-template-columns: repeat(4, 1fr);
       }
     }
   }

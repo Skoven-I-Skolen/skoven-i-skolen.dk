@@ -6,6 +6,7 @@
 @nestedimport "./assets/components/css/base/variables.css";
 
 .field--type-styles,
-.field--type-styles-link {
+.field--type-styles-link,
+.field--type-styles-link-target {
   @nestedimport "./assets/components/css/components/01-particles/button.css";
 }

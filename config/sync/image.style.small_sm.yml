@@ -1,0 +1,16 @@
+uuid: 4faa46b9-7067-4f55-b8bc-6421dc665e22
+langcode: da
+status: true
+dependencies: {  }
+name: small_sm
+label: 'Lille (SM)'
+effects:
+  49031ddc-154b-4801-8f98-1cbba3b01ad7:
+    uuid: 49031ddc-154b-4801-8f98-1cbba3b01ad7
+    id: image_scale
+    weight: 1
+    data:
+      width: 315
+      height: null
+      upscale: false
+pipeline: __default__

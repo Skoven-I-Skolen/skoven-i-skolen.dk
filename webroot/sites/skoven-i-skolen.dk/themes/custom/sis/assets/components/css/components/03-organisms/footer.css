@@ -168,7 +168,7 @@
       font-size: var(--base-font-size-small);
       text-align: center;
 
-      @media(--viewport-sm-min) {
+      @media (--viewport-sm-min) {
         text-align: right;
       }
 

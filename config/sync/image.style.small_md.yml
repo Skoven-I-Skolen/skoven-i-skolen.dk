@@ -1,0 +1,16 @@
+uuid: 675ecba8-aac2-46b7-b5db-08b5894dbc43
+langcode: da
+status: true
+dependencies: {  }
+name: small_md
+label: 'Lille (MD)'
+effects:
+  d33d8771-110e-4314-9e3d-ce089c88d3cd:
+    uuid: d33d8771-110e-4314-9e3d-ce089c88d3cd
+    id: image_scale
+    weight: 1
+    data:
+      width: 255
+      height: null
+      upscale: false
+pipeline: __default__

@@ -23,11 +23,11 @@ h1 {
   line-height: 1;
 
   @media (--viewport-ms-min) {
-    font-size: var(--base-font-size-xxxlarge)
+    font-size: var(--base-font-size-xxxlarge);
   }
 
   @media (--viewport-sm-min) {
-    font-size: var(--base-font-size-xxxxlarge)
+    font-size: var(--base-font-size-xxxxlarge);
   }
 }
 
@@ -36,11 +36,11 @@ h2 {
   line-height: 1.2;
 
   @media (--viewport-ms-min) {
-    font-size: var(--base-font-size-xxxlarge)
+    font-size: var(--base-font-size-xxxlarge);
   }
 
   @media (--viewport-sm-min) {
-    font-size: var(--base-font-size-xxxlarge)
+    font-size: var(--base-font-size-xxxlarge);
   }
 }
 
@@ -49,11 +49,11 @@ h3 {
   line-height: 1.2;
 
   @media (--viewport-ms-min) {
-    font-size: var(--base-font-size-xlarge)
+    font-size: var(--base-font-size-xlarge);
   }
 
   @media (--viewport-sm-min) {
-    font-size: var(--base-font-size-xxlarge)
+    font-size: var(--base-font-size-xxlarge);
   }
 }
 
@@ -62,7 +62,7 @@ h4 {
   line-height: 1.2;
 
   @media (--viewport-sm-min) {
-    font-size: var(--base-font-size-xlarge)
+    font-size: var(--base-font-size-xlarge);
   }
 }
 

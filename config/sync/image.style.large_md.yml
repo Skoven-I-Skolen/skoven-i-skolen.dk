@@ -1,0 +1,16 @@
+uuid: dd39c656-3f1e-4395-a24d-211f321783bb
+langcode: da
+status: true
+dependencies: {  }
+name: large_md
+label: 'Stor (MD)'
+effects:
+  68fb0411-9f29-440a-ab48-86880fd9381f:
+    uuid: 68fb0411-9f29-440a-ab48-86880fd9381f
+    id: image_scale
+    weight: 1
+    data:
+      width: 765
+      height: null
+      upscale: false
+pipeline: __default__

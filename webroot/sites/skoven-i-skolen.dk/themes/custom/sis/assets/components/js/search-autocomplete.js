@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const info = document.createElement('li');
         info.setAttribute('class', 'autoComplete_wrapper__info');
         if (data.results.length > 8) {
-          info.innerHTML = `<a href="/search?q=${data.query}" class="button">${Drupal.t('Show all results (@count)', { '@count': data.matches.length })}</a>`;
+          info.innerHTML = `<a href="/search?text=${data.query}" class="button">${Drupal.t('Show all results (@count)', { '@count': data.matches.length })}</a>`;
         }
 
         if (!data.results.length) {
@@ -52,8 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
       element: (item, data) => {
         const element = item;
         const type = data.value.data.field_article_type_label.value;
+        const href = data.value.href.substring(1);
         element.innerHTML = `
-            <span class="autoComplete_wrapper__match" data-href="${data.value.href}">${data.match}</span>
+            <span class="autoComplete_wrapper__match" data-href="${href}">${data.match}</span>
             <span class="autoComplete_wrapper__type">${type}</span>`;
       },
       highlight: true,
@@ -61,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     events: {
       input: {
         selection: (event) => {
-          const selection = event.detail.selection.value.href;
-          window.location.replace(drupalSettings.path.baseUrl + selection);
+          const selection = event.detail.selection.value.href.substring(1);
+          window.location.assign(drupalSettings.path.baseUrl + selection);
         },
       },
     },

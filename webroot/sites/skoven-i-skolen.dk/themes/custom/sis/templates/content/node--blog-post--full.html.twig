@@ -73,7 +73,7 @@
 {{ attach_library('sis_blog_post/sis_blog_post') }}
 {{ attach_library('sis/slider-pager-count') }}
 {% if node.field_section_bg_graphics.value %}
-	{{ attach_library('sis/section-bg-graphics') }}
+  {{ attach_library('sis/section-bg-graphics') }}
 {% endif %}
 
 {% set classes = [
@@ -83,106 +83,102 @@
 ] %}
 
 {% if authoring_information %}
-	<div class="blog-post__date">
-		{{ authoring_information }}
-	</div>
+  <div class="blog-post__date">
+    {{ authoring_information }}
+  </div>
 {% endif %}
 
-<article{{attributes.addClass(classes)}}>
-	{% if node.field_section_bg_graphics.value %}
-		<img src="/{{ directory }}/dist/images/{{ node.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ node.field_section_bg_graphics.value }} section-bg-graphics__position--{{ node.field_section_bg_graphics_pos.value }}"/>
-	{% endif %}
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-8 col-lg-7">
-				{% include '@reusable-component/page-title.twig' with {
+<article{{ attributes.addClass(classes) }}>
+  {% if node.field_section_bg_graphics.value %}
+    <img src="/{{ directory }}/dist/images/{{ node.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ node.field_section_bg_graphics.value }} section-bg-graphics__position--{{ node.field_section_bg_graphics_pos.value }}" />
+  {% endif %}
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-lg-7">
+        {% include '@reusable-component/page-title.twig' with {
           'attributes': create_attribute().addClass('article-page__title'),
           'title': node.title.value,
         } %}
-				<div class="news-page__description">
-					{{ node.body.summary }}
-				</div>
-				<div class="news-page__content">
-					{{ content }}
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-4 col-lg-4 col-lg-offset-1">
-				{% if current_writer %}
-					{{ current_writer }}
-				{% endif %}
-				{% if other_writers %}
-					<h3>Andre Skribenter</h3>
-					{% for writer in other_writers|slice(0, 3) %}
-						{{ writer }}
-					{% endfor %}
-				{% endif %}
-				{% if all_writers|length > 0 %}
-					<div class="view-all-writers-link">
-						<h4>Se alle skribenter</h4>
-						{% include '@reusable-component/svg-icon.twig' with {
+        <div class="news-page__description">
+            {{ node.body.summary }}
+        </div>
+        <div class="news-page__content">
+          {{ content }}
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4 col-lg-4 col-lg-offset-1">
+        {% if current_writer %}
+          {{ current_writer }}
+        {% endif %}
+        {% if other_writers %}
+          <h3>Andre Skribenter</h3>
+            {% for writer in other_writers %}
+              {{ writer }}
+            {% endfor %}
+          {% endif %}
+        <div class="view-all-writers-link">
+          <h4>Se alle skribenter</h4>
+          {% include '@reusable-component/svg-icon.twig' with {
             'attributes': '',
             'svgIconName': 'carret'
           } %}
-					</div>
-				{% endif %}
-			</div>
-		</div>
+        </div>
+      </div>
+    </div>
 
-		{% if all_writers %}
-			<div class="blog-post--view-all-writers">
-				<div class="blog-post--view-all-writers--title">
-					<h3>Alle skribenter</h3>
-					<div class="hide-all-writers-link">
-						<h4>Luk
-							{% include '@reusable-component/svg-icon.twig' with {
+    <div class="blog-post--view-all-writers">
+      <div class="blog-post--view-all-writers--title">
+        <h3>Alle skribenter</h3>
+        <div class="hide-all-writers-link">
+          <h4>Lukke
+            {% include '@reusable-component/svg-icon.twig' with {
               'attributes': '',
               'svgIconName': 'carret'
             } %}</h4>
 
-					</div>
-				</div>
-				<div class="row all-writers">
-					{% for writer in all_writers %}
-						<div class="col-xs-12 col-md-4 col-lg-4">
-							{{ writer }}
-						</div>
-					{% endfor %}
-				</div>
-			</div>
-		{% endif %}
+        </div>
+      </div>
+      <div class="row all-writers">
+        {% for writer in all_writers %}
+        <div class="col-xs-12 col-md-4 col-lg-4">
+            {{ writer }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
 
-		{% if other_blog_posts %}
-			<div class="news-page__latest section section--spacing-bottom-none">
-				<div class="row">
-					<div class="col-xs-12 col-sm-8 col-md-8">
-						<div class="news-page__latest-header">
-							{% if current_writer['#user'].field_full_name.value %}
-								<h3>{{ 'Andre blogindlæg af '|t ~  current_writer['#user'].field_full_name.value}}</h3>
-							{% else %}
-								<h3>{{ 'Andre blogindlæg'|t }}</h3>
-							{% endif %}
-						</div>
-					</div>
-					<div class="col-xs-12 col-sm-4 col-md-4">
-						<div class="swiper-navigation">
-							<div class="swiper-pagination-wrapper">
-								<div class="swiper-pagination-title">
-									Viser:</div>
-								<div class="swiper-pagination"></div>
-							</div>
-							<div class="swiper-button-prev"></div>
-							<div class="swiper-button-next"></div>
-						</div>
-					</div>
-					<div class="col-xs-12">
-						<div class="news-page__latest-items js-news-page__latest-items swiper">
-							<div class="swiper-wrapper">
-								{{ other_blog_posts }}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		{% endif %}
-	</div>
+    {% if other_blog_posts %}
+    <div class="news-page__latest section section--spacing-bottom-none">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8">
+          <div class="news-page__latest-header">
+            {% if current_writer['#user'].field_full_name.value %}
+              <h3>{{ 'Andre blogindlæg af '|t ~  current_writer['#user'].field_full_name.value}}</h3>
+              {% else %}
+                <h3>{{ 'Andre blogindlæg'|t }}</h3>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="swiper-navigation">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="news-page__latest-items js-news-page__latest-items swiper">
+            <div class="swiper-wrapper">
+                {{ other_blog_posts }}
+            </div>
+          </div>
+          {% if other_blog_posts_count > 0 %}
+            <div class="slider-pager-count">
+              {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
 </article>

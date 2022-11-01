@@ -3,16 +3,17 @@
   background-color: var(--color-white);
   box-shadow: 0 4px 30px rgb(131 131 131 / 25%);
 
-  table {
+  & table {
+    overflow-wrap: anywhere;
     border: 1px solid black;
-  }
 
-  tr {
-    border: 1px solid black;
-  }
+    & tr {
+      border: 1px solid black;
+    }
 
-  td {
-    border: 1px solid black;
+    & td {
+      border: 1px solid black;
+    }
   }
 
   &.fixed-height {

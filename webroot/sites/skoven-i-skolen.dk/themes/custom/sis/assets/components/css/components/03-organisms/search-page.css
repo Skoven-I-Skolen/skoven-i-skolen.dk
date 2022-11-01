@@ -41,11 +41,11 @@
   }
 
   &__header {
-    text-align: center;
-    min-height: 250px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-height: 250px;
+    text-align: center;
 
     &-inner {
       height: 100%;

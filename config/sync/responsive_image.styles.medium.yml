@@ -1,0 +1,59 @@
+uuid: 04fe43dc-2616-4804-8a0e-a412891572da
+langcode: da
+status: true
+dependencies:
+  config:
+    - image.style.large_xxs
+    - image.style.large_xxs_x2
+    - image.style.medium_lg
+    - image.style.medium_md
+    - image.style.medium_sm
+    - image.style.medium_xs
+    - image.style.medium_xs_x2
+  theme:
+    - sis
+id: medium
+label: Mellem
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_lg
+    breakpoint_id: sis.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_lg
+    breakpoint_id: sis.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_md
+    breakpoint_id: sis.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_sm
+    breakpoint_id: sis.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_xs
+    breakpoint_id: sis.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_xs_x2
+    breakpoint_id: sis.xs
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_xxs
+    breakpoint_id: sis.xxs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_xxs_x2
+    breakpoint_id: sis.xxs
+    multiplier: 2x
+breakpoint_group: sis
+fallback_image_style: large_xxs

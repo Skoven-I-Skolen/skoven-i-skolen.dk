@@ -12,75 +12,84 @@
 #}
 {{ attach_library('sis/overview-form') }}
 
-<form{{ attributes.addClass('overview-form') }}>
-  <div class="container">
-    {#  {{ children }} #}
-    <div class="row overview-form__header">
-      <div class="col-xs-12 col-md-8">
-        <div class="overview-form__search-title">
-          {{ element['search'].title }}
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-4 filter-mobile-wrapper">
-        <div class="overview-form__toolbar">
-          <span class="overview-form__toolbar__filter-button js-overview-form__toolbar__filter-button">
-            {% include '@reusable-component/svg-icon.twig' with {
+<form{{attributes.addClass('overview-form')}}>
+	<div class="container">
+		<div class="row overview-form__header overview-form__heading-facets">
+			<div class="col-xs-12 col-md-8 ">
+				<div class="overview-form__search-facets">
+					{{ element['facets'].sort }}
+				</div>
+				<div class="overview-form__search-title">
+					{{ element['search'].title }}
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4 filter-mobile-wrapper">
+				<div class="overview-form__toolbar">
+					<span class="overview-form__toolbar__filter-button js-overview-form__toolbar__filter-button">
+						{% include '@reusable-component/svg-icon.twig' with {
                     'attributes': '',
                     'svgIconName': 'filter-icon'
                   } %}
-            {{ "Filter"|t }}
-          </span>
-        </div>
-        <div class="overview-form__search-input">
-          {% if element['facets'].text %}
-            {{ element['facets'].text }}
-            {{ element['search'].search }}
-          {% endif %}
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-3">
-        <div class="overview-form__search-filters js-overview-form__search-filters">
-          <div class="overview-form__search-filters__mobile-header">
-            <div>
-              {{ "Filter"|t }}
-            </div>
-            <div class="js-search-filters-close">
-              {% include '@reusable-component/svg-icon.twig' with {
+						{{ "Filter"|t }}
+					</span>
+				</div>
+				<div class="overview-form__search-input">
+					{% if element['facets'].text %}
+						{{ element['facets'].text }}
+						{{ element['search'].search }}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-3">
+				<div class="overview-form__search-filters js-overview-form__search-filters">
+					<div class="overview-form__search-filters__mobile-header">
+						<div>
+							{{ "Filter"|t }}
+						</div>
+						<div class="js-search-filters-close">
+							{% include '@reusable-component/svg-icon.twig' with {
                 'attributes': '',
                 'svgIconName': 'close'
               } %}
-            </div>
-          </div>
-          <div class="accordion js-accordion">
-            <div class="accordion-buttons">
-              <button id="buttonExpandAll" type="button" class="accordion-button accordion-button__expand">
-                {{ "Expand All"|t }} +
-              </button>
-              <button id="buttonCollapseAll" type="button" class="accordion-button accordion-button__collapse hide">
-                {{ "Collapse All"|t }} -
-              </button>
-            </div>
-            <div class="accordion__items js-accordion__items">
-              {{ element['facets'].field_class }}
-              {{ element['facets'].field_location }}
-              {{ element['facets'].field_season }}
-              {{ element['facets'].field_subject }}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-9">
-        <div class="row">
-          {{ element['content'] }}
-        </div>
-      </div>
-    </div>
-  </div>
-  {{ element['page'] }}
-  {{ element['page_submit'] }}
-  {{ element['form_build_id'] }}
-  {{ element['form_token'] }}
-  {{ element['form_id'] }}
+						</div>
+					</div>
+					<div class="accordion js-accordion">
+						<div class="accordion-buttons">
+							<button id="buttonExpandAll" type="button" class="accordion-button accordion-button__expand">
+								{{ "Expand All"|t }}
+								+
+							</button>
+							<button id="buttonCollapseAll" type="button" class="accordion-button accordion-button__collapse hide">
+								{{ "Collapse All"|t }}
+								-
+							</button>
+						</div>
+						<div class="accordion__items js-accordion__items">
+							{{ element['facets'].field_class }}
+							{{ element['facets'].field_location }}
+							{{ element['facets'].field_season }}
+							{{ element['facets'].field_subject }}
+						</div>
+
+						<div class="custom-accordion-wrapper">
+							<a href="/del" class="button button--green custom-accordion-wrapper-button">Del en ide</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-md-9">
+				<div class="row">
+					{{ element['content'] }}
+				</div>
+			</div>
+		</div>
+	</div>
+	{{ element['page'] }}
+	{{ element['page_submit'] }}
+	{{ element['form_build_id'] }}
+	{{ element['form_token'] }}
+	{{ element['form_id'] }}
 </form>

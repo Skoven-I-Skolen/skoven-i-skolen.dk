@@ -1,0 +1,16 @@
+uuid: f83c92d4-36a4-4d72-8400-685b77dd4e61
+langcode: da
+status: true
+dependencies: {  }
+name: large_sm
+label: 'Stor (SM)'
+effects:
+  489ad458-79fb-4fdd-8b5b-fddd65f2d58b:
+    uuid: 489ad458-79fb-4fdd-8b5b-fddd65f2d58b
+    id: image_scale
+    weight: 1
+    data:
+      width: 943
+      height: null
+      upscale: false
+pipeline: __default__

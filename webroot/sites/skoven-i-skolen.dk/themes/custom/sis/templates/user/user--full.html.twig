@@ -20,6 +20,7 @@
 {{ attach_library('sis/news-page') }}
 {{ attach_library('sis/user-page') }}
 {{ attach_library('sis/lexicon') }}
+{{ attach_library('sis/slider-pager-count') }}
 
 {% set classes = [
   'user-page',
@@ -33,7 +34,6 @@
 			</div>
 			<div class="col-md-8 col-lg-8">
 				<h2>{{ content.field_full_name }}</h2>
-				<h5>{{ content.field_summary }}</h5>
 				<div>{{ content.field_description }}</div>
 				<div>{{ content.field_contact_information }}</div>
 			</div>
@@ -48,10 +48,8 @@
 					</div>
 					<div class="col-xs-12 col-sm-4 col-md-4">
 						<div class="swiper-navigation">
-							<div class="swiper-pagination-wrapper">
-								<div class="swiper-pagination-title">
-									Viser:</div>
-								<div class="swiper-pagination"></div>
+							<div class="slider-pager-count">
+								{{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
@@ -77,10 +75,8 @@
 					</div>
 					<div class="col-xs-12 col-sm-4 col-md-4">
 						<div class="swiper-navigation">
-							<div class="swiper-pagination-wrapper">
-								<div class="swiper-pagination-title">
-									Viser:</div>
-								<div class="swiper-pagination"></div>
+							<div class="slider-pager-count">
+								{{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>

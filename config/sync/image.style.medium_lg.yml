@@ -1,0 +1,18 @@
+uuid: 1aa7ff7d-ebf1-47f4-9a92-6800028acbde
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: HVOGQgVzup9Y6_7ZMZh3N1sjWo1uHHkwXlPSbC1s66U
+name: medium_lg
+label: 'Mellem (LG)'
+effects:
+  3d1ef068-952e-4f5e-abf8-67d03651f1a5:
+    uuid: 3d1ef068-952e-4f5e-abf8-67d03651f1a5
+    id: image_scale
+    weight: 1
+    data:
+      width: 585
+      height: null
+      upscale: false
+pipeline: __default__

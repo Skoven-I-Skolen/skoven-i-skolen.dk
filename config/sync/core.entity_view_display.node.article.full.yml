@@ -16,14 +16,18 @@ dependencies:
     - field.field.node.article.field_colophon_author
     - field.field.node.article.field_colophon_editor
     - field.field.node.article.field_colophon_photographer
+    - field.field.node.article.field_contact_person
+    - field.field.node.article.field_copy_sheet
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
     - field.field.node.article.field_header
+    - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
     - field.field.node.article.field_list_media
     - field.field.node.article.field_location
+    - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_season
     - field.field.node.article.field_section_bg_graphics
@@ -132,6 +136,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_teaching_goals:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
 hidden:
   content_hierarchy: true
   content_moderation_control: true
@@ -159,7 +170,6 @@ hidden:
   field_section_bg_graphics: true
   field_section_bg_graphics_pos: true
   field_subject: true
-  field_teaching_goals: true
   field_time: true
   langcode: true
   lat: true

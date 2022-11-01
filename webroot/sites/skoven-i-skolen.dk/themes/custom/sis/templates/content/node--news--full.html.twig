@@ -69,6 +69,7 @@
 #}
 
 {{ attach_library('sis/news-page') }}
+{{ attach_library('sis/slider-pager-count') }}
 {% if node.field_section_bg_graphics.value %}
   {{ attach_library('sis/section-bg-graphics') }}
 {% endif %}
@@ -167,9 +168,8 @@
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="swiper-navigation">
-              <div class="swiper-pagination-wrapper">
-                <div class="swiper-pagination-title"> Viser:</div>
-                <div class="swiper-pagination"></div>
+              <div class="slider-pager-count">
+                {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
               </div>
               <div class="swiper-button-prev"></div>
               <div class="swiper-button-next"></div>

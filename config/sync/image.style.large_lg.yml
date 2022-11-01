@@ -1,0 +1,18 @@
+uuid: e0d02509-9afb-4203-8610-77c7970fce4a
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: HVOGQgVzup9Y6_7ZMZh3N1sjWo1uHHkwXlPSbC1s66U
+name: large_lg
+label: 'Stor (LG)'
+effects:
+  3d1ef068-952e-4f5e-abf8-67d03651f1a5:
+    uuid: 3d1ef068-952e-4f5e-abf8-67d03651f1a5
+    id: image_scale
+    weight: 1
+    data:
+      width: 875
+      height: null
+      upscale: false
+pipeline: __default__

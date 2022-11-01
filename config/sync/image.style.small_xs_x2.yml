@@ -1,0 +1,16 @@
+uuid: 36df84c5-bf35-4f08-80da-758591e3bc14
+langcode: da
+status: true
+dependencies: {  }
+name: small_xs_x2
+label: 'Lille (XSx2)'
+effects:
+  c020a7e0-3a53-4e50-9ce2-75ffdc812178:
+    uuid: c020a7e0-3a53-4e50-9ce2-75ffdc812178
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: false
+pipeline: __default__
