@@ -51,9 +51,13 @@ function sis_overview_preprocess_overview_list_item(&$variables) {
 function sis_overview_entity_overview_count_options_alter(&$options, &$context) {
   $options = [
     4 => '4',
+    6 => '6',
     8 => '8',
+    9 => '9',
     12 => '12',
+    15 => '15',
     16 => '16',
+    18 => '18',
     20 => '20',
   ];
 }
