@@ -18,7 +18,6 @@ function sis_overview_locale_translation_projects_alter(&$projects) {
 
 
 function sis_overview_theme() {
-
   return [
     'term_overview' => [
       'variables' => ['term' => NULL, 'entities' => []],
