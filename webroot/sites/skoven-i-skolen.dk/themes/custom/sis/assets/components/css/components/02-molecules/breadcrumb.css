@@ -54,3 +54,21 @@
   }
 }
 
+.is_mobile {
+  display: none;
+}
+
+.is_desktop {
+  display: block;
+}
+
+/* display on mobile screen */
+@media (max-width: 767px) {
+.is_mobile {
+  display: block;
+  }
+
+  .is_desktop {
+    display: none;
+  }
+}
