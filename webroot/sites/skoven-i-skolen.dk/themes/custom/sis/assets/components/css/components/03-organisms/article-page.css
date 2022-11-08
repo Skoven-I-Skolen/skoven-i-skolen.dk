@@ -95,6 +95,9 @@
       margin: 0;
       padding: 0;
       word-break: break-word;
+      background-color: #fff;
+      border-bottom: 1px solid #000;
+      width: fit-content;
     }
 
     &__content {
@@ -191,8 +194,10 @@
   -webkit-line-clamp: 11;
   -webkit-box-orient: vertical;
 
+
+
   &--read-more {
-    display: block;
+    display: inline-flex;
     padding-bottom: 15px;
     font-weight: 700;
 
@@ -214,5 +219,18 @@
       transform: rotate(45deg);
       content: "";
     }
+
+
   }
 }
+
+
+  @media print {
+    .undervi-box {
+      display: block;
+      max-height: none;
+    }
+    .undervi-box--read-more{
+      display: none;
+    }
+  }
