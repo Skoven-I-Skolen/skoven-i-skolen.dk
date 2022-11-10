@@ -8,7 +8,7 @@ import Vue from 'vue';
 require('../../../scripts/vue.config')(Vue);
 
 Drupal.behaviors.accordion = {
-  attach(context) {
+  attach(context, settings) {
     const accordions = document.querySelectorAll('.js-accordion:not(.loaded)');
     if (accordions.length === 0) {
       return;

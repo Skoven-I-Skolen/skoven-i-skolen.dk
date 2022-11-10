@@ -17,8 +17,6 @@ function sis_form_node_article_form_alter(&$form, \Drupal\Core\Form\FormStateInt
  */
 function sis_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if ($form_id === 'entity_overview_filter_form') {
-    if (isset($_GET['page'])) {
-      $form["#attached"]["library"][] = 'sis/pager-overview';
-    }
+    $form["#attached"]["library"][] = 'sis/pager-overview';
   }
 }
