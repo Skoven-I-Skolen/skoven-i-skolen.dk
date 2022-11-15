@@ -49,6 +49,7 @@
         "drupal/entity_clone": "^1.0-beta4",
         "drupal/entity_usage": "^2.0-beta3",
         "drupal/field_group": "^3.0",
+        "drupal/field_permissions": "^1.2",
         "drupal/focal_point": "^1.0",
         "drupal/honeypot": "^2.1",
         "drupal/hreflang": "^1.0",

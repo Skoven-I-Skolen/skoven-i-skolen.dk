@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 Drupal.behaviors.latestNews = {
-  attach() {
+  attach(context, settings) {
     const slideLists = document.querySelectorAll('.news-page__latest:not(.loaded)');
     for (let i = 0; i < slideLists.length; i += 1) {
       const slideList = slideLists[i];

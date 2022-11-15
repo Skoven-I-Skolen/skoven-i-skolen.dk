@@ -1,0 +1,20 @@
+uuid: f8a26003-18b6-4ec2-acfd-e1d2635ff233
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_article_image_migrated
+field_name: field_article_image_migrated
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

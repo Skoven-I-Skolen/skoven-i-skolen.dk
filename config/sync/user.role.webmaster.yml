@@ -36,6 +36,7 @@ dependencies:
     - content_translation
     - contextual
     - entity_clone
+    - field_permissions
     - file
     - filter
     - layout_builder
@@ -111,6 +112,7 @@ permissions:
   - 'create content translations'
   - 'create document media'
   - 'create dot_on_map content'
+  - 'create field_header'
   - 'create image media'
   - 'create media'
   - 'create news content'
@@ -197,12 +199,14 @@ permissions:
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit atom'
+  - 'edit field_header'
   - 'edit own almanac content'
   - 'edit own article content'
   - 'edit own audio media'
   - 'edit own blog_post content'
   - 'edit own document media'
   - 'edit own dot_on_map content'
+  - 'edit own field_header'
   - 'edit own image media'
   - 'edit own news content'
   - 'edit own page content'

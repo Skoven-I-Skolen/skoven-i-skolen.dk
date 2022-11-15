@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_image
+    - field.field.node.article.field_article_image_migrated
     - field.field.node.article.field_article_months
     - field.field.node.article.field_article_related
     - field.field.node.article.field_article_type
@@ -15,14 +16,18 @@ dependencies:
     - field.field.node.article.field_colophon_author
     - field.field.node.article.field_colophon_editor
     - field.field.node.article.field_colophon_photographer
+    - field.field.node.article.field_contact_person
+    - field.field.node.article.field_copy_sheet
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
     - field.field.node.article.field_header
+    - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
     - field.field.node.article.field_list_media
     - field.field.node.article.field_location
+    - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_season
     - field.field.node.article.field_section_bg_graphics
@@ -89,6 +94,7 @@ content:
 hidden:
   content_hierarchy: true
   field_article_categories: true
+  field_article_image_migrated: true
   field_article_related: true
   field_article_type: true
   field_class: true

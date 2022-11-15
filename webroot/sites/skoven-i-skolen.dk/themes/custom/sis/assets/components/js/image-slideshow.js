@@ -9,7 +9,7 @@ import FlickityAsNavFor from 'flickity-as-nav-for';
 import 'flickity/css/flickity.css';
 
 Drupal.behaviors.imageSlideshow = {
-  attach(context) {
+  attach(context, settings) {
     const imageSlideShowsWrappers = document.querySelectorAll('.js-image-slideshow-wrapper:not(.loaded)');
     if (imageSlideShowsWrappers.length === 0) {
       return;

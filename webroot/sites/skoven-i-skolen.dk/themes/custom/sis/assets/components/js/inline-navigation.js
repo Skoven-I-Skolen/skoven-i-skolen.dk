@@ -54,7 +54,7 @@ function checkMediaQuery(x) {
 }
 
 Drupal.behaviors.inlineNavigation = {
-  attach(context) {
+  attach(context, settings) {
     const mediaQuery = window.matchMedia('(min-width: 768px)');
     checkMediaQuery(mediaQuery); // Call listener function at run time
     mediaQuery.addListener(checkMediaQuery); // Attach listener function on state changes

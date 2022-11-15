@@ -1,0 +1,103 @@
+<?php
+/**
+ * @file
+ * Implementations for hook_update_N().
+ */
+
+use Drupal\Core\Config\FileStorage;
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update all media entities that doesn't have author.
+ */
+function sis_migration_update_9000(&$sandbox) {
+  $storage = \Drupal::entityTypeManager()->getStorage("media");
+
+  // Initialize some variables during the first pass through.
+  if (!isset($sandbox['total'])) {
+      $ids = $storage->getQuery()
+          ->condition("bundle", "image")
+          ->execute();
+      $sandbox['ids'] = $ids;
+      $sandbox['total'] = count($ids);
+      $sandbox['processed'] = 0;
+  }
+
+  $entities_per_batch = 25;
+  $ids = array_splice($sandbox['ids'], 0, $entities_per_batch);
+
+  /** @var \Drupal\media\Entity\Media[] $entities */
+  $entities = $storage->loadMultiple($ids);
+  
+  foreach ($entities as $entity) {
+    $hasChanges = FALSE;
+    $owner = $entity->getOwner();
+    if (!$owner) {
+      $entity->setOwnerId(1);
+      $hasChanges = TRUE;
+    }
+    
+    if ($hasChanges) {
+      try {
+        $entity->save();
+      } 
+      catch (Exception $ex) {
+        $messenger = \Drupal::messenger();
+        $messenger->addMessage($ex->getMessage(), $messenger::TYPE_WARNING);
+      }
+    }
+  }
+
+  $sandbox['processed'] += $entities_per_batch;
+  $sandbox['#finished'] = empty($sandbox['ids']) ? 1 : $sandbox['processed'] / $sandbox['total'];
+
+  return $sandbox['processed'] . ' entities processed';
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Move current article images to new field.
+ */
+function sis_migration_update_9001(&$sandbox) {
+  $storage = \Drupal::entityTypeManager()->getStorage("node");
+
+  // Initialize some variables during the first pass through.
+  if (!isset($sandbox['total'])) {
+    $ids = $storage->getQuery()
+        ->condition("type", "article")
+        ->execute();
+    $sandbox['ids'] = $ids;
+    $sandbox['total'] = count($ids);
+    $sandbox['processed'] = 0;
+  }
+
+  $entities_per_batch = 25;
+  $ids = array_splice($sandbox['ids'], 0, $entities_per_batch);
+
+  /** @var \Drupal\node\Entity\Node[] $entities */
+  $entities = $storage->loadMultiple($ids);
+  
+  foreach ($entities as $entity) {
+    if ($entity->get("field_article_image")->isEmpty()) {
+      continue;
+    }
+    
+    try {
+      $value = $entity->get("field_article_image")->getValue();
+      $entity->get("field_article_image_migrated")->setValue($value);
+      $entity->get("field_article_image")->setValue(NULL);
+      $entity->save();
+    } 
+    catch (Exception $ex) {
+      $messenger = \Drupal::messenger();
+      $messenger->addMessage($ex->getMessage(), $messenger::TYPE_WARNING);
+    }
+  }
+
+  $sandbox['processed'] += $entities_per_batch;
+  $sandbox['#finished'] = empty($sandbox['ids']) ? 1 : $sandbox['processed'] / $sandbox['total'];
+
+  return $sandbox['processed'] . ' entities processed';
+}
