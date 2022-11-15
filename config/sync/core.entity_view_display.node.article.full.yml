@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_image
+    - field.field.node.article.field_article_image_migrated
     - field.field.node.article.field_article_months
     - field.field.node.article.field_article_related
     - field.field.node.article.field_article_type
@@ -109,7 +110,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_article_image:
     type: entity_reference_entity_view
@@ -119,6 +120,15 @@ content:
       link: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_article_image_migrated:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: article_migrated
+      link: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_description:
     type: basic_string
@@ -141,7 +151,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
 hidden:
   content_hierarchy: true
