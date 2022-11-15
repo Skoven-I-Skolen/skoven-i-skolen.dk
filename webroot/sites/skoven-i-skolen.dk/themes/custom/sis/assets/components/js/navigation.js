@@ -6,7 +6,7 @@
 import HoverIntent from 'hoverintent';
 
 Drupal.behaviors.navigation = {
-  attach(context) {
+  attach(context, settings) {
     const navigation = document.querySelectorAll('.js-navigation:not(.loaded)');
     if (navigation.length === 0) {
       return;

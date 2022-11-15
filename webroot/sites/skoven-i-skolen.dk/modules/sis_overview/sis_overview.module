@@ -18,7 +18,6 @@ function sis_overview_locale_translation_projects_alter(&$projects) {
 
 
 function sis_overview_theme() {
-
   return [
     'term_overview' => [
       'variables' => ['term' => NULL, 'entities' => []],
@@ -51,9 +50,13 @@ function sis_overview_preprocess_overview_list_item(&$variables) {
 function sis_overview_entity_overview_count_options_alter(&$options, &$context) {
   $options = [
     4 => '4',
+    6 => '6',
     8 => '8',
+    9 => '9',
     12 => '12',
+    15 => '15',
     16 => '16',
+    18 => '18',
     20 => '20',
   ];
 }

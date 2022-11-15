@@ -8,7 +8,7 @@ import Vue from 'vue';
 require('../../../scripts/vue.config')(Vue);
 
 Drupal.behaviors.languageMenu = {
-  attach(context) {
+  attach(context, settings) {
     const languageMenu = document.getElementById('js-language-menu');
     if (!languageMenu || languageMenu.classList.contains('loaded')) {
       return;

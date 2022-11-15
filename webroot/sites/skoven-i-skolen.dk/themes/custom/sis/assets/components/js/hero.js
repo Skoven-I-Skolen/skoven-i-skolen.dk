@@ -51,7 +51,7 @@ window.onYouTubePlayerAPIReady = function onYouTubePlayerAPIReady() {
 };
 
 Drupal.behaviors.hero = {
-  attach(context) {
+  attach(context, settings) {
     const heros = document.querySelectorAll('.js-hero:not(.loaded)');
     if (heros.length === 0) {
       return;

@@ -7,7 +7,7 @@ function sis_organization_form_node_article_form_alter(&$form, FormStateInterfac
   $currentUser = \Drupal::currentUser();
 
   if (in_array('organization', $currentUser->getRoles())) {
-    $form['field_header']['#access'] = FALSE;
+    // $form['field_header']['#access'] = FALSE;
     $form['revision_log']['#access'] = FALSE;
 
     $type_from_url = Drupal::requestStack()->getCurrentRequest()->get('type');

@@ -69,9 +69,10 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     if (isset($form["field_graphics"]['#access'])) {
       $form["field_graphics"]["#access"] = FALSE;
     }
-    if (isset($form["field_header"]['#access'])) {
-      $form["field_header"]['#access'] = FALSE;
-    }
+    // The next condition will be controlled from Field Permission module.
+    // if (isset($form["field_header"]['#access'])) {
+    //   $form["field_header"]['#access'] = FALSE;
+    // }
     if (isset($form["revision_information"]['#access'])) {
       $form["revision_information"]['#access'] = FALSE;
     }

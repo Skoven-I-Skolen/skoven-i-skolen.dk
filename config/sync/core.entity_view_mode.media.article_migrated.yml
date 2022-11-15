@@ -1,0 +1,10 @@
+uuid: d438d01b-acee-4048-a59f-11ada7df977d
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+id: media.article_migrated
+label: 'Article (Migrated)'
+targetEntityType: media
+cache: true

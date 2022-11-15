@@ -81,7 +81,7 @@
 
 
         <div class="row">
-          {{ element['content']|without('total') }}
+          {{ element['content'] }}
         </div>
       </div>
     </div>
@@ -92,10 +92,3 @@
   {{ element['form_token'] }}
   {{ element['form_id'] }}
 </form>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      {{ element.most_popular }}
-    </div>
-  </div>
-</div>

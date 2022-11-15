@@ -14,15 +14,12 @@
 		<div{{attributes.addClass('breadcrumb')}}>
 			<ol{{items_attributes.addClass('breadcrumb__items')}}>
 				{% for item in breadcrumb %}
-					{# if breadcrumbs has more than 2 items change first item to ... for mobile onkly #}
+					{# if breadcrumbs has more than 2 items change first item to ... for mobile only #}
 					{% if loop.index == 1 and loop.length > 2 %}
 						<li class="breadcrumb__item">
 							<a href="{{ item.url }}" class="breadcrumb__link">
-								{% if is_mobile() %}
-									<span class="breadcrumb__text">...</span>
-								{% else %}
-									<span class="breadcrumb__text">{{item.text}}</span>
-								{% endif %}
+								<span class="breadcrumb__text is_mobile">...</span>
+								<span class="breadcrumb__text is_desktop">{{item.text}}</span>
 							</a>
 						</li>
 					{% else %}

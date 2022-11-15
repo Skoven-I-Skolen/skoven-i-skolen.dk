@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 Drupal.behaviors.entitySlideshow = {
-  attach() {
+  attach(context, settings) {
     const entitySlideShowsWrappers = document.querySelectorAll('.js-entity-slideshow-wrapper:not(.loaded)');
     for (let i = 0; i < entitySlideShowsWrappers.length; i += 1) {
       const slideshow = entitySlideShowsWrappers[i];
