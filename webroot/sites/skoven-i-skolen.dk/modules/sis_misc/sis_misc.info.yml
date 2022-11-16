@@ -1,0 +1,7 @@
+name: SIS Miscellaneous
+description: Miscellaneous
+package: Skoven i Skolen
+type: module
+core_version_requirement: ^8 || ^9
+dependencies:
+ - filter
