@@ -1,7 +1,9 @@
 uuid: dec71ffd-ea79-4f2d-b25c-96bc67b31b63
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - sis_misc
 name: 'Begrænset HTML med link'
 format: limited_html_link
 weight: -10
@@ -15,3 +17,9 @@ filters:
       allowed_html: '<a href hreflang>'
       filter_html_help: true
       filter_html_nofollow: false
+  filter_responsive_table:
+    id: filter_responsive_table
+    provider: sis_misc
+    status: true
+    weight: 0
+    settings: {  }

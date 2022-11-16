@@ -91,6 +91,11 @@ table {
   border-collapse: collapse !important;
 }
 
+.table-responsive {
+  max-width: calc(100vw - 50px);
+  overflow: auto;
+}
+
 #drupal-modal .section {
   width: 100%;
   padding-top: 0 !important;
