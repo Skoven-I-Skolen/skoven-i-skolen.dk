@@ -1,0 +1,33 @@
+uuid: 08df16e7-821b-4b10-b976-67f455424b50
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.twentythree.field_media_oembed_sis_custom
+    - image.style.medium
+    - media.type.twentythree
+  module:
+    - image
+id: media.twentythree.media_library
+targetEntityType: media
+bundle: twentythree
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_oembed_sis_custom: true
+  langcode: true
+  name: true
+  uid: true

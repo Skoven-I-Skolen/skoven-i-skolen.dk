@@ -11,6 +11,7 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - media.type.sis_custom_video
+    - media.type.twentythree
     - media.type.video
     - node.type.almanac
     - node.type.article
@@ -112,6 +113,7 @@ permissions:
   - 'create content translations'
   - 'create document media'
   - 'create dot_on_map content'
+  - 'create field_article_related'
   - 'create field_header'
   - 'create image media'
   - 'create media'
@@ -169,6 +171,7 @@ permissions:
   - 'delete own page content'
   - 'delete own remote_video media'
   - 'delete own sis_custom_video media'
+  - 'delete own twentythree media'
   - 'delete own video media'
   - 'delete own webform'
   - 'delete own webform submission'
@@ -195,10 +198,12 @@ permissions:
   - 'edit any page content'
   - 'edit any remote_video media'
   - 'edit any sis_custom_video media'
+  - 'edit any twentythree media'
   - 'edit any video media'
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit atom'
+  - 'edit field_article_related'
   - 'edit field_header'
   - 'edit own almanac content'
   - 'edit own article content'
@@ -206,12 +211,14 @@ permissions:
   - 'edit own blog_post content'
   - 'edit own document media'
   - 'edit own dot_on_map content'
+  - 'edit own field_article_related'
   - 'edit own field_header'
   - 'edit own image media'
   - 'edit own news content'
   - 'edit own page content'
   - 'edit own remote_video media'
   - 'edit own sis_custom_video media'
+  - 'edit own twentythree media'
   - 'edit own video media'
   - 'edit own webform'
   - 'edit own webform submission'

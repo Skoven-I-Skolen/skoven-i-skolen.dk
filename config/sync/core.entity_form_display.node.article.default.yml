@@ -105,8 +105,7 @@ third_party_settings:
         direction: horizontal
         width_breakpoint: 640
     group_categorization:
-      children:
-        - group_categories
+      children: {  }
       label: Kategorisering
       region: content
       parent_name: group_article_metadata
@@ -436,9 +435,9 @@ third_party_settings:
         - group_season
         - group_month
       label: Kategorier
-      region: hidden
-      parent_name: group_categorization
-      weight: 13
+      region: content
+      parent_name: ''
+      weight: 20
       format_type: tabs
       format_settings:
         classes: ''
@@ -495,6 +494,16 @@ content:
     weight: 18
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_article_related:
+    type: entity_reference_autocomplete
+    weight: 21
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_article_type:
     type: options_select
@@ -777,4 +786,3 @@ hidden:
   content_hierarchy: true
   field_article_categories: true
   field_article_image_migrated: true
-  field_article_related: true

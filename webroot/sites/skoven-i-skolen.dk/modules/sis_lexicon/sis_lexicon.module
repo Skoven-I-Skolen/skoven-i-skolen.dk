@@ -52,7 +52,9 @@ function sis_lexicon_preprocess_block__inline_block__lexicon_teaser(&$variables)
 
   $initialLetter = $variables['content']['#block_content']
     ->get('field_lexicon_initial_letter')->value;
-  $variables['articles'] = $lexiconContentDeliveryService->getArticles($initialLetter);
+  if ($initialLetter !== NULL) {
+    $variables['articles'] = $lexiconContentDeliveryService->getArticles($initialLetter);
+  }
   $variables['articles']['#letter'] = NULL;
 }
 

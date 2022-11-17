@@ -1,0 +1,28 @@
+uuid: da5a40b9-45bf-4945-98be-5ca43f8aa744
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.twentythree.field_media_oembed_sis_custom
+    - media.type.twentythree
+id: media.twentythree.media_library
+targetEntityType: media
+bundle: twentythree
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_oembed_sis_custom: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

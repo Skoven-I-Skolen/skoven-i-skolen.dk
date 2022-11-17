@@ -1,0 +1,20 @@
+uuid: 1f8a0122-8fde-4bea-818b-11dd970914b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - oembed_providers.bucket.sis_custom
+  module:
+    - oembed_providers
+id: twentythree
+label: TwentyThree
+description: 'Videoer fra TwentyThree.'
+source: 'oembed:sis_custom'
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_oembed_sis_custom
+  thumbnails_directory: 'public://oembed_thumbnails/[date:custom:Y-m]'
+  providers:
+    - TwentyThree
+field_map: {  }

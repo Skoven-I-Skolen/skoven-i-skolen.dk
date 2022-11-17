@@ -3,8 +3,12 @@ langcode: da
 status: true
 dependencies:
   module:
+    - field_permissions
     - media
     - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
 _core:
   default_config_hash: hjkGaAi8NTPEocjmRz8aoQJBlkmC0QACQztwO_XickI
 id: paragraph.field_background

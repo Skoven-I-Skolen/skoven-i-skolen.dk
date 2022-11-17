@@ -1,0 +1,29 @@
+uuid: d115c2cc-e218-484d-a44f-4f32fa4e721c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.twentythree.field_media_oembed_sis_custom
+    - media.type.twentythree
+  module:
+    - media
+id: media.twentythree.default
+targetEntityType: media
+bundle: twentythree
+mode: default
+content:
+  field_media_oembed_sis_custom:
+    type: oembed
+    label: visually_hidden
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

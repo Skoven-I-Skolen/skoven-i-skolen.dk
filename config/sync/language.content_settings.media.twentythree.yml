@@ -1,0 +1,11 @@
+uuid: f8852454-e4d5-4cea-8724-eb5c61dcb21f
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.twentythree
+id: media.twentythree
+target_entity_type_id: media
+target_bundle: twentythree
+default_langcode: site_default
+language_alterable: false

@@ -206,6 +206,9 @@
             },
             "drupal/webp": {
                 "(#3153137) Using Image Widget Crop in responsive images does not refresh webp image": "https://www.drupal.org/files/issues/2021-05-04/webp-support-image-crop-3153137-11.patch"
+            },
+            "drupal/cookiebot": {
+                "(#3091260) Blockmode 'Auto' will not work in Drupal 8 with core's domready library": "https://www.drupal.org/files/issues/2020-10-08/cookiebot-blocking-auto-mode.patch"
             }
         }
     }

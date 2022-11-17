@@ -16,6 +16,7 @@ master:
     layout:
       dist/components/css/layout/grid.css: {}
   dependencies:
+    - core/drupal.ajax
     - sis/theme-primary
     - sis/theme-green
 

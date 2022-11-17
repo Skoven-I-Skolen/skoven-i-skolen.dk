@@ -1,0 +1,19 @@
+uuid: 43f5923b-6873-455a-b31d-615ad77b66a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_oembed_sis_custom
+    - media.type.twentythree
+id: media.twentythree.field_media_oembed_sis_custom
+field_name: field_media_oembed_sis_custom
+entity_type: media
+bundle: twentythree
+label: 'SiS Custom URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

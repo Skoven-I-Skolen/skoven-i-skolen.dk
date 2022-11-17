@@ -9,6 +9,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - content_moderation
+    - field_permissions
     - filter
     - media
     - node
@@ -30,5 +31,7 @@ permissions:
   - 'use text format basic_html'
   - 'view any organization profile'
   - 'view any profile'
+  - 'view field_article_related'
   - 'view media'
+  - 'view own field_article_related'
   - 'view the administration theme'
