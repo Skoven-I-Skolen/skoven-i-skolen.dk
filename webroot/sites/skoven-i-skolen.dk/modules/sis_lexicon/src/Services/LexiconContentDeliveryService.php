@@ -4,6 +4,7 @@ namespace Drupal\sis_lexicon\Services;
 
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Link;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\sis_lexicon\Repository\LexiconRepository;
 
@@ -35,9 +36,16 @@ class LexiconContentDeliveryService {
 
     foreach ($alphapet as $letter) {
       $params['query']['letter'] = $letter;
-      $alphapet_links[] = Link::createFromRoute($letter, 'sis_lexicon.get_articles', [],
-        $params
-      );
+      $url = Url::fromRoute('sis_lexicon.get_articles', $params['query']);
+      $alphapet_links[] = [
+        '#type' => 'html_tag',
+        '#tag' => 'button',
+        '#value' => $letter,
+        '#attributes' => [
+          'href' => $url->toString(),
+          'class' => 'use-ajax',
+        ],
+      ];
     }
 
     return [

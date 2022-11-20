@@ -173,11 +173,16 @@
         margin-right: 18px;
         margin-bottom: 12px;
 
-        a {
+        button {
           font-weight: var(--base-font-weight);
           font-size: var(--base-font-size-xlarge);
           font-family: var(--heading-font-family);
           text-underline-offset: 6px;
+          text-decoration-skip-ink: auto;
+          text-decoration: underline;
+          color: var(--theme-link-color);
+          padding: 0;
+          cursor: pointer;
 
           @media (--viewport-md-min) {
             font-size: var(--base-font-size-xxlarge);

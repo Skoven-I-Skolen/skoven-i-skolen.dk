@@ -6,6 +6,7 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\filter\FilterProcessResult;
 use Drupal\filter\Plugin\FilterBase;
+use Drupal\image\Entity\ImageStyle as IS;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -25,18 +26,30 @@ class ImageStyle extends FilterBase implements ContainerFactoryPluginInterface {
   protected $storage;
 
   /**
+   * @var \Drupal\Core\File\FileUrlGenerator;
+   */
+  protected $fileUrlGenerator;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, $entity_type_manager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, $entity_type_manager, $file_url_generator) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->storage = $entity_type_manager->getStorage("file");
+    $this->fileUrlGenerator = $file_url_generator;
   }
 
   /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static($configuration, $plugin_id, $plugin_definition, $container->get("entity_type.manager"));
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get("entity_type.manager"),
+      $container->get("file_url_generator")
+    );
   }
 
   /**
@@ -45,21 +58,27 @@ class ImageStyle extends FilterBase implements ContainerFactoryPluginInterface {
   public function process($text, $langcode) {
     $result = new FilterProcessResult($text);
 
-    if (stristr($text, 'data-image-style') !== FALSE) {
+    if (stristr($text, 'data-image-size') !== FALSE) {
       $dom = Html::load($text);
       $xpath = new \DOMXPath($dom);
-      foreach ($xpath->query('//*[@data-image-style]') as $node) {
+      foreach ($xpath->query('//*[@data-image-size]') as $node) {
         // Read the data-align attribute's value, then delete it.
-        $style = $node->getAttribute('data-image-style');
+        $style = $node->getAttribute('data-image-size');
         $uuid = $node->getAttribute('data-entity-uuid');
-        $node->removeAttribute('data-image-style');
+
+        $node->removeAttribute('data-image-size');
+        $node->removeAttribute('data-entity-type');
+        $node->removeAttribute('data-entity-uuid');
 
         $file = $this->storage->loadByProperties(['uuid' => $uuid]);
         $file = reset($file);
+        $fileUri = $file->getFileUri();
 
         if (isset($file) && in_array($style, ['small', 'medium', 'large'])) {
-          $style = ImageStyle::load($style);
-          $src = $style->buildUrl($file->getFileUri());
+          $style = IS::load($style);
+          $uri = $style->buildUri($fileUri);
+          $style->createDerivative($fileUri, $uri);
+          $src = $this->fileUrlGenerator->generateString($uri);
           $node->setAttribute('src', $src);
         }
       }

@@ -1,0 +1,16 @@
+uuid: b9671950-540b-498c-ab9f-fc9cfd2f3cf7
+langcode: da
+status: true
+dependencies: {  }
+name: article
+label: Article
+effects:
+  81410c95-8b7b-440b-86ce-b8dc55053d08:
+    uuid: 81410c95-8b7b-440b-86ce-b8dc55053d08
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 250
+      upscale: false
+pipeline: __default__

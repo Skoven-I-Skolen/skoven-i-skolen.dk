@@ -104,11 +104,11 @@
             {{ content.field_description }}
           </div>
           <div class="article-page__image">
-		  	{% if content.field_article_image|render is empty %}
+		  	    {% if content.field_article_image|render is empty %}
             	{{ content.field_article_image_migrated }}
-			{% else %}
+			      {% else %}
             	{{ content.field_article_image }}
-			{% endif %}
+			      {% endif %}
           </div>
           {{ content|without(['field_list_date', 'field_header', 'title', 'field_article_image_migrated', 'field_article_image', 'field_description']) }}
         </div>

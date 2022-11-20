@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * Help functions.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function sis_misc_form_editor_image_dialog_alter(&$form, FormStateInterface $form_state) {
+  if (isset($form_state->getUserInput()['editor_object'])) {
+    // By convention, the data that the text editor sends to any dialog is in
+    // the 'editor_object' key. And the image dialog for text editors expects
+    // that data to be the attributes for an <img> element.
+    $image_element = $form_state->getUserInput()['editor_object'];
+  }
+  else {
+    // Retrieve the image element's attributes from form state.
+    $image_element = $form_state->get('image_element') ?: [];
+  }
+
+  $form['attributes']['data-image-size'] = [
+    '#type' => 'select',
+    '#options' => [
+      'small' => t('Small'),
+      'medium' => t('Medium'),
+      'large' => t('Large'),
+    ],
+    '#title' => t('Image size'),
+    '#default_value' => $image_element['data-image-size'] ?? ''
+  ];
+  $form['align']['#access'] = FALSE;
+}
