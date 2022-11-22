@@ -71,12 +71,15 @@
 
 {% set subject_items = content.field_subject['#items'] %}
 
+{% set typeAltrerLink = node.field_article_type.entity.field_page_link.0.url %}
+{% set typeUrl = path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_article_type.entity.id}) %}
+
 <div class="inspiration-overview__item">
   <div class="inspiration-overview__item-inner">
     <a href="{{ url }}" class="inspiration-overview__item-link" aria-label="{{ node.field_article_type.entity.name.value }}">
       <div class="inspiration-overview__image">
         {{ content.field_list_media }}
-        <a href="/{{ url|split('/')[1] }}" aria-label="{{ node.field_article_type.entity.name.value }}">
+        <a href="{{ typeAltrerLink ?? typeUrl }}" aria-label="{{ node.field_article_type.entity.name.value }}">
           <div class="inspiration-overview__type">
             {{ node.field_article_type.entity.name.value }}
           </div>

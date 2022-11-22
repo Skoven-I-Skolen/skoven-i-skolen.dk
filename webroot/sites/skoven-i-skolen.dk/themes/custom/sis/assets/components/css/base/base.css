@@ -67,6 +67,18 @@ figure {
   width: 100%;
   margin: 0;
 
+  &.align-left {
+    text-align: left;
+    width: auto;
+  }
+  &.align-right {
+    text-align: right;
+    width: auto;
+  }
+  &.align-center {
+    text-align: center;
+  }
+
   img {
     display: block;
     max-width: 100%;
@@ -77,6 +89,8 @@ figure {
 
   figcaption {
     margin-top: 8px;
+    font-size: 0.8em;
+    color: gray;
   }
 }
 

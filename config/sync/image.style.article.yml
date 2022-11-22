@@ -1,16 +1,18 @@
 uuid: b9671950-540b-498c-ab9f-fc9cfd2f3cf7
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - focal_point
 name: article
 label: Article
 effects:
-  81410c95-8b7b-440b-86ce-b8dc55053d08:
-    uuid: 81410c95-8b7b-440b-86ce-b8dc55053d08
-    id: image_scale
-    weight: 1
+  e3ce9605-fc87-4688-8524-75dd0efb29d6:
+    uuid: e3ce9605-fc87-4688-8524-75dd0efb29d6
+    id: focal_point_scale_and_crop
+    weight: 2
     data:
-      width: null
-      height: 250
-      upscale: false
+      width: 900
+      height: 400
+      crop_type: focal_point
 pipeline: __default__

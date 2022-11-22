@@ -8,11 +8,13 @@ dependencies:
     - field.field.taxonomy_term.article_types.field_link_liste_headline
     - field.field.taxonomy_term.article_types.field_overview
     - field.field.taxonomy_term.article_types.field_overview_headline
+    - field.field.taxonomy_term.article_types.field_page_link
     - taxonomy.vocabulary.article_types
   module:
     - layout_builder
     - layout_builder_restrictions
     - layout_discovery
+    - link
     - sis_overview
     - text
 third_party_settings:
@@ -48,6 +50,26 @@ third_party_settings:
               block_revision_id: 152
               block_serialized: null
             weight: 1
+            additional: {  }
+          1cc3f2d3-cbfd-4fd8-b49e-735c360c55d7:
+            uuid: 1cc3f2d3-cbfd-4fd8-b49e-735c360c55d7
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:article_types:field_page_link'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 2
             additional: {  }
         third_party_settings: {  }
       -
@@ -108,6 +130,18 @@ content:
       view_mode: list
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_page_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   field_link_liste_headline: true
