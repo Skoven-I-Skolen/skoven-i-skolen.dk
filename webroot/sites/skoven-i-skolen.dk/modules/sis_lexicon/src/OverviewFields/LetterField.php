@@ -20,7 +20,7 @@ class LetterField implements OverviewFieldInfoInterface {
   }
 
   public function getWidgets(): array {
-    return ['radios'];
+    return ['radios' => t('Radios')];
   }
 
   public function isBase(): bool {
