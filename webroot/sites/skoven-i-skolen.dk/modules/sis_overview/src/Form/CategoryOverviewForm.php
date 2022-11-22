@@ -11,13 +11,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class CategoryOverviewForm extends OverviewFilterForm {
 
-  static public function create(ContainerInterface $container) {
-    return new static(
-      $container->get('entity_overview.manager'),
-      $container->get('request_stack')
-    );
-  }
-
   public function buildForm(array $form, FormStateInterface $form_state, OverviewFilter $filter = NULL, $headline = '') {
     $form = parent::buildForm($form, $form_state, $filter);
 
@@ -68,17 +61,6 @@ class CategoryOverviewForm extends OverviewFilterForm {
     $form['content']['pager']['#quantity'] = 5;
 
     return $form;
-  }
-
-  protected function buildEntitiesInContent(array &$content, array $entities, OverviewFilter $filter) {
-    $content['content'] = [
-      '#type' => 'markup',
-      '#markup' => t('Ingen resultater fundet'),
-    ];
-
-    if ($entities) {
-      parent::buildEntitiesInContent($content, $entities, $filter);
-    }
   }
 
 }
