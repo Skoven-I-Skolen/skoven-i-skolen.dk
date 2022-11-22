@@ -488,7 +488,7 @@ form-select:
 pager-overview:
   version: VERSION
   js:
-    dist/components/js/pager-overview.js: {}
+    js/pager-overview.js: {}
   dependencies:
     - core/drupal
 
