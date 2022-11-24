@@ -110,7 +110,7 @@
             	{{ content.field_article_image }}
 			      {% endif %}
           </div>
-          {{ content|without(['field_list_date', 'field_header', 'title', 'field_article_image_migrated', 'field_article_image', 'field_description']) }}
+          {{ content|without(['field_list_date', 'field_header', 'title', 'field_article_image_migrated', 'field_article_image', 'field_description', 'field_article_related']) }}
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-lg-offset-1 article-content-sidebar">
@@ -379,8 +379,41 @@
 				</div>
 			</div>
 		</div>
-		{% if related %}
-			<div class="article-page__related section section--spacing-bottom-none">
+
+    {% if content.field_article_related | render is not empty %}
+      <div class="article-page__related section section--spacing-bottom-none">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-8">
+            <div class="article-page__related-header">
+              <h3>Måske du også leder efter...</h3>
+              <p>Gå på opdagelse i vores aktiviteter og materialer og find lige det, der passer til din undervisning.</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+
+            <div class="swiper-navigation">
+              {% if content.field_article_related|length > 0 %}
+                <div class="slider-pager-count">
+                  {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
+                </div>
+              {% endif %}
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="article-page__related-items js-article-page__related-items swiper">
+              <div class="swiper-wrapper">
+                {% for key, item in content.field_article_related if key|first != '#' %}
+                  <div class="inspiration-overview__item">{{ item }}</div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+		{% elseif related %}
+      <div class="article-page__related section section--spacing-bottom-none">
 				<div class="row">
 					<div class="col-xs-12 col-sm-8 col-md-8">
 						<div class="article-page__related-header">
@@ -400,7 +433,7 @@
 							<div class="swiper-button-next"></div>
 						</div>
 					</div>
-					<div class="col-xs-12">
+          <div class="col-xs-12">
 						<div class="article-page__related-items js-article-page__related-items swiper">
 							<div class="swiper-wrapper">
 								{{ related }}

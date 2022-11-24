@@ -66,17 +66,15 @@ hr {
 figure {
   width: 100%;
   margin: 0;
-
-  &.align-left {
-    text-align: left;
-    width: auto;
-  }
+  text-align: left;
+  width: auto;
   &.align-right {
     text-align: right;
     width: auto;
   }
   &.align-center {
     text-align: center;
+    width: 100%;
   }
 
   img {
