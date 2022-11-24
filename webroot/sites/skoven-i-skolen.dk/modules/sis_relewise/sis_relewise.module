@@ -109,6 +109,14 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
         ->getValue()['value']);
       $content->addData('field_list_date', $dateformat->getTimestamp());
     }
+    if ($node->hasField('field_search_exclude') && !$node->get('field_search_exclude')
+        ->isEmpty()) {
+      if ($node->get('field_list_date')
+        ->first()
+        ->getValue()['value'] == 1) {
+        $content = NULL;
+      }
+    }
   }
   elseif ($entity->getEntityTypeId() == 'profile') {
     /** @var \Drupal\profile\Entity\Profile $profile */
