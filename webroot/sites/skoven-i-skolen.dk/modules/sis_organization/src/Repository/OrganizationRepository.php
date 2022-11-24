@@ -23,7 +23,9 @@ class OrganizationRepository {
 
   public function getOrganizations(int $limit = 10, int $page = 0) {
     $query = $this->entityTypeManager->getStorage('profile')->getQuery();
+    $query->accessCheck(TRUE);
     $query->condition('status', NodeInterface::PUBLISHED);
+    $query->condition('uid.entity:user.roles', 'organization');
 
     if ($page > 0) {
         $query->pager($limit, $page);
@@ -36,7 +38,9 @@ class OrganizationRepository {
   public function getNumberOfOrganizations() {
     return $this->entityTypeManager->getStorage('profile')
       ->getQuery()
+      ->accessCheck(TRUE)
       ->condition('status', NodeInterface::PUBLISHED)
+      ->condition('uid.entity:user.roles', 'organization')
       ->count()
       ->execute();
   }

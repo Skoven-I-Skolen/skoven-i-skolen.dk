@@ -4,7 +4,11 @@ status: true
 dependencies:
   module:
     - block_content
+    - field_permissions
     - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
 id: block_content.field_lexicon_initial_letter
 field_name: field_lexicon_initial_letter
 entity_type: block_content

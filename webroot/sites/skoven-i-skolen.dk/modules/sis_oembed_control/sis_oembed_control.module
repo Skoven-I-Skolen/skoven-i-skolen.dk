@@ -1,0 +1,131 @@
+<?php
+
+use Drupal\Component\Utility\NestedArray;
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FormatterInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_field_formatter_settings_summary_alter().
+ *
+ * @param $summary
+ * @param $context
+ */
+function sis_oembed_control_field_formatter_settings_summary_alter(&$summary, $context) {
+  $settings = $context['formatter']->getThirdPartySettings('sis_oembed_control');
+
+  // Bail if no modal field formatter settings found.
+  if (!$settings) {
+    return;
+  }
+
+  $options = implode(', ', array_map(function($value, $key) {
+    return $key . ': ' . $value;
+  }, $settings, array_keys($settings)));
+  $summary[] = [
+    '#markup' => t('Oembed control: @options', ['@options' => $options])
+  ];
+}
+
+/**
+ * Implements hook_field_formatter_third_party_settings_form().
+ *
+ * @param \Drupal\Core\Field\FormatterInterface $plugin
+ * @param \Drupal\Core\Field\FieldDefinitionInterface $field_definition
+ * @param $view_mode
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ */
+function sis_oembed_control_field_formatter_third_party_settings_form(FormatterInterface $plugin, FieldDefinitionInterface $field_definition, $view_mode, $form, FormStateInterface $form_state) {
+  $element = [];
+
+  if ($plugin->getPluginId() == 'oembed') {
+    // We initialize default settings.
+    if (!$settings = $plugin->getThirdPartySettings('sis_oembed_control')) {
+      $settings = [
+        'video_autoplay' => FALSE,
+      ];
+    }
+
+    $element['video_autoplay'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Autoplay video'),
+      '#default_value' => $settings['video_autoplay'],
+      '#description' => t('Autoplay embedded video (not available for all providers).'),
+    ];
+
+    // We clean up empty field values (courtesy of linked_field module).
+    $element['#element_validate'][] = 'sis_oembed_control_form_element_validate';
+  }
+
+  return $element;
+}
+
+/**
+ * We misuse the validation handler to clear out disabled values to keep
+ * the third party settings array clean.
+ *
+ * @param $element
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ */
+function sis_oembed_control_form_element_validate($element, FormStateInterface $form_state) {
+  $parents = $form_state->getTriggeringElement()['#parents'];
+  $parents = array_slice($parents, 0, 3);
+  $settings = NestedArray::getValue(
+    $form_state->getValues(),
+    $parents
+  );
+
+  if (!isset($settings['third_party_settings']['sis_oembed_control'])) {
+    return;
+  }
+  // Remove third party settings if not activated.
+  $active_settings = array_filter($settings['third_party_settings']['sis_oembed_control'], function($value) {
+    return $value == TRUE;
+  });
+  if (empty($active_settings)) {
+    unset($settings['third_party_settings']['sis_oembed_control']);
+    // Set adjusted settings back into form state.
+    $form_state->setValue($parents, $settings);
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+
+function sis_oembed_control_preprocess_field(&$variables) {
+  if ($variables['element']['#formatter'] == 'oembed') {
+    $entity = $variables['element']['#object'];
+    $view_mode = $variables['element']['#view_mode'];
+    $field_name = $variables['element']['#field_name'];
+
+    // get the field formatter settings...
+    $entity_display = EntityViewDisplay::collectRenderDisplay($entity, $view_mode);
+    $field_display = $entity_display->getComponent($field_name);
+
+    foreach ($variables['items'] as &$item) {
+      $url = Url::fromUri('internal:' . $item['content']['#attributes']['src']);
+      $query = $url->getOption('query');
+
+      $provider = \Drupal::service('media.oembed.url_resolver')->getProviderByUrl($query['url']);
+      $query['sis_oembed_control']['provider_name'] = $provider->getName();
+      if (array_key_exists('sis_oembed_control', $field_display['third_party_settings'])) {
+        $query['sis_oembed_control']['settings'] = $field_display['third_party_settings']['sis_oembed_control'];
+      }
+      $url->setOption('query', $query);
+
+      $item['content']['#attributes']['src'] = $url->toString();
+    }
+
+  }
+}
+
+function sis_oembed_control_oembed_resource_url_alter(array &$parsed_url) {
+  $resource_url = UrlHelper::parse($parsed_url['query']['url']);
+  $parsed_url['query']['url'] = $resource_url['path'];
+  $parsed_url['query'] = array_merge($parsed_url['query'], $resource_url['query']);
+}

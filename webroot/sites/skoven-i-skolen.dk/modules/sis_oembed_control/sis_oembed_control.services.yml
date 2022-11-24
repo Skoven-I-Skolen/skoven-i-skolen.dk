@@ -1,0 +1,6 @@
+services:
+  sis_oembed_control.route_subscriber:
+    class: '\Drupal\sis_oembed_control\EventSubscriber\MediaOembedControlRouteSubscriber'
+    tags:
+      - { name: 'event_subscriber' }
+

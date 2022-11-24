@@ -1,0 +1,5 @@
+name: SIS oEmbed Control
+type: module
+description: Provides control options for oembed content.
+core_version_requirement: ^8 || ^9 || ^10
+package: Skoven i Skolen

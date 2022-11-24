@@ -120,6 +120,7 @@ module:
   sis_migration: 0
   sis_misc: 0
   sis_news: 0
+  sis_oembed_control: 0
   sis_organization: 0
   sis_overview: 0
   sis_relewise: 0
