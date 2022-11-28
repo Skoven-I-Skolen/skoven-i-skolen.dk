@@ -153,6 +153,7 @@
     @media (--viewport-md-min) {
       padding-right: 60px;
       padding-left: 60px;
+      height: auto;
     }
 
     .appetiser__image-wrapper {

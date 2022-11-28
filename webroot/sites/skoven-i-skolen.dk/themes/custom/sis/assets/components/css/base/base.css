@@ -63,19 +63,51 @@ hr {
 }
 
 /* Image handling */
+img {
+  &.align-left {
+    float: none;
+    margin-right: auto;
+    margin-left: 0;
+    display: block;
+  }
+  &.align-center {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+  &.align-right {
+    float: none;
+    margin-right: 0;
+    margin-left: auto;
+    display: block;
+  }
+}
 figure {
   width: 100%;
   margin: 0;
   text-align: left;
   width: auto;
-  &.align-right {
-    text-align: right;
+  &.align-left {
+    text-align: left;
     width: auto;
+    float: none;
+    img {
+      margin-left: 0 !important;
+    }
   }
   &.align-center {
     text-align: center;
     width: 100%;
   }
+  &.align-right {
+    text-align: right;
+    width: auto;
+    float: none;
+    img {
+      margin-right: 0 !important;
+    }
+ }
 
   img {
     display: block;
