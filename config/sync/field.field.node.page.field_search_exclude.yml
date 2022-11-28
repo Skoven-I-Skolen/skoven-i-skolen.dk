@@ -1,0 +1,23 @@
+uuid: 9d79a6a1-93bd-4a7e-9355-1db34ec60c3f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_search_exclude
+    - node.type.page
+id: node.page.field_search_exclude
+field_name: field_search_exclude
+entity_type: node
+bundle: page
+label: 'Ekskludér fra søgning'
+description: 'Vælg hvis siden ikke skal kunne dukke op som et søgeresultat.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Tilsluttet
+  off_label: Afbrudt
+field_type: boolean
