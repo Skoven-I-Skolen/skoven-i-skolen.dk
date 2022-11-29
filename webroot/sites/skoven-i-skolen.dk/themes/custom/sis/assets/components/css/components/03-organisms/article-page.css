@@ -74,6 +74,9 @@
 @media print {
   @page {
     size: a4;
+    /* stylelint-disable */
+    margin: 1.5cm;
+    /* stylelint-enable */
   }
 
   * {
@@ -81,26 +84,35 @@
     margin: 0;
   }
 
+  table {
+    page-break-before: always;
+  }
+
   body {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+    display: inline;
     padding: 0;
     margin: 0;
     background: #fff;
   }
 
   .facts-box {
-    display: grid;
+    page-break-before: always; // force page break before facts box
+    display: inline;
     margin: 0;
     padding: 0;
     box-shadow: none;
 
     &__title {
       display: block;
-      width: fit-content;
       margin: 0;
       padding: 0;
       word-break: break-word;
-      background-color: #fff;
+      background-color: var(--color-yellow); /* stylelint-disable-line */
       border-bottom: 1px solid #000;
+      width: fit-content;
     }
 
     &__content {
@@ -197,6 +209,8 @@
   -webkit-line-clamp: 11;
   -webkit-box-orient: vertical;
 
+
+
   &--read-more {
     display: inline-flex;
     padding-bottom: 15px;
@@ -220,16 +234,18 @@
       transform: rotate(45deg);
       content: "";
     }
+
+
   }
 }
 
-@media print {
-  .undervi-box {
-    display: block;
-    max-height: none;
-  }
 
-  .undervi-box--read-more {
-    display: none;
+  @media print {
+    .undervi-box {
+      display: block;
+      max-height: none;
+    }
+    .undervi-box--read-more{
+      display: none;
+    }
   }
-}
