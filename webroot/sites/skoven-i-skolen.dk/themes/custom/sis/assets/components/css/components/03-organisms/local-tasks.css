@@ -16,6 +16,8 @@
 
   li {
     font-size: var(--base-font-size);
+    display: flex;
+
 
     &:last-child::after {
       content: "";
