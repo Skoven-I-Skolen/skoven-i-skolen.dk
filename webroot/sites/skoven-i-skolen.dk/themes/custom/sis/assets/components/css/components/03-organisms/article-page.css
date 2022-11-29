@@ -99,7 +99,7 @@
   }
 
   .facts-box {
-    page-break-before: always; // force page break before facts box
+    page-break-before: always;
     display: inline;
     margin: 0;
     padding: 0;
