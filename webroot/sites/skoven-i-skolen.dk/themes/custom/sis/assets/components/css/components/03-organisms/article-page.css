@@ -74,13 +74,16 @@
 @media print {
   @page {
     size: a4;
-    /* stylelint-disable */
-    margin: 1.5cm;
-    /* stylelint-enable */
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
   }
 
   body {
     padding: 0;
+    margin: 0;
     background: #fff;
   }
 
@@ -92,12 +95,12 @@
 
     &__title {
       display: block;
+      width: fit-content;
       margin: 0;
       padding: 0;
       word-break: break-word;
       background-color: #fff;
       border-bottom: 1px solid #000;
-      width: fit-content;
     }
 
     &__content {
@@ -194,8 +197,6 @@
   -webkit-line-clamp: 11;
   -webkit-box-orient: vertical;
 
-
-
   &--read-more {
     display: inline-flex;
     padding-bottom: 15px;
@@ -219,18 +220,16 @@
       transform: rotate(45deg);
       content: "";
     }
-
-
   }
 }
 
-
-  @media print {
-    .undervi-box {
-      display: block;
-      max-height: none;
-    }
-    .undervi-box--read-more{
-      display: none;
-    }
+@media print {
+  .undervi-box {
+    display: block;
+    max-height: none;
   }
+
+  .undervi-box--read-more {
+    display: none;
+  }
+}
