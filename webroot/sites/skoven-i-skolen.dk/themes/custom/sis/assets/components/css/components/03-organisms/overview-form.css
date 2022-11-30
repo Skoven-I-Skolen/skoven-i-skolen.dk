@@ -338,7 +338,6 @@
   @media (--viewport-ms-max) {
     min-width: 100% !important;
   }
-
 }
 
 .overview-form__toolbar {
