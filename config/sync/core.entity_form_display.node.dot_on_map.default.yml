@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.dot_on_map.field_contact_information
     - field.field.node.dot_on_map.field_files
     - field.field.node.dot_on_map.field_location
+    - field.field.node.dot_on_map.field_meta_tags
     - field.field.node.dot_on_map.field_people_and_places
     - field.field.node.dot_on_map.field_replant_the_planet
     - field.field.node.dot_on_map.field_season
@@ -26,6 +27,7 @@ dependencies:
     - dds_dawa
     - field_group
     - file
+    - metatag
     - text
 third_party_settings:
   field_group:
@@ -243,6 +245,14 @@ content:
     weight: 6
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_people_and_places:
     type: options_buttons

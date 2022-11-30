@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.dot_on_map.field_contact_information
     - field.field.node.dot_on_map.field_files
     - field.field.node.dot_on_map.field_location
+    - field.field.node.dot_on_map.field_meta_tags
     - field.field.node.dot_on_map.field_people_and_places
     - field.field.node.dot_on_map.field_replant_the_planet
     - field.field.node.dot_on_map.field_season
@@ -21,6 +22,7 @@ dependencies:
     - node.type.dot_on_map
   module:
     - file
+    - metatag
     - text
     - user
 id: node.dot_on_map.default
@@ -77,6 +79,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
     region: content
   field_people_and_places:
     type: entity_reference_label

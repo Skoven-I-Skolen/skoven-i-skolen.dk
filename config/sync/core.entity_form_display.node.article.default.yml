@@ -29,6 +29,7 @@ dependencies:
     - field.field.node.article.field_location
     - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
+    - field.field.node.article.field_meta_tags
     - field.field.node.article.field_season
     - field.field.node.article.field_section_bg_graphics
     - field.field.node.article.field_section_bg_graphics_pos
@@ -47,6 +48,7 @@ dependencies:
     - field_group
     - file
     - media_library
+    - metatag
     - paragraphs_asymmetric_translation_widgets
     - path
     - text
@@ -651,6 +653,14 @@ content:
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 44
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_season:
     type: options_buttons

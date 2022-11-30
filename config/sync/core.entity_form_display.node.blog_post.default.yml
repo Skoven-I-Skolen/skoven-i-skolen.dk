@@ -5,12 +5,14 @@ dependencies:
   config:
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_list_media
+    - field.field.node.blog_post.field_meta_tags
     - field.field.node.blog_post.field_section_bg_graphics
     - field.field.node.blog_post.field_section_bg_graphics_pos
     - node.type.blog_post
   module:
     - content_moderation
     - media_library
+    - metatag
     - path
     - text
 id: node.blog_post.default
@@ -40,6 +42,14 @@ content:
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
