@@ -65,49 +65,56 @@ hr {
 /* Image handling */
 img {
   &.align-left {
+    display: block;
     float: none;
     margin-right: auto;
     margin-left: 0;
-    display: block;
   }
+
   &.align-center {
+    display: block;
     float: none;
     margin-right: auto;
     margin-left: auto;
-    display: block;
   }
+
   &.align-right {
+    display: block;
     float: none;
     margin-right: 0;
     margin-left: auto;
-    display: block;
   }
 }
+
 figure {
-  width: 100%;
+  width: auto;
   margin: 0;
   text-align: left;
-  width: auto;
+
   &.align-left {
-    text-align: left;
-    width: auto;
     float: none;
+    width: auto;
+    text-align: left;
+
     img {
       margin-left: 0 !important;
     }
   }
+
   &.align-center {
-    text-align: center;
     width: 100%;
+    text-align: center;
   }
+
   &.align-right {
-    text-align: right;
-    width: auto;
     float: none;
+    width: auto;
+    text-align: right;
+
     img {
       margin-right: 0 !important;
     }
- }
+  }
 
   img {
     display: block;
@@ -118,9 +125,10 @@ figure {
   }
 
   figcaption {
-    margin-top: 8px;
-    font-size: 0.8em;
+    margin-top: 4px;
+    margin-bottom: 8px;
     color: gray;
+    font-size: .8em;
   }
 }
 
