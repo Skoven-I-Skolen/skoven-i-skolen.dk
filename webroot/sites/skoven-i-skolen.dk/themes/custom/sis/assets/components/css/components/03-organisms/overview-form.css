@@ -330,12 +330,43 @@
   }
 }
 
+.premium-dropdown--trigger {
+  border-radius: 100px;
+}
+
+.overview-form__toolbar {
+  @media (--viewport-ms-max) {
+    align-items: end;
+  }
+}
+
+#Search-leksikon {
+  @media (--viewport-ms-max) {
+  padding-left: 0;
+  padding-right: 0;
+  }
+}
+
 .overview-form__search-facets {
-  max-width: none;
   margin-top: -12px;
   margin-left: auto;
+  width: 250px;
+  display: block;
 
-  @media (--viewport-ms-min) {
-    max-width: 300px;
+
+
+  /* dekstop facet 'sort by' */
+  @media (--viewport-ms-max) {
+  display: none;
   }
+
+  /* Sort by facet that appears on mobile view only */
+   &--mobile {
+    display: none;
+
+    @media (--viewport-ms-max) {
+      display: block;
+    }
+   }
+
 }
