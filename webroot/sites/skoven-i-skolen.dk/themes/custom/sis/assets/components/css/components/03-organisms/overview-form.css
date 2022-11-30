@@ -133,6 +133,7 @@
 
   &__header {
     margin-bottom: 26px;
+    align-items: baseline;
   }
 
   &__search {
@@ -332,6 +333,12 @@
 
 .premium-dropdown--trigger {
   border-radius: 100px;
+  min-width: 300px !important;
+
+  @media (--viewport-ms-max) {
+    min-width: 100% !important;
+  }
+
 }
 
 .overview-form__toolbar {
@@ -350,14 +357,21 @@
 .overview-form__search-facets {
   margin-top: -12px;
   margin-left: auto;
-  width: 250px;
+  width: 330px;
   display: block;
-
-
 
   /* dekstop facet 'sort by' */
   @media (--viewport-ms-max) {
   display: none;
+  }
+
+  .js-form-item-sort {
+    display: flex;
+    align-items: baseline;
+
+    .label {
+      margin-right: 10px;
+    }
   }
 
   /* Sort by facet that appears on mobile view only */
@@ -368,5 +382,4 @@
       display: block;
     }
    }
-
 }
