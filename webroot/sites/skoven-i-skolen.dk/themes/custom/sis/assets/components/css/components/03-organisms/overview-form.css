@@ -337,6 +337,13 @@
 
   @media (--viewport-ms-max) {
     min-width: 100% !important;
+    /* elipse text if not enough space */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+
+
   }
 }
 
@@ -380,6 +387,10 @@
 
     @media (--viewport-ms-max) {
       display: block;
+
+      .label {
+        display: none;
+      }
     }
    }
 }
