@@ -362,9 +362,8 @@
 
 .overview-form__search-facets {
   margin-top: -12px;
-  margin-left: auto;
-  width: 330px;
-  display: block;
+  display: flex;
+  justify-content: end;
 
   /* dekstop facet 'sort by' */
   @media (--viewport-ms-max) {
