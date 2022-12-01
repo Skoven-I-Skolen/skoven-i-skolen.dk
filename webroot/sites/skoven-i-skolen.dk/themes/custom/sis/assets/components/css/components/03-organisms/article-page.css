@@ -39,7 +39,7 @@
 
   &__description {
     margin-bottom: 24px;
-    font-size: var(--base-font-size-medium);
+    font-size: var(--base-font-size-large);
 
     img {
       max-width: 100%;

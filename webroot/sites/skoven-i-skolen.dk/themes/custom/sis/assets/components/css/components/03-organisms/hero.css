@@ -8,6 +8,12 @@
   --hero-narrow-max-height: 350px;
 }
 
+.hero__image-wrapper {
+  .contextual-region {
+    position: unset;
+  }
+}
+
 .hero {
   position: relative;
   max-height: var(--hero-max-height);

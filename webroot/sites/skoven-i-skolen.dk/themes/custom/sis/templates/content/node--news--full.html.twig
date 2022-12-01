@@ -146,7 +146,7 @@
             </div>
           {% endfor %}
         {% endif %}
-        {% if inspirations %}
+        {% if inspirations|render|length > 0 %}
           <div class="facts-box">
             <div class="facts-box__title">
               Inspiration og lignende materialer

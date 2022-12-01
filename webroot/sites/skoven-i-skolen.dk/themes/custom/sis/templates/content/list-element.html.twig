@@ -1,4 +1,7 @@
 
+{% set typeAltrerLink = article_type.field_page_link.0.url %}
+{% set typeUrl = path('entity.taxonomy_term.canonical', {'taxonomy_term': article_type.id}) %}
+
 {% if children %}
   <div class="inspiration-overview__list-links">
     <div class="inspiration-overview__headline">{{ list_headline }}</div>
@@ -7,7 +10,7 @@
         {{ child }}
       {% endfor %}
     </ul>
-    <a class="inspiration-overview__more-link" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': article_type.id}) }}">
+    <a class="inspiration-overview__more-link" href="{{ typeAltrerLink ?? typeUrl }}">
       {% if list_link_title %}
         {{ list_link_title }}
       {% else %}
