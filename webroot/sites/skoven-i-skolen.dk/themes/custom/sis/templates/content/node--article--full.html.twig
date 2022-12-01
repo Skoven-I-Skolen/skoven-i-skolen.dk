@@ -405,7 +405,7 @@
             <div class="article-page__related-items js-article-page__related-items swiper">
               <div class="swiper-wrapper">
                 {% for key, item in content.field_article_related if key|first != '#' %}
-                  <div class="inspiration-overview__item">{{ item }}</div>
+                  {{ item }}
                 {% endfor %}
               </div>
             </div>
