@@ -1,0 +1,30 @@
+uuid: d52574ef-e7ea-42f5-8ea9-f7adc71f5ade
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.subjects.field_icon
+    - taxonomy.vocabulary.subjects
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.subjects.full
+targetEntityType: taxonomy_term
+bundle: subjects
+mode: full
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_icon: true
+  langcode: true

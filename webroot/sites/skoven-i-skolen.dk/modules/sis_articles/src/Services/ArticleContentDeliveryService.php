@@ -61,8 +61,11 @@ class ArticleContentDeliveryService {
     $inspirational = [];
     foreach ($fields as $field) {
       if ($node->hasField($field) && !$node->get($field)->isEmpty()) {
-        $title = $node->get($field)->entity->label();
-        $inspirational[$title] = $this->getRandomArticlesByFields([$field], $node);
+        $entity = $node->get($field)->entity;
+        if ($entity) {
+          $title = $entity->label();
+          $inspirational[$title] = $this->getRandomArticlesByFields([$field], $node);
+        }
       }
     }
     return $inspirational;
