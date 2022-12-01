@@ -370,6 +370,7 @@
 
     .label {
       margin-right: 10px;
+      white-space: nowrap;
     }
   }
 
