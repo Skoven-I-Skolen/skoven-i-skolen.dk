@@ -141,6 +141,7 @@ figure {
 table {
   width: 100% !important;
   border-collapse: collapse !important;
+
 }
 
 .table-responsive {
@@ -168,4 +169,39 @@ table {
 
 #media-library-view .views-row .views-field-media-library-select-form {
   z-index: 999;
+}
+
+
+@media print {
+  body,
+  p,
+  h1,
+  h2,
+  h3,
+  ul,
+  ol,
+  div {
+    position: static;
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+  }
+
+  p {
+    page-break-inside: avoid;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    page-break-inside: avoid;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
 }

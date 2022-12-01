@@ -4,9 +4,9 @@
     text-align: center;
 
     img {
+      width: auto;
       max-width: 100%;
       height: auto;
-      width: auto;
     }
   }
 
@@ -69,62 +69,101 @@
   }
 }
 
-/* PRINT */
+.article-content-wrapper {
+  & h2 {
+    font-size: var(--base-font-size-xxlarge) !important;
+  }
+
+  & h3 {
+    font-size: var(--base-font-size-xlarge) !important;
+  }
+}
+
+.contextual-region {
+  overflow: visible;
+}
+
+.undervi-box {
+  display: -webkit-box; /* stylelint-disable-line */
+  max-height: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 11;
+  -webkit-box-orient: vertical;
+
+  &--read-more {
+    display: inline-flex;
+    padding-bottom: 15px;
+    font-weight: 700;
+
+    a {
+      display: flex;
+      color: var(--color-purple);
+      cursor: pointer;
+      text-underline-offset: 3px;
+    }
+
+    &::after {
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin-top: 9px;
+      margin-left: 6px;
+      border-top: 2px solid var(--color-purple);
+      border-right: 2px solid var(--color-purple);
+      transform: rotate(45deg);
+      content: "";
+    }
+  }
+}
 
 @media print {
   @page {
     size: a4;
-    /* stylelint-disable */
-    margin: 1.5cm;
-    /* stylelint-enable */
-  }
-
-  * {
-    padding: 0;
-    margin: 0;
-  }
-
-  table {
-    page-break-before: always;
+    margin: 1.5cm; /* stylelint-disable-line */
   }
 
   body {
-    page-break-before: auto;
-    page-break-after: auto;
-    page-break-inside: avoid;
-    display: inline;
-    padding: 0;
-    margin: 0;
     background: #fff;
   }
 
+  .facts-box,
+  .facts-box * {
+    display: inline-block;
+    width: 100%;
+    page-break-inside: avoid;
+  }
+
   .facts-box {
-    page-break-before: always;
-    display: inline;
+    margin: 0;
+    padding: 0 0 35px;
+    box-shadow: none;
+  }
+
+  .facts-box__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: var(--base-font-size-medium);
+    word-break: break-word;
+    background: none;
+    background: var(--color-yellow);
+  }
+
+  .facts-box__inspiration-title {
+    margin-bottom: 5px;
+    padding-bottom: 0;
+  }
+
+  .facts-box__content {
     margin: 0;
     padding: 0;
-    box-shadow: none;
+    word-break: break-word;
+  }
 
-    &__title {
-      display: block;
-      margin: 0;
-      padding: 0;
-      word-break: break-word;
-      background-color: var(--color-yellow); /* stylelint-disable-line */
-      border-bottom: 1px solid #000;
-      width: fit-content;
-    }
-
-    &__content {
-      display: block;
-      margin: 0;
-      padding: 0;
-      word-break: break-word;
-    }
-
-    &__content-item {
-      display: block;
-    }
+  .facts-box__content-item {
+    margin-bottom: 10px;
   }
 
   .container,
@@ -135,16 +174,15 @@
   section,
   section > div,
   .layout,
-  .facts-box__title,
   .section,
   .layout__region,
   .container,
   .article-page,
-  .row,
-  .facts-box {
-    break-inside: avoid;
+  .row {
     margin: 0;
     padding: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   /* stylelint-disable */
@@ -175,77 +213,20 @@
     width: 100%;
   }
 
-  .facts-box,
-  .facts-box__title,
-  .facts-box__content,
-  .facts-box__content-item,
-  .facts-box__content-item-label,
-  .facts-box__content-item-value,
+  .article-content-wrapper {
+    margin-bottom: 35px;
+  }
+
   .article-content-sidebar {
-    margin: 0;
-    padding: 0;
+    margin-left: 0;
+  }
+
+  .undervi-box {
+    display: block;
+    max-height: none;
+  }
+
+  .undervi-box--read-more {
+    display: none;
   }
 }
-
-.article-content-wrapper {
-  & h2 {
-    font-size: var(--base-font-size-xxlarge) !important;
-  }
-
-  & h3 {
-    font-size: var(--base-font-size-xlarge) !important;
-  }
-}
-
-.contextual-region {
-  overflow: visible;
-}
-
-.undervi-box {
-  display: -webkit-box;
-  max-height: 300px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 11;
-  -webkit-box-orient: vertical;
-
-
-
-  &--read-more {
-    display: inline-flex;
-    padding-bottom: 15px;
-    font-weight: 700;
-
-    a {
-      display: flex;
-      color: var(--color-purple);
-      cursor: pointer;
-      text-underline-offset: 3px;
-    }
-
-    &::after {
-      display: block;
-      width: 8px;
-      height: 8px;
-      margin-top: 9px;
-      margin-left: 6px;
-      border-top: 2px solid var(--color-purple);
-      border-right: 2px solid var(--color-purple);
-      transform: rotate(45deg);
-      content: "";
-    }
-
-
-  }
-}
-
-
-  @media print {
-    .undervi-box {
-      display: block;
-      max-height: none;
-    }
-    .undervi-box--read-more{
-      display: none;
-    }
-  }
