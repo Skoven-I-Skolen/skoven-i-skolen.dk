@@ -17,6 +17,7 @@ class LazyBuilderService implements TrustedCallbackInterface {
    * @return array
    */
   public static function getArticleInspirationContent($nodeId): array {
+    if (empty($nodeId)) return [];
     $articleContentDeliveryService = \Drupal::service('sis_articles.content_delivery_service');
     $node = Node::load($nodeId);
     if ($type_term = $node->hasField('field_article_type')) {
