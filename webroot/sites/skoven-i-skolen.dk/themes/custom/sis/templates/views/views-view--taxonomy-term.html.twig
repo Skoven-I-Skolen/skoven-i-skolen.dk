@@ -30,7 +30,16 @@
  * @see template_preprocess_views_view()
  */
 #}
-<div class="section section--spacing-top-medium section--spacing-bottom-none js-term-overview">
+{%
+  set classes = [
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+  'section',
+  'section--spacing-top-medium',
+  'section--spacing-bottom-none',
+  'js-term-overview'
+]
+%}
+<div{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
   {{ title }}

@@ -35,8 +35,8 @@ display:
           tags:
             next: ››
             previous: ‹‹
-            first: '« First'
-            last: 'Last »'
+            first: ''
+            last: ''
           expose:
             items_per_page: false
             items_per_page_label: 'Antal elementer'
@@ -222,6 +222,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      use_ajax: true
       link_display: page_1
       link_url: ''
       header:
