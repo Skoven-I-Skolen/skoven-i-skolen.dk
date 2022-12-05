@@ -3,12 +3,10 @@
 namespace Drupal\sis_misc\Plugin\CKEditorPlugin;
 
 use Drupal\ckeditor\CKEditorPluginContextualInterface;
-use Drupal\ckeditor\CKEditorPluginCssInterface;
 use Drupal\ckeditor\CKEditorPluginInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Plugin\PluginBase;
 use Drupal\editor\Entity\Editor;
-use Drupal\ckeditor\CKEditorPluginBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -53,7 +51,32 @@ class ImageStyle extends PluginBase implements CKEditorPluginInterface, CKEditor
    * {@inheritdoc}
    */
   public function isEnabled(Editor $editor) {
-    return TRUE;
+    // Check if a DrupalImage has been placed in the CKeditor.
+    $settings = $editor->getSettings();
+    if ($this->checkImageEnable($settings['toolbar']['rows'][0])) {
+      return TRUE;
+    }
+    return FALSE;
+  }
+
+  /**
+   * Check if a DrupalImage exists in the given toolbar row.
+   *
+   * @param array $toolbar
+   *   A CKeditor toolbar row containing Ckeditor plugin items.
+   *
+   * @return bool
+   *   Does the DrupalImage has been placed in the CKeditor.
+   */
+  public function checkImageEnable($toolbar) {
+    foreach ($toolbar as $items) {
+      foreach ($items['items'] as $item) {
+        if ('DrupalImage' === $item) {
+          return TRUE;
+        }
+      }
+    }
+    return FALSE;
   }
 
   /**
