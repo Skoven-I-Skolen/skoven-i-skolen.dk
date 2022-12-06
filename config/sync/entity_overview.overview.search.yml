@@ -1,12 +1,21 @@
 uuid: 40fe2c18-0546-4391-b21d-a535a11c4b45
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.article
+    - node.type.blog_post
+    - node.type.page
+    - profile.type.organization
+  module:
+    - node
+    - profile
 id: search
 label: Søgning
 entity_bundles:
   node:
     - article
+    - blog_post
     - page
   profile:
     - organization
@@ -18,5 +27,5 @@ fields:
   field_season: checkboxes
   field_subject: checkboxes
 engine_id: relewise
-sort_field: field_list_date
+sort_field: created
 show_total: results

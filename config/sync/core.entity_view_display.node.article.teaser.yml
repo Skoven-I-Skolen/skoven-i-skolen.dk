@@ -110,6 +110,7 @@ hidden:
   body: true
   content_hierarchy: true
   field_article_image: true
+  field_article_image_migrated: true
   field_article_months: true
   field_article_related: true
   field_class: true

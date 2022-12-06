@@ -3,8 +3,12 @@ langcode: da
 status: true
 dependencies:
   module:
+    - field_permissions
     - node
     - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
 _core:
   default_config_hash: OXKi1lOkzdvllQeaPeFGNCH7pyjNUdXsiHsc2-w5_sI
 id: node.field_article_type
