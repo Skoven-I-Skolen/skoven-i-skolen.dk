@@ -87,3 +87,14 @@ function sis_preprocess_menu_local_tasks(&$variables) {
     unset($variables['primary']['entity.user.canonical']);
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_media_alter().
+ */
+function sis_theme_suggestions_media_alter(array &$suggestions, array $variables, $hook) {
+  if ($variables['elements']['#embed']) {
+    foreach ($suggestions as $suggestion) {
+      $suggestions[] = $suggestion . "__embed";
+    }
+  }
+}
