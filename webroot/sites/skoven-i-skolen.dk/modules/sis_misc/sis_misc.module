@@ -4,7 +4,11 @@
  * Help functions.
  */
 
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -32,4 +36,13 @@ function sis_misc_form_editor_image_dialog_alter(&$form, FormStateInterface $for
     '#default_value' => $image_element['data-image-size'] ?? ''
   ];
   $form['align']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_entity_access().
+ */
+function sis_misc_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($entity->getEntityTypeId() === 'profile') {
+    return AccessResult::allowedIfHasPermission($account, 'manage profile entities');
+  }
 }

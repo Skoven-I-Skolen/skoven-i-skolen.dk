@@ -53,6 +53,7 @@ dependencies:
     - redirect
     - role_delegation
     - scheduled_transitions
+    - sis_misc
     - system
     - taxonomy
     - toolbar
@@ -234,6 +235,7 @@ permissions:
   - 'edit terms in subjects'
   - 'edit terms in time'
   - 'edit webform assets'
+  - 'manage profile entities'
   - 'reschedule scheduled transitions node page'
   - 'revert all revisions'
   - 'revert almanac revisions'
