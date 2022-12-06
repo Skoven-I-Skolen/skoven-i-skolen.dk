@@ -14,17 +14,23 @@
 
 <form{{attributes.addClass('overview-form')}}>
 	<div class="container">
+
+
 		<div class="row overview-form__header overview-form__heading-facets">
 			<div class="col-xs-12 col-md-8 ">
-				<div class="overview-form__search-facets">
+				<div class="overview-form__search-facets overview-form__search-facets--mobile">
 					{{ element['facets'].sort }}
 				</div>
+
 				<div class="overview-form__search-title">
 					{{ element['search'].title }}
 				</div>
 			</div>
+
 			<div class="col-xs-12 col-md-4 filter-mobile-wrapper">
 				<div class="overview-form__toolbar">
+
+
 					<span class="overview-form__toolbar__filter-button js-overview-form__toolbar__filter-button">
 						{% include '@reusable-component/svg-icon.twig' with {
                     'attributes': '',
@@ -32,10 +38,6 @@
                   } %}
 						{{ "Filter"|t }}
 					</span>
-					{# Cant have facets twice #}
-					{# <div class="overview-form__search-facets--mobile">
-											{{ element['facets'].sort }}
-										</div> #}
 				</div>
 				<div class="overview-form__search-input">
 					{% if element['facets'].text %}
@@ -44,7 +46,11 @@
 					{% endif %}
 				</div>
 			</div>
+
+
 		</div>
+
+
 		<div class="row">
 			<div class="col-xs-12 col-md-3">
 				<div class="overview-form__search-filters js-overview-form__search-filters">
