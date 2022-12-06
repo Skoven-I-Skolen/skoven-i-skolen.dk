@@ -117,7 +117,8 @@
         height: 100%;
         padding: 44px;
         color: var(--color-white);
-        background: var(--color-blue-darker) url("../../../../images/dk-map.svg") no-repeat bottom left;
+        background: var(--color-blue-darker)
+          url("../../../../images/dk-map.svg") no-repeat bottom left;
       }
 
       .inspiration-overview__item-title {
@@ -132,8 +133,8 @@
   }
 
   &__header {
-    margin-bottom: 26px;
     align-items: baseline;
+    margin-bottom: 26px;
   }
 
   &__search {
@@ -219,7 +220,7 @@
       position: relative;
       display: block;
       align-items: center;
-      margin-right: 20px;
+      width: 100%;
       padding: 16px 24px 14px 62px;
       color: currentcolor;
       font-weight: var(--button-font-weight);
@@ -332,8 +333,8 @@
 }
 
 .premium-dropdown--trigger {
-  border-radius: 100px;
   min-width: 300px !important;
+  border-radius: 100px;
 
   @media (--viewport-ms-max) {
     min-width: 100% !important;
@@ -341,9 +342,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
-
-
   }
 }
 
@@ -355,20 +353,15 @@
 
 #Search-leksikon {
   @media (--viewport-ms-max) {
-  padding-left: 0;
-  padding-right: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
 .overview-form__search-facets {
-  margin-top: -12px;
   display: flex;
   justify-content: end;
-
-  /* dekstop facet 'sort by' */
-  @media (--viewport-ms-max) {
-  display: none;
-  }
+  margin-top: -12px;
 
   .js-form-item-sort {
     display: flex;
@@ -381,15 +374,27 @@
   }
 
   /* Sort by facet that appears on mobile view only */
-   &--mobile {
-    display: none;
+  &--mobile {
+    .form-item-sort {
+      width: 100%;
+
+      .premium-dropdown--wrapper {
+        width: 100%;
+      }
+    }
 
     @media (--viewport-ms-max) {
-      display: block;
+      .form-item-sort {
+        width: 100%;
+
+        .premium-dropdown--wrapper {
+          width: 100%;
+        }
+      }
 
       .label {
         display: none;
       }
     }
-   }
+  }
 }

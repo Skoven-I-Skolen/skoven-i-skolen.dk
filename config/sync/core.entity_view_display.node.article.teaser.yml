@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_image
+    - field.field.node.article.field_article_image_migrated
     - field.field.node.article.field_article_months
     - field.field.node.article.field_article_related
     - field.field.node.article.field_article_type
@@ -92,7 +93,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: inline_navigation
+      view_mode: list
       link: false
     third_party_settings: {  }
     weight: 4
