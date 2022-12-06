@@ -22,7 +22,7 @@ settings:
     target_bundles:
       subjects: subjects
     sort:
-      field: name
+      field: weight
       direction: asc
     auto_create: false
     auto_create_bundle: ''
