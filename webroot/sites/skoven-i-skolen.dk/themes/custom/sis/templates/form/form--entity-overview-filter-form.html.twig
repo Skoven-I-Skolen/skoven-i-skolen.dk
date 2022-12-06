@@ -32,9 +32,10 @@
                   } %}
 						{{ "Filter"|t }}
 					</span>
-					<div class="overview-form__search-facets--mobile">
-						{{ element['facets'].sort }}
-					</div>
+					{# Cant have facets twice #}
+					{# <div class="overview-form__search-facets--mobile">
+											{{ element['facets'].sort }}
+										</div> #}
 				</div>
 				<div class="overview-form__search-input">
 					{% if element['facets'].text %}
