@@ -1,14 +1,14 @@
 {{ attach_library('sis/inspiration-overview') }}
 {% if not is_small %}
-  {{ breadcrumb }}
+	{{ breadcrumb }}
 {% endif %}
 <div class="container">
-  <div class="row">
-    <div class="inspiration-overview__pageheader col-xs-12">
-      {{ title_prefix }}
-      <h1 class="inspiration-overview__pageheader-headline">{{ name }}</h1>
-      {{ title_suffix }}
-      {{ content }}
-    </div>
-  </div>
+	<div class="row">
+		<div class="inspiration-overview__pageheader col-xs-12">
+			{{ title_prefix }}
+			<h1>{{ name }}</h1>
+			{{ title_suffix }}
+			{{ content }}
+		</div>
+	</div>
 </div>

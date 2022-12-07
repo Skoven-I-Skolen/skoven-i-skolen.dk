@@ -24,7 +24,7 @@ settings:
     target_bundles:
       article_types: article_types
     sort:
-      field: name
+      field: weight
       direction: asc
     auto_create: false
     auto_create_bundle: ''
