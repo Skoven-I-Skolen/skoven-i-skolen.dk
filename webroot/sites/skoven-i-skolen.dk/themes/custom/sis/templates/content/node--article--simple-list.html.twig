@@ -69,10 +69,15 @@
 #}
 {{ attach_library('sis/facts-box') }}
 
+{% set typeAltrerLink = node.field_article_type.entity.field_page_link.0.url %}
+{% set typeUrl = path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_article_type.entity.id}) %}
+
 <div class="facts-box__inspiration-item">
-  <div class="facts-box__inspiration-item__type">
-    {{ content.field_article_type }}
-  </div>
+  <a href="{{ typeAltrerLink ?? typeUrl }}" aria-label="{{ node.field_article_type.entity.name.value }}">
+    <div class="facts-box__inspiration-item__type">
+      {{ content.field_article_type }}
+    </div>
+  </a>
   <a href="{{ url }}" class="facts-box__inspiration-item__link">
     {{ label }}
   </a>
