@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   module:
+    - mobile_detect
     - premium_core
     - system
   theme:
@@ -24,4 +25,8 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/profile/*\r\n/kort\r\n/blogs/*\r\n/user/*\r\n/prik/*\r\n/del\r\n/nyhed*\r\n/newsletter/*"
+    pages: "/profile/*\r\n/kort\r\n/blogs/*\r\n/user/*\r\n/prik/*\r\n/del\r\n/nyhed*\r\n/newsletter/*\r\n/node/preview/*"
+  mobile_detect_device_type:
+    id: mobile_detect_device_type
+    negate: null
+    devices: {  }
