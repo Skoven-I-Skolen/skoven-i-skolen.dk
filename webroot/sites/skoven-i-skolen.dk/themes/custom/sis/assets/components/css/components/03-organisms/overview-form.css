@@ -41,6 +41,14 @@
       }
     }
   }
+  .overview-form__search-facets {
+    align-items: baseline;
+
+    /* hide default label */
+    label {
+      display: none !important;
+    }
+  }
 
   &-contents {
     display: grid;

@@ -3,6 +3,12 @@
  * Search page.
  */
 
+.overview-form__toolbar-label--default {
+  label {
+    display: none !important;
+  }
+}
+
 .search-page {
   &__keys-submit {
     display: flex;
@@ -85,6 +91,6 @@
   .search-hierarchy {
     margin-top: 12px;
     font-size: var(--base-font-size);
-    opacity: .6;
+    opacity: 0.6;
   }
 }
