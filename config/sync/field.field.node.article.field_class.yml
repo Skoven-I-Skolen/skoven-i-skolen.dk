@@ -10,7 +10,7 @@ id: node.article.field_class
 field_name: field_class
 entity_type: node
 bundle: article
-label: Klasse
+label: Klassetrin
 description: ''
 required: false
 translatable: false
