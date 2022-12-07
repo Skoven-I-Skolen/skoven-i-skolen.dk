@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_article_type
     - node.type.blog_post
     - taxonomy.vocabulary.article_types
+  content:
+    - 'taxonomy_term:article_types:5c32eb4f-b339-4c81-990d-6402d2a08d82'
 id: node.blog_post.field_article_type
 field_name: field_article_type
 entity_type: node
@@ -14,7 +16,9 @@ label: Type
 description: ''
 required: false
 translatable: true
-default_value: {  }
+default_value:
+  -
+    target_uuid: 5c32eb4f-b339-4c81-990d-6402d2a08d82
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
