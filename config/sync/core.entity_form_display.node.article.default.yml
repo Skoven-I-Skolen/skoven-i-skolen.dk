@@ -83,7 +83,7 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        description: 'Bruges hvis artiklen bliver vist i en liste, og som et resumé i starten af artiklen'
+        description: 'Bruges hvis artiklen bliver vist i en liste, og som et resumé i starten af artiklen.'
         required_fields: true
     group_article_metadata:
       children:
@@ -206,9 +206,9 @@ third_party_settings:
     group_geolokation:
       children:
         - sis_map_address_dawa
-        - lat
         - lon
-      label: Geolokation
+        - lat
+      label: 'Vis på kort'
       region: content
       parent_name: ''
       weight: 19
@@ -438,14 +438,14 @@ third_party_settings:
         - group_month
       label: Kategorier
       region: content
-      parent_name: ''
-      weight: 20
+      parent_name: group_kategorier
+      weight: 21
       format_type: tabs
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        direction: vertical
+        direction: horizontal
         width_breakpoint: 640
     group_side_boxes:
       children:
@@ -459,7 +459,21 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        description: 'Dette indhold vil blive vist i boksere til højre på siden.'
+        description: 'Dette indhold vil blive vist i bokse i højre side.'
+        required_fields: true
+    group_kategorier:
+      children:
+        - group_categories
+      label: Kategorier
+      region: content
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
         required_fields: true
 _core:
   default_config_hash: lCMS9iqusl8ppbYxINj_SRny0NNOhS2IAGuGG9i0r6c
@@ -499,7 +513,7 @@ content:
     third_party_settings: {  }
   field_article_related:
     type: entity_reference_autocomplete
-    weight: 21
+    weight: 22
     region: content
     settings:
       match_operator: CONTAINS
@@ -656,7 +670,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 44
+    weight: 23
     region: content
     settings:
       sidebar: true
@@ -711,7 +725,7 @@ content:
     third_party_settings: {  }
   lat:
     type: string_textfield
-    weight: 39
+    weight: 40
     region: content
     settings:
       size: 60
@@ -719,7 +733,7 @@ content:
     third_party_settings: {  }
   lon:
     type: string_textfield
-    weight: 41
+    weight: 39
     region: content
     settings:
       size: 60

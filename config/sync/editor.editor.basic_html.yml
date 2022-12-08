@@ -38,7 +38,6 @@ settings:
         -
           name: Media
           items:
-            - Blockquote
             - DrupalImage
         -
           name: 'Block Formatting'
@@ -47,7 +46,6 @@ settings:
         -
           name: Tools
           items:
-            - Source
             - Table
   plugins:
     drupallink:

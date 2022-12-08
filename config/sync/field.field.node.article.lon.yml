@@ -9,7 +9,7 @@ id: node.article.lon
 field_name: lon
 entity_type: node
 bundle: article
-label: Longitude
+label: Længdegrad
 description: ''
 required: false
 translatable: true

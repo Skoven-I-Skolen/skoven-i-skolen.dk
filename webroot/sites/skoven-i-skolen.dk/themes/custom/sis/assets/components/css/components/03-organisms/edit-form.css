@@ -1,5 +1,39 @@
 .node-edit-form {
   &__title {
-    padding: 50px 0;
+    width: 100%;
+    max-width: var(--container-width);
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--container-spacing-mobile);
+    padding-left: var(--container-spacing-mobile);
+
+    @media (--viewport-md-min) {
+      padding-right: var(--container-spacing);
+      padding-left: var(--container-spacing);
+    }
+
+    & #block-pageheader {
+      padding: 50px 0;
+      font-weight: var(--heading-font-weight);
+      font-size: var(--base-font-size-xxlarge);
+      font-family: var(--heading-font-family);
+      line-height: 1;
+
+      @media (--viewport-ms-min) {
+        font-size: var(--base-font-size-xxxlarge);
+      }
+
+      @media (--viewport-sm-min) {
+        font-size: var(--base-font-size-xxxxlarge);
+      }
+    }
+  }
+}
+
+.node-article-edit-form,
+.node-blog-post-form,
+.node-dot-on-map-form {
+  .entity-meta {
+    display: none;
   }
 }

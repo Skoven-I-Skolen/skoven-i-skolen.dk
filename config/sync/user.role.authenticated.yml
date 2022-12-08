@@ -32,4 +32,3 @@ permissions:
   - 'view field_article_related'
   - 'view media'
   - 'view own field_article_related'
-  - 'view the administration theme'

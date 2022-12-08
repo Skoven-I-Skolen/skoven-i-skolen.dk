@@ -3,28 +3,43 @@ langcode: da
 status: true
 dependencies:
   config:
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
     - node.type.article
     - node.type.dot_on_map
     - workflows.workflow.editorial
   module:
     - content_moderation
-    - metatag
+    - media
     - node
     - profile
-    - system
 id: organization
 label: Organisation
 weight: 6
 is_admin: null
 permissions:
-  - 'administer meta tags'
+  - 'access media overview'
   - 'create article content'
+  - 'create document media'
   - 'create dot_on_map content'
+  - 'create image media'
+  - 'create remote_video media'
+  - 'create video media'
   - 'delete any article content'
   - 'delete own article content'
+  - 'delete own document media'
   - 'delete own dot_on_map content'
+  - 'delete own image media'
+  - 'delete own remote_video media'
+  - 'delete own video media'
   - 'edit own article content'
+  - 'edit own document media'
+  - 'edit own image media'
+  - 'edit own remote_video media'
+  - 'edit own video media'
   - 'update own organization profile'
   - 'use editorial transition create_new_draft'
   - 'view own unpublished content'
-  - 'view the administration theme'
+  - 'view own unpublished media'

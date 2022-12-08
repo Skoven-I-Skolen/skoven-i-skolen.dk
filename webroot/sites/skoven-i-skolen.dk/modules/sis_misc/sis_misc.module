@@ -9,6 +9,7 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -44,5 +45,33 @@ function sis_misc_form_editor_image_dialog_alter(&$form, FormStateInterface $for
 function sis_misc_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
   if ($entity->getEntityTypeId() === 'profile') {
     return AccessResult::allowedIfHasPermission($account, 'manage profile entities');
+  }
+}
+
+/**
+ * Implements hook_entity_access().
+ */
+function sis_misc_views_pre_render(ViewExecutable $view) {
+  // Only doing this for the media library view.
+  if ($view->id() === 'media_library') {
+    $current_user = \Drupal::currentUser();
+    $admin_roles = [
+      'administrator',
+      'editor',
+      'webmaster',
+    ];
+    $is_admin = count(array_intersect($admin_roles, $current_user->getRoles()));
+    $result = [];
+
+    // If the user is non-admin, display only media authored by that user.
+    if (!$is_admin) {
+      foreach ($view->result as $key => $row) {
+        $entity = $row->_entity;
+        if ($entity->getOwnerId() == $current_user->id()) {
+          $result[$key] = $row;
+        }
+      }
+      $view->result = $result;
+    }
   }
 }

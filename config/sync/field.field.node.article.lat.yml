@@ -9,7 +9,7 @@ id: node.article.lat
 field_name: lat
 entity_type: node
 bundle: article
-label: Latitude
+label: Breddegrad
 description: ''
 required: false
 translatable: true

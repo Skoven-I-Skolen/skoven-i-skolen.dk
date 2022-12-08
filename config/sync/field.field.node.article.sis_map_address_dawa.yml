@@ -11,8 +11,8 @@ id: node.article.sis_map_address_dawa
 field_name: sis_map_address_dawa
 entity_type: node
 bundle: article
-label: Address
-description: 'Det gør det muligt at geolokalisere denne artikel. Hvis det ikke er knyttet til en placering, skal du lade det stå tomt. Hvis der ikke indtastes nogen adresse, vil nedenstående koordinater blive brugt'
+label: Adresse
+description: 'Indtast en adresse for at vise artiklen på kortet. Hvis der ikke findes nogen adresse på stedet, kan du indtaste længde- og breddegrad på det herunder.'
 required: false
 translatable: true
 default_value: {  }

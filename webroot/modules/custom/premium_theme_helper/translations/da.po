@@ -35,3 +35,9 @@ msgstr "Viser"
 
 msgid "out of"
 msgstr "ud af"
+
+msgid "One media item remaining."
+msgstr "Ét media element mangler."
+
+msgid "No media items are selected."
+msgstr "Der er ikke valgt noget media element."
