@@ -59,6 +59,7 @@
         "drupal/layout_builder_modal": "^1.0",
         "drupal/layout_builder_restrictions": "^2.0",
         "drupal/linkit": "^6.0.0-beta2",
+        "drupal/lupus_taxonomy_import": "^1.2",
         "drupal/mailsystem": "^4.3",
         "drupal/media_library_bulk_upload": "^1.0@alpha",
         "drupal/menu_item_extras": "^2.16",
