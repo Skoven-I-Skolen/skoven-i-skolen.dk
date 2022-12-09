@@ -11,6 +11,7 @@ dependencies:
     - field.field.block_content.appetizer.field_appetizer_orientation
     - field.field.block_content.appetizer.field_appetizer_text
     - field.field.block_content.appetizer.field_appetizer_text_alignment
+    - field.field.block_content.appetizer.field_dynamic_height
     - field.field.block_content.appetizer.field_image_overflow
   module:
     - media_library
@@ -25,7 +26,7 @@ mode: default
 content:
   field_appetizer_color_theme:
     type: styles
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -73,6 +74,13 @@ content:
     weight: 5
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_dynamic_height:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_image_overflow:
     type: boolean_checkbox

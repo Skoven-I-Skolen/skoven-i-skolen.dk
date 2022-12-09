@@ -31,13 +31,15 @@
 {% set text_alignment = content['#block_content'].field_appetizer_text_alignment.value %}
 {% set image_overflow = content['#block_content'].field_image_overflow.value %}
 {% set color_theme = content['#block_content'].field_appetizer_color_theme.value %}
+{% set dynamic_height = content['#block_content'].field_dynamic_height.value %}
 {% set classes = [
   'appetiser',
   text_alignment ? 'appetiser--content-' ~ text_alignment,
   orientation and not is_small_version ? 'appetiser--image-' ~ orientation,
   is_small_version ? 'appetiser--small',
   image_overflow ? 'appetiser--image-overflow',
-  color_theme ? 'theme ' ~ color_theme
+  color_theme ? 'theme ' ~ color_theme,
+  dynamic_height ? 'appetiser--dynamic-height'
 ] %}
 
 <div {{ attributes.addClass(classes) }}>
