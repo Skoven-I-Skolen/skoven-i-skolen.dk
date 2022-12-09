@@ -1,0 +1,23 @@
+uuid: 5205d1f8-dbfb-42fe-9fcc-b09ed76176a8
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.appetizer
+    - field.storage.block_content.field_dynamic_height
+id: block_content.appetizer.field_dynamic_height
+field_name: field_dynamic_height
+entity_type: block_content
+bundle: appetizer
+label: 'Dynamisk højde'
+description: "Ved valg af dynamisk højde, vil højden tilpasse sig indholdet af blokken. <br>\r\nVed fravalg af dynamisk højde vil indholdet have samme højde som blokken ved siden af i et 2 kolonnes layout."
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Tilsluttet
+  off_label: Afbrudt
+field_type: boolean

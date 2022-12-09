@@ -243,4 +243,8 @@
       }
     }
   }
+
+  &--dynamic-height {
+    height: auto;
+  }
 }
