@@ -94,3 +94,14 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     $form['#attached']['library'][] = 'sis/media-library';
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function sis_articles_preprocess_menu(&$variables) {
+  if ($variables['menu_name'] === 'meta-menu') {
+    if (!$variables['logged_in']) {
+      unset($variables['items']['sis_articles.add_content']);
+    }
+  }
+}
