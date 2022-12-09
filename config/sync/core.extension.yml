@@ -70,6 +70,7 @@ module:
   link: 0
   linkit: 0
   locale: 0
+  lupus_taxonomy_import: 0
   mailsystem: 0
   media: 0
   media_icons: 0
