@@ -41,8 +41,11 @@ module:
   dynamic_page_cache: 0
   editor: 0
   editor_advanced_link: 0
+  embed: 0
   entity: 0
+  entity_browser: 0
   entity_clone: 0
+  entity_embed: 0
   entity_overview: 0
   entity_overview_search: 0
   entity_reference_revisions: 0
@@ -73,6 +76,9 @@ module:
   lupus_taxonomy_import: 0
   mailsystem: 0
   media: 0
+  media_directories: 0
+  media_directories_editor: 0
+  media_directories_ui: 0
   media_icons: 0
   media_library: 0
   media_library_bulk_upload: 0

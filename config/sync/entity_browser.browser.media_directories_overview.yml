@@ -1,0 +1,26 @@
+uuid: 64e10156-3b98-4f70-b4c1-e49e76c80739
+langcode: da
+status: true
+dependencies:
+  module:
+    - views
+_core:
+  default_config_hash: fwYnA3r1hTsmdfWhNHjuT32WZwfmgm9MeW9Qld0bv_A
+name: media_directories_overview
+label: 'Media Directories: Standalone'
+display: standalone
+display_configuration:
+  path: /admin/content/browser
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  35012080-4c05-4d06-aa7b-0a179e04a611:
+    id: media_directories_browser_widget
+    uuid: 35012080-4c05-4d06-aa7b-0a179e04a611
+    label: Browser
+    weight: 1
+    settings:
+      submit_text: 'Select entities'
+      auto_select: 0
