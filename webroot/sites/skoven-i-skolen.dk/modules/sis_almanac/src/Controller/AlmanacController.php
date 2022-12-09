@@ -103,6 +103,8 @@ class AlmanacController extends ControllerBase {
     $almanacToRender = [
       '#theme' => 'almanac',
       '#date' => $this->almanacService->createdFormattedDate($month, $day),
+      '#day' => $day,
+      '#month' => $month,
       '#content' => [
         '#type' => 'processed_text',
         '#text' => $almanac->get('field_almanac_content')->value,
