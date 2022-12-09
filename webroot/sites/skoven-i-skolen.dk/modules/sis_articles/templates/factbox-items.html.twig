@@ -1,7 +1,7 @@
 {% spaceless %}
 {% for title, inspiration in items %}
   <div class="facts-box__inspiration-group">
-    <div class="facts-box__inspiration-title">{{ title }}</div>
+    <div class="facts-box__inspiration-title">{{ title|raw }}</div>
     {% for article in inspiration %}
       {{ article }}
     {% endfor %}

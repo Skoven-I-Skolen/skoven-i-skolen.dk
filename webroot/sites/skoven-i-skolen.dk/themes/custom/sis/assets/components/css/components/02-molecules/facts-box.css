@@ -104,6 +104,10 @@
       background-size: contain;
       content: "";
     }
+
+    a {
+      text-decoration: none;
+    }
   }
 
   &__inspiration-group {

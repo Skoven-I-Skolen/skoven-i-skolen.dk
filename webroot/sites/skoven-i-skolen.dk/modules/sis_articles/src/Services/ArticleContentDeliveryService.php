@@ -61,10 +61,12 @@ class ArticleContentDeliveryService {
     $inspirational = [];
     foreach ($fields as $field) {
       if ($node->hasField($field) && !$node->get($field)->isEmpty()) {
+        /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
         $entity = $node->get($field)->entity;
         if ($entity) {
           $title = $entity->label();
-          $inspirational[$title] = $this->getRandomArticlesByFields([$field], $node);
+          $link = (string) $entity->toLink()->toString();
+          $inspirational[$link] = $this->getRandomArticlesByFields([$field], $node);
         }
       }
     }
