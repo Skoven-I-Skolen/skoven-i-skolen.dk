@@ -54,4 +54,19 @@ class NewsContentDeliveryService {
 
     return [];
   }
+
+  /**
+   * Get Latest news
+   *
+   * @return array
+   *   Array of rendered news items.
+   */
+  public function getLatestContentAsSimplelist(): array {
+    if ($latest = $this->newsRepository->getLatestContent(NULL, 3)) {
+      $nodes = Node::loadMultiple($latest);
+      return $this->entityViewBuilder->viewMultiple($nodes,'simple_list');
+    }
+
+    return [];
+  }
 }

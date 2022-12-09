@@ -41,4 +41,28 @@ class NewsRepository {
     return $query->execute();
   }
 
+  /**
+   * Get the latest content.
+   *
+   * @param \Drupal\node\NodeInterface|NULL $node
+   *   The node to filter from the result.
+   *
+   * @return array
+   *   Array if node ids.
+   */
+  public function getLatestContent(NodeInterface $node = NULL, $limit = 12): array {
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', ['news', 'article', 'blog_post'], 'IN')
+      ->condition('status', NodeInterface::PUBLISHED)
+      ->range(0, $limit)
+      ->sort('created', 'DESC');
+
+
+    // If node is provided, filter if from the result.
+    if ($node) {
+      $query->condition('nid', $node->id(), '!=');
+    }
+    return $query->execute();
+  }
+
 }
