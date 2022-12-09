@@ -32,3 +32,31 @@
     }
   }
 }
+
+media {
+  width: 100%;
+  display: block;
+  text-align: center;
+  picture {
+    display: inline-block;
+    margin-left: auto;
+  }
+  button {
+    position: absolute;
+    top: 10px;
+  }
+  &.align-center,
+  &.align-left,
+  &.align-right {
+   float: none;
+  }
+  &.align-right {
+   text-align: right;
+  }
+  &.align-left {
+   text-align: left;
+  }
+  &.align-center {
+   text-align: center;
+  }
+}
