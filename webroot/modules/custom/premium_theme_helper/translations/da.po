@@ -37,7 +37,10 @@ msgid "out of"
 msgstr "ud af"
 
 msgid "One media item remaining."
-msgstr "Ét media element mangler."
+msgstr "1 mediefil tilgængelig."
+
+msgid "@count media items remaining."
+msgstr "@count mediefiler tilgængelig."
 
 msgid "No media items are selected."
-msgstr "Der er ikke valgt noget media element."
+msgstr "Ingen mediefiler er valgt."
