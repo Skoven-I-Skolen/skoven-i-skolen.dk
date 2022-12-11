@@ -20,6 +20,7 @@ function sis_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $
   if (in_array($form_id, $article_forms)) {
     $form['#attached']['library'][] = 'sis/edit-form';
     unset($form['field_meta_tags']);
+    $form['revision_log']['#access'] = FALSE;
   }
 }
 
