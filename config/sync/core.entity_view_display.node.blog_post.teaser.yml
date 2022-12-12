@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_article_type
     - field.field.node.blog_post.field_description
+    - field.field.node.blog_post.field_list_date
     - field.field.node.blog_post.field_list_media
     - field.field.node.blog_post.field_meta_tags
     - field.field.node.blog_post.field_section_bg_graphics
@@ -36,6 +37,7 @@ content:
 hidden:
   field_article_type: true
   field_description: true
+  field_list_date: true
   field_list_media: true
   field_meta_tags: true
   field_section_bg_graphics: true
