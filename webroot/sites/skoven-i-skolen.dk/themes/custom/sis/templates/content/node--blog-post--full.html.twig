@@ -82,13 +82,10 @@
   node.field_section_bg_graphics.value ? 'section--background-graphics' : '',
 ] %}
 
-{% if authoring_information %}
-  <div class="blog-post__date">
-    {{ authoring_information }}
-  </div>
-{% endif %}
-
 <article{{ attributes.addClass(classes) }}>
+  <div class="blog-post__date">
+    Skrevet af <strong>{{ author_name|striptags }}</strong> {{ content.field_list_date }}
+  </div>
   {% if node.field_section_bg_graphics.value %}
     <img src="/{{ directory }}/dist/images/{{ node.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ node.field_section_bg_graphics.value }} section-bg-graphics__position--{{ node.field_section_bg_graphics_pos.value }}" />
   {% endif %}
@@ -100,10 +97,10 @@
           'title': node.title.value,
         } %}
         <div class="news-page__description">
-            {{ node.body.summary }}
+          {{ content.field_description }}
         </div>
         <div class="news-page__content">
-          {{ content }}
+          {{ content.body }}
         </div>
       </div>
       <div class="col-xs-12 col-md-4 col-lg-4 col-lg-offset-1">
