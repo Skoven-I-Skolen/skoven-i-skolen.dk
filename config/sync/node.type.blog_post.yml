@@ -15,4 +15,4 @@ description: 'Bruges til blogs med flere brugere. Hver bruger får en personlig 
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false
