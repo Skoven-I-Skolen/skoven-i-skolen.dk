@@ -83,15 +83,15 @@
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
-  <div class="blog-post__date">
-    Skrevet af <strong>{{ author_name|striptags }}</strong> {{ content.field_list_date }}
-  </div>
   {% if node.field_section_bg_graphics.value %}
     <img src="/{{ directory }}/dist/images/{{ node.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ node.field_section_bg_graphics.value }} section-bg-graphics__position--{{ node.field_section_bg_graphics_pos.value }}" />
   {% endif %}
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-8 col-lg-7">
+        <div class="blog-post__date">
+          Skrevet af <strong>{{ author_name|striptags }}</strong> {{ node.created.value|date('U')|format_date('custom', 'j. F Y') }}
+        </div>
         {% include '@reusable-component/page-title.twig' with {
           'attributes': create_attribute().addClass('article-page__title'),
           'title': node.title.value,
