@@ -8,6 +8,7 @@ dependencies:
     - core.entity_view_mode.media.small
   module:
     - editor
+    - entity_embed
     - media
     - sis_misc
 _core:
@@ -46,7 +47,7 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode alt title>'
       filter_html_help: true
       filter_html_nofollow: false
   media_embed:
@@ -67,4 +68,10 @@ filters:
     provider: sis_misc
     status: true
     weight: 0
+    settings: {  }
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: 100
     settings: {  }
