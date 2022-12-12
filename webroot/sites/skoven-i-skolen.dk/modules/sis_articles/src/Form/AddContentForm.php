@@ -20,9 +20,9 @@ class AddContentForm extends FormBase {
         ->t('Hvad vil du oprette?'),
       '#default_value' => 1,
       '#options' => [
-        0 => $this->t('Vil du have en prik på kortet?'),
-        1 => $this->t('Vil du lægge en aktivitet på kortet'),
-        2 => $this->t('Vil du lægge et undervisningsforløb på kortet'),
+        0 => '<strong>' . $this->t('Vil du have en prik på kortet?') . '</strong><div class="descriotion">' . t('(Institutioner som kan hjælpe udeskole lokalt, f.eks. udeskole, naturvejleder, jæger eller andet)') . '</div>',
+        1 => '<strong>' . $this->t('Vil du lægge en aktivitet på kortet') . '</strong><div class="descriotion">' . t('(En aktivitet er en ide, som ikke nødvendigvis er knyttet til et fag og faglige mål)') . '</div>',
+        2 => '<strong>' . $this->t('Vil du lægge et undervisningsforløb på kortet') . '</strong><div class="descriotion">' . t('(Et undervisningsforløb er knyttet til fag, klasse og faglige mål)') . '</div>',
       ],
     ];
 
