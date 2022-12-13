@@ -19,11 +19,14 @@ msgstr "Grene"
 msgid "Deer"
 msgstr "Hjort"
 
+msgid "Fish"
+msgstr "Fisk"
+
 msgid "Reeds"
 msgstr "Dunhammer"
 
 msgid "Sea"
-msgstr "hav"
+msgstr "Hav"
 
 msgid "Wind"
 msgstr "Vind"
@@ -37,11 +40,14 @@ msgstr "Grene"
 msgid "deer"
 msgstr "Hjort"
 
+msgid "fish"
+msgstr "Fisk"
+
 msgid "reeds"
 msgstr "Dunhammer"
 
 msgid "sea"
-msgstr "hav"
+msgstr "Hav"
 
 msgid "wind"
 msgstr "Vind"

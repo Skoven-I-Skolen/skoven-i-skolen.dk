@@ -12,6 +12,9 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: fish
+      label: Fisk
+    -
       value: birds
       label: Fugle
     -

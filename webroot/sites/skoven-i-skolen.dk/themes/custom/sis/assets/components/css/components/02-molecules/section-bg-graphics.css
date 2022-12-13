@@ -34,6 +34,10 @@
       width: 180px;
     }
 
+    &--fish {
+      width: 190px;
+    }
+
     &--reeds {
       width: 240px;
     }
@@ -59,6 +63,10 @@
 
       &.section-bg-graphics__image--deer {
         right: -10px;
+      }
+
+      &.section-bg-graphics__image--fish {
+        right: 0;
       }
 
       &.section-bg-graphics__image--reeds {
@@ -87,6 +95,10 @@
 
       &.section-bg-graphics__image--deer {
         left: -10px;
+      }
+
+      &.section-bg-graphics__image--fish {
+        left: 0;
       }
 
       &.section-bg-graphics__image--reeds {
