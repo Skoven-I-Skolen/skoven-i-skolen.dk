@@ -120,13 +120,16 @@
 
   &__inspiration-item {
     margin-bottom: 20px;
-
+    a {
+      text-decoration: none;
+    }
     &:last-child {
       margin-bottom: 0;
     }
 
     &__type {
       font-size: var(--base-font-size-small);
+      text-decoration: none;
     }
 
     &__link {

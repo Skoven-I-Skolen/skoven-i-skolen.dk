@@ -61,11 +61,11 @@ class AlmanacController extends ControllerBase {
     switch ($action) {
       case 'before':
         $day = $date->modify('-1 day')->format('j');
-        $month = $date->modify('-1 day')->format('n');
+        $month = $date->format('n');
         break;
       case 'after':
         $day = $date->modify('+1 day')->format('j');
-        $month = $date->modify('+1 day')->format('n');
+        $month = $date->format('n');
         break;
     }
 

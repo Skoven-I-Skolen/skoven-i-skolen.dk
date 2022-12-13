@@ -11,7 +11,7 @@ field_name: field_summary
 entity_type: user
 bundle: user
 label: Resumé
-description: 'Skriv et kort resumé om dig selv. Det vil blive vist på hver blogside, du udgiver, og muligvis på andre relaterede blogsider.'
+description: 'Skriv et kort resumé om dig selv.'
 required: false
 translatable: false
 default_value: {  }

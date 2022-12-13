@@ -125,25 +125,27 @@
 
         {% if node.field_factboxes.value %}
           {% for factboxe in node.field_factboxes %}
-            <div class="facts-box">
-              <div class="facts-box__title">
-                {{ factboxe.entity.field_factbox_title.value }}
-              </div>
-              <div class="facts-box__content">
-                {% if factboxe.entity.field_factbox_subtitle.value %}
-                  <div class="facts-box__content-item">
-                    <div class="facts-box__content-item-label">
-                      {{ factboxe.entity.field_factbox_subtitle.value }}
+            {% if factboxe.entity.field_factbox_content.value %}
+              <div class="facts-box">
+                <div class="facts-box__title">
+                  {{ factboxe.entity.field_factbox_title.value }}
+                </div>
+                <div class="facts-box__content">
+                  {% if factboxe.entity.field_factbox_subtitle.value %}
+                    <div class="facts-box__content-item">
+                      <div class="facts-box__content-item-label">
+                        {{ factboxe.entity.field_factbox_subtitle.value }}
+                      </div>
+                      <div class="facts-box__content-item-value">
+                        {{ factboxe.entity.field_factbox_content.value|t }}
+                      </div>
                     </div>
-                    <div class="facts-box__content-item-value">
-                      {{ factboxe.entity.field_factbox_content.value|t }}
-                    </div>
-                  </div>
-                {% else %}
-                  {{ factboxe.entity.field_factbox_content.value|t }}
-                {% endif %}
+                  {% else %}
+                    {{ factboxe.entity.field_factbox_content.value|t }}
+                  {% endif %}
+                </div>
               </div>
-            </div>
+            {% endif %}
           {% endfor %}
         {% endif %}
         {% if inspirations|render|length > 0 %}
