@@ -11,8 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - limited_html_link
-      - basic_html
+      - plain_text
 id: node.article.field_institution
 field_name: field_institution
 entity_type: node

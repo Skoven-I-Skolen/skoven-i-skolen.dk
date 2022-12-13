@@ -104,13 +104,15 @@
             {{ content.field_description }}
           </div>
           <div class="article-page__image">
-		  	    {% if content.field_article_image|render is empty %}
-            	{{ content.field_article_image_migrated }}
-			      {% else %}
-            	{{ content.field_article_image }}
+            {% if content.field_article_image_anonymous|render is not empty %}
+                {{ content.field_article_image_anonymous|render }}
+              {% elseif content.field_article_image_migrated|render is not empty %}
+                {{ content.field_article_image_migrated|render }}
+              {% elseif content.field_article_image|render is not empty %}
+                {{ content.field_article_image|render }}
 			      {% endif %}
           </div>
-          {{ content|without(['field_list_date', 'field_header', 'title', 'field_article_image_migrated', 'field_article_image', 'field_description', 'field_article_related']) }}
+            {{ content.body }}
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-lg-offset-1 article-content-sidebar">
@@ -204,7 +206,9 @@
                         {{ factboxe.entity.field_factbox_subtitle.value }}
                       </div>
                       <div class="facts-box__content-item-value">
-                        {{ factboxe.entity.field_factbox_content.value|t }}
+                        <div>
+                          {{ factboxe.entity.field_factbox_content.value|t }}
+                        </div>
                       </div>
                     </div>
                   {% else %}

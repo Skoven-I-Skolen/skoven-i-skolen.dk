@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.dot_on_map.field_class
     - field.field.node.dot_on_map.field_contact_information
     - field.field.node.dot_on_map.field_files
+    - field.field.node.dot_on_map.field_list_media_anonymous
     - field.field.node.dot_on_map.field_location
     - field.field.node.dot_on_map.field_meta_tags
     - field.field.node.dot_on_map.field_people_and_places
@@ -19,6 +20,7 @@ dependencies:
     - field.field.node.dot_on_map.lat
     - field.field.node.dot_on_map.lon
     - field.field.node.dot_on_map.sis_map_address_dawa
+    - image.style.thumbnail
     - node.type.dot_on_map
     - workflows.workflow.editorial
   module:
@@ -27,6 +29,7 @@ dependencies:
     - dds_dawa
     - field_group
     - file
+    - image
     - metatag
     - text
 third_party_settings:
@@ -116,7 +119,7 @@ third_party_settings:
       label: Kategorisering
       region: content
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: fieldset
       format_settings:
         classes: ''
@@ -126,14 +129,12 @@ third_party_settings:
         required_fields: true
     group_information:
       children:
-        - title
-        - body
         - field_summary
-        - field_contact_information
-      label: Information
+        - field_list_media_anonymous
+      label: Listevisning
       region: content
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: fieldset
       format_settings:
         classes: ''
@@ -147,7 +148,7 @@ third_party_settings:
       label: Filer
       region: content
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: fieldset
       format_settings:
         classes: ''
@@ -193,7 +194,23 @@ third_party_settings:
       label: Geolokation
       region: content
       parent_name: ''
-      weight: 1
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_content:
+      children:
+        - title
+        - body
+        - field_contact_information
+      label: Indhold
+      region: content
+      parent_name: ''
+      weight: 0
       format_type: fieldset
       format_settings:
         classes: ''
@@ -227,7 +244,7 @@ content:
     third_party_settings: {  }
   field_contact_information:
     type: string_textarea
-    weight: 4
+    weight: 3
     region: content
     settings:
       rows: 5
@@ -240,6 +257,14 @@ content:
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
+  field_list_media_anonymous:
+    type: image_image
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_location:
     type: options_buttons
     weight: 6
@@ -248,7 +273,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 26
+    weight: 8
     region: content
     settings:
       sidebar: true
@@ -274,13 +299,13 @@ content:
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_section_bg_graphics_pos:
     type: options_select
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -292,7 +317,7 @@ content:
     third_party_settings: {  }
   field_summary:
     type: string_textarea
-    weight: 3
+    weight: 4
     region: content
     settings:
       rows: 5
@@ -308,7 +333,7 @@ content:
     third_party_settings: {  }
   lon:
     type: string_textfield
-    weight: 12
+    weight: 10
     region: content
     settings:
       size: 60
@@ -316,7 +341,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

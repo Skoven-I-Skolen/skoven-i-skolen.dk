@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_image
+    - field.field.node.article.field_article_image_anonymous
     - field.field.node.article.field_article_image_migrated
     - field.field.node.article.field_article_months
     - field.field.node.article.field_article_related
@@ -27,6 +28,7 @@ dependencies:
     - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
     - field.field.node.article.field_list_media
+    - field.field.node.article.field_list_media_anonymous
     - field.field.node.article.field_location
     - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
@@ -43,6 +45,7 @@ dependencies:
     - node.type.article
   module:
     - datetime
+    - image
     - user
 _core:
   default_config_hash: cITkIPn3-i-ZQcV_BmrcIM66yh1kZWBRCYKeSftnYpc
@@ -62,7 +65,15 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 7
+    region: content
+  field_article_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_article_type:
     type: entity_reference_label
@@ -70,7 +81,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_description:
     type: basic_string
@@ -98,6 +109,17 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  field_list_media_anonymous:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_subject:
     type: entity_reference_entity_view
     label: hidden
@@ -110,7 +132,7 @@ content:
 hidden:
   body: true
   content_hierarchy: true
-  field_article_image: true
+  field_article_image_anonymous: true
   field_article_image_migrated: true
   field_article_months: true
   field_article_related: true

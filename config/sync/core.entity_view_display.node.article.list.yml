@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_image
+    - field.field.node.article.field_article_image_anonymous
+    - field.field.node.article.field_article_image_migrated
     - field.field.node.article.field_article_months
     - field.field.node.article.field_article_related
     - field.field.node.article.field_article_type
@@ -16,14 +18,19 @@ dependencies:
     - field.field.node.article.field_colophon_author
     - field.field.node.article.field_colophon_editor
     - field.field.node.article.field_colophon_photographer
+    - field.field.node.article.field_contact_person
+    - field.field.node.article.field_copy_sheet
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
     - field.field.node.article.field_header
+    - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
     - field.field.node.article.field_list_media
+    - field.field.node.article.field_list_media_anonymous
     - field.field.node.article.field_location
+    - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_meta_tags
     - field.field.node.article.field_season
@@ -36,9 +43,11 @@ dependencies:
     - field.field.node.article.lon
     - field.field.node.article.sis_map_address_dawa
     - node.type.article
+    - responsive_image.styles.list_view
   module:
     - layout_builder
     - layout_builder_restrictions
+    - responsive_image
     - user
 third_party_settings:
   layout_builder:
@@ -61,7 +70,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_class:
     type: entity_reference_label
@@ -69,14 +78,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_description:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_list_media:
     type: entity_reference_entity_view
@@ -85,7 +94,16 @@ content:
       view_mode: list
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
+    region: content
+  field_list_media_anonymous:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: list_view
+      image_link: ''
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_subject:
     type: entity_reference_entity_view
@@ -94,13 +112,14 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
 hidden:
   body: true
   content_hierarchy: true
   field_article_categories: true
   field_article_image: true
+  field_article_image_anonymous: true
   field_article_image_migrated: true
   field_article_months: true
   field_article_related: true

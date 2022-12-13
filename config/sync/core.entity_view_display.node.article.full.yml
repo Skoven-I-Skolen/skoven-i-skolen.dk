@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_image
+    - field.field.node.article.field_article_image_anonymous
     - field.field.node.article.field_article_image_migrated
     - field.field.node.article.field_article_months
     - field.field.node.article.field_article_related
@@ -27,6 +28,7 @@ dependencies:
     - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
     - field.field.node.article.field_list_media
+    - field.field.node.article.field_list_media_anonymous
     - field.field.node.article.field_location
     - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
@@ -43,6 +45,7 @@ dependencies:
     - node.type.article
   module:
     - entity_reference_revisions
+    - image
     - layout_builder
     - layout_builder_restrictions
     - text
@@ -122,6 +125,17 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_article_image_anonymous:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 7
+    region: content
   field_article_image_migrated:
     type: entity_reference_entity_view
     label: hidden
@@ -182,6 +196,7 @@ hidden:
   field_institution: true
   field_list_date: true
   field_list_media: true
+  field_list_media_anonymous: true
   field_location: true
   field_materials: true
   field_media_downloads: true

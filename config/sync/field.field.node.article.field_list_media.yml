@@ -12,9 +12,9 @@ id: node.article.field_list_media
 field_name: field_list_media
 entity_type: node
 bundle: article
-label: 'Liste media'
+label: 'Liste media (Webmasters)'
 description: 'Billede vist på søgeresultater og andre lister.'
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

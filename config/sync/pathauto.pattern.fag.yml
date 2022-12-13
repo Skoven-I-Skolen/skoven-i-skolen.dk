@@ -1,0 +1,22 @@
+uuid: b345c88a-30d5-49ea-a68b-2c977101f851
+langcode: da
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: fag
+label: Fag
+type: 'canonical_entities:taxonomy_term'
+pattern: '/fag/[term:name]'
+selection_criteria:
+  13ad6e42-90f1-4727-948c-adf49e5d6338:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 13ad6e42-90f1-4727-948c-adf49e5d6338
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      subjects: subjects
+selection_logic: and
+weight: -5
+relationships: {  }

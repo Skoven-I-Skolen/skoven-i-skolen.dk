@@ -1,0 +1,17 @@
+uuid: 5070513d-1e0f-4c25-8b53-bbdeb3d4cb65
+langcode: da
+status: true
+dependencies: {  }
+name: 'Simpel HTML til faktabokse'
+format: simpel_html_til_faktabokse
+weight: -10
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>'
+      filter_html_help: true
+      filter_html_nofollow: false

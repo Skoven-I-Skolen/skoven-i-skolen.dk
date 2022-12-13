@@ -1,5 +1,6 @@
 .facts-box {
   margin-bottom: 40px;
+  word-break: break-all;
   background-color: var(--color-white);
   box-shadow: 0 4px 30px rgb(131 131 131 / 25%);
 
@@ -120,9 +121,11 @@
 
   &__inspiration-item {
     margin-bottom: 20px;
+
     a {
       text-decoration: none;
     }
+
     &:last-child {
       margin-bottom: 0;
     }

@@ -37,3 +37,11 @@
     display: none;
   }
 }
+
+.filter-help {
+  display: none;
+}
+
+.edit-field-factboxes {
+  margin-bottom: 50px;
+}
