@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.simpel_html_til_faktabokse
     - media.type.image
     - node.type.article
     - node.type.dot_on_map
@@ -28,15 +29,27 @@ permissions:
   - 'access user profiles'
   - 'create article content'
   - 'create dot_on_map content'
+  - 'create field_article_image_anonymous'
+  - 'create field_list_media_anonymous'
   - 'create image media'
   - 'delete own image media'
+  - 'edit own field_article_image_anonymous'
+  - 'edit own field_list_media_anonymous'
   - 'edit own image media'
   - 'search content'
   - 'use editorial transition create_new_draft'
   - 'use text format basic_html'
+  - 'use text format simpel_html_til_faktabokse'
   - 'view any organization profile'
   - 'view any profile'
   - 'view field_article_related'
+  - 'view field_colophon'
+  - 'view field_list_media'
+  - 'view field_list_media_anonymous'
   - 'view media'
+  - 'view own field_article_image_anonymous'
   - 'view own field_article_related'
+  - 'view own field_colophon'
+  - 'view own field_list_media'
+  - 'view own field_list_media_anonymous'
   - 'view own unpublished media'

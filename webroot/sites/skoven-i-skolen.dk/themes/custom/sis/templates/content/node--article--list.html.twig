@@ -78,7 +78,11 @@
 	<div class="inspiration-overview__item-inner">
 		<a href="{{ url }}" class="inspiration-overview__item-link" aria-label="{{ node.field_article_type.entity.name.value }}">
 			<div class="inspiration-overview__image">
-				{{ content.field_list_media }}
+        {% if content.field_list_media_anonymous[0] %}
+            {{ content.field_list_media_anonymous }}
+          {% else %}
+            {{ content.field_list_media }}
+        {% endif %}
 				<a href="{{ typeAltrerLink ?? typeUrl }}" aria-label="{{ node.field_article_type.entity.name.value }}">
 					<div class="inspiration-overview__type">
 						{{ node.field_article_type.entity.name.value }}

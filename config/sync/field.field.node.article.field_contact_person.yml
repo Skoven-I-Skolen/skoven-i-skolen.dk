@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - limited_html_link
+      - simpel_html_til_faktabokse
       - basic_html
 id: node.article.field_contact_person
 field_name: field_contact_person

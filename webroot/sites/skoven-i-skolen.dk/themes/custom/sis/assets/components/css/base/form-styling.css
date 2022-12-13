@@ -47,3 +47,18 @@
   }
 }
 
+#edit-field-factboxes {
+  margin-bottom: 25px;
+}
+
+.js-filter-guidelines {
+  display: none;
+}
+
+#edit-field-institution-0-format {
+  display: none;
+}
+
+.js-filter-wrapper {
+  display: none;
+}

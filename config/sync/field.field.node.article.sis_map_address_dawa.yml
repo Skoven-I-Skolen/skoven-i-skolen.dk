@@ -12,7 +12,7 @@ field_name: sis_map_address_dawa
 entity_type: node
 bundle: article
 label: Adresse
-description: 'Indtast en adresse for at vise artiklen på kortet. Hvis der ikke findes nogen adresse på stedet, kan du indtaste længde- og breddegrad på det herunder.'
+description: "Denne adresse bruges til at finde indholdet på kortet.\r\nHvis der ikke er nogen adresse, vil nedenstående koordinater blive brugt."
 required: false
 translatable: true
 default_value: {  }

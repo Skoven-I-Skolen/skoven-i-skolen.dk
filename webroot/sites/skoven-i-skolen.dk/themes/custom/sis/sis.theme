@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\taxonomy\Entity\Term;
 
 require_once 'layout_block.preprocess.inc';
@@ -53,6 +54,16 @@ function sis_theme_suggestions_menu_alter(&$suggestions, array $variables) {
 function sis_preprocess_block(&$variables) {
   if($variables['plugin_id'] === 'premium_breadcrumb_block') {
     $variables['#cache']['max-age'] = 0;
+  }
+  else if (isset($variables['elements']['#id']) &&
+    $variables['elements']['#id'] === 'pageheader') {
+    if ($name = Drupal::requestStack()->getCurrentRequest()->get('type')) {
+      if ($name === 'Aktiviteter') {
+        $name = 'Aktivitet';
+      }
+      $variables['content']['title']['#title'] =
+        new TranslatableMarkup('Create @name', ['@name' => $name]);
+    }
   }
 }
 

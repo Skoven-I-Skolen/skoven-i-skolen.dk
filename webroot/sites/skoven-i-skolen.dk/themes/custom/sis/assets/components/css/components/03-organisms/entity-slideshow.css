@@ -65,6 +65,7 @@
     flex-direction: column;
     height: 100%;
     background-color: #fff;
+    color: var(--color-white);
   }
 
   &__item-link {
@@ -98,6 +99,11 @@
     font-family: var(--base-font-family);
     background-color: var(--color-primary);
 
+    a {
+      text-decoration: none;
+      color: unset;
+    }
+    
     &--news {
       background-color: var(--color-red);
     }

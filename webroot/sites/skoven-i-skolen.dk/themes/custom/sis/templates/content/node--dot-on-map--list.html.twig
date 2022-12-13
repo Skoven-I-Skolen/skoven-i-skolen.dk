@@ -72,11 +72,13 @@
 	<div class="inspiration-overview__item-inner">
 		<div class="inspiration-overview__item-link">
 			<a href="{{ url }}">
-				<div class="inspiration-overview__image">
-					{{ content.field_list_media }}
-						<div class="inspiration-overview__type inspiration-overview__type--dot-on-map">
-							{{ 'Prik på kort'|t }}
-						</div>
+				<div class="inspiration-overview__image inspiration-overview__image__dot-on-map">
+            {{ content.field_list_media_anonymous }}
+          <a href="/kort" aria-label="{{ node.field_article_type.entity.name.value }}">
+            <div class="inspiration-overview__type">
+              Prik på kort
+            </div>
+          </a>
 				</div>
 			</a>
 			<a href="{{ url }}" class="inspiration-overview__content__wrapper">
@@ -91,7 +93,7 @@
 						{% endtrans %}
 					</div>
 					<div class="inspiration-overview__description">
-						{{ content.body }}
+						{{ content.field_summary }}
 					</div>
 				</div>
 			</a>

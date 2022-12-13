@@ -74,9 +74,11 @@
       <a href="{{ url }}" class="entity-slideshow__item-link">
         <div class="entity-slideshow__image">
           {{ article_image }}
-          <div class="entity-slideshow__type">
-            {{ node.field_article_type.entity.name.value }}
-          </div>
+          <a href="/{{ node.field_article_type.entity.name.value }}">
+            <div class="entity-slideshow__type">
+              {{ node.field_article_type.entity.name.value }}
+            </div>
+          </a>
         </div>
         <div class="entity-slideshow__content-wrapper">
           <div class="entity-slideshow__content">

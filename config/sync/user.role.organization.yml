@@ -12,6 +12,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - content_moderation
+    - field_permissions
     - media
     - node
     - profile
@@ -24,6 +25,7 @@ permissions:
   - 'create article content'
   - 'create document media'
   - 'create dot_on_map content'
+  - 'create field_colophon'
   - 'create image media'
   - 'create remote_video media'
   - 'create video media'
@@ -36,6 +38,7 @@ permissions:
   - 'delete own video media'
   - 'edit own article content'
   - 'edit own document media'
+  - 'edit own field_colophon'
   - 'edit own image media'
   - 'edit own remote_video media'
   - 'edit own video media'

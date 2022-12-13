@@ -6,7 +6,7 @@ dependencies:
     - sis_misc
 name: 'Begrænset HTML med link'
 format: limited_html_link
-weight: -9
+weight: -8
 filters:
   filter_html:
     id: filter_html

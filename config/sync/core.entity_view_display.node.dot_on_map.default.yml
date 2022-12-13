@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.dot_on_map.field_class
     - field.field.node.dot_on_map.field_contact_information
     - field.field.node.dot_on_map.field_files
+    - field.field.node.dot_on_map.field_list_media_anonymous
     - field.field.node.dot_on_map.field_location
     - field.field.node.dot_on_map.field_meta_tags
     - field.field.node.dot_on_map.field_people_and_places
@@ -20,9 +21,11 @@ dependencies:
     - field.field.node.dot_on_map.lon
     - field.field.node.dot_on_map.sis_map_address_dawa
     - node.type.dot_on_map
+    - responsive_image.styles.list_view
   module:
     - file
     - metatag
+    - responsive_image
     - text
     - user
 id: node.dot_on_map.default
@@ -71,6 +74,15 @@ content:
       use_description_as_link_text: true
     third_party_settings: {  }
     weight: 10
+    region: content
+  field_list_media_anonymous:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: list_view
+      image_link: ''
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_location:
     type: entity_reference_label
@@ -121,7 +133,7 @@ content:
     region: content
   field_summary:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 11

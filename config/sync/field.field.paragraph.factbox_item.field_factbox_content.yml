@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - basic_html
+      - plain_text
 id: paragraph.factbox_item.field_factbox_content
 field_name: field_factbox_content
 entity_type: paragraph

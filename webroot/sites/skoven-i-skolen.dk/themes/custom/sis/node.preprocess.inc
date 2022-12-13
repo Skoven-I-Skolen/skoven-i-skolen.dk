@@ -63,7 +63,11 @@ function sis_preprocess_node__article__slideshow(&$variables) {
   $node = $variables['node'] ?? NULL;
   $image_style = 'entity_slideshow';
 
-  if ($node->hasField('field_article_image') && !$node->get('field_article_image')->isEmpty() && !is_null($node->get('field_article_image')->entity)) {
+  if ($node->hasField('field_article_image_anonymous') && !$node->get('field_article_image_anonymous')->isEmpty() && !is_null($node->get('field_article_image_anonymous')->entity)
+    && isset($variables['content']['field_article_image_anonymous'])) {
+    $variables['article_image'] = $variables['content']['field_article_image_anonymous'];
+  }
+  elseif ($node->hasField('field_article_image') && !$node->get('field_article_image')->isEmpty() && !is_null($node->get('field_article_image')->entity)) {
     $variables['article_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($node->get('field_article_image')->entity, $image_style);
   }
   elseif ($node->hasField('field_article_image_migrated') && !$node->get('field_article_image_migrated')->isEmpty() && !is_null($node->get('field_article_image_migrated')->entity)) {

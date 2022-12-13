@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.article.content_hierarchy
     - field.field.node.article.field_article_categories
     - field.field.node.article.field_article_image
+    - field.field.node.article.field_article_image_anonymous
+    - field.field.node.article.field_article_image_migrated
     - field.field.node.article.field_article_months
     - field.field.node.article.field_article_related
     - field.field.node.article.field_article_type
@@ -26,6 +28,7 @@ dependencies:
     - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
     - field.field.node.article.field_list_media
+    - field.field.node.article.field_list_media_anonymous
     - field.field.node.article.field_location
     - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
@@ -40,9 +43,11 @@ dependencies:
     - field.field.node.article.lon
     - field.field.node.article.sis_map_address_dawa
     - node.type.article
+    - responsive_image.styles.entity_slideshow
   module:
     - layout_builder
     - layout_builder_restrictions
+    - responsive_image
     - user
 third_party_settings:
   layout_builder:
@@ -71,13 +76,30 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_class:
+  field_article_image_anonymous:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: entity_slideshow
+      image_link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_article_image_migrated:
     type: entity_reference_label
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_class:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_description:
     type: basic_string
@@ -92,14 +114,13 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
 hidden:
   body: true
   content_hierarchy: true
   content_moderation_control: true
   field_article_categories: true
-  field_article_image_migrated: true
   field_article_months: true
   field_article_related: true
   field_article_type: true
@@ -116,6 +137,7 @@ hidden:
   field_institution: true
   field_list_date: true
   field_list_media: true
+  field_list_media_anonymous: true
   field_location: true
   field_materials: true
   field_media_downloads: true

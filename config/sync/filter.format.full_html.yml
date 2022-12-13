@@ -15,7 +15,7 @@ _core:
   default_config_hash: svejBAiBwALaC_w177xrfxgSohJVRMBWC8o2kfKabLs
 name: 'Fuld HTML'
 format: full_html
-weight: -8
+weight: -7
 filters:
   filter_align:
     id: filter_align
@@ -56,7 +56,7 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: large
+      default_view_mode: default
       allowed_view_modes:
         large: large
         medium: medium

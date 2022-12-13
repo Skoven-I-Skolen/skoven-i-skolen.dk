@@ -12,7 +12,7 @@ field_name: field_description
 entity_type: node
 bundle: article
 label: 'Liste beskrivelse'
-description: ''
+description: 'En kort beskrivelse af artiklen. Det vil blive vist på lister, såsom søgeresultater.'
 required: true
 translatable: true
 default_value: {  }

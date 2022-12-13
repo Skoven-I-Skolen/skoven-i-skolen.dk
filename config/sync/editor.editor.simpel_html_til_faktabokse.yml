@@ -1,0 +1,41 @@
+uuid: 806a1bc2-b0e7-4263-8bfa-5def25d67e9a
+langcode: da
+status: true
+dependencies:
+  config:
+    - filter.format.simpel_html_til_faktabokse
+  module:
+    - ckeditor
+format: simpel_html_til_faktabokse
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatering
+          items:
+            - Bold
+            - Italic
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lister
+          items:
+            - BulletedList
+            - NumberedList
+  plugins:
+    drupallink:
+      linkit_enabled: false
+      linkit_profile: ''
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null
