@@ -12,7 +12,7 @@ field_name: field_section_bg_graphics
 entity_type: node
 bundle: blog_post
 label: Baggrundsgrafik
-description: 'Baggrundsgrafik er figurer eller natur-motiver som fremgår på din side i højre eller venstre side af skærmen. Se flere eksempler på forsiden. Vælg Ingen.'
+description: 'Baggrundsgrafik er figurer eller natur-motiver som fremgår på din side i højre eller venstre side af skærmen. Se flere eksempler på forsiden.'
 required: false
 translatable: true
 default_value: {  }
