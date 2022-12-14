@@ -4,12 +4,13 @@ status: true
 dependencies:
   config:
     - block_content.type.image
+    - entity_browser.browser.media_directories_modal
     - field.field.block_content.image.field_dynamic_height
     - field.field.block_content.image.field_image_caption
     - field.field.block_content.image.field_image_link
     - field.field.block_content.image.field_image_media
   module:
-    - media_library
+    - entity_browser
     - premium_tools
 _core:
   default_config_hash: hKym4mVUgl9Lw6DJLa31vUA3KhJDJbNLXAWNr2vTR64
@@ -43,11 +44,19 @@ content:
       target_blank: 0
     third_party_settings: {  }
   field_image_media:
-    type: media_library_widget
+    type: entity_browser_entity_reference
     weight: 0
     region: content
     settings:
-      media_types: {  }
+      entity_browser: media_directories_modal
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: small
+      selection_mode: selection_append
     third_party_settings: {  }
 hidden:
   info: true

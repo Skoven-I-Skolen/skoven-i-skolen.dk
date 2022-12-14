@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_directories_modal
     - field.field.paragraph.basic_hero.field_background
     - field.field.paragraph.basic_hero.field_color_theme
     - field.field.paragraph.basic_hero.field_cta
@@ -14,7 +15,7 @@ dependencies:
     - field.field.paragraph.basic_hero.field_text_position
     - paragraphs.paragraphs_type.basic_hero
   module:
-    - media_library
+    - entity_browser
     - styles
     - text
 _core:
@@ -25,11 +26,19 @@ bundle: basic_hero
 mode: default
 content:
   field_background:
-    type: media_library_widget
+    type: entity_browser_entity_reference
     weight: 1
     region: content
     settings:
-      media_types: {  }
+      entity_browser: media_directories_modal
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: small
+      selection_mode: selection_append
     third_party_settings: {  }
   field_color_theme:
     type: styles

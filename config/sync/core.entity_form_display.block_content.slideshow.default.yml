@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - block_content.type.slideshow
+    - entity_browser.browser.media_directories_editor_browser
     - field.field.block_content.slideshow.field_slideshow_autoplay
     - field.field.block_content.slideshow.field_slideshow_images
   module:
-    - media_library
+    - entity_browser
 _core:
   default_config_hash: PwgP7TYn7SL_SulZXB2dLEDq5o7-5goC4U48YUWQuKQ
 id: block_content.slideshow.default
@@ -23,11 +24,19 @@ content:
       display_label: true
     third_party_settings: {  }
   field_slideshow_images:
-    type: media_library_widget
+    type: entity_browser_entity_reference
     weight: 0
     region: content
     settings:
-      media_types: {  }
+      entity_browser: media_directories_editor_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: list
+      selection_mode: selection_append
     third_party_settings: {  }
 hidden:
   info: true

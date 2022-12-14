@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_directories_modal
     - field.field.paragraph.inline_hero.field_background
     - field.field.paragraph.inline_hero.field_cta
     - field.field.paragraph.inline_hero.field_dynamic_height
@@ -13,7 +14,7 @@ dependencies:
     - field.field.paragraph.inline_hero.field_title
     - paragraphs.paragraphs_type.inline_hero
   module:
-    - media_library
+    - entity_browser
     - styles
     - text
 _core:
@@ -24,11 +25,19 @@ bundle: inline_hero
 mode: default
 content:
   field_background:
-    type: media_library_widget
+    type: entity_browser_entity_reference
     weight: 3
     region: content
     settings:
-      media_types: {  }
+      entity_browser: media_directories_modal
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: small
+      selection_mode: selection_append
     third_party_settings: {  }
   field_cta:
     type: styles_link_target
