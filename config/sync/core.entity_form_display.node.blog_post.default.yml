@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_directories_modal
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_article_type
     - field.field.node.blog_post.field_description
@@ -14,9 +15,8 @@ dependencies:
   module:
     - allowed_formats
     - content_moderation
-    - datetime
+    - entity_browser
     - field_group
-    - media_library
     - metatag
     - path
     - text
@@ -70,11 +70,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_list_media:
-    type: media_library_widget
+    type: entity_browser_entity_reference
     weight: 18
     region: content
     settings:
-      media_types: {  }
+      entity_browser: media_directories_modal
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+      selection_mode: selection_append
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
