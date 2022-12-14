@@ -12,7 +12,6 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - simpel_html_til_faktabokse
-      - basic_html
 id: node.article.field_contact_person
 field_name: field_contact_person
 entity_type: node
