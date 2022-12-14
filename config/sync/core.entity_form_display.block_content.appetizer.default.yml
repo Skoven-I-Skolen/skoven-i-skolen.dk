@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.appetizer
+    - entity_browser.browser.media_directories_modal
     - field.field.block_content.appetizer.field_appetizer_color_theme
     - field.field.block_content.appetizer.field_appetizer_cta
     - field.field.block_content.appetizer.field_appetizer_headline
@@ -14,7 +15,7 @@ dependencies:
     - field.field.block_content.appetizer.field_dynamic_height
     - field.field.block_content.appetizer.field_image_overflow
   module:
-    - media_library
+    - entity_browser
     - styles
     - text
 _core:
@@ -49,11 +50,19 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_appetizer_image:
-    type: media_library_widget
+    type: entity_browser_entity_reference
     weight: 1
     region: content
     settings:
-      media_types: {  }
+      entity_browser: media_directories_modal
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: small
+      selection_mode: selection_append
     third_party_settings: {  }
   field_appetizer_orientation:
     type: options_select
