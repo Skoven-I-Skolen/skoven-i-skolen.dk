@@ -73,7 +73,9 @@
     <div class="entity-slideshow__item-inner">
       <a href="{{ url }}" class="entity-slideshow__item-link">
         <div class="entity-slideshow__image">
-          {{ blog_image }}
+          {% if blog_image %}
+            {{ blog_image }}
+          {% endif %}
           <a href="/blogs">
             <div class="entity-slideshow__type entity-slideshow__type--blog">
               {{ node.type.entity.label }}
