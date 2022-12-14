@@ -6,7 +6,13 @@ dependencies:
     - block_content.type.inspiration_overview
     - field.storage.block_content.body
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+      - full_html
 id: block_content.inspiration_overview.body
 field_name: body
 entity_type: block_content
