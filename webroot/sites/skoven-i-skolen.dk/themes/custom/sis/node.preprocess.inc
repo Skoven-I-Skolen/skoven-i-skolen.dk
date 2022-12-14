@@ -81,7 +81,10 @@ function sis_preprocess_node__blog_post__slideshow(&$variables) {
   $node = $variables['node'] ?? NULL;
   $image_style = 'entity_slideshow';
 
-  if ($node->hasField('field_list_media') && !$node->get('field_list_media')->isEmpty() && !is_null($node->get('field_list_media')->entity)) {
+  if ($node->hasField('field_list_media_anonymous') && !$node->get('field_list_media_anonymous')->isEmpty() && !is_null($node->get('field_list_media_anonymous')->entity)) {
+    $variables['blog_image'] = $variables['content']['field_list_media_anonymous'];
+  }
+  else if ($node->hasField('field_list_media') && !$node->get('field_list_media')->isEmpty() && !is_null($node->get('field_list_media')->entity)) {
     $variables['blog_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($node->get('field_list_media')->entity, $image_style);
   }
 }
