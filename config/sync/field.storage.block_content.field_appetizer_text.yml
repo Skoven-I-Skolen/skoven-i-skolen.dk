@@ -4,7 +4,11 @@ status: true
 dependencies:
   module:
     - block_content
+    - field_permissions
     - text
+third_party_settings:
+  field_permissions:
+    permission_type: public
 _core:
   default_config_hash: 2n0qGDX2x-GfaYF70_8lWsn74fM9ABbJGbo9Pm5r-3U
 id: block_content.field_appetizer_text
