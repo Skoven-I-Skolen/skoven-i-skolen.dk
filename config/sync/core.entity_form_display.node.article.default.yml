@@ -66,7 +66,7 @@ third_party_settings:
       label: 'Page header'
       region: content
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: fieldset
       format_settings:
         classes: ''
@@ -83,7 +83,7 @@ third_party_settings:
       label: Listevisning
       region: content
       parent_name: ''
-      weight: 5
+      weight: 4
       format_type: fieldset
       format_settings:
         classes: ''
@@ -117,7 +117,7 @@ third_party_settings:
       label: Kategorisering
       region: content
       parent_name: group_article_metadata
-      weight: 4
+      weight: 37
       format_type: tab
       format_settings:
         classes: ''
@@ -134,7 +134,7 @@ third_party_settings:
       label: Grej
       region: content
       parent_name: group_article_metadata
-      weight: 5
+      weight: 38
       format_type: tab
       format_settings:
         classes: ''
@@ -152,7 +152,7 @@ third_party_settings:
       label: Kolofon
       region: content
       parent_name: group_article_metadata
-      weight: 6
+      weight: 39
       format_type: tab
       format_settings:
         classes: ''
@@ -167,7 +167,7 @@ third_party_settings:
       label: Undervisningsmål
       region: content
       parent_name: group_article_metadata
-      weight: 7
+      weight: 40
       format_type: tab
       format_settings:
         classes: ''
@@ -182,7 +182,7 @@ third_party_settings:
       label: Faktabokse
       region: content
       parent_name: group_article_metadata
-      weight: 8
+      weight: 41
       format_type: tab
       format_settings:
         classes: ''
@@ -200,7 +200,7 @@ third_party_settings:
       label: Filer
       region: content
       parent_name: group_article_metadata
-      weight: 9
+      weight: 42
       format_type: tab
       format_settings:
         classes: ''
@@ -336,7 +336,7 @@ third_party_settings:
       label: Kontakt
       region: content
       parent_name: group_article_metadata
-      weight: 11
+      weight: 44
       format_type: tab
       format_settings:
         classes: ''
@@ -351,7 +351,7 @@ third_party_settings:
       label: Tid
       region: content
       parent_name: group_article_metadata
-      weight: 10
+      weight: 43
       format_type: tab
       format_settings:
         classes: ''
@@ -459,7 +459,7 @@ third_party_settings:
       label: 'Indhold vist på sideboksene'
       region: content
       parent_name: ''
-      weight: 6
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: ''
@@ -485,12 +485,13 @@ third_party_settings:
       children:
         - title
         - body
+        - field_article_image_migrated
         - field_article_image
         - field_article_image_anonymous
       label: Indhold
       region: content
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: fieldset
       format_settings:
         classes: ''
@@ -517,31 +518,47 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_image:
     type: entity_browser_entity_reference
-    weight: 3
+    weight: 4
     region: content
     settings:
       entity_browser: media_directories_modal
-      field_widget_display: label
+      field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
       field_widget_replace: false
-      open: false
-      field_widget_display_settings: {  }
+      open: true
+      field_widget_display_settings:
+        view_mode: small
       selection_mode: selection_append
     third_party_settings: {  }
   field_article_image_anonymous:
     type: image_image
-    weight: 4
+    weight: 5
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_article_image_migrated:
+    type: entity_browser_entity_reference
+    weight: 3
+    region: content
+    settings:
+      entity_browser: media_directories_modal
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: small
+      selection_mode: selection_append
     third_party_settings: {  }
   field_article_months:
     type: options_buttons
@@ -561,7 +578,7 @@ content:
     third_party_settings: {  }
   field_article_type:
     type: options_select
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -657,7 +674,7 @@ content:
     third_party_settings: {  }
   field_files:
     type: file_generic
-    weight: 36
+    weight: 37
     region: content
     settings:
       progress_indicator: throbber
@@ -692,7 +709,7 @@ content:
       field_widget_edit: true
       field_widget_remove: true
       field_widget_replace: false
-      open: false
+      open: true
       field_widget_display_settings: {  }
       selection_mode: selection_append
     third_party_settings: {  }
@@ -740,13 +757,13 @@ content:
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   field_section_bg_graphics_pos:
     type: options_select
-    weight: 17
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -803,19 +820,19 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 13
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 9
+    weight: 8
     region: content
     settings:
       display_label: true
@@ -828,14 +845,14 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 15
+    weight: 14
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 12
+    weight: 11
     region: content
     settings:
       display_label: true
@@ -849,13 +866,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -864,12 +881,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   content_hierarchy: true
   field_article_categories: true
-  field_article_image_migrated: true
   field_list_date: true

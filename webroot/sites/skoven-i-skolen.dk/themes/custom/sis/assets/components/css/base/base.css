@@ -249,3 +249,7 @@ table {
     page-break-inside: avoid;
   }
 }
+
+.entities-list .item-container > input {
+  width: 100%;
+}

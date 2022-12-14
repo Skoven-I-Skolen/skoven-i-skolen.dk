@@ -10,8 +10,8 @@ id: node.article.field_article_image_migrated
 field_name: field_article_image_migrated
 entity_type: node
 bundle: article
-label: 'Article image (Migrated)'
-description: ''
+label: 'Artiklens billede (migreret fra gammel website)'
+description: 'Dette er billedet migreret fra den gamle hjemmeside. Hvis du sletter det, vil billedet nedenfor blive brugt.'
 required: false
 translatable: false
 default_value: {  }

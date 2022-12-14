@@ -14,3 +14,11 @@ atoms:
     category: Artikel sider
     default:
       da: '/del'
+
+  pending-approval-message:
+    type: textfield
+    title: Meddelelse om afventende godkendelse
+    description: Meddelelse vist til brugere, når deres artikel afventer godkendelse.
+    category: Artikel sider
+    default:
+      da: 'Tak for dit bidrag til Skoven-i-Skolen. Dit indhold udgives efter en gennemgang fra en af vores redaktører.'

@@ -201,6 +201,7 @@ permissions:
   - 'edit any webform submission'
   - 'edit atom'
   - 'edit field_article_image'
+  - 'edit field_article_image_migrated'
   - 'edit field_article_related'
   - 'edit field_colophon'
   - 'edit field_list_media'

@@ -36,10 +36,23 @@ function sis_articles_query_sort_by_random_alter(AlterableInterface $query) {
   $query->orderRandom();
 }
 
+function sis_articles_anonymous_message() {
+  Drupal::messenger()->addWarning(atom_str('pending-approval-message'));
+}
+
 function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if ($form_id === 'node_article_form') {
     $is_anon_or_org = in_array('anonymous', Drupal::currentUser()->getRoles()) ||
       in_array('organization', Drupal::currentUser()->getRoles());
+
+    if ($is_anon_or_org) {
+      foreach (array_keys($form['actions']) as $action) {
+        if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+          $form['actions'][$action]['#submit'][] = 'sis_articles_anonymous_message';
+        }
+      }
+    }
+
     if ($article_type = Drupal::requestStack()->getCurrentRequest()->get('type')) {
       if (!isset($form['field_article_type']['widget']['#options'])) {
         return;
