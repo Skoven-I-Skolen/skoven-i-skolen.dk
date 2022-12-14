@@ -41,9 +41,10 @@ function sis_articles_anonymous_message() {
 }
 
 function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $roles = Drupal::currentUser()->getRoles();
   if ($form_id === 'node_article_form') {
-    $is_anon_or_org = in_array('anonymous', Drupal::currentUser()->getRoles()) ||
-      in_array('organization', Drupal::currentUser()->getRoles());
+    $is_anon_or_org = in_array('anonymous', $roles) ||
+      in_array('organization', $roles);
 
     if ($is_anon_or_org) {
       foreach (array_keys($form['actions']) as $action) {
@@ -74,11 +75,14 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
   }
 
-  $roles = Drupal::currentUser()->getRoles();
-  if (in_array('anonymous', $roles) || in_array('organization', $roles)) {
+  if (in_array('anonymous', $roles) || in_array('organization', $roles)
+    || in_array('writer', $roles)) {
     // Hide fields that are not relevant for anonymous users and organizations.
     if (isset($form['revision_information']['#access'])) {
       $form['revision_information']['#access'] = FALSE;
+    }
+    if (isset($form['revision']['#access'])) {
+      $form['revision']['#access'] = FALSE;
     }
     if (isset($form['moderation_state']['#access'])) {
       $form['moderation_state']['#access'] = FALSE;
@@ -113,6 +117,8 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
   else if ($form_id === 'views_form_media_library_page' || 'views_form_media_library_widget_document') {
     $form['#attached']['library'][] = 'sis/media-library';
   }
+
+
 }
 
 /**
