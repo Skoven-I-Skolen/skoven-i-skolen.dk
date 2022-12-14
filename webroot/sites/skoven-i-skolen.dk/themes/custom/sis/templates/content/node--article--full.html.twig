@@ -106,10 +106,10 @@
           <div class="article-page__image">
             {% if content.field_article_image_anonymous|render is not empty %}
                 {{ content.field_article_image_anonymous|render }}
-              {% elseif content.field_article_image_migrated|render is not empty %}
-                {{ content.field_article_image_migrated|render }}
               {% elseif content.field_article_image|render is not empty %}
                 {{ content.field_article_image|render }}
+              {% elseif content.field_article_image_migrated|render is not empty %}
+                {{ content.field_article_image_migrated|render }}
 			      {% endif %}
           </div>
           <div class="article-page__content">
