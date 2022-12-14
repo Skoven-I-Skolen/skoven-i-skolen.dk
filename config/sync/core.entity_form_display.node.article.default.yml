@@ -217,7 +217,7 @@ third_party_settings:
       label: 'Vis på kort'
       region: content
       parent_name: ''
-      weight: 18
+      weight: 17
       format_type: fieldset
       format_settings:
         classes: ''
@@ -473,7 +473,7 @@ third_party_settings:
       label: Kategorier
       region: content
       parent_name: ''
-      weight: 19
+      weight: 18
       format_type: fieldset
       format_settings:
         classes: ''
@@ -484,10 +484,9 @@ third_party_settings:
     group_content:
       children:
         - title
-        - body
-        - field_article_image_migrated
         - field_article_image
         - field_article_image_anonymous
+        - body
       label: Indhold
       region: content
       parent_name: ''
@@ -508,7 +507,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 2
+    weight: 5
     region: content
     settings:
       rows: 9
@@ -524,7 +523,7 @@ content:
     third_party_settings: {  }
   field_article_image:
     type: entity_browser_entity_reference
-    weight: 4
+    weight: 2
     region: content
     settings:
       entity_browser: media_directories_modal
@@ -539,26 +538,11 @@ content:
     third_party_settings: {  }
   field_article_image_anonymous:
     type: image_image
-    weight: 5
+    weight: 4
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_article_image_migrated:
-    type: entity_browser_entity_reference
-    weight: 3
-    region: content
-    settings:
-      entity_browser: media_directories_modal
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      field_widget_replace: false
-      open: true
-      field_widget_display_settings:
-        view_mode: small
-      selection_mode: selection_append
     third_party_settings: {  }
   field_article_months:
     type: options_buttons
@@ -568,7 +552,7 @@ content:
     third_party_settings: {  }
   field_article_related:
     type: entity_reference_autocomplete
-    weight: 20
+    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -636,7 +620,7 @@ content:
         hide_guidelines: '1'
   field_copy_sheet:
     type: media_library_widget
-    weight: 34
+    weight: 35
     region: content
     settings:
       media_types: {  }
@@ -730,7 +714,7 @@ content:
     third_party_settings: {  }
   field_materials:
     type: media_library_widget
-    weight: 35
+    weight: 36
     region: content
     settings:
       media_types: {  }
@@ -744,7 +728,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 21
+    weight: 20
     region: content
     settings:
       sidebar: true
@@ -889,4 +873,5 @@ content:
 hidden:
   content_hierarchy: true
   field_article_categories: true
+  field_article_image_migrated: true
   field_list_date: true
