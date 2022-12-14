@@ -73,8 +73,10 @@
   <div class="inspiration-overview__item-inner">
     <a href="{{ url }}" class="inspiration-overview__item-link">
       <div class="inspiration-overview__image">
-        {% if content.field_list_media %}
-          {{ content.field_list_media }}
+        {% if content.field_list_media_anonymous[0] %}
+            {{ content.field_list_media_anonymous }}
+          {% else %}
+            {{ content.field_list_media }}
         {% endif %}
         <div class="inspiration-overview__type inspiration-overview__type--blog">
           {{ 'Blog'|t }}

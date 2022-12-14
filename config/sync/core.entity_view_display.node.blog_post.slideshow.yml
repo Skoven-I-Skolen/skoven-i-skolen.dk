@@ -8,12 +8,15 @@ dependencies:
     - field.field.node.blog_post.field_article_type
     - field.field.node.blog_post.field_description
     - field.field.node.blog_post.field_list_media
+    - field.field.node.blog_post.field_list_media_anonymous
     - field.field.node.blog_post.field_meta_tags
     - field.field.node.blog_post.field_section_bg_graphics
     - field.field.node.blog_post.field_section_bg_graphics_pos
     - node.type.blog_post
+    - responsive_image.styles.entity_slideshow
   module:
     - layout_builder
+    - responsive_image
     - text
     - user
 third_party_settings:
@@ -40,6 +43,15 @@ content:
       link: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_list_media_anonymous:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: entity_slideshow
+      image_link: ''
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }

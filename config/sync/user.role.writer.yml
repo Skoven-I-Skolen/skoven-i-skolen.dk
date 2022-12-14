@@ -11,6 +11,7 @@ dependencies:
     - node.type.blog_post
     - node.type.dot_on_map
   module:
+    - field_permissions
     - filter
     - media
     - node
@@ -23,6 +24,7 @@ permissions:
   - 'create blog_post content'
   - 'create document media'
   - 'create dot_on_map content'
+  - 'create field_list_media_anonymous'
   - 'create image media'
   - 'create remote_video media'
   - 'create video media'
@@ -33,6 +35,7 @@ permissions:
   - 'delete own video media'
   - 'edit own blog_post content'
   - 'edit own document media'
+  - 'edit own field_list_media_anonymous'
   - 'edit own image media'
   - 'edit own remote_video media'
   - 'edit own video media'
