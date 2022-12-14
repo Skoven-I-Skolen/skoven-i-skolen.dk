@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - filter.format.simpel_html_til_faktabokse
     - media.type.document
     - media.type.image
     - media.type.remote_video
@@ -10,6 +11,7 @@ dependencies:
     - node.type.blog_post
     - node.type.dot_on_map
   module:
+    - filter
     - media
     - node
 id: writer
@@ -34,5 +36,6 @@ permissions:
   - 'edit own image media'
   - 'edit own remote_video media'
   - 'edit own video media'
+  - 'use text format simpel_html_til_faktabokse'
   - 'view own unpublished content'
   - 'view own unpublished media'

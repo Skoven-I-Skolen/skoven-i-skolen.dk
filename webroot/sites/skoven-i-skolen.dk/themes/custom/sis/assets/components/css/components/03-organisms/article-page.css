@@ -1,4 +1,8 @@
 .article-page {
+  &__content {
+    word-break: break-all;
+  }
+
   &__image {
     margin-bottom: 24px;
     text-align: center;

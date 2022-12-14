@@ -2,7 +2,10 @@ uuid: fcafe017-0aea-4a6b-baa1-59394555f9a2
 langcode: da
 status: true
 dependencies:
+  config:
+    - filter.format.simpel_html_til_faktabokse
   module:
+    - filter
     - status_feed
   enforced:
     module:
@@ -15,3 +18,4 @@ weight: 5
 is_admin: null
 permissions:
   - 'access status feed'
+  - 'use text format simpel_html_til_faktabokse'

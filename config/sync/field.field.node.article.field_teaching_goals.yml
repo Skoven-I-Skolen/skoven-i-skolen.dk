@@ -12,6 +12,7 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - simpel_html_til_faktabokse
+      - basic_html
 id: node.article.field_teaching_goals
 field_name: field_teaching_goals
 entity_type: node

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_display.node.page.full
     - filter.format.full_html
     - filter.format.limited_html_link
+    - filter.format.simpel_html_til_faktabokse
     - media.type.audio
     - media.type.document
     - media.type.image
@@ -203,7 +204,6 @@ permissions:
   - 'edit field_article_related'
   - 'edit field_colophon'
   - 'edit field_list_media'
-  - 'edit field_list_media_anonymous'
   - 'edit own almanac content'
   - 'edit own article content'
   - 'edit own audio media'
@@ -268,6 +268,7 @@ permissions:
   - 'use media video bulk upload form'
   - 'use text format full_html'
   - 'use text format limited_html_link'
+  - 'use text format simpel_html_til_faktabokse'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view all scheduled transitions'
