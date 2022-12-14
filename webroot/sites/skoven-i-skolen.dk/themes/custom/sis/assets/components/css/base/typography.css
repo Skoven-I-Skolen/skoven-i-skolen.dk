@@ -72,6 +72,11 @@ h5 {
 
 p {
   margin-top: 0;
+
+  &.resume {
+    font-size: var(--base-font-size-large);
+    font-family: var(--base-font-family);
+  }
 }
 
 .large-text {

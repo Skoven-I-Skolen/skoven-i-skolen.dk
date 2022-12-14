@@ -42,7 +42,7 @@ settings:
         -
           name: 'Block Formatting'
           items:
-            - Format
+            - Styles
         -
           name: Tools
           items:
@@ -51,6 +51,8 @@ settings:
     drupallink:
       linkit_enabled: true
       linkit_profile: default
+    stylescombo:
+      styles: "p.default|Normal\r\nh1|Overskrift 1\r\nh2|Overskrift 2\r\nh3|Overskrift 3\r\np.resume|Resumé"
 image_upload:
   status: true
   scheme: public

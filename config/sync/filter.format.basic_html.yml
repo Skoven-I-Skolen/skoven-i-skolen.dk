@@ -10,7 +10,7 @@ _core:
   default_config_hash: afTU0GNxo-MjXuKrD1zBE1IaHJRMmN1WXWmheRdJg8o
 name: 'Simpel HTML'
 format: basic_html
-weight: -9
+weight: -10
 filters:
   filter_html:
     id: filter_html
@@ -18,7 +18,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<0> <1> <2> <3 cite> <4> <5 type> <6 type start> <7> <8> <9> <10> <11 id> <12 id> <13 class=""> <14> <15> <16 src alt data-entity-type data-entity-uuid data-align data-caption data-image-size width height> <17 href hreflang target data-entity-substitution data-entity-type data-entity-uuid title> <18> <19> <20> <21> <22> <23> <24> <25> <strong> <em> <a href> <ul> <li> <ol> <img src alt data-entity-type data-entity-uuid data-align data-caption data-image-size> <p> <h1> <h2> <h3> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr>'
+      allowed_html: '<0> <1> <2> <3 cite> <4> <5 type> <6 type start> <7> <8> <9> <10> <11 id> <12 id> <13 class=""> <14> <15> <16 src alt data-entity-type data-entity-uuid data-align data-caption data-image-size width height> <17 href hreflang target data-entity-substitution data-entity-type data-entity-uuid title> <18> <19> <20> <21> <22> <23> <24> <25> <strong> <em> <a href> <ul> <li> <ol> <img src alt data-entity-type data-entity-uuid data-align data-caption data-image-size> <p class=""> <h1> <h2> <h3> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
