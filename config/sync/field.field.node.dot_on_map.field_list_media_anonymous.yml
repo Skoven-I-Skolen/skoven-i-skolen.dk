@@ -19,7 +19,7 @@ field_name: field_list_media_anonymous
 entity_type: node
 bundle: dot_on_map
 label: 'Liste media'
-description: ''
+description: 'Et lille billede, der vises på interne søgeresultater og andre lister. Det kan være det samme billede som artiklens billede.'
 required: false
 translatable: true
 default_value: {  }

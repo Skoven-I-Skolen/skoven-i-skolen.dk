@@ -13,6 +13,6 @@ name: Blogindlæg
 type: blog_post
 description: 'Bruges til blogs med flere brugere. Hver bruger får en personlig blog.'
 help: ''
-new_revision: true
+new_revision: false
 preview_mode: 1
 display_submitted: false
