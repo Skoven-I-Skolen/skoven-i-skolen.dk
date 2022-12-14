@@ -80,8 +80,17 @@ function sis_preprocess_breadcrumb(&$variables) {
     if ($node->getType() === 'news') {
       $variables['breadcrumb'][1]['url'] = '/nyhedoversigt';
     }
-    if ($node->getType() === 'blog_post') {
+    else if ($node->getType() === 'blog_post') {
       $variables['breadcrumb'][1]['url'] = '/blogs';
+    }
+    else if ($node->getType() === 'dot_on_map') {
+      $variables['breadcrumb'][1] = [
+        'url' => '/kort',
+        'text' => 'Kort',
+      ];
+      $variables['breadcrumb'][] = [
+        'text' => $node->getTitle(),
+      ];
     }
     if (count($variables['breadcrumb']) === 1) {
       $variables['breadcrumb'][] = [
