@@ -12,6 +12,9 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: duck
+      label: And
+    -
       value: fish
       label: Fisk
     -
@@ -21,14 +24,32 @@ settings:
       value: branches
       label: Grene
     -
+      value: dragonfly
+      label: Guldsmed
+    -
       value: sea
       label: Hav
+    -
+      value: helicopters
+      label: Helikoptere
     -
       value: deer
       label: Hjort
     -
+      value: vortex
+      label: Hvirvel
+    -
+      value: rainbow
+      label: Regnbue
+    -
       value: reeds
       label: Siv
+    -
+      value: clouds
+      label: Skyer
+    -
+      value: butterflies
+      label: Sommerfugle
     -
       value: wind
       label: Vind

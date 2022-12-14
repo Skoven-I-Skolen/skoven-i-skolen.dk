@@ -10,44 +10,86 @@ msgstr "Alle @type sider"
 msgid "Materials from @organization"
 msgstr "Materialer fra @organization"
 
+msgid "Duck"
+msgstr "And"
+
+msgid "duck"
+msgstr "And"
+
+msgid "Fish"
+msgstr "Fisk"
+
+msgid "fish"
+msgstr "Fisk"
+
 msgid "Birds"
+msgstr "Fugle"
+
+msgid "birds"
 msgstr "Fugle"
 
 msgid "Branches"
 msgstr "Grene"
 
-msgid "Deer"
-msgstr "Hjort"
+msgid "branches"
+msgstr "Grene"
 
-msgid "Fish"
-msgstr "Fisk"
+msgid "Dragonfly"
+msgstr "Guldsmed"
 
-msgid "Reeds"
-msgstr "Dunhammer"
+msgid "dragonfly"
+msgstr "Guldsmed"
 
 msgid "Sea"
 msgstr "Hav"
 
-msgid "Wind"
-msgstr "Vind"
+msgid "sea"
+msgstr "Hav"
 
-msgid "birds"
-msgstr "Fugle"
+msgid "Helicopters"
+msgstr "Helikoptere"
 
-msgid "branches"
-msgstr "Grene"
+msgid "helicopters"
+msgstr "Helikoptere"
+
+msgid "Deer"
+msgstr "Hjort"
 
 msgid "deer"
 msgstr "Hjort"
 
-msgid "fish"
-msgstr "Fisk"
+msgid "Vortex"
+msgstr "Hvirvel"
+
+msgid "vortex"
+msgstr "Hvirvel"
+
+msgid "Rainbow"
+msgstr "Regnbue"
+
+msgid "rainbow"
+msgstr "Regnbue"
+
+msgid "Reeds"
+msgstr "Siv"
 
 msgid "reeds"
-msgstr "Dunhammer"
+msgstr "Siv"
 
-msgid "sea"
-msgstr "Hav"
+msgid "Clouds"
+msgstr "Skyer"
+
+msgid "clouds"
+msgstr "Skyer"
+
+msgid "Butterflies"
+msgstr "Sommerfugle"
+
+msgid "butterflies"
+msgstr "Sommerfugle"
+
+msgid "Wind"
+msgstr "Vind"
 
 msgid "wind"
 msgstr "Vind"
