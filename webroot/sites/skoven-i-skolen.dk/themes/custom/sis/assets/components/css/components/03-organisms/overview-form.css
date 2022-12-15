@@ -406,3 +406,18 @@
     }
   }
 }
+
+.entity-overview-filter-blog-form {
+  .overview-form-contents {
+    grid-template-columns: repeat(4,1fr);
+  }
+  .overview-form__header {
+    flex-direction: row-reverse;
+  }
+  .filter-mobile-wrapper {
+    display: flex;
+  }
+  label {
+    display: none;
+  }
+}

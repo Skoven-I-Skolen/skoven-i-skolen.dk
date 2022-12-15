@@ -1,0 +1,18 @@
+uuid: 012973a7-2e5e-4b57-a0e9-48ad8c4cfcd2
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.blog_post
+  module:
+    - node
+id: blog
+label: Blog
+entity_bundles:
+  node:
+    - blog_post
+fields:
+  text: search
+engine_id: blog
+sort_field: created
+show_total: ''
