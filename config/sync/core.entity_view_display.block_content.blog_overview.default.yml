@@ -1,0 +1,24 @@
+uuid: 5b2dd3ef-4888-46c6-8044-82e2a555efba
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.blog_overview
+    - field.field.block_content.blog_overview.field_blog_overview
+  module:
+    - sis_blog_post
+id: block_content.blog_overview.default
+targetEntityType: block_content
+bundle: blog_overview
+mode: default
+content:
+  field_blog_overview:
+    type: blog_overview_form
+    label: hidden
+    settings:
+      view_mode: list
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

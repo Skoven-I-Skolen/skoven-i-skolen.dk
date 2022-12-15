@@ -1,0 +1,29 @@
+uuid: b6a2b28b-5108-4273-bd31-304e71eb907f
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.blog_overview
+    - field.storage.block_content.field_blog_overview
+  module:
+    - entity_overview
+id: block_content.blog_overview.field_blog_overview
+field_name: field_blog_overview
+entity_type: block_content
+bundle: blog_overview
+label: 'Blog Oversigt'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    fields:
+      text: ''
+    count: 4
+    sort: newest
+    pagination: true
+    facets:
+      - text
+default_value_callback: ''
+settings: {  }
+field_type: overview_filter

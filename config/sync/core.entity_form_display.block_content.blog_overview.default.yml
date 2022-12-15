@@ -1,0 +1,36 @@
+uuid: 1d5bdf68-2cc7-4fa1-9d3d-9ebc837cecde
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.blog_overview
+    - field.field.block_content.blog_overview.field_blog_overview
+  module:
+    - entity_overview
+id: block_content.blog_overview.default
+targetEntityType: block_content
+bundle: blog_overview
+mode: default
+content:
+  field_blog_overview:
+    type: overview_filter_widget
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }
