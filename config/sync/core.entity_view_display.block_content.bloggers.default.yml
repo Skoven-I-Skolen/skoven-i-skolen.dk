@@ -1,0 +1,28 @@
+uuid: a71b1a27-29e7-4abe-afdb-b8eb805bb535
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.bloggers
+    - field.field.block_content.bloggers.field_link
+  module:
+    - link
+id: block_content.bloggers.default
+targetEntityType: block_content
+bundle: bloggers
+mode: default
+content:
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

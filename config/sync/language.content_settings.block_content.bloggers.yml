@@ -1,0 +1,11 @@
+uuid: bd948c9e-2c3d-4753-9655-15d2b5620263
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.bloggers
+id: block_content.bloggers
+target_entity_type_id: block_content
+target_bundle: bloggers
+default_langcode: site_default
+language_alterable: false
