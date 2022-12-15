@@ -13,7 +13,6 @@
     }
 
     & #block-pageheader {
-      padding: 50px 0;
       font-weight: var(--heading-font-weight);
       font-size: var(--base-font-size-xxlarge);
       font-family: var(--heading-font-family);
