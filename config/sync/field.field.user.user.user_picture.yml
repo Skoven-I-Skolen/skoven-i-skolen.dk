@@ -25,7 +25,7 @@ settings:
   file_directory: 'pictures/[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
   max_filesize: '80 KB'
-  max_resolution: 85x85
+  max_resolution: 220x220
   min_resolution: ''
   alt_field: false
   alt_field_required: false

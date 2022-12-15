@@ -30,12 +30,36 @@
       width: 350px;
     }
 
+    &--butterflies {
+      width: 240px;
+    }
+
+    &--clouds {
+      width: 300px;
+    }
+
     &--deer {
+      width: 180px;
+    }
+
+    &--dragonfly {
+      width: 180px;
+    }
+
+    &--duck {
       width: 180px;
     }
 
     &--fish {
       width: 190px;
+    }
+
+    &--helicopters {
+      width: 300px;
+    }
+
+    &--rainbow {
+      width: 300px;
     }
 
     &--reeds {
@@ -44,6 +68,10 @@
 
     &--sea {
       width: 265px;
+    }
+
+    &--vortex {
+      width: 300px;
     }
 
     &--wind {
@@ -61,12 +89,36 @@
         right: -100px;
       }
 
+      &.section-bg-graphics__image--butterflies {
+        right: 0;
+      }
+
+      &.section-bg-graphics__image--clouds {
+        right: -40px;
+      }
+
       &.section-bg-graphics__image--deer {
+        right: -10px;
+      }
+
+      &.section-bg-graphics__image--dragonfly {
+        right: 0;
+      }
+
+      &.section-bg-graphics__image--duck {
         right: -10px;
       }
 
       &.section-bg-graphics__image--fish {
         right: 0;
+      }
+
+      &.section-bg-graphics__image--helicopters {
+        right: 0;
+      }
+
+      &.section-bg-graphics__image--rainbow {
+        right: -30px;
       }
 
       &.section-bg-graphics__image--reeds {
@@ -75,6 +127,11 @@
 
       &.section-bg-graphics__image--sea {
         right: -25px;
+      }
+
+      &.section-bg-graphics__image--vortex {
+        right: -30px;
+        transform: scaleX(-1);
       }
 
       &.section-bg-graphics__image--wind {
@@ -93,12 +150,36 @@
         left: -100px;
       }
 
+      &.section-bg-graphics__image--butterflies {
+        left: 0;
+      }
+
+      &.section-bg-graphics__image--clouds {
+        left: -40px;
+      }
+
       &.section-bg-graphics__image--deer {
+        left: -10px;
+      }
+
+      &.section-bg-graphics__image--dragonfly {
+        left: 0;
+      }
+
+      &.section-bg-graphics__image--duck {
         left: -10px;
       }
 
       &.section-bg-graphics__image--fish {
         left: 0;
+      }
+
+      &.section-bg-graphics__image--helicopters {
+        left: 0;
+      }
+
+      &.section-bg-graphics__image--rainbow {
+        left: -30px;
       }
 
       &.section-bg-graphics__image--reeds {
@@ -109,6 +190,11 @@
         left: -25px;
       }
 
+      &.section-bg-graphics__image--vortex {
+        left: -30px;
+        transform: scaleX(1);
+      }
+
       &.section-bg-graphics__image--wind {
         left: 0;
       }
@@ -117,6 +203,7 @@
 }
 
 .section--background-graphics:not(.theme) {
+  position: relative;
   @media (--viewport-sm-min) {
     overflow: hidden;
   }
