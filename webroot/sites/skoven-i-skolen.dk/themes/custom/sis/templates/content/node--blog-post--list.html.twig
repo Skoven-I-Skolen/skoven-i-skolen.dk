@@ -78,9 +78,11 @@
           {% else %}
             {{ content.field_list_media }}
         {% endif %}
-        <div class="inspiration-overview__type inspiration-overview__type--blog">
-          {{ 'Blog'|t }}
-        </div>
+        <a href="/blogs">
+          <div class="inspiration-overview__type inspiration-overview__type--blog">
+            {{ 'Blog'|t }}
+          </div>
+        </a>
       </div>
       <div class="inspiration-overview__title inspiration-overview__title--authoring-information">
         {{ authoring_information }}

@@ -35,6 +35,13 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_list_media:
     type: entity_reference_entity_view
     label: hidden
@@ -42,7 +49,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_list_media_anonymous:
     type: responsive_image
@@ -51,7 +58,7 @@ content:
       responsive_image_style: list_view
       image_link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   links:
     settings: {  }
@@ -60,7 +67,6 @@ content:
     region: content
 hidden:
   field_article_type: true
-  field_description: true
   field_meta_tags: true
   field_section_bg_graphics: true
   field_section_bg_graphics_pos: true
