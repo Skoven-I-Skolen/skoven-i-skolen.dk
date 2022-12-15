@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 name: 'Simpel HTML til faktabokse'
 format: simpel_html_til_faktabokse
-weight: -10
+weight: -9
 filters:
   filter_html:
     id: filter_html

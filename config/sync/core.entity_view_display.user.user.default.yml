@@ -8,7 +8,7 @@ dependencies:
     - field.field.user.user.field_full_name
     - field.field.user.user.field_summary
     - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - image.style.article
   module:
     - image
     - text
@@ -59,7 +59,7 @@ content:
     label: hidden
     settings:
       image_link: content
-      image_style: thumbnail
+      image_style: article
       image_loading:
         attribute: lazy
     third_party_settings: {  }

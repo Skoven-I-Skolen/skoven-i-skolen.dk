@@ -68,8 +68,8 @@ function sis_preprocess_block(&$variables) {
 }
 
 function sis_preprocess_breadcrumb(&$variables) {
-
   $node = \Drupal::routeMatch()->getParameter('node');
+  $profile = \Drupal::routeMatch()->getParameter('profile');
   if ($node instanceof \Drupal\node\NodeInterface) {
     if ($node->getType() === 'blog_post') {
       $variables['breadcrumb'][1]['url'] = '/';
@@ -92,11 +92,21 @@ function sis_preprocess_breadcrumb(&$variables) {
         'text' => $node->getTitle(),
       ];
     }
+    else if ($node->getType() === 'article') {
+      $type = $node->get('field_article_type')->first()->entity;
+      if ($type && $type->hasField('field_page_link') && !$type->get('field_page_link')->isEmpty()) {
+        $url = $type->get('field_page_link')->first()->getUrl();
+        $variables['breadcrumb'][1]['url'] = $url->toString();
+      }
+    }
     if (count($variables['breadcrumb']) === 1) {
       $variables['breadcrumb'][] = [
         'text' => $node->getTitle(),
       ];
     }
+  }
+  else if ($profile && $profile instanceof \Drupal\profile\Entity\ProfileInterface) {
+    $variables['breadcrumb'][1]['text'] = 'Visitkort';
   }
 }
 

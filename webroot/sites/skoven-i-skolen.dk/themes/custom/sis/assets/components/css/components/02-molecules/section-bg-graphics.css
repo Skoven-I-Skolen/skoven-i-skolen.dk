@@ -203,6 +203,7 @@
 }
 
 .section--background-graphics:not(.theme) {
+  position: relative;
   @media (--viewport-sm-min) {
     overflow: hidden;
   }

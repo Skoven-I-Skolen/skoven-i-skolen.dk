@@ -70,9 +70,11 @@
 {{ attach_library('sis/facts-box') }}
 
 <div class="facts-box__inspiration-item">
-  <div class="facts-box__inspiration-item__type">
-    {{ 'Blog'|t }}
-  </div>
+  <a href="/blogs">
+    <div class="facts-box__inspiration-item__type">
+      {{ 'Blog'|t }}
+    </div>
+  </a>
   <a href="{{ url }}" class="facts-box__inspiration-item__link">
     {{ label }}
   </a>
