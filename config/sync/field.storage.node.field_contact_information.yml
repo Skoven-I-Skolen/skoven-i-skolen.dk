@@ -1,16 +1,20 @@
-uuid: 80ccddea-fc46-45f2-99ac-494be946d4ee
+uuid: a57a08b8-31cd-4795-a116-97f6621cee70
 langcode: da
 status: true
 dependencies:
   module:
+    - field_permissions
     - node
+    - text
+third_party_settings:
+  field_permissions:
+    permission_type: public
 id: node.field_contact_information
 field_name: field_contact_information
 entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

@@ -1,10 +1,17 @@
-uuid: 444ec68b-c48f-43c7-94a4-fb93835be9ba
+uuid: 059085c9-c71c-4c29-acf7-f9c3c25b6b82
 langcode: da
 status: true
 dependencies:
   config:
     - field.storage.node.field_contact_information
     - node.type.dot_on_map
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simpel_html_til_faktabokse
 id: node.dot_on_map.field_contact_information
 field_name: field_contact_information
 entity_type: node
@@ -16,4 +23,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: text_long

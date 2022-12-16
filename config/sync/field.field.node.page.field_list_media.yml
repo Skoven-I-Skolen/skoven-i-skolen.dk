@@ -14,7 +14,7 @@ id: node.page.field_list_media
 field_name: field_list_media
 entity_type: node
 bundle: page
-label: 'Liste media'
+label: 'Liste media (Webmasters)'
 description: 'Image used for meta tags and inline navigation'
 required: false
 translatable: true
