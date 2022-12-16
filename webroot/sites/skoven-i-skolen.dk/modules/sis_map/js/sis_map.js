@@ -117,6 +117,11 @@ Drupal.behaviors.sis_map_okapi_integration = {
         description += marker['node']['field_summary'][0]['value'].substring(0, 60) + '...'; + '<br>';
       }
 
+      if (marker['node']['field_description'] && marker['node']['field_description'][0]
+        && marker['node']['field_description'][0]['value']) {
+        description += marker['node']['field_description'][0]['value'].substring(0, 60) + '...'; + '<br>';
+      }
+
       else if (marker['node']['body'] && marker['node']['body'][0]
         && marker['node']['body'][0]['summary']) {
         description += marker['node']['body'][0]['summary'].substring(0, 60) + '...'; + '<br>';
