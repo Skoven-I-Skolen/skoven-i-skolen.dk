@@ -62,11 +62,11 @@ content:
     weight: 106
     region: content
   field_contact_information:
-    type: basic_string
-    label: above
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 110
     region: content
   field_files:
     type: file_default

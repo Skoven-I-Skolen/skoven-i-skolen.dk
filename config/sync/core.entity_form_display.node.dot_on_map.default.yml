@@ -247,8 +247,8 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_contact_information:
-    type: string_textarea
-    weight: 3
+    type: text_textarea
+    weight: 26
     region: content
     settings:
       rows: 5
