@@ -8,6 +8,7 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - media.type.video
+    - node.type.article
     - node.type.blog_post
     - node.type.dot_on_map
   module:
@@ -21,6 +22,7 @@ weight: 7
 is_admin: null
 permissions:
   - 'access media overview'
+  - 'create article content'
   - 'create blog_post content'
   - 'create document media'
   - 'create dot_on_map content'
@@ -28,11 +30,13 @@ permissions:
   - 'create image media'
   - 'create remote_video media'
   - 'create video media'
+  - 'delete own article content'
   - 'delete own blog_post content'
   - 'delete own document media'
   - 'delete own image media'
   - 'delete own remote_video media'
   - 'delete own video media'
+  - 'edit own article content'
   - 'edit own blog_post content'
   - 'edit own document media'
   - 'edit own field_list_media_anonymous'
