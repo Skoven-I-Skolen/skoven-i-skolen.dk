@@ -42,10 +42,20 @@ function sis_articles_anonymous_message() {
 
 function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   $roles = Drupal::currentUser()->getRoles();
-  if ($form_id === 'node_article_form') {
-    $is_anon_or_org = in_array('anonymous', $roles) ||
-      in_array('organization', $roles);
+  $is_anon_or_org = in_array('anonymous', $roles) ||
+    in_array('organization', $roles);
 
+  if ($form_id === 'node_dot_on_map_form') {
+    if ($is_anon_or_org) {
+      foreach (array_keys($form['actions']) as $action) {
+        if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+          $form['actions'][$action]['#submit'][] = 'sis_articles_anonymous_message';
+        }
+      }
+    }
+  }
+
+  else if ($form_id === 'node_article_form') {
     if ($is_anon_or_org) {
       foreach (array_keys($form['actions']) as $action) {
         if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
@@ -70,6 +80,7 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
         }
       }
     }
+
     else if ($is_anon_or_org) {
       header('Location: /');
     }
