@@ -3,5 +3,5 @@ _core:
 langcode: da
 index: true
 priority: '0.5'
-changefreq: ''
+changefreq: weekly
 include_images: false
