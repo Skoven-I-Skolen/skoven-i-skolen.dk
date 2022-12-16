@@ -11,8 +11,8 @@ field_name: field_list_media
 entity_type: node
 bundle: dot_on_map
 label: 'Liste media'
-description: ''
-required: false
+description: 'Et lille billede, der vises på interne søgeresultater og andre lister.'
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
