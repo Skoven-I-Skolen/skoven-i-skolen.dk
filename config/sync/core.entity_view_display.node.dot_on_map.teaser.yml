@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.dot_on_map.field_class
     - field.field.node.dot_on_map.field_contact_information
     - field.field.node.dot_on_map.field_files
+    - field.field.node.dot_on_map.field_list_media
     - field.field.node.dot_on_map.field_list_media_anonymous
     - field.field.node.dot_on_map.field_location
     - field.field.node.dot_on_map.field_meta_tags
@@ -63,6 +64,7 @@ hidden:
   field_class: true
   field_contact_information: true
   field_files: true
+  field_list_media: true
   field_location: true
   field_meta_tags: true
   field_people_and_places: true

@@ -62,3 +62,18 @@
 .js-filter-wrapper {
   display: none;
 }
+
+.node-edit-form {
+  &__title {
+    #block-pageheader {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.entities-list {
+  input {
+    width: 100%;
+  }
+}

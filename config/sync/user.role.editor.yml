@@ -41,6 +41,7 @@ dependencies:
     - entity_clone
     - field_permissions
     - file
+    - file_delete
     - filter
     - layout_builder
     - media
@@ -154,6 +155,7 @@ permissions:
   - 'delete blog_post revisions'
   - 'delete content translations'
   - 'delete dot_on_map revisions'
+  - 'delete files'
   - 'delete media'
   - 'delete news revisions'
   - 'delete own almanac content'

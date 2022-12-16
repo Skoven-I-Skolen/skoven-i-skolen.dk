@@ -3,10 +3,12 @@ langcode: da
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_directories_modal
     - field.field.node.dot_on_map.body
     - field.field.node.dot_on_map.field_class
     - field.field.node.dot_on_map.field_contact_information
     - field.field.node.dot_on_map.field_files
+    - field.field.node.dot_on_map.field_list_media
     - field.field.node.dot_on_map.field_list_media_anonymous
     - field.field.node.dot_on_map.field_location
     - field.field.node.dot_on_map.field_meta_tags
@@ -27,6 +29,7 @@ dependencies:
     - allowed_formats
     - content_moderation
     - dds_dawa
+    - entity_browser
     - field_group
     - file
     - image
@@ -130,6 +133,7 @@ third_party_settings:
     group_information:
       children:
         - field_summary
+        - field_list_media
         - field_list_media_anonymous
       label: Listevisning
       region: content
@@ -257,9 +261,24 @@ content:
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
+  field_list_media:
+    type: entity_browser_entity_reference
+    weight: 5
+    region: content
+    settings:
+      entity_browser: media_directories_modal
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: small
+      selection_mode: selection_append
+    third_party_settings: {  }
   field_list_media_anonymous:
     type: image_image
-    weight: 5
+    weight: 6
     region: content
     settings:
       progress_indicator: throbber
@@ -333,7 +352,7 @@ content:
     third_party_settings: {  }
   lon:
     type: string_textfield
-    weight: 10
+    weight: 11
     region: content
     settings:
       size: 60
