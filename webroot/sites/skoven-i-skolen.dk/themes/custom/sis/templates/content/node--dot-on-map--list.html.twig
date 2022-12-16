@@ -73,7 +73,11 @@
 		<div class="inspiration-overview__item-link">
 			<a href="{{ url }}">
 				<div class="inspiration-overview__image inspiration-overview__image__dot-on-map">
-            {{ content.field_list_media_anonymous }}
+          {% if content.field_list_media[0] %}
+            {{ content.field_list_media }}
+            {% else %}
+              {{ content.field_list_media_anonymous }}
+          {% endif %}
           <a href="/kort" aria-label="{{ node.field_article_type.entity.name.value }}">
             <div class="inspiration-overview__type">
               Prik på kort

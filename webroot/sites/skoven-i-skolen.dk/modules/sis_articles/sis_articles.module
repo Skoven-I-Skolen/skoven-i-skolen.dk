@@ -80,10 +80,6 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
         }
       }
     }
-
-    else if ($is_anon_or_org) {
-      header('Location: /');
-    }
   }
 
   if (in_array('anonymous', $roles) || in_array('organization', $roles)
@@ -139,6 +135,15 @@ function sis_articles_preprocess_menu(&$variables) {
   if ($variables['menu_name'] === 'meta-menu') {
     if (!$variables['logged_in']) {
       unset($variables['items']['sis_articles.add_content']);
+    }
+    if (isset($variables['items']['sis_articles.add_content'])) {
+      $user_roles = Drupal::currentUser()->getRoles();
+      if (in_array('organization', $user_roles)) {
+        $variables["items"]["sis_articles.add_content"]["url"] = \Drupal\Core\Url::fromUri('internal:/del');
+      }
+      else {
+        $variables["items"]["sis_articles.add_content"]["url"] = \Drupal\Core\Url::fromUri('internal:/node/add');
+      }
     }
   }
 }
