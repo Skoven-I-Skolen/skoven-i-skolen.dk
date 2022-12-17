@@ -1,7 +1,7 @@
 .blog-post {
   .all-writers {
     .facts-box {
-      height: 240px;
+      height: calc(100% - 40px);
       overflow: hidden;
     }
   }
