@@ -1,16 +1,37 @@
+{{ attach_library('sis/bloggers') }}
 
-<div{{ attributes.addClass(['bloggers']) }}>
+<div{{ attributes.addClass('bloggers') }}>
   {{ title_prefix }}
   {{ title_suffix }}
   <div class="row">
     <div class="col-xs-12">
+      <div class="bloggers__title">
+        Skribenter
+        {% if content.field_link.0['#url'] %}
+          <a href="{{ content.field_link.0['#url'] }}" class="button button--green">Bliv blogger</a>
+        {% endif %}
+      </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row bloggers__writers js-bloggers__writers">
     {% for writer in all_writers %}
-      <div class="col-xs-12 col-md-4 col-lg-4">
+      <div class="col-xs-12 col-md-4 col-lg-4 bloggers__writer-wrapper{{ loop.index > 3 ? " bloggers__writer-wrapper--hidden" }}">
         {{ writer }}
       </div>
     {% endfor %}
   </div>
+  {% if all_writers|length > 3 %}
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="bloggers__view-all-writers-toggle js-bloggers__view-all-writers-toggle">
+          <h4 class="bloggers__view-all-writers-toggle--show">Se alle skribenter</h4>
+          <h4 class="bloggers__view-all-writers-toggle--hide">Luk</h4>
+          {% include '@reusable-component/svg-icon.twig' with {
+            'attributes': '',
+            'svgIconName': 'carret'
+          } %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
 </div>
