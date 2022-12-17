@@ -1,0 +1,25 @@
+uuid: 49dae6f5-2907-4260-a048-1da8cda09998
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.bloggers
+    - field.field.block_content.bloggers.field_link
+  module:
+    - link
+id: block_content.bloggers.default
+targetEntityType: block_content
+bundle: bloggers
+mode: default
+content:
+  field_link:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  info: true
+  langcode: true

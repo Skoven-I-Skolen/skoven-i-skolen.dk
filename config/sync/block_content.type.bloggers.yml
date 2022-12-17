@@ -1,0 +1,8 @@
+uuid: dfaa012b-141a-4804-9aca-e832eb3513af
+langcode: da
+status: true
+dependencies: {  }
+id: bloggers
+label: Skribenter
+revision: 0
+description: 'En blok der indeholder alle bloggere'

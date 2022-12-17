@@ -1,0 +1,97 @@
+/**
+ * Type: Organisms.
+ * Bloggers.
+ */
+
+.bloggers {
+  a.facts-box {
+    height: calc(100% - 40px);
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+    font-weight: var(--heading-font-weight);
+    font-size: var(--base-font-size-xxlarge);
+    font-family: var(--heading-font-family);
+
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      padding-bottom: 2.3%;
+      background-image: url("../../../../../dist/images/heading-underline.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+    }
+
+    .button {
+      margin-left: auto;
+    }
+  }
+
+  &__writers {
+    .bloggers__writer-wrapper--hidden {
+      display: none;
+    }
+
+    &--expanded {
+      .bloggers__writer-wrapper--hidden {
+        display: block;
+      }
+    }
+  }
+
+  &__view-all-writers-toggle {
+    display: flex;
+
+    & h4 {
+      margin-right: 10px;
+      margin-bottom: 0;
+      text-decoration: underline;
+    }
+
+    &--show {
+      display: block;
+      visibility: visible;
+    }
+
+    &--hide {
+      display: none;
+      visibility: hidden;
+    }
+
+    &.active {
+      .bloggers__view-all-writers-toggle--show {
+        display: none;
+        visibility: hidden;
+      }
+
+      .bloggers__view-all-writers-toggle--hide {
+        display: block;
+        visibility: visible;
+      }
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    svg {
+      align-self: center;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
