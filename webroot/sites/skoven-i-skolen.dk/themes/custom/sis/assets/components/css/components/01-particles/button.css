@@ -11,12 +11,12 @@ a.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 55px;
-  padding: 0 40px;
+  min-height: 45px;
+  padding: 0 20px;
   overflow: visible;
   color: var(--theme-button-color);
   font-weight: 800;
-  font-size: var(--base-font-size);
+  font-size: var(--base-font-size-small);
   font-family: var(--base-font-family);
   white-space: nowrap;
   text-decoration: none;
@@ -24,6 +24,12 @@ a.button {
   border: 1px solid transparent;
   border-radius: 50px;
   cursor: pointer;
+
+  @media (--viewport-ms-min) {
+    min-height: 55px;
+    padding: 0 40px;
+    font-size: var(--base-font-size);
+  }
 
   a {
     color: white;
