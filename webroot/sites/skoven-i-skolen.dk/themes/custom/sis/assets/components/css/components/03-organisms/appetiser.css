@@ -145,12 +145,12 @@
 
   &--small {
     flex-direction: column;
-    height: 100%;
     padding-right: 40px;
     padding-left: 40px;
     overflow: hidden;
 
     @media (--viewport-md-min) {
+      height: 100%;
       padding-right: 60px;
       padding-left: 60px;
     }
