@@ -1,5 +1,5 @@
 {% set link =  url('entity.user.canonical', { 'user': user.id() }) %}
-<div class="facts-box">
+<a href="{{ link }}" class="facts-box">
   <div class="facts-box__content">
     <div class="facts-box__content-item user">
       <div class="facts-box__content-item-label facts-box__content-item-label-author-image">
@@ -8,15 +8,15 @@
         {% endif %}
       </div>
       <div class="facts-box__content-item-value facts-box__content-item-value-author-full-name">
-        {% if content.field_full_name %}
-          <a href="{{ link }}"><h5>{{ content.field_full_name }}</h5></a>
+        {% if content.field_full_name[0] %}
+          <h5>{{ content.field_full_name }}</h5>
+        {% else %}
+          <h5>{{ user.name.0.value }}</h5>
         {% endif %}
         {% if user.field_summary.value %}
-          <a href="{{ link }}">
           {{ user.field_summary.value[:225] ~ (user.field_summary.value|length > 225 ? '...') }}
-          </a>
         {% endif %}
       </div>
     </div>
   </div>
-</div>
+</a>

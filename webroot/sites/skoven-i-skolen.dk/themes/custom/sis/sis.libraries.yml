@@ -311,6 +311,14 @@ news-page:
     - sis/facts-box
     - sis/latest-news
 
+bloggers:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/bloggers.css: {}
+  js:
+    dist/components/js/bloggers.js: {}
+
 burger-menu:
   version: VERSION
   css:

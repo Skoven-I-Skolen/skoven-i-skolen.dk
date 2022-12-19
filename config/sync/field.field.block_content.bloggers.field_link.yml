@@ -1,0 +1,23 @@
+uuid: 81730682-6f4b-41a3-aa4d-98fa7cf79eb5
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.bloggers
+    - field.storage.block_content.field_link
+  module:
+    - link
+id: block_content.bloggers.field_link
+field_name: field_link
+entity_type: block_content
+bundle: bloggers
+label: 'Bliv blogger link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 1
+field_type: link

@@ -13,3 +13,15 @@ function sis_blog_post_preprocess_block__inline_block__blog_list(&$variables) {
   $variables['latest_four_blog_posts'] = \Drupal::service('sis_blog_post.content_delivery_service')
     ->getBlogPosts($max_elements);
 }
+
+function sis_blog_post_preprocess_block__inline_block__bloggers(array &$variables) {
+  $all_writers = \Drupal::service('sis_blog_post.content_delivery_service')
+    ->getWriters(NULL, NULL);
+
+  // sort by name
+  usort($all_writers, function ($a, $b) {
+    return strcmp($a['#user']->name->value, $b['#user']->name->value);
+  });
+
+  $variables['all_writers'] = $all_writers;
+}
