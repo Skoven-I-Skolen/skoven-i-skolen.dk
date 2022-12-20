@@ -4,3 +4,5 @@ langcode: da
 ignored_config_entities:
   - sis_articles.settings
   - smtp.settings
+  - 'system.site:page.403'
+  - 'system.site:page.404'

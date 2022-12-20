@@ -50,6 +50,9 @@ webroot/sites/simpletest
 # Ignore SimpleTest multi-site environment.
 # simpletest
 
+# Ignore configurations that are ignored by config-ignore module
+config/sync/smtp.settings.yml
+
 # Since we are using drupal-scaffold the files are create on composer-update
 # so there is no reason to save them in version-control.
 .editorconfig

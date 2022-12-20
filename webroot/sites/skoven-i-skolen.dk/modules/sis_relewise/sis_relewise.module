@@ -111,11 +111,12 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     }
     if ($node->hasField('field_search_exclude') && !$node->get('field_search_exclude')
         ->isEmpty()) {
-      if ($node->get('field_list_date')
-        ->first()
-        ->getValue()['value'] == 1) {
-        $content = NULL;
-      }
+      // TODO: The following condition is wrong.
+//      if ($node->get('field_list_date')
+//        ->first()
+//        ->getValue()['value'] == 1) {
+//        $content = NULL;
+//      }
     }
   }
   elseif ($entity->getEntityTypeId() == 'profile') {

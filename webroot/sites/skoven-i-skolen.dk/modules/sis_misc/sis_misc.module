@@ -75,3 +75,10 @@ function sis_misc_views_pre_render(ViewExecutable $view) {
     }
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state) {
+  $form['options']['#access'] = \Drupal::currentUser()->hasPermission('bypass node access');
+}
