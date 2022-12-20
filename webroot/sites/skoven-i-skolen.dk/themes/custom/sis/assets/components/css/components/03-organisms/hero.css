@@ -24,7 +24,7 @@
     font-size: var(--base-font-size-xxxlarge);
 
     @media (--viewport-md-min) {
-      max-width: 580px;
+      max-width: 480px;
       font-size: var(--base-font-size-xxxxxlarge);
     }
   }
