@@ -26,7 +26,24 @@ third_party_settings:
     allow_custom: true
   layout_builder_restrictions:
     allowed_block_categories:
+      - Block
+      - 'Chaos Tools'
+      - 'Content fields'
+      - Cookiebot
+      - 'Custom block types'
+      - 'Custom blocks'
+      - Forms
+      - Help
       - 'Inline blocks'
+      - 'Lists (Views)'
+      - Menus
+      - 'Mobile Detect'
+      - Premium
+      - Skoven-i-Skolen
+      - System
+      - User
+      - Webform
+      - core
     entity_view_mode_restriction:
       allowed_layouts:
         - layout_onecol
@@ -35,24 +52,28 @@ third_party_settings:
       denylisted_blocks:
         'Inline blocks':
           - 'inline_block:accordion'
-          - 'inline_block:quote'
+          - 'inline_block:article_form'
+          - 'inline_block:articles'
           - 'inline_block:basic'
+          - 'inline_block:category_overview'
+          - 'inline_block:quote'
       allowlisted_blocks: {  }
       restricted_categories:
         - Block
-        - Bruger
         - 'Chaos Tools'
         - 'Content fields'
         - Cookiebot
         - 'Custom block types'
-        - Devel
+        - 'Custom blocks'
         - Forms
         - Help
         - 'Lists (Views)'
         - Menus
+        - 'Mobile Detect'
         - Premium
         - Skoven-i-Skolen
         - System
+        - User
         - Webform
         - core
       blacklisted_blocks:

@@ -145,12 +145,12 @@
 
   &--small {
     flex-direction: column;
-    height: 100%;
     padding-right: 40px;
     padding-left: 40px;
     overflow: hidden;
 
     @media (--viewport-md-min) {
+      height: 100%;
       padding-right: 60px;
       padding-left: 60px;
     }
@@ -177,9 +177,9 @@
       height: 100%;
 
       img {
-        width: auto;
-        max-width: none;
+        width: 100%;
         height: 100%;
+        object-fit: contain;
       }
     }
 
