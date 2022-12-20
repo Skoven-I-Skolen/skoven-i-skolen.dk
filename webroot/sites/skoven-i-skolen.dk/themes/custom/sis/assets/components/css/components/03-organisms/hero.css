@@ -24,7 +24,7 @@
     font-size: var(--base-font-size-xxxlarge);
 
     @media (--viewport-md-min) {
-      max-width: 500px;
+      max-width: 580px;
       font-size: var(--base-font-size-xxxxxlarge);
     }
   }
@@ -48,6 +48,7 @@
       background-color: rgb(0 0 0 / 30%);
       content: "";
     }
+
     .contextual-region {
       position: unset;
     }
