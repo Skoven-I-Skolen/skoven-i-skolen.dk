@@ -19,6 +19,7 @@ li.almanac__list-item--active {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 4px;
+  text-transform: lowercase;
 }
 
 .almanac__list-item-content {
