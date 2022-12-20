@@ -55,7 +55,7 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
   }
 
-  else if ($form_id === 'node_article_form') {
+  else if ($form_id === 'node_article_form' || $form_id === 'node_article_edit_form') {
     if ($is_anon_or_org) {
       foreach (array_keys($form['actions']) as $action) {
         if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
@@ -82,6 +82,17 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
   }
 
+
+  else if ($form_id === 'node_blog_post_form' || $form_id === 'node_blog_post_edit_form') {
+    if (isset($form['field_article_type']['widget']['#options'])) {
+      foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
+        if ($value !== 'Blogs') {
+          //SIS2-528: We only want the Blogs option here.
+          unset($form['field_article_type']['widget']['#options'][$key]);
+        }
+      }
+    }
+  }
   if (in_array('anonymous', $roles) || in_array('organization', $roles)
     || in_array('writer', $roles)) {
     // Hide fields that are not relevant for anonymous users and organizations.
