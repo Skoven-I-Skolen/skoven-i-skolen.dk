@@ -9,6 +9,7 @@ function sis_map_theme() {
         'markers' => [],
         'filters' => [],
         'icons' => [],
+        'org_name' => NULL,
       ],
     ],
   ];
