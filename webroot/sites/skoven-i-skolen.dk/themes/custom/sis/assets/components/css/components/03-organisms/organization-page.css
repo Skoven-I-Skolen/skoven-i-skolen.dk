@@ -8,6 +8,8 @@
   }
 
   &__description {
-    max-width: 58.3333%;
+    @media (--viewport-lg-min) {
+      max-width:  58.3333%;
+    }
   }
 }
