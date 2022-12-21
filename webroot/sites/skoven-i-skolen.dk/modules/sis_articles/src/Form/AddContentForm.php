@@ -20,7 +20,7 @@ class AddContentForm extends FormBase {
       2 => '<strong>' . $this->t('Vil du lægge et undervisningsforløb på kortet') . '</strong><div class="descriotion">' . t('(Et undervisningsforløb er knyttet til fag, klasse og faglige mål)') . '</div>',
     ];
 
-    if (($mode = \Drupal::request()->get('mode')) === 'organization') {
+    if (in_array('organization', \Drupal::currentUser()->getRoles())) {
       $options = [
         0 => '<strong>' . $this->t('Vil du have en prik på kortet?') . '</strong><div class="descriotion">' . t('(Institutioner som kan hjælpe udeskole lokalt, f.eks. udeskole, naturvejleder, jæger eller andet, ikke vist i de interne søgeresultater)') . '</div>',
         1 => '<strong>' . $this->t('Vil du lægge en artikel?') . '</strong><div class="descriotion">' . t('(En aktivitet, et undervisningsforløb, eller en anden artikeltype, der vises i interne søgeresultater og på din visitkortside)') . '</div>',
@@ -49,7 +49,7 @@ class AddContentForm extends FormBase {
         $form_state->setResponse(new RedirectResponse('/node/add/dot_on_map'));
         break;
       case 1:
-        if (($mode = \Drupal::request()->get('mode')) === 'organization') {
+        if (in_array('organization', \Drupal::currentUser()->getRoles())) {
           $form_state->setResponse(new RedirectResponse('/node/add/article'));
         }
         else {
