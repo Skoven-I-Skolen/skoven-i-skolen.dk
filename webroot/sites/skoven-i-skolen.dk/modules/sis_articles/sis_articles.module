@@ -56,6 +56,14 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
   }
 
   else if ($form_id === 'node_article_form' || $form_id === 'node_article_edit_form') {
+    if (isset($form['field_article_type']['widget']['#options'])) {
+      foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
+        if ($value === 'Blogs') {
+          //SIS2-528: We don't want the Blogs option here.
+          unset($form['field_article_type']['widget']['#options'][$key]);
+        }
+      }
+    }
     if ($is_anon_or_org) {
       foreach (array_keys($form['actions']) as $action) {
         if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
@@ -93,6 +101,7 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
       }
     }
   }
+
   if (in_array('anonymous', $roles) || in_array('organization', $roles)
     || in_array('writer', $roles)) {
     // Hide fields that are not relevant for anonymous users and organizations.
@@ -150,7 +159,7 @@ function sis_articles_preprocess_menu(&$variables) {
     if (isset($variables['items']['sis_articles.add_content'])) {
       $user_roles = Drupal::currentUser()->getRoles();
       if (in_array('organization', $user_roles)) {
-        $variables["items"]["sis_articles.add_content"]["url"] = \Drupal\Core\Url::fromUri('internal:/del');
+        $variables["items"]["sis_articles.add_content"]["url"] = \Drupal\Core\Url::fromUri('internal:/del?mode=organization');
       }
       else {
         $variables["items"]["sis_articles.add_content"]["url"] = \Drupal\Core\Url::fromUri('internal:/node/add');
