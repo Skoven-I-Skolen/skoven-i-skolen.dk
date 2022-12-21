@@ -9,7 +9,7 @@ cookiebot_show_declaration_node_path: /node/
 exclude_paths: ''
 exclude_admin_theme: true
 exclude_uid_1: true
-message_placeholder_cookieconsent_optout_marketing_show: false
+message_placeholder_cookieconsent_optout_marketing_show: true
 message_placeholder_cookieconsent_optout_marketing:
   value: "<p>Please <a class=\"cookieconsent-optout-marketing__cookiebot-renew\" href=\"!cookiebot_renew\">accept marketing-cookies</a> to view this embedded content from <a class=\"cookieconsent-optout-marketing__from-src-url\" href=\"!cookiebot_from_src_url\" target=\"_blank\">!cookiebot_from_src_url</a></p>\r\n"
   format: full_html

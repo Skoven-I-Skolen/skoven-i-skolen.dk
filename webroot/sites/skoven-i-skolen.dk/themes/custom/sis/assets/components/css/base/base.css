@@ -122,6 +122,7 @@ figure {
     height: auto;
     margin: 0 auto;
     transition: opacity .2s;
+    float: none !important;
   }
 
   figcaption {

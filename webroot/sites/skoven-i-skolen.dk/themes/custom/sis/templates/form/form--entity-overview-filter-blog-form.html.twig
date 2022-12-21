@@ -13,26 +13,33 @@
 {{ attach_library('sis/overview-form') }}
 
 <form{{ attributes.addClass('overview-form') }}>
-    <div class="row overview-form__header">
-      <div class="col-xs-12 col-md-6 filter-mobile-wrapper">
+  <div>
+    <div class="row overview-form__header overview-form__heading-facets">
+      <div class="col-xs-12 col-md-8">
         {% if element['facets'].sort %}
-        <div class="overview-form__search-input">
-            {{ element['facets'].sort|without('#title') }}
-        </div>
+          <div class="overview-form__search-facets overview-form__search-facets--mobile">
+            <span class="overview-form__toolbar-label">{{ "Sorted by"|t }}:</span>
+              {{ element['facets'].sort|without('#title') }}
+          </div>
         {% endif %}
+      </div>
+      <div class="col-xs-12 col-md-4">
         {% if element['facets'].text %}
-        <div class="overview-form__search-input">
-          {{ element['facets'].text }}
-          {{ element['search'].search }}
-        </div>
+          <div class="overview-form__search-input">
+            {{ element['facets'].text }}
+            {{ element['search'].search }}
+          </div>
         {% endif %}
       </div>
     </div>
+    <div class="row">
       <div class="col-xs-12 col-md-12">
         <div class="row">
           {{ element['content'] }}
         </div>
       </div>
+    </div>
+  </div>
   {{ element['page'] }}
   {{ element['page_submit'] }}
   {{ element['form_build_id'] }}
