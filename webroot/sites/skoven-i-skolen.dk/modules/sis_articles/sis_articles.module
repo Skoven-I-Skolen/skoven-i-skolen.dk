@@ -159,7 +159,7 @@ function sis_articles_preprocess_menu(&$variables) {
     if (isset($variables['items']['sis_articles.add_content'])) {
       $user_roles = Drupal::currentUser()->getRoles();
       if (in_array('organization', $user_roles)) {
-        $variables["items"]["sis_articles.add_content"]["url"] = \Drupal\Core\Url::fromUri('internal:/del?mode=organization');
+        $variables["items"]["sis_articles.add_content"]["url"] = \Drupal\Core\Url::fromUri('internal:/del');
       }
       else {
         $variables["items"]["sis_articles.add_content"]["url"] = \Drupal\Core\Url::fromUri('internal:/node/add');
