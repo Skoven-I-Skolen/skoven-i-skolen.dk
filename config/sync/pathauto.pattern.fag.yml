@@ -5,17 +5,20 @@ dependencies:
   module:
     - taxonomy
 id: fag
-label: Fag
+label: 'Fag, Klasse, Sted og Årstid'
 type: 'canonical_entities:taxonomy_term'
-pattern: '/fag/[term:name]'
+pattern: '/[term:vocabulary]/[term:name]'
 selection_criteria:
-  13ad6e42-90f1-4727-948c-adf49e5d6338:
+  01a8dfe8-e987-4c71-822b-fd6e0c9640ec:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 13ad6e42-90f1-4727-948c-adf49e5d6338
+    uuid: 01a8dfe8-e987-4c71-822b-fd6e0c9640ec
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
+      class: class
+      location: location
+      season: season
       subjects: subjects
 selection_logic: and
 weight: -5

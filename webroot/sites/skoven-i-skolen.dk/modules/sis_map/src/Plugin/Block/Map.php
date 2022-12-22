@@ -5,7 +5,9 @@ namespace Drupal\sis_map\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\profile\Entity\Profile;
 use Drupal\sis_map\MapManager;
+use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -32,7 +34,21 @@ class Map extends BlockBase implements ContainerFactoryPluginInterface {
   }
 
   public function build() {
-    $markers = $this->mapManager->loadMapMarkers();
+    $uid = \Drupal::request()->get('uid');
+    $org_name = NULL;
+    if ($uid) {
+      $username = \Drupal::entityTypeManager()
+        ->getStorage('profile')
+        ->loadByProperties(['uid' => $uid]);
+      $username = reset($username);
+      if ($username) {
+        $username = $username->get('field_organization_address')->getValue();
+        if(isset($username[0]['organization'])) {
+          $org_name = $username[0]['organization'];
+        }
+      }
+    }
+    $markers = $this->mapManager->loadMapMarkers($uid);
     $filters = $this->mapManager->fetchFilters($markers);
     $icons = $this->mapManager->loadIcons($filters);
     return [
@@ -40,6 +56,7 @@ class Map extends BlockBase implements ContainerFactoryPluginInterface {
       '#markers' => $markers,
       '#filters' => $filters,
       '#icons' => $icons,
+      '#org_name' => $org_name,
     ];
   }
 

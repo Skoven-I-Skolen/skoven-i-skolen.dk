@@ -30,7 +30,7 @@ class BlogOverviewForm extends OverviewFilterForm {
     $form = parent::buildForm($form, $form_state, $filter);
     unset($form['facets']['letter']['#title']);
     unset($form['facets']['text']['#title']);
-    $form['facets']['text']['#attributes']['placeholder'] = 'Søg i blog sider';
+    $form['facets']['text']['#attributes']['placeholder'] = 'Søg i blogindlæg';
     return $form;
   }
 

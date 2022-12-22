@@ -72,6 +72,10 @@ class OrganizationOverviewForm extends OverviewFilterForm {
   protected function buildEntitiesInContent(array &$content, array $entities, OverviewFilter $filter) {
     parent::buildEntitiesInContent($content, $entities, $filter);
     $profile = $this->request->get('profile');
+    $uid = '';
+    if ($profile) {
+      $uid = $profile->get('uid')->getString();
+    }
     $dots_on_map = \Drupal::service('sis_map.manager')->loadMapMarkers($profile->get('uid')->getString());
     if (count($dots_on_map) > 0) {
       array_unshift($content['content'], [
@@ -83,7 +87,7 @@ class OrganizationOverviewForm extends OverviewFilterForm {
           'class' => ['inspiration-overview__item--maplink']
         ],
         '#link' => [
-          'uri' => Url::fromUserInput('/'),
+          'uri' => Url::fromUserInput('/kort?uid=' . $uid),
           'title' => t('Go to map')
         ]
       ]);

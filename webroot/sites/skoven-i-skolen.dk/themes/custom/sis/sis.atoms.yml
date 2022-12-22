@@ -91,3 +91,13 @@ atoms:
       external: FALSE
     default:
       da: ''
+
+  newsletter-list-id:
+    type: textfield
+    title: Liste-id
+    description: Listens ID på Ubivox.
+    category: Nyhedsbrev
+    group: Nyhedsbrev
+    weight: 1
+    default:
+          da: '74511'

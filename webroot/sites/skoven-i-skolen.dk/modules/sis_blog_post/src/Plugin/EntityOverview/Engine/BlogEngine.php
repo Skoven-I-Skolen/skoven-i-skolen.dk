@@ -57,7 +57,11 @@ class BlogEngine extends EntityQueryEngine {
       }
 
       if ($field_name === 'text') {
-        $query->condition($keys['label'], $value, 'CONTAINS');
+        $group = $query->orConditionGroup()
+          ->condition($keys['label'], $value, 'CONTAINS')
+          ->condition('body', $value, 'CONTAINS')
+          ->condition('field_description', $value, 'CONTAINS');
+        $query->condition($group);
       }
     }
     if ($filter->hasPagination()) {
