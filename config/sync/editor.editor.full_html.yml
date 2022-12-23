@@ -42,6 +42,7 @@ settings:
           items:
             - Blockquote
             - media_directories
+            - DrupalImage
             - Table
             - HorizontalRule
         -
@@ -60,7 +61,7 @@ settings:
     stylescombo:
       styles: "p.default|Normal\r\nh1|Overskrift 1\r\nh2|Overskrift 2\r\nh3|Overskrift 3\r\nh4|Overskrift 4\r\nh5|Overskrift 5\r\nh6|Overskrift 6\r\npre|Formateret\r\np.resume|Resumé"
 image_upload:
-  status: true
+  status: false
   scheme: public
   directory: inline-images
   max_size: ''

@@ -77,6 +77,14 @@ function sis_misc_views_pre_render(ViewExecutable $view) {
 }
 
 /**
+ * Implements hook_form_alter().
+ */
+function sis_misc_form_entity_embed_dialog_alter(&$form, FormStateInterface $form_state) {
+  $form['attributes']['data-entity-embed-display-settings']['image_style']['#access'] = \Drupal::currentUser()->hasPermission('administer media');
+  $form['attributes']['data-entity-embed-display-settings']['image_loading']['#access'] = \Drupal::currentUser()->hasPermission('administer media');
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state) {

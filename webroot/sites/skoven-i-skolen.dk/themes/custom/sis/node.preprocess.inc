@@ -73,7 +73,6 @@ function sis_preprocess_node__article__slideshow(&$variables) {
   elseif ($node->hasField('field_article_image_migrated') && !$node->get('field_article_image_migrated')->isEmpty() && !is_null($node->get('field_article_image_migrated')->entity)) {
     $variables['article_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($node->get('field_article_image_migrated')->entity, $image_style);
   }
-  \Drupal::logger('debug')->debug(json_encode($variables['article_image']));
 }
 
 function sis_preprocess_node__blog_post__slideshow(&$variables) {
