@@ -42,6 +42,9 @@ function sis_map_preprocess_map(&$variables) {
   $variables['button_link'] = atom_str('map-add-idea-button-link');
   $variables['map_title'] = atom_str('map-title');
   $variables['description_above_map'] = atom('map-description');
+  if (Drupal::request()->get('uid')) {
+    $variables['#attached']['drupalSettings']['sis_map']['render_all_markers_on_build'] = TRUE;
+  }
   $variables['#attached']['drupalSettings']['sis_map']['display_map_helpers'] = Drupal::configFactory()->get('sis_map.settings')->get('display_map_helpers') ?? FALSE;
   $variables['max_visible_filters'] = Drupal::configFactory()->get('sis_map.settings')->get('max_visible_filters') ?? 5;
 }
