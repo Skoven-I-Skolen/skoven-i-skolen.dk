@@ -4,7 +4,11 @@ status: true
 dependencies:
   module:
     - block_content
+    - field_permissions
     - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
 _core:
   default_config_hash: OHVpFJTLJ9BImLiBjk4M0U2vrO7b3ErRLJ7AXpEKriI
 id: block_content.field_appetizer_orientation
@@ -15,10 +19,10 @@ settings:
   allowed_values:
     -
       value: left
-      label: 'Image on the left'
+      label: 'Billede til venstre'
     -
       value: right
-      label: 'Image on the right'
+      label: 'Billede til højre'
   allowed_values_function: ''
 module: options
 locked: false

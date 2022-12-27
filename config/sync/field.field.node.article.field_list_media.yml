@@ -14,7 +14,7 @@ entity_type: node
 bundle: article
 label: 'Liste media (Webmasters)'
 description: 'Et lille billede, der vises på interne søgeresultater og andre lister. Det kan være det samme billede som artiklens billede.'
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

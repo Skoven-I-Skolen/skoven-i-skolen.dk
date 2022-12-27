@@ -27,6 +27,7 @@ third_party_settings:
   layout_builder_restrictions:
     allowed_block_categories:
       - Block
+      - Bruger
       - 'Chaos Tools'
       - 'Content fields'
       - Cookiebot
@@ -41,7 +42,6 @@ third_party_settings:
       - Premium
       - Skoven-i-Skolen
       - System
-      - User
       - Webform
       - core
     entity_view_mode_restriction:
@@ -54,12 +54,12 @@ third_party_settings:
           - 'inline_block:accordion'
           - 'inline_block:article_form'
           - 'inline_block:articles'
-          - 'inline_block:basic'
-          - 'inline_block:category_overview'
           - 'inline_block:quote'
+          - 'inline_block:basic'
       allowlisted_blocks: {  }
       restricted_categories:
         - Block
+        - Bruger
         - 'Chaos Tools'
         - 'Content fields'
         - Cookiebot
@@ -73,7 +73,6 @@ third_party_settings:
         - Premium
         - Skoven-i-Skolen
         - System
-        - User
         - Webform
         - core
       blacklisted_blocks:

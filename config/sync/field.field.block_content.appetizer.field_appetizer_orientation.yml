@@ -14,7 +14,7 @@ field_name: field_appetizer_orientation
 entity_type: block_content
 bundle: appetizer
 label: Orientation
-description: ''
+description: 'Denne indstilling er kun relevant i én-kolonnes sektioner'
 required: true
 translatable: false
 default_value:
