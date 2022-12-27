@@ -4,6 +4,8 @@ Drupal.behaviors.sis_map_okapi_integration = {
     var filters = [];
     let markers = [];
     var autoZoom = false;
+    var firstRender = true;
+
     if (settings.sis_map) {
       markers = settings.sis_map.markers;
     }
@@ -78,7 +80,6 @@ Drupal.behaviors.sis_map_okapi_integration = {
         e.remove();
       })
 
-      var resultList = [];
 
       // Render each map new marker.
       resultSet.forEach(function (element) {
@@ -289,6 +290,13 @@ Drupal.behaviors.sis_map_okapi_integration = {
       document.querySelector('.map-container').prepend(m);
       autoZoom = true;
 
+      if (firstRender && settings.sis_map.render_all_markers_on_build) {
+        Object.keys(markers).forEach(function (index) {
+          renderMapMarker(markers[index]);
+        });
+        firstRender = false;
+      }
+
       if (settings.sis_map) {
         var map = new okapi.Initialize({icons: settings.sis_map.icons});
       }
@@ -296,6 +304,8 @@ Drupal.behaviors.sis_map_okapi_integration = {
       else {
         var map = new okapi.Initialize({icons: {'default':defaultDotIcon}});
       }
+
+      console.log("build map");
     }
 
     buildMap();

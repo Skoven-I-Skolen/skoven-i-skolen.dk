@@ -26,6 +26,7 @@ class OrganizationRepository {
     $query->accessCheck(TRUE);
     $query->condition('status', NodeInterface::PUBLISHED);
     $query->condition('uid.entity:user.roles', 'organization');
+    $query->sort('field_organization_address.organization');
 
     if ($page > 0) {
         $query->pager($limit, $page);
