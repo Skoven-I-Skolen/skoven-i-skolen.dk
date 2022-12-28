@@ -24,7 +24,6 @@ dependencies:
   module:
     - content_hierarchy
     - content_moderation
-    - datetime
     - entity_browser
     - field_group
     - metatag
@@ -111,7 +110,6 @@ third_party_settings:
         required_fields: true
     group_lists:
       children:
-        - field_list_date
         - field_description
         - field_list_media
       label: Listevisning
@@ -165,7 +163,7 @@ content:
     third_party_settings: {  }
   field_factboxes:
     type: paragraphs_classic_asymmetric
-    weight: 26
+    weight: 28
     region: content
     settings:
       title: Paragraph
@@ -181,12 +179,6 @@ content:
     region: content
     settings:
       display_label: true
-    third_party_settings: {  }
-  field_list_date:
-    type: datetime_default
-    weight: 27
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_list_media:
     type: entity_browser_entity_reference
@@ -238,13 +230,13 @@ content:
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   field_section_bg_graphics_pos:
     type: options_select
-    weight: 17
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -314,4 +306,5 @@ hidden:
   field_graphics: true
   field_header: true
   field_hide_title: true
+  field_list_date: true
   langcode: true

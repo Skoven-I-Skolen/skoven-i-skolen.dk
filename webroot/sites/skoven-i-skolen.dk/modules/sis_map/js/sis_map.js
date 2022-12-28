@@ -208,7 +208,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
               }
             });
             if (event.currentTarget.innerText.includes('Se alle')) {
-              event.currentTarget.innerText = 'Lukke ' + key.toLowerCase();
+              event.currentTarget.innerText = 'Luk ' + key.toLowerCase();
             }
             else {
               event.currentTarget.innerText = 'Se alle ' + key.toLowerCase();
