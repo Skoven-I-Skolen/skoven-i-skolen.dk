@@ -6,6 +6,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\sis_articles\Repository\ArticleRepository;
+use Drupal\taxonomy\Entity\Term;
 
 class ArticleContentDeliveryService {
 
@@ -55,18 +56,33 @@ class ArticleContentDeliveryService {
 
     $fields = [
       'field_class',
-      'field_subject'
+      'field_subject',
+      'field_related_terms'
     ];
 
     $inspirational = [];
+
     foreach ($fields as $field) {
       if ($node->hasField($field) && !$node->get($field)->isEmpty()) {
-        /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
-        $entity = $node->get($field)->entity;
-        if ($entity) {
-          $title = $entity->label();
-          $link = (string) $entity->toLink()->toString();
-          $inspirational[$link] = $this->getRandomArticlesByFields([$field], $node);
+        if ($node->getType() === 'news') {
+          $entities = $node->get($field)->getValue();
+          foreach ($entities as $entity) {
+            $entity = Term::load($entity['target_id']);
+            $title = $entity->label();
+            $link = (string) $entity->toLink()->toString();
+            $inspirational[$link] = $this->getRandomArticlesByVid(
+              $entity->get('vid')->getString(), $entity->get('tid')
+              ->getString());
+          }
+        }
+        else {
+          /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+          $entity = $node->get($field)->entity;
+          if ($entity) {
+            $title = $entity->label();
+            $link = (string) $entity->toLink()->toString();
+            $inspirational[$link] = $this->getRandomArticlesByFields([$field], $node);
+          }
         }
       }
     }
@@ -269,6 +285,22 @@ class ArticleContentDeliveryService {
     }
 
     return null;
+  }
+
+  public function getRandomArticlesByVid(string $vid, string $term_id) {
+    if ($vid === 'subjects') {
+      $vid = 'subject';
+    }
+    $result = $this->entityTypeManager->getStorage('node')
+      ->loadByProperties(['field_' . $vid => $term_id]);
+    $nodes = [];
+    if ($result) {
+      $rand_keys = array_rand($result, 3);
+      foreach ($rand_keys as $nid) {
+        $nodes[] = Node::load($nid);
+      }
+    }
+    return $nodes;
   }
 
   /**
