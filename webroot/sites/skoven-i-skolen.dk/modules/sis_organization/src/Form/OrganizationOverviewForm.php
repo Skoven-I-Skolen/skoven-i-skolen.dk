@@ -88,7 +88,12 @@ class OrganizationOverviewForm extends OverviewFilterForm {
     if(!$request->getQueryString()) {
       // No filters are selected.
       $uid = $filter->getFieldValue('owner');
-      $filter->setFieldValues(['owner' => $uid]);
+      $entities = \Drupal::entityTypeManager()->getStorage('node')
+        ->loadByProperties([
+          'uid' => $uid,
+          'type' => 'article',
+          'status' => 1,
+        ]);
     }
 
     if (!$entities) {
