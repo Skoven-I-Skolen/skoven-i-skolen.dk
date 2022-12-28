@@ -11,7 +11,7 @@ function sis_articles_preprocess_node(&$variables) {
     $related = $contentDelivery->getRelatedArticles($variables['node']);
     $get_articles = \Drupal::service('sis_articles.content_delivery_service')->getInspirationalArticlesForCurrent($variables['node']);
 
-    if (count($get_articles) > 1) {
+    if (count($get_articles) > 0) {
       $variables['inspirations'] = [
         '#lazy_builder' => [
           LazyBuilderService::class . '::getArticleInspirationContent', [

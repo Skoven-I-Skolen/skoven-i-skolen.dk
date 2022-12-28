@@ -89,4 +89,13 @@ function sis_misc_form_entity_embed_dialog_alter(&$form, FormStateInterface $for
  */
 function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state) {
   $form['options']['#access'] = \Drupal::currentUser()->hasPermission('bypass node access');
+
+  $user = \Drupal::currentUser();
+  $roles = $user->getRoles();
+
+  $anonymous = array_intersect($roles, ['anonymous', 'organization', 'writer']);
+  $logged_in = array_intersect($roles, ['administrator', 'editor', 'webmaster']);
+
+  $form['field_list_media']['widget']['#required'] = !empty($logged_in);
+  $form['field_list_media_anonymous']['widget'][0]['#required'] = !empty($anonymous);
 }

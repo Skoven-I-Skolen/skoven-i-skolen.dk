@@ -1,0 +1,35 @@
+uuid: 73269df4-fea6-4d06-8b8b-32158154cc3f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_terms
+    - node.type.news
+    - taxonomy.vocabulary.class
+    - taxonomy.vocabulary.location
+    - taxonomy.vocabulary.season
+    - taxonomy.vocabulary.subjects
+id: node.news.field_related_terms
+field_name: field_related_terms
+entity_type: node
+bundle: news
+label: 'Søgeord til Inspiration og Lignende materialer'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subjects: subjects
+      class: class
+      location: location
+      season: season
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: location
+field_type: entity_reference

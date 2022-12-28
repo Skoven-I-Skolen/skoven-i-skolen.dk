@@ -23,11 +23,14 @@ Drupal.behaviors.sis_map_okapi_integration = {
 
     // Add "checked" event to each filter checkbox.
     document.querySelectorAll('.filter-checkbox').forEach(function (element) {
-      element.addEventListener('change', (event) => {
-        if (!event.currentTarget.classList.contains('js-see-all-checkbox')) {
-          applyFilter(event.currentTarget.name, event.currentTarget.value, event.currentTarget.checked);
-        }
-       });
+      if (!element.classList.contains('enabled')) {
+        element.addEventListener('change', (event) => {
+          if (!event.currentTarget.classList.contains('js-see-all-checkbox')) {
+            applyFilter(event.currentTarget.name, event.currentTarget.value, event.currentTarget.checked);
+          }
+        });
+        element.classList.add('enabled');
+      }
     });
 
     function applyFilter(category, value, status) {
@@ -304,30 +307,29 @@ Drupal.behaviors.sis_map_okapi_integration = {
       else {
         var map = new okapi.Initialize({icons: {'default':defaultDotIcon}});
       }
-
-      console.log("build map");
     }
 
     buildMap();
 
     document.querySelectorAll('.category-name').forEach(function (element) {
-      element.addEventListener('click', function (event) {
-        var filterList = document.querySelector('[name="filters for ' + event.currentTarget.getAttribute('name') + '"]');
-        if (filterList.style.display === 'none' || filterList.style.display === '') {
-          filterList.style.display = 'block';
-        }
-        else {
-          filterList.style.display = 'none';
-        }
-        var icon = event.currentTarget.querySelector('svg');
-        if (icon.classList.contains('inverted')) {
-          icon.classList.remove('inverted');
-        }
-        else {
-          icon.classList.add('inverted');
-        }
-      })
-    });
+      if (!element.classList.contains('enabled')) {
+        element.addEventListener('click', function (event) {
+          var filterList = document.querySelector('[name="filters for ' + event.currentTarget.getAttribute('name') + '"]');
+          if (!filterList.classList.contains('expanded')) {
+            filterList.classList.add('expanded');
+          } else {
+            filterList.classList.remove('expanded');
+          }
+          var icon = event.currentTarget.querySelector('svg');
+          if (icon.classList.contains('inverted')) {
+            icon.classList.remove('inverted');
+          } else {
+            icon.classList.add('inverted');
+          }
+        })
+        element.classList.add('enabled');
+      }
+    }, {once: true});
 
     document.querySelectorAll('.js-filter-icon').forEach(function (element) {
       element.addEventListener('click', function(event){

@@ -27,7 +27,7 @@ class LazyBuilderService implements TrustedCallbackInterface {
     if ($type_term) {
       $type_term = $type_term->get('machine_name')->getString();
     }
-    if ($node->getType() === 'news' || $type_term === 'lexicon') {
+    if ($type_term === 'lexicon') {
       $inspirations = $articleContentDeliveryService->getRandomInspirationalArticles();
     }
     else {

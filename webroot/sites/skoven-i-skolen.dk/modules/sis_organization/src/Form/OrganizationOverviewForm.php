@@ -23,6 +23,19 @@ class OrganizationOverviewForm extends OverviewFilterForm {
   public function buildForm(array $form, FormStateInterface $form_state, OverviewFilter $filter = NULL) {
     $form = parent::buildForm($form, $form_state, $filter);
 
+    if ($form['facets']['field_class']) {
+      $form['facets']['field_class']['#default_value'] = [];
+    }
+    if ($form['facets']['field_location']['#default_value']) {
+      $form['facets']['field_location']['#default_value'] = [];
+    }
+    if ($form['facets']['field_season']['#default_value']) {
+      $form['facets']['field_season']['#default_value'] = [];
+    }
+    if ($form['facets']['field_subject']['#default_value']) {
+      $form['facets']['field_subject']['#default_value'] = [];
+    }
+
     $form['search'] = [];
 
     $form['search']['title'] = [
@@ -70,6 +83,18 @@ class OrganizationOverviewForm extends OverviewFilterForm {
   }
 
   protected function buildEntitiesInContent(array &$content, array $entities, OverviewFilter $filter) {
+
+    $request = \Drupal::requestStack()->getCurrentRequest();
+    if(!$request->getQueryString()) {
+      // No filters are selected.
+      $uid = $filter->getFieldValue('owner');
+      $filter->setFieldValues(['owner' => $uid]);
+    }
+
+    if (!$entities) {
+      $entities = parent::getEntitiesForBuilding($filter);
+    }
+
     parent::buildEntitiesInContent($content, $entities, $filter);
     $profile = $this->request->get('profile');
     $uid = '';
@@ -77,7 +102,7 @@ class OrganizationOverviewForm extends OverviewFilterForm {
       $uid = $profile->get('uid')->getString();
     }
     $dots_on_map = \Drupal::service('sis_map.manager')->loadMapMarkers($profile->get('uid')->getString());
-    if (count($dots_on_map) > 0) {
+    if (count($dots_on_map) > 0 && isset($content['content'])) {
       array_unshift($content['content'], [
         '#theme' => 'overview_list_item',
         '#headline' => t('See site-specific materials from @name', [
