@@ -75,6 +75,10 @@
   display: none;
 }
 
+.expanded {
+  display: block !important;
+}
+
 .same-line-text-and-icon {
   display: flex;
   cursor: pointer;

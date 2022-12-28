@@ -17,7 +17,7 @@ dependencies:
     - field.field.node.news.field_list_media
     - field.field.node.news.field_meta_tags
     - field.field.node.news.field_news_image
-    - field.field.node.news.field_news_inspiration
+    - field.field.node.news.field_related_terms
     - field.field.node.news.field_section_bg_graphics
     - field.field.node.news.field_section_bg_graphics_pos
     - node.type.news
@@ -39,7 +39,7 @@ third_party_settings:
       label: 'Page header'
       region: hidden
       parent_name: ''
-      weight: 21
+      weight: 22
       format_type: fieldset
       format_settings:
         classes: ''
@@ -81,7 +81,7 @@ third_party_settings:
         width_breakpoint: 640
     group_inspiration:
       children:
-        - field_news_inspiration
+        - field_related_terms
       label: Inspiration
       region: content
       parent_name: group_sidebar
@@ -226,9 +226,9 @@ content:
         view_mode: small
       selection_mode: selection_append
     third_party_settings: {  }
-  field_news_inspiration:
+  field_related_terms:
     type: entity_reference_autocomplete
-    weight: 18
+    weight: 15
     region: content
     settings:
       match_operator: CONTAINS
@@ -238,13 +238,13 @@ content:
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   field_section_bg_graphics_pos:
     type: options_select
-    weight: 16
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }

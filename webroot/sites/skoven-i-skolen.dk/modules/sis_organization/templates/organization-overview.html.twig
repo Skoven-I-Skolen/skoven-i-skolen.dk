@@ -1,6 +1,9 @@
 <div class="organization-overview">
   {{ title }}
   <div id="organization_overview_wrapper" class="organization-overview__wrapper">
+    {% if no_results %}
+      {{ no_results }}
+    {% endif %}
     {{ entities }}
   </div>
 </div>

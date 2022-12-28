@@ -63,6 +63,7 @@ function sis_preprocess_block(&$variables) {
       }
       $variables['content']['title']['#title'] =
         new TranslatableMarkup('Create @name', ['@name' => $name]);
+      $variables['#cache']['contexts'][] = 'url.query_args';
     }
   }
 }
