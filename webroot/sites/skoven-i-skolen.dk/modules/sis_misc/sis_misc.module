@@ -99,3 +99,13 @@ function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state) {
   $form['field_list_media']['widget']['#required'] = !empty($logged_in);
   $form['field_list_media_anonymous']['widget'][0]['#required'] = !empty($anonymous);
 }
+
+/**
+ * Implements hook_simple_sitemap_links_alter().
+ */
+function sis_misc_simple_sitemap_links_alter(array &$links) {
+  foreach ($links as $key => $link) {
+    $url = preg_replace('/^http:/', 'https:', $link['url']);
+    $links[$key]['url'] = $url;
+  }
+}
