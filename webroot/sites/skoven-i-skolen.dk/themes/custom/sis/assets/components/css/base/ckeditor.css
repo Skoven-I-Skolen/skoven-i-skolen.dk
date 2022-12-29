@@ -23,8 +23,9 @@
   }
 
   .caption-img {
-    display: inline-block;
+    display: block;
     margin: 0;
+    clear: both;
 
     figcaption {
       display: block;
@@ -33,18 +34,42 @@
   }
 }
 
+drupal-entity {
+  display: block !important;
+  &[data-align="left"] {
+    text-align: left;
+  }
+  &[data-align="right"] {
+    text-align: right;
+  }
+  &[data-align="center"] {
+    text-align: center;
+  }
+  > div {
+    float: none !important;
+    margin: 0 auto;
+    display: inline-block;
+  }
+}
+
 .cke_widget_image {
   width: 100%;
   float: none !important;
+  display: block !important;
   img {
     display: block;
   }
+  figure {
+    display: block !important;
+  }
+  .align-left,
   &[style="float: left;"] {
     img {
       margin-right: auto;
       margin-left: 0;
     }
   }
+  .align-right,
   &[style="float: right;"] {
     img {
       margin-right: 0;
