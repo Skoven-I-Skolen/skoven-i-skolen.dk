@@ -59,6 +59,8 @@ class OrganizationRepository {
     $query->condition('n.status', NodeInterface::PUBLISHED)
       ->condition('u.roles_target_id', 'organization');
 
+    $query->orderBy('n.created', 'DESC');
+
     if ($limit > 0) {
       $query->range(0, $limit);
     }
