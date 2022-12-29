@@ -29,6 +29,8 @@ function sis_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
  */
 function sis_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id === 'entity_overview_filter_form') {
+    $form['search']['title']['#prefix'] = "<h3>";
+    $form['search']['title']['#suffix'] = "</h3>";
     $form["#attached"]["library"][] = 'sis/pager-overview';
   }
 }
