@@ -93,3 +93,10 @@ msgstr "Vind"
 
 msgid "wind"
 msgstr "Vind"
+
+msgid "Short description of the image used by screen readers and displayed when the image is not loaded. This is important for accessibility."
+msgstr "Kort beskrivelse af billedet brugt af screen readers og crawlere."
+
+msgid "Confirm removal"
+msgstr "Bekræft fjernelse"
+

@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.overview_element.field_article
     - field.field.paragraph.overview_element.field_link_list_headline
     - field.field.paragraph.overview_element.field_link_list_title
     - field.field.paragraph.overview_element.field_show_link_list
@@ -15,6 +16,15 @@ targetEntityType: paragraph
 bundle: overview_element
 mode: default
 content:
+  field_article:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: list
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_type:
     type: article_random_content
     label: hidden

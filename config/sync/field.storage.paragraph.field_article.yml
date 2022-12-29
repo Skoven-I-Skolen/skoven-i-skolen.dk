@@ -1,18 +1,20 @@
-uuid: fc33cbc7-3960-49c7-8ba2-87f9483ba6ff
+uuid: 549fe28f-67e8-4aab-9532-de3fac8ea6c5
 langcode: da
 status: true
 dependencies:
   module:
     - field_permissions
+    - node
     - paragraphs
 third_party_settings:
   field_permissions:
     permission_type: public
-id: paragraph.field_show_link_list
-field_name: field_show_link_list
+id: paragraph.field_article
+field_name: field_article
 entity_type: paragraph
-type: boolean
-settings: {  }
+type: entity_reference
+settings:
+  target_type: node
 module: core
 locked: false
 cardinality: 1

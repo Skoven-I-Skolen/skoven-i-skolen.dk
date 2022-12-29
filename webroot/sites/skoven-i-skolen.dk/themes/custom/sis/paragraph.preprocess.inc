@@ -51,3 +51,13 @@ function sis_preprocess_paragraph__inline_hero(array &$variables) {
     }
   }
 }
+
+function sis_preprocess_paragraph__overview_element(array &$variables) {
+  if (isset($variables['content']['field_article']['#object'])) {
+    // SIS2-547: The selected article should have priority over the random article.
+    if (isset($variables['content']['field_type'][1])) {
+      $variables['content']['field_article'][] = $variables['content']['field_type'][1];
+    }
+    unset($variables['content']['field_type']);
+  }
+}

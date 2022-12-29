@@ -1,4 +1,8 @@
 function appLoop(resize) {
+  if (document.querySelector('.read-more__content').clientHeight < 305) {
+    document.querySelector('.read-more__trigger').style.display = 'none';
+  }
+
   const apps = document.querySelectorAll('.read-more__content-wrapper');
   if (apps.length === 0) {
     return;
