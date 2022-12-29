@@ -101,3 +101,16 @@ atoms:
     weight: 1
     default:
           da: '74511'
+
+  show-on-map-help-text:
+    type: text_format
+    title: Hjælpetekst på Vis på kort feltsæt
+    description: ''
+    category: Page layout
+    group: Formularer
+    subgroup: Tilføj artikel
+    weight: 7
+    options:
+      external: FALSE
+    default:
+      da: '<p><strong>Disse indstillinger bruges til at vise artiklen som en prik på et <a href="/kort" target="_blank">kort</a>. Brug disse indstillinger hvis artiklen er stedsspecifik. Kan undlades.</strong></p>'
