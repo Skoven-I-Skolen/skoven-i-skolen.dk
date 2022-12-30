@@ -19,7 +19,7 @@ h6 {
 }
 
 h1 {
-  font-size: var(--base-font-size-xxlarge);
+  font-size: var(--base-font-size-xxxlarge);
   line-height: 1;
 
   @media (--viewport-ms-min) {
@@ -32,20 +32,20 @@ h1 {
 }
 
 h2 {
-  font-size: var(--base-font-size-xlarge);
+  font-size: var(--base-font-size-xxlarge);
   line-height: 1.2;
 
   @media (--viewport-ms-min) {
-    font-size: var(--base-font-size-xxxlarge);
+    font-size: var(--base-font-size-xxlarge);
   }
 
   @media (--viewport-sm-min) {
-    font-size: var(--base-font-size-xxxlarge);
+    font-size: var(--base-font-size-xxlarge);
   }
 }
 
 h3 {
-  font-size: var(--base-font-size-xxlarge);
+  font-size: var(--base-font-size-xlarge);
   line-height: 1.2;
 
   @media (--viewport-ms-min) {
@@ -53,7 +53,7 @@ h3 {
   }
 
   @media (--viewport-sm-min) {
-    font-size: var(--base-font-size-xxlarge);
+    font-size: var(--base-font-size-xlarge);
   }
 }
 
@@ -62,7 +62,7 @@ h4 {
   line-height: 1.2;
 
   @media (--viewport-sm-min) {
-    font-size: var(--base-font-size-xlarge);
+    font-size: var(--base-font-size-large);
   }
 }
 
