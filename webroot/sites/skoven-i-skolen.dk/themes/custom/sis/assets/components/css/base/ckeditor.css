@@ -45,7 +45,8 @@ drupal-entity {
   &[data-align="center"] {
     text-align: center;
   }
-  > div {
+  > div,
+  > figure {
     float: none !important;
     margin: 0 auto;
     display: inline-block;

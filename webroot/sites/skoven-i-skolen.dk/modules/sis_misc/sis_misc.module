@@ -107,5 +107,10 @@ function sis_misc_simple_sitemap_links_alter(array &$links) {
   foreach ($links as $key => $link) {
     $url = preg_replace('/^http:/', 'https:', $link['url']);
     $links[$key]['url'] = $url;
+    // Fix the protocol for translation links in xml sitemap.
+    foreach ($link['alternate_urls'] as $language => $alternate_url) {
+      $alternate_url = preg_replace('/^http:/', 'https:', $alternate_url);
+      $links[$key]['alternate_urls'][$language] = $alternate_url;
+    }
   }
 }
