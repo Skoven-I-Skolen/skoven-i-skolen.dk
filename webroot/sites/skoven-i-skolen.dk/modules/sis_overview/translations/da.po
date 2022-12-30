@@ -100,3 +100,12 @@ msgstr "Kort beskrivelse af billedet brugt af screen readers og crawlere."
 msgid "Confirm removal"
 msgstr "Bekræft fjernelse"
 
+msgid "Deleted Faktaboks: Factbox"
+msgstr "Slettet Faktaboks: Factbox"
+
+msgid "Deleted Faktaboks"
+msgstr "Slettet Faktaboks"
+
+msgid "Deleted"
+msgstr "Slettet"
+
