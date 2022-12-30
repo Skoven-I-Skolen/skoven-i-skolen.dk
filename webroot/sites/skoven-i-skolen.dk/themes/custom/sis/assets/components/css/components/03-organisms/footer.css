@@ -6,6 +6,13 @@
 .footer {
   position: relative;
 
+  &__header {
+    font-size: var(--base-font-size-xlarge);
+    font-weight: var(--heading-font-weight);
+    font-family: var(--heading-font-family);
+    margin-bottom: 10px;
+  }
+
   &__graphic {
     position: relative;
     z-index: -1;

@@ -1,0 +1,60 @@
+[
+    {
+        "id":77552,
+        "result":11.34000015258789,
+        "depth":1,
+        "dato":"2021-12-16T00:00:00",
+        "season":"Vinter",
+        "unit":"mg/l",
+        "mapLocationId":4745,
+        "mapLocation":
+        {
+            "id":4745,
+            "longitude":9.0625,
+            "latitude":56.954,
+            "placeName":"Løgstør Bredning",
+            "samplesNew":null
+        },
+        "element":
+        {
+            "id":4675,
+            "name":"Oxygen indhold"
+        },
+        "depthType":
+        {
+            "sampleId":77552,
+            "depthMeasurement":"",
+            "simple":"x",
+            "samplesNew":null
+        }
+    },
+    {
+        "id":77555,
+        "result":27,
+        "depth":1,
+        "dato":"2021-06-21T00:00:00",
+        "season":"Sommer",
+        "unit":"µg/l",
+        "mapLocationId":4745,
+        "mapLocation":
+        {
+            "id":4745,
+            "longitude":9.0625,
+            "latitude":56.954,
+            "placeName":"Løgstør Bredning",
+            "samplesNew":null
+        },
+        "element":
+        {
+            "id":4676,
+            "name":"Phosphor, total-P"
+        },
+        "depthType":
+        {
+            "sampleId":77555,
+            "depthMeasurement":"",
+            "simple":"x",
+            "samplesNew":null
+        }
+    }
+]

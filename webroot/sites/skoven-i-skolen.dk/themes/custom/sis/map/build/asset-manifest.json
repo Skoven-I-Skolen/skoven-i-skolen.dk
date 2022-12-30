@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/main.0bb410e4.chunk.css",
+    "main.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/main.ab2cd1e8.chunk.js",
+    "main.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/main.ab2cd1e8.chunk.js.map",
+    "runtime-main.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/runtime-main.9d99235f.js",
+    "runtime-main.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/runtime-main.9d99235f.js.map",
+    "static/js/2.f0b5b4de.chunk.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.f0b5b4de.chunk.js",
+    "static/js/2.f0b5b4de.chunk.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.f0b5b4de.chunk.js.map",
+    "index.html": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/index.html",
+    "static/css/main.0bb410e4.chunk.css.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/main.0bb410e4.chunk.css.map",
+    "static/js/2.f0b5b4de.chunk.js.LICENSE.txt": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.f0b5b4de.chunk.js.LICENSE.txt",
+    "static/media/Flensborg Fjord.43be04dc.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Flensborg Fjord.43be04dc.xlsx",
+    "static/media/Horsens Fjord.b769157b.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Horsens Fjord.b769157b.xlsx",
+    "static/media/Limfjorden.654b30cd.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Limfjorden.654b30cd.xlsx",
+    "static/media/Mariager Fjord (Dybet).9446b02d.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Mariager Fjord (Dybet).9446b02d.xlsx",
+    "static/media/Odense Fjord.d9279076.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Odense Fjord.d9279076.xlsx",
+    "static/media/Øresund.af32106a.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Øresund.af32106a.xlsx"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9d99235f.js",
+    "static/js/2.f0b5b4de.chunk.js",
+    "static/css/main.0bb410e4.chunk.css",
+    "static/js/main.ab2cd1e8.chunk.js"
+  ]
+}

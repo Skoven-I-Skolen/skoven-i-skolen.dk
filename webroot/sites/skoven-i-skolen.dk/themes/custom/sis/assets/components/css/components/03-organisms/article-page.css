@@ -97,16 +97,6 @@ media {
   }
 }
 
-.article-content-wrapper {
-  & h2 {
-    font-size: var(--base-font-size-xxlarge) !important;
-  }
-
-  & h3 {
-    font-size: var(--base-font-size-xlarge) !important;
-  }
-}
-
 .contextual-region {
   overflow: visible;
 }
