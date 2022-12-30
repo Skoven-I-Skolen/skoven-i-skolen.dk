@@ -8,9 +8,9 @@ dependencies:
     - field.field.user.user.field_full_name
     - field.field.user.user.field_summary
     - field.field.user.user.user_picture
-    - image.style.article
+    - responsive_image.styles.small
   module:
-    - image
+    - responsive_image
     - text
     - user
 _core:
@@ -55,13 +55,11 @@ content:
     weight: 5
     region: content
   user_picture:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
-      image_link: content
-      image_style: article
-      image_loading:
-        attribute: lazy
+      responsive_image_style: small
+      image_link: ''
     third_party_settings: {  }
     weight: 0
     region: content
