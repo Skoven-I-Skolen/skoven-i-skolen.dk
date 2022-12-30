@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/main.624d374b.chunk.css",
-    "main.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/main.bb32a82c.chunk.js",
-    "main.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/main.bb32a82c.chunk.js.map",
-    "runtime-main.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/runtime-main.d79fda21.js",
-    "runtime-main.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/runtime-main.d79fda21.js.map",
-    "static/css/2.564fcabe.chunk.css": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/2.564fcabe.chunk.css",
-    "static/js/2.61d2088f.chunk.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.61d2088f.chunk.js",
-    "static/js/2.61d2088f.chunk.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.61d2088f.chunk.js.map",
+    "main.css": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/main.e5a2339c.chunk.css",
+    "main.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/main.ab2cd1e8.chunk.js",
+    "main.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/main.ab2cd1e8.chunk.js.map",
+    "runtime-main.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/runtime-main.9d99235f.js",
+    "runtime-main.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/runtime-main.9d99235f.js.map",
+    "static/js/2.f0b5b4de.chunk.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.f0b5b4de.chunk.js",
+    "static/js/2.f0b5b4de.chunk.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.f0b5b4de.chunk.js.map",
     "index.html": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/index.html",
-    "static/css/2.564fcabe.chunk.css.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/2.564fcabe.chunk.css.map",
-    "static/css/main.624d374b.chunk.css.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/main.624d374b.chunk.css.map",
-    "static/js/2.61d2088f.chunk.js.LICENSE.txt": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.61d2088f.chunk.js.LICENSE.txt",
+    "static/css/main.e5a2339c.chunk.css.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/main.e5a2339c.chunk.css.map",
+    "static/js/2.f0b5b4de.chunk.js.LICENSE.txt": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.f0b5b4de.chunk.js.LICENSE.txt",
     "static/media/Flensborg Fjord.43be04dc.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Flensborg Fjord.43be04dc.xlsx",
     "static/media/Horsens Fjord.b769157b.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Horsens Fjord.b769157b.xlsx",
     "static/media/Limfjorden.654b30cd.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Limfjorden.654b30cd.xlsx",
@@ -20,10 +18,9 @@
     "static/media/Øresund.af32106a.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Øresund.af32106a.xlsx"
   },
   "entrypoints": [
-    "static/js/runtime-main.d79fda21.js",
-    "static/css/2.564fcabe.chunk.css",
-    "static/js/2.61d2088f.chunk.js",
-    "static/css/main.624d374b.chunk.css",
-    "static/js/main.bb32a82c.chunk.js"
+    "static/js/runtime-main.9d99235f.js",
+    "static/js/2.f0b5b4de.chunk.js",
+    "static/css/main.e5a2339c.chunk.css",
+    "static/js/main.ab2cd1e8.chunk.js"
   ]
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Divider, Grid, Spin, Button, message } from "antd";
-import 'antd/dist/antd.css';
 
 import {
   ComposableMap,
