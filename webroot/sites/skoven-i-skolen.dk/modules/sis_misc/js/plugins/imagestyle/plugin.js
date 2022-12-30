@@ -39,6 +39,7 @@
         widgetDefinition.downcast = function (element) {
           originalDowncast.call(this, element);
           element.attributes['data-image-size'] = this.data['data-image-size'];
+          return element;
         };
 
         var originalUpcast = widgetDefinition.upcast;
@@ -52,12 +53,11 @@
             return;
           }
 
-          element = originalUpcast.call(this, element, data);
+          originalUpcast.call(this, element, data);
           var attrs = element.attributes;
 
           data['data-image-size'] = attrs['data-image-size'];
           delete attrs['data-image-size'];
-
           return element;
         };
 
