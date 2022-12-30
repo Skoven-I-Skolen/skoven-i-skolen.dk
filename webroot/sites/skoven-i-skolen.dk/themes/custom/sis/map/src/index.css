@@ -1,0 +1,232 @@
+@import "~antd/dist/antd.css";
+
+html,
+body,
+#root {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 120px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.7);
+  margin: 16px 24px 16px 0;
+  float: left;
+  border-radius: 50px;
+}
+
+.ant-drawer-mask {
+  animation: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+}
+
+.ant-drawer-content {
+  opacity: 0.95;
+
+  .ant-drawer-close {
+    padding: 10px;
+  }
+  .ant-drawer-header {
+    padding: 20px 24px;
+  }
+
+  .ant-menu-vertical {
+    border-right: none;
+  }
+
+  .ant-drawer-body {
+    padding-top: 5.5rem;
+  }
+}
+
+.white-text {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  span:not(.anticon),
+  .ant-typography,
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    color: #fff;
+  }
+}
+
+.ant-btn-text {
+  padding-left: 0;
+}
+
+.ant-tag {
+  margin-bottom: 5px;
+}
+
+.ant-input-group > .ant-input:first-child,
+.ant-input-group-addon:first-child {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.ant-input-lg {
+  padding-left: 15px;
+}
+
+.ant-input-group-wrapper {
+  width: auto;
+}
+
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.ant-input-group-addon {
+  background: none;
+}
+
+.ant-typography code {
+  background: rgba(150, 150, 150, 0.3);
+}
+
+.sponsor {
+  width: 220px;
+  height: 120px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  margin: 0.8rem;
+  cursor: pointer;
+  display: inline-block;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.content .drawer {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 50px 20px;
+  margin-top: 20px;
+}
+
+footer {
+  .footer-wrap {
+    padding: 50px 0 20px 0;
+    p {
+      margin-bottom: 2px;
+    }
+  }
+  &.dark {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      color: #fff;
+    }
+    .footer-wrap {
+      padding: 50px 0;
+    }
+  }
+}
+
+.measurements {
+  .ant-statistic {
+    min-width: 6rem;
+  }
+  .suffix {
+    font-size: 12px;
+  }
+}
+
+.container-checkabletags {
+  //position:relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+$checkedColor: #1890ff;
+$checkedRed: 24;
+$checkedGreen: 144;
+$checkedBlue: 255;
+.lighter-checked-level-1.ant-tag-checkable-checked {
+  background-color: rgba($checkedRed, $checkedGreen, $checkedBlue, 0.75);
+}
+.lighter-checked-level-2.ant-tag-checkable-checked {
+  background-color: rgba($checkedRed, $checkedGreen, $checkedBlue, 0.5);
+}
+
+/* Start Cookie Politics */
+
+.cookie-politics-link {
+  color: #687989;
+}
+/* End Cookie Politics*/
+
+.red-on-hover:hover {
+  color: red;
+  font-weight: bold;
+}
+
+.stretch {
+  width: 100% !important;
+}
+
+.hide {
+  display: none;
+}
+
+.appear-and-fade {
+  display: inline-block !important;
+  animation: appearThenHide 4s normal forwards;
+  animation-delay: 1s;
+}
+
+@keyframes appearThenHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.search-card{
+  //overflow: hidden;
+  //white-space:nowrap;
+  //text-overflow: ellipsis;
+  padding: 12px;
+  color: #fff;
+  background: rgb(20, 67, 102);
+  //opacity: 0.9;
+  filter: alpha(opacity=10);
+  border: 1px solid #000;
+  font-weight: bold;
+  max-width:100%;
+}
+.search-card:hover{
+  //background: rgba(20, 67, 102, 0.9);
+  color: #fff;
+}
+
+@media  (max-width: 800px) {
+  .topnav  {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/main.624d374b.chunk.css",
+    "main.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/main.bb32a82c.chunk.js",
+    "main.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/main.bb32a82c.chunk.js.map",
+    "runtime-main.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/runtime-main.d79fda21.js",
+    "runtime-main.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/runtime-main.d79fda21.js.map",
+    "static/css/2.564fcabe.chunk.css": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/2.564fcabe.chunk.css",
+    "static/js/2.61d2088f.chunk.js": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.61d2088f.chunk.js",
+    "static/js/2.61d2088f.chunk.js.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.61d2088f.chunk.js.map",
+    "index.html": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/index.html",
+    "static/css/2.564fcabe.chunk.css.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/2.564fcabe.chunk.css.map",
+    "static/css/main.624d374b.chunk.css.map": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/css/main.624d374b.chunk.css.map",
+    "static/js/2.61d2088f.chunk.js.LICENSE.txt": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/js/2.61d2088f.chunk.js.LICENSE.txt",
+    "static/media/Flensborg Fjord.43be04dc.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Flensborg Fjord.43be04dc.xlsx",
+    "static/media/Horsens Fjord.b769157b.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Horsens Fjord.b769157b.xlsx",
+    "static/media/Limfjorden.654b30cd.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Limfjorden.654b30cd.xlsx",
+    "static/media/Mariager Fjord (Dybet).9446b02d.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Mariager Fjord (Dybet).9446b02d.xlsx",
+    "static/media/Odense Fjord.d9279076.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Odense Fjord.d9279076.xlsx",
+    "static/media/Øresund.af32106a.xlsx": "/sites/skoven-i-skolen.dk/themes/custom/sis/map/build/static/media/Øresund.af32106a.xlsx"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d79fda21.js",
+    "static/css/2.564fcabe.chunk.css",
+    "static/js/2.61d2088f.chunk.js",
+    "static/css/main.624d374b.chunk.css",
+    "static/js/main.bb32a82c.chunk.js"
+  ]
+}
