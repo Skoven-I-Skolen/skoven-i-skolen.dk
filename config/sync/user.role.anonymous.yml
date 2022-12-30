@@ -50,6 +50,8 @@ permissions:
   - 'view field_article_image_migrated'
   - 'view field_article_related'
   - 'view field_colophon'
+  - 'view field_external_link'
+  - 'view field_external_link_logo'
   - 'view field_list_media'
   - 'view field_list_media_anonymous'
   - 'view field_top_image'

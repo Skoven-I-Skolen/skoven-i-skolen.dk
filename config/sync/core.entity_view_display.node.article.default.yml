@@ -21,6 +21,8 @@ dependencies:
     - field.field.node.article.field_copy_sheet
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
+    - field.field.node.article.field_external_link
+    - field.field.node.article.field_external_link_logo
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
     - field.field.node.article.field_header
@@ -44,8 +46,10 @@ dependencies:
     - field.field.node.article.sis_map_address_dawa
     - node.type.article
   module:
+    - image
     - layout_builder
     - layout_builder_restrictions
+    - link
     - metatag
     - responsive_image
     - text
@@ -105,6 +109,29 @@ content:
       link: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_external_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_external_link_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_meta_tags:
     type: metatag_empty_formatter

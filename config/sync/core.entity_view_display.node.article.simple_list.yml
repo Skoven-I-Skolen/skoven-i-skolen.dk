@@ -22,6 +22,8 @@ dependencies:
     - field.field.node.article.field_copy_sheet
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
+    - field.field.node.article.field_external_link
+    - field.field.node.article.field_external_link_logo
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
     - field.field.node.article.field_header
@@ -97,6 +99,8 @@ hidden:
   field_copy_sheet: true
   field_description: true
   field_equipment: true
+  field_external_link: true
+  field_external_link_logo: true
   field_factboxes: true
   field_files: true
   field_header: true

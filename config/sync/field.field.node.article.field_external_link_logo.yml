@@ -1,0 +1,38 @@
+uuid: 3afcaf78-c9da-442d-b395-291e9021d8f9
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_link_logo
+    - node.type.article
+  module:
+    - image
+id: node.article.field_external_link_logo
+field_name: field_external_link_logo
+entity_type: node
+bundle: article
+label: 'Eksternt link logo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

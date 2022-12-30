@@ -22,6 +22,8 @@ dependencies:
     - field.field.node.article.field_copy_sheet
     - field.field.node.article.field_description
     - field.field.node.article.field_equipment
+    - field.field.node.article.field_external_link
+    - field.field.node.article.field_external_link_logo
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
     - field.field.node.article.field_header
@@ -48,6 +50,7 @@ dependencies:
   module:
     - layout_builder
     - layout_builder_restrictions
+    - link
     - responsive_image
     - user
 third_party_settings:
@@ -87,6 +90,27 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_external_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_external_link_logo:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_list_media:
     type: entity_reference_entity_view
