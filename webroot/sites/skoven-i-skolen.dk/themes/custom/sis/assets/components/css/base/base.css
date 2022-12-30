@@ -13,6 +13,10 @@
   }
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* Body */
 body {
   position: relative;
@@ -28,6 +32,7 @@ body {
   background-color: var(--site-background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 
   @media (--viewport-ms-min) {
     padding-top: var(--header-height);

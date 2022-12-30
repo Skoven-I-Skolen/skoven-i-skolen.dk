@@ -133,3 +133,19 @@ img[data-cke-widget-data*='data-image-size%22%3A%22medium'] {
 img[data-cke-widget-data*='data-image-size%22%3A%22large'] {
   max-width: 480px;
 }
+
+figure[data-cke-widget-data*='data-image-size%22%3A%22small'] {
+  img {
+    max-width: 160px;
+  }
+}
+figure[data-cke-widget-data*='data-image-size%22%3A%22medium'] {
+  img {
+    max-width: 220px;
+  }
+}
+figure[data-cke-widget-data*='data-image-size%22%3A%22large'] {
+  img {
+    max-width: 480px;
+  }
+}
