@@ -1,11 +1,17 @@
 .form-overview-header {
   display: flex;
   gap: 20px;
+  @media (--viewport-sm-max) {
+    flex-direction: column;
+  }
   .search-title {
     min-width: 50%;
   }
   .search-facets {
     display: flex;
+    @media (--viewport-sm-max) {
+      flex-direction: column;
+    }
     label {
       display: none;
     }
