@@ -123,3 +123,13 @@ media {
 p.resume {
   font-size: 20px;
 }
+
+img[data-cke-widget-data*='data-image-size%22%3A%22small'] {
+  max-width: 160px;
+}
+img[data-cke-widget-data*='data-image-size%22%3A%22medium'] {
+  max-width: 220px;
+}
+img[data-cke-widget-data*='data-image-size%22%3A%22large'] {
+  max-width: 480px;
+}
