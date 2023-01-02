@@ -113,7 +113,6 @@
       text-align: center;
     }
 
-    .hero__title,
     .hero__description {
       text-align: center;
     }
@@ -131,7 +130,6 @@
       text-align: right;
     }
 
-    .hero__title,
     .hero__description {
       text-align: right;
     }
@@ -187,10 +185,6 @@
 
   &--inverted {
     color: white;
-  }
-
-  &__content-title {
-    font-size: 36px;
   }
 }
 
