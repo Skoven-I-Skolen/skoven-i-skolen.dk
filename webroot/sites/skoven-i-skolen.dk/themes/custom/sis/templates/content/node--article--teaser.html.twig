@@ -68,15 +68,21 @@
  */
 #}
 {{ attach_library('sis/inspiration-overview') }}
+{{ attach_library('core/drupal.dialog.ajax') }}
 
 {% set subject_items = content.field_subject['#items'] %}
 
 {% set typeAltrerLink = node.field_article_type.entity.field_page_link.0.url %}
 {% set typeUrl = path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_article_type.entity.id}) %}
+{% set dataDialogOpts = { closeText: "", classes: { "ui-dialog": "article-modal" }} %}
 
 <div class="inspiration-overview__item">
 	<div class="inspiration-overview__item-inner">
-		<a href="{{ url }}" class="inspiration-overview__item-link">
+    {% if content.field_external_link.0['#url'] %}
+      <a href="{{ url }}" class="inspiration-overview__item-link use-ajax" data-dialog-options="{{ dataDialogOpts|json_encode()|e('html_attr') }}" data-dialog-type="modal" >
+    {% else %}
+      <a href="{{ url }}" class="inspiration-overview__item-link">
+    {% endif %}
 			<div class="inspiration-overview__image">
         {% if content.field_list_media[0] %}
           {{ content.field_list_media }}
@@ -88,6 +94,13 @@
 						{{ node.field_article_type.entity.name.value }}
 					</div>
 				</a>
+        {% if content.field_external_link.0['#url'] %}
+          {% include '@reusable-component/svg-icon.twig' with {
+            'attributes': '',
+            'svgIconName': 'external-link'
+          } %}
+					<div class="inspiration-overview__type inspiration-overview__type--bottom">Materiale fra andet site</div>
+        {% endif %}
 			</div>
 			<div class="inspiration-overview__content">
 				{% if content.field_class[0]|length > 0 %}
@@ -107,7 +120,11 @@
 						{% endfor %}
 					</div>
 				{% endif %}
-				<a href="{{ url }}" class="inspiration-overview__item-link">
+        {% if content.field_external_link.0['#url'] %}
+          <a href="{{ url }}" class="inspiration-overview__item-link use-ajax" data-dialog-options="{{ dataDialogOpts|json_encode()|e('html_attr') }}" data-dialog-type="modal" >
+        {% else %}
+          <a href="{{ url }}" class="inspiration-overview__item-link">
+        {% endif %}
 					<div class="inspiration-overview__title">
 						{{ label }}
 					</div>

@@ -2,7 +2,7 @@
  * Type: Base.
  * Modal styling.
  */
-.ui-dialog:not(.ui-dialog-position-side) {
+.ui-dialog:not(.ui-dialog-position-side):not(.ui-dialog.article-modal) {
   /* stylelint-disable */
   top: 50% !important;
   left: 50% !important;
@@ -14,6 +14,11 @@
     min-height: calc(100% - 46px) !important;
   }
   /* stylelint-enable */
+}
+
+.ui-widget-overlay {
+  background: var(--color-black);
+  opacity: 0.8;
 }
 
 #layout-builder-modal {

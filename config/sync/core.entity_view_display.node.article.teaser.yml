@@ -49,6 +49,7 @@ dependencies:
   module:
     - datetime
     - image
+    - link
     - user
 _core:
   default_config_hash: cITkIPn3-i-ZQcV_BmrcIM66yh1kZWBRCYKeSftnYpc
@@ -92,6 +93,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_external_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_list_date:
     type: datetime_time_ago
@@ -147,7 +160,6 @@ hidden:
   field_contact_person: true
   field_copy_sheet: true
   field_equipment: true
-  field_external_link: true
   field_external_link_logo: true
   field_factboxes: true
   field_files: true
