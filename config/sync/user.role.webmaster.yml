@@ -38,7 +38,6 @@ dependencies:
     - content_translation
     - contextual
     - entity_browser
-    - entity_clone
     - field_permissions
     - file
     - file_delete
@@ -109,7 +108,6 @@ permissions:
   - 'assign organization role'
   - 'assign webmaster role'
   - 'assign writer role'
-  - 'clone node entity'
   - 'configure all page node layout overrides'
   - 'configure any layout'
   - 'configure editable page node layout overrides'
