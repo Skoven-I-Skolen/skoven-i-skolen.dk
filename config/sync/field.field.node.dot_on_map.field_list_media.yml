@@ -12,7 +12,7 @@ entity_type: node
 bundle: dot_on_map
 label: 'Liste media'
 description: 'Et lille billede, der vises på interne søgeresultater og andre lister.'
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
