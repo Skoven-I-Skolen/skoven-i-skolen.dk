@@ -38,7 +38,6 @@ dependencies:
     - content_translation
     - contextual
     - entity_browser
-    - entity_clone
     - field_permissions
     - file
     - file_delete
@@ -109,7 +108,6 @@ permissions:
   - 'assign organization role'
   - 'assign webmaster role'
   - 'assign writer role'
-  - 'clone node entity'
   - 'configure all page node layout overrides'
   - 'configure any layout'
   - 'configure editable page node layout overrides'
@@ -126,6 +124,7 @@ permissions:
   - 'create field_colophon'
   - 'create field_header'
   - 'create field_list_media'
+  - 'create field_list_media_anonymous'
   - 'create image media'
   - 'create media'
   - 'create news content'
@@ -221,6 +220,7 @@ permissions:
   - 'edit field_colophon'
   - 'edit field_header'
   - 'edit field_list_media'
+  - 'edit field_list_media_anonymous'
   - 'edit own almanac content'
   - 'edit own article content'
   - 'edit own audio media'
@@ -232,6 +232,7 @@ permissions:
   - 'edit own field_colophon'
   - 'edit own field_header'
   - 'edit own field_list_media'
+  - 'edit own field_list_media_anonymous'
   - 'edit own image media'
   - 'edit own news content'
   - 'edit own page content'
