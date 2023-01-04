@@ -13,10 +13,6 @@
   }
 }
 
-html {
-  overflow-x: hidden;
-}
-
 /* Body */
 body {
   position: relative;
@@ -133,8 +129,8 @@ figure {
   figcaption {
     margin-top: 4px;
     margin-bottom: 8px;
-    color: gray;
-    font-size: .8em;
+    color: var(--color-purple);
+    font-size: 11px;
   }
 }
 

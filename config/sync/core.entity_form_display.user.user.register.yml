@@ -13,7 +13,6 @@ dependencies:
   module:
     - image
     - path
-    - profile
     - user
 _core:
   default_config_hash: Tii0Ca3OF32lLDp9WN3el1Q1cy2MFIxUUCraMzIZxRA
@@ -31,13 +30,6 @@ content:
   language:
     weight: 0
     region: content
-  organization_profiles:
-    type: profile_form
-    weight: 90
-    region: content
-    settings:
-      form_mode: default
-    third_party_settings: {  }
   path:
     type: path
     weight: 30
@@ -61,3 +53,4 @@ hidden:
   field_full_name: true
   field_summary: true
   langcode: true
+  organization_profiles: true
