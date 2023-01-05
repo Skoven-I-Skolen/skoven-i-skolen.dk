@@ -18,16 +18,3 @@ function sis_blog_post_theme_suggestions_user_alter(&$suggestions, $vars, $hook)
   // Create a theme hook suggestion which has the view mode name in it.
   $suggestions[] = 'user__' . $mode;
 }
-
-/**
- * SIS2-592: If the anonymous image uploade field is filled out, show it to webmasters.
- * Otherwise, hide it.
- * 
- * Implements hook_form_FORM_ID_alter().
- */
-function sis_blog_post_form_node_blog_post_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-    if (in_array('webmaster', Drupal::currentUser()->getRoles())) {
-      $form["field_list_media_anonymous"]["#access"] =
-        isset($form['field_list_media_anonymous']['widget'][0]['#default_value']['target_id']);
-    }
-}
