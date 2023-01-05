@@ -55,7 +55,7 @@ class SeasonWheelContentDeliveryService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function getRandomArticleByMonthTermId(int $monthTermId, $limit = 0): ?array {
-    $fields = ['field_article_months' => $monthTermId];
+    $fields = ['field_article_months' => $monthTermId, 'field_article_type' => 3];
     if ($articleIds = $this->articleRepository->fetchRandomArticlesIdsByTaxonomy($fields, $limit)) {
       return Node::loadMultiple($articleIds);
     }

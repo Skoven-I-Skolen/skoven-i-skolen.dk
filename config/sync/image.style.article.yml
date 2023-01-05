@@ -1,24 +1,26 @@
 uuid: b9671950-540b-498c-ab9f-fc9cfd2f3cf7
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - focal_point
 name: article
 label: Article
 effects:
   c47afc4d-6e41-43d5-8262-e6b88c4595b8:
     uuid: c47afc4d-6e41-43d5-8262-e6b88c4595b8
     id: image_scale
-    weight: -9
+    weight: -8
     data:
       width: 900
       height: 506
       upscale: true
-  fef5fa25-d502-4edc-9c7e-d0910f16f0bd:
-    uuid: fef5fa25-d502-4edc-9c7e-d0910f16f0bd
-    id: image_scale_and_crop
-    weight: -10
+  8ef87ec8-bd1a-4b22-ad86-0af771355b5c:
+    uuid: 8ef87ec8-bd1a-4b22-ad86-0af771355b5c
+    id: focal_point_scale_and_crop
+    weight: -9
     data:
       width: 900
       height: 506
-      anchor: center-center
+      crop_type: focal_point
 pipeline: __default__
