@@ -1,0 +1,18 @@
+uuid: 6e56b34e-4c35-4300-8d4f-2cb1cb29d4f8
+langcode: da
+status: true
+dependencies:
+  module:
+    - focal_point
+name: simple_slideshow
+label: 'Simple Slideshow'
+effects:
+  44bb30ff-518c-4255-b390-dd9eb4ae16ce:
+    uuid: 44bb30ff-518c-4255-b390-dd9eb4ae16ce
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1524
+      height: 500
+      crop_type: focal_point
+pipeline: __default__

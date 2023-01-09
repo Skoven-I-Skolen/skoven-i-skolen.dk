@@ -1,0 +1,18 @@
+uuid: 1e62c706-d5a4-45aa-8d50-c3bb3900db49
+langcode: da
+status: true
+dependencies:
+  module:
+    - focal_point
+name: simple_slideshow_twocol
+label: 'Simple Slideshow: Twocol'
+effects:
+  44bb30ff-518c-4255-b390-dd9eb4ae16ce:
+    uuid: 44bb30ff-518c-4255-b390-dd9eb4ae16ce
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 762
+      height: 250
+      crop_type: focal_point
+pipeline: __default__

@@ -66,6 +66,9 @@
 
     &--content {
       word-break: break-word;
+      a {
+        color: var(--color-purple);
+      }
     }
   }
 }
