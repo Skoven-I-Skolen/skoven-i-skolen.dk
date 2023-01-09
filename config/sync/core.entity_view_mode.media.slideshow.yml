@@ -1,0 +1,10 @@
+uuid: 0272674e-200b-45dd-b8d0-020ae4106061
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+id: media.slideshow
+label: Slideshow
+targetEntityType: media
+cache: true

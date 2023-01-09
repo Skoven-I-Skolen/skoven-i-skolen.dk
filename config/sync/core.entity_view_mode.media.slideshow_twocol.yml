@@ -1,0 +1,10 @@
+uuid: 4f4ca9e8-d950-465e-8bae-3fd587efaaa5
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+id: media.slideshow_twocol
+label: 'Slideshow: Twocol'
+targetEntityType: media
+cache: true

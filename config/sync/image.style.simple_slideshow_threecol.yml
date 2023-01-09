@@ -1,0 +1,18 @@
+uuid: 822e226c-4270-45e2-b61d-b02db4b52fac
+langcode: da
+status: true
+dependencies:
+  module:
+    - focal_point
+name: simple_slideshow_threecol
+label: 'Simple Slideshow: Threecol'
+effects:
+  44bb30ff-518c-4255-b390-dd9eb4ae16ce:
+    uuid: 44bb30ff-518c-4255-b390-dd9eb4ae16ce
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 508
+      height: 167
+      crop_type: focal_point
+pipeline: __default__
