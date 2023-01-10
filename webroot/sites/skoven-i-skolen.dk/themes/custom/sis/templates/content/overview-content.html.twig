@@ -25,5 +25,6 @@
   {% if content.no_results %}
       {{ content.no_results }}
   {% endif %}
-  {{ content|without(['content', 'no_results']) }}
+  <div class="overview-form__total">{{ content.total }}</div>
+  {{ content|without(['content', 'no_results', 'total']) }}
 </div>
