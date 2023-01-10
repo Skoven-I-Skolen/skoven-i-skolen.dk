@@ -126,13 +126,13 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
   elseif ($entity->getEntityTypeId() == 'profile') {
     /** @var \Drupal\profile\Entity\Profile $profile */
     $profile = $entity;
-    $langcode = $entity->language()->getId();
+    $langcode = \Drupal::languageManager()->getDefaultLanguage()->getId();
 
     if ($profile->hasField('field_organization_description') && !$profile->get('field_organization_description')
         ->isEmpty()) {
-      $content->addData('field_description', new \Drupal\relewise\DataTypes\Multilingual($profile->get('field_organization_description')
+      $content->addData('field_description', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($profile->get('field_organization_description')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($profile->hasField('field_organization_address') && !$profile->get('field_organization_address')
         ->isEmpty()) {
