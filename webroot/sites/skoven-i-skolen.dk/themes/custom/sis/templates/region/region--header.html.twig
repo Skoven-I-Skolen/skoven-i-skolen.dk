@@ -48,6 +48,7 @@
               .setAttribute('name', 'text')
               .setAttribute('aria-label', 'Search')
               .setAttribute('id', 'js-header-search-input') }}
+               autocomplete="off"
               >
             <button {{ create_attribute().setAttribute('type', 'submit').addClass('header-search__submit') }} aria-label="search">
               {% include '@reusable-component/svg-icon.twig' with {
