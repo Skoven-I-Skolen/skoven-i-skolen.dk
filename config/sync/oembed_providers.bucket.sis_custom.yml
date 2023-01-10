@@ -10,4 +10,3 @@ description: 'Videoer fra TwentyThree, Youtube og Vimeo'
 providers:
   - TwentyThree
   - Vimeo
-  - YouTube
