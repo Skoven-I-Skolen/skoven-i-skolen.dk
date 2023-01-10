@@ -28,6 +28,8 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     $node = $entity;
     $langcode = $entity->language()->getId();
 
+    $content->addData('bundle_label', new \Drupal\relewise\DataTypes\Multilingual($node->getEntityType()->getBundleLabel()));
+
     if ($node->hasField('body') && !$node->get('body')
         ->isEmpty()) {
       $content->addData('body', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('body')
