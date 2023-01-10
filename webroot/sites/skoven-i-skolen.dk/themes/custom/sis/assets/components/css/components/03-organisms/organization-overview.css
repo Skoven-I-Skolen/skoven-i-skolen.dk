@@ -51,7 +51,7 @@
       width: 50%;
       padding: var(--container-spacing);
 
-      .entity-overview-search-page overview-form & {
+      .entity-overview-search-page & {
         width: 100%;
       }
     }
@@ -60,7 +60,7 @@
       width: calc(100% / 3);
       padding: var(--container-spacing);
 
-      .entity-overview-search-page overview-form & {
+      .entity-overview-search-page & {
         width: 100%;
       }
     }
@@ -68,7 +68,7 @@
     @media (--viewport-lg-min) {
       width: 25%;
 
-      .entity-overview-search-page overview-form & {
+      .entity-overview-search-page & {
         width: 100%;
       }
     }
@@ -99,6 +99,7 @@
     height: 200px;
     padding: var(--container-spacing);
     background-color: var(--color-white);
+    overflow: hidden;
 
     img {
       max-width: 90%;
