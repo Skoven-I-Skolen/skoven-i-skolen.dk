@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Component\Render\PlainTextOutput;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\EntityReferenceFieldItemList;
 use Drupal\node\Entity\Node;
@@ -29,9 +30,9 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
 
     if ($node->hasField('body') && !$node->get('body')
         ->isEmpty()) {
-      $content->addData('body', new \Drupal\relewise\DataTypes\Multilingual($node->get('body')
+      $content->addData('body', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('body')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_description') && !$node->get('field_description')
         ->isEmpty()) {
