@@ -128,6 +128,9 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     $profile = $entity;
     $langcode = \Drupal::languageManager()->getDefaultLanguage()->getId();
 
+    $bundle = \Drupal::entityTypeManager()->getStorage($profile->getEntityType()->getBundleEntityType())->load($profile->bundle());
+    $content->addData('bundle_label', new \Drupal\relewise\DataTypes\Multilingual($bundle->label(), $langcode));
+
     if ($profile->hasField('field_organization_description') && !$profile->get('field_organization_description')
         ->isEmpty()) {
       $content->addData('field_description', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($profile->get('field_organization_description')
