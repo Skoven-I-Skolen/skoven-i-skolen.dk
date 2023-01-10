@@ -115,12 +115,14 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     }
     if ($node->hasField('field_search_exclude') && !$node->get('field_search_exclude')
         ->isEmpty()) {
-      // TODO: The following condition is wrong.
-//      if ($node->get('field_list_date')
-//        ->first()
-//        ->getValue()['value'] == 1) {
-//        $content = NULL;
-//      }
+      if ($node->get('field_search_exclude')
+        ->first()
+        ->getValue()['value'] == 1) {
+        /** @var \Drupal\relewise\Relewise $relewise */
+        $relewise = \Drupal::service('relewise');
+        $relewise->disableContentIndex($entity);
+        $content = NULL;
+      }
     }
   }
   elseif ($entity->getEntityTypeId() == 'profile') {
