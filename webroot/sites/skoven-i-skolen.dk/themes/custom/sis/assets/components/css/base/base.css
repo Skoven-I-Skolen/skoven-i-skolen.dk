@@ -20,6 +20,7 @@ body {
   margin: 0;
   padding-top: var(--header-height-mobile);
   overflow-x: hidden;
+  overflow-y: visible;
   color: var(--color-purple);
   font-weight: var(--base-font-weight);
   font-size: var(--base-font-size);
@@ -28,7 +29,6 @@ body {
   background-color: var(--site-background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 
   @media (--viewport-ms-min) {
     padding-top: var(--header-height);
@@ -119,11 +119,11 @@ figure {
 
   img {
     display: block;
+    float: none !important;
     max-width: 100%;
     height: auto;
     margin: 0 auto;
     transition: opacity .2s;
-    float: none !important;
   }
 
   figcaption {
@@ -143,7 +143,6 @@ figure {
 table {
   width: 100% !important;
   border-collapse: collapse !important;
-
 }
 
 .table-responsive {
@@ -177,13 +176,15 @@ table {
   position: sticky;
   top: calc(var(--header-height) + var(--meta-menu-height));
   max-width: var(--container-width);
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
   padding-right: var(--container-spacing);
   padding-left: var(--container-spacing);
+
   .js-form-item-view-mode {
     display: none;
   }
+
   a {
     position: relative;
     display: inline-flex;
@@ -202,17 +203,18 @@ table {
     border: 2px solid var(--color-green-dark);
     border-radius: 50px;
     cursor: pointer;
-    &:before {
-       display: block;
-       width: 12px;
-       height: 12px;
-       transform: translateY(-50%) rotate(45deg);
-       content: "";
-       border-bottom: 2px solid var(--theme-arrow-color);
-       border-left: 2px solid var(--theme-arrow-color);
-       position: absolute;
-       top: 50%;
-       left: 20px;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-bottom: 2px solid var(--theme-arrow-color);
+      border-left: 2px solid var(--theme-arrow-color);
+      transform: translateY(-50%) rotate(45deg);
+      content: "";
     }
   }
 }
