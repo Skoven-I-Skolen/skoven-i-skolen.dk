@@ -51,7 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
     resultItem: {
       element: (item, data) => {
         const element = item;
-        const type = data.value.data.field_article_type_label.value;
+        let type = '';
+        if (typeof data.value.data.bundle_label !== 'undefined' && data.value.data.bundle.value !== 'page') {
+          type = data.value.data.bundle_label.value;
+        }
+        if (typeof data.value.data.field_article_type_label !== 'undefined') {
+          type = data.value.data.field_article_type_label.value;
+        }
         const href = data.value.href.substring(1);
         element.innerHTML = `
             <span class="autoComplete_wrapper__match" data-href="${href}">${data.match}</span>
