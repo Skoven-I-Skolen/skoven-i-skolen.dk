@@ -47,4 +47,13 @@ function sis_map_preprocess_map(&$variables) {
   }
   $variables['#attached']['drupalSettings']['sis_map']['display_map_helpers'] = Drupal::configFactory()->get('sis_map.settings')->get('display_map_helpers') ?? FALSE;
   $variables['max_visible_filters'] = Drupal::configFactory()->get('sis_map.settings')->get('max_visible_filters') ?? 5;
+  $variables["#cache"] = [
+    'contexts' => [
+      'url.query_args',
+    ],
+    'tags' => [
+      'node_list',
+    ]
+  ];
 }
+
