@@ -5,6 +5,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
     let markers = [];
     var autoZoom = false;
     var firstRender = true;
+    var query = new URL(window.location).searchParams;
 
     if (settings.sis_map) {
       markers = settings.sis_map.markers;
@@ -18,8 +19,8 @@ Drupal.behaviors.sis_map_okapi_integration = {
           settings.sis_map.icons[formatDataType(filterName)] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
         }
       );
-    settings.sis_map.icons['default'] = defaultDotIcon;
-   }
+      settings.sis_map.icons['default'] = defaultDotIcon;
+    }
 
     // Add "checked" event to each filter checkbox.
     document.querySelectorAll('.filter-checkbox').forEach(function (element) {
@@ -33,15 +34,52 @@ Drupal.behaviors.sis_map_okapi_integration = {
       }
     });
 
+    function addOrRemoveFilterToQuery(category, value, add = true) {
+      if (add) {
+        if (!query.getAll(category).includes(value)) {
+          query.append(category, value);
+          let pageTitle = document.getElementsByTagName("title")[0].innerHTML;
+          window.history.pushState(window.location.pathname,
+            pageTitle, '?' + query.toString());
+        }
+      }
+      else {
+        let currentParams = new URL(window.location).searchParams.toString();
+        let toRemoveParams = new URLSearchParams({[category] : value}).toString();
+        currentParams = currentParams.replaceAll('&' + toRemoveParams, '');
+        currentParams.replaceAll('?$', '?');
+        currentParams.replaceAll('&&', '&');
+        query = new URLSearchParams(currentParams);
+        window.history.pushState('page2', 'Title', '?' + currentParams);
+      }
+    }
+
+    function applyFiltersFromSearchQuery(query) {
+      let iterator = query.keys();
+      for (const i of iterator) {
+        query.getAll(i).forEach(function (f) {
+          if (i !== 'uid') {
+            var checkbox = document.querySelector('[id="' + decodeURIComponent(f) + '"]');
+            if (!checkbox.checked) {
+              checkbox.click();
+              checkbox.parentElement.parentElement.classList.add('expanded');
+            }
+          }
+        })
+      }
+    }
+
     function applyFilter(category, value, status) {
       if (status) {
         // Add a filter.
         if (!filters[category]) {
           filters[category] = []
           filters[category].push(value);
+          addOrRemoveFilterToQuery(category, value, true);
         }
         else if (!filters[category].includes(value)){
           filters[category].push(value);
+          addOrRemoveFilterToQuery(category, value, true);
         }
       }
       else {
@@ -51,8 +89,10 @@ Drupal.behaviors.sis_map_okapi_integration = {
           if (filters[category].length === 0) {
             delete filters[category];
           }
+          addOrRemoveFilterToQuery(category, value, false);
         }
       }
+
       refreshMarkers();
     }
 
@@ -293,19 +333,22 @@ Drupal.behaviors.sis_map_okapi_integration = {
       document.querySelector('.map-container').prepend(m);
       autoZoom = true;
 
-      if (firstRender && settings.sis_map.render_all_markers_on_build) {
-        Object.keys(markers).forEach(function (index) {
-          renderMapMarker(markers[index]);
-        });
-        firstRender = false;
-      }
-
       if (settings.sis_map) {
         var map = new okapi.Initialize({icons: settings.sis_map.icons});
       }
 
       else {
         var map = new okapi.Initialize({icons: {'default':defaultDotIcon}});
+      }
+
+      if (firstRender) {
+        if (settings.sis_map.render_all_markers_on_build) {
+          Object.keys(markers).forEach(function (index) {
+            renderMapMarker(markers[index]);
+          });
+        }
+        applyFiltersFromSearchQuery(query);
+        firstRender = false;
       }
     }
 
