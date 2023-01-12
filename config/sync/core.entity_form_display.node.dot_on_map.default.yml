@@ -34,12 +34,18 @@ dependencies:
     - file
     - image
     - metatag
+    - path
     - text
 third_party_settings:
   field_group:
     group_categorization:
       children:
+        - group_class
+        - group_subject
+        - group_location
+        - group_season
         - group_people_and_places
+        - group_replant_the_planet
       label: Kategorisering
       region: content
       parent_name: group_categorization_wrapper
@@ -55,8 +61,8 @@ third_party_settings:
       children:
         - field_subject
       label: Fag
-      region: hidden
-      parent_name: group_season
+      region: content
+      parent_name: group_categorization
       weight: 6
       format_type: tab
       format_settings:
@@ -68,13 +74,11 @@ third_party_settings:
         required_fields: true
     group_season:
       children:
-        - group_subject
-        - group_location
         - field_season
       label: Årstid
-      region: hidden
-      parent_name: ''
-      weight: 10
+      region: content
+      parent_name: group_categorization
+      weight: 9
       format_type: tab
       format_settings:
         classes: ''
@@ -87,9 +91,9 @@ third_party_settings:
       children:
         - field_class
       label: Klasse
-      region: hidden
-      parent_name: ''
-      weight: 9
+      region: content
+      parent_name: group_categorization
+      weight: 5
       format_type: tab
       format_settings:
         classes: ''
@@ -102,8 +106,8 @@ third_party_settings:
       children:
         - field_location
       label: Sted
-      region: hidden
-      parent_name: group_season
+      region: content
+      parent_name: group_categorization
       weight: 7
       format_type: tab
       format_settings:
@@ -176,8 +180,8 @@ third_party_settings:
       children:
         - field_replant_the_planet
       label: 'Genplant Planeten'
-      region: hidden
-      parent_name: ''
+      region: content
+      parent_name: group_categorization
       weight: 11
       format_type: tab
       format_settings:
@@ -237,6 +241,18 @@ content:
       allowed_formats:
         hide_help: '0'
         hide_guidelines: '0'
+  created:
+    type: datetime_timestamp
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_class:
+    type: options_buttons
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_contact_information:
     type: text_textarea
     weight: 26
@@ -275,6 +291,12 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_location:
+    type: options_buttons
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
     weight: 8
@@ -289,6 +311,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_replant_the_planet:
+    type: options_buttons
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_season:
+    type: options_buttons
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
     weight: 5
@@ -298,6 +332,12 @@ content:
   field_section_bg_graphics_pos:
     type: options_select
     weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_subject:
+    type: options_buttons
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -331,11 +371,24 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   sis_map_address_dawa:
     type: dawa_address_autocomplete_widget
     weight: 8
     region: content
     settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -345,18 +398,23 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  created: true
-  field_class: true
   field_contact_data: true
-  field_location: true
-  field_replant_the_planet: true
-  field_season: true
-  field_subject: true
   langcode: true
-  path: true
   promote: true
-  status: true
   sticky: true
-  uid: true
-  url_redirects: true
