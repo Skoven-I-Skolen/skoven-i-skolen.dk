@@ -1,7 +1,10 @@
 uuid: 87eec9f3-f51c-439b-9cac-9adfa4cd53c7
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.article
+    - node.type.dot_on_map
 id: article_approved
 label: 'Artikel godkendt'
 format: plain_text
@@ -12,7 +15,9 @@ recipient_types:
     provider: workbench_email
     status: true
     settings: {  }
-bundles: {  }
+bundles:
+  'node:article': 'node:article'
+  'node:dot_on_map': 'node:dot_on_map'
 body:
   value: "Din artikel er blevet godkendt.\r\n\r\nSe den her [node:url]"
   format: plain_text
