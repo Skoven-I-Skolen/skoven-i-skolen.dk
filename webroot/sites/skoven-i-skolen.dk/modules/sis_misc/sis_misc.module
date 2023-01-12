@@ -87,7 +87,7 @@ function sis_misc_form_entity_embed_dialog_alter(&$form, FormStateInterface $for
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state) {
+function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['options']['#access'] = \Drupal::currentUser()->hasPermission('bypass node access');
 
   $user = \Drupal::currentUser();
@@ -98,6 +98,36 @@ function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state) {
 
   $form['field_list_media']['widget']['#required'] = !empty($logged_in);
   $form['field_list_media_anonymous']['widget'][0]['#required'] = !empty($anonymous);
+
+  // Add custom markup that holds information about creation of dot on map for the end user.
+  if ($form_id === 'node_dot_on_map_form') {
+    $form['#markup'] = '<div><p>Her kan du oprette en prik for en institution, som hjælper udeskole lokalt.</p><ul><li>Vælg hvilken kategori din institution tilhører i "Kategorisering".</li><li>Beskriv din institution og dens tilbud til skoler i "Beskrivelse".</li><li>Sæt din institution på kortet i "Geolokation" ved at skrive adressen eller indtaste længe- og breddegrader.</li><li>De felter, som er markeret med * skal fyldes ud.</li></ul><p>&nbsp;</p></div>';
+  }
+
+  // Added form required fields for dot on the map content type depending on which fields are empty.
+  if (in_array($form_id, array('node_dot_on_map_form', 'node_dot_on_map_edit_form'))) {
+    $form['sis_map_address_dawa']['widget'][0]['#states'] = [
+      'required' => [
+        ':input[name="lon[0][value]"]' => ['filled' => false],
+        'and',
+        ':input[name="lat[0][value]"]' => ['filled' => false]
+      ],
+    ];
+    $form['lon']['widget'][0]['value']['#states'] = [
+      'required' => [
+        ':input[name="lat[0][value]"]' => ['filled' => true],
+        'and',
+        ':input[name="lon[0][value]"]' => ['filled' => false]
+      ],
+    ];
+    $form['lat']['widget'][0]['value']['#states'] = [
+      'required' => [
+        ':input[name="lon[0][value]"]' => ['filled' => true],
+        'and',
+        ':input[name="lat[0][value]"]' => ['filled' => false]
+      ],
+    ];
+  }
 }
 
 /**

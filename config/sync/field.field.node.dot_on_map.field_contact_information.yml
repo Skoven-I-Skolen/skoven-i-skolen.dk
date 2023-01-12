@@ -18,7 +18,7 @@ entity_type: node
 bundle: dot_on_map
 label: Kontaktdata
 description: 'Dine kontaktoplysninger, såsom telefonnummer, e-mail og postadresse.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

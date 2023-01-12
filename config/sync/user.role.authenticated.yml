@@ -24,6 +24,7 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'access user profiles'
+  - 'create field_files'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'

@@ -34,6 +34,7 @@ dependencies:
     - file
     - image
     - metatag
+    - path
     - text
 third_party_settings:
   field_group:
@@ -128,7 +129,7 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        description: ''
+        description: 'Hvis din kategori ikke findes, så send en besked til <a href="mailto:info@skoven-i-skolen.dk">info@skoven-i-skolen.dk</a>'
         required_fields: true
     group_information:
       children:
@@ -240,6 +241,12 @@ content:
       allowed_formats:
         hide_help: '0'
         hide_guidelines: '0'
+  created:
+    type: datetime_timestamp
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_class:
     type: options_buttons
     weight: 6
@@ -364,11 +371,24 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   sis_map_address_dawa:
     type: dawa_address_autocomplete_widget
     weight: 8
     region: content
     settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -378,13 +398,23 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  created: true
   field_contact_data: true
   langcode: true
-  path: true
   promote: true
-  status: true
   sticky: true
-  uid: true
-  url_redirects: true
