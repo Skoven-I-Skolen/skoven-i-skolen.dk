@@ -6,7 +6,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
     var autoZoom = false;
     var firstRender = true;
     var query = new URL(window.location).searchParams;
-
+    const peopleAndPlacesTerms = ['Biavlere', 'Jægere', 'Klimatilpasning', 'Livstræer', 'Natur- og friluftsvejledere', 'Udeskoler', 'Udstyr'];
     if (settings.sis_map) {
       markers = settings.sis_map.markers;
     }
@@ -112,7 +112,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
               matchCount++;
             }
           });
-          if (matchCount === Object.keys(filters).length) {
+          if (matchCount > 0) {
             resultSet.push(markers[index]);
           }
         }
@@ -139,10 +139,17 @@ Drupal.behaviors.sis_map_okapi_integration = {
     function renderMapMarker(marker) {
       let lastSelectedFilter = (Object.keys(filters)[Object.keys(filters).length - 1]);
       let dataType = 'default';
-      if (marker['filters'][lastSelectedFilter] && settings.sis_map.icons[marker['filters'][lastSelectedFilter][0]]) {
+
+      if (marker['filters']['Mennesker og steder']) {
+        dataType = marker['filters']['Mennesker og steder'][0];
+      }
+
+      else if (marker['filters'][lastSelectedFilter] && settings.sis_map.icons[marker['filters'][lastSelectedFilter][0]]) {
         dataType = marker['filters'][lastSelectedFilter][0];
       }
+
       let m = document.createElement('span');
+
       m.setAttribute('class', 'geomarker');
       m.setAttribute('data-type', formatDataType(dataType));
       m.setAttribute('data-title', marker['node']['title'][0]['value']);
@@ -209,7 +216,12 @@ Drupal.behaviors.sis_map_okapi_integration = {
         var allFilters = Object.values(element['filters']).flat().filter(
           function(item, pos, self) { return self.indexOf(item) == pos; })
         let intersection = allFilters.filter(x => selectedFilters.includes(x)).sort();
-        intersection = intersection.join(' & ');
+        if (!peopleAndPlacesTerms.includes(intersection[0])) {
+          intersection = 'Stedsbasered materialer';
+        }
+        else {
+          intersection = intersection.join(' & ');
+        }
         if (!resultList[intersection]) { resultList[intersection] = [];}
         if (!resultList[intersection].includes(element)) {
           resultList[intersection].push(element);
@@ -263,10 +275,12 @@ Drupal.behaviors.sis_map_okapi_integration = {
             }
           });
           var seeAllIcon = document.createElement('div');
-          seeAllIcon.classList.add('category-title-see-all-link-icon');
+          if (resultList[key].length > 3) {
+            seeAllIcon.classList.add('category-title-see-all-link-icon');
+          }
           categoryTitleWrapper.appendChild(categoryIcon);
           categoryTitleWrapper.appendChild(category);
-          if (resultList[key].length > 0) {
+          if (resultList[key].length > 3) {
             categoryTitleWrapper.appendChild(seeAllLink);
           }
           categoryTitleWrapper.appendChild(seeAllIcon);
@@ -281,7 +295,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
             if (count % 2 == 0) {
               item.classList.add('is-even');
             }
-            if (count > -1) {
+            if (count > 2) {
               item.classList.add('is-hidden');
               item.classList.add('can-be-hidden');
             }
@@ -291,7 +305,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
             count++;
           });
           var separator = document.createElement('div')
-          separator.classList.add('filter-separator')
+          // separator.classList.add('filter-separator')
           separator.classList.add('can-be-hidden')
           separator.setAttribute('name', key)
           listElement.appendChild(separator);
