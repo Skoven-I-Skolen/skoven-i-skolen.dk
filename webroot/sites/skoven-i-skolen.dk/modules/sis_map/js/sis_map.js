@@ -6,6 +6,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
     var autoZoom = false;
     var firstRender = true;
     var query = new URL(window.location).searchParams;
+    var doNotAddToQuery = false;
     const peopleAndPlacesTerms = ['Biavlere', 'Jægere', 'Klimatilpasning', 'Livstræer', 'Natur- og friluftsvejledere', 'Udeskoler', 'Udstyr'];
     if (settings.sis_map) {
       markers = settings.sis_map.markers;
@@ -39,12 +40,14 @@ Drupal.behaviors.sis_map_okapi_integration = {
         if (!query.getAll(category).includes(value)) {
           query.append(category, value);
           let pageTitle = document.getElementsByTagName("title")[0].innerHTML;
-          window.history.pushState(window.location.pathname,
-            pageTitle, '?' + query.toString());
+          if (!doNotAddToQuery) {
+            window.history.pushState(window.location.pathname,
+              pageTitle, '?' + query.toString());
+          }
         }
       }
       else {
-        let currentParams = new URL(window.location).searchParams.toString();
+        let currentParams = query.toString();
         let toRemoveParams = new URLSearchParams({[category] : value}).toString();
         currentParams = currentParams.replaceAll('&' + toRemoveParams, '');
         currentParams.replaceAll('?$', '?');
@@ -347,26 +350,38 @@ Drupal.behaviors.sis_map_okapi_integration = {
       document.querySelector('.map-container').prepend(m);
       autoZoom = true;
 
+      if (firstRender) {
+        firstRender = false;
+        if (query.toString().includes('&')) {
+          firstRender = false;
+          applyFiltersFromSearchQuery(query);
+        }
+        else if (settings.sis_map.render_all_markers_on_build) {
+          doNotAddToQuery = true;
+          Object.keys(markers).forEach(function (index) {
+            renderMapMarker(markers[index]);
+          });
+          document.querySelectorAll('.js-see-all-checkbox').forEach(function (e) {
+            e.click();
+            e.parentElement.classList.add('expanded');
+          })
+          doNotAddToQuery = false;
+        }
+      }
+
+      if (document.querySelector('#map') && document.querySelector('#map').children.length === 1) {
+        // Avoid creating the map twice.
+        return;
+      }
       if (settings.sis_map) {
         var map = new okapi.Initialize({icons: settings.sis_map.icons});
       }
 
       else {
-        var map = new okapi.Initialize({icons: {'default':defaultDotIcon}});
+        var map = new okapi.Initialize({icons: {'default': defaultDotIcon}});
       }
 
-      if (firstRender) {
-        if (settings.sis_map.render_all_markers_on_build) {
-          Object.keys(markers).forEach(function (index) {
-            renderMapMarker(markers[index]);
-          });
-        }
-        applyFiltersFromSearchQuery(query);
-        firstRender = false;
-      }
     }
-
-    buildMap();
 
     document.querySelectorAll('.category-name').forEach(function (element) {
       if (!element.classList.contains('enabled')) {
@@ -441,6 +456,8 @@ Drupal.behaviors.sis_map_okapi_integration = {
 
       });
     });
+
+    buildMap();
 
   }
 };
