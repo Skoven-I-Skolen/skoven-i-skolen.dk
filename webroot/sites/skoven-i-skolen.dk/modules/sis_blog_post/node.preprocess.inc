@@ -13,16 +13,24 @@ function sis_blog_post_preprocess_node(&$variables) {
       $variables['current_writer'] = NULL;
       $variables['other_writers'] = [];
 
+      $writers_size = count($all_writers);
+      $random_index = random_int(0, count($all_writers) - 2);
+
+      if (isset($all_writers[$random_index])) {
+        $variables['other_writers'][] = [$all_writers[$random_index]];
+      }
+      if (isset($all_writers[$random_index + 1])) {
+        $variables['other_writers'][] = [$all_writers[$random_index + 1]];
+      }
+
       foreach ($all_writers as $writer) {
         if ($user = $writer['#user']) {
           if ($user === $author) {
             $variables['current_writer'] = $writer;
           }
-          else {
-            $variables['other_writers'][] = $writer;
-          }
         }
       }
+
       $variables['other_blog_posts'] = \Drupal::service('sis_blog_post.content_delivery_service')
         ->getBlogPostsByAuthor([$variables['node']->getOwnerId()]);
 
