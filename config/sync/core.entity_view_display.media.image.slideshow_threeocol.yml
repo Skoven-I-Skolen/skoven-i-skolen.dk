@@ -1,0 +1,43 @@
+uuid: 276df93e-fc00-467d-8a57-86ba1203afc0
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.slideshow_threeocol
+    - field.field.media.image.field_media_category
+    - field.field.media.image.field_media_image
+    - image.style.simple_slideshow_threecol
+    - media.type.image
+  module:
+    - image
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: d69bsUoZgPMKBwQa1UW1jIvszVcwhtCYcoMCsh75S4s
+id: media.image.slideshow_threeocol
+targetEntityType: media
+bundle: image
+mode: slideshow_threeocol
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: simple_slideshow_threecol
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_category: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

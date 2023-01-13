@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Component\Render\PlainTextOutput;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\EntityReferenceFieldItemList;
 use Drupal\node\Entity\Node;
@@ -27,11 +28,14 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     $node = $entity;
     $langcode = $entity->language()->getId();
 
+    $bundle = \Drupal::entityTypeManager()->getStorage($node->getEntityType()->getBundleEntityType())->load($node->bundle());
+    $content->addData('bundle_label', new \Drupal\relewise\DataTypes\Multilingual($bundle->label(), $langcode));
+
     if ($node->hasField('body') && !$node->get('body')
         ->isEmpty()) {
-      $content->addData('body', new \Drupal\relewise\DataTypes\Multilingual($node->get('body')
+      $content->addData('body', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('body')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_description') && !$node->get('field_description')
         ->isEmpty()) {
@@ -74,33 +78,33 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     }
     if ($node->hasField('field_equipment') && !$node->get('field_equipment')
         ->isEmpty()) {
-      $content->addData('field_equipment', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_equipment')
+      $content->addData('field_equipment', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_equipment')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_colophon') && !$node->get('field_colophon')
         ->isEmpty()) {
-      $content->addData('field_colophon', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_colophon')
+      $content->addData('field_colophon', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_colophon')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_colophon_author') && !$node->get('field_colophon_author')
         ->isEmpty()) {
-      $content->addData('field_colophon_author', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_colophon_author')
+      $content->addData('field_colophon_author', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_colophon_author')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_colophon_photographer') && !$node->get('field_colophon_photographer')
         ->isEmpty()) {
-      $content->addData('field_colophon_photographer', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_colophon_photographer')
+      $content->addData('field_colophon_photographer', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_colophon_photographer')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_teaching_goals') && !$node->get('field_teaching_goals')
         ->isEmpty()) {
-      $content->addData('field_teaching_goals', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_teaching_goals')
+      $content->addData('field_teaching_goals', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_teaching_goals')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_list_date') && !$node->get('field_list_date')
         ->isEmpty()) {
@@ -111,24 +115,29 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     }
     if ($node->hasField('field_search_exclude') && !$node->get('field_search_exclude')
         ->isEmpty()) {
-      // TODO: The following condition is wrong.
-//      if ($node->get('field_list_date')
-//        ->first()
-//        ->getValue()['value'] == 1) {
-//        $content = NULL;
-//      }
+      if ($node->get('field_search_exclude')
+        ->first()
+        ->getValue()['value'] == 1) {
+        /** @var \Drupal\relewise\Relewise $relewise */
+        $relewise = \Drupal::service('relewise');
+        $relewise->disableContentIndex($entity);
+        $content = NULL;
+      }
     }
   }
   elseif ($entity->getEntityTypeId() == 'profile') {
     /** @var \Drupal\profile\Entity\Profile $profile */
     $profile = $entity;
-    $langcode = $entity->language()->getId();
+    $langcode = \Drupal::languageManager()->getDefaultLanguage()->getId();
+
+    $bundle = \Drupal::entityTypeManager()->getStorage($profile->getEntityType()->getBundleEntityType())->load($profile->bundle());
+    $content->addData('bundle_label', new \Drupal\relewise\DataTypes\Multilingual($bundle->label(), $langcode));
 
     if ($profile->hasField('field_organization_description') && !$profile->get('field_organization_description')
         ->isEmpty()) {
-      $content->addData('field_description', new \Drupal\relewise\DataTypes\Multilingual($profile->get('field_organization_description')
+      $content->addData('field_description', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($profile->get('field_organization_description')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($profile->hasField('field_organization_address') && !$profile->get('field_organization_address')
         ->isEmpty()) {

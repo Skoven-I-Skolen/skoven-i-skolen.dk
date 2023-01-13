@@ -7,12 +7,12 @@ dependencies:
 id: organizations
 label: Organisationer
 type: 'canonical_entities:profile'
-pattern: 'organisationer/[profile:field_organization_address:organization]'
+pattern: 'visitkort/[profile:field_organization_address:organization]'
 selection_criteria:
-  e04bc304-c80b-4229-804e-19eaa76445b5:
+  1a19cb79-96c9-4bca-9eda-5c0f29ad6542:
     id: 'entity_bundle:profile'
     negate: false
-    uuid: e04bc304-c80b-4229-804e-19eaa76445b5
+    uuid: 1a19cb79-96c9-4bca-9eda-5c0f29ad6542
     context_mapping:
       profile: profile
     bundles:

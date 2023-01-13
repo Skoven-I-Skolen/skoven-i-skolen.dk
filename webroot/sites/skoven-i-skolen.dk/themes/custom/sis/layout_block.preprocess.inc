@@ -95,3 +95,40 @@ function sis_preprocess_block__inline_block__news_overview(array &$variables) {
     $variables['terms_16']['pager']['#route_parameters']['small'] = TRUE;
   }
 }
+
+/**
+ * Slideshow layout block preprocess.
+ *
+ * @param array $variables
+ *   Template variables.
+ */
+function sis_preprocess_block__inline_block__slideshow(array &$variables) {
+  /** @var \Drupal\block_content\Entity\BlockContent $block */
+  $block = $variables['elements']['content']['#block_content'];
+
+  if ($block->hasField('field_slideshow_images') && !$block->get('field_slideshow_images')->isEmpty()) {
+    $medias = $block->get('field_slideshow_images')->referencedEntities();
+    $media_view_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
+
+    if (!empty($medias)) {
+      $layout = $variables['elements']['content']['#layout'] ?? [];
+      $layout_id = $layout['layout_id'] ?? '';
+      switch ($layout_id) {
+        case 'layout_threecol_section':
+          $view_mode = 'slideshow_threeocol';
+          break;
+
+        case 'layout_twocol_section':
+          $view_mode = 'slideshow_twocol';
+          break;
+
+        default:
+          $view_mode = 'slideshow';
+      }
+      $variables['items'] = [];
+      foreach ($medias as $media) {
+        $variables['items'][] = ['image' => $media_view_builder->view($media, $view_mode)];
+      }
+    }
+  }
+}

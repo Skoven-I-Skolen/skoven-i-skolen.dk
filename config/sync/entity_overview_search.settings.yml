@@ -16,7 +16,7 @@ filter:
     - field_location
     - field_season
     - field_subject
-  sort: newest
+  sort: relevant
   count: 12
   pagination: false
   page: 0
