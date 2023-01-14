@@ -6,6 +6,8 @@
   }
   .search-title {
     min-width: 50%;
+    display: flex;
+    align-items: center;
   }
   .search-facets {
     display: flex;

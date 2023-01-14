@@ -50,7 +50,7 @@ class BreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
     $links = [
       Link::createFromRoute(t('Frontpage'), '<front>'),
-      Link::createFromRoute(t('Organizations'), 'sis_organization.overview'),
+      Link::createFromRoute(t('Visitkort'), 'sis_organization.overview'),
       Link::createFromRoute($profile->get('field_organization_address')->organization, '<none>'),
     ];
 

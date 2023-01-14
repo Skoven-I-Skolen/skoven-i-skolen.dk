@@ -132,3 +132,14 @@ function sis_preprocess_block__inline_block__slideshow(array &$variables) {
     }
   }
 }
+
+/**
+ * Blog overview layout block preprocess.
+ *
+ * @param array $variables
+ *   Template variables.
+ */
+function sis_preprocess_block__inline_block__blog_overview(array &$variables) {
+  $variables['content']['field_blog_overview'][0]['blog_title'] = $variables['content']['field_title'];
+  unset($variables['content']['field_title']);
+}

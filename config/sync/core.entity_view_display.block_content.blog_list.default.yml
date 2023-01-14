@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.blog_list
     - field.field.block_content.blog_list.field_max_elements
+    - field.field.block_content.blog_list.field_title
 id: block_content.blog_list.default
 targetEntityType: block_content
 bundle: blog_list
@@ -25,6 +26,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   langcode: true
