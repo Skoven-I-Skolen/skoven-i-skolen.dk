@@ -34,7 +34,6 @@ class BlogPostContentDeliveryService {
     $users_view = [];
     if ($results = $this->blogPostRepository->getWriters($target_id, $exception)) {
       $users = User::loadMultiple($results);
-      shuffle($users);
       foreach ($users as $user) {
         $users_view[] = $this->entityTypeManager->getViewBuilder('user')->view($user, 'compact');
       }

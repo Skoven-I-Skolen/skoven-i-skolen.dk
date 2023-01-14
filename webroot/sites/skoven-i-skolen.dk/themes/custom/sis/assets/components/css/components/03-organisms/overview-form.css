@@ -359,6 +359,16 @@
       }
     }
   }
+
+  &__total {
+    grid-column: 1/-1;
+    width: 100%;
+    padding: 0 var(--container-spacing-mobile);
+
+    @media (--viewport-ms-min) {
+      padding: 0 var(--container-spacing);
+    }
+  }
 }
 
 .premium-dropdown--trigger {

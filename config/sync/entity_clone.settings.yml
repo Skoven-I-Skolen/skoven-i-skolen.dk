@@ -1,0 +1,70 @@
+form_settings:
+  taxonomy_term:
+    default_value: false
+    disable: false
+    hidden: true
+  block_content:
+    default_value: true
+    disable: false
+    hidden: true
+  file:
+    default_value: false
+    disable: false
+    hidden: true
+  node:
+    default_value: false
+    disable: false
+    hidden: true
+  shortcut:
+    default_value: false
+    disable: false
+    hidden: true
+  user:
+    default_value: false
+    disable: false
+    hidden: true
+  menu_link_content:
+    default_value: true
+    disable: false
+    hidden: true
+  content_moderation_state:
+    hidden: true
+    default_value: false
+    disable: false
+  crop:
+    hidden: true
+    default_value: false
+    disable: false
+  entity_embed_fake_entity:
+    hidden: true
+    default_value: false
+    disable: false
+  media:
+    hidden: true
+    default_value: false
+    disable: false
+  path_alias:
+    hidden: true
+    default_value: false
+    disable: false
+  profile:
+    hidden: true
+    default_value: false
+    disable: false
+  redirect:
+    hidden: true
+    default_value: false
+    disable: false
+  scheduled_transition:
+    default_value: true
+    hidden: true
+    disable: false
+  webform_submission:
+    hidden: true
+    default_value: false
+    disable: false
+  paragraph:
+    default_value: true
+    hidden: true
+    disable: false
+take_ownership: 1
