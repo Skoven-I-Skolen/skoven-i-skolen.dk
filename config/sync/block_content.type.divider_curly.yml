@@ -1,0 +1,8 @@
+uuid: 9fd877b1-4d20-45b4-af4c-a33ee2a0bdce
+langcode: da
+status: true
+dependencies: {  }
+id: divider_curly
+label: 'Skillelinje med krølle'
+revision: 0
+description: 'En blok der indeholder en skillelinje med krølle.'

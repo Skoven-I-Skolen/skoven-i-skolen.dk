@@ -1,0 +1,16 @@
+uuid: e0fbe1d1-eb07-47b5-900a-5a675d61aa17
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.divider_curly
+    - field.field.block_content.divider_curly.body
+id: block_content.divider_curly.default
+targetEntityType: block_content
+bundle: divider_curly
+mode: default
+content: {  }
+hidden:
+  body: true
+  info: true
+  langcode: true
