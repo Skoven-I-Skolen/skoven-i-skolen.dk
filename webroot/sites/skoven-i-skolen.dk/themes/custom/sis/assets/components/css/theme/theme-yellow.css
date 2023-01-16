@@ -10,7 +10,7 @@
   --theme-button-color: #fff;
   --theme-arrow-background-color: var(--color-green);
   --theme-arrow-color: var(--color-white);
-  --theme-link-color: #232323;
+  --theme-link-color: var(--color-purple);
   --theme-divider-background-color: #232323;
   --theme-input-border: #232323;
   --theme-input-color-marked: #232323;

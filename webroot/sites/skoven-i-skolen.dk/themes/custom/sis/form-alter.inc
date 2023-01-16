@@ -33,8 +33,4 @@ function sis_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['search']['title']['#suffix'] = "</h3>";
     $form["#attached"]["library"][] = 'sis/pager-overview';
   }
-  else if ($form_id === 'entity_overview_filter_blog_form') {
-//    print "<pre>" . print_r(array_keys($form), true) . "</pre>";
-//    print "<pre>" . print_r($form['overview_content_id'], true) . "</pre>";
-  }
 }

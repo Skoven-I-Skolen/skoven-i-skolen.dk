@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.blog_overview
     - field.field.block_content.blog_overview.field_blog_overview
+    - field.field.block_content.blog_overview.field_title
   module:
     - sis_blog_post
 id: block_content.blog_overview.default
@@ -18,7 +19,15 @@ content:
     settings:
       view_mode: list
     third_party_settings: {  }
-    weight: 0
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   langcode: true
