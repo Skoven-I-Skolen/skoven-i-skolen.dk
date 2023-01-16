@@ -120,6 +120,12 @@ divider:
     theme:
       dist/components/css/components/02-molecules/divider.css: {}
 
+divider-curly:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/divider-curly.css: {}
+
 facts-box:
   version: VERSION
   css:

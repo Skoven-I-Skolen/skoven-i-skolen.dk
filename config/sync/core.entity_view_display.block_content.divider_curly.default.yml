@@ -1,0 +1,23 @@
+uuid: fa21d6c4-d307-4cc2-bbce-0455dcb95ebf
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.divider_curly
+    - field.field.block_content.divider_curly.body
+  module:
+    - text
+id: block_content.divider_curly.default
+targetEntityType: block_content
+bundle: divider_curly
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
