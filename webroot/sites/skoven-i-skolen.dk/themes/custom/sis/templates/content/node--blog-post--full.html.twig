@@ -90,7 +90,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-8 col-lg-7">
         <div class="blog-post__date">
-          Skrevet af <strong>{{ author_name|striptags }}</strong> {{ node.created.value|date('U')|format_date('custom', 'j. F Y') }}
+          Skrevet af {{ node.Owner.name.value }} &#124; {{ node.created.value|date('U')|format_date('custom', 'j. F Y') }}
         </div>
         {% include '@reusable-component/page-title.twig' with {
           'attributes': create_attribute().addClass('article-page__title'),

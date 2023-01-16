@@ -154,8 +154,10 @@
     &--authoring-information {
       margin-top: 10px;
       padding-left: 20px;
+      padding-right: 20px;
       font-weight: normal;
       font-size: var(--base-font-size-small);
+      hyphens: none;
     }
 
     &--blog-post {

@@ -83,7 +83,7 @@
         </div>
       </div>
       <div class="inspiration-overview__title inspiration-overview__title--authoring-information">
-        {{ authoring_information }}
+        Af {{ node.Owner.name.value }} &#124; {{ node.created.value|date('U')|format_date('custom', 'j. F Y') }}
       </div>
       <div class="inspiration-overview__title inspiration-overview__title--blog-post">
         {{ label }}
