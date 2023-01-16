@@ -13,9 +13,12 @@ h6 {
   margin-bottom: 10px;
   font-weight: var(--heading-font-weight);
   font-family: var(--heading-font-family);
-  word-break: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
+
+  @media (--viewport-sm-max) {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
 }
 
 h1 {
