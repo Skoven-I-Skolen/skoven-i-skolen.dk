@@ -58,8 +58,8 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
   }
 
   else if ($form_id === 'node_article_form' || $form_id === 'node_article_edit_form') {
-    $form["field_colophon_author"]["widget"][0]["value"]["#required"] = $is_anon_or_org;
-    $form["field_contact_person"]["widget"][0]["#required"] = $is_anon_or_org;
+    $form['field_colophon_author']['widget'][0]['value']['#required'] = $is_anon_or_org;
+    $form['field_contact_person']['widget'][0]['#required'] = $is_anon_or_org;
     if (isset($form['field_article_type']['widget']['#options'])) {
       foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
         if ($value === 'Blogs') {
