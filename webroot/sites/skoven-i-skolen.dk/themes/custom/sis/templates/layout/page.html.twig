@@ -143,15 +143,12 @@
 
               {% if atom('footer-col4-link').0['#url'] %}
                 <div class="footer__header">Tilmeld dig nyhedsbrevet</div>
-                <form action="/newsletter/subscribe" method="post" target="_blank" class="newsletter-form">
+                <form action="{{ atom_str('newsletter-url') }}" method="post" class="newsletter-form">
                   <input type="hidden" name="optin_scheme" value="double" />
                   <input type="hidden" name="action" value="subscribe" />
                   <input type="hidden" name="lists" value="{{ atom_str('newsletter-list-id') }}" />
                   <input type="hidden" name="secret" value="" />
                   <div class="field-items">
-                    <div class="field-item field-name">
-                      <input type="text" name="data_Navn" placeholder="Navn" class="input" required />
-                    </div>
                     <div class="field-item field-email">
                       <input type="text" name="email_address" placeholder="E-mail adresse" class="input" required />
                     </div>
