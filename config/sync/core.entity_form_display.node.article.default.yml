@@ -159,7 +159,7 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        formatter: closed
+        formatter: open
         description: ''
         required_fields: true
     group_teaching_goals:

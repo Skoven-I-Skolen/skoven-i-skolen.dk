@@ -350,7 +350,9 @@ Drupal.behaviors.sis_map_okapi_integration = {
       document.querySelector('.map-container').prepend(m);
       autoZoom = true;
 
-      if (firstRender) {
+      console.log(settings.sis_map);
+
+      if (firstRender && typeof settings.sis_map !== 'undefined') {
         firstRender = false;
         if (query.toString().includes('&')) {
           firstRender = false;
