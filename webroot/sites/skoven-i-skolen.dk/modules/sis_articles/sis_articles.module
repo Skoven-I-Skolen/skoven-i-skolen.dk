@@ -46,8 +46,9 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
   $is_anon_or_org = in_array('anonymous', $roles) ||
     in_array('organization', $roles);
 
+  unset($form['field_people_and_places']['widget']['#options']['_none']);
+
   if ($form_id === 'node_dot_on_map_form') {
-    unset($form['field_people_and_places']['widget']['#options']['_none']);
     if ($is_anon_or_org) {
       foreach (array_keys($form['actions']) as $action) {
         if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
