@@ -33,6 +33,7 @@ dependencies:
     - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_search_exclude
     - field.field.node.article.field_season
     - field.field.node.article.field_section_bg_graphics
     - field.field.node.article.field_section_bg_graphics_pos
@@ -498,6 +499,22 @@ third_party_settings:
         id: ''
         description: ''
         required_fields: true
+    group_sideindstillinger:
+      children:
+        - field_search_exclude
+      label: Sideindstillinger
+      region: content
+      parent_name: ''
+      weight: 21
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 _core:
   default_config_hash: lCMS9iqusl8ppbYxINj_SRny0NNOhS2IAGuGG9i0r6c
 id: node.article.default
@@ -733,6 +750,13 @@ content:
     settings:
       sidebar: true
       use_details: true
+    third_party_settings: {  }
+  field_search_exclude:
+    type: boolean_checkbox
+    weight: 22
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_season:
     type: options_buttons

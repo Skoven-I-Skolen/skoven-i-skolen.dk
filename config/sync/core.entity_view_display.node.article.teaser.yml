@@ -33,6 +33,7 @@ dependencies:
     - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_search_exclude
     - field.field.node.article.field_season
     - field.field.node.article.field_section_bg_graphics
     - field.field.node.article.field_section_bg_graphics_pos
@@ -152,6 +153,7 @@ hidden:
   field_materials: true
   field_media_downloads: true
   field_meta_tags: true
+  field_search_exclude: true
   field_season: true
   field_section_bg_graphics: true
   field_section_bg_graphics_pos: true
