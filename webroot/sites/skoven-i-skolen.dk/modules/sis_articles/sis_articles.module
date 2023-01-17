@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 
 \Drupal::moduleHandler()->loadInclude('sis_articles', 'inc', 'node.preprocess');
@@ -56,6 +57,8 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
   }
 
   else if ($form_id === 'node_article_form' || $form_id === 'node_article_edit_form') {
+    $form["field_colophon_author"]["widget"][0]["value"]["#required"] = $is_anon_or_org;
+    $form["field_contact_person"]["widget"][0]["#required"] = $is_anon_or_org;
     if (isset($form['field_article_type']['widget']['#options'])) {
       foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
         if ($value === 'Blogs') {
@@ -138,6 +141,9 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
     if (isset($form['field_section_bg_graphics_pos']['#access'])) {
       $form['field_section_bg_graphics_pos']['#access'] = FALSE;
+    }
+    if (isset($form['field_search_exclude']['#access'])) {
+      $form['field_search_exclude']['#access'] = FALSE;
     }
   }
 

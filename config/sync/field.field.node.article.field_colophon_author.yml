@@ -9,9 +9,9 @@ id: node.article.field_colophon_author
 field_name: field_colophon_author
 entity_type: node
 bundle: article
-label: Forfatter
+label: 'Forfatter (påkrævet)'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
