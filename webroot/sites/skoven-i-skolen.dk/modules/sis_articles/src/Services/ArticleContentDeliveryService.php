@@ -197,6 +197,12 @@ class ArticleContentDeliveryService {
     return [];
   }
 
+  public function getUnpublishedContentByUser($user_id) {
+    $nodes = \Drupal::entityTypeManager()->getStorage('node')
+      ->loadByProperties(['status' => 0, 'uid' => $user_id]);
+    return $this->entityTypeManager->getViewBuilder('node')->viewMultiple($nodes, 'list');
+  }
+
   /**
    * @return \Drupal\sis_articles\Services\SeasonService
    */

@@ -29,3 +29,9 @@ msgstr "Sidste nyt"
 
 msgid "Business Card"
 msgstr "Visitkort"
+
+msgid "Latest unpublished content"
+msgstr "Seneste ikke udgivet indhold"
+
+msgid "Latest articles"
+msgstr "Seneste artikler"
