@@ -8441,10 +8441,10 @@
         },
         {
             "name": "novicell/relewise",
-            "version": "2.0.15",
+            "version": "2.0.16",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_23MH3V/novicellrelewise-2-0-15.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_SyJTY/novicellrelewise-2-0-16.zip"
             },
             "type": "drupal-module",
             "license": [
