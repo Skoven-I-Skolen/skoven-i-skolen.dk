@@ -23,7 +23,7 @@ class AddContentForm extends FormBase {
     if (in_array('organization', \Drupal::currentUser()->getRoles())) {
       $options = [
         0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
-        1 => '<strong>' . $this->t('Vil du oprette en artikel?') . '</strong><div class="descriotion">' . t('(En aktivitet, et undervisningsforløb, eller en anden artikeltype, der vises i interne søgeresultater og på din visitkortside)') . '</div>',
+        1 => '<strong>' . atom_str('share-page-second-option-title-green-orgs') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text-green-orgs') . '</div>',
       ];
     }
 

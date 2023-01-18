@@ -10,7 +10,7 @@ field_name: field_summary
 entity_type: node
 bundle: dot_on_map
 label: Resumé
-description: 'Du kan skrive en kort beskrivelse af begivenheden, som vil blive vist som en popup på kortet når din prik klikkes.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

@@ -70,3 +70,19 @@ atoms:
     default:
       da: 'Et undervisningsforløb er skrevet for lærere og knyttet til fag, klasse og faglige mål.'
       en: 'Et undervisningsforløb er skrevet for lærere og knyttet til fag, klasse og faglige mål.'
+
+  share-page-second-option-title-green-orgs:
+    type: textfield
+    title: Del side - andet valg - titel - for grønne organisationer
+    category: Del side
+    default:
+      da: 'Vil du oprette en artikel?'
+      en: 'Vil du oprette en artikel?'
+
+  share-page-second-option-help-text-green-orgs:
+    type: textfield
+    title: Del side - andet valg - hjælpetekst - for grønne organisationer
+    category: Del side
+    default:
+      da: 'En aktivitet, et undervisningsforløb, eller en anden artikeltype, der vises i interne søgeresultater og på din visitkortside'
+      en: 'En aktivitet, et undervisningsforløb, eller en anden artikeltype, der vises i interne søgeresultater og på din visitkortside'

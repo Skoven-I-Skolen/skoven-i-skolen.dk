@@ -18,8 +18,8 @@ field_name: body
 entity_type: node
 bundle: dot_on_map
 label: Beskrivelse
-description: 'En længere beskrivelse af aktiviteten. Skriv dit tilbud til skoler - eller om den institution du lægger på kortet.'
-required: false
+description: 'Fortæl kort om, hvem I er – og beskriv jeres tilbud til skoler.'
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
