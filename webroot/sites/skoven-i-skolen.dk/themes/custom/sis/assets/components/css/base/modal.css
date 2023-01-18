@@ -56,3 +56,7 @@
     overflow: visible;
   }
 }
+
+.entity-browser-modal {
+  margin-top: -200px !important;
+}
