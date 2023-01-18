@@ -1,0 +1,38 @@
+uuid: 2e781d06-9bd3-4270-bb84-67f20945cfcf
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_top_image_anonymous
+    - profile.type.organization
+  module:
+    - image
+id: profile.organization.field_top_image_anonymous
+field_name: field_top_image_anonymous
+entity_type: profile
+bundle: organization
+label: 'Top billede'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '5 MB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

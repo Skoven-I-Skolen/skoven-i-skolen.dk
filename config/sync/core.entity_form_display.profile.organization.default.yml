@@ -14,6 +14,7 @@ dependencies:
     - field.field.profile.organization.field_section_bg_graphics
     - field.field.profile.organization.field_section_bg_graphics_pos
     - field.field.profile.organization.field_top_image
+    - field.field.profile.organization.field_top_image_anonymous
     - image.style.thumbnail
     - profile.type.organization
   module:
@@ -21,6 +22,7 @@ dependencies:
     - entity_browser
     - entity_overview
     - field_group
+    - focal_point
     - image
     - link
     - path
@@ -30,21 +32,38 @@ third_party_settings:
   field_group:
     group_additional_contact_info:
       children:
+        - field_organization_address
         - field_organization_email
         - field_organization_website
         - field_organization_phone
-      label: 'Yderligere kontaktinformation'
+      label: 'Kontaktinformation'
       region: content
       parent_name: ''
-      weight: 2
-      format_type: details
+      weight: 1
+      format_type: fieldset
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        open: false
         description: ''
         required_fields: false
+        open: false
+    group_images:
+      children:
+        - field_top_image_anonymous
+        - field_top_image
+        - field_organization_logo
+      label: Billeder
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
 id: profile.organization.default
 targetEntityType: profile
 bundle: organization
@@ -52,13 +71,13 @@ mode: default
 content:
   field_organization_address:
     type: address_default
-    weight: 1
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_organization_description:
     type: text_textarea
-    weight: 4
+    weight: 2
     region: content
     settings:
       rows: 5
@@ -66,7 +85,7 @@ content:
     third_party_settings: {  }
   field_organization_email:
     type: email_default
-    weight: 2
+    weight: 3
     region: content
     settings:
       placeholder: ''
@@ -74,7 +93,7 @@ content:
     third_party_settings: {  }
   field_organization_logo:
     type: image_image
-    weight: 3
+    weight: 5
     region: content
     settings:
       progress_indicator: throbber
@@ -82,20 +101,20 @@ content:
     third_party_settings: {  }
   field_organization_overview:
     type: overview_filter_widget
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_organization_phone:
     type: telephone_default
-    weight: 4
+    weight: 5
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_organization_website:
     type: link_default
-    weight: 3
+    weight: 4
     region: content
     settings:
       placeholder_url: ''
@@ -103,19 +122,19 @@ content:
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
-    weight: 26
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_section_bg_graphics_pos:
     type: options_select
-    weight: 27
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_top_image:
     type: entity_browser_entity_reference
-    weight: 0
+    weight: 4
     region: content
     settings:
       entity_browser: media_directories_modal
@@ -128,9 +147,19 @@ content:
         view_mode: small
       selection_mode: selection_append
     third_party_settings: {  }
+  field_top_image_anonymous:
+    type: image_focal_point
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: false
+      offsets: '50,50'
+    third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

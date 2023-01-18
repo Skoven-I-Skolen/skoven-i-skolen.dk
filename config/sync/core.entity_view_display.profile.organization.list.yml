@@ -14,6 +14,7 @@ dependencies:
     - field.field.profile.organization.field_section_bg_graphics
     - field.field.profile.organization.field_section_bg_graphics_pos
     - field.field.profile.organization.field_top_image
+    - field.field.profile.organization.field_top_image_anonymous
     - profile.type.organization
   module:
     - address
@@ -62,4 +63,5 @@ hidden:
   field_section_bg_graphics: true
   field_section_bg_graphics_pos: true
   field_top_image: true
+  field_top_image_anonymous: true
   search_api_excerpt: true
