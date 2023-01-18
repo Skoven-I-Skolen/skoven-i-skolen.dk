@@ -22,3 +22,51 @@ atoms:
     category: Artikel sider
     default:
       da: 'Tak for dit bidrag til Skoven-i-Skolen. Dit indhold udgives efter en gennemgang fra en af vores redaktører.'
+
+  share-page-first-option-title:
+    type: textfield
+    title: Del side - først valg - titel
+    category: Del side
+    default:
+      da: 'Vil du have en prik på kortet?'
+      en: 'Vil du have en prik på kortet?'
+
+  share-page-first-option-help-text:
+    type: textfield
+    title: Del side - først valg - hjælpetekst
+    category: Del side
+    default:
+      da: 'For mennesker og steder, som kan hjælpe med udeskole lokalt, fx naturskoler, jægere, museer eller andet.'
+      en: 'For mennesker og steder, som kan hjælpe med udeskole lokalt, fx naturskoler, jægere, museer eller andet.'
+
+  share-page-second-option-title:
+    type: textfield
+    title: Del side - andet valg - titel
+    category: Del side
+    default:
+      da: 'Vil du dele en aktivitet?'
+      en: 'Vil du dele en aktivitet?'
+
+  share-page-second-option-help-text:
+    type: textfield
+    title: Del side - andet valg - hjælpetekst
+    category: Del side
+    default:
+      da: 'En aktivitet er skrevet for børn – og beskriver kort en udeaktivitet - fx snit en pilefløjte.'
+      en: 'En aktivitet er skrevet for børn – og beskriver kort en udeaktivitet - fx snit en pilefløjte.'
+
+  share-page-third-option-title:
+    type: textfield
+    title: Del side - tredje valg - titel
+    category: Del side
+    default:
+      da: 'Vil du lægge et undervisningsforløb på kortet?'
+      en: 'Vil du lægge et undervisningsforløb på kortet?'
+
+  share-page-third-option-help-text:
+    type: textfield
+    title: Del side - tredje valg - hjælpetekst
+    category: Del side
+    default:
+      da: 'Et undervisningsforløb er skrevet for lærere og knyttet til fag, klasse og faglige mål.'
+      en: 'Et undervisningsforløb er skrevet for lærere og knyttet til fag, klasse og faglige mål.'

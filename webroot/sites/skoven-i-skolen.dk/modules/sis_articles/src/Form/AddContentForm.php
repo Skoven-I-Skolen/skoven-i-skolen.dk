@@ -15,14 +15,14 @@ class AddContentForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     $options = [
-      0 => '<strong>' . $this->t('Vil du have en prik på kortet?') . '</strong><div class="descriotion">' . t('(Institutioner som kan hjælpe udeskole lokalt, f.eks. udeskole, naturvejleder, jæger eller andet, ikke vist i de interne søgeresultater)') . '</div>',
-      1 => '<strong>' . $this->t('Vil du lægge en aktivitet på kortet') . '</strong><div class="descriotion">' . t('(En aktivitet er en ide, som ikke nødvendigvis er knyttet til et fag og faglige mål)') . '</div>',
-      2 => '<strong>' . $this->t('Vil du lægge et undervisningsforløb på kortet') . '</strong><div class="descriotion">' . t('(Et undervisningsforløb er knyttet til fag, klasse og faglige mål)') . '</div>',
+      0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
+      1 => '<strong>' . atom_str('share-page-second-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text') . '</div>',
+      2 => '<strong>' . atom_str('share-page-third-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-third-option-help-text') . '</div>',
     ];
 
     if (in_array('organization', \Drupal::currentUser()->getRoles())) {
       $options = [
-        0 => '<strong>' . $this->t('Vil du have en prik på kortet?') . '</strong><div class="descriotion">' . t('(Institutioner som kan hjælpe udeskole lokalt, f.eks. udeskole, naturvejleder, jæger eller andet, ikke vist i de interne søgeresultater)') . '</div>',
+        0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
         1 => '<strong>' . $this->t('Vil du oprette en artikel?') . '</strong><div class="descriotion">' . t('(En aktivitet, et undervisningsforløb, eller en anden artikeltype, der vises i interne søgeresultater og på din visitkortside)') . '</div>',
       ];
     }
