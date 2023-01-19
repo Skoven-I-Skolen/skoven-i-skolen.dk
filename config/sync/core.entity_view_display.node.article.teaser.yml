@@ -47,7 +47,6 @@ dependencies:
   module:
     - datetime
     - image
-    - link
     - user
 _core:
   default_config_hash: cITkIPn3-i-ZQcV_BmrcIM66yh1kZWBRCYKeSftnYpc
