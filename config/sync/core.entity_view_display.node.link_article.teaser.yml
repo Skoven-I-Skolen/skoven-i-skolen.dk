@@ -17,9 +17,11 @@ dependencies:
     - field.field.node.link_article.field_season
     - field.field.node.link_article.field_subject
     - node.type.link_article
+    - responsive_image.styles.list_view
   module:
     - image
     - link
+    - responsive_image
     - user
 id: node.link_article.teaser
 targetEntityType: node
@@ -74,13 +76,11 @@ content:
     weight: 1
     region: content
   field_list_media_anonymous:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: list_view
       image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 2
     region: content
