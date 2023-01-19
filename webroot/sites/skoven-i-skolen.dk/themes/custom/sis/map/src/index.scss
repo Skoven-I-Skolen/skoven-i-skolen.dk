@@ -104,7 +104,6 @@
     margin: 0.8rem;
     cursor: pointer;
     display: inline-block;
-
     &:hover {
       opacity: 1;
     }
@@ -121,12 +120,10 @@
   footer {
     .footer-wrap {
       padding: 50px 0 20px 0;
-
       p {
         margin-bottom: 2px;
       }
     }
-
     &.dark {
       h1,
       h2,
@@ -137,7 +134,6 @@
       p {
         color: #fff;
       }
-
       .footer-wrap {
         padding: 50px 0;
       }
@@ -148,7 +144,6 @@
     .ant-statistic {
       min-width: 6rem;
     }
-
     .suffix {
       font-size: 12px;
     }
@@ -160,7 +155,6 @@
     flex-direction: column;
     align-items: flex-start;
   }
-
   $checkedColor: #1890ff;
   $checkedRed: 24;
   $checkedGreen: 144;
@@ -179,7 +173,6 @@
   .cookie-politics-link {
     color: #687989;
   }
-
   /* End Cookie Politics*/
 
   .red-on-hover:hover {
