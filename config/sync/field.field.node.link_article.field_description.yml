@@ -1,0 +1,19 @@
+uuid: 390381f9-e258-4d74-ae60-301886c40c3b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.link_article
+id: node.link_article.field_description
+field_name: field_description
+entity_type: node
+bundle: link_article
+label: 'Liste beskrivelse'
+description: 'En kort beskrivelse af link artiklen. Det vil blive vist på lister, såsom søgeresultater.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

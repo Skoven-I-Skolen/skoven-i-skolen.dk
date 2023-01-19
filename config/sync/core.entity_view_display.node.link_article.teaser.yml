@@ -1,0 +1,85 @@
+uuid: 87586c60-f13e-412e-b273-9fb34b1bb011
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.link_article.body
+    - field.field.node.link_article.field_article_months
+    - field.field.node.link_article.field_article_type
+    - field.field.node.link_article.field_class
+    - field.field.node.link_article.field_description
+    - field.field.node.link_article.field_external_link
+    - field.field.node.link_article.field_external_link_logo
+    - field.field.node.link_article.field_list_media
+    - field.field.node.link_article.field_list_media_anonymous
+    - field.field.node.link_article.field_location
+    - field.field.node.link_article.field_season
+    - field.field.node.link_article.field_subject
+    - node.type.link_article
+  module:
+    - image
+    - link
+    - user
+id: node.link_article.teaser
+targetEntityType: node
+bundle: link_article
+mode: teaser
+content:
+  field_article_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_external_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_list_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: list
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_list_media_anonymous:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  field_article_months: true
+  field_class: true
+  field_external_link_logo: true
+  field_location: true
+  field_season: true
+  field_subject: true
+  langcode: true
+  links: true

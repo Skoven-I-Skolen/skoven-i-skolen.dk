@@ -1,0 +1,29 @@
+uuid: 65a90dde-909b-4c0c-8240-0d6ba2bca854
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_season
+    - node.type.link_article
+    - taxonomy.vocabulary.season
+id: node.link_article.field_season
+field_name: field_season
+entity_type: node
+bundle: link_article
+label: Årstid
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      season: season
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

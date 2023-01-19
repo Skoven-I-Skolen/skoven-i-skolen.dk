@@ -1,0 +1,21 @@
+uuid: 736c9ab0-d7b3-4fcd-8593-bf0cc381d5be
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_months
+    - node.type.link_article
+id: node.link_article.field_article_months
+field_name: field_article_months
+entity_type: node
+bundle: link_article
+label: Måneder
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

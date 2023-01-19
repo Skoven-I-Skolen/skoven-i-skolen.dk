@@ -1,0 +1,23 @@
+uuid: 20964dad-2928-41d8-889c-560006ef6fcc
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.link_article
+  module:
+    - text
+id: node.link_article.body
+field_name: body
+entity_type: node
+bundle: link_article
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

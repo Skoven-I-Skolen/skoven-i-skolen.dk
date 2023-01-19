@@ -1,0 +1,29 @@
+uuid: ed247758-c3fc-4337-868b-8aa8ef44392f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subject
+    - node.type.link_article
+    - taxonomy.vocabulary.subjects
+id: node.link_article.field_subject
+field_name: field_subject
+entity_type: node
+bundle: link_article
+label: Fag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subjects: subjects
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

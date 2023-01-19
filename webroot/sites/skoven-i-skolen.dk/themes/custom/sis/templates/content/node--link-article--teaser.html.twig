@@ -68,6 +68,7 @@
  */
 #}
 {{ attach_library('sis/inspiration-overview') }}
+{{ attach_library('core/drupal.dialog.ajax') }}
 
 {% set subject_items = content.field_subject['#items'] %}
 
@@ -77,18 +78,19 @@
 
 <div class="inspiration-overview__item">
 	<div class="inspiration-overview__item-inner">
-    <a href="{{ url }}" class="inspiration-overview__item-link">
+    <a href="{{ url }}" class="inspiration-overview__item-link use-ajax" data-dialog-options="{{ dataDialogOpts|json_encode()|e('html_attr') }}" data-dialog-type="modal" >
 			<div class="inspiration-overview__image">
-        {% if content.field_list_media[0] %}
-          {{ content.field_list_media }}
-        {% elseif content.field_list_media_anonymous[0]%}
-          {{ content.field_list_media_anonymous }}
-        {% endif %}
+				{{ content.field_list_media }}
 				<a href="{{ typeAltrerLink ?? typeUrl }}" aria-label="{{ node.field_article_type.entity.name.value }}">
 					<div class="inspiration-overview__type">
 						{{ node.field_article_type.entity.name.value }}
 					</div>
 				</a>
+        {% include '@reusable-component/svg-icon.twig' with {
+          'attributes': '',
+          'svgIconName': 'external-link'
+        } %}
+        <div class="inspiration-overview__type inspiration-overview__type--bottom">Materiale fra andet site</div>
 			</div>
 			<div class="inspiration-overview__content">
 				{% if content.field_class[0]|length > 0 %}
@@ -108,7 +110,7 @@
 						{% endfor %}
 					</div>
 				{% endif %}
-        <a href="{{ url }}" class="inspiration-overview__item-link">
+        <a href="{{ url }}" class="inspiration-overview__item-link use-ajax" data-dialog-options="{{ dataDialogOpts|json_encode()|e('html_attr') }}" data-dialog-type="modal" >
 					<div class="inspiration-overview__title">
 						{{ label }}
 					</div>
