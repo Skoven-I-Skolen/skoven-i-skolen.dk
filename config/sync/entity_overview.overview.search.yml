@@ -5,6 +5,7 @@ dependencies:
   config:
     - node.type.article
     - node.type.blog_post
+    - node.type.link_article
     - node.type.page
     - profile.type.organization
   module:
@@ -16,6 +17,7 @@ entity_bundles:
   node:
     - article
     - blog_post
+    - link_article
     - page
   profile:
     - organization

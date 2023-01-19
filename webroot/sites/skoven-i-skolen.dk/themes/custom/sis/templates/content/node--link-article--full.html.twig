@@ -73,6 +73,7 @@
 {{ attach_library('sis/slider-pager-count') }}
 {{ attach_library('sis/modal-article') }}
 {{ attach_library('sis/related-articles') }}
+{{ attach_library('sis/inspiration-overview') }}
 
 {% set classes = [
   'article-page',
@@ -80,6 +81,7 @@
 
 <article{{ attributes.addClass(classes) }}>
   <div class="article-page__modal">
+    <h1>{{ label }}</h1>
     <div class="article-page__modal__inner">
       <div class="article-page__modal__content">
         {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] %}
@@ -116,6 +118,8 @@
       <div class="article-page__modal__image">
         {% if content.field_list_media[0] %}
           {{ content.field_list_media }}
+        {% elseif content.field_list_media_anonymous[0]%}
+          {{ content.field_list_media_anonymous }}
         {% endif %}
       </div>
     </div>

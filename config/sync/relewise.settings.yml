@@ -3,6 +3,7 @@ entity_bundles:
   node:
     - article
     - blog_post
+    - link_article
     - news
     - page
   profile:

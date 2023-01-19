@@ -39,7 +39,9 @@ function sis_theme_suggestions_block_alter(&$suggestions, array $variables) {
 
   if(isset($element['#id']) && $element['#id'] === 'pageheader') {
     $request = \Drupal::request()->getRequestUri();
-    $suggestions[] = $variables['theme_hook_original'] .'__'. $element['#id'] . '_' . str_replace('/','_', $request);;
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $suggestions[] = $variables['theme_hook_original'] .'__'. $element['#id'] . '_' . str_replace('/','_', $request);
+    $suggestions[] = $variables['theme_hook_original'] .'__'. $element['#id'] . '__node_' . $node->getType();
   }
 }
 
