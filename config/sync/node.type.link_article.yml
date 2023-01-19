@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: 'Link artikel'
 type: link_article
-description: ''
+description: 'Brug link artikler til artikler og indhold fra andre hjemmesider.'
 help: ''
 new_revision: false
 preview_mode: 0
