@@ -44,10 +44,8 @@ dependencies:
     - field.field.node.article.sis_map_address_dawa
     - node.type.article
   module:
-    - image
     - layout_builder
     - layout_builder_restrictions
-    - link
     - metatag
     - responsive_image
     - text

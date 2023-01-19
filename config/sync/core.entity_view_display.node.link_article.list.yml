@@ -33,6 +33,15 @@ targetEntityType: node
 bundle: link_article
 mode: list
 content:
+  field_article_months:
+    type: entity_reference_entity_view
+    label: inline
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
   field_article_type:
     type: entity_reference_label
     label: hidden
@@ -40,6 +49,15 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_class:
+    type: entity_reference_entity_view
+    label: inline
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_description:
     type: basic_string
@@ -89,12 +107,34 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_location:
+    type: entity_reference_entity_view
+    label: inline
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_season:
+    type: entity_reference_entity_view
+    label: inline
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_subject:
+    type: entity_reference_entity_view
+    label: inline
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
 hidden:
   body: true
-  field_article_months: true
-  field_class: true
-  field_location: true
-  field_season: true
-  field_subject: true
   langcode: true
   links: true

@@ -48,7 +48,6 @@ dependencies:
   module:
     - layout_builder
     - layout_builder_restrictions
-    - link
     - responsive_image
     - user
 third_party_settings:
