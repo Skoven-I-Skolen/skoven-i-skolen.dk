@@ -161,6 +161,10 @@ table {
   flex-wrap: wrap;
 }
 
+.views-form {
+  z-index: 10;
+}
+
 .js-media-library-views-form {
   img {
     width: 100%;
