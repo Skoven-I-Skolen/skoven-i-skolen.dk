@@ -22,7 +22,7 @@ entity_bundles:
   profile:
     - organization
 fields:
-  text: textfield
+  external: checkboxes
   field_article_type: checkboxes
   field_class: checkboxes
   field_location: checkboxes
