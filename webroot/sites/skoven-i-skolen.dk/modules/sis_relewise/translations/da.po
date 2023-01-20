@@ -36,4 +36,5 @@ msgstr "Søg på hele sitet"
 msgid "Search entire site"
 msgstr "Søg på hele sitet"
 
-
+msgid "External material"
+msgstr "Ekstern materiale"

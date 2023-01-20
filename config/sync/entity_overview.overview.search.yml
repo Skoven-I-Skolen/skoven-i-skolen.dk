@@ -28,6 +28,6 @@ fields:
   field_location: checkboxes
   field_season: checkboxes
   field_subject: checkboxes
-engine_id: relewise
+engine_id: custom_relewise
 sort_field: created
 show_total: results
