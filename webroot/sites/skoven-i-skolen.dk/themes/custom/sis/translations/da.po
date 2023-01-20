@@ -29,3 +29,13 @@ msgstr "Skjul alle"
 
 msgid "News"
 msgstr "Nyheder"
+
+msgid 'Specify an alternative path by which this data can be accessed. For example, type "/about" when writing an about page.'
+msgstr "Nyheder"
+
+msgid "Short description of the image used by screen readers and displayed when the image is not loaded. This is important for accessibility."
+msgstr ""
+
+msgid 'Required if you want to change the %mail or %pass below. <a href=":request_new_url" title="Send password reset instructions via email.">Reset your password</a>.'
+msgstr 'Påkrævet hvis du vil skifte %mail eller %pass nedenfor. <a href=":request_new_url" title="Send password reset instructions via email.">Nulstil dit password</a>.'
+
