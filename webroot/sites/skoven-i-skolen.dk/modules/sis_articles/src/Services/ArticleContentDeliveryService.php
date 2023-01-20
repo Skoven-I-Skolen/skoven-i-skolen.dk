@@ -104,7 +104,10 @@ class ArticleContentDeliveryService {
       $random_term = $terms[array_rand($terms)];
       $nodes = $this->entityTypeManager
         ->getStorage('node')
-        ->loadByProperties([$field => $random_term->tid]);
+        ->loadByProperties([
+          $field => $random_term->tid,
+          'field_search_exclude' => 0
+        ]);
 
       if ($nodes) {
         if (count($nodes) > 1) {
