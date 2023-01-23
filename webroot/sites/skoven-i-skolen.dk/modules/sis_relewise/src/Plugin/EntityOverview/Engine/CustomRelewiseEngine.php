@@ -3,6 +3,8 @@ namespace Drupal\sis_relewise\Plugin\EntityOverview\Engine;
 
 use Drupal\entity_overview\Entity\Overview;
 use Drupal\entity_overview\OverviewFieldInfoInterface;
+use Drupal\entity_overview\OverviewFields\OwnerField;
+use Drupal\entity_overview\OverviewFields\SearchTextField;
 use Drupal\entity_overview\OverviewFilter;
 use Drupal\entity_overview\OverviewResultInterface;
 use Drupal\relewise\Plugin\EntityOverview\Engine\RelewiseEngine;
@@ -32,8 +34,10 @@ class CustomRelewiseEngine extends RelewiseEngine {
    */
   protected function getEngineFieldInfo(Overview $overview, string $field): ?OverviewFieldInfoInterface {
     return match ($field) {
+      'text' => new SearchTextField(),
+      'owner' => new OwnerField(),
       'external' => new ExternalField(),
-      default => parent::getEngineFieldInfo($overview, $field)
+      default => NULL
     };
   }
 
