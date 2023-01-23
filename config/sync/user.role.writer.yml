@@ -11,6 +11,7 @@ dependencies:
     - node.type.article
     - node.type.blog_post
     - node.type.dot_on_map
+    - node.type.link_article
   module:
     - field_permissions
     - filter
@@ -28,12 +29,14 @@ permissions:
   - 'create dot_on_map content'
   - 'create field_list_media_anonymous'
   - 'create image media'
+  - 'create link_article content'
   - 'create remote_video media'
   - 'create video media'
   - 'delete own article content'
   - 'delete own blog_post content'
   - 'delete own document media'
   - 'delete own image media'
+  - 'delete own link_article content'
   - 'delete own remote_video media'
   - 'delete own video media'
   - 'edit own article content'
@@ -41,6 +44,7 @@ permissions:
   - 'edit own document media'
   - 'edit own field_list_media_anonymous'
   - 'edit own image media'
+  - 'edit own link_article content'
   - 'edit own remote_video media'
   - 'edit own video media'
   - 'use text format simpel_html_til_faktabokse'

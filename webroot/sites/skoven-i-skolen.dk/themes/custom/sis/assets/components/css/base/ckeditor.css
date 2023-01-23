@@ -149,19 +149,26 @@ img[data-cke-widget-data*='data-image-size%22%3A%22large'] {
 
 p[data-cke-widget-data*='data-image-size%22%3A%22small'],
 figure[data-cke-widget-data*='data-image-size%22%3A%22small'] {
-  img {
+  img,
+  figcaption {
     max-width: 160px;
   }
 }
 p[data-cke-widget-data*='data-image-size%22%3A%22medium'],
 figure[data-cke-widget-data*='data-image-size%22%3A%22medium'] {
-  img {
+  img,
+  figcaption {
     max-width: 220px;
   }
 }
 p[data-cke-widget-data*='data-image-size%22%3A%22large'],
 figure[data-cke-widget-data*='data-image-size%22%3A%22large'] {
-  img {
+  img,
+  figcaption {
     max-width: 480px;
   }
+}
+
+.caption > figcaption {
+  display: inline-block;
 }
