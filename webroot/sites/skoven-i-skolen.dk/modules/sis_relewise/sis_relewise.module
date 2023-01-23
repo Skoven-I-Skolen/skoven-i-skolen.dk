@@ -204,11 +204,7 @@ function sis_relewise_preprocess_sis_relewise_most_popular(array &$variables) {
  * Implements hook_form_FORM_ID_alter().
  */
 function sis_relewise_form_entity_overview_search_page_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  $form['most_popular'] = [
-    '#theme' => 'sis_relewise_most_popular'
-  ];
-
   $form['keyword'] = [
-    '#markup' => $form_state->get(['fields', 'text'])
+    '#markup' => \Drupal::request()->get('text')
   ];
 }
