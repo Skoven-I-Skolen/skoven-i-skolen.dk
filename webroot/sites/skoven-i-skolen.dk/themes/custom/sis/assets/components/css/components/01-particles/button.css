@@ -55,6 +55,12 @@ a.button {
     border: 2px solid var(--color-green-dark);
   }
 
+  &--normal {
+    color: var(--color-purple);
+    background-color: var(--color-pink);
+    border: 2px solid var(--color-pink);
+  }
+
   &--center {
     left: 50%;
     transform: translateX(-50%);
