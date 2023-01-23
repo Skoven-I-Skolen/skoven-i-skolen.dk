@@ -11,7 +11,7 @@ field_name: field_list_media
 entity_type: node
 bundle: dot_on_map
 label: 'Liste media'
-description: 'Brug knappen og hent et godt foto på din computer. Billedet bliver vist i toppen af din artikel – og på søgninger. Det skal være i bredformat og mindst 900 pixels bredt. (Ideelt er 900 x 506 pixels.) Du kan kun vælge ét foto.'
+description: 'Brug knappen og hent et godt foto på din computer. Billedet bliver vist ifm. søgeoversigter på hjemmesiden. Det skal være i bredformat og mindst 900 pixels bredt. (Ideelt er 900 x 506 pixels.) Du kan kun vælge ét foto.'
 required: false
 translatable: true
 default_value: {  }
