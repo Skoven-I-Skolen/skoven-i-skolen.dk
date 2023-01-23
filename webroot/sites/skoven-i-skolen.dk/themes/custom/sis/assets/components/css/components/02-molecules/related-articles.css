@@ -1,9 +1,12 @@
 .article-page__related {
   &-header {
-    margin-bottom: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 10px 0;
 
-    @media (--viewport-sm-min) {
-      margin-bottom: 48px;
+    & h2 {
+      margin-bottom: 0;
     }
   }
 
@@ -33,10 +36,6 @@
     align-items: center;
     justify-content: flex-end;
     height: 100%;
-
-    @media (--viewport-sm-min) {
-      padding-bottom: 18px;
-    }
 
     .swiper-button-next,
     .swiper-button-prev {
