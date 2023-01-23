@@ -10,6 +10,7 @@ dependencies:
     - media.type.video
     - node.type.article
     - node.type.dot_on_map
+    - node.type.link_article
     - workflows.workflow.editorial
   module:
     - content_moderation
@@ -34,13 +35,16 @@ permissions:
   - 'create field_list_media_anonymous'
   - 'create field_top_image_anonymous'
   - 'create image media'
+  - 'create link_article content'
   - 'create remote_video media'
   - 'create video media'
   - 'delete any article content'
+  - 'delete any link_article content'
   - 'delete own article content'
   - 'delete own document media'
   - 'delete own dot_on_map content'
   - 'delete own image media'
+  - 'delete own link_article content'
   - 'delete own remote_video media'
   - 'delete own video media'
   - 'edit own article content'
@@ -52,6 +56,7 @@ permissions:
   - 'edit own field_list_media_anonymous'
   - 'edit own field_top_image_anonymous'
   - 'edit own image media'
+  - 'edit own link_article content'
   - 'edit own remote_video media'
   - 'edit own video media'
   - 'update own organization profile'

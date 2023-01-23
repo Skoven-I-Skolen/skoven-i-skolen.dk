@@ -71,6 +71,22 @@ atoms:
       da: 'Et undervisningsforløb er skrevet for lærere og knyttet til fag, klasse og faglige mål.'
       en: 'Et undervisningsforløb er skrevet for lærere og knyttet til fag, klasse og faglige mål.'
 
+  share-page-fourth-option-title:
+    type: textfield
+    title: Del side - fjerde valg - titel
+    category: Del side
+    default:
+      da: 'Vil du oprette en link artikel til indhold fra en anden hjemmeside?'
+      en: 'Vil du oprette en link artikel til indhold fra en anden hjemmeside?'
+
+  share-page-fourth-option-help-text:
+    type: textfield
+    title: Del side - fjerde valg - hjælpetekst
+    category: Del side
+    default:
+      da: 'En link artikel er indhold fra en anden hjemmeside som du ønsker at vise i listen over aktiviteter etc.'
+      en: 'En link artikel er indhold fra en anden hjemmeside som du ønsker at vise i listen over aktiviteter etc.'
+
   share-page-second-option-title-green-orgs:
     type: textfield
     title: Del side - andet valg - titel - for grønne organisationer
