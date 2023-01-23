@@ -33,6 +33,8 @@ msgstr "Nyheder"
 msgid 'Specify an alternative path by which this data can be accessed. For example, type "/about" when writing an about page.'
 msgstr "Specificer en alternativ sti, hvormed disse data kan fås adgang til. Skriv for eksempel “/om” Når du skriver en om side"
 
+msgid "Edit organization page"
+msgstr "Rediger visitkortside"
+
 msgid 'Required if you want to change the %mail or %pass below. <a href=":request_new_url" title="Send password reset instructions via email.">Reset your password</a>.'
 msgstr 'Påkrævet hvis du vil skifte %mail eller %pass nedenfor. <a href=":request_new_url" title="Send password reset instructions via email.">Nulstil dit password</a>.'
-

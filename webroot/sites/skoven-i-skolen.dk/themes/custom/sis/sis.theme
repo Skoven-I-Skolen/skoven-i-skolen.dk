@@ -119,6 +119,9 @@ function sis_preprocess_menu_local_tasks(&$variables) {
   $roles = Drupal::currentUser()->getRoles();
   if (in_array('organization', $roles)) {
     // Hide the "view" link on the user profile menu tab.
+    if (isset($variables["primary"]["profile.user_page:organization"]["#link"]["title"])) {
+      $variables["primary"]["profile.user_page:organization"]["#link"]["title"] = t('Edit organization page');
+    }
     unset($variables['primary']['entity.user.canonical']);
   }
 }
