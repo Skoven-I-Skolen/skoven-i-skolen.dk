@@ -75,7 +75,7 @@ h5 {
 
 p {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 
   &.resume {
     font-size: var(--base-font-size-large);
