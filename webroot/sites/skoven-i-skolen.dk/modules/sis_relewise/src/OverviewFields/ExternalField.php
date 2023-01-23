@@ -51,7 +51,7 @@ class ExternalField implements OverviewFieldInfoInterface {
       '#type' => 'checkboxes',
       '#title' => $this->label(),
       '#options' => $this->getOptions(),
-      '#default_value' => $filter->getFieldValue($this->id()) ?? ''
+      '#default_value' => $filter->getFieldValue($this->id()) ?? []
     ];
   }
 
