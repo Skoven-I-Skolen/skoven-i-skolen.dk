@@ -18,7 +18,7 @@
       }
     }
 
-    @media (--viewport-sm-min) {
+    @media (--viewport-md-min) {
       display: block;
     }
 
