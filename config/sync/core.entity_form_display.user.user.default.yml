@@ -38,7 +38,6 @@ third_party_settings:
         - field_full_name
         - field_description
         - user_picture
-        - path
       label: 'Konto detaljer'
       region: content
       parent_name: ''
@@ -99,7 +98,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
