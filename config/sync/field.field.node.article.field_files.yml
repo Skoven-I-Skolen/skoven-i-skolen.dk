@@ -12,7 +12,7 @@ field_name: field_files
 entity_type: node
 bundle: article
 label: Filer
-description: ''
+description: 'Her kan du tilføje filer, som fx kopiark eller andet.'
 required: false
 translatable: true
 default_value: {  }

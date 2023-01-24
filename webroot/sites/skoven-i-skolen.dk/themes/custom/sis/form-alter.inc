@@ -22,6 +22,12 @@ function sis_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
     $form['revision_log']['#access'] = FALSE;
     $form['#attached']['library'][] = 'sis/edit-form';
   }
+  if (in_array($form_id, array('node_article_form', 'node_article_edit_form'))) {
+    $form['form_description'] = array(
+      '#markup' => '<p>Her kan du dele en artikel. Er det en aktivitet, så skriv enkelt, så børn kan forstå det. Er det et undervisningsforløb, så skriv til lærere. Skriv kort og klart uanset hvad.</p>',
+    );
+
+  }
 }
 
 /**

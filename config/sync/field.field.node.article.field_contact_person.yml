@@ -18,7 +18,7 @@ field_name: field_contact_person
 entity_type: node
 bundle: article
 label: Kontaktperson
-description: ''
+description: 'Skriv gerne dit navn og din e-mail, så vi kan kontakte dig, når din artikel er redigeret. Skriv, hvis vi skal slette dit navn og e-mail her, inden vi offentliggør din e-mail.'
 required: false
 translatable: false
 default_value: {  }

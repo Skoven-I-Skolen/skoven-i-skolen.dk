@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: factbox_item
-label: Factbox
+label: Faktaboks
 icon_uuid: null
 icon_default: null
 description: ''

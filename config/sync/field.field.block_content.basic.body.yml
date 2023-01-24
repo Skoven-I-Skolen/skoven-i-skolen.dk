@@ -19,7 +19,7 @@ id: block_content.basic.body
 field_name: body
 entity_type: block_content
 bundle: basic
-label: Brødtekst
+label: 'Skriv hovedteksten til din artikel her.'
 description: ''
 required: false
 translatable: true
