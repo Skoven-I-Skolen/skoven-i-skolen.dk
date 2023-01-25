@@ -2,6 +2,7 @@ overview: search
 filter:
   overview: search
   fields:
+    text: ''
     external: {  }
     field_article_type: {  }
     field_class: {  }
@@ -10,6 +11,7 @@ filter:
     field_subject: {  }
   facets:
     - sort
+    - text
     - external
     - field_article_type
     - field_class
