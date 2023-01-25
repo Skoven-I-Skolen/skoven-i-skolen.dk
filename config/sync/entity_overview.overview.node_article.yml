@@ -14,6 +14,7 @@ entity_bundles:
     - article
     - link_article
 fields:
+  text: search
   owner: entity_autocomplete
   external: checkboxes
   field_article_type: checkboxes
