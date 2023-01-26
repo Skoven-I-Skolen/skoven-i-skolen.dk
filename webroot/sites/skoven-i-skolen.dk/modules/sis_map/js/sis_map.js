@@ -12,12 +12,16 @@ Drupal.behaviors.sis_map_okapi_integration = {
       markers = settings.sis_map.markers;
     }
     const TOKEN = '9f667a80fc5d9b3f0f8dac7ae6492048';
+    var iconsFetched = false;
 
-    if (settings.sis_map) {
+    if (settings.sis_map && !iconsFetched) {
+      iconsFetched = true;
       // Format the icons array to add the actual .svg file paths.
       Object.keys(settings.sis_map.icons).forEach(function (filterName) {
           let iconName = settings.sis_map.icons[filterName];
-          settings.sis_map.icons[formatDataType(filterName)] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
+          if (!iconName.includes('.svg')) {
+            settings.sis_map.icons[formatDataType(filterName)] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
+          }
         }
       );
       settings.sis_map.icons['default'] = defaultDotIcon;
