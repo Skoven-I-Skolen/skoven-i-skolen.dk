@@ -133,13 +133,13 @@
     position: relative;
     top: 50vh;
     left: 50vw;
-    transform: translate(-50%, -50%);
     z-index: 2;
     display: flex;
     flex-direction: column;
     width: 600px;
     background-color: #fff;
     border-radius: 10px;
+    transform: translate(-50%, -50%);
 
     @media screen and (max-width: 992px) {
       width: 90vw;
@@ -150,6 +150,7 @@
     position: absolute;
     top: 5px;
     right: 4px;
+    z-index: 1;
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -172,8 +173,12 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 5px 20px 15px;
+    padding: 5px var(--half-gutter-width-mobile) 15px;
     overflow: auto;
+
+    @media (--viewport-md-min) {
+      padding: 5px var(--half-gutter-width) 15px;
+    }
 
     & .modal-image__container {
       position: relative;
