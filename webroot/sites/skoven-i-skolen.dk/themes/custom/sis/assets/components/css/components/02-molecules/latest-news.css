@@ -103,6 +103,10 @@
   .inspiration-overview__item-link {
     width: 100%;
     height: auto;
+
+    &--blog {
+      height: 100%;
+    }
   }
 
   .inspiration-overview__title {
