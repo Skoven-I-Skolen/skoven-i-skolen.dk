@@ -23,7 +23,7 @@ use Drupal\sis_relewise\OverviewFields\ExternalField;
  *    "sort",
  *    "pagination"
  *  },
- *  multiple = false,
+ *  multiple = true,
  *  recommendations = false
  * )
  */
