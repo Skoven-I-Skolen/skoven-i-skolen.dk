@@ -5,6 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.media_directories_modal
     - field.field.node.dot_on_map.body
+    - field.field.node.dot_on_map.field_article_type
     - field.field.node.dot_on_map.field_class
     - field.field.node.dot_on_map.field_contact_information
     - field.field.node.dot_on_map.field_files
@@ -49,7 +50,7 @@ third_party_settings:
       label: Kategorisering
       region: content
       parent_name: ''
-      weight: 15
+      weight: 14
       format_type: tabs
       format_settings:
         classes: ''
@@ -242,7 +243,7 @@ content:
         hide_guidelines: '0'
   created:
     type: datetime_timestamp
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -289,7 +290,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 9
+    weight: 8
     region: content
     settings:
       sidebar: true
@@ -303,13 +304,13 @@ content:
     third_party_settings: {  }
   field_section_bg_graphics:
     type: options_select
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_section_bg_graphics_pos:
     type: options_select
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -339,13 +340,13 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -357,7 +358,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 14
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -372,7 +373,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -381,11 +382,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_article_type: true
   field_class: true
   field_contact_data: true
   field_location: true

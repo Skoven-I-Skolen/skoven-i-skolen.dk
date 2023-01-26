@@ -1,0 +1,33 @@
+uuid: fbfc2c00-4537-4fbf-9a6a-bdb98a45a1e6
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_type
+    - node.type.dot_on_map
+    - taxonomy.vocabulary.article_types
+  content:
+    - 'taxonomy_term:article_types:ee6a15d9-661d-4094-ac88-a7190428bd9e'
+id: node.dot_on_map.field_article_type
+field_name: field_article_type
+entity_type: node
+bundle: dot_on_map
+label: Type
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: ee6a15d9-661d-4094-ac88-a7190428bd9e
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_types: article_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
