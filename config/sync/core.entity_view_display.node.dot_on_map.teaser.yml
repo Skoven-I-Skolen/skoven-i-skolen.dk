@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.dot_on_map.body
+    - field.field.node.dot_on_map.field_article_type
     - field.field.node.dot_on_map.field_class
     - field.field.node.dot_on_map.field_contact_information
     - field.field.node.dot_on_map.field_files
@@ -61,6 +62,7 @@ content:
     weight: 1
     region: content
 hidden:
+  field_article_type: true
   field_class: true
   field_contact_information: true
   field_files: true

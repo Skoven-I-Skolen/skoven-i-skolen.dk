@@ -327,12 +327,6 @@
   }
 }
 
-.inspiration-overview__item-link {
-  &--blog {
-    height: 100%;
-  }
-}
-
 .ui-dialog.article-modal {
   width: 96% !important;
 
