@@ -41,7 +41,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
           query.append(category, value);
           let pageTitle = document.getElementsByTagName("title")[0].innerHTML;
           if (!doNotAddToQuery) {
-            window.history.pushState(window.location.pathname,
+            window.history.replaceState(window.location.pathname,
               pageTitle, '?' + query.toString());
           }
         }
@@ -53,7 +53,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
         currentParams.replaceAll('?$', '?');
         currentParams.replaceAll('&&', '&');
         query = new URLSearchParams(currentParams);
-        window.history.pushState('page2', 'Title', '?' + currentParams);
+        window.history.replaceState('page2', 'Title', '?' + currentParams);
       }
     }
 
@@ -215,6 +215,10 @@ Drupal.behaviors.sis_map_okapi_integration = {
         }
       });
 
+      if (typeof resultSet === 'object') {
+        resultSet = Object.values(resultSet);
+      }
+
       resultSet.forEach(function (element) {
         var allFilters = Object.values(element['filters']).flat().filter(
           function(item, pos, self) { return self.indexOf(item) == pos; })
@@ -350,8 +354,6 @@ Drupal.behaviors.sis_map_okapi_integration = {
       document.querySelector('.map-container').prepend(m);
       autoZoom = true;
 
-      console.log(settings.sis_map);
-
       if (firstRender && typeof settings.sis_map !== 'undefined') {
         firstRender = false;
         if (query.toString().includes('&')) {
@@ -363,10 +365,8 @@ Drupal.behaviors.sis_map_okapi_integration = {
           Object.keys(markers).forEach(function (index) {
             renderMapMarker(markers[index]);
           });
-          document.querySelectorAll('.js-see-all-checkbox').forEach(function (e) {
-            e.click();
-            e.parentElement.classList.add('expanded');
-          })
+          filters = peopleAndPlacesTerms;
+          renderResultList(markers);
           doNotAddToQuery = false;
         }
       }
