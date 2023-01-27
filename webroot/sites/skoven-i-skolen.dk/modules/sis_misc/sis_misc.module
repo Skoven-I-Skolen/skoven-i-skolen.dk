@@ -94,11 +94,11 @@ function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state, $
   $roles = $user->getRoles();
 
   if (isset($form['field_article_type']['widget']['#options'])) {
-    foreach ($form["field_article_type"]["widget"]["#options"] as $key => $value) {
-      if ($value === "Mennesker og steder" || $value === "Nyheder") {
+    foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
+      if ($value === 'Mennesker og steder' || $value === 'Nyheder' || $value === 'Visitkort') {
         // These article types should be linked only to dot_on_map and news
         // content types, we shouldn't list them as an option here.
-        unset($form["field_article_type"]["widget"]["#options"][$key]);
+        unset($form['field_article_type']['widget']['#options'][$key]);
       }
     }
   }
