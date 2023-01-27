@@ -91,10 +91,10 @@
 						{{ label }}
 					</div>
 					<div class="inspiration-overview__date">
-						{% set createdDate = node.getCreatedTime|date('j F Y') %}
-						{% trans %}
-							{{ createdDate }}
-						{% endtrans %}
+						{% set createdDay = node.getCreatedTime|date('j') %}
+						{% set createdMonth = node.getCreatedTime|date('F') %}
+						{% set createdYear = node.getCreatedTime|date('Y') %}
+            {{ createdDay }} {{ createdMonth|t }} {{ createdYear }}
 					</div>
 					<div class="inspiration-overview__description">
 						{{ content.field_summary }}

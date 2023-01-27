@@ -7,7 +7,7 @@ dependencies:
     - node.type.dot_on_map
     - taxonomy.vocabulary.article_types
   content:
-    - 'taxonomy_term:article_types:ee6a15d9-661d-4094-ac88-a7190428bd9e'
+    - 'taxonomy_term:article_types:5b4b4f45-e1a1-4b36-8241-264f45c762db'
 id: node.dot_on_map.field_article_type
 field_name: field_article_type
 entity_type: node
@@ -18,7 +18,7 @@ required: false
 translatable: true
 default_value:
   -
-    target_uuid: ee6a15d9-661d-4094-ac88-a7190428bd9e
+    target_uuid: 5b4b4f45-e1a1-4b36-8241-264f45c762db
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
