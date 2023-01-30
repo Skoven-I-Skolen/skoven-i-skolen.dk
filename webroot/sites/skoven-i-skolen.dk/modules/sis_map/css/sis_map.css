@@ -1,18 +1,18 @@
 .geomap {
+  width: 100%;
   height: 490px;
+  margin-bottom: 30px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 991px) {
   .geomap {
     height: 380px;
-    width: 850px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .geomap {
     height: 380px;
-    width: 100%;
   }
 }
 
@@ -198,23 +198,8 @@
 
 .map-button {
   text-decoration: none;
-  margin-top: 58px;
 }
 
 .see-all-checkbox {
   margin-bottom: 10px;
-}
-
-/* padding on sides on small viewport */
-@media (max-width: 1590px) {
-  main, #block-breadcrumbs {
- padding-left: 100px;
-  padding-right: var(--container-spacing);
-  }
-  @media (max-width: 900px) {
-    main, #block-breadcrumbs {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
 }
