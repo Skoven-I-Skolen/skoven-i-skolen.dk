@@ -86,7 +86,7 @@
   {% endif %}
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-lg-7">
+      <div class="col-xs-12 col-md-8 col-lg-7">
         <div{{ content_attributes }}>
           {% if node.field_header[0] %}
             {% include '@reusable-component/page-title.twig' with {
@@ -105,39 +105,40 @@
           <div class="article-page__content">
             {{ content.body }}
           </div>
-
-          {% if node.sis_map_address_dawa.value or (node.lat.value and node.lon.value) %}
-            <span
-              class="geomarker"
-              data-type="default"
-              data-title="{{ node.title.value }}"
-              {% if node.lat.value and node.lon.value %}
-                data-lat="{{ node.lat.value }}"
-                data-lon="{{ node.lon.value }}"
-                data-description="Breddegrad: {{ node.lat.value }}<br>Længde: {{ node.lon.value }}"
-                >
-                {% elseif node.sis_map_address_dawa.value %}
-                  data-address="{{ node.sis_map_address_dawa.value }}"
-                  data-description="Addresse:{{ node.sis_map_address_dawa.value }}"
-                >
-              {% endif %}
-            </span>
-            <div class="map-container">
-              <div
-               id="map"
-               class="geomap"
-               data-type="default"
-               data-zoom="auto"
-               data-center="auto"
-               data-layerswitcher="true"
-               data-token="9f667a80fc5d9b3f0f8dac7ae6492048">
-              </div>
-            </div>
-          {% endif %}
-
         </div>
       </div>
-      <div class="col-md-4 col-lg-4 col-lg-offset-1">
+
+      <div class="col-xs-12 col-md-8 col-lg-7">
+        {% if node.sis_map_address_dawa.value or (node.lat.value and node.lon.value) %}
+          <span
+            class="geomarker"
+            data-type="default"
+            data-title="{{ node.title.value }}"
+            {% if node.lat.value and node.lon.value %}
+              data-lat="{{ node.lat.value }}"
+              data-lon="{{ node.lon.value }}"
+              data-description="Breddegrad: {{ node.lat.value }}<br>Længde: {{ node.lon.value }}"
+              >
+              {% elseif node.sis_map_address_dawa.value %}
+                data-address="{{ node.sis_map_address_dawa.value }}"
+                data-description="Addresse:{{ node.sis_map_address_dawa.value }}"
+              >
+            {% endif %}
+          </span>
+          <div class="map-container">
+            <div
+             id="map"
+             class="geomap"
+             data-type="default"
+             data-zoom="auto"
+             data-center="auto"
+             data-layerswitcher="true"
+             data-token="9f667a80fc5d9b3f0f8dac7ae6492048">
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="col-xs-12 col-md-4 col-lg-4 col-lg-offset-1">
         {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] or node.sis_map_address_dawa.value %}
           <div class="facts-box">
             <div class="facts-box__title">
