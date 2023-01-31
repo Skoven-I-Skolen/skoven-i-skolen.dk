@@ -87,10 +87,10 @@ img {
   }
 }
 
-figure {
+figure,
+.embedded-entity {
   width: auto;
   margin: 0;
-  text-align: left;
 
   &.align-left {
     float: none;
