@@ -96,7 +96,6 @@ third_party_settings:
       children:
         - group_categorization
         - group_colophon
-        - group_article_colophon
         - group_teaching_goals
         - group_factboxes
         - group_files
@@ -105,7 +104,7 @@ third_party_settings:
       label: 'Artikel metadata'
       region: content
       parent_name: group_side_boxes
-      weight: 9
+      weight: 40
       format_type: tabs
       format_settings:
         classes: ''
@@ -152,16 +151,16 @@ third_party_settings:
         - field_colophon_photographer
       label: Kolofon
       region: content
-      parent_name: group_article_metadata
+      parent_name: group_side_boxes
       weight: 39
-      format_type: tab
+      format_type: fieldset
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        formatter: open
         description: ''
         required_fields: true
+        formatter: open
     group_teaching_goals:
       children:
         - field_teaching_goals
@@ -456,6 +455,7 @@ third_party_settings:
         width_breakpoint: 640
     group_side_boxes:
       children:
+        - group_article_colophon
         - group_article_metadata
       label: 'Indhold vist på sideboksene'
       region: content
