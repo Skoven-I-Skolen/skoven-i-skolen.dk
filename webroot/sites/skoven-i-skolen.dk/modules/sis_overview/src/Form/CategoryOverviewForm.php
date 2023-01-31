@@ -36,9 +36,15 @@ class CategoryOverviewForm extends OverviewFilterForm {
         ],
       ];
       if (!empty($filter->getFieldValue('field_article_type'))) {
-        $tid = $filter->getFieldValue('field_article_type');
-        $term = Term::load($tid[0]);
-        $form['facets']['text']['#attributes']['placeholder'] = $this->t('Search in') . ' ' . strtolower($term->label());
+        if (count($filter->getFieldValue('field_article_type')) > 1) {
+          $form['facets']['text']['#attributes']['placeholder'] = $this->t('Search in articles');
+        } else {
+          $tid = $filter->getFieldValue('field_article_type');
+          $term = Term::load($tid[0]);
+          $form['facets']['text']['#attributes']['placeholder'] = $this->t('Search in') . ' ' . strtolower($term->label());
+        }
+      } else {
+        $form['facets']['text']['#attributes']['placeholder'] = $this->t('Search in content');
       }
     }
 

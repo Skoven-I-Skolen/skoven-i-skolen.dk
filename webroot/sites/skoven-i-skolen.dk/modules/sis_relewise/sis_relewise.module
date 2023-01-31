@@ -3,6 +3,7 @@
 use Drupal\Component\Render\PlainTextOutput;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\EntityReferenceFieldItemList;
+use Drupal\entity_overview\OverviewFilter;
 use Drupal\node\Entity\Node;
 use Drupal\relewise\DataTypes\Search\Sorting\Content\ContentPopularitySorting;
 
@@ -149,6 +150,14 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
   }
   //$content = null;
   return $content;
+}
+
+/**
+ * Implements hook_entity_overview_facet_options_alter().
+ */
+function sis_relewise_entity_overview_facet_options_alter(&$facet_options, OverviewFilter $filter) {
+  unset($facet_options['count']);
+  unset($facet_options['owner']);
 }
 
 /**
