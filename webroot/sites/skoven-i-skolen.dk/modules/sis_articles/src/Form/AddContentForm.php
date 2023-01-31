@@ -13,19 +13,26 @@ class AddContentForm extends FormBase {
   }
 
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $options = [];
 
-    $options = [
-      0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
-      1 => '<strong>' . atom_str('share-page-second-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text') . '</div>',
-      2 => '<strong>' . atom_str('share-page-third-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-third-option-help-text') . '</div>',
-      3 => '<strong>' . atom_str('share-page-fourth-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-fourth-option-help-text') . '</div>',
-    ];
-
-    if (in_array('organization', \Drupal::currentUser()->getRoles())) {
+    if (in_array('anonymous', \Drupal::currentUser()->getRoles())) {
+      $options = [
+        0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
+        1 => '<strong>' . atom_str('share-page-second-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text') . '</div>',
+        2 => '<strong>' . atom_str('share-page-third-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-third-option-help-text') . '</div>',
+      ];
+    } elseif (in_array('organization', \Drupal::currentUser()->getRoles())) {
       $options = [
         0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
         1 => '<strong>' . atom_str('share-page-second-option-title-green-orgs') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text-green-orgs') . '</div>',
         2 => '<strong>' . atom_str('share-page-fourth-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-fourth-option-help-text') . '</div>',
+      ];
+    } elseif (in_array('administrator', \Drupal::currentUser()->getRoles()) || in_array('webmaster', \Drupal::currentUser()->getRoles()) || in_array('editor', \Drupal::currentUser()->getRoles())) {
+      $options = [
+        0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
+        1 => '<strong>' . atom_str('share-page-second-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text') . '</div>',
+        2 => '<strong>' . atom_str('share-page-third-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-third-option-help-text') . '</div>',
+        3 => '<strong>' . atom_str('share-page-fourth-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-fourth-option-help-text') . '</div>',
       ];
     }
 
@@ -59,7 +66,11 @@ class AddContentForm extends FormBase {
         }
         break;
       case 2:
-        $form_state->setResponse(new RedirectResponse('/node/add/article?type=Undervisningsforløb'));
+        if (in_array('organization', \Drupal::currentUser()->getRoles())) {
+          $form_state->setResponse(new RedirectResponse('/node/add/link_article'));
+        } else {
+          $form_state->setResponse(new RedirectResponse('/node/add/article?type=Undervisningsforløb'));
+        }
         break;
       case 3:
         $form_state->setResponse(new RedirectResponse('/node/add/link_article'));
