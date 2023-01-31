@@ -56,3 +56,21 @@ msgstr "Søg i artikler"
 
 msgid "Search in content"
 msgstr "Søg i indhold"
+
+msgid "Select media"
+msgstr "Vælg fil"
+
+msgid "You can select one @entity_type."
+msgstr "Du kan vælge ét element"
+
+msgid "Company"
+msgstr "Organisation"
+
+msgid "Street address"
+msgstr "Vejnavn og nummer"
+
+msgid "Postal code"
+msgstr "Postnummer"
+
+msgid "City"
+msgstr "By"
