@@ -1,6 +1,11 @@
 {{ attach_library('sis/form-select') }}
 
-{% set selected_option = '- None -' |t %}
+{% if attributes.required == 'required' %}
+  {% set selected_option = '- Select a value -' |t %}
+{% else %}
+  {% set selected_option = '- None -' |t %}
+{% endif %}
+
 {% apply spaceless %}
   <select{{ attributes.addClass('hidden') }}>
     {% for option in options %}
@@ -29,7 +34,10 @@
     <div class="premium-dropdown--menu">
       {% for option in options %}
         {% if option.type == 'option' %}
-          <a href="#" class="premium-dropdown--menu-item{{ option.selected ? ' is-active' }}" data-id="{{ option.value }}">{{ option.label }}</a>
+          {% if attributes.required == 'required' and option.value == '_none' %}
+            {% else %}
+            <a href="#" class="premium-dropdown--menu-item{{ option.selected ? ' is-active' }}" data-id="{{ option.value }}">{{ option.label }}</a>
+          {% endif %}
         {% endif %}
       {% endfor %}
     </div>
