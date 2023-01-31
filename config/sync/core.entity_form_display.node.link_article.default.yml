@@ -181,6 +181,12 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_article_months:
     type: options_buttons
     weight: 0
@@ -266,7 +272,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 4
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -279,12 +285,20 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
-  created: true
   langcode: true
   moderation_state: true
   path: true
   promote: true
   sticky: true
-  uid: true
   url_redirects: true

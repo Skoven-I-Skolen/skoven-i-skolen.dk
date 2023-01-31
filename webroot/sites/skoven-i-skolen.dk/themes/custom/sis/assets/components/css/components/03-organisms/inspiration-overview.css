@@ -171,8 +171,8 @@
 
     &--authoring-information {
       margin-top: 10px;
-      padding-left: 20px;
       padding-right: 20px;
+      padding-left: 20px;
       font-weight: normal;
       font-size: var(--base-font-size-small);
       hyphens: none;
@@ -329,6 +329,8 @@
 
 .ui-dialog.article-modal {
   width: 96% !important;
+  padding: 0;
+  border-radius: 10px;
 
   @media (--viewport-sm-min) {
     width: 600px !important;
@@ -347,42 +349,46 @@
   }
 
   .ui-dialog-titlebar-close {
-    right: var(--container-spacing);
+    right: 10px;
+    width: 28px;
+    height: 28px;
     margin: 0;
-    background: none;
+    background: var(--color-green-dark);
     border: none;
+    border-radius: 50%;
     transform: translateY(-50%);
   }
 
   .ui-button-icon {
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
     margin-top: 0;
     margin-left: 0;
     background: none;
+    transform: translate(-50%, -50%);
 
     &::before {
       position: absolute;
-      top: 8px;
-      left: 0;
+      top: 4px;
+      left: -2px;
       display: block;
-      width: 20px;
-      height: 1px;
-      background-color: rgba(0 0 0 / 50%);
+      width: 14px;
+      height: 2px;
+      background-color: var(--color-white);
       transform: rotate(45deg);
       content: "";
     }
 
     &::after {
       position: absolute;
-      top: 8px;
-      left: 0;
+      top: 4px;
+      left: -2px;
       display: block;
-      width: 20px;
-      height: 1px;
-      background-color: rgba(0 0 0 / 50%);
+      width: 14px;
+      height: 2px;
+      background-color: var(--color-white);
       transform: rotate(-45deg);
       content: "";
     }
@@ -472,7 +478,7 @@
     display: flex;
     justify-content: flex-end;
     margin: 0 calc(var(--container-spacing) * -1);
-    padding: 10px var(--container-spacing);
+    padding: 10px;
     border-top: 1px solid rgba(0 0 0 / 10%);
 
     a.button {
