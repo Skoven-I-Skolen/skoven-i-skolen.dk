@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: 'Link artikel'
+name: Linkartikel
 type: link_article
-description: 'Brug link artikler til artikler og indhold fra andre hjemmesider.'
+description: 'Brug linkartikler til artikler og indhold fra andre hjemmesider.'
 help: ''
 new_revision: false
 preview_mode: 0
