@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.media_directories_modal
+    - field.field.profile.organization.field_article_type
     - field.field.profile.organization.field_organization_address
     - field.field.profile.organization.field_organization_description
     - field.field.profile.organization.field_organization_email
@@ -157,5 +158,6 @@ content:
       offsets: '50,50'
     third_party_settings: {  }
 hidden:
+  field_article_type: true
   is_default: true
   path: true

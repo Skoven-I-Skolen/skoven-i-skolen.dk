@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.profile.organization.field_article_type
     - field.field.profile.organization.field_organization_address
     - field.field.profile.organization.field_organization_description
     - field.field.profile.organization.field_organization_email
@@ -107,6 +108,7 @@ content:
     weight: 8
     region: content
 hidden:
+  field_article_type: true
   field_section_bg_graphics: true
   field_section_bg_graphics_pos: true
   search_api_excerpt: true
