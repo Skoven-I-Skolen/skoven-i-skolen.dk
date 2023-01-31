@@ -872,7 +872,7 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: ''
+      placeholder: 'Skriv din titel her'
     third_party_settings: {  }
   translation:
     weight: 9
