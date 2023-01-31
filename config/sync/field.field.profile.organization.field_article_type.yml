@@ -1,0 +1,33 @@
+uuid: e30d646f-6524-42ee-88dc-74d9a483648f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_article_type
+    - profile.type.organization
+    - taxonomy.vocabulary.article_types
+  content:
+    - 'taxonomy_term:article_types:5ae88c41-a229-4862-b824-2828cb50cbdf'
+id: profile.organization.field_article_type
+field_name: field_article_type
+entity_type: profile
+bundle: organization
+label: Type
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 5ae88c41-a229-4862-b824-2828cb50cbdf
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_types: article_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

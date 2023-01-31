@@ -65,6 +65,8 @@ hr {
 
 /* Image handling */
 img {
+  max-width: 100%;
+
   &.align-left {
     display: block;
     float: none;
@@ -87,10 +89,10 @@ img {
   }
 }
 
-figure {
+figure,
+.embedded-entity {
   width: auto;
   margin: 0;
-  text-align: left;
 
   &.align-left {
     float: none;

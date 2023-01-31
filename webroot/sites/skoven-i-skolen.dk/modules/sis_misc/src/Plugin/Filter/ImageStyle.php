@@ -71,15 +71,17 @@ class ImageStyle extends FilterBase implements ContainerFactoryPluginInterface {
         $node->removeAttribute('data-entity-uuid');
 
         $file = $this->storage->loadByProperties(['uuid' => $uuid]);
-        $file = reset($file);
-        $fileUri = $file->getFileUri();
+        if ($file) {
+          $file = reset($file);
+          $fileUri = $file->getFileUri();
 
-        if (isset($file) && in_array($style, ['small', 'medium', 'large'])) {
-          $style = IS::load($style);
-          $uri = $style->buildUri($fileUri);
-          $style->createDerivative($fileUri, $uri);
-          $src = $this->fileUrlGenerator->generateString($uri);
-          $node->setAttribute('src', $src);
+          if (isset($file) && in_array($style, ['small', 'medium', 'large'])) {
+            $style = IS::load($style);
+            $uri = $style->buildUri($fileUri);
+            $style->createDerivative($fileUri, $uri);
+            $src = $this->fileUrlGenerator->generateString($uri);
+            $node->setAttribute('src', $src);
+          }
         }
       }
       $result->setProcessedText(Html::serialize($dom));

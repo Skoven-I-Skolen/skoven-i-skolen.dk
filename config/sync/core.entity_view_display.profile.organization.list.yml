@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.profile.list
+    - field.field.profile.organization.field_article_type
     - field.field.profile.organization.field_organization_address
     - field.field.profile.organization.field_organization_description
     - field.field.profile.organization.field_organization_email
@@ -56,6 +57,7 @@ content:
     weight: 1
     region: content
 hidden:
+  field_article_type: true
   field_organization_email: true
   field_organization_overview: true
   field_organization_phone: true

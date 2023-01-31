@@ -144,6 +144,19 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
         ->isEmpty()) {
       $content->addData('field_organization_address', $profile->get('field_organization_address')->first()->getValue()['organization'] ?? '');
     }
+    if ($profile->hasField('field_article_type') && !$profile->get('field_article_type')
+        ->isEmpty()) {
+      $content->addData('field_article_type', $profile->get('field_article_type')
+        ->first()
+        ->getValue()['target_id']);
+      $tid = $profile->get('field_article_type')
+        ->first()
+        ->getValue()['target_id'];
+      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+      if ($term) {
+        $content->addData('field_article_type_label', $term->label());
+      }
+    }
   }
   else {
     $content = NULL;
