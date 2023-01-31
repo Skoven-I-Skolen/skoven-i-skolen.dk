@@ -26,7 +26,8 @@ function sis_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
     $form['form_description'] = array(
       '#markup' => '<p>Her kan du dele en artikel. Er det en aktivitet, så skriv enkelt, så børn kan forstå det. Er det et undervisningsforløb, så skriv til lærere. Skriv kort og klart uanset hvad.</p>',
     );
-
+    $form['field_factboxes']['widget']['text']['value']['#prefix'] = '<p>Her kan du tilføje ekstra faktabokse, som bliver vist til højre for artiklen.</p>';
+    $form['field_factboxes']['widget']['text']['value']['#prefix'] .= '<em>';
   }
 }
 
