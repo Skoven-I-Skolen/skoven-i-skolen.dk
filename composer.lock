@@ -8334,10 +8334,10 @@
         },
         {
             "name": "novicell/entity_overview",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_m4vrD/novicellentity_overview-2-3-4.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_1y37nX/novicellentity_overview-2-3-5.zip"
             },
             "require": {
                 "drupal/html5history": "^1.0"
