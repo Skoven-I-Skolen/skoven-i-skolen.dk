@@ -76,22 +76,22 @@
           {% if blog_image %}
             {{ blog_image }}
           {% endif %}
-          <a href="/blogs">
-            <div class="entity-slideshow__type entity-slideshow__type--blog">
-              {{ node.type.entity.label }}
-            </div>
-          </a>
-        </div>
-        <div class="entity-slideshow__content-wrapper">
-          <div class="entity-slideshow__content">
-            <div class="entity-slideshow__title">
-              {{ node.label }}
-            </div>
-            <div class="entity-slideshow__description">
-              {{ content.field_description }}
-            </div>
-          </div>
         </div>
       </a>
+      <a href="/blogs">
+        <div class="entity-slideshow__type entity-slideshow__type--blog">
+          {{ node.type.entity.label }}
+        </div>
+      </a>
+      <div class="entity-slideshow__content-wrapper">
+        <a href="{{ url }}" class="entity-slideshow__content">
+          <div class="entity-slideshow__title">
+            {{ node.label }}
+          </div>
+          <div class="entity-slideshow__description">
+            {{ content.field_description }}
+          </div>
+        </a>
+      </div>
     </div>
   </div>

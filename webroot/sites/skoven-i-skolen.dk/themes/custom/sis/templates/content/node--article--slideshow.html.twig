@@ -69,52 +69,53 @@
 #}
 {{ attach_library('sis/entity-slideshow') }}
 {% set subject_items = node.field_subject %}
-  <div class="entity-slideshow__item">
-    <div class="entity-slideshow__item-inner">
-      <a href="{{ url }}" class="entity-slideshow__item-link">
-        <div class="entity-slideshow__image">
-          {{ article_image }}
-          <a href="/{{ node.field_article_type.entity.name.value }}">
-            <div class="entity-slideshow__type">
-              {{ node.field_article_type.entity.name.value }}
-            </div>
-          </a>
-        </div>
-        <div class="entity-slideshow__content-wrapper">
-          <div class="entity-slideshow__content">
-            {% if node.field_class.entity.name.value|length > 0 %}
-              <div class="entity-slideshow__class">
-                {% include '@reusable-component/svg-icon.twig' with {
-                  'attributes': '',
-                  'svgIconName': 'reading'
-                } %}
-                {{ node.field_class.entity.name.value }}
-              </div>
-            {% endif %}
-            <div class="entity-slideshow__title">
-              {{ node.label }}
-            </div>
-            <div class="entity-slideshow__description">
-              {{ node.field_description.value }}
-            </div>
+{% set typeAltrerLink = node.field_article_type.entity.field_page_link.0.url %}
+{% set typeUrl = path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_article_type.entity.id}) %}
+
+<div class="entity-slideshow__item">
+  <div class="entity-slideshow__item-inner">
+    <a href="{{ url }}" class="entity-slideshow__item-link">
+      <div class="entity-slideshow__image">
+        {{ article_image }}
+      </div>
+    </a>
+    <div class="entity-slideshow__content-wrapper">
+      <a href="{{ url }}" class="entity-slideshow__content">
+        {% if node.field_class.entity.name.value|length > 0 %}
+          <div class="entity-slideshow__class">
+            {% include '@reusable-component/svg-icon.twig' with {
+              'attributes': '',
+              'svgIconName': 'reading'
+            } %}
+            {{ node.field_class.entity.name.value }}
           </div>
-          {% if subject_items|length > 0 %}
-            <div class="entity-slideshow__subject">
-              {% if subject_items|length > 2 %}
-                {% for item in subject_items|slice(0, 2) %}
-                  {% if item.entity.tid.value %}
-                    <a class="entity-slideshow__subject-item" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{ item.entity.name.value }}</a>
-                  {% endif %}
-                {% endfor %}
-                <div class="entity-slideshow__subject-item--more-text">
-                  + {{ subject_items|length - 2 }} {{ 'subjects'|t }}
-                </div>
-              {% else %}
-                <a class="entity-slideshow__subject-item" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term':  node.field_subject.entity.tid.value}) }}">{{  node.field_subject.entity.name.value }}</a>
-              {% endif %}
-            </div>
-          {% endif %}
+        {% endif %}
+        <div class="entity-slideshow__title">
+          {{ node.label }}
+        </div>
+        <div class="entity-slideshow__description">
+          {{ node.field_description.value }}
         </div>
       </a>
+      {% if subject_items|length > 0 %}
+        <div class="entity-slideshow__subject">
+          {% if subject_items|length > 2 %}
+            {% for item in subject_items|slice(0, 2) %}
+              {% if item.entity.tid.value %}
+                <a class="entity-slideshow__subject-item" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{ item.entity.name.value }}</a>
+              {% endif %}
+            {% endfor %}
+            <div class="entity-slideshow__subject-item--more-text">
+              + {{ subject_items|length - 2 }} {{ 'subjects'|t }}
+            </div>
+          {% else %}
+            <a class="entity-slideshow__subject-item" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term':  node.field_subject.entity.tid.value}) }}">{{  node.field_subject.entity.name.value }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
+    <a href="{{ typeAltrerLink ?? typeUrl }}" aria-label="{{ node.field_article_type.entity.name.value }}" class="entity-slideshow__type">
+      {{ node.field_article_type.entity.name.value }}
+    </a>
   </div>
+</div>
