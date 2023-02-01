@@ -59,15 +59,11 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     }
     if ($node->hasField('field_subject') && !$node->get('field_subject')
         ->isEmpty()) {
-      $content->addData('field_subject', $node->get('field_subject')
-        ->first()
-        ->getValue()['target_id']);
+      $content->addData('field_subject', _sis_relewise_relewise_taxonomy_value($node->get('field_subject')));
     }
     if ($node->hasField('field_class') && !$node->get('field_class')
         ->isEmpty()) {
-      $content->addData('field_class', $node->get('field_class')
-        ->first()
-        ->getValue()['target_id']);
+      $content->addData('field_class', _sis_relewise_relewise_taxonomy_value($node->get('field_class')));
     }
     if ($node->hasField('field_location') && !$node->get('field_location')
         ->isEmpty()) {
