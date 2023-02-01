@@ -71,8 +71,10 @@
 
 {% set subject_items = content.field_subject['#items'] %}
 
-{% set typeAltrerLink = node.field_article_type.entity.field_page_link.0.url %}
-{% set typeUrl = path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_article_type.entity.id}) %}
+{% if node.field_article_type.entity.name.value %}
+  {% set typeAltrerLink = node.field_article_type.entity.field_page_link.0.url %}
+  {% set typeUrl = path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_article_type.entity.id}) %}
+{% endif %}
 
 <div class="inspiration-overview__item">
 	<div class="inspiration-overview__item-inner">
