@@ -70,35 +70,33 @@
 {{ attach_library('sis/inspiration-overview') }}
 <div class="inspiration-overview__item">
 	<div class="inspiration-overview__item-inner">
-		<div class="inspiration-overview__item-link">
-			<a href="{{ url }}">
-				<div class="inspiration-overview__image inspiration-overview__image__dot-on-map">
-          {% if content.field_list_media[0] %}
-            {{ content.field_list_media }}
-          {% elseif content.field_list_media_anonymous[0]%}
-            {{ content.field_list_media_anonymous }}
-          {% endif %}
-				</div>
-        <div class="inspiration-overview__content__wrapper">
-          <div class="inspiration-overview__content">
-            <div class="inspiration-overview__title">
-              {{ label }}
-            </div>
-            <div class="inspiration-overview__date">
-              {% set createdDay = node.getCreatedTime|date('j') %}
-              {% set createdMonth = node.getCreatedTime|date('F') %}
-              {% set createdYear = node.getCreatedTime|date('Y') %}
-              {{ createdDay }} {{ createdMonth|t }} {{ createdYear }}
-            </div>
-            <div class="inspiration-overview__description">
-              {{ content.field_summary }}
-            </div>
+		<a href="{{ url }}" class="inspiration-overview__item-link">
+      <div class="inspiration-overview__image inspiration-overview__image__dot-on-map">
+        {% if content.field_list_media[0] %}
+          {{ content.field_list_media }}
+        {% elseif content.field_list_media_anonymous[0]%}
+          {{ content.field_list_media_anonymous }}
+        {% endif %}
+      </div>
+      <div class="inspiration-overview__content__wrapper">
+        <div class="inspiration-overview__content">
+          <div class="inspiration-overview__title">
+            {{ label }}
+          </div>
+          <div class="inspiration-overview__date">
+            {% set createdDay = node.getCreatedTime|date('j') %}
+            {% set createdMonth = node.getCreatedTime|date('F') %}
+            {% set createdYear = node.getCreatedTime|date('Y') %}
+            {{ createdDay }} {{ createdMonth|t }} {{ createdYear }}
+          </div>
+          <div class="inspiration-overview__description">
+            {{ content.field_summary }}
           </div>
         </div>
-			</a>
-      <a href="/kort" aria-label="{{ node.field_article_type.entity.name.value }}" class="inspiration-overview__type">
-        Prik på kort
-      </a>
-		</div>
+      </div>
+    </a>
+    <a href="/kort" aria-label="{{ node.field_article_type.entity.name.value }}" class="inspiration-overview__type">
+      Prik på kort
+    </a>
 	</div>
 </div>
