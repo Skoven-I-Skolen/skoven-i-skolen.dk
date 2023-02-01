@@ -76,9 +76,6 @@
         {% if page_image %}
           {{ page_image }}
         {% endif %}
-        <div class="entity-slideshow__type entity-slideshow__type--news">
-          {{ node.type.entity.label }}
-        </div>
       </div>
       <div class="entity-slideshow__content-wrapper">
         <div class="entity-slideshow__content">
@@ -94,5 +91,8 @@
         </div>
       </div>
     </a>
+    <div class="entity-slideshow__type entity-slideshow__type--news">
+      {{ node.type.entity.label }}
+    </div>
   </div>
 </div>

@@ -54,6 +54,7 @@
   }
 
   &__item-inner {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -106,6 +107,7 @@
     font-weight: 800;
     font-size: var(--base-font-size-extra-small);
     font-family: var(--base-font-family);
+    text-decoration: none;
     background-color: var(--color-primary);
 
     &--bottom {
@@ -129,8 +131,15 @@
     }
 
     &--blog {
+      top: var(--container-spacing-mobile);
+      left: var(--container-spacing-mobile);
       color: var(--color-purple-dark);
       background-color: var(--color-apricot);
+
+      @media (--viewport-ms-min) {
+        top: var(--container-spacing);
+        left: var(--container-spacing);
+      }
     }
   }
 
@@ -321,6 +330,11 @@
       gap: 36px;
     }
   }
+}
+
+.inspiration-overview__image .icon,
+.inspiration-overview__type--bottom {
+  position: absolute;
 }
 
 .inspiration-overview__item-link + .inspiration-overview__list-links {

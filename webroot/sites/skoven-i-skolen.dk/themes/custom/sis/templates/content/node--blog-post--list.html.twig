@@ -78,9 +78,6 @@
         {% elseif content.field_list_media_anonymous[0]%}
           {{ content.field_list_media_anonymous }}
         {% endif %}
-        <div class="inspiration-overview__type inspiration-overview__type--blog">
-          {{ 'Blog'|t }}
-        </div>
       </div>
       <div class="inspiration-overview__title inspiration-overview__title--authoring-information">
         Af {{ node.Owner.name.value }} &#124; {{ node.created.value|date('U')|format_date('custom', 'j. F Y') }}
@@ -94,5 +91,8 @@
         </div>
       </div>
     </div>
+  </a>
+  <a class="inspiration-overview__type inspiration-overview__type--blog" href="/blogs">
+    {{ 'Blog'|t }}
   </a>
 </div>
