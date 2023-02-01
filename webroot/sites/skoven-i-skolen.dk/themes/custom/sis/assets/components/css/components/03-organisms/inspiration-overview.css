@@ -67,6 +67,10 @@
     width: 100%;
     color: var(--color-purple);
     text-decoration: none;
+
+    &--blog {
+      height: 100%;
+    }
   }
 
   &__image {
