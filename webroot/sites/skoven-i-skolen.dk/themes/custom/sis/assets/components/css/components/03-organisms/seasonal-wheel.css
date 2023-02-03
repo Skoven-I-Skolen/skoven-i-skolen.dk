@@ -199,6 +199,10 @@
 
     & .modal-link__title {
       color: #3d2859;
+
+      h4 {
+        padding-right: 30px;
+      }
     }
   }
 
