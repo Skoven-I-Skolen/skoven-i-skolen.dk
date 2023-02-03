@@ -13,6 +13,10 @@
   }
 }
 
+html {
+  scroll-padding-top: 175px;
+}
+
 /* Body */
 body {
   position: relative;
