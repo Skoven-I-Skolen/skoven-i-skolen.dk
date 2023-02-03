@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - editor
-    - linkit
     - sis_misc
 _core:
   default_config_hash: afTU0GNxo-MjXuKrD1zBE1IaHJRMmN1WXWmheRdJg8o
@@ -45,13 +44,6 @@ filters:
     status: true
     weight: 11
     settings: {  }
-  linkit:
-    id: linkit
-    provider: linkit
-    status: true
-    weight: 0
-    settings:
-      title: true
   filter_responsive_table:
     id: filter_responsive_table
     provider: sis_misc

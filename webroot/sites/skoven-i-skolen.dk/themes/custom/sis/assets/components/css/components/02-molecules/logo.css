@@ -9,16 +9,28 @@
 
   &__image {
     display: block;
-    width: 154px;
+    width: 200px;
     height: auto;
     margin: 0 auto;
 
     @media (--viewport-ms-min) {
-      width: 134px;
+      width: 140px;
     }
 
     @media (--viewport-sm-min) {
-      width: 194px;
+      width: 200px;
+    }
+
+    @media (--viewport-md-min) {
+      width: 300px;
+    }
+
+    @media (--viewport-lg-min) {
+      width: 200px;
+    }
+
+    @media (--viewport-xl-min) {
+      width: 300px;
     }
   }
 }

@@ -62,6 +62,7 @@ dependencies:
     - toolbar
     - view_unpublished
     - webform
+    - workbench_email
     - workflows
 _core:
   default_config_hash: oG8QEVj6xO8fgjjs4loG8kHW8_E2KNOjMil1h9amB6s
@@ -103,6 +104,7 @@ permissions:
   - 'administer users'
   - 'administer webform'
   - 'administer webform submission'
+  - 'administer workbench_email templates'
   - 'administer workflows'
   - 'assign all roles'
   - 'assign editor role'
