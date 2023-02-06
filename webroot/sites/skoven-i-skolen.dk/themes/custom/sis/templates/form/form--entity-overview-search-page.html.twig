@@ -17,19 +17,23 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="search-page__header">
-					<div class="search-page__header-inner">
-						<div class="search-page__description">
-							{{ 'Showing search results for'|t }}
-						</div>
-						<h3 class="search-page__title">
-							"<span class="overview-form-contents__keyword">{{ element['keyword'] }}</span>"
-						</h3>
-						<div class="search-page__count">
-              <span class="overview-form-contents__total">{{ element['content']['total'] }}</span>
-						</div>
-					</div>
-				</div>
+        {% if element['keyword']['#markup'] != '' %}
+          <div class="search-page__header">
+            <div class="search-page__header-inner">
+              <div class="search-page__description">
+                {{ 'Showing search results for'|t }}
+              </div>
+              <h3 class="search-page__title">
+                "<span class="overview-form-contents__keyword">{{ element['keyword'] }}</span>"
+              </h3>
+              <div class="search-page__count">
+                <span class="overview-form-contents__total">{{ element['content']['total'] }}</span>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="section section--spacing-top-small"></div>
+        {% endif %}
 			</div>
 		</div>
 		<div class="row">
