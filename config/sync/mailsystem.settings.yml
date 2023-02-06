@@ -3,10 +3,10 @@ _core:
 langcode: da
 theme: sis
 defaults:
-  sender: SMTPMailSystem
-  formatter: SMTPMailSystem
+  sender: swiftmailer
+  formatter: swiftmailer
 modules:
   swiftmailer:
     none:
-      sender: swiftmailer
+      sender: SMTPMailSystem
       formatter: swiftmailer

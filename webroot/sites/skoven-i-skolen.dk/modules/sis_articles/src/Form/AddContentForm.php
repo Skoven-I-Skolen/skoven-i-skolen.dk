@@ -67,7 +67,7 @@ class AddContentForm extends FormBase {
         break;
       case 2:
         if (in_array('organization', \Drupal::currentUser()->getRoles())) {
-          $form_state->setResponse(new RedirectResponse('/node/add/link_article'));
+          $form_state->setResponse(new RedirectResponse('/node/add/link_article?type=Undervisningsforløb'));
         } else {
           $form_state->setResponse(new RedirectResponse('/node/add/article?type=Undervisningsforløb'));
         }

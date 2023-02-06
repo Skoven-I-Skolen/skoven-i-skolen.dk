@@ -2,11 +2,17 @@
  * Type: Base.
  * Modal styling.
  */
+
+body {
+  height: 100vh;
+}
+
 .ui-dialog:not(.ui-dialog-position-side):not(.ui-dialog.article-modal) {
   /* stylelint-disable */
   top: 50% !important;
   left: 50% !important;
   height: 80% !important;
+  margin-top: 0 !important;
   transform: translate(-50%, -50%);
 
   .ui-dialog-content {
