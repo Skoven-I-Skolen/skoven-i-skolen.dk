@@ -1,36 +1,54 @@
-uuid: 806a1bc2-b0e7-4263-8bfa-5def25d67e9a
+uuid: 6ef50ae3-868e-4985-b2cb-0c9fa03f0e94
 langcode: da
 status: true
 dependencies:
   config:
     - filter.format.simpel_html_til_faktabokse
   module:
-    - ckeditor
+    - ckeditor5
 format: simpel_html_til_faktabokse
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatering
-          items:
-            - Bold
-            - Italic
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lister
-          items:
-            - BulletedList
-            - NumberedList
+    items:
+      - bold
+      - italic
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - blockQuote
+      - code
+      - heading
+      - sourceEditing
   plugins:
-    drupallink:
-      linkit_enabled: false
-      linkit_profile: ''
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<blockquote cite>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<h4 id>'
+        - '<h5 id>'
+        - '<h6 id>'
+        - '<a hreflang>'
+        - '<ul type>'
+        - '<ol type>'
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
 image_upload:
   status: false
   scheme: public

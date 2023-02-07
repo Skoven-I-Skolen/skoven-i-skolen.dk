@@ -58,12 +58,20 @@ class ImageStyle extends FilterBase implements ContainerFactoryPluginInterface {
   public function process($text, $langcode) {
     $result = new FilterProcessResult($text);
 
-    if (stristr($text, 'data-image-size') !== FALSE) {
+    if (stristr($text, 'data-entity-uuid') !== FALSE) {
       $dom = Html::load($text);
       $xpath = new \DOMXPath($dom);
-      foreach ($xpath->query('//*[@data-image-size]') as $node) {
+      foreach ($xpath->query('//*[@data-entity-uuid]') as $node) {
         // Read the data-align attribute's value, then delete it.
         $style = $node->getAttribute('data-image-size');
+
+        if (!$style) {
+          $style = $node->parentNode->getAttribute('data-image-size');
+          if (!$style && $node->parentNode->parentNode) {
+            $style = $node->parentNode->parentNode->getAttribute('data-image-size');
+          }
+        }
+
         $uuid = $node->getAttribute('data-entity-uuid');
 
         $node->removeAttribute('data-image-size');
@@ -76,11 +84,13 @@ class ImageStyle extends FilterBase implements ContainerFactoryPluginInterface {
           $fileUri = $file->getFileUri();
 
           if (isset($file) && in_array($style, ['small', 'medium', 'large'])) {
+            $size = $style;
             $style = IS::load($style);
             $uri = $style->buildUri($fileUri);
             $style->createDerivative($fileUri, $uri);
             $src = $this->fileUrlGenerator->generateString($uri);
             $node->setAttribute('src', $src);
+            $node->setAttribute('class', 'img-size--' . $size);
           }
         }
       }
