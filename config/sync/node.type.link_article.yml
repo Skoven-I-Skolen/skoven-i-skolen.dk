@@ -11,7 +11,7 @@ third_party_settings:
 name: Linkartikel
 type: link_article
 description: 'Brug linkartikler til artikler og indhold fra andre hjemmesider.'
-help: ''
+help: 'Her kan du dele en artikel fra en anden hjemmeside. Er det en aktivitet, så skriv enkelt, så børn kan forstå det. Er det et undervisningsforløb, så skriv til lærere. Skriv kort og klart uanset hvad.'
 new_revision: false
 preview_mode: 0
 display_submitted: true
