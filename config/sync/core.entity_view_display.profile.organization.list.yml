@@ -17,10 +17,11 @@ dependencies:
     - field.field.profile.organization.field_top_image
     - field.field.profile.organization.field_top_image_anonymous
     - profile.type.organization
+    - responsive_image.styles.large
   module:
     - address
-    - image
     - layout_builder
+    - responsive_image
     - text
 third_party_settings:
   layout_builder:
@@ -46,13 +47,11 @@ content:
     weight: 2
     region: content
   field_organization_logo:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: large
       image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 1
     region: content
