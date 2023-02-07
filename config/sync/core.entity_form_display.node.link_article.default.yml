@@ -71,7 +71,7 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        description: ''
+        description: 'Her kan du vælge, hvilke fag, klassetrin, sted eller årstid, som passer bedst til din aktivitet/dit undervisningsforløb.'
         required_fields: true
     group_categorie_panes:
       children:
@@ -283,7 +283,7 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: ''
+      placeholder: 'Skriv din titel her'
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

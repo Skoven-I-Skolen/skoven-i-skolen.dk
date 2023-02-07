@@ -15,7 +15,7 @@ id: node.link_article.body
 field_name: body
 entity_type: node
 bundle: link_article
-label: Brødtekst
+label: 'Skriv hovedteksten til din artikel her'
 description: ''
 required: false
 translatable: true

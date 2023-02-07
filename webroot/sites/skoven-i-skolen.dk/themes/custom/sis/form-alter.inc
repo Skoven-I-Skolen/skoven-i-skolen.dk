@@ -25,9 +25,18 @@ function sis_form_node_form_alter(&$form, FormStateInterface $form_state, $form_
   if (in_array($form_id, array('node_article_form', 'node_article_edit_form'))) {
     $form['form_description'] = array(
       '#markup' => '<p>Her kan du dele en artikel. Er det en aktivitet, så skriv enkelt, så børn kan forstå det. Er det et undervisningsforløb, så skriv til lærere. Skriv kort og klart uanset hvad.</p>',
+      '#weight' => -100,
     );
     $form['field_factboxes']['widget']['text']['value']['#prefix'] = '<p>Her kan du tilføje ekstra faktabokse, som bliver vist til højre for artiklen.</p>';
     $form['field_factboxes']['widget']['text']['value']['#prefix'] .= '<em>';
+//    dump($form);
+  }
+  if (in_array($form_id, array('node_link_article_form', 'node_link_article_edit_form'))) {
+    $form['form_description'] = array(
+      '#markup' => '<p>Her kan du dele en artikel fra en anden hjemmeside. Er det en aktivitet, så skriv enkelt, så børn kan forstå det. Er det et undervisningsforløb, så skriv til lærere. Skriv kort og klart uanset hvad.</p>',
+      '#weight' => -100,
+    );
+//    dump($form);
   }
 }
 
