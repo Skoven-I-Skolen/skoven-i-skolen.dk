@@ -19,6 +19,6 @@ bundles:
   'node:article': 'node:article'
   'node:dot_on_map': 'node:dot_on_map'
 body:
-  value: "<p>Tusind tak for din artikel. Den er nu redigeret, godkendt og lagt ud på sitet. Du kan se den via linket her:<br />\r\n[node:url]</p>\r\n\r\n<p>Tak igen og mange hilsner</p>\r\n\r\n<p><strong style=\"color: #2AAC65;\">SKOVEN I SKOLEN</strong><br />\r\nc/o Nationalpark Skjoldungernes Land<br />\r\nLedreborg Allé 2A<br />\r\n4320 Lejre</p>\r\n\r\n<p>E-mail: skoven-i-skolen@nst.dk</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"Skoven i Skolen\" src=\"https://sis.staging.statens-it.dk//sites/skoven-i-skolen.dk/themes/custom/sis/dist/images/skoven-i-skolen-email-logo.png\" /></p>\r\n"
-  format: full_html
+  value: "<p>Tusind tak for din artikel. Den er nu redigeret, godkendt og lagt ud på sitet. Du kan se den via linket her:<br />\r\n[node:url]</p>\r\n\r\n<p>Tak igen og mange hilsner</p>\r\n"
+  format: basic_html
 replyTo: skoven-i-skolen@nst.dk
