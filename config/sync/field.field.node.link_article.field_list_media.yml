@@ -4,18 +4,26 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_list_media
+    - media.type.image
     - node.type.link_article
 id: node.link_article.field_list_media
 field_name: field_list_media
 entity_type: node
 bundle: link_article
 label: 'Liste media'
-description: ''
+description: 'Et lille billede, der vises på interne søgeresultater og andre lister. Det kan være det samme billede som artiklens billede.'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:media'
-  handler_settings: {  }
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference
