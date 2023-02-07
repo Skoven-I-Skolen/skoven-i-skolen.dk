@@ -9,3 +9,6 @@ msgstr "Vis alle leksikonartikler med bogstavet @letter"
 
 msgid "No results found"
 msgstr "Ingen resultater fundet"
+
+msgid "All"
+msgstr "Alle"
