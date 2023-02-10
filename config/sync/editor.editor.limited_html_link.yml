@@ -13,7 +13,6 @@ settings:
     items:
       - link
       - '|'
-      - sourceEditing
   plugins:
     ckeditor5_sourceEditing:
       allowed_tags:

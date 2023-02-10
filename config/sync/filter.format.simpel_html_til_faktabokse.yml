@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 name: 'Simpel HTML til faktabokse'
 format: simpel_html_til_faktabokse
-weight: -8
+weight: -9
 filters:
   filter_html:
     id: filter_html
@@ -12,6 +12,6 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <blockquote cite> <a hreflang href> <ul type> <ol type start> <strong> <em> <code> <li>'
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <code> <blockquote> <a href> <ul> <ol start> <li> <img src alt data-entity-type data-entity-uuid data-image-size>'
       filter_html_help: true
       filter_html_nofollow: false
