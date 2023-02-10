@@ -248,3 +248,31 @@ media {
     display: none;
   }
 }
+
+p {
+  &.align-right {
+     text-align: right;
+   }
+  &.align-center {
+     text-align: center;
+   }
+  &.align-right {
+     text-align: left;
+   }
+}
+
+.img-size {
+  &--small {
+     max-width: 30% !important;
+   }
+  &--medium {
+     max-width: 70% !important;
+   }
+  &--large {
+     max-width: 90% !important
+   }
+}
+
+figure {
+  text-align: center;
+}

@@ -1,30 +1,23 @@
-uuid: 53ceec09-08aa-43fe-99f9-b804216347b9
+uuid: c2699e19-74c5-4e83-a1f0-ef52002c8d02
 langcode: da
 status: true
 dependencies:
   config:
     - filter.format.limited_html_link
   module:
-    - ckeditor
+    - ckeditor5
 format: limited_html_link
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Værktøjer
-          items:
-            - Source
+    items:
+      - link
+      - '|'
+      - sourceEditing
   plugins:
-    drupallink:
-      linkit_enabled: true
-      linkit_profile: default
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<a hreflang>'
 image_upload:
   status: false
   scheme: public
