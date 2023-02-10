@@ -8,7 +8,7 @@ dependencies:
 id: article_approved
 label: 'Artikel godkendt'
 format: html
-subject: 'Artikel godkendt'
+subject: 'Artikel godkendt - Skoven i Skolen'
 recipient_types:
   author:
     id: author
