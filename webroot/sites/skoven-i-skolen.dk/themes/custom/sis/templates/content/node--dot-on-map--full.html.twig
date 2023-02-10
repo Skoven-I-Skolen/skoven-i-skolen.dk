@@ -117,7 +117,7 @@
             {% if node.lat.value and node.lon.value %}
               data-lat="{{ node.lat.value }}"
               data-lon="{{ node.lon.value }}"
-              data-description="Breddegrad: {{ node.lat.value }}<br>Længde: {{ node.lon.value }}"
+              data-description="Breddegrad: {{ node.lat.value }}<br>Længdegrad: {{ node.lon.value }}"
               >
               {% elseif node.sis_map_address_dawa.value %}
                 data-address="{{ node.sis_map_address_dawa.value }}"
@@ -230,7 +230,7 @@
             <div class="facts-box__content">
               {% for file in node.field_files %}
                 <div class="facts-box__content-item">
-                  <a href="{{ file_url(file.entity.uri.value) }}" target="_blank"> {{ file.entity.filename.value }}</a>
+                  <a href="{{ file_url(file.entity.uri.value) }}" title="{{ file.entity.filename.value }}" target="_blank">{{ file.entity.filename.value }}</a>
                 </div>
               {% endfor %}
             </div>

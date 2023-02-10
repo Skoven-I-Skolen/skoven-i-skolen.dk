@@ -8,7 +8,7 @@ msgid "Latitude"
 msgstr "Breddegrad"
 
 msgid "Longitude"
-msgstr "Længde"
+msgstr "Længdegrad"
 
 msgid "Display map helpers"
 msgstr "Vis korthjælpere"
