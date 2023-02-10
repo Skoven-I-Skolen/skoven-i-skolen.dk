@@ -7,7 +7,7 @@
 .ui-autocomplete-input {
   display: block;
   width: 100%;
-  min-height: 55px;
+  min-height: 53px;
   padding: 0 30px;
   color: var(--theme-color);
   font-size: var(--base-font-size);

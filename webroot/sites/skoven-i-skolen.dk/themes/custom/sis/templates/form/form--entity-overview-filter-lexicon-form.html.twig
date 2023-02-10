@@ -13,26 +13,24 @@
 {{ attach_library('sis/overview-form') }}
 
 <form{{ attributes.addClass('overview-form') }}>
-    <div class="row overview-form__header">
-      <div class="col-xs-12 col-md-6">
-        <div class="overview-form__search-title">
-          {{ element['facets'].letter }}
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-4 filter-mobile-wrapper">
-        <div class="overview-form__search-input">
-          {% if element['facets'].text %}
-            {{ element['facets'].text }}
-            {{ element['search'].search }}
-          {% endif %}
-        </div>
+  <div class="row overview-form__header">
+    <div class="col-xs-12 col-md-6">
+      <div class="overview-form__search-title">
+        {{ element['facets'].letter }}
       </div>
     </div>
-      <div class="col-xs-12 col-md-12">
-        <div class="row">
-          {{ element['content'] }}
-        </div>
+    <div class="col-xs-12 col-md-4 filter-mobile-wrapper">
+      <div class="overview-form__search-input">
+        {% if element['facets'].text %}
+          {{ element['facets'].text }}
+          {{ element['search'].search }}
+        {% endif %}
       </div>
+    </div>
+  </div>
+  <div class="row">
+    {{ element['content'] }}
+  </div>
   {{ element['page'] }}
   {{ element['page_submit'] }}
   {{ element['form_build_id'] }}
