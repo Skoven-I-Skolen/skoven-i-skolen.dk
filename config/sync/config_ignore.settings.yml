@@ -6,3 +6,4 @@ ignored_config_entities:
   - smtp.settings
   - 'system.site:page.403'
   - 'system.site:page.404'
+  - 'workbench_email.workbench_email_template.*'
