@@ -28,7 +28,6 @@ settings:
       - insertTable
       - '|'
       - heading
-      - sourceEditing
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -60,8 +59,6 @@ settings:
         - justify
     ckeditor5_imageResize:
       allow_resize: true
-    media_media:
-      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public

@@ -1,177 +1,177 @@
-/*!***/
-/* * Type: Base.*/
-/* * CKEditor styling.*/
-/* *!*/
+/**
+ * Type: Base.
+ * CKEditor styling.
+ */
 
-/*!* stylelint-disable *!*/
-/*p.cke_widget_element,*/
-/*.cke_widget_image {*/
-/*  width: 100%;*/
+/* stylelint-disable */
+p.cke_widget_element,
+.cke_widget_image {
+  width: 100%;
 
-/*  &.align-left {*/
-/*    float: none;*/
-/*    text-align: left;*/
-/*    img {*/
-/*      margin-left: 0;*/
-/*      margin-right: auto;*/
-/*    }*/
-/*  }*/
+  &.align-left {
+    float: none;
+    text-align: left;
+    img {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
 
-/*  &.align-right {*/
-/*    float: none;*/
-/*    text-align: right;*/
-/*    img {*/
-/*      margin-left: auto;*/
-/*      margin-right: 0;*/
-/*    }*/
-/*  }*/
+  &.align-right {
+    float: none;
+    text-align: right;
+    img {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
 
-/*  &.align-center {*/
-/*    float: none;*/
-/*    text-align: center;*/
-/*    img {*/
-/*      margin-left: auto;*/
-/*      margin-right: auto;*/
-/*    }*/
-/*  }*/
+  &.align-center {
+    float: none;
+    text-align: center;
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 
-/*  .caption-img {*/
-/*    display: block;*/
-/*    margin: 0;*/
-/*    clear: both;*/
+  .caption-img {
+    display: block;
+    margin: 0;
+    clear: both;
 
-/*    figcaption {*/
-/*      display: block;*/
-/*      width: 100%;*/
-/*    }*/
-/*  }*/
-/*}*/
+    figcaption {
+      display: block;
+      width: 100%;
+    }
+  }
+}
 
-/*drupal-entity {*/
-/*  display: block !important;*/
-/*  &[data-align="left"] {*/
-/*    text-align: left;*/
-/*  }*/
-/*  &[data-align="right"] {*/
-/*    text-align: right;*/
-/*  }*/
-/*  &[data-align="center"] {*/
-/*    text-align: center;*/
-/*  }*/
-/*  > div,*/
-/*  > figure {*/
-/*    float: none !important;*/
-/*    margin: 0 auto;*/
-/*    display: inline-block;*/
-/*  }*/
-/*}*/
+drupal-entity {
+  display: block !important;
+  &[data-align="left"] {
+    text-align: left;
+  }
+  &[data-align="right"] {
+    text-align: right;
+  }
+  &[data-align="center"] {
+    text-align: center;
+  }
+  > div,
+  > figure {
+    float: none !important;
+    margin: 0 auto;
+    display: inline-block;
+  }
+}
 
-/*.cke_widget_image {*/
-/*  width: 100%;*/
-/*  float: none !important;*/
-/*  display: block !important;*/
-/*  img {*/
-/*    display: block;*/
-/*  }*/
-/*  figure {*/
-/*    display: block !important;*/
-/*  }*/
-/*  .align-left,*/
-/*  &[style="float: left;"] {*/
-/*    img {*/
-/*      margin-right: auto;*/
-/*      margin-left: 0;*/
-/*    }*/
-/*  }*/
-/*  .align-right,*/
-/*  &[style="float: right;"] {*/
-/*    img {*/
-/*      margin-right: 0;*/
-/*      margin-left: auto;*/
-/*    }*/
-/*  }*/
-/*  !*img {*!*/
-/*  !*  display: block;*!*/
-/*  !*  &[data-align="right"] {*!*/
-/*  !*    margin-left: auto;*!*/
-/*  !*    margin-right: 0;*!*/
-/*  !*  }*!*/
-/*  !*}*!*/
-/*}*/
+.cke_widget_image {
+  width: 100%;
+  float: none !important;
+  display: block !important;
+  img {
+    display: block;
+  }
+  figure {
+    display: block !important;
+  }
+  .align-left,
+  &[style="float: left;"] {
+    img {
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+  .align-right,
+  &[style="float: right;"] {
+    img {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+  /*img {*/
+  /*  display: block;*/
+  /*  &[data-align="right"] {*/
+  /*    margin-left: auto;*/
+  /*    margin-right: 0;*/
+  /*  }*/
+  /*}*/
+}
 
-/*media {*/
-/*  width: 100%;*/
-/*  display: block;*/
-/*  text-align: center;*/
+media {
+  width: 100%;
+  display: block;
+  text-align: center;
 
-/*  picture {*/
-/*    display: inline-block;*/
-/*    margin-left: auto;*/
-/*  }*/
+  picture {
+    display: inline-block;
+    margin-left: auto;
+  }
 
-/*  button {*/
-/*    position: absolute;*/
-/*    top: 10px;*/
-/*  }*/
+  button {
+    position: absolute;
+    top: 10px;
+  }
 
-/*  &.align-center,*/
-/*  &.align-left,*/
-/*  &.align-right {*/
-/*   float: none;*/
-/*  }*/
+  &.align-center,
+  &.align-left,
+  &.align-right {
+   float: none;
+  }
 
-/*  &.align-right {*/
-/*   text-align: right;*/
-/*  }*/
+  &.align-right {
+   text-align: right;
+  }
 
-/*  &.align-left {*/
-/*   text-align: left;*/
-/*  }*/
+  &.align-left {
+   text-align: left;
+  }
 
-/*  &.align-center {*/
-/*   text-align: center;*/
-/*  }*/
-/*}*/
+  &.align-center {
+   text-align: center;
+  }
+}
 
-/*p.resume {*/
-/*  font-size: 20px;*/
-/*}*/
+p.resume {
+  font-size: 20px;
+}
 
-/*img[data-cke-widget-data*='data-image-size%22%3A%22small'] {*/
-/*  max-width: 160px;*/
-/*}*/
-/*img[data-cke-widget-data*='data-image-size%22%3A%22medium'] {*/
-/*  max-width: 220px;*/
-/*}*/
-/*img[data-cke-widget-data*='data-image-size%22%3A%22large'] {*/
-/*  max-width: 480px;*/
-/*}*/
+img[data-cke-widget-data*='data-image-size%22%3A%22small'] {
+  max-width: 160px;
+}
+img[data-cke-widget-data*='data-image-size%22%3A%22medium'] {
+  max-width: 220px;
+}
+img[data-cke-widget-data*='data-image-size%22%3A%22large'] {
+  max-width: 480px;
+}
 
-/*p[data-cke-widget-data*='data-image-size%22%3A%22small'],*/
-/*figure[data-cke-widget-data*='data-image-size%22%3A%22small'] {*/
-/*  img,*/
-/*  figcaption {*/
-/*    max-width: 160px;*/
-/*  }*/
-/*}*/
-/*p[data-cke-widget-data*='data-image-size%22%3A%22medium'],*/
-/*figure[data-cke-widget-data*='data-image-size%22%3A%22medium'] {*/
-/*  img,*/
-/*  figcaption {*/
-/*    max-width: 220px;*/
-/*  }*/
-/*}*/
-/*p[data-cke-widget-data*='data-image-size%22%3A%22large'],*/
-/*figure[data-cke-widget-data*='data-image-size%22%3A%22large'] {*/
-/*  img,*/
-/*  figcaption {*/
-/*    max-width: 480px;*/
-/*  }*/
-/*}*/
+p[data-cke-widget-data*='data-image-size%22%3A%22small'],
+figure[data-cke-widget-data*='data-image-size%22%3A%22small'] {
+  img,
+  figcaption {
+    max-width: 160px;
+  }
+}
+p[data-cke-widget-data*='data-image-size%22%3A%22medium'],
+figure[data-cke-widget-data*='data-image-size%22%3A%22medium'] {
+  img,
+  figcaption {
+    max-width: 220px;
+  }
+}
+p[data-cke-widget-data*='data-image-size%22%3A%22large'],
+figure[data-cke-widget-data*='data-image-size%22%3A%22large'] {
+  img,
+  figcaption {
+    max-width: 480px;
+  }
+}
 
-/*.caption > figcaption {*/
-/*  display: inline-block;*/
-/*}*/
+.caption > figcaption {
+  display: inline-block;
+}
 
 p {
   &.align-right {

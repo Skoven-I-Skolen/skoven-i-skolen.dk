@@ -4,13 +4,11 @@ status: true
 dependencies:
   module:
     - editor
-    - entity_embed
-    - media
 _core:
   default_config_hash: afTU0GNxo-MjXuKrD1zBE1IaHJRMmN1WXWmheRdJg8o
 name: 'Simpel HTML'
 format: basic_html
-weight: -9
+weight: -8
 filters:
   filter_html:
     id: filter_html
@@ -18,7 +16,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p class> <h1 class="text-align-left text-align-center text-align-right text-align-justify"> <h2 class="text-align-left text-align-center text-align-right text-align-justify"> <h3 class="text-align-left text-align-center text-align-right text-align-justify"> <figcaption> <figure src alt data-entity-type data-entity-uuid data-align data-caption data-image-size> <img data-image-size src alt height width data-entity-uuid data-entity-type data-caption data-align> <strong> <em> <a href> <ul> <ol> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align>'
+      allowed_html: '<br> <p class> <h1 class="text-align-left text-align-center text-align-right text-align-justify"> <h2 class="text-align-left text-align-center text-align-right text-align-justify"> <h3 class="text-align-left text-align-center text-align-right text-align-justify"> <strong> <em> <a href> <ul> <ol> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-entity-uuid data-entity-type data-caption data-align data-image-size> <figcaption> <figure src alt data-entity-type data-entity-uuid data-align data-caption data-image-size>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -45,18 +43,3 @@ filters:
     status: true
     weight: 11
     settings: {  }
-  entity_embed:
-    id: entity_embed
-    provider: entity_embed
-    status: true
-    weight: 100
-    settings: {  }
-  media_embed:
-    id: media_embed
-    provider: media
-    status: true
-    weight: 100
-    settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
-      allowed_media_types: {  }
