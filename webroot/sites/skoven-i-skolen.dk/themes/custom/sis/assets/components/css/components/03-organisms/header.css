@@ -108,36 +108,3 @@
     width: 100%;
   }
 }
-
-/* Leksicon overview block search field */
-.lexicon-search-wrapper {
-  padding: 0 18px;
-
-  @media (--viewport-ms-max) {
-    padding: 0 20px;
-  }
-
-  .header-search {
-    &__submit {
-      position: absolute;
-      top: 8px;
-      right: 30px;
-      width: 34px;
-      height: 34px;
-      padding: 10px;
-      background: transparent;
-      border-radius: 50%;
-      cursor: pointer;
-
-      @media (--viewport-ms-max) {
-        right: 33px;
-      }
-
-      & svg.icon {
-        width: 18px;
-        height: 18px;
-        fill: #3d2859;
-      }
-    }
-  }
-}

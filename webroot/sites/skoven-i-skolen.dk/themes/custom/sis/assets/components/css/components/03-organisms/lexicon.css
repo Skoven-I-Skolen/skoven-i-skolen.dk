@@ -25,7 +25,8 @@
       flex-wrap: wrap;
 
       label {
-        padding-left: 18px;
+        margin-right: 18px;
+        padding-left: 0;
         color: var(--theme-link-color);
         font-size: var(--base-font-size-xlarge);
         font-family: var(--heading-font-family);
