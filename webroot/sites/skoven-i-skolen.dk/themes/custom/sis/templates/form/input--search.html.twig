@@ -10,16 +10,13 @@
  * @see template_preprocess_input()
  */
 #}
-{{ attach_library('sis/header') }}
 
-<div class="lexicon-search-wrapper" id="Search-leksikon">
-
+<div class="search-wrapper">
 	<input{{attributes}}/>{{ children }}
-	<div {{ create_attribute().setAttribute('type', 'submit').addClass('header-search__submit') }} aria-label="search">
-		{% include '@reusable-component/svg-icon.twig' with {
-                'attributes': '',
-                'svgIconName': 'search'
-              } %}
+	<div {{ create_attribute().setAttribute('type', 'submit').addClass('search__submit') }} aria-label="search">
+    {% include '@reusable-component/svg-icon.twig' with {
+      'attributes': '',
+      'svgIconName': 'search'
+    } %}
 	</div>
-
 </div>

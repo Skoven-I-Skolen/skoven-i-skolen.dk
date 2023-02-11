@@ -94,13 +94,13 @@ third_party_settings:
         required_fields: true
     group_article_metadata:
       children:
+        - group_contact
         - group_categorization
         - group_colophon
         - group_teaching_goals
         - group_factboxes
         - group_files
         - group_tid
-        - group_contact
       label: 'Artikel metadata'
       region: content
       parent_name: group_side_boxes
@@ -117,7 +117,7 @@ third_party_settings:
       label: Kategorisering
       region: content
       parent_name: group_article_metadata
-      weight: 37
+      weight: 42
       format_type: tab
       format_settings:
         classes: ''
@@ -134,7 +134,7 @@ third_party_settings:
       label: Grej
       region: content
       parent_name: group_article_metadata
-      weight: 38
+      weight: 43
       format_type: tab
       format_settings:
         classes: ''
@@ -167,7 +167,7 @@ third_party_settings:
       label: Undervisningsmål
       region: content
       parent_name: group_article_metadata
-      weight: 40
+      weight: 44
       format_type: tab
       format_settings:
         classes: ''
@@ -182,7 +182,7 @@ third_party_settings:
       label: Faktabokse
       region: content
       parent_name: group_article_metadata
-      weight: 41
+      weight: 45
       format_type: tab
       format_settings:
         classes: ''
@@ -200,7 +200,7 @@ third_party_settings:
       label: Filer
       region: content
       parent_name: group_article_metadata
-      weight: 42
+      weight: 46
       format_type: tab
       format_settings:
         classes: ''
@@ -212,8 +212,8 @@ third_party_settings:
     group_geolokation:
       children:
         - sis_map_address_dawa
-        - lon
         - lat
+        - lon
       label: 'Vis på kort'
       region: content
       parent_name: ''
@@ -336,7 +336,7 @@ third_party_settings:
       label: Kontakt
       region: content
       parent_name: group_article_metadata
-      weight: 44
+      weight: 41
       format_type: tab
       format_settings:
         classes: ''
@@ -351,7 +351,7 @@ third_party_settings:
       label: Tid
       region: content
       parent_name: group_article_metadata
-      weight: 43
+      weight: 47
       format_type: tab
       format_settings:
         classes: ''

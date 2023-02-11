@@ -79,3 +79,29 @@
     width: 100%;
   }
 }
+
+.search-wrapper {
+  position: relative;
+
+  input[type="search"] {
+    padding: 0 34px 0 10px;
+  }
+
+  .search__submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+
+    & svg.icon {
+      width: 18px;
+      height: 18px;
+      fill: #3d2859;
+    }
+  }
+}

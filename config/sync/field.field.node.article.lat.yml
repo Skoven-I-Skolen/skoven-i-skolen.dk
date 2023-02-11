@@ -10,7 +10,7 @@ field_name: lat
 entity_type: node
 bundle: article
 label: Breddegrad
-description: 'Bruges hvis der ikke er nogen adresse. Eksempelværdi: 56.1131237.'
+description: 'Bruges hvis der ikke er nogen adresse. Eksempelværdi: 11.1131237'
 required: false
 translatable: true
 default_value: {  }
