@@ -287,6 +287,14 @@ accordion:
   dependencies:
     - core/drupal
 
+add-content-form:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/add-content-form.css: {}
+  js:
+    dist/components/js/add-content-form.js: {}
+
 appetiser:
   version: VERSION
   css:
