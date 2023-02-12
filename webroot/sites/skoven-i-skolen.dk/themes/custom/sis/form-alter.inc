@@ -50,3 +50,11 @@ function sis_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form["#attached"]["library"][] = 'sis/pager-overview';
   }
 }
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function sis_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $roles = Drupal::currentUser()->getRoles();
+  $form['field_summary']['#access'] = !in_array('organization', $roles, TRUE);
+}

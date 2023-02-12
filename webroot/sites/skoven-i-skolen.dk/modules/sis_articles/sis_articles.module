@@ -95,7 +95,6 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
   }
 
-
   else if ($form_id === 'node_blog_post_form' || $form_id === 'node_blog_post_edit_form') {
     if (isset($form['field_article_type']['widget']['#options'])) {
       foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
@@ -105,6 +104,10 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
         }
       }
     }
+  }
+
+  else if ($form_id === 'add_content') {
+    $form['#attached']['library'][] = 'sis/add-content-form';
   }
 
   if (in_array('anonymous', $roles) || in_array('organization', $roles)

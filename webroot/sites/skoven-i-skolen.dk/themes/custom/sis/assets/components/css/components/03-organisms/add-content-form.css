@@ -1,0 +1,11 @@
+p .fieldset-description {
+  margin-bottom: 20px;
+}
+
+h4 .fieldset-description {
+  margin-bottom: 20px;
+}
+
+legend {
+  font-size: var(--base-font-size-xlarge);
+}

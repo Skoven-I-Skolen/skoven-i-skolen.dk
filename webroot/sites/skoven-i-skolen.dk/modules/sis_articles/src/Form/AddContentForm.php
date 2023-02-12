@@ -13,36 +13,66 @@ class AddContentForm extends FormBase {
   }
 
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $options = [];
+    $options = [
+      '<strong>' . atom_str('share-page-first-option-title') .
+      '</strong><div class="">' . atom_str('share-page-first-option-help-text') . '</div>',
+      '<strong>' . atom_str('share-page-second-option-title') .
+      '</strong><div class="">' . atom_str('share-page-second-option-help-text') . '</div>',
+      '<strong>' . atom_str('share-page-third-option-title') .
+      '</strong><div class="">' . atom_str('share-page-third-option-help-text') . '</div>',
+      '<strong>' . atom_str('share-page-fourth-option-title') .
+      '</strong><div class="">' . atom_str('share-page-fourth-option-help-text') . '</div>',
+    ];
+
+    $form['fieldset'] = [
+      '#type' => 'fieldset',
+      '#title' => atom_str('share-page-title'),
+    ];
+    $form['fieldset'][] = [
+      '#type' => 'markup',
+      '#markup' => atom_str('share-page-first-fieldset-title'),
+      '#prefix' => '<h4 class="fieldset-description">',
+      '#suffix' => '</h4>',
+    ];
+    $form['fieldset'][] = [
+      '#type' => 'markup',
+      '#markup' => atom_str('share-page-first-fieldset-suffix'),
+      '#prefix' => '<p class="fieldset-description">',
+      '#suffix' => '</p>',
+    ];
+    $form['fieldset']['radio_group_1'] = [
+      '#type' => 'checkboxes',
+      '#options' => [],
+    ];
+    $form['fieldset'][] = [
+      '#type' => 'markup',
+      '#markup' => atom_str('share-page-second-fieldset-title'),
+      '#prefix' => '<h4 class="fieldset-description">',
+      '#suffix' => '</h4>',
+    ];
+    $form['fieldset'][] = [
+      '#type' => 'markup',
+      '#markup' => atom_str('share-page-second-fieldset-suffix'),
+      '#prefix' => '<p class="fieldset-description">',
+      '#suffix' => '</p>',
+    ];
+    $form['fieldset']['radio_group_2'] = [
+      '#type' => 'checkboxes',
+      '#options' => [],
+    ];
+
+    $form['fieldset']['radio_group_1']['#options'][] = $options[0];
+    $form['fieldset']['radio_group_2']['#options'][] = $options[1];
 
     if (in_array('anonymous', \Drupal::currentUser()->getRoles())) {
-      $options = [
-        0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
-        1 => '<strong>' . atom_str('share-page-second-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text') . '</div>',
-        2 => '<strong>' . atom_str('share-page-third-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-third-option-help-text') . '</div>',
-      ];
+      $form['fieldset']['radio_group_2']['#options'][] = $options[2];
     } elseif (in_array('organization', \Drupal::currentUser()->getRoles())) {
-      $options = [
-        0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
-        1 => '<strong>' . atom_str('share-page-second-option-title-green-orgs') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text-green-orgs') . '</div>',
-        2 => '<strong>' . atom_str('share-page-fourth-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-fourth-option-help-text') . '</div>',
-      ];
-    } elseif (in_array('administrator', \Drupal::currentUser()->getRoles()) || in_array('webmaster', \Drupal::currentUser()->getRoles()) || in_array('editor', \Drupal::currentUser()->getRoles())) {
-      $options = [
-        0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
-        1 => '<strong>' . atom_str('share-page-second-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text') . '</div>',
-        2 => '<strong>' . atom_str('share-page-third-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-third-option-help-text') . '</div>',
-        3 => '<strong>' . atom_str('share-page-fourth-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-fourth-option-help-text') . '</div>',
-      ];
+      $form['fieldset']['radio_group_2']['#options'][] = $options[3];
+    } elseif (in_array('administrator', \Drupal::currentUser()->getRoles()) ||
+      in_array('webmaster', \Drupal::currentUser()->getRoles()) || in_array('editor', \Drupal::currentUser()->getRoles())) {
+      $form['fieldset']['radio_group_2']['#options'][] = $options[2];
+      $form['fieldset']['radio_group_2']['#options'][] = $options[3];
     }
-
-    $form['content_type'] = [
-      '#type' => 'radios',
-      '#title' => $this
-        ->t('Hvad vil du oprette?'),
-      '#default_value' => 1,
-      '#options' => $options,
-    ];
 
     $form['submit'] = array(
       '#type' => 'submit',
@@ -53,11 +83,29 @@ class AddContentForm extends FormBase {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    switch ($form_state->getValue('content_type')) {
-      case 0:
+    $selected = NULL;
+    $input = $form_state->getUserInput();
+    if (isset($input['radio_group_1'][0]) &&
+      $input['radio_group_1'][0] !== NULL) {
+      $selected = 'dot';
+    }
+    else if (isset($input['radio_group_2'][0]) &&
+      $input['radio_group_2'][0] != NULL) {
+      $selected = 'article';
+    }
+    else if (isset($input['radio_group_2'][1]) &&
+      $input['radio_group_2'][1] != NULL) {
+      $selected = 'education';
+    }
+    else if (isset($input['radio_group_2'][2]) &&
+      $input['radio_group_2'][2] != NULL) {
+      $selected = 'linked_article';
+    }
+    switch ($selected) {
+      case 'dot':
         $form_state->setResponse(new RedirectResponse('/node/add/dot_on_map'));
         break;
-      case 1:
+      case 'article':
         if (in_array('organization', \Drupal::currentUser()->getRoles())) {
           $form_state->setResponse(new RedirectResponse('/node/add/article'));
         }
@@ -65,14 +113,14 @@ class AddContentForm extends FormBase {
           $form_state->setResponse(new RedirectResponse('/node/add/article?type=Aktiviteter'));
         }
         break;
-      case 2:
+      case 'education':
         if (in_array('organization', \Drupal::currentUser()->getRoles())) {
           $form_state->setResponse(new RedirectResponse('/node/add/link_article?type=Undervisningsforløb'));
         } else {
           $form_state->setResponse(new RedirectResponse('/node/add/article?type=Undervisningsforløb'));
         }
         break;
-      case 3:
+      case 'linked_article':
         $form_state->setResponse(new RedirectResponse('/node/add/link_article'));
         break;
     }
