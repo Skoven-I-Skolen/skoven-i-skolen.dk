@@ -35,3 +35,9 @@ msgstr "Seneste ikke udgivet indhold"
 
 msgid "Latest articles"
 msgstr "Seneste artikler"
+
+msgid "Select media"
+msgstr "Vælg fil"
+
+msgid "Upload"
+msgstr "Vælg fil"
