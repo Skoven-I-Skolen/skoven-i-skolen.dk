@@ -13,36 +13,36 @@ class AddContentForm extends FormBase {
   }
 
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $options = [];
-
-    if (in_array('anonymous', \Drupal::currentUser()->getRoles())) {
-      $options = [
-        0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
-        1 => '<strong>' . atom_str('share-page-second-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text') . '</div>',
-        2 => '<strong>' . atom_str('share-page-third-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-third-option-help-text') . '</div>',
-      ];
-    } elseif (in_array('organization', \Drupal::currentUser()->getRoles())) {
-      $options = [
-        0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
-        1 => '<strong>' . atom_str('share-page-second-option-title-green-orgs') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text-green-orgs') . '</div>',
-        2 => '<strong>' . atom_str('share-page-fourth-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-fourth-option-help-text') . '</div>',
-      ];
-    } elseif (in_array('administrator', \Drupal::currentUser()->getRoles()) || in_array('webmaster', \Drupal::currentUser()->getRoles()) || in_array('editor', \Drupal::currentUser()->getRoles())) {
-      $options = [
-        0 => '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
-        1 => '<strong>' . atom_str('share-page-second-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text') . '</div>',
-        2 => '<strong>' . atom_str('share-page-third-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-third-option-help-text') . '</div>',
-        3 => '<strong>' . atom_str('share-page-fourth-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-fourth-option-help-text') . '</div>',
-      ];
-    }
-
-    $form['content_type'] = [
-      '#type' => 'radios',
-      '#title' => $this
-        ->t('Hvad vil du oprette?'),
-      '#default_value' => 1,
-      '#options' => $options,
+    $options = [
+      '<strong>' . atom_str('share-page-first-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-first-option-help-text') . '</div>',
+      '<strong>' . atom_str('share-page-second-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-second-option-help-text') . '</div>',
+      '<strong>' . atom_str('share-page-third-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-third-option-help-text') . '</div>',
+      '<strong>' . atom_str('share-page-fourth-option-title') . '</strong><div class="descriotion">' . atom_str('share-page-fourth-option-help-text') . '</div>',
     ];
+
+    $form['people_and_places_fieldset'] = [
+      '#type' => 'fieldset',
+      '#title' => atom_str('share-page-first-fieldset-title'),
+      '#options' => [],
+      '#name' => 'a',
+    ];
+    $form['user_materials_fieldset'] = [
+      '#type' => 'radios',
+      '#title' => atom_str('share-page-second-fieldset-title'),
+      '#options' => [],
+      '#name' => 'a',
+    ];
+    $form['people_and_places_fieldset']['#options'][] = $options[0];
+    $form['user_materials_fieldset']['#options'][] = $options[1];
+    if (in_array('anonymous', \Drupal::currentUser()->getRoles())) {
+      $form['user_materials_fieldset']['#options'][] = $options[2];
+    } elseif (in_array('organization', \Drupal::currentUser()->getRoles())) {
+      $form['user_materials_fieldset']['#options'][] = $options[3];
+    } elseif (in_array('administrator', \Drupal::currentUser()->getRoles()) ||
+      in_array('webmaster', \Drupal::currentUser()->getRoles()) || in_array('editor', \Drupal::currentUser()->getRoles())) {
+      $form['user_materials_fieldset']['#options'][] = $options[2];
+      $form['user_materials_fieldset']['#options'][] = $options[3];
+    }
 
     $form['submit'] = array(
       '#type' => 'submit',
@@ -53,6 +53,7 @@ class AddContentForm extends FormBase {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $value = $form_state->getValue('content_type');
     switch ($form_state->getValue('content_type')) {
       case 0:
         $form_state->setResponse(new RedirectResponse('/node/add/dot_on_map'));
