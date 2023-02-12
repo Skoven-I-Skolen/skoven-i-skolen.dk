@@ -148,3 +148,24 @@ function sis_preprocess_input__submit(&$variables) {
     $variables["attributes"]["value"] = t('Select media');
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function sis_preprocess_field_multiple_value_form(&$variables) {
+  if (isset($variables['elements'][0]['address']['address_line1']['#title'])) {
+    $variables['elements'][0]['address']['address_line1']['#title'] = t('Street address');
+  }
+  if (isset($variables['elements'][0]['address']['organization']['#title'])) {
+    $variables['elements'][0]['address']['organization']['#title'] = t('Company');
+  }
+  if (isset($variables['elements'][0]['address']['address_line1']['#title'])) {
+    $variables['elements'][0]['address']['address_line1']['#title'] = t('Street address');
+  }
+  if (isset($variables['elements'][0]['address']['postal_code']['#title'])) {
+    $variables['elements'][0]['address']['postal_code']['#title'] = t('Postal code');
+  }
+  if (isset($variables['elements'][0]['address']['locality']['#title'])) {
+    $variables['elements'][0]['address']['locality']['#title'] = t('City');
+  }
+}

@@ -45,14 +45,6 @@ msgstr "Vælg fil"
 msgid "You can select one @entity_type."
 msgstr "Du kan vælge ét element"
 
-msgid "Company"
-msgstr "Organisation"
+msgid "Upload"
+msgstr "Vælg fil"
 
-msgid "Street address"
-msgstr "Vejnavn og nummer"
-
-msgid "Postal code"
-msgstr "Postnummer"
-
-msgid "City"
-msgstr "By"

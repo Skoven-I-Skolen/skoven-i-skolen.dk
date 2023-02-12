@@ -72,8 +72,17 @@ msgstr "Vejnavn og nummer"
 msgid "Postal code"
 msgstr "Postnummer"
 
-msgid "City"
-msgstr "By"
-
 msgid "Original image size: @widthx@height"
 msgstr "Original billedestørrelse: @widthx@height <br />Ændr størrelsen på dit billede. 900px = fuld bredde, 450px = halv bredde. Formatet på billedet bevares."
+
+msgid "Company"
+msgstr "Organisation"
+
+msgid "Street address"
+msgstr "Vejnavn og nummer"
+
+msgid "Postal code"
+msgstr "Postnummer"
+
+msgid "City"
+msgstr "By"
