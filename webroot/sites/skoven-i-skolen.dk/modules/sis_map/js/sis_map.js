@@ -54,16 +54,20 @@ Drupal.behaviors.sis_map_okapi_integration = {
         let currentParams = query.toString();
         let toRemoveParams = new URLSearchParams({[category] : value}).toString();
         currentParams = currentParams.replaceAll('&' + toRemoveParams, '');
-        currentParams.replaceAll('?$', '?');
-        currentParams.replaceAll('&&', '&');
-        query = new URLSearchParams(currentParams);
-        window.history.replaceState('page2', 'Title', '?' + currentParams);
+        currentParams = currentParams.replaceAll(toRemoveParams, '');
+        currentParams = currentParams.replaceAll('?$', '?');
+        currentParams = currentParams.replaceAll('&&', '&');
+        query = new URLSearchParams(currentParams)
+        let pageTitle = document.getElementsByTagName("title")[0].innerHTML;
+        window.history.replaceState('kort', pageTitle, '?' + currentParams);
       }
     }
 
     function applyFiltersFromSearchQuery(query) {
+      console.log("applyFiltersFromSearchQuery");
       let iterator = query.keys();
       for (const i of iterator) {
+        console.log(i);
         query.getAll(i).forEach(function (f) {
           if (i !== 'uid') {
             var checkbox = document.querySelector('[id="' + decodeURIComponent(f) + '"]');
@@ -360,7 +364,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
 
       if (firstRender && typeof settings.sis_map !== 'undefined') {
         firstRender = false;
-        if (query.toString().includes('&')) {
+        if (query.toString().includes('=')) {
           firstRender = false;
           applyFiltersFromSearchQuery(query);
         }
