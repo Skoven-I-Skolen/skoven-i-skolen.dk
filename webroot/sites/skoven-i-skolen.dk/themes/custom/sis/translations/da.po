@@ -48,3 +48,18 @@ msgstr "Du kan vælge ét element"
 msgid "Upload"
 msgstr "Vælg fil"
 
+msgid "Address"
+msgstr "Addresse"
+
+msgid "Latitude"
+msgstr "Breddegrad"
+
+msgid "Longitude"
+msgstr "Længdegrad"
+
+msgid "Display map helpers"
+msgstr "Vis korthjælpere"
+
+msgid "Always show all filters"
+msgstr "Vis altid alle filtre"
+

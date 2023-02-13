@@ -112,9 +112,29 @@ class MapManager {
 
   public function fetchFilters($markers) {
     $filters = [];
+    $show_all_filters = $this->configurationFactory
+      ->get(self::CONFIG_KEY)
+      ->get('always_show_all_filters');
 
     foreach ($markers as $marker) {
       foreach ($marker['filters'] as $key => $value) {
+        if ($show_all_filters) {
+          $vid = $this->entityTypeManager->getStorage('taxonomy_vocabulary')
+            ->loadByProperties(['name' => $key]);
+          $vid = reset($vid);
+          $vid_name = $vid->get('vid');
+          $terms = $this->entityTypeManager->getStorage('taxonomy_term')
+            ->loadByProperties(['vid' => $vid_name]);
+          foreach ($terms as $term) {
+            if (!isset($filters[$key])) {
+              $filters[$key] = [];
+            }
+            if (!in_array($term->get('name')->getString(), $filters[$key])) {
+              $filters[$key][] = $term->get('name')->getString();
+            }
+          }
+          continue;
+        }
         if (!isset($filters[$key])) {
           $filters[$key] = [];
         }
@@ -132,6 +152,10 @@ class MapManager {
           }
         }
       }
+    }
+
+    if (isset($filters['Fag'])) {
+      ksort($filters);
     }
 
     return $filters;
