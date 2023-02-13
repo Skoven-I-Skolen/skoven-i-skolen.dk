@@ -20,3 +20,4 @@ enabled_filters:
   field_subject: field_subject
 display_map_helpers: 0
 max_visible_filters: '5'
+always_show_all_filters: 1

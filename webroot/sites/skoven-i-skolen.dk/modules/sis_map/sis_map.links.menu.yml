@@ -1,0 +1,6 @@
+sis_map.settings:
+  title: 'Kortindstillinger'
+  description: 'Indstillinger relateret til kortvisningen'
+  parent: system.admin_config_development
+  route_name: sis_map.settings
+  weight: 100
