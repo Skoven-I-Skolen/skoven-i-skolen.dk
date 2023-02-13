@@ -121,7 +121,13 @@ class MapManager {
         if (is_array($value)) {
           foreach ($value as $k => $v) {
             if (isset($filters[$key]) && !in_array($v, $filters[$key])) {
-              $filters[$key][] = $v;
+              $weight = random_int(200, 999);
+              $term = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties(['name' => $v]);
+              if ($term && $term = reset($term)) {
+                $weight = $term->getWeight();
+              }
+              $filters[$key][$weight] = $v;
+              ksort($filters[$key]);
             }
           }
         }
