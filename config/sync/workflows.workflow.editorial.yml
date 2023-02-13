@@ -45,7 +45,7 @@ type_settings:
       published: true
       default_revision: true
     unpublished:
-      label: 'Ikke udgivet'
+      label: Kladde
       weight: 6
       published: false
       default_revision: true
@@ -55,7 +55,6 @@ type_settings:
       from:
         - draft
         - published
-        - unpublished
       to: unpublished
       weight: 5
     archive:
@@ -79,7 +78,6 @@ type_settings:
     create_new_draft:
       label: 'Opret Ny Kladde'
       from:
-        - draft
         - unpublished
       to: draft
       weight: 0
