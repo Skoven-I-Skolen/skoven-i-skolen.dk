@@ -1,0 +1,29 @@
+uuid: 93a5a1ec-c3dd-402d-80b2-9392c1837aac
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_files_webmasters
+    - media.type.document
+    - node.type.article
+id: node.article.field_files_webmasters
+field_name: field_files_webmasters
+entity_type: node
+bundle: article
+label: 'Filer (webmasters)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

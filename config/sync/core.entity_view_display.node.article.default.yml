@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
+    - field.field.node.article.field_files_webmasters
     - field.field.node.article.field_header
     - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
@@ -128,6 +129,15 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_files_webmasters:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_meta_tags:
     type: metatag_empty_formatter

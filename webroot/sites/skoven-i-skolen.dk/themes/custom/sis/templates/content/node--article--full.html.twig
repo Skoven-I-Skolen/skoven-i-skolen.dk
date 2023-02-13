@@ -289,7 +289,7 @@
             </div>
           </div>
         {% endif %}
-        {% if node.field_media_downloads[0] or node.field_files[0] or node.field_copy_sheet[0] or node.field_materials[0 ]%}
+        {% if node.field_media_downloads[0] or node.field_files[0] or node.field_copy_sheet[0] or node.field_materials[0] or node.field_files_webmasters[0] %}
           <div class="facts-box">
             <div class="facts-box__title">
               Filer
@@ -332,18 +332,31 @@
                   {% endfor %}
                 </ul><br>
               {% endif %}
+              {% set files = [] %}
+
               {% if node.field_files[0] %}
+                  {% for file in node.field_files %}
+                    {% set files = files|merge({(file.entity.filename.value): file_url(file.entity.uri.value)}) %}
+                  {% endfor %}
+              {% endif %}
+
+              {% if node.field_files_webmasters[0] %}
+                  {% for file in node.field_files_webmasters %}
+                    {% set files = files|merge({(file.entity.name.value|slice(0, 40)): file_url(file.entity.field_media_document.entity.uri.value)}) %}
+                  {% endfor %}
+              {% endif %}
+
+              {% if files|length > 0 %}
                 <strong>Filer:</strong><br>
                 <ul>
-                  {% for file in node.field_files %}
-                    <li>
-                      <div class="facts-box__content-item">
-                        <a href="{{ file_url(file.entity.uri.value) }}" target="_blank">
-                          {{ file.entity.filename.value }}</a>
-                      </div>
-                    </li>
-                  {% endfor %}
-                </ul><br>
+                {% for filename in files|keys %}
+                  <li>
+                    <div class="facts-box__content-item">
+                      <a href="{{ files[filename] }}" target="_blank">{{ filename }}</a>
+                    </div>
+                  </li>
+                {% endfor %}
+               </ul>
               {% endif %}
             </div>
           </div>
