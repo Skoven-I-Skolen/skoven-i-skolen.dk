@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
+    - field.field.node.article.field_files_webmasters
     - field.field.node.article.field_header
     - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
@@ -197,6 +198,7 @@ third_party_settings:
         - field_copy_sheet
         - field_materials
         - field_files
+        - field_files_webmasters
       label: Filer
       region: content
       parent_name: group_article_metadata
@@ -212,12 +214,12 @@ third_party_settings:
     group_geolokation:
       children:
         - sis_map_address_dawa
-        - lat
         - lon
+        - lat
       label: 'Vis på kort'
       region: content
       parent_name: ''
-      weight: 17
+      weight: 18
       format_type: fieldset
       format_settings:
         classes: ''
@@ -474,7 +476,7 @@ third_party_settings:
       label: Kategorier
       region: content
       parent_name: ''
-      weight: 18
+      weight: 19
       format_type: fieldset
       format_settings:
         classes: ''
@@ -505,7 +507,7 @@ third_party_settings:
       label: Sideindstillinger
       region: content
       parent_name: ''
-      weight: 21
+      weight: 22
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -569,7 +571,7 @@ content:
     third_party_settings: {  }
   field_article_related:
     type: entity_reference_autocomplete
-    weight: 19
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
@@ -637,7 +639,7 @@ content:
         hide_guidelines: '1'
   field_copy_sheet:
     type: media_library_widget
-    weight: 35
+    weight: 34
     region: content
     settings:
       media_types: {  }
@@ -675,10 +677,24 @@ content:
     third_party_settings: {  }
   field_files:
     type: file_generic
-    weight: 37
+    weight: 36
     region: content
     settings:
       progress_indicator: throbber
+    third_party_settings: {  }
+  field_files_webmasters:
+    type: entity_browser_entity_reference
+    weight: 37
+    region: content
+    settings:
+      entity_browser: media_directories_modal
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings: {  }
+      selection_mode: selection_append
     third_party_settings: {  }
   field_header:
     type: paragraphs_classic_asymmetric
@@ -731,7 +747,7 @@ content:
     third_party_settings: {  }
   field_materials:
     type: media_library_widget
-    weight: 36
+    weight: 35
     region: content
     settings:
       media_types: {  }
@@ -745,7 +761,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 20
+    weight: 21
     region: content
     settings:
       sidebar: true
@@ -772,7 +788,7 @@ content:
     third_party_settings: {  }
   field_section_bg_graphics_pos:
     type: options_select
-    weight: 16
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
+    - field.field.node.article.field_files_webmasters
     - field.field.node.article.field_header
     - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
@@ -94,6 +95,7 @@ hidden:
   field_external_link_logo: true
   field_factboxes: true
   field_files: true
+  field_files_webmasters: true
   field_header: true
   field_institution: true
   field_list_date: true

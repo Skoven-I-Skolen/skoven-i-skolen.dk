@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
+    - field.field.node.article.field_files_webmasters
     - field.field.node.article.field_header
     - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
@@ -43,7 +44,6 @@ dependencies:
     - field.field.node.article.lat
     - field.field.node.article.lon
     - field.field.node.article.sis_map_address_dawa
-    - image.style.thumbnail
     - node.type.article
     - responsive_image.styles.3_column_flex_height
   module:
@@ -51,7 +51,6 @@ dependencies:
     - image
     - layout_builder
     - layout_builder_restrictions
-    - link
     - responsive_image
     - text
     - user
@@ -239,6 +238,7 @@ hidden:
   field_equipment: true
   field_factboxes: true
   field_files: true
+  field_files_webmasters: true
   field_institution: true
   field_list_date: true
   field_location: true
