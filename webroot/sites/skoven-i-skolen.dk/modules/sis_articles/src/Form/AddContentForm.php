@@ -104,12 +104,7 @@ class AddContentForm extends FormBase {
         $form_state->setResponse(new RedirectResponse('/node/add/dot_on_map'));
         break;
       case 'article':
-        if (in_array('organization', \Drupal::currentUser()->getRoles())) {
-          $form_state->setResponse(new RedirectResponse('/node/add/article'));
-        }
-        else {
-          $form_state->setResponse(new RedirectResponse('/node/add/article?type=Aktiviteter'));
-        }
+        $form_state->setResponse(new RedirectResponse('/node/add/article?type=Aktiviteter'));
         break;
       case 'education':
         $form_state->setResponse(new RedirectResponse('/node/add/article?type=Undervisningsforløb'));
