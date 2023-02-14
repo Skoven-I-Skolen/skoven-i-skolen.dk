@@ -335,7 +335,17 @@
 
 .inspiration-overview__image .icon,
 .inspiration-overview__type--bottom {
-  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  background-color: var(--color-primary);
+}
+
+.inspiration-overview__type__icon-container {
+  margin-left: 3px;
 }
 
 .inspiration-overview__item-link + .inspiration-overview__list-links {
