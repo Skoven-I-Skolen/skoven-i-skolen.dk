@@ -16,12 +16,11 @@ entity_type: node
 bundle: page
 label: 'Liste media (Webmasters)'
 description: 'Image used for meta tags and inline navigation'
-required: false
+required: true
 translatable: true
 default_value:
   -
     target_uuid: 659ccb42-57dc-4973-8e51-e28246c24aee
-    weight: 0
 default_value_callback: ''
 settings:
   handler: 'default:media'
