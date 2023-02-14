@@ -164,7 +164,7 @@
 
 .category-title-see-all-link-icon {
   flex: 3%;
-  content: url('/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/carret.svg');
+  content: url("/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/carret.svg");
   max-width: 14px;
   max-height: 8px;
   margin-top: 8px;
@@ -198,6 +198,7 @@
 
 .map-button {
   text-decoration: none;
+  text-align: center;
 }
 
 .see-all-checkbox {
