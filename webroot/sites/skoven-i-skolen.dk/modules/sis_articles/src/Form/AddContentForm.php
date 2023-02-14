@@ -63,14 +63,12 @@ class AddContentForm extends FormBase {
 
     $form['fieldset']['radio_group_1']['#options'][] = $options[0];
     $form['fieldset']['radio_group_2']['#options'][] = $options[1];
-
-    if (in_array('anonymous', \Drupal::currentUser()->getRoles())) {
-      $form['fieldset']['radio_group_2']['#options'][] = $options[2];
-    } elseif (in_array('organization', \Drupal::currentUser()->getRoles())) {
-      $form['fieldset']['radio_group_2']['#options'][] = $options[3];
-    } elseif (in_array('administrator', \Drupal::currentUser()->getRoles()) ||
-      in_array('webmaster', \Drupal::currentUser()->getRoles()) || in_array('editor', \Drupal::currentUser()->getRoles())) {
-      $form['fieldset']['radio_group_2']['#options'][] = $options[2];
+    $form['fieldset']['radio_group_2']['#options'][] = $options[2];
+    if (
+      in_array('administrator', \Drupal::currentUser()->getRoles()) ||
+      in_array('webmaster', \Drupal::currentUser()->getRoles()) ||
+      in_array('editor', \Drupal::currentUser()->getRoles()) ||
+      in_array('organization', \Drupal::currentUser()->getRoles())) {
       $form['fieldset']['radio_group_2']['#options'][] = $options[3];
     }
 
@@ -106,22 +104,13 @@ class AddContentForm extends FormBase {
         $form_state->setResponse(new RedirectResponse('/node/add/dot_on_map'));
         break;
       case 'article':
-        if (in_array('organization', \Drupal::currentUser()->getRoles())) {
-          $form_state->setResponse(new RedirectResponse('/node/add/article'));
-        }
-        else {
-          $form_state->setResponse(new RedirectResponse('/node/add/article?type=Aktiviteter'));
-        }
+        $form_state->setResponse(new RedirectResponse('/node/add/article?type=Aktiviteter'));
         break;
       case 'education':
-        if (in_array('organization', \Drupal::currentUser()->getRoles())) {
-          $form_state->setResponse(new RedirectResponse('/node/add/link_article?type=Undervisningsforløb'));
-        } else {
-          $form_state->setResponse(new RedirectResponse('/node/add/article?type=Undervisningsforløb'));
-        }
+        $form_state->setResponse(new RedirectResponse('/node/add/article?type=Undervisningsforløb'));
         break;
       case 'linked_article':
-        $form_state->setResponse(new RedirectResponse('/node/add/link_article'));
+        $form_state->setResponse(new RedirectResponse('/node/add/link_article?type=Undervisningsforløb'));
         break;
     }
   }
