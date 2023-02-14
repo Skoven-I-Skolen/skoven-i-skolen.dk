@@ -206,6 +206,12 @@ class ArticleContentDeliveryService {
     return $this->entityTypeManager->getViewBuilder('node')->viewMultiple($nodes, 'list');
   }
 
+  public function getPublishedContentByUser($user_id) {
+    $nodes = \Drupal::entityTypeManager()->getStorage('node')
+      ->loadByProperties(['status' => 1, 'uid' => $user_id]);
+    return $this->entityTypeManager->getViewBuilder('node')->viewMultiple($nodes, 'list');
+  }
+
   /**
    * @return \Drupal\sis_articles\Services\SeasonService
    */

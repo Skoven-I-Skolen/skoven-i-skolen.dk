@@ -63,3 +63,5 @@ msgstr "Vis korthjælpere"
 msgid "Always show all filters"
 msgstr "Vis altid alle filtre"
 
+msgid "Latest published content"
+msgstr "Seneste udgivet indhold"
