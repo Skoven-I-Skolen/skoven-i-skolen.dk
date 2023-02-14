@@ -192,12 +192,12 @@ Drupal.behaviors.sis_map_okapi_integration = {
       if (marker['lat'] && marker['lon']) {
         m.setAttribute('data-lat', marker['lat']);
         m.setAttribute('data-lon', marker['lon']);
-        description += '<br>Breddegrad: ' + marker['lat'] + "<br>Længdegrad: " + marker['lon'];
+        // description += '<br>Breddegrad: ' + marker['lat'] + "<br>Længdegrad: " + marker['lon'];
       }
 
       if (address) {
         m.setAttribute('data-address', address);
-        description += '<br>Addresse:<br>' + address;
+        // description += '<br>Addresse:<br>' + address;
       }
 
       if (marker['url']) {
