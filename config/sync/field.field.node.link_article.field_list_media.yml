@@ -12,7 +12,7 @@ entity_type: node
 bundle: link_article
 label: 'Liste media'
 description: 'Et lille billede, der vises på interne søgeresultater og andre lister. Det kan være det samme billede som artiklens billede.'
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
