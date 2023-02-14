@@ -359,6 +359,7 @@
 .ui-dialog.article-modal {
   width: 96% !important;
   padding: 0;
+  font-family: var(--base-font-family);
   border-radius: 10px;
 
   @media (--viewport-sm-min) {
@@ -437,6 +438,7 @@
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
+  font-family: var(--base-font-family);
 
   &__content {
     display: flex;
@@ -481,6 +483,10 @@
     &-logo {
       display: flex;
       justify-content: center;
+
+      img {
+        max-height: 100px;
+      }
     }
   }
 
