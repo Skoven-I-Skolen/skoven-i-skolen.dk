@@ -335,7 +335,17 @@
 
 .inspiration-overview__image .icon,
 .inspiration-overview__type--bottom {
-  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  background-color: var(--color-primary);
+}
+
+.inspiration-overview__type__icon-container {
+  margin-left: 3px;
 }
 
 .inspiration-overview__item-link + .inspiration-overview__list-links {
@@ -349,6 +359,7 @@
 .ui-dialog.article-modal {
   width: 96% !important;
   padding: 0;
+  font-family: var(--base-font-family);
   border-radius: 10px;
 
   @media (--viewport-sm-min) {
@@ -427,6 +438,7 @@
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
+  font-family: var(--base-font-family);
 
   &__content {
     display: flex;
@@ -471,6 +483,10 @@
     &-logo {
       display: flex;
       justify-content: center;
+
+      img {
+        max-height: 100px;
+      }
     }
   }
 
