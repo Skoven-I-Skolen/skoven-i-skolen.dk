@@ -130,7 +130,7 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        description: 'Hvis din kategori ikke findes, så send en besked til <a href="mailto:info@skoven-i-skolen.dk">info@skoven-i-skolen.dk</a>'
+        description: 'Hvis din kategori ikke findes her, kan du springe denne del over og fortsætte. Skriv gerne til <a href="mailto:skoven-i-skolen@nst.dk">skoven-i-skolen@nst.dk</a> og fortæl, hvilken kategori, du mangler.'
         required_fields: true
     group_information:
       children:
