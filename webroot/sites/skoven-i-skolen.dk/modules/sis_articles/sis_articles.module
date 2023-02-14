@@ -120,6 +120,7 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
       $form['revision']['#access'] = FALSE;
     }
     if (isset($form['moderation_state']['#access'])) {
+      $form["moderation_state"]["widget"][0]["state"]["#default_value"] = 'unpublished';
       $form['moderation_state']['#access'] = FALSE;
     }
     if (isset($form['revision_log']['#access'])) {
