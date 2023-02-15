@@ -65,3 +65,18 @@ msgstr "Vis altid alle filtre"
 
 msgid "Latest published content"
 msgstr "Seneste udgivet indhold"
+
+msgid "Text alternative"
+msgstr "Alternativtekst - Hvad forestiller billedet"
+
+msgid "Add missing alternative text"
+msgstr "Tilføj manglende alternativtekst"
+
+msgid "Align center and break text"
+msgstr "Juster centreret og bryd teksten"
+
+msgid "Align left and wrap text"
+msgstr "Juster til venstre, og ombryd tekst"
+
+msgid "Align right and wrap text"
+msgstr "Juster til højre, og ombryd tekst"
