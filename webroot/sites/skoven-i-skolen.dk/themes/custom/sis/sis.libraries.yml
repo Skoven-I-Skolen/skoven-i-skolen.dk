@@ -548,3 +548,9 @@ modal-article:
     dist/components/js/modal-article.js: {}
   dependencies:
     - core/drupal
+
+ckeditor5:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/ckeditor5.css: {}
