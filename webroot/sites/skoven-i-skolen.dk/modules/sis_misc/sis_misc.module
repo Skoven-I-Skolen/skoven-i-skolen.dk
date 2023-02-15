@@ -9,6 +9,7 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -159,4 +160,20 @@ function sis_misc_simple_sitemap_links_alter(array &$links) {
       $links[$key]['alternate_urls'][$language] = $alternate_url;
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function sis_misc_preprocess_views_view_unformatted__media_directories_base(&$variables) {
+  $a = 0 ;
+}
+
+function sis_misc_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+ if (isset($view->element["#name"]) && $view->element["#name"] === 'media_directories_base') {
+   $query->orderby[] = [
+     'field' => 'media_field_data.name',
+     'direction' => 'ASC',
+   ];
+ }
 }
