@@ -1,0 +1,101 @@
+uuid: 71711cd9-9287-4207-ae62-dbe5c61a4b43
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.link_article.body
+    - field.field.node.link_article.field_article_months
+    - field.field.node.link_article.field_article_type
+    - field.field.node.link_article.field_class
+    - field.field.node.link_article.field_description
+    - field.field.node.link_article.field_external_link
+    - field.field.node.link_article.field_external_link_logo
+    - field.field.node.link_article.field_list_media
+    - field.field.node.link_article.field_list_media_anonymous
+    - field.field.node.link_article.field_location
+    - field.field.node.link_article.field_season
+    - field.field.node.link_article.field_subject
+    - node.type.link_article
+    - responsive_image.styles.3_column_flex_height
+  module:
+    - layout_builder
+    - link
+    - responsive_image
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.link_article.full
+targetEntityType: node
+bundle: link_article
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_external_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_external_link_logo:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: small
+      image_link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_list_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 3_column_flex_height
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_list_media_anonymous:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: 3_column_flex_height
+      image_link: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_article_months: true
+  field_article_type: true
+  field_class: true
+  field_location: true
+  field_season: true
+  field_subject: true
+  langcode: true

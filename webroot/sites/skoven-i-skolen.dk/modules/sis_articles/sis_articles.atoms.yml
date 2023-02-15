@@ -22,3 +22,139 @@ atoms:
     category: Artikel sider
     default:
       da: 'Tak for dit bidrag til Skoven-i-Skolen. Dit indhold udgives efter en gennemgang fra en af vores redaktører.'
+
+  share-page-first-option-title:
+    type: textfield
+    title: Del side - først valg - titel
+    category: Del side
+    default:
+      da: 'Vil du have en prik på kortet?'
+      en: 'Vil du have en prik på kortet?'
+    weight: 1
+
+  share-page-first-option-help-text:
+    type: textfield
+    title: Del side - først valg - hjælpetekst
+    category: Del side
+    default:
+      da: 'For mennesker og steder, som kan hjælpe med udeskole lokalt, fx naturskoler, jægere, museer eller andet.'
+      en: 'For mennesker og steder, som kan hjælpe med udeskole lokalt, fx naturskoler, jægere, museer eller andet.'
+    weight: 2
+
+  share-page-second-option-title:
+    type: textfield
+    title: Del side - andet valg - titel
+    category: Del side
+    default:
+      da: 'Vil du dele en aktivitet?'
+      en: 'Vil du dele en aktivitet?'
+    weight: 3
+
+  share-page-second-option-help-text:
+    type: textfield
+    title: Del side - andet valg - hjælpetekst
+    category: Del side
+    default:
+      da: 'En aktivitet er skrevet for børn – og beskriver kort en udeaktivitet - fx snit en pilefløjte.'
+      en: 'En aktivitet er skrevet for børn – og beskriver kort en udeaktivitet - fx snit en pilefløjte.'
+    weight: 4
+
+  share-page-second-option-title-green-orgs:
+    type: textfield
+    title: Del side - andet valg - titel - for grønne organisationer
+    category: Del side
+    default:
+      da: 'Vil du oprette en artikel?'
+      en: 'Vil du oprette en artikel?'
+    weight: 5
+
+  share-page-second-option-help-text-green-orgs:
+    type: textfield
+    title: Del side - andet valg - hjælpetekst - for grønne organisationer
+    category: Del side
+    default:
+      da: 'En aktivitet, et undervisningsforløb, eller en anden artikeltype, der vises i interne søgeresultater og på din visitkortside'
+      en: 'En aktivitet, et undervisningsforløb, eller en anden artikeltype, der vises i interne søgeresultater og på din visitkortside'
+    weight: 6
+
+  share-page-third-option-title:
+    type: textfield
+    title: Del side - tredje valg - titel
+    category: Del side
+    default:
+      da: 'Vil du lægge et undervisningsforløb på kortet?'
+      en: 'Vil du lægge et undervisningsforløb på kortet?'
+    weight: 7
+
+  share-page-third-option-help-text:
+    type: textfield
+    title: Del side - tredje valg - hjælpetekst
+    category: Del side
+    default:
+      da: 'Et undervisningsforløb er skrevet for lærere og knyttet til fag, klasse og faglige mål.'
+      en: 'Et undervisningsforløb er skrevet for lærere og knyttet til fag, klasse og faglige mål.'
+    weight: 8
+
+  share-page-fourth-option-title:
+    type: textfield
+    title: Del side - fjerde valg - titel
+    category: Del side
+    default:
+      da: 'Vil du oprette en linkartikel til indhold fra en anden hjemmeside?'
+      en: 'Vil du oprette en linkartikel til indhold fra en anden hjemmeside?'
+    weight: 9
+
+  share-page-fourth-option-help-text:
+    type: textfield
+    title: Del side - fjerde valg - hjælpetekst
+    category: Del side
+    default:
+      da: 'En linkartikel er indhold fra en anden hjemmeside som du ønsker at vise i listen over aktiviteter etc.'
+      en: 'En linkartikel er indhold fra en anden hjemmeside som du ønsker at vise i listen over aktiviteter etc.'
+    weight: 10
+
+  share-page-first-fieldset-title:
+    type: textfield
+    title: Del side - først fieldset - titel
+    category: Del side
+    default:
+      da: 'Mennesker og steder'
+      en: 'Mennesker og steder'
+    weight: 10
+
+  share-page-first-fieldset-suffix:
+    type: textfield
+    title: Del side - først fieldset - titel - suffix
+    category: Del side
+    default:
+      da: ''
+      en: ''
+    weight: 10
+
+  share-page-second-fieldset-title:
+    type: textfield
+    title: Del side - andet fieldset - titel
+    category: Del side
+    default:
+      da: 'Brugernes materialer'
+      en: 'Brugernes materialer'
+    weight: 10
+
+  share-page-second-fieldset-suffix:
+    type: textfield
+    title: Del side - andet fieldset - titel - suffix
+    category: Del side
+    default:
+      da: 'Del en ide til udeskole. Din ide bliver vist på hjemmesiden i den kategori, som hedder Brugernes materialer. Din ide kan – men skal ikke – knyttes til et sted på kortet.'
+      en: 'Del en ide til udeskole. Din ide bliver vist på hjemmesiden i den kategori, som hedder Brugernes materialer. Din ide kan – men skal ikke – knyttes til et sted på kortet.'
+    weight: 10
+
+  share-page-title:
+    type: textfield
+    title: Del side - sidetitel
+    category: Del side
+    default:
+      da: 'Hvad vil du oprette?'
+      en: 'Hvad vil du oprette?'
+    weight: 10
+

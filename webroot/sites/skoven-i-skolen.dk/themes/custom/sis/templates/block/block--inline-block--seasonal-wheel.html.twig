@@ -250,7 +250,9 @@
 																																																																																																													c-0.3,1.8-0.1,3.7,0.3,5.5L276,233.2z"/>
 						</g>
 						<path class="st2 red-knob" @click="getCurrentMonthRandomArticle()" d="M290,332.4c23.4,0,42.4-19,42.4-42.4c0-23.4-19-42.4-42.4-42.4c-23.4,0-42.4,19-42.4,42.4
-																																																																																												C247.6,313.4,266.6,332.4,290,332.4z"/>
+																																																																																												C247.6,313.4,266.6,332.4,290,332.4z">
+              <title>Klik og få en ide</title>
+            </path>
 					</svg>
 				</div>
 			</div>
@@ -294,9 +296,12 @@
 			<div class="modal__dialog">
 				<div class="modal__header">
 					<button type="button" class="modal__close" @click="closeModal()">
-						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 352 512">
-							<path fill="#3D2859" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path>
-						</svg>
+            {% endverbatim %}
+              {% include '@reusable-component/svg-icon.twig' with {
+                'attributes': '',
+                'svgIconName': 'close-modal'
+              } %}
+            {% verbatim %}
 					</button>
 				</div>
 				<div class="modal__body">

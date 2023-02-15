@@ -13,13 +13,16 @@ h6 {
   margin-bottom: 10px;
   font-weight: var(--heading-font-weight);
   font-family: var(--heading-font-family);
-  word-break: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
+
+  @media (--viewport-sm-max) {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
 }
 
 h1 {
-  font-size: var(--base-font-size-xxlarge);
+  font-size: var(--base-font-size-xxxlarge);
   line-height: 1;
 
   @media (--viewport-ms-min) {
@@ -32,20 +35,20 @@ h1 {
 }
 
 h2 {
-  font-size: var(--base-font-size-xlarge);
+  font-size: var(--base-font-size-xxlarge);
   line-height: 1.2;
 
   @media (--viewport-ms-min) {
-    font-size: var(--base-font-size-xxxlarge);
+    font-size: var(--base-font-size-xxlarge);
   }
 
   @media (--viewport-sm-min) {
-    font-size: var(--base-font-size-xxxlarge);
+    font-size: var(--base-font-size-xxlarge);
   }
 }
 
 h3 {
-  font-size: var(--base-font-size-xxlarge);
+  font-size: var(--base-font-size-xlarge);
   line-height: 1.2;
 
   @media (--viewport-ms-min) {
@@ -53,7 +56,7 @@ h3 {
   }
 
   @media (--viewport-sm-min) {
-    font-size: var(--base-font-size-xxlarge);
+    font-size: var(--base-font-size-xlarge);
   }
 }
 
@@ -62,7 +65,7 @@ h4 {
   line-height: 1.2;
 
   @media (--viewport-sm-min) {
-    font-size: var(--base-font-size-xlarge);
+    font-size: var(--base-font-size-large);
   }
 }
 
@@ -72,6 +75,7 @@ h5 {
 
 p {
   margin-top: 0;
+  margin-bottom: 20px;
 
   &.resume {
     font-size: var(--base-font-size-large);

@@ -1,0 +1,311 @@
+uuid: 716d93a7-78fa-4d6e-8200-03cbb6c83c56
+langcode: da
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.media_directories_modal
+    - field.field.node.link_article.body
+    - field.field.node.link_article.field_article_months
+    - field.field.node.link_article.field_article_type
+    - field.field.node.link_article.field_class
+    - field.field.node.link_article.field_description
+    - field.field.node.link_article.field_external_link
+    - field.field.node.link_article.field_external_link_logo
+    - field.field.node.link_article.field_list_media
+    - field.field.node.link_article.field_list_media_anonymous
+    - field.field.node.link_article.field_location
+    - field.field.node.link_article.field_season
+    - field.field.node.link_article.field_subject
+    - image.style.thumbnail
+    - node.type.link_article
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - entity_browser
+    - field_group
+    - image
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - title
+        - body
+        - field_external_link
+        - field_external_link_logo
+      label: Indhold
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_list_view:
+      children:
+        - field_description
+        - field_list_media_anonymous
+        - field_list_media
+      label: Listevisning
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_categories:
+      children:
+        - group_categorie_panes
+      label: Kategorier
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: 'Her kan du vælge, hvilke fag, klassetrin, sted eller årstid, som passer bedst til din aktivitet/dit undervisningsforløb.'
+        required_fields: true
+    group_categorie_panes:
+      children:
+        - group_subject
+        - group_location
+        - group_class
+        - group_season
+        - group_month
+      label: Kategorier
+      region: content
+      parent_name: group_categories
+      weight: 20
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_subject:
+      children:
+        - field_subject
+      label: Fag
+      region: content
+      parent_name: group_categorie_panes
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_location:
+      children:
+        - field_location
+      label: Sted
+      region: content
+      parent_name: group_categorie_panes
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_class:
+      children:
+        - field_class
+      label: Klasse
+      region: content
+      parent_name: group_categorie_panes
+      weight: 22
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_season:
+      children:
+        - field_season
+      label: Årstid
+      region: content
+      parent_name: group_categorie_panes
+      weight: 23
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_month:
+      children:
+        - field_article_months
+      label: Måned
+      region: content
+      parent_name: group_categorie_panes
+      weight: 24
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.link_article.default
+targetEntityType: node
+bundle: link_article
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_article_months:
+    type: options_buttons
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_article_type:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_class:
+    type: options_buttons
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_external_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_external_link_logo:
+    type: image_image
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_list_media:
+    type: entity_browser_entity_reference
+    weight: 3
+    region: content
+    settings:
+      entity_browser: media_directories_modal
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: small
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_list_media_anonymous:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_location:
+    type: options_buttons
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_season:
+    type: options_buttons
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_subject:
+    type: options_buttons
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Skriv din titel her'
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true
+  promote: true
+  sticky: true
+  url_redirects: true

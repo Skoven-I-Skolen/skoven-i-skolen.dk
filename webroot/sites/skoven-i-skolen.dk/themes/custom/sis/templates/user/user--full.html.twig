@@ -70,7 +70,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-8 col-md-8">
 						<div class="news-page__latest-header">
-							<h3>{{ 'Seneste artikler'|t }}</h3>
+							<h3>{{ 'Latest published content'|t }}</h3>
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-4 col-md-4">
@@ -92,5 +92,32 @@
 				</div>
 			</div>
 		{% endif %}
+    {% if unpublished_content_by_author %}
+      <div class="news-page__latest section section--spacing-bottom-none">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-8">
+            <div class="news-page__latest-header">
+              <h3>{{ 'Latest unpublished content'|t }}</h3>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="swiper-navigation">
+              <div class="slider-pager-count">
+                {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="news-page__latest-items js-news-page__latest-items swiper">
+              <div class="swiper-wrapper">
+                {{ unpublished_content_by_author }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
 	</div>
 </article>

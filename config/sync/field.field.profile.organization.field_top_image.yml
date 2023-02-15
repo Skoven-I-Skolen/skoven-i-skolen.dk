@@ -10,7 +10,7 @@ id: profile.organization.field_top_image
 field_name: field_top_image
 entity_type: profile
 bundle: organization
-label: 'Top billede'
+label: 'Top billede (webmasters)'
 description: ''
 required: false
 translatable: false

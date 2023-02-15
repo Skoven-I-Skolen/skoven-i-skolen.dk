@@ -81,6 +81,7 @@
   'article-page',
   node.field_section_bg_graphics.value ? 'section--background-graphics' : '',
 ] %}
+
 <article{{ attributes.addClass(classes) }}>
   {% if node.field_section_bg_graphics.value %}
     <img src="/{{ directory }}/dist/images/{{ node.field_section_bg_graphics.value }}.svg" class="section-bg-graphics__image section-bg-graphics__image--{{ node.field_section_bg_graphics.value }} section-bg-graphics__position--{{ node.field_section_bg_graphics_pos.value }}" />
@@ -110,7 +111,7 @@
                 {{ content.field_article_image|render }}
               {% elseif content.field_article_image_migrated|render is not empty %}
                 {{ content.field_article_image_migrated|render }}
-			      {% endif %}
+            {% endif %}
           </div>
           <div class="article-page__content">
             {{ content.body }}
@@ -124,78 +125,78 @@
               'attributes': '',
               'svgIconName': 'printer'
             } %}
-						<span class="print-button__text">Print</span>
-					</a>
-				</div>
-				{% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] %}
-					<div class="facts-box">
-						<div class="facts-box__title">
-							Hvem, hvad, hvor
-						</div>
-						<div class="facts-box__content">
-							{% if node.field_subject[0] %}
-								<div class="facts-box__content-item">
-									<div class="facts-box__content-item-label">
-										Fag
-									</div>
-									<div class="facts-box__content-item-value">
-										{% for subject in node.field_subject %}
-											{{ subject.entity.name.value }}{{ loop.index != node.field_subject|length ? ', ' : '' }}
-										{% endfor %}
-									</div>
-								</div>
-							{% endif %}
-							{% if node.field_class[0] %}
-								<div class="facts-box__content-item">
-									<div class="facts-box__content-item-label">
-										Klasse
-									</div>
-									<div class="facts-box__content-item-value">
-										{% for class in node.field_class %}
-											{{ class.entity.name.value }}{{ loop.index != node.field_class|length ? ', ' : '' }}
-										{% endfor %}
-									</div>
-								</div>
-							{% endif %}
-							{% if node.field_location[0] %}
-								<div class="facts-box__content-item">
-									<div class="facts-box__content-item-label">
-										Sted
-									</div>
-									<div class="facts-box__content-item-value">
-										{% for location in node.field_location %}
-											{{ location.entity.name.value }}{{ loop.index != node.field_location|length ? ', ' : '' }}
-										{% endfor %}
-									</div>
-								</div>
-							{% endif %}
-							{% if node.field_season[0] %}
-								<div class="facts-box__content-item">
-									<div class="facts-box__content-item-label">
-										&Aring;rstid
-									</div>
-									<div class="facts-box__content-item-value">
-										{% for season in node.field_season %}
-											{{ season.entity.name.value }}{{ loop.index != node.field_season|length ? ', ' : '' }}
-										{% endfor %}
-									</div>
-								</div>
-							{% endif %}
-						</div>
-					</div>
-				{% endif %}
-				{% if node.field_equipment.value %}
-					<div class="facts-box">
-						<div class="facts-box__title">
-							Grej
-						</div>
-						<div class="facts-box__content">
-							{{ node.field_equipment.value|t }}
-						</div>
-					</div>
-				{% endif %}
-				{% if node.field_factboxes.value %}
-					{% for factboxe in node.field_factboxes %}
+            <span class="print-button__text">Print</span>
+          </a>
+        </div>
+        {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Hvem, hvad, hvor
+            </div>
+            <div class="facts-box__content">
+              {% if node.field_subject[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Fag
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {% for subject in node.field_subject %}
+                      {{ subject.entity.name.value }}{{ loop.index != node.field_subject|length ? ', ' : '' }}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+              {% if node.field_class[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Klasse
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {% for class in node.field_class %}
+                      {{ class.entity.name.value }}{{ loop.index != node.field_class|length ? ', ' : '' }}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+              {% if node.field_location[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Sted
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {% for location in node.field_location %}
+                      {{ location.entity.name.value }}{{ loop.index != node.field_location|length ? ', ' : '' }}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+              {% if node.field_season[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    &Aring;rstid
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {% for season in node.field_season %}
+                      {{ season.entity.name.value }}{{ loop.index != node.field_season|length ? ', ' : '' }}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_equipment.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Grej
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_equipment.value|t }}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_factboxes.value %}
+          {% for factboxe in node.field_factboxes %}
             {% if factboxe.entity.field_factbox_content.value %}
               <div class="facts-box">
                 <div class="facts-box__title">
@@ -219,186 +220,199 @@
                 </div>
               </div>
             {% endif %}
-					{% endfor %}
-				{% endif %}
-				{% if node.field_time.value %}
-					<div class="facts-box">
-						<div class="facts-box__title">
-							Tid
-						</div>
-						<div class="facts-box__content">
-							{{ node.field_time.value|t }}
-						</div>
-					</div>
-				{% endif %}
-				{% if node.field_teaching_goals.value %}
-					<div class="facts-box">
-						<div class="facts-box__title">
-							Undervisningsm&aring;l
-						</div>
-						<div class="facts-box__content undervi-box">
-							{{ content.field_teaching_goals }}
-						</div>
-						{% if content.field_teaching_goals|render|striptags|length > 300 %}
-							<div class="facts-box__content undervi-box--read-more">
-								<a class="read-more-link-modal js-article-modal-button-open">L&aelig;s mere</a>
-							</div>
-						{% endif %}
-					</div>
-				{% endif %}
-				{% if node.field_colophon[0] or node.field_colophon_author[0] or node.field_colophon_editor[0] or node.field_colophon_photographer[0] %}
-					<div class="facts-box">
-						<div class="facts-box__title">
-							Kolofon
-						</div>
-						<div class="facts-box__content">
-							{% if node.field_colophon[0] %}
-								{{ node.field_colophon.value|t }}
-							{% endif %}
-							{% if node.field_colophon_author[0] %}
-								<div class="facts-box__content-item">
-									<div class="facts-box__content-item-label">
-										Forfatter
-									</div>
-									<div class="facts-box__content-item-value">
-										{{ node.field_colophon_author.value }}
-									</div>
-								</div>
-							{% endif %}
-							{% if node.field_colophon_editor[0] %}
-								<div class="facts-box__content-item">
-									<div class="facts-box__content-item-label">
-										Redakt&oslash;r
-									</div>
-									<div class="facts-box__content-item-value">
-										{{ node.field_colophon_editor.value }}
-									</div>
-								</div>
-							{% endif %}
-							{% if node.field_colophon_photographer[0] %}
-								<div class="facts-box__content-item">
-									<div class="facts-box__content-item-label">
-										Foto
-									</div>
-									<div class="facts-box__content-item-value">
-										{{ node.field_colophon_photographer.value }}
-									</div>
-								</div>
-							{% endif %}
-						</div>
-					</div>
-				{% endif %}
-				{% if node.field_media_downloads[0] or node.field_files[0] or node.field_copy_sheet[0] or node.field_materials[0 ]%}
-					<div class="facts-box">
-						<div class="facts-box__title">
-							Filer
-						</div>
-						<div class="facts-box__content">
-							{% if node.field_materials[0] %}
-								<strong>Materialer:</strong><br>
-								<ul>
-									{% for file in node.field_materials %}
-										<li>
-											<div class="facts-box__content-item">
-												<a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
-											</div>
-										</li>
-									{% endfor %}
-								</ul><br>
-							{% endif %}
-							{% if node.field_media_downloads[0] %}
-								<strong>Media:</strong><br>
-								<ul>
-									{% for file in node.field_media_downloads %}
-										<li>
-											<div class="facts-box__content-item">
-												<a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
-											</div>
-										</li>
-									{% endfor %}
-								</ul><br>
-							{% endif %}
-							{% if node.field_copy_sheet[0] %}
-								<strong>Kopiark:</strong><br>
-								<ul>
-									{% for file in node.field_copy_sheet %}
-										<li>
-											<div class="facts-box__content-item">
-												<a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">
-													{{ file.entity.name.value|slice(0, 40) }}</a>
-											</div>
-										</li>
-									{% endfor %}
-								</ul><br>
-							{% endif %}
-							{% if node.field_files[0] %}
-								<strong>Filer:</strong><br>
-								<ul>
-									{% for file in node.field_files %}
-										<li>
-											<div class="facts-box__content-item">
-												<a href="{{ file_url(file.entity.uri.value) }}" target="_blank">
-													{{ file.entity.filename.value }}</a>
-											</div>
-										</li>
-									{% endfor %}
-								</ul><br>
-							{% endif %}
-						</div>
-					</div>
-				{% endif %}
-				{% if node.field_institution.value %}
-					<div class="facts-box">
-						<div class="facts-box__title">
-							Institution
-						</div>
-						<div class="facts-box__content">
-							{{ node.field_institution.value|t }}
-						</div>
-					</div>
-				{% endif %}
-				{% if node.field_contact_person.value %}
-					<div class="facts-box">
-						<div class="facts-box__title">
-							Kontaktperson
-						</div>
-						<div class="facts-box__content">
-							{{ node.field_contact_person.value|t }}
-						</div>
-					</div>
-				{% endif %}
+          {% endfor %}
+        {% endif %}
+        {% if node.field_time.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Tid
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_time.value|t }}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_teaching_goals.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Undervisningsm&aring;l
+            </div>
+            <div class="facts-box__content undervi-box">
+              {{ content.field_teaching_goals }}
+            </div>
+            {% if content.field_teaching_goals|render|striptags|length > 300 %}
+              <div class="facts-box__content undervi-box--read-more">
+                <a class="read-more-link-modal js-article-modal-button-open">L&aelig;s mere</a>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if node.field_colophon[0] or node.field_colophon_author[0] or node.field_colophon_editor[0] or node.field_colophon_photographer[0] %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Kolofon
+            </div>
+            <div class="facts-box__content">
+              {% if node.field_colophon[0] %}
+                {{ node.field_colophon.value|t }}
+              {% endif %}
+              {% if node.field_colophon_author[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Forfatter
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {{ node.field_colophon_author.value }}
+                  </div>
+                </div>
+              {% endif %}
+              {% if node.field_colophon_editor[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Redakt&oslash;r
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {{ node.field_colophon_editor.value }}
+                  </div>
+                </div>
+              {% endif %}
+              {% if node.field_colophon_photographer[0] %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">
+                    Foto
+                  </div>
+                  <div class="facts-box__content-item-value">
+                    {{ node.field_colophon_photographer.value }}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_media_downloads[0] or node.field_files[0] or node.field_copy_sheet[0] or node.field_materials[0] or node.field_files_webmasters[0] %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Filer
+            </div>
+            <div class="facts-box__content">
+              {% if node.field_materials[0] %}
+                <strong>Materialer:</strong><br>
+                <ul>
+                  {% for file in node.field_materials %}
+                    <li>
+                      <div class="facts-box__content-item">
+                        <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul><br>
+              {% endif %}
+              {% if node.field_media_downloads[0] %}
+                <strong>Media:</strong><br>
+                <ul>
+                  {% for file in node.field_media_downloads %}
+                    <li>
+                      <div class="facts-box__content-item">
+                        <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">{{ file.entity.name.value }}</a>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul><br>
+              {% endif %}
+              {% if node.field_copy_sheet[0] %}
+                <strong>Kopiark:</strong><br>
+                <ul>
+                  {% for file in node.field_copy_sheet %}
+                    <li>
+                      <div class="facts-box__content-item">
+                        <a href="{{ file_url(file.entity.field_media_document.entity.uri.value) }}" target="_blank">
+                          {{ file.entity.name.value|slice(0, 40) }}</a>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul><br>
+              {% endif %}
+              {% set files = [] %}
 
-				{% if inspirations %}
-					<div class="facts-box">
-						<div class="facts-box__title">
-							Inspiration og lignende materialer
-						</div>
-						<div class="facts-box__content facts-box__inspiration">
-							{{ inspirations }}
-						</div>
-					</div>
-				{% endif %}
+              {% if node.field_files[0] %}
+                  {% for file in node.field_files %}
+                    {% set files = files|merge({(file.entity.filename.value): file_url(file.entity.uri.value)}) %}
+                  {% endfor %}
+              {% endif %}
 
-				<div class="facts-box__button-below-wrapper">
-					{% if atom_str('text-of-button-below-fact-boxes') %}
-						<a href="{{ atom_str('link-of-button-below-fact-boxes') }}" target="_blank">
-							<button type="button" class="facts-box__button-below button button--green">{{ atom('text-of-button-below-fact-boxes') }}</button>
-						</a>
-					{% endif %}
-				</div>
-			</div>
-		</div>
+              {% if node.field_files_webmasters[0] %}
+                  {% for file in node.field_files_webmasters %}
+                    {% set files = files|merge({(file.entity.name.value|slice(0, 40)): file_url(file.entity.field_media_document.entity.uri.value)}) %}
+                  {% endfor %}
+              {% endif %}
+
+              {% if files|length > 0 %}
+                <strong>Filer:</strong><br>
+                <ul>
+                {% for filename in files|keys %}
+                  <li>
+                    <div class="facts-box__content-item">
+                      <a href="{{ files[filename] }}" target="_blank">{{ filename }}</a>
+                    </div>
+                  </li>
+                {% endfor %}
+               </ul>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_institution.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Institution
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_institution.value|t }}
+            </div>
+          </div>
+        {% endif %}
+        {% if node.field_contact_person.value %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Kontaktperson
+            </div>
+            <div class="facts-box__content">
+              {{ node.field_contact_person.value|t }}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if inspirations %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Inspiration og lignende materialer
+            </div>
+            <div class="facts-box__content facts-box__inspiration">
+              {{ inspirations }}
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="facts-box__button-below-wrapper">
+          {% if atom_str('text-of-button-below-fact-boxes') %}
+            <a href="{{ atom_str('link-of-button-below-fact-boxes') }}" target="_blank">
+              <button type="button" class="facts-box__button-below button button--green">{{ atom('text-of-button-below-fact-boxes') }}</button>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
 
     {% if content.field_article_related | render is not empty %}
       <div class="article-page__related section section--spacing-bottom-none">
         <div class="row">
-          <div class="col-xs-12 col-sm-8 col-md-8">
+          <div class="col-xs-12 col-ms-6 col-sm-7 col-md-8">
             <div class="article-page__related-header">
-              <h3>Måske du også leder efter...</h3>
-              <p>Gå på opdagelse i vores aktiviteter og materialer og find lige det, der passer til din undervisning.</p>
+              <h2>Læs også</h2>
+{#              <p>Gå på opdagelse i vores aktiviteter og materialer og find lige det, der passer til din undervisning.</p>#}
             </div>
           </div>
-          <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="col-xs-12 col-ms-6 col-sm-5 col-md-4">
 
             <div class="swiper-navigation">
               {% if content.field_article_related|length > 0 %}
@@ -424,49 +438,49 @@
 		{% elseif related %}
       <div class="article-page__related section section--spacing-bottom-none">
 				<div class="row">
-					<div class="col-xs-12 col-sm-8 col-md-8">
+					<div class="col-xs-12 col-ms-6 col-sm-7 col-md-8">
 						<div class="article-page__related-header">
-							<h3>Måske du også leder efter...</h3>
-							<p>Gå på opdagelse i vores aktiviteter og materialer og find lige det, der passer til din undervisning.</p>
+							<h2>Læs også</h2>
+{#							<p>Gå på opdagelse i vores aktiviteter og materialer og find lige det, der passer til din undervisning.</p>#}
 						</div>
 					</div>
-					<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="col-xs-12 col-ms-6 col-sm-5 col-md-4">
 
-						<div class="swiper-navigation">
+            <div class="swiper-navigation">
               {% if related_count > 0 %}
                 <div class="slider-pager-count">
                   {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
                 </div>
               {% endif %}
-							<div class="swiper-button-prev"></div>
-							<div class="swiper-button-next"></div>
-						</div>
-					</div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
           <div class="col-xs-12">
-						<div class="article-page__related-items js-article-page__related-items swiper">
-							<div class="swiper-wrapper">
-								{{ related }}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		{% endif %}
-	</div>
+            <div class="article-page__related-items js-article-page__related-items swiper">
+              <div class="swiper-wrapper">
+                {{ related }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
 </article>
 
 <div class="js-modal-article">
-	<div class="js-modal-article__content">
-		<div class="js-modal-article__content__header">
+  <div class="js-modal-article__content">
+    <div class="js-modal-article__content__header">
       <a class="js-modal-article__content__header__close-button">
         {% include '@reusable-component/svg-icon.twig' with {
           'attributes': '',
           'svgIconName': 'close-modal'
         } %}
       </a>
-		</div>
-		<div class="js-modal-article__content__main">
-			{{ content.field_teaching_goals }}
-		</div>
-	</div>
+    </div>
+    <div class="js-modal-article__content__main">
+      {{ content.field_teaching_goals }}
+    </div>
+  </div>
 </div>

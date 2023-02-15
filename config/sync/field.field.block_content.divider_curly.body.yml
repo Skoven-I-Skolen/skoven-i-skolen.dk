@@ -1,0 +1,23 @@
+uuid: ea3e1d87-5033-4b1b-84b2-366a624c83e2
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.divider_curly
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.divider_curly.body
+field_name: body
+entity_type: block_content
+bundle: divider_curly
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

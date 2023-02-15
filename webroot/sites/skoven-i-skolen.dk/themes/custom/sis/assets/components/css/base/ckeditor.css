@@ -4,22 +4,35 @@
  */
 
 /* stylelint-disable */
+p.cke_widget_element,
 .cke_widget_image {
   width: 100%;
 
   &.align-left {
     float: none;
     text-align: left;
+    img {
+      margin-left: 0;
+      margin-right: auto;
+    }
   }
 
   &.align-right {
     float: none;
     text-align: right;
+    img {
+      margin-left: auto;
+      margin-right: 0;
+    }
   }
 
   &.align-center {
     float: none;
     text-align: center;
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   .caption-img {
@@ -45,7 +58,8 @@ drupal-entity {
   &[data-align="center"] {
     text-align: center;
   }
-  > div {
+  > div,
+  > figure {
     float: none !important;
     margin: 0 auto;
     display: inline-block;
@@ -121,4 +135,68 @@ media {
 
 p.resume {
   font-size: 20px;
+}
+
+img[data-cke-widget-data*='data-image-size%22%3A%22small'] {
+  max-width: 160px;
+}
+img[data-cke-widget-data*='data-image-size%22%3A%22medium'] {
+  max-width: 220px;
+}
+img[data-cke-widget-data*='data-image-size%22%3A%22large'] {
+  max-width: 480px;
+}
+
+p[data-cke-widget-data*='data-image-size%22%3A%22small'],
+figure[data-cke-widget-data*='data-image-size%22%3A%22small'] {
+  img,
+  figcaption {
+    max-width: 160px;
+  }
+}
+p[data-cke-widget-data*='data-image-size%22%3A%22medium'],
+figure[data-cke-widget-data*='data-image-size%22%3A%22medium'] {
+  img,
+  figcaption {
+    max-width: 220px;
+  }
+}
+p[data-cke-widget-data*='data-image-size%22%3A%22large'],
+figure[data-cke-widget-data*='data-image-size%22%3A%22large'] {
+  img,
+  figcaption {
+    max-width: 480px;
+  }
+}
+
+.caption > figcaption {
+  display: inline-block;
+}
+
+p {
+  &.align-right {
+    text-align: right;
+  }
+  &.align-center {
+    text-align: center;
+  }
+  &.align-right {
+    text-align: left;
+  }
+}
+
+.img-size {
+  &--small {
+     max-width: 30% !important;
+   }
+  &--medium {
+     max-width: 70% !important;
+   }
+  &--large {
+     max-width: 90% !important
+   }
+}
+
+figure {
+  text-align: center;
 }

@@ -1,0 +1,45 @@
+uuid: 7ab37398-6a75-4326-92e3-957e14e5bffa
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_list_media_anonymous
+    - node.type.link_article
+  module:
+    - content_translation
+    - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: node.link_article.field_list_media_anonymous
+field_name: field_list_media_anonymous
+entity_type: node
+bundle: link_article
+label: 'Liste media'
+description: 'Vælg et foto, der vises på interne søgeresultater og andre lister. Det kan være det samme billede som artiklens billede.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '5 MB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

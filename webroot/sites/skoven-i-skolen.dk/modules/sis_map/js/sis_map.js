@@ -5,21 +5,27 @@ Drupal.behaviors.sis_map_okapi_integration = {
     let markers = [];
     var autoZoom = false;
     var firstRender = true;
-
+    var query = new URL(window.location).searchParams;
+    var doNotAddToQuery = false;
+    const peopleAndPlacesTerms = ['Biavlere', 'Jægere', 'Klimatilpasning', 'Livstræer', 'Natur- og friluftsvejledere', 'Udeskoler', 'Udstyr'];
     if (settings.sis_map) {
       markers = settings.sis_map.markers;
     }
     const TOKEN = '9f667a80fc5d9b3f0f8dac7ae6492048';
+    var iconsFetched = false;
 
-    if (settings.sis_map) {
+    if (settings.sis_map && !iconsFetched) {
+      iconsFetched = true;
       // Format the icons array to add the actual .svg file paths.
       Object.keys(settings.sis_map.icons).forEach(function (filterName) {
           let iconName = settings.sis_map.icons[filterName];
-          settings.sis_map.icons[formatDataType(filterName)] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
+          if (!iconName.includes('.svg')) {
+            settings.sis_map.icons[formatDataType(filterName)] = '/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/' + iconName + '.svg';
+          }
         }
       );
-    settings.sis_map.icons['default'] = defaultDotIcon;
-   }
+      settings.sis_map.icons['default'] = defaultDotIcon;
+    }
 
     // Add "checked" event to each filter checkbox.
     document.querySelectorAll('.filter-checkbox').forEach(function (element) {
@@ -33,15 +39,58 @@ Drupal.behaviors.sis_map_okapi_integration = {
       }
     });
 
+    function addOrRemoveFilterToQuery(category, value, add = true) {
+      if (add) {
+        if (!query.getAll(category).includes(value)) {
+          query.append(category, value);
+          let pageTitle = document.getElementsByTagName("title")[0].innerHTML;
+          if (!doNotAddToQuery) {
+            window.history.replaceState(window.location.pathname,
+              pageTitle, '?' + query.toString());
+          }
+        }
+      }
+      else {
+        let currentParams = query.toString();
+        let toRemoveParams = new URLSearchParams({[category] : value}).toString();
+        currentParams = currentParams.replaceAll('&' + toRemoveParams, '');
+        currentParams = currentParams.replaceAll(toRemoveParams, '');
+        currentParams = currentParams.replaceAll('?$', '?');
+        currentParams = currentParams.replaceAll('&&', '&');
+        query = new URLSearchParams(currentParams)
+        let pageTitle = document.getElementsByTagName("title")[0].innerHTML;
+        window.history.replaceState('kort', pageTitle, '?' + currentParams);
+      }
+    }
+
+    function applyFiltersFromSearchQuery(query) {
+      console.log("applyFiltersFromSearchQuery");
+      let iterator = query.keys();
+      for (const i of iterator) {
+        console.log(i);
+        query.getAll(i).forEach(function (f) {
+          if (i !== 'uid') {
+            var checkbox = document.querySelector('[id="' + decodeURIComponent(f) + '"]');
+            if (!checkbox.checked) {
+              checkbox.click();
+              checkbox.parentElement.parentElement.classList.add('expanded');
+            }
+          }
+        })
+      }
+    }
+
     function applyFilter(category, value, status) {
       if (status) {
         // Add a filter.
         if (!filters[category]) {
           filters[category] = []
           filters[category].push(value);
+          addOrRemoveFilterToQuery(category, value, true);
         }
         else if (!filters[category].includes(value)){
           filters[category].push(value);
+          addOrRemoveFilterToQuery(category, value, true);
         }
       }
       else {
@@ -51,8 +100,10 @@ Drupal.behaviors.sis_map_okapi_integration = {
           if (filters[category].length === 0) {
             delete filters[category];
           }
+          addOrRemoveFilterToQuery(category, value, false);
         }
       }
+
       refreshMarkers();
     }
 
@@ -72,7 +123,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
               matchCount++;
             }
           });
-          if (matchCount === Object.keys(filters).length) {
+          if (matchCount > 0) {
             resultSet.push(markers[index]);
           }
         }
@@ -99,10 +150,17 @@ Drupal.behaviors.sis_map_okapi_integration = {
     function renderMapMarker(marker) {
       let lastSelectedFilter = (Object.keys(filters)[Object.keys(filters).length - 1]);
       let dataType = 'default';
-      if (marker['filters'][lastSelectedFilter] && settings.sis_map.icons[marker['filters'][lastSelectedFilter][0]]) {
+
+      if (marker['filters']['Mennesker og steder']) {
+        dataType = marker['filters']['Mennesker og steder'][0];
+      }
+
+      else if (marker['filters'][lastSelectedFilter] && settings.sis_map.icons[marker['filters'][lastSelectedFilter][0]]) {
         dataType = marker['filters'][lastSelectedFilter][0];
       }
+
       let m = document.createElement('span');
+
       m.setAttribute('class', 'geomarker');
       m.setAttribute('data-type', formatDataType(dataType));
       m.setAttribute('data-title', marker['node']['title'][0]['value']);
@@ -134,12 +192,12 @@ Drupal.behaviors.sis_map_okapi_integration = {
       if (marker['lat'] && marker['lon']) {
         m.setAttribute('data-lat', marker['lat']);
         m.setAttribute('data-lon', marker['lon']);
-        description += '<br>Breddegrad: ' + marker['lat'] + "<br>Længdegrad: " + marker['lon'];
+        // description += '<br>Breddegrad: ' + marker['lat'] + "<br>Længdegrad: " + marker['lon'];
       }
 
       if (address) {
         m.setAttribute('data-address', address);
-        description += '<br>Addresse:<br>' + address;
+        // description += '<br>Addresse:<br>' + address;
       }
 
       if (marker['url']) {
@@ -165,11 +223,20 @@ Drupal.behaviors.sis_map_okapi_integration = {
         }
       });
 
+      if (typeof resultSet === 'object') {
+        resultSet = Object.values(resultSet);
+      }
+
       resultSet.forEach(function (element) {
         var allFilters = Object.values(element['filters']).flat().filter(
           function(item, pos, self) { return self.indexOf(item) == pos; })
         let intersection = allFilters.filter(x => selectedFilters.includes(x)).sort();
-        intersection = intersection.join(' & ');
+        if (!peopleAndPlacesTerms.includes(intersection[0])) {
+          intersection = 'Stedsbasered materialer';
+        }
+        else {
+          intersection = intersection.join(' & ');
+        }
         if (!resultList[intersection]) { resultList[intersection] = [];}
         if (!resultList[intersection].includes(element)) {
           resultList[intersection].push(element);
@@ -223,10 +290,12 @@ Drupal.behaviors.sis_map_okapi_integration = {
             }
           });
           var seeAllIcon = document.createElement('div');
-          seeAllIcon.classList.add('category-title-see-all-link-icon');
+          if (resultList[key].length > 3) {
+            seeAllIcon.classList.add('category-title-see-all-link-icon');
+          }
           categoryTitleWrapper.appendChild(categoryIcon);
           categoryTitleWrapper.appendChild(category);
-          if (resultList[key].length > 0) {
+          if (resultList[key].length > 3) {
             categoryTitleWrapper.appendChild(seeAllLink);
           }
           categoryTitleWrapper.appendChild(seeAllIcon);
@@ -241,7 +310,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
             if (count % 2 == 0) {
               item.classList.add('is-even');
             }
-            if (count > -1) {
+            if (count > 2) {
               item.classList.add('is-hidden');
               item.classList.add('can-be-hidden');
             }
@@ -251,7 +320,7 @@ Drupal.behaviors.sis_map_okapi_integration = {
             count++;
           });
           var separator = document.createElement('div')
-          separator.classList.add('filter-separator')
+          // separator.classList.add('filter-separator')
           separator.classList.add('can-be-hidden')
           separator.setAttribute('name', key)
           listElement.appendChild(separator);
@@ -293,23 +362,36 @@ Drupal.behaviors.sis_map_okapi_integration = {
       document.querySelector('.map-container').prepend(m);
       autoZoom = true;
 
-      if (firstRender && settings.sis_map.render_all_markers_on_build) {
-        Object.keys(markers).forEach(function (index) {
-          renderMapMarker(markers[index]);
-        });
+      if (firstRender && typeof settings.sis_map !== 'undefined') {
         firstRender = false;
+        if (query.toString().includes('=')) {
+          firstRender = false;
+          applyFiltersFromSearchQuery(query);
+        }
+        else if (settings.sis_map.render_all_markers_on_build) {
+          doNotAddToQuery = true;
+          Object.keys(markers).forEach(function (index) {
+            renderMapMarker(markers[index]);
+          });
+          filters = peopleAndPlacesTerms;
+          renderResultList(markers);
+          doNotAddToQuery = false;
+        }
       }
 
+      if (document.querySelector('#map') && document.querySelector('#map').children.length === 1) {
+        // Avoid creating the map twice.
+        return;
+      }
       if (settings.sis_map) {
         var map = new okapi.Initialize({icons: settings.sis_map.icons});
       }
 
       else {
-        var map = new okapi.Initialize({icons: {'default':defaultDotIcon}});
+        var map = new okapi.Initialize({icons: {'default': defaultDotIcon}});
       }
-    }
 
-    buildMap();
+    }
 
     document.querySelectorAll('.category-name').forEach(function (element) {
       if (!element.classList.contains('enabled')) {
@@ -384,6 +466,8 @@ Drupal.behaviors.sis_map_okapi_integration = {
 
       });
     });
+
+    buildMap();
 
   }
 };

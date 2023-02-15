@@ -44,15 +44,21 @@ a.button {
 
   &--ghost {
     overflow: visible !important;
-    color: currentcolor;
-    background-color: transparent;
-    border: 2px solid var(--theme-button-color);
+    color: currentcolor !important;
+    background-color: transparent !important;
+    border: 2px solid currentcolor !important;
   }
 
   &--green {
-    color: var(--color-white);
-    background-color: var(--color-green-dark);
-    border: 2px solid var(--color-green-dark);
+    color: var(--color-white) !important;
+    background-color: var(--color-green-dark) !important;
+    border: 2px solid var(--color-green-dark) !important;
+  }
+
+  &--normal {
+    color: var(--color-purple) !important;
+    background-color: var(--color-pink) !important;
+    border: 2px solid var(--color-pink) !important;
   }
 
   &--center {

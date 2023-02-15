@@ -1,10 +1,13 @@
 uuid: d1094839-14f0-49b9-8e2f-cd0f19d665f6
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.article
+    - node.type.dot_on_map
 id: article_submitted
 label: 'Artikel indsendt'
-format: plain_text
+format: html
 subject: 'Ny artikel: [node:title] '
 recipient_types:
   fixed_email:
@@ -13,8 +16,10 @@ recipient_types:
     status: true
     settings:
       recipients: skoven-i-skolen@nst.dk
-bundles: {  }
+bundles:
+  'node:article': 'node:article'
+  'node:dot_on_map': 'node:dot_on_map'
 body:
-  value: "En artikel afventer godkendelse\r\n\r\nSe artiklen [node:url]"
-  format: plain_text
+  value: "<p>En artikel afventer godkendelse</p>\r\n\r\n<p>Se artiklen [node:url]</p>\r\n"
+  format: basic_html
 replyTo: ''

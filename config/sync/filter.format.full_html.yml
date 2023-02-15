@@ -63,12 +63,6 @@ filters:
         small: small
       allowed_media_types:
         image: image
-  filter_responsive_table:
-    id: filter_responsive_table
-    provider: sis_misc
-    status: true
-    weight: 0
-    settings: {  }
   entity_embed:
     id: entity_embed
     provider: entity_embed
@@ -77,6 +71,12 @@ filters:
     settings: {  }
   filter_image_style:
     id: filter_image_style
+    provider: sis_misc
+    status: true
+    weight: 0
+    settings: {  }
+  filter_responsive_table:
+    id: filter_responsive_table
     provider: sis_misc
     status: true
     weight: 0

@@ -1,18 +1,18 @@
 .geomap {
+  width: 100%;
   height: 490px;
+  margin-bottom: 30px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 991px) {
   .geomap {
     height: 380px;
-    width: 850px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .geomap {
     height: 380px;
-    width: 100%;
   }
 }
 
@@ -164,7 +164,7 @@
 
 .category-title-see-all-link-icon {
   flex: 3%;
-  content: url('/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/carret.svg');
+  content: url("/sites/skoven-i-skolen.dk/themes/custom/sis/assets/icons/carret.svg");
   max-width: 14px;
   max-height: 8px;
   margin-top: 8px;
@@ -198,23 +198,9 @@
 
 .map-button {
   text-decoration: none;
-  margin-top: 58px;
+  text-align: center;
 }
 
 .see-all-checkbox {
   margin-bottom: 10px;
-}
-
-/* padding on sides on small viewport */
-@media (max-width: 1590px) {
-  main, #block-breadcrumbs {
- padding-left: 100px;
-  padding-right: var(--container-spacing);
-  }
-  @media (max-width: 900px) {
-    main, #block-breadcrumbs {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
 }

@@ -39,7 +39,11 @@ function sis_theme_suggestions_block_alter(&$suggestions, array $variables) {
 
   if(isset($element['#id']) && $element['#id'] === 'pageheader') {
     $request = \Drupal::request()->getRequestUri();
-    $suggestions[] = $variables['theme_hook_original'] .'__'. $element['#id'] . '_' . str_replace('/','_', $request);;
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node) {
+      $suggestions[] = $variables['theme_hook_original'] . '__' . $element['#id'] . '_' . str_replace('/', '_', $request);
+      $suggestions[] = $variables['theme_hook_original'] . '__' . $element['#id'] . '__node_' . $node->getType();
+    }
   }
 }
 
@@ -115,6 +119,9 @@ function sis_preprocess_menu_local_tasks(&$variables) {
   $roles = Drupal::currentUser()->getRoles();
   if (in_array('organization', $roles)) {
     // Hide the "view" link on the user profile menu tab.
+    if (isset($variables["primary"]["profile.user_page:organization"]["#link"]["title"])) {
+      $variables["primary"]["profile.user_page:organization"]["#link"]["title"] = t('Edit organization page');
+    }
     unset($variables['primary']['entity.user.canonical']);
   }
 }
@@ -127,5 +134,38 @@ function sis_theme_suggestions_media_alter(array &$suggestions, array $variables
     foreach ($suggestions as $suggestion) {
       $suggestions[] = $suggestion . "__embed";
     }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function sis_preprocess_input__submit(&$variables) {
+  if ($variables["element"]["#name"] === 'field_top_image_anonymous_0_upload_button') {
+    $variables["attributes"]["value"] = t('Select media');
+  }
+  if ($variables["element"]["#name"] === 'field_top_image_entity_browser_entity_browser') {
+    $variables["attributes"]["value"] = t('Select media');
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function sis_preprocess_field_multiple_value_form(&$variables) {
+  if (isset($variables['elements'][0]['address']['address_line1']['#title'])) {
+    $variables['elements'][0]['address']['address_line1']['#title'] = t('Street address');
+  }
+  if (isset($variables['elements'][0]['address']['organization']['#title'])) {
+    $variables['elements'][0]['address']['organization']['#title'] = t('Company');
+  }
+  if (isset($variables['elements'][0]['address']['address_line1']['#title'])) {
+    $variables['elements'][0]['address']['address_line1']['#title'] = t('Street address');
+  }
+  if (isset($variables['elements'][0]['address']['postal_code']['#title'])) {
+    $variables['elements'][0]['address']['postal_code']['#title'] = t('Postal code');
+  }
+  if (isset($variables['elements'][0]['address']['locality']['#title'])) {
+    $variables['elements'][0]['address']['locality']['#title'] = t('City');
   }
 }

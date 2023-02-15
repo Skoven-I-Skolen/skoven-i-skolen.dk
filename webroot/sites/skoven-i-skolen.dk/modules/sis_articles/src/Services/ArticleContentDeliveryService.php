@@ -104,7 +104,10 @@ class ArticleContentDeliveryService {
       $random_term = $terms[array_rand($terms)];
       $nodes = $this->entityTypeManager
         ->getStorage('node')
-        ->loadByProperties([$field => $random_term->tid]);
+        ->loadByProperties([
+          $field => $random_term->tid,
+          'field_search_exclude' => 0
+        ]);
 
       if ($nodes) {
         if (count($nodes) > 1) {
@@ -195,6 +198,18 @@ class ArticleContentDeliveryService {
       return $this->entityTypeManager->getViewBuilder('node')->viewMultiple($articles, 'list');
     }
     return [];
+  }
+
+  public function getUnpublishedContentByUser($user_id) {
+    $nodes = \Drupal::entityTypeManager()->getStorage('node')
+      ->loadByProperties(['status' => 0, 'uid' => $user_id]);
+    return $this->entityTypeManager->getViewBuilder('node')->viewMultiple($nodes, 'list');
+  }
+
+  public function getPublishedContentByUser($user_id) {
+    $nodes = \Drupal::entityTypeManager()->getStorage('node')
+      ->loadByProperties(['status' => 1, 'uid' => $user_id]);
+    return $this->entityTypeManager->getViewBuilder('node')->viewMultiple($nodes, 'list');
   }
 
   /**

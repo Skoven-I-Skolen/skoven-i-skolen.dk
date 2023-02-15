@@ -5,10 +5,14 @@ dependencies:
   config:
     - oembed_providers.bucket.sis_custom
   module:
+    - crop
     - oembed_providers
+third_party_settings:
+  crop:
+    image_field: null
 id: sis_custom_video
-label: 'TwentyThree, Youtube, Vimeo'
-description: 'Videoer fra TwentyThree, Youtube og Vimeo.'
+label: 'TwentyThree only'
+description: 'Videoer fra TwentyThree'
 source: 'oembed:sis_custom'
 queue_thumbnail_downloads: false
 new_revision: false

@@ -13,6 +13,10 @@
   }
 }
 
+html {
+  scroll-padding-top: 175px;
+}
+
 /* Body */
 body {
   position: relative;
@@ -20,6 +24,7 @@ body {
   margin: 0;
   padding-top: var(--header-height-mobile);
   overflow-x: hidden;
+  overflow-y: visible;
   color: var(--color-purple);
   font-weight: var(--base-font-weight);
   font-size: var(--base-font-size);
@@ -64,6 +69,8 @@ hr {
 
 /* Image handling */
 img {
+  max-width: 100%;
+
   &.align-left {
     display: block;
     float: none;
@@ -86,10 +93,10 @@ img {
   }
 }
 
-figure {
+figure,
+.embedded-entity {
   width: auto;
   margin: 0;
-  text-align: left;
 
   &.align-left {
     float: none;
@@ -118,18 +125,18 @@ figure {
 
   img {
     display: block;
+    float: none !important;
     max-width: 100%;
     height: auto;
     margin: 0 auto;
     transition: opacity .2s;
-    float: none !important;
   }
 
   figcaption {
     margin-top: 4px;
     margin-bottom: 8px;
-    color: gray;
-    font-size: .8em;
+    color: var(--color-purple);
+    font-size: 11px;
   }
 }
 
@@ -142,7 +149,6 @@ figure {
 table {
   width: 100% !important;
   border-collapse: collapse !important;
-
 }
 
 .table-responsive {
@@ -161,6 +167,10 @@ table {
   flex-wrap: wrap;
 }
 
+.views-form {
+  z-index: 10;
+}
+
 .js-media-library-views-form {
   img {
     width: 100%;
@@ -176,13 +186,15 @@ table {
   position: sticky;
   top: calc(var(--header-height) + var(--meta-menu-height));
   max-width: var(--container-width);
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
   padding-right: var(--container-spacing);
   padding-left: var(--container-spacing);
+
   .js-form-item-view-mode {
     display: none;
   }
+
   a {
     position: relative;
     display: inline-flex;
@@ -201,17 +213,18 @@ table {
     border: 2px solid var(--color-green-dark);
     border-radius: 50px;
     cursor: pointer;
-    &:before {
-       display: block;
-       width: 12px;
-       height: 12px;
-       transform: translateY(-50%) rotate(45deg);
-       content: "";
-       border-bottom: 2px solid var(--theme-arrow-color);
-       border-left: 2px solid var(--theme-arrow-color);
-       position: absolute;
-       top: 50%;
-       left: 20px;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-bottom: 2px solid var(--theme-arrow-color);
+      border-left: 2px solid var(--theme-arrow-color);
+      transform: translateY(-50%) rotate(45deg);
+      content: "";
     }
   }
 }

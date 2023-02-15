@@ -11,16 +11,16 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - basic_html
       - full_html
+      - basic_html
 _core:
   default_config_hash: IjZnOLWk1Pjq3WRg2pLSA1ERh7Po7izCq_p6UztZr2c
 id: node.article.body
 field_name: body
 entity_type: node
 bundle: article
-label: Brødtekst
-description: 'Dette er hovedteksten i dit indhold.'
+label: 'Skriv hovedteksten til din artikel her'
+description: ''
 required: false
 translatable: true
 default_value: {  }

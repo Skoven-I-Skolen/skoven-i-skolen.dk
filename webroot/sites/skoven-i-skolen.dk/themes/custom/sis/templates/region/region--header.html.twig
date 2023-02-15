@@ -43,11 +43,12 @@
         <form action="/search" method="get" aria-label="search">
           <div class="header-search__input-field" id="search">
             <input {{ create_attribute().addClass('input')
-              .setAttribute('type', 'search').setAttribute('aria-label', 'Search'|t).setAttribute('required', 'required')
+              .setAttribute('type', 'search').setAttribute('aria-label', 'Search'|t)
               .setAttribute('placeholder', 'Search the entire site'|t)
               .setAttribute('name', 'text')
               .setAttribute('aria-label', 'Search')
               .setAttribute('id', 'js-header-search-input') }}
+               autocomplete="off"
               >
             <button {{ create_attribute().setAttribute('type', 'submit').addClass('header-search__submit') }} aria-label="search">
               {% include '@reusable-component/svg-icon.twig' with {

@@ -20,7 +20,17 @@ function sis_blog_post_preprocess_block__inline_block__bloggers(array &$variable
 
   // sort by name
   usort($all_writers, function ($a, $b) {
-    return strcmp($a['#user']->name->value, $b['#user']->name->value);
+    $name_a = $a['#user']->name->value;
+    $name_b = $b['#user']->name->value;
+
+    if (!$a['#user']->get('field_full_name')->isEmpty()) {
+      $name_a = $a['#user']->field_full_name->value;
+    }
+    if (!$b['#user']->get('field_full_name')->isEmpty()) {
+      $name_b = $b['#user']->field_full_name->value;
+    }
+
+    return strcmp($name_a, $name_b);
   });
 
   $variables['all_writers'] = $all_writers;

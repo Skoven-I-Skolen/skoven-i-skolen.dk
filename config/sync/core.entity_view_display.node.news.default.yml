@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.content_hierarchy
     - field.field.node.news.field_article_categories
+    - field.field.node.news.field_article_type
     - field.field.node.news.field_description
     - field.field.node.news.field_factboxes
     - field.field.node.news.field_graphics
@@ -50,7 +51,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_description:
     type: basic_string
@@ -66,7 +67,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_graphics:
     type: entity_reference_label
@@ -83,7 +84,7 @@ content:
       timezone_override: ''
       format_type: news_date
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -99,7 +100,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_related_terms:
     type: entity_reference_label
@@ -107,7 +108,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 9
+    weight: 8
     region: content
   links:
     settings: {  }
@@ -118,6 +119,7 @@ hidden:
   body: true
   content_hierarchy: true
   content_moderation_control: true
+  field_article_type: true
   field_header: true
   field_hide_breadcrumb: true
   field_hide_title: true

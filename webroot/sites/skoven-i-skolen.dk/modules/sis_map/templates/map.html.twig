@@ -37,30 +37,36 @@
 <div class="markers"></div>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-lg-7 col-xs-12">
-      {% if org_name %}
+    {% if org_name %}
+      <div class="col-xs-12">
         <h2>{{ map_title }} - {{ org_name }}</h2>
-        På dette kort kan du finde artikler og lokationer oprettet af {{ org_name }}. Her kan du finde idéer og inspiration til aktiviteter og undervisningsforløb i naturen.
-        {% else %}
+      </div>
+      <div class="col-md-8 col-lg-7 col-xs-12">
+        På dette kort kan du finde artikler og lokationer oprettet af {{ org_name }}. Her kan du finde idéer og inspiration til aktiviteter og undervisningsforløb i naturen. Du kan finde et kort over alle brugernes materialer <a href="/kort">her</a>.
+      </div>
+    {% else %}
+      <div class="col-xs-12">
         <h1>{{ map_title }}</h1>
-          {{ description_above_map }}
-      {% endif %}
+      </div>
+      <div class="col-md-8 col-lg-7 col-xs-12">
+        {{ description_above_map }}
+      </div>
+    {% endif %}
 
-    </div>
-<a class="map-button col-md-offset-1" href="{{ button_link }}">
-	<button {{ create_attribute().addClass(button_classes) }}>
-		{{ button_text }}
-	</button>
-</a>
+    <a class="col-md-4 col-lg-3 col-xs-12 col-lg-offset-1 map-button" href="{{ button_link }}">
+      <button {{ create_attribute().addClass(button_classes) }}>
+        {{ button_text }}
+      </button>
+    </a>
 
     <div class="col-md-8 col-lg-7 col-xs-12">
       <div class="map-container"></div>
       <div class="result-list"></div>
     </div>
-    <div class="col-md-3 col-lg-3 col-xs-12 col-md-offset-1 filters">
+    <div class="col-md-4 col-lg-3 col-xs-12 col-lg-offset-1 filters">
       <div class="same-line-text-and-icon">
         <div class="text">
-          <h5>Stedsbaserede materialer</h5>
+          <h5>Stedbaserede materialer</h5>
         </div>
         <div class="icon">
           {% include '@reusable-component/svg-icon.twig' with {

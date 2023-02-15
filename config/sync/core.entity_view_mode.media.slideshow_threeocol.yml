@@ -1,0 +1,10 @@
+uuid: 0d2ea77f-8bfb-4541-9c52-1268d3235fb6
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+id: media.slideshow_threeocol
+label: 'Slideshow: Threeocol'
+targetEntityType: media
+cache: true

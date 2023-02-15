@@ -90,7 +90,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-8 col-lg-7">
         <div class="blog-post__date">
-          Skrevet af <strong>{{ author_name|striptags }}</strong> {{ node.created.value|date('U')|format_date('custom', 'j. F Y') }}
+          Skrevet af {{ node.Owner.name.value }} &#124; {{ node.created.value|date('U')|format_date('custom', 'j. F Y') }}
         </div>
         {% include '@reusable-component/page-title.twig' with {
           'attributes': create_attribute().addClass('article-page__title'),
@@ -158,6 +158,11 @@
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4">
           <div class="swiper-navigation">
+            {% if other_blog_posts_count > 0 %}
+              <div class="slider-pager-count">
+                {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
+              </div>
+            {% endif %}
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           </div>
@@ -168,11 +173,6 @@
                 {{ other_blog_posts }}
             </div>
           </div>
-          {% if other_blog_posts_count > 0 %}
-            <div class="slider-pager-count">
-              {{ 'Showing'|t }}&nbsp;<span class="slider-pager-count--showing"></span>&nbsp;{{ 'out of'|t }}&nbsp;<span class="slider-pager-count--total"></span>
-            </div>
-          {% endif %}
         </div>
       </div>
     </div>

@@ -4,9 +4,9 @@ langcode: da
 theme: sis
 defaults:
   sender: SMTPMailSystem
-  formatter: SMTPMailSystem
+  formatter: swiftmailer
 modules:
   swiftmailer:
     none:
-      sender: swiftmailer
+      sender: SMTPMailSystem
       formatter: swiftmailer

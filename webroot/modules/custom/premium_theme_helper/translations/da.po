@@ -46,4 +46,43 @@ msgid "No media items are selected."
 msgstr "Ingen mediefiler er valgt."
 
 msgid "This must be an internal path such as /node/add. You can also start typing the title of a piece of content to select it. Enter <front> to link to the front page. Enter <nolink> to display link text only. Enter <button> to display keyboard-accessible link text only."
-msgstr "Dette skal være en intern sti såsom /node/add. Du kan også begynde at skrive titlen på et stykke indhold for at vælge det. Indtast <front> for at linke til forsiden."
+msgstr "Dette skal være en intern sti såsom /node/add. Du kan også begynde at skrive titlen på et stykke indhold for at vælge det. Indtast \<front>\ for at linke til forsiden."
+
+msgid "No @title added yet."
+msgstr "Der er ikke tilføjet en @title endnu."
+
+msgid "Search in articles"
+msgstr "Søg i artikler"
+
+msgid "Search in content"
+msgstr "Søg i indhold"
+
+msgid "Select media"
+msgstr "Vælg fil"
+
+msgid "You can select one @entity_type."
+msgstr "Du kan vælge ét element"
+
+msgid "Company"
+msgstr "Organisation"
+
+msgid "Street address"
+msgstr "Vejnavn og nummer"
+
+msgid "Postal code"
+msgstr "Postnummer"
+
+msgid "Original image size: @widthx@height"
+msgstr "Original billedestørrelse: @widthx@height <br />Ændr størrelsen på dit billede. 900px = fuld bredde, 450px = halv bredde. Formatet på billedet bevares."
+
+msgid "Company"
+msgstr "Organisation"
+
+msgid "Street address"
+msgstr "Vejnavn og nummer"
+
+msgid "Postal code"
+msgstr "Postnummer"
+
+msgid "City"
+msgstr "By"

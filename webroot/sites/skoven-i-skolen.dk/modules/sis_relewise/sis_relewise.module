@@ -1,7 +1,9 @@
 <?php
 
+use Drupal\Component\Render\PlainTextOutput;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\EntityReferenceFieldItemList;
+use Drupal\entity_overview\OverviewFilter;
 use Drupal\node\Entity\Node;
 use Drupal\relewise\DataTypes\Search\Sorting\Content\ContentPopularitySorting;
 
@@ -27,11 +29,14 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     $node = $entity;
     $langcode = $entity->language()->getId();
 
+    $bundle = \Drupal::entityTypeManager()->getStorage($node->getEntityType()->getBundleEntityType())->load($node->bundle());
+    $content->addData('bundle_label', new \Drupal\relewise\DataTypes\Multilingual($bundle->label(), $langcode));
+
     if ($node->hasField('body') && !$node->get('body')
         ->isEmpty()) {
-      $content->addData('body', new \Drupal\relewise\DataTypes\Multilingual($node->get('body')
+      $content->addData('body', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('body')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_description') && !$node->get('field_description')
         ->isEmpty()) {
@@ -54,15 +59,11 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     }
     if ($node->hasField('field_subject') && !$node->get('field_subject')
         ->isEmpty()) {
-      $content->addData('field_subject', $node->get('field_subject')
-        ->first()
-        ->getValue()['target_id']);
+      $content->addData('field_subject', _sis_relewise_relewise_taxonomy_value($node->get('field_subject')));
     }
     if ($node->hasField('field_class') && !$node->get('field_class')
         ->isEmpty()) {
-      $content->addData('field_class', $node->get('field_class')
-        ->first()
-        ->getValue()['target_id']);
+      $content->addData('field_class', _sis_relewise_relewise_taxonomy_value($node->get('field_class')));
     }
     if ($node->hasField('field_location') && !$node->get('field_location')
         ->isEmpty()) {
@@ -74,33 +75,33 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     }
     if ($node->hasField('field_equipment') && !$node->get('field_equipment')
         ->isEmpty()) {
-      $content->addData('field_equipment', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_equipment')
+      $content->addData('field_equipment', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_equipment')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_colophon') && !$node->get('field_colophon')
         ->isEmpty()) {
-      $content->addData('field_colophon', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_colophon')
+      $content->addData('field_colophon', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_colophon')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_colophon_author') && !$node->get('field_colophon_author')
         ->isEmpty()) {
-      $content->addData('field_colophon_author', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_colophon_author')
+      $content->addData('field_colophon_author', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_colophon_author')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_colophon_photographer') && !$node->get('field_colophon_photographer')
         ->isEmpty()) {
-      $content->addData('field_colophon_photographer', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_colophon_photographer')
+      $content->addData('field_colophon_photographer', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_colophon_photographer')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_teaching_goals') && !$node->get('field_teaching_goals')
         ->isEmpty()) {
-      $content->addData('field_teaching_goals', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_teaching_goals')
+      $content->addData('field_teaching_goals', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_teaching_goals')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($node->hasField('field_list_date') && !$node->get('field_list_date')
         ->isEmpty()) {
@@ -111,28 +112,46 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     }
     if ($node->hasField('field_search_exclude') && !$node->get('field_search_exclude')
         ->isEmpty()) {
-      // TODO: The following condition is wrong.
-//      if ($node->get('field_list_date')
-//        ->first()
-//        ->getValue()['value'] == 1) {
-//        $content = NULL;
-//      }
+      if ($node->get('field_search_exclude')
+        ->first()
+        ->getValue()['value'] == 1) {
+        /** @var \Drupal\relewise\Relewise $relewise */
+        $relewise = \Drupal::service('relewise');
+        $relewise->disableContentIndex($entity);
+        $content = NULL;
+      }
     }
   }
   elseif ($entity->getEntityTypeId() == 'profile') {
     /** @var \Drupal\profile\Entity\Profile $profile */
     $profile = $entity;
-    $langcode = $entity->language()->getId();
+    $langcode = \Drupal::languageManager()->getDefaultLanguage()->getId();
+
+    $bundle = \Drupal::entityTypeManager()->getStorage($profile->getEntityType()->getBundleEntityType())->load($profile->bundle());
+    $content->addData('bundle_label', new \Drupal\relewise\DataTypes\Multilingual($bundle->label(), $langcode));
 
     if ($profile->hasField('field_organization_description') && !$profile->get('field_organization_description')
         ->isEmpty()) {
-      $content->addData('field_description', new \Drupal\relewise\DataTypes\Multilingual($profile->get('field_organization_description')
+      $content->addData('field_description', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($profile->get('field_organization_description')
         ->first()
-        ->getValue()['value'], $langcode));
+        ->getValue()['value']), $langcode));
     }
     if ($profile->hasField('field_organization_address') && !$profile->get('field_organization_address')
         ->isEmpty()) {
       $content->addData('field_organization_address', $profile->get('field_organization_address')->first()->getValue()['organization'] ?? '');
+    }
+    if ($profile->hasField('field_article_type') && !$profile->get('field_article_type')
+        ->isEmpty()) {
+      $content->addData('field_article_type', $profile->get('field_article_type')
+        ->first()
+        ->getValue()['target_id']);
+      $tid = $profile->get('field_article_type')
+        ->first()
+        ->getValue()['target_id'];
+      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+      if ($term) {
+        $content->addData('field_article_type_label', $term->label());
+      }
     }
   }
   else {
@@ -140,6 +159,14 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
   }
   //$content = null;
   return $content;
+}
+
+/**
+ * Implements hook_entity_overview_facet_options_alter().
+ */
+function sis_relewise_entity_overview_facet_options_alter(&$facet_options, OverviewFilter $filter) {
+  unset($facet_options['count']);
+  unset($facet_options['owner']);
 }
 
 /**
@@ -195,11 +222,7 @@ function sis_relewise_preprocess_sis_relewise_most_popular(array &$variables) {
  * Implements hook_form_FORM_ID_alter().
  */
 function sis_relewise_form_entity_overview_search_page_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  $form['most_popular'] = [
-    '#theme' => 'sis_relewise_most_popular'
-  ];
-
   $form['keyword'] = [
-    '#markup' => $form_state->get(['fields', 'text'])
+    '#markup' => \Drupal::request()->get('text')
   ];
 }

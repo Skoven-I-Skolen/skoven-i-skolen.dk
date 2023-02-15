@@ -102,6 +102,16 @@ atoms:
     default:
           da: '74511'
 
+  newsletter-url:
+    type: textfield
+    title: URL til tilmelding til nyhedsbrev
+    category: Nyhedsbrev
+    group: Nyhedsbrev
+    weight: 1
+    default:
+      da: 'https://np-skjoldundernes-land.clients.ubivox.com/handlers/post/'
+      en: 'https://np-skjoldundernes-land.clients.ubivox.com/handlers/post/'
+
   show-on-map-help-text:
     type: text_format
     title: Hjælpetekst på Vis på kort feltsæt

@@ -1,0 +1,101 @@
+uuid: 94998bc2-ce61-40d1-bb05-a5f46bddbbb9
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list
+    - field.field.node.dot_on_map.body
+    - field.field.node.dot_on_map.field_article_type
+    - field.field.node.dot_on_map.field_class
+    - field.field.node.dot_on_map.field_contact_information
+    - field.field.node.dot_on_map.field_files
+    - field.field.node.dot_on_map.field_list_media
+    - field.field.node.dot_on_map.field_list_media_anonymous
+    - field.field.node.dot_on_map.field_location
+    - field.field.node.dot_on_map.field_meta_tags
+    - field.field.node.dot_on_map.field_people_and_places
+    - field.field.node.dot_on_map.field_replant_the_planet
+    - field.field.node.dot_on_map.field_season
+    - field.field.node.dot_on_map.field_section_bg_graphics
+    - field.field.node.dot_on_map.field_section_bg_graphics_pos
+    - field.field.node.dot_on_map.field_subject
+    - field.field.node.dot_on_map.field_summary
+    - field.field.node.dot_on_map.lat
+    - field.field.node.dot_on_map.lon
+    - field.field.node.dot_on_map.sis_map_address_dawa
+    - node.type.dot_on_map
+    - responsive_image.styles.list_view
+  module:
+    - layout_builder
+    - responsive_image
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.dot_on_map.list
+targetEntityType: node
+bundle: dot_on_map
+mode: list
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_contact_data:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_list_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: list
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_list_media_anonymous:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: list_view
+      image_link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_article_type: true
+  field_class: true
+  field_contact_information: true
+  field_files: true
+  field_location: true
+  field_meta_tags: true
+  field_people_and_places: true
+  field_replant_the_planet: true
+  field_season: true
+  field_section_bg_graphics: true
+  field_section_bg_graphics_pos: true
+  field_subject: true
+  field_summary: true
+  langcode: true
+  lat: true
+  lon: true
+  sis_map_address_dawa: true

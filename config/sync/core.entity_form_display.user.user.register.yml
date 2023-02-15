@@ -12,8 +12,6 @@ dependencies:
     - image.style.thumbnail
   module:
     - image
-    - path
-    - profile
     - user
 _core:
   default_config_hash: Tii0Ca3OF32lLDp9WN3el1Q1cy2MFIxUUCraMzIZxRA
@@ -23,33 +21,21 @@ bundle: user
 mode: register
 content:
   account:
-    weight: -10
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
     weight: 5
     region: content
   language:
-    weight: 0
-    region: content
-  organization_profiles:
-    type: profile_form
-    weight: 90
-    region: content
-    settings:
-      form_mode: default
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 30
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  timezone:
-    weight: 6
-    region: content
   user_picture:
     type: image_image
-    weight: -1
+    weight: 1
     region: content
     settings:
       progress_indicator: throbber
@@ -61,3 +47,6 @@ hidden:
   field_full_name: true
   field_summary: true
   langcode: true
+  organization_profiles: true
+  path: true
+  timezone: true

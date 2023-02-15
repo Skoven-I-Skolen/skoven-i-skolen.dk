@@ -3,6 +3,7 @@ filter:
   overview: search
   fields:
     text: ''
+    external: {  }
     field_article_type: {  }
     field_class: {  }
     field_location: {  }
@@ -11,12 +12,13 @@ filter:
   facets:
     - sort
     - text
+    - external
     - field_article_type
     - field_class
     - field_location
     - field_season
     - field_subject
-  sort: newest
+  sort: relevant
   count: 12
   pagination: false
   page: 0

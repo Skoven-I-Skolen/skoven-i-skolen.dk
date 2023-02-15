@@ -18,6 +18,7 @@ dependencies:
     - node.type.article
     - node.type.blog_post
     - node.type.dot_on_map
+    - node.type.link_article
     - node.type.news
     - node.type.page
     - taxonomy.vocabulary.article_categories
@@ -38,7 +39,6 @@ dependencies:
     - content_translation
     - contextual
     - entity_browser
-    - entity_clone
     - field_permissions
     - file
     - file_delete
@@ -62,6 +62,7 @@ dependencies:
     - toolbar
     - view_unpublished
     - webform
+    - workbench_email
     - workflows
 _core:
   default_config_hash: oG8QEVj6xO8fgjjs4loG8kHW8_E2KNOjMil1h9amB6s
@@ -103,13 +104,13 @@ permissions:
   - 'administer users'
   - 'administer webform'
   - 'administer webform submission'
+  - 'administer workbench_email templates'
   - 'administer workflows'
   - 'assign all roles'
   - 'assign editor role'
   - 'assign organization role'
   - 'assign webmaster role'
   - 'assign writer role'
-  - 'clone node entity'
   - 'configure all page node layout overrides'
   - 'configure any layout'
   - 'configure editable page node layout overrides'
@@ -124,9 +125,17 @@ permissions:
   - 'create field_article_image'
   - 'create field_article_related'
   - 'create field_colophon'
+  - 'create field_description'
+  - 'create field_external_link'
+  - 'create field_external_link_logo'
+  - 'create field_files_webmasters'
   - 'create field_header'
   - 'create field_list_media'
+  - 'create field_summary'
+  - 'create field_top_image'
+  - 'create field_top_image_anonymous'
   - 'create image media'
+  - 'create link_article content'
   - 'create media'
   - 'create news content'
   - 'create organization profile'
@@ -156,6 +165,7 @@ permissions:
   - 'delete any document media'
   - 'delete any dot_on_map content'
   - 'delete any image media'
+  - 'delete any link_article content'
   - 'delete any media'
   - 'delete any news content'
   - 'delete any organization profile'
@@ -169,6 +179,7 @@ permissions:
   - 'delete content translations'
   - 'delete dot_on_map revisions'
   - 'delete files'
+  - 'delete link_article revisions'
   - 'delete media'
   - 'delete news revisions'
   - 'delete own almanac content'
@@ -178,6 +189,7 @@ permissions:
   - 'delete own document media'
   - 'delete own dot_on_map content'
   - 'delete own image media'
+  - 'delete own link_article content'
   - 'delete own news content'
   - 'delete own organization profile'
   - 'delete own page content'
@@ -206,6 +218,7 @@ permissions:
   - 'edit any document media'
   - 'edit any dot_on_map content'
   - 'edit any image media'
+  - 'edit any link_article content'
   - 'edit any news content'
   - 'edit any page content'
   - 'edit any remote_video media'
@@ -219,8 +232,16 @@ permissions:
   - 'edit field_article_image_migrated'
   - 'edit field_article_related'
   - 'edit field_colophon'
+  - 'edit field_description'
+  - 'edit field_external_link'
+  - 'edit field_external_link_logo'
+  - 'edit field_files'
+  - 'edit field_files_webmasters'
   - 'edit field_header'
   - 'edit field_list_media'
+  - 'edit field_summary'
+  - 'edit field_top_image'
+  - 'edit field_top_image_anonymous'
   - 'edit own almanac content'
   - 'edit own article content'
   - 'edit own audio media'
@@ -230,9 +251,17 @@ permissions:
   - 'edit own field_article_image'
   - 'edit own field_article_related'
   - 'edit own field_colophon'
+  - 'edit own field_description'
+  - 'edit own field_external_link'
+  - 'edit own field_external_link_logo'
+  - 'edit own field_files_webmasters'
   - 'edit own field_header'
   - 'edit own field_list_media'
+  - 'edit own field_summary'
+  - 'edit own field_top_image'
+  - 'edit own field_top_image_anonymous'
   - 'edit own image media'
+  - 'edit own link_article content'
   - 'edit own news content'
   - 'edit own page content'
   - 'edit own remote_video media'
@@ -259,6 +288,7 @@ permissions:
   - 'revert article revisions'
   - 'revert blog_post revisions'
   - 'revert dot_on_map revisions'
+  - 'revert link_article revisions'
   - 'revert news revisions'
   - 'revert page revisions'
   - 'select account cancellation method'
@@ -304,11 +334,18 @@ permissions:
   - 'view blog_post revisions'
   - 'view dot_on_map revisions'
   - 'view field_article_image'
+  - 'view field_files_webmasters'
   - 'view field_list_media'
+  - 'view field_top_image'
   - 'view latest version'
+  - 'view link_article revisions'
   - 'view news revisions'
   - 'view own field_article_image'
+  - 'view own field_external_link'
+  - 'view own field_external_link_logo'
+  - 'view own field_files_webmasters'
   - 'view own field_list_media'
+  - 'view own field_top_image'
   - 'view own organization profile'
   - 'view own profile'
   - 'view own unpublished content'

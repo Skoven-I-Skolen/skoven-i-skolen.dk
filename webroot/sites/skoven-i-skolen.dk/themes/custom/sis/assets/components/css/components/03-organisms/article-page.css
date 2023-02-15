@@ -97,16 +97,6 @@ media {
   }
 }
 
-.article-content-wrapper {
-  & h2 {
-    font-size: var(--base-font-size-xxlarge) !important;
-  }
-
-  & h3 {
-    font-size: var(--base-font-size-xlarge) !important;
-  }
-}
-
 .contextual-region {
   overflow: visible;
 }
@@ -257,4 +247,32 @@ media {
   .undervi-box--read-more {
     display: none;
   }
+}
+
+p {
+  &.align-right {
+     text-align: right;
+   }
+  &.align-center {
+     text-align: center;
+   }
+  &.align-right {
+     text-align: left;
+   }
+}
+
+.img-size {
+  &--small {
+     max-width: 30% !important;
+   }
+  &--medium {
+     max-width: 70% !important;
+   }
+  &--large {
+     max-width: 90% !important
+   }
+}
+
+figure {
+  text-align: center;
 }

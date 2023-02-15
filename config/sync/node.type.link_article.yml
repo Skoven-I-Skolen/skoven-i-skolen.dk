@@ -1,0 +1,17 @@
+uuid: 9f70c297-0506-4b5f-8379-d93249bd3ba8
+langcode: da
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Linkartikel
+type: link_article
+description: 'Brug linkartikler til artikler og indhold fra andre hjemmesider.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

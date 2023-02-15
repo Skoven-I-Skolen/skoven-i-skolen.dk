@@ -1,6 +1,8 @@
 {{ attach_library('sis/organization-page') }}
 {{ attach_library('sis/section-bg-graphics') }}
 
+{{ breadcrumb }}
+
 <section class="section section--spacing-top-medium section--spacing-bottom-medium section--background-graphics">
 	<img src="/sites/skoven-i-skolen.dk/themes/custom/sis/dist/images/wind.svg" class="section-bg-graphics__image section-bg-graphics__image--wind section-bg-graphics__position--right">
 	<div class="container">
@@ -14,13 +16,13 @@
 		{{ page.content }}
 		<div class="article-page__related section section--spacing-bottom-none">
 			<div class="row">
-				<div class="col-xs-12 col-sm-8 col-md-8">
+				<div class="col-xs-12 col-sm-7 col-md-8">
 					<div class="article-page__related-header">
 						<h3>{{ atom_str('organization-page-related-headline') }}</h3>
 						<p>{{ atom_str('organization-page-related-description') }}</p>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
+				<div class="col-xs-12 col-sm-5 col-md-4">
 					<div class="swiper-navigation">
             {% if page.content_slideshow %}
               <div class="slider-pager-count">

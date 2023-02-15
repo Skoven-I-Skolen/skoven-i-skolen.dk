@@ -65,7 +65,10 @@
     }
 
     &--content {
-      word-break: break-all;
+      word-break: break-word;
+      a {
+        color: var(--color-purple);
+      }
     }
   }
 }

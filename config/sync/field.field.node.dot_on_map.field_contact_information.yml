@@ -17,8 +17,8 @@ field_name: field_contact_information
 entity_type: node
 bundle: dot_on_map
 label: Kontaktdata
-description: 'Dine kontaktoplysninger, såsom telefonnummer, e-mail og postadresse.'
-required: false
+description: 'Skriv institutionens eller personens kontaktdata, som vi må lægge ud på sitet: Navn, adresse, e-mail og evt. også telefonnummer.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

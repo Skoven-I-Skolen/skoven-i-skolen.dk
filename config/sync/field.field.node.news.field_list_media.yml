@@ -14,7 +14,7 @@ entity_type: node
 bundle: news
 label: 'Liste media'
 description: 'Image used for meta tags and inline navigation'
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

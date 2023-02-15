@@ -18,6 +18,8 @@ class BlogPostRepository {
       $writers->condition('uid', $exception, '!=');
     }
 
+    $writers->sort('field_full_name', 'ASC');
+
     return $writers->execute();
   }
 

@@ -6,8 +6,6 @@ dependencies:
     - oembed_providers.provider.twentythree
 id: sis_custom
 label: 'SiS Custom'
-description: 'Videoer fra TwentyThree, Youtube og Vimeo'
+description: 'Videoer fra TwentyThree'
 providers:
   - TwentyThree
-  - Vimeo
-  - YouTube

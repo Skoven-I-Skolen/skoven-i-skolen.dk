@@ -62,6 +62,12 @@ class SettingsForm extends ConfigFormBase {
       '#default_value' => $this->configFactory()->get(MapManager::CONFIG_KEY)->get('display_map_helpers') ?? false,
     ];
 
+    $form['general_settings_fieldset']['always_show_all_filters'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Always show all filters'),
+      '#default_value' => $this->configFactory()->get(MapManager::CONFIG_KEY)->get('always_show_all_filters') ?? false,
+    ];
+
     $form['general_settings_fieldset']['max_visible_filters'] = [
       '#type' => 'number',
       '#title' => $this->t('Max visible filters'),
@@ -137,6 +143,10 @@ class SettingsForm extends ConfigFormBase {
 
     $this->configFactory()->getEditable(MapManager::CONFIG_KEY)
       ->set('display_map_helpers', $form_state->getValue('display_map_helpers'))
+      ->save();
+
+    $this->configFactory()->getEditable(MapManager::CONFIG_KEY)
+      ->set('always_show_all_filters', $form_state->getValue('always_show_all_filters'))
       ->save();
 
     $this->configFactory()->getEditable(MapManager::CONFIG_KEY)

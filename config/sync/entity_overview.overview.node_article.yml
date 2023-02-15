@@ -1,20 +1,27 @@
 uuid: dc546d23-0531-4810-95ed-14a7b2dffaec
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.article
+    - node.type.link_article
+  module:
+    - node
 id: node_article
 label: Artikel
 entity_bundles:
   node:
     - article
+    - link_article
 fields:
+  text: search
   owner: entity_autocomplete
-  text: textfield
+  external: checkboxes
   field_article_type: checkboxes
   field_class: checkboxes
   field_location: checkboxes
   field_season: checkboxes
   field_subject: checkboxes
-engine_id: relewise
-sort_field: field_list_date
+engine_id: custom_relewise
+sort_field: created
 show_total: results

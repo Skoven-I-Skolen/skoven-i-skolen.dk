@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 
 \Drupal::moduleHandler()->loadInclude('sis_articles', 'inc', 'node.preprocess');
@@ -45,6 +46,8 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
   $is_anon_or_org = in_array('anonymous', $roles) ||
     in_array('organization', $roles);
 
+  unset($form['field_people_and_places']['widget']['#options']['_none']);
+
   if ($form_id === 'node_dot_on_map_form') {
     if ($is_anon_or_org) {
       foreach (array_keys($form['actions']) as $action) {
@@ -55,7 +58,9 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
   }
 
-  else if ($form_id === 'node_article_form' || $form_id === 'node_article_edit_form') {
+  else if ($form_id === 'node_article_form' || $form_id === 'node_article_edit_form' || $form_id === 'node_link_article_form' || $form_id === 'node_link_article_edit_form') {
+    $form['field_colophon_author']['widget'][0]['value']['#required'] = $is_anon_or_org;
+    $form['field_contact_person']['widget'][0]['#required'] = $is_anon_or_org;
     if (isset($form['field_article_type']['widget']['#options'])) {
       foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
         if ($value === 'Blogs') {
@@ -90,7 +95,6 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
   }
 
-
   else if ($form_id === 'node_blog_post_form' || $form_id === 'node_blog_post_edit_form') {
     if (isset($form['field_article_type']['widget']['#options'])) {
       foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
@@ -100,6 +104,10 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
         }
       }
     }
+  }
+
+  else if ($form_id === 'add_content') {
+    $form['#attached']['library'][] = 'sis/add-content-form';
   }
 
   if (in_array('anonymous', $roles) || in_array('organization', $roles)
@@ -112,6 +120,7 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
       $form['revision']['#access'] = FALSE;
     }
     if (isset($form['moderation_state']['#access'])) {
+      $form["moderation_state"]["widget"][0]["state"]["#default_value"] = 'unpublished';
       $form['moderation_state']['#access'] = FALSE;
     }
     if (isset($form['revision_log']['#access'])) {
@@ -138,6 +147,9 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
     if (isset($form['field_section_bg_graphics_pos']['#access'])) {
       $form['field_section_bg_graphics_pos']['#access'] = FALSE;
+    }
+    if (isset($form['field_search_exclude']['#access'])) {
+      $form['field_search_exclude']['#access'] = FALSE;
     }
   }
 

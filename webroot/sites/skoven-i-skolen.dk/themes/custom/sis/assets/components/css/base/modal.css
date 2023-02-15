@@ -2,11 +2,17 @@
  * Type: Base.
  * Modal styling.
  */
-.ui-dialog:not(.ui-dialog-position-side) {
+
+body {
+  height: 100vh;
+}
+
+.ui-dialog:not(.ui-dialog-position-side):not(.ui-dialog.article-modal) {
   /* stylelint-disable */
   top: 50% !important;
   left: 50% !important;
   height: 80% !important;
+  margin-top: 0 !important;
   transform: translate(-50%, -50%);
 
   .ui-dialog-content {
@@ -14,6 +20,11 @@
     min-height: calc(100% - 46px) !important;
   }
   /* stylelint-enable */
+}
+
+.ui-widget-overlay {
+  background: var(--color-black);
+  opacity: 0.8;
 }
 
 #layout-builder-modal {
@@ -55,4 +66,8 @@
     margin: -.75em 0 0;
     overflow: visible;
   }
+}
+
+.entity-browser-modal {
+  margin-top: -200px !important;
 }

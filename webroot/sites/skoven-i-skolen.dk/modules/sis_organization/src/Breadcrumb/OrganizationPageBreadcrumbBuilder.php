@@ -48,7 +48,7 @@ class OrganizationPageBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
     $links = [
       Link::createFromRoute(t('Frontpage'), '<front>'),
-      Link::createFromRoute(t('Organizations'), '<none>'),
+      Link::createFromRoute(t('Visitkort'), '<none>'),
     ];
 
     $breadcrumb->setLinks($links);

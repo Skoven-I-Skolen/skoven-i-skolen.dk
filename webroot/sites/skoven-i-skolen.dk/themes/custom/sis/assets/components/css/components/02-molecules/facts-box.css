@@ -75,6 +75,10 @@
     min-width: 85px;
     font-weight: var(--heading-font-weight);
 
+    .facts-box__content-item--lat-lon & {
+      min-width: 100px;
+    }
+
     &-author-image {
       width: 85px;
       max-height: 85px;
@@ -82,7 +86,8 @@
       overflow: hidden;
 
       img {
-        width: 100%;
+        max-width: 100%;
+        height: auto;
       }
     }
   }

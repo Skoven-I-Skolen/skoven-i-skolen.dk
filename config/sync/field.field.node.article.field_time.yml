@@ -18,7 +18,7 @@ field_name: field_time
 entity_type: node
 bundle: article
 label: Tid
-description: ''
+description: 'Hvor lang tid tager din aktivitet/dit undervisningsforløb?'
 required: false
 translatable: false
 default_value: {  }

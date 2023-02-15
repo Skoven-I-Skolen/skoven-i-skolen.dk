@@ -43,6 +43,10 @@
     <div class="profile__hero">
       {{ content.field_top_image }}
     </div>
+    {% elseif content.field_top_image_anonymous[0] %}
+      <div class="profile__hero">
+        {{ content.field_top_image_anonymous }}
+      </div>
   {% endif %}
   <div class="profile__content{{ profile.field_section_bg_graphics.value ? ' section section--background-graphics' : '' }}">
     {% if profile.field_section_bg_graphics.value %}
@@ -120,6 +124,8 @@
     </div>
   </div>
 </div>
-<div class="profile__overview">
-  {{ content.field_organization_overview }}
+<div class="container layout__region layout__region--first">
+  <div class="profile__overview">
+    {{ content.field_organization_overview }}
+  </div>
 </div>

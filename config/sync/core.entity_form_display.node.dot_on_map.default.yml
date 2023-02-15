@@ -5,6 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.media_directories_modal
     - field.field.node.dot_on_map.body
+    - field.field.node.dot_on_map.field_article_type
     - field.field.node.dot_on_map.field_class
     - field.field.node.dot_on_map.field_contact_information
     - field.field.node.dot_on_map.field_files
@@ -34,6 +35,7 @@ dependencies:
     - file
     - image
     - metatag
+    - path
     - text
 third_party_settings:
   field_group:
@@ -47,8 +49,8 @@ third_party_settings:
         - group_replant_the_planet
       label: Kategorisering
       region: content
-      parent_name: group_categorization_wrapper
-      weight: 15
+      parent_name: ''
+      weight: 14
       format_type: tabs
       format_settings:
         classes: ''
@@ -60,7 +62,7 @@ third_party_settings:
       children:
         - field_subject
       label: Fag
-      region: content
+      region: hidden
       parent_name: group_categorization
       weight: 6
       format_type: tab
@@ -75,7 +77,7 @@ third_party_settings:
       children:
         - field_season
       label: Årstid
-      region: content
+      region: hidden
       parent_name: group_categorization
       weight: 9
       format_type: tab
@@ -90,7 +92,7 @@ third_party_settings:
       children:
         - field_class
       label: Klasse
-      region: content
+      region: hidden
       parent_name: group_categorization
       weight: 5
       format_type: tab
@@ -105,7 +107,7 @@ third_party_settings:
       children:
         - field_location
       label: Sted
-      region: content
+      region: hidden
       parent_name: group_categorization
       weight: 7
       format_type: tab
@@ -118,7 +120,7 @@ third_party_settings:
         required_fields: true
     group_categorization_wrapper:
       children:
-        - group_categorization
+        - field_people_and_places
       label: Kategorisering
       region: content
       parent_name: ''
@@ -128,7 +130,7 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        description: ''
+        description: 'Hvis din kategori ikke findes, så send en besked til <a href="mailto:info@skoven-i-skolen.dk">info@skoven-i-skolen.dk</a>'
         required_fields: true
     group_information:
       children:
@@ -161,10 +163,9 @@ third_party_settings:
         description: ''
         required_fields: true
     group_people_and_places:
-      children:
-        - field_people_and_places
+      children: {  }
       label: 'Mennesker & steder'
-      region: content
+      region: hidden
       parent_name: group_categorization
       weight: 10
       format_type: tab
@@ -179,7 +180,7 @@ third_party_settings:
       children:
         - field_replant_the_planet
       label: 'Genplant Planeten'
-      region: content
+      region: hidden
       parent_name: group_categorization
       weight: 11
       format_type: tab
@@ -234,15 +235,15 @@ content:
     settings:
       rows: 9
       summary_rows: 3
-      placeholder: ''
-      show_summary: true
+      placeholder: 'Fortæl kort om, hvem I er – og beskriv jeres tilbud til skoler.'
+      show_summary: false
     third_party_settings:
       allowed_formats:
         hide_help: '0'
         hide_guidelines: '0'
-  field_class:
-    type: options_buttons
-    weight: 6
+  created:
+    type: datetime_timestamp
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -252,8 +253,11 @@ content:
     region: content
     settings:
       rows: 5
-      placeholder: ''
-    third_party_settings: {  }
+      placeholder: 'Skriv institutionens eller personens kontaktdata, som vi må lægge ud på sitet: Navn, adresse, e-mail og evt. også telefonnummer.'
+    third_party_settings:
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
   field_files:
     type: file_generic
     weight: 15
@@ -284,12 +288,6 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_location:
-    type: options_buttons
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
     weight: 8
@@ -301,18 +299,6 @@ content:
   field_people_and_places:
     type: options_buttons
     weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_replant_the_planet:
-    type: options_buttons
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_season:
-    type: options_buttons
-    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -328,19 +314,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_subject:
-    type: options_buttons
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_summary:
     type: string_textarea
     weight: 4
     region: content
     settings:
       rows: 5
-      placeholder: ''
+      placeholder: 'Beskriv dit tilbud kort (max 100 anslag). Resume vises i pop up vindue, når man klikker på din prik på kortet.'
     third_party_settings: {  }
   lat:
     type: string_textfield
@@ -364,11 +344,24 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   sis_map_address_dawa:
     type: dawa_address_autocomplete_widget
     weight: 8
     region: content
     settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -376,15 +369,31 @@ content:
     region: content
     settings:
       size: 60
+      placeholder: 'Skriv institutionens navn eller personens navn.'
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
       placeholder: ''
     third_party_settings: {  }
+  url_redirects:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  created: true
+  field_article_type: true
+  field_class: true
   field_contact_data: true
+  field_location: true
+  field_replant_the_planet: true
+  field_season: true
+  field_subject: true
   langcode: true
-  path: true
   promote: true
-  status: true
   sticky: true
-  uid: true
-  url_redirects: true

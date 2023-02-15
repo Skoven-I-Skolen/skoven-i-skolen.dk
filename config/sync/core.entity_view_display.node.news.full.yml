@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.content_hierarchy
     - field.field.node.news.field_article_categories
+    - field.field.node.news.field_article_type
     - field.field.node.news.field_description
     - field.field.node.news.field_factboxes
     - field.field.node.news.field_graphics
@@ -94,7 +95,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: article
       link: false
     third_party_settings: {  }
     weight: 0
@@ -103,6 +104,7 @@ hidden:
   content_hierarchy: true
   content_moderation_control: true
   field_article_categories: true
+  field_article_type: true
   field_factboxes: true
   field_graphics: true
   field_header: true

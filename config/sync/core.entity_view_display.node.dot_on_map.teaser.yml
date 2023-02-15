@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.dot_on_map.body
+    - field.field.node.dot_on_map.field_article_type
     - field.field.node.dot_on_map.field_class
     - field.field.node.dot_on_map.field_contact_information
     - field.field.node.dot_on_map.field_files
@@ -46,6 +47,15 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_list_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: list
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_list_media_anonymous:
     type: responsive_image
     label: hidden
@@ -61,10 +71,10 @@ content:
     weight: 1
     region: content
 hidden:
+  field_article_type: true
   field_class: true
   field_contact_information: true
   field_files: true
-  field_list_media: true
   field_location: true
   field_meta_tags: true
   field_people_and_places: true

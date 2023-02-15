@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
+    - field.field.node.article.field_files_webmasters
     - field.field.node.article.field_header
     - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
@@ -33,6 +34,7 @@ dependencies:
     - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_search_exclude
     - field.field.node.article.field_season
     - field.field.node.article.field_section_bg_graphics
     - field.field.node.article.field_section_bg_graphics_pos
@@ -90,6 +92,18 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_external_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_list_date:
     type: datetime_time_ago
     label: hidden
@@ -144,14 +158,17 @@ hidden:
   field_contact_person: true
   field_copy_sheet: true
   field_equipment: true
+  field_external_link_logo: true
   field_factboxes: true
   field_files: true
+  field_files_webmasters: true
   field_header: true
   field_institution: true
   field_location: true
   field_materials: true
   field_media_downloads: true
   field_meta_tags: true
+  field_search_exclude: true
   field_season: true
   field_section_bg_graphics: true
   field_section_bg_graphics_pos: true

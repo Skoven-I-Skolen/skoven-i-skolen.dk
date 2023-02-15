@@ -1,0 +1,29 @@
+uuid: 64989fb2-33c4-4c87-a721-5aabbfc0a579
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class
+    - node.type.link_article
+    - taxonomy.vocabulary.class
+id: node.link_article.field_class
+field_name: field_class
+entity_type: node
+bundle: link_article
+label: Klassetrin
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      class: class
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

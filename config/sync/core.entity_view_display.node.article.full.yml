@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.article.field_equipment
     - field.field.node.article.field_factboxes
     - field.field.node.article.field_files
+    - field.field.node.article.field_files_webmasters
     - field.field.node.article.field_header
     - field.field.node.article.field_institution
     - field.field.node.article.field_list_date
@@ -33,6 +34,7 @@ dependencies:
     - field.field.node.article.field_materials
     - field.field.node.article.field_media_downloads
     - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_search_exclude
     - field.field.node.article.field_season
     - field.field.node.article.field_section_bg_graphics
     - field.field.node.article.field_section_bg_graphics_pos
@@ -43,11 +45,13 @@ dependencies:
     - field.field.node.article.lon
     - field.field.node.article.sis_map_address_dawa
     - node.type.article
+    - responsive_image.styles.3_column_flex_height
   module:
     - entity_reference_revisions
     - image
     - layout_builder
     - layout_builder_restrictions
+    - responsive_image
     - text
     - user
 third_party_settings:
@@ -161,6 +165,29 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_external_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_external_link_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_header:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -169,6 +196,24 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_list_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 3_column_flex_height
+      link: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_list_media_anonymous:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: 3_column_flex_height
+      image_link: ''
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_teaching_goals:
     type: text_default
@@ -193,14 +238,14 @@ hidden:
   field_equipment: true
   field_factboxes: true
   field_files: true
+  field_files_webmasters: true
   field_institution: true
   field_list_date: true
-  field_list_media: true
-  field_list_media_anonymous: true
   field_location: true
   field_materials: true
   field_media_downloads: true
   field_meta_tags: true
+  field_search_exclude: true
   field_season: true
   field_section_bg_graphics: true
   field_section_bg_graphics_pos: true

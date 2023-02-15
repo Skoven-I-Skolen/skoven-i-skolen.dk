@@ -1,4 +1,4 @@
-uuid: 806a1bc2-b0e7-4263-8bfa-5def25d67e9a
+uuid: 6de46344-42df-444a-af81-e46ef9d248da
 langcode: da
 status: true
 dependencies:
@@ -27,6 +27,10 @@ settings:
           items:
             - BulletedList
             - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
   plugins:
     drupallink:
       linkit_enabled: false
