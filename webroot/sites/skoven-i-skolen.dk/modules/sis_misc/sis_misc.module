@@ -90,9 +90,11 @@ function sis_misc_form_entity_embed_dialog_alter(&$form, FormStateInterface $for
  */
 function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['options']['#access'] = \Drupal::currentUser()->hasPermission('bypass node access');
-
+  $form['#attached']['library'][] = 'sis/ckeditor5';
   $user = \Drupal::currentUser();
   $roles = $user->getRoles();
+
+
 
   if (isset($form['field_article_type']['widget']['#options'])) {
     foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
@@ -160,13 +162,6 @@ function sis_misc_simple_sitemap_links_alter(array &$links) {
       $links[$key]['alternate_urls'][$language] = $alternate_url;
     }
   }
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function sis_misc_preprocess_views_view_unformatted__media_directories_base(&$variables) {
-  $a = 0 ;
 }
 
 function sis_misc_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
