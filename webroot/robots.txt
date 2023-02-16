@@ -7,3 +7,5 @@ Disallow: /node/add/article
 Disallow: /node/35737
 
 Allow: /
+
+Sitemap: https://skoven-i-skolen.dk/sitemap.xml
