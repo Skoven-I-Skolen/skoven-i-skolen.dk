@@ -150,9 +150,6 @@
                 "web-root": "webroot/"
             },
             "file-mapping": {
-                "[web-root]/robots.txt": {
-                    "append": "assets/robots-additions.txt"
-                },
                 "[web-root]/sites/development.services.yml": {
                     "mode": "replace",
                     "path": "assets/development.services.yml",
