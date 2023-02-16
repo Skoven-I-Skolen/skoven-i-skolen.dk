@@ -1,2 +1,9 @@
 User-agent: *
-Disallow: /
+
+Disallow: /node/add/*
+Disallow: /node/add/dot_on_map
+Disallow: /del
+Disallow: /node/add/article
+Disallow: /node/35737
+
+Allow: /
