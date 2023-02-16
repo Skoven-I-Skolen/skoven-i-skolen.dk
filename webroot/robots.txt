@@ -63,5 +63,10 @@ Disallow: /index.php/user/login
 Disallow: /index.php/user/logout
 Disallow: /index.php/media/oembed
 Disallow: /index.php/*/media/oembed
+Disallow: /node/add/*
+Disallow: /node/add/dot_on_map
+Disallow: /del
+Disallow: /node/add/article
+Disallow: /node/35737
 
 Sitemap: https://skoven-i-skolen.dk/sitemap.xml
