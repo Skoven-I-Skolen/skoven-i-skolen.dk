@@ -161,6 +161,7 @@ module:
   views: 10
   paragraphs: 11
   premium_profile: 1000
+  robotstxt: 1
 theme:
   stable: 0
   premium_theme: 0
