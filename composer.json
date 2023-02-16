@@ -81,6 +81,7 @@
         "drupal/redirect": "^1.0",
         "drupal/redirect_404": "^1.8",
         "drupal/redis": "^1.5",
+        "drupal/robotstxt": "^1.4",
         "drupal/role_delegation": "^1.1",
         "drupal/role_theme_switcher": "^1.1",
         "drupal/rules": "^3.0@alpha",
@@ -149,7 +150,9 @@
                 "web-root": "webroot/"
             },
             "file-mapping": {
-                "[web-root]/robots.txt": true,
+                "[web-root]/robots.txt": {
+                    "append": "assets/robots-additions.txt"
+                },
                 "[web-root]/sites/development.services.yml": {
                     "mode": "replace",
                     "path": "assets/development.services.yml",
