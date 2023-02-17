@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.media.article_migrated
     - field.field.media.image.field_media_category
     - field.field.media.image.field_media_image
+    - image.style.default
     - media.type.image
   module:
     - image
@@ -26,7 +27,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: default
       image_loading:
         attribute: lazy
     third_party_settings: {  }
