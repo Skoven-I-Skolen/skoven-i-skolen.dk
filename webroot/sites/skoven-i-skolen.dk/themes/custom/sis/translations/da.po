@@ -80,3 +80,6 @@ msgstr "Juster til venstre, og ombryd tekst"
 
 msgid "Align right and wrap text"
 msgstr "Juster til højre, og ombryd tekst"
+
+msgid "Select media"
+msgstr "Vælg fil"
