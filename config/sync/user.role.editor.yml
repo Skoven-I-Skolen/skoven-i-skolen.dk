@@ -291,6 +291,7 @@ permissions:
   - 'update content translations'
   - 'update media'
   - 'update own organization profile'
+  - 'use editorial transition afpublicere'
   - 'use editorial transition archive'
   - 'use editorial transition archived_draft'
   - 'use editorial transition archived_published'
