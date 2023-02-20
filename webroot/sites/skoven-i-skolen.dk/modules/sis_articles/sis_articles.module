@@ -166,7 +166,7 @@ function sis_articles_form_alter(&$form, FormStateInterface $form_state, $form_i
     'node_blog_post_edit_form',
   ];
 
-  if ($is_editor && in_array($form_id, $forms_with_custom_validation)) {
+  if (in_array($form_id, $forms_with_custom_validation)) {
     $form['#validate'][] = 'sis_articles_custom_validate';
   }
 
