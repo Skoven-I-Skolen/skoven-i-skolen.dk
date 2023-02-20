@@ -51,9 +51,6 @@ display:
                 title: Udgivet
               2:
                 title: 'Ikke udgivet'
-        langcode:
-          expose:
-            label: Sprog
       title: Indhold
       empty:
         area_text_custom:

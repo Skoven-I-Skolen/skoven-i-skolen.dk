@@ -51,9 +51,6 @@ display:
                 title: Published
               2:
                 title: Unpublished
-        langcode:
-          expose:
-            label: Language
       title: Content
       empty:
         area_text_custom:
