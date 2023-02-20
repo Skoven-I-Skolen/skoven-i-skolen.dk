@@ -12,9 +12,9 @@ id: node.article.field_list_media
 field_name: field_list_media
 entity_type: node
 bundle: article
-label: 'Liste media (Webmasters)'
-description: 'Et lille billede, der vises på interne søgeresultater og andre lister. Det kan være det samme billede som artiklens billede.'
-required: true
+label: 'Liste media (kan kun redigeres af redaktører)'
+description: "Dette billede erstatter billedet ovenfor, som er uploadet af en anonym bruger eller en blogger.\r\nEt lille billede, der vises på interne søgeresultater og andre lister. Det kan være det samme billede som artiklens billede."
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

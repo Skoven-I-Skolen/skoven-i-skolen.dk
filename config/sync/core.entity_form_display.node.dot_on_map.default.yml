@@ -135,8 +135,8 @@ third_party_settings:
     group_information:
       children:
         - field_summary
-        - field_list_media
         - field_list_media_anonymous
+        - field_list_media
       label: Listevisning
       region: content
       parent_name: ''
@@ -267,7 +267,7 @@ content:
     third_party_settings: {  }
   field_list_media:
     type: entity_browser_entity_reference
-    weight: 5
+    weight: 6
     region: content
     settings:
       entity_browser: media_directories_modal
@@ -282,7 +282,7 @@ content:
     third_party_settings: {  }
   field_list_media_anonymous:
     type: image_image
-    weight: 6
+    weight: 5
     region: content
     settings:
       progress_indicator: throbber

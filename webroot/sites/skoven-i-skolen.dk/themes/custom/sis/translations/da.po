@@ -83,3 +83,6 @@ msgstr "Juster til højre, og ombryd tekst"
 
 msgid "Select media"
 msgstr "Vælg fil"
+
+msgid "An image is required as list media"
+msgstr "Et billede er påkrævet som listemedie."
