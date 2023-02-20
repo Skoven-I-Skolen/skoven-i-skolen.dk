@@ -10,9 +10,9 @@ id: node.blog_post.field_list_media
 field_name: field_list_media
 entity_type: node
 bundle: blog_post
-label: 'Liste media (webmasters)'
-description: ''
-required: true
+label: 'Liste media (kan kun redigeres af redaktører)'
+description: 'Dette billede erstatter billedet ovenfor, som er uploadet af en anonym bruger eller en blogger.'
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

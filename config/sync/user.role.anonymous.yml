@@ -36,7 +36,6 @@ permissions:
   - 'create image media'
   - 'create link_article content'
   - 'delete own image media'
-  - 'edit own field_article_image_anonymous'
   - 'edit own image media'
   - 'search content'
   - 'use editorial transition create_new_draft'
