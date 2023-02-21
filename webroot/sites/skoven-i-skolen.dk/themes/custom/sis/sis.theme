@@ -67,8 +67,17 @@ function sis_preprocess_block(&$variables) {
       }
       $variables['content']['title']['#title'] =
         new TranslatableMarkup('Create @name', ['@name' => $name]);
-      $variables['#cache']['contexts'][] = 'url.query_args';
+      if (isset($variables['#cache']['contexts'])) {
+        $variables['#cache']['contexts'][] = 'url.query_args:type';
+      }
     }
+    if (isset($variables['#cache']['contexts'])) {
+      $variables['#cache']['contexts'][] = 'url';
+      if (($key = array_search('user.permissions', $variables['#cache']['contexts'])) !== false) {
+        unset($variables['#cache']['contexts'][$key]);
+      }
+    }
+
   }
 }
 
