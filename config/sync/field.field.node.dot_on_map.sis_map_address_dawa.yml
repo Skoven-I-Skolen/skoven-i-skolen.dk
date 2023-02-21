@@ -12,7 +12,7 @@ field_name: sis_map_address_dawa
 entity_type: node
 bundle: dot_on_map
 label: Addresse
-description: "Denne adresse bruges til at finde indholdet på kortet.\r\nHvis der ikke er nogen adresse, vil nedenstående koordinater blive brugt."
+description: "Denne adresse bruges til at finde indholdet på kortet.\r\nHvis der ikke er nogen adresse, så skriv blot stedets koordinater ind i de to felter nedenfor."
 required: false
 translatable: true
 default_value: {  }
