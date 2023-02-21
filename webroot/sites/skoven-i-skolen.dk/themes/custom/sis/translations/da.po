@@ -39,9 +39,6 @@ msgstr "Rediger visitkortside"
 msgid 'Required if you want to change the %mail or %pass below. <a href=":request_new_url" title="Send password reset instructions via email.">Reset your password</a>.'
 msgstr 'Påkrævet hvis du vil skifte %mail eller %pass nedenfor. <a href=":request_new_url" title="Send password reset instructions via email.">Nulstil dit password</a>.'
 
-msgid "Select media"
-msgstr "Vælg fil"
-
 msgid "You can select one @entity_type."
 msgstr "Du kan vælge ét element"
 
@@ -81,11 +78,11 @@ msgstr "Juster til venstre, og ombryd tekst"
 msgid "Align right and wrap text"
 msgstr "Juster til højre, og ombryd tekst"
 
-msgid "Select media"
-msgstr "Vælg fil"
-
 msgid "An image is required as list media"
 msgstr "Et billede er påkrævet som listemedie."
 
 msgid "All"
 msgstr "Alle"
+
+msgid "Select file"
+msgstr "Vælg fil"
