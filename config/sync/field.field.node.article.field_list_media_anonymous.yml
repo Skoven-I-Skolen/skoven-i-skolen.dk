@@ -13,7 +13,7 @@ entity_type: node
 bundle: article
 label: 'Liste media'
 description: 'Vælg et foto, der vises på interne søgeresultater og andre lister. Det kan være det samme billede som artiklens billede.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
