@@ -202,13 +202,23 @@ class ArticleContentDeliveryService {
 
   public function getUnpublishedContentByUser($user_id) {
     $nodes = \Drupal::entityTypeManager()->getStorage('node')
-      ->loadByProperties(['status' => 0, 'uid' => $user_id]);
+      ->getQuery()
+      ->condition('uid', $user_id)
+      ->condition('status', '0')
+      ->condition('type', 'almanac', 'NOT IN')
+      ->execute();
+    $nodes = Node::loadMultiple($nodes);
     return $this->entityTypeManager->getViewBuilder('node')->viewMultiple($nodes, 'list');
   }
 
   public function getPublishedContentByUser($user_id) {
     $nodes = \Drupal::entityTypeManager()->getStorage('node')
-      ->loadByProperties(['status' => 1, 'uid' => $user_id]);
+      ->getQuery()
+      ->condition('uid', $user_id)
+      ->condition('status', '1')
+      ->condition('type', 'almanac', 'NOT IN')
+      ->execute();
+    $nodes = Node::loadMultiple($nodes);
     return $this->entityTypeManager->getViewBuilder('node')->viewMultiple($nodes, 'list');
   }
 
