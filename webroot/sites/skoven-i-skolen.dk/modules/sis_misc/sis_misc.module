@@ -94,8 +94,6 @@ function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state, $
   $user = \Drupal::currentUser();
   $roles = $user->getRoles();
 
-
-
   if (isset($form['field_article_type']['widget']['#options'])) {
     foreach ($form['field_article_type']['widget']['#options'] as $key => $value) {
       if ($value === 'Mennesker og steder' || $value === 'Nyheder' || $value === 'Visitkort') {
@@ -108,6 +106,10 @@ function sis_misc_form_node_form_alter(&$form, FormStateInterface $form_state, $
 
   $anonymous = array_intersect($roles, ['anonymous', 'organization', 'writer']);
   $logged_in = array_intersect($roles, ['administrator', 'editor', 'webmaster']);
+
+  if ($anonymous && isset($form['field_article_type']['#access'])) {
+    $form['field_article_type']['#access'] = FALSE;
+  }
 
   $form['field_list_media']['widget']['#required'] = !empty($logged_in);
   $form['field_list_media_anonymous']['widget'][0]['#required'] = !empty($anonymous);
