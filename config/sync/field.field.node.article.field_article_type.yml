@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_article_type
     - node.type.article
     - taxonomy.vocabulary.article_types
+  content:
+    - 'taxonomy_term:article_types:b47ad27d-ad8c-46c4-b707-c60d226a1e9c'
 _core:
   default_config_hash: hrmAL6h_uKcZlEcv9rF5Dh8_yJe_bO2Kpc2Z2IJ1Ngg
 id: node.article.field_article_type
@@ -16,7 +18,9 @@ label: Type
 description: ''
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: b47ad27d-ad8c-46c4-b707-c60d226a1e9c
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
