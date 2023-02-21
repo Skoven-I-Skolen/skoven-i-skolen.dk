@@ -12,7 +12,7 @@ field_name: field_files
 entity_type: node
 bundle: dot_on_map
 label: Filer
-description: 'Hvis du vil knytte dokumenter eller flere fotos til dit opslag, så kan du lægge op til fem filer ved her på samlet max 5 MB.'
+description: 'Hvis du vil knytte dokumenter eller flere fotos til dit opslag, så kan du lægge op til fem filer ved her på samlet max 10 MB.'
 required: false
 translatable: false
 default_value: {  }
@@ -22,6 +22,6 @@ settings:
   handler_settings: {  }
   file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'txt pdf docx doc png jpg jpeg gif'
-  max_filesize: '5 MB'
+  max_filesize: '10 MB'
   description_field: false
 field_type: file
