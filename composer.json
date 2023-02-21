@@ -213,6 +213,9 @@
             },
             "drupal/scheduled_transitions": {
                 "(#3210877) Get node lock message...": "https://www.drupal.org/files/issues/2021-04-27/scheduled_transitions-3210877-node_lock_message-2.patch"
+            },
+            "drupal/ckeditor5" : {
+                "Remove csfr requirement from CKEditor5 routes" : "webroot/sites/skoven-i-skolen.dk/patches/ckeditor5-remove-csfr-requirement-from-routes.patch"
             }
         }
     }
