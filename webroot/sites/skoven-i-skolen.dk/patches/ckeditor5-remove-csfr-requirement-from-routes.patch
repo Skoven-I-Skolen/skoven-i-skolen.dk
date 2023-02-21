@@ -1,0 +1,20 @@
+diff --git a/ckeditor5.routing.yml b/ckeditor5.routing.yml
+index 98256192..af681264 100644
+--- a/ckeditor5.routing.yml
++++ b/ckeditor5.routing.yml
+@@ -6,7 +6,6 @@ ckeditor5.upload_image:
+   requirements:
+     _entity_access: 'editor.use'
+     _custom_access: '\Drupal\ckeditor5\Controller\CKEditor5ImageController::imageUploadEnabledAccess'
+-    _csrf_token: 'TRUE'
+   options:
+     parameters:
+       editor:
+@@ -20,7 +19,6 @@ ckeditor5.media_entity_metadata:
+   requirements:
+     _entity_access: 'editor.use'
+     _custom_access: '\Drupal\ckeditor5\Controller\CKEditor5MediaController::access'
+-    _csrf_token: 'TRUE'
+   options:
+     parameters:
+       editor:
