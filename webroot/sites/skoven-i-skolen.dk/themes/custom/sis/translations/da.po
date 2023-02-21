@@ -86,3 +86,6 @@ msgstr "Vælg fil"
 
 msgid "An image is required as list media"
 msgstr "Et billede er påkrævet som listemedie."
+
+msgid "All"
+msgstr "Alle"
