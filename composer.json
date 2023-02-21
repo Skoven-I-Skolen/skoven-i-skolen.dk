@@ -200,7 +200,8 @@
                 "(#3080606) Reorder Layout Builder sections": "https://www.drupal.org/files/issues/2020-06-18/3080606-reorder-layout-sections-43.patch",
                 "(#2985882) Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch",
                 "(#2780839) Optimize migration of specific source IDs for SQL sources": "https://www.drupal.org/files/issues/2022-04-25/2780839-9.4.x-optimize-migrate-source-filter-53.patch",
-                "(#3278959) oEmbed resource version as float throws exception": "https://www.drupal.org/files/issues/2022-08-30/media-float-version-3278959-8.patch"
+                "(#3278959) oEmbed resource version as float throws exception": "https://www.drupal.org/files/issues/2022-08-30/media-float-version-3278959-8.patch",
+                "Remove csfr requirement from CKEditor5 routes" : "webroot/sites/skoven-i-skolen.dk/patches/ckeditor5-remove-csfr-requirement-from-routes.patch"
             },
             "drupal/paragraphs": {
                 "(#2901390) Integrity constraint violation: 1048 Column 'langcode' cannot be null": "https://www.drupal.org/files/issues/2020-06-25/paragraphs-2901390-51.patch"
@@ -213,9 +214,6 @@
             },
             "drupal/scheduled_transitions": {
                 "(#3210877) Get node lock message...": "https://www.drupal.org/files/issues/2021-04-27/scheduled_transitions-3210877-node_lock_message-2.patch"
-            },
-            "drupal/ckeditor5" : {
-                "Remove csfr requirement from CKEditor5 routes" : "webroot/sites/skoven-i-skolen.dk/patches/ckeditor5-remove-csfr-requirement-from-routes.patch"
             }
         }
     }
