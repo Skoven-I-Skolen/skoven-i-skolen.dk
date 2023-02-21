@@ -40,8 +40,6 @@ permissions:
   - 'create link_article content'
   - 'create remote_video media'
   - 'create video media'
-  - 'delete any article content'
-  - 'delete any link_article content'
   - 'delete own article content'
   - 'delete own document media'
   - 'delete own dot_on_map content'
