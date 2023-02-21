@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a26734671c1ad7da8dd7b3fbbc9eeb8",
+    "content-hash": "110bab69bd6de57437188bd6b151b12c",
     "packages": [
         {
             "name": "algolia/places",
