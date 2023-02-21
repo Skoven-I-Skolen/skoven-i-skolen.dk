@@ -7,6 +7,7 @@ use Drupal\entity_overview\OverviewFields\OwnerField;
 use Drupal\entity_overview\OverviewFields\SearchTextField;
 use Drupal\entity_overview\OverviewFilter;
 use Drupal\entity_overview\Plugin\EntityOverview\Engine\EntityQueryEngine;
+use Drupal\node\Entity\Node;
 use Drupal\sis_lexicon\OverviewFields\LetterField;
 
 /**
@@ -50,6 +51,8 @@ class LexiconEngine extends EntityQueryEngine {
     $overview = $filter->getOverview();
     $storage = $this->entityTypeManager->getStorage($this->getEntityTypeID($overview));
     $keys = $this->entityTypeManager->getDefinition($this->getEntityTypeID($overview))->getKeys();
+    $is_double_a = FALSE;
+    $is_single_a = FALSE;
     $query = $storage->getQuery()
       ->condition($keys['bundle'], $this->getBundles($overview), 'IN')
       ->condition('field_article_type', 15)
@@ -62,6 +65,8 @@ class LexiconEngine extends EntityQueryEngine {
       if ($field_name == 'text') {
         $query->condition($keys['label'], $value, 'CONTAINS');
       } elseif ($field_name == 'letter') {
+        $is_double_a = ($value === 'Å');
+        $is_single_a = ($value === 'A');
         $query->condition($keys['label'], $value, 'STARTS_WITH');
       } elseif (is_array($value)) {
         $query->condition($field_name, $value, 'IN');
@@ -88,7 +93,28 @@ class LexiconEngine extends EntityQueryEngine {
         break;
     }
 
-    return $query->execute();
+    $results = $query->execute();
+
+    if (!$is_single_a && !$is_double_a) {
+      return $results;
+    }
+
+    // SIS2-693: This is a hacky solution for an issue where Å and å are
+    // handled like A and a by MySQL. The other solution would be changing the
+    // collation on the server, which is not easily doable for SiS.
+    foreach ($results as $key => $value) {
+      if ($node = Node::load($value)) {
+        if ($letter = substr($node->getTitle(), 0, 1)) {
+          if ($letter === 'A' && $is_double_a) {
+            unset($results[$key]);
+          }
+          else if ($letter !== 'A' && $is_single_a) {
+            unset($results[$key]);
+          }
+        }
+      }
+    }
+    return $results;
   }
 
   /**
