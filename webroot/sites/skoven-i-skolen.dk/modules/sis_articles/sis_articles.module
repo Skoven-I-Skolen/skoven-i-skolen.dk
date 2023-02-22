@@ -80,6 +80,9 @@ function sis_articles_form_alter(&$form, FormStateInterface $form_state, $form_i
     }
 
     if ($article_type = Drupal::requestStack()->getCurrentRequest()->get('type')) {
+      if ($article_type === 'Link-artikel') {
+        $article_type = 'Undervisningsforløb';
+      }
       if (!isset($form['field_article_type']['widget']['#options'])) {
         return;
       }

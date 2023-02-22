@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.media.article
     - field.field.media.image.field_media_category
     - field.field.media.image.field_media_image
-    - image.style.default
+    - image.style.article
     - media.type.image
   module:
     - image
@@ -27,7 +27,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: default
+      image_style: article
       image_loading:
         attribute: lazy
     third_party_settings: {  }
