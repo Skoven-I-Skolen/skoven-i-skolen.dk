@@ -110,7 +110,7 @@ class AddContentForm extends FormBase {
         $form_state->setResponse(new RedirectResponse('/node/add/article?type=Undervisningsforløb'));
         break;
       case 'linked_article':
-        $form_state->setResponse(new RedirectResponse('/node/add/link_article?type=Undervisningsforløb'));
+        $form_state->setResponse(new RedirectResponse('/node/add/link_article?type=Link-artikel'));
         break;
     }
   }

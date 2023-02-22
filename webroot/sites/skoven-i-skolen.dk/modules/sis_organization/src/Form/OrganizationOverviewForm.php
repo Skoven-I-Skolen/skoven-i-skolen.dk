@@ -91,7 +91,6 @@ class OrganizationOverviewForm extends OverviewFilterForm {
       $entities = \Drupal::entityTypeManager()->getStorage('node')
         ->loadByProperties([
           'uid' => $uid,
-          'type' => 'article',
           'status' => 1,
         ]);
     }
