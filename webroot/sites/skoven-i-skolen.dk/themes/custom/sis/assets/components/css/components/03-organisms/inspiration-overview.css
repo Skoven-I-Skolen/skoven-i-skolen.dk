@@ -461,6 +461,11 @@
     @media (--viewport-sm-min) {
       flex-flow: row;
     }
+
+    &__wrapper {
+      max-height: 500px;
+      overflow: auto;
+    }
   }
 
   &__image {
