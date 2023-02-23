@@ -151,10 +151,10 @@ function sis_theme_suggestions_media_alter(array &$suggestions, array $variables
  */
 function sis_preprocess_input__submit(&$variables) {
   if ($variables["element"]["#name"] === 'field_top_image_anonymous_0_upload_button') {
-    $variables["attributes"]["value"] = t('Select media');
+    $variables["attributes"]["value"] = 'Vælg fil';
   }
   if ($variables["element"]["#name"] === 'field_top_image_entity_browser_entity_browser') {
-    $variables["attributes"]["value"] = t('Select media');
+    $variables["attributes"]["value"] = 'Vælg fil';
   }
 }
 
