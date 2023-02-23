@@ -25,7 +25,6 @@ const burgerPrev = () => {
     const targetList = target.parentNode.parentNode.parentNode;
     const parentList = target.parentNode;
     target.addEventListener('click', () => {
-      console.log('clicked');
       targetList.classList.remove('burger-nav__parent');
       parentList.classList.remove('burger-nav__parent', 'burger-nav__open');
     });
@@ -49,7 +48,6 @@ const mobileNav = () => {
   const mobileNavigationClose = document.getElementById('burger-menu--close');
 
   hamburgerIcon.addEventListener('click', (e) => {
-    console.log('clicked 2');
     e.preventDefault();
     if (hamburgerIcon.classList.contains('hamburger-icon--open')) {
       hamburgerIcon.classList.remove('hamburger-icon--open');
@@ -79,7 +77,6 @@ const mobileNav = () => {
   });
 
   mobileNavigationClose.addEventListener('click', (e) => {
-    console.log('clicked 4');
     if (hamburgerIcon.classList.contains('hamburger-icon--open')) {
       hamburgerIcon.classList.remove('hamburger-icon--open');
       mobileNavigation.classList.remove('burger-menu--overlay__active');
