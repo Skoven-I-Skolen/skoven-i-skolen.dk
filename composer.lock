@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "110bab69bd6de57437188bd6b151b12c",
+    "content-hash": "2e87c9d9ec7c657aa865403d7a143ef6",
     "packages": [
         {
             "name": "algolia/places",
@@ -6667,6 +6667,62 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/webp",
                 "issues": "https://www.drupal.org/project/issues/webp"
+            }
+        },
+        {
+            "name": "drupal/webp_extras",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/webp_extras.git",
+                "reference": "5da3b6a06837ee50ead65ccaa56fa054eaa9abbe"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9",
+                "drupal/webp": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "1.x-dev",
+                    "datestamp": "1637161897",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmad Smhan",
+                    "homepage": "https://www.drupal.org/user/3632457",
+                    "email": "a.smhan@sprintive.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Yahya Ahmad",
+                    "homepage": "https://www.drupal.org/user/3601769",
+                    "email": "yahya@sprintive.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "m.abdulqader",
+                    "homepage": "https://www.drupal.org/user/1281252"
+                }
+            ],
+            "description": "Extra functionalities for the WebP module. Provides a filter to convert images to webp images.",
+            "homepage": "https://www.drupal.org/project/webp_extras",
+            "support": {
+                "source": "http://git.drupal.org/project/webp_extras.git",
+                "issues": "https://www.drupal.org/project/issues/webp_extras",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
         {
@@ -13490,7 +13546,8 @@
         "drupal/paragraphs_asymmetric_translation_widgets": 10,
         "drupal/rules": 15,
         "drupal/search_api_page": 10,
-        "drupal/taxonomy_machine_name": 10
+        "drupal/taxonomy_machine_name": 10,
+        "drupal/webp_extras": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
