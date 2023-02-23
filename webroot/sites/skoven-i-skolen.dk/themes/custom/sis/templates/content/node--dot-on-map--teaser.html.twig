@@ -67,77 +67,36 @@
  *
  */
 #}
-
-{{ attach_library('sis/article-page') }}
-{{ attach_library('sis/facts-box') }}
-{{ attach_library('sis/slider-pager-count') }}
-{{ attach_library('sis/related-articles') }}
 {{ attach_library('sis/inspiration-overview') }}
-{{ attach_library('sis/read-more') }}
-
-{% set classes = [
-  'article-page',
-] %}
-
-<article{{ attributes.addClass(classes) }}>
-  <div class="article-page__modal">
-    <h1>{{ label }}</h1>
-    <div class="article-page__modal__inner__wrapper">
-      <div class="article-page__modal__inner">
-        <div class="article-page__modal__content">
-          {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] %}
-            <div class="article-page__modal-tags">
-              {% if node.field_subject[0] %}
-                {% for subject in node.field_subject %}
-                  <a href="/taxonomy/term/{{ subject.entity.tid.value }}" class="article-page__modal-tag" target="_blank">{{ subject.entity.name.value }}</a>
-                {% endfor %}
-              {% endif %}
-              {% if node.field_class[0] %}
-                {% for class in node.field_class %}
-                  <a href="/taxonomy/term/{{ class.entity.tid.value }}" class="article-page__modal-tag" target="_blank">{{ class.entity.name.value }}</a>
-                {% endfor %}
-              {% endif %}
-              {% if node.field_location[0] %}
-                {% for location in node.field_location %}
-                  <a href="/taxonomy/term/{{ location.entity.tid.value }}" class="article-page__modal-tag" target="_blank">{{ location.entity.name.value }}</a>
-                {% endfor %}
-              {% endif %}
-              {% if node.field_season[0] %}
-                {% for season in node.field_season %}
-                  <a href="/taxonomy/term/{{ season.entity.tid.value }}" class="article-page__modal-tag" target="_blank">{{ season.entity.name.value }}</a>
-                {% endfor %}
-              {% endif %}
-            </div>
-          {% endif %}
-          <div class="read-more__content-wrapper">
-            <div class="read-more__content">
-              {{ content.body }}
-            </div>
-            <a href="#" class="read-more__trigger">
-              <div class="read-more__label--expanded">{{ 'Hide'|t }}</div>
-              <div class="read-more__label--collapsed">{{ 'Read more'|t }}</div>
-              <div class="read-more__arrow">
-                <span></span>
-              </div>
-            </a>
+<div class="inspiration-overview__item">
+	<div class="inspiration-overview__item-inner">
+		<a href="{{ url }}" class="inspiration-overview__item-link">
+      <div class="inspiration-overview__image inspiration-overview__image__dot-on-map">
+        {% if content.field_list_media[0] %}
+          {{ content.field_list_media }}
+        {% elseif content.field_list_media_anonymous[0]%}
+          {{ content.field_list_media_anonymous }}
+        {% endif %}
+      </div>
+      <div class="inspiration-overview__content__wrapper">
+        <div class="inspiration-overview__content">
+          <div class="inspiration-overview__title">
+            {{ label }}
           </div>
-          {% if content.field_external_link_logo[0] %}
-            <div class="article-page__modal__image-logo">
-              {{ content.field_external_link_logo }}
-            </div>
-          {% endif %}
-        </div>
-        <div class="article-page__modal__image">
-          {% if content.field_list_media[0] %}
-            {{ content.field_list_media }}
-          {% elseif content.field_list_media_anonymous[0]%}
-            {{ content.field_list_media_anonymous }}
-          {% endif %}
+          <div class="inspiration-overview__date">
+            {% set createdDay = node.getCreatedTime|date('j') %}
+            {% set createdMonth = node.getCreatedTime|date('F') %}
+            {% set createdYear = node.getCreatedTime|date('Y') %}
+            {{ createdDay }} {{ createdMonth|t }} {{ createdYear }}
+          </div>
+          <div class="inspiration-overview__description">
+            {{ content.field_summary }}
+          </div>
         </div>
       </div>
-    </div>
-    <div class="article-page__modal__footer">
-      <a href="{{ content.field_external_link.0['#url'] }}" class="button button--green" target="_blank">Gå til indhold</a>
-    </div>
-  </div>
-</article>
+    </a>
+    <a href="/kort" aria-label="{{ node.field_article_type.entity.name.value }}" class="inspiration-overview__type">
+      Prik på kort
+    </a>
+	</div>
+</div>

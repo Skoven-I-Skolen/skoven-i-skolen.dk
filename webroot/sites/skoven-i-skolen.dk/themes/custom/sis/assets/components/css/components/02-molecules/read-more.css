@@ -33,6 +33,10 @@
     color: var(--theme-button-color);
     font-weight: var(--base-font-weight);
     text-decoration: none;
+
+    .read-more__content-wrapper.expandable & {
+      display: block;
+    }
   }
 
   &__arrow {
