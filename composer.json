@@ -96,6 +96,7 @@
         "drupal/view_unpublished": "^1.0",
         "drupal/webform": "^6.0",
         "drupal/webp": "^1.0.0-beta5",
+        "drupal/webp_extras": "1.x-dev@dev",
         "drupal/workbench_email": "^2.2",
         "drush/drush": "^10.0",
         "novicell/atoms": "^1.0",
