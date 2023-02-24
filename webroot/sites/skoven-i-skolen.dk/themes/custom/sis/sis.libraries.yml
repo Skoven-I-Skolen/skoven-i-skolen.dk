@@ -549,6 +549,12 @@ modal-article:
   dependencies:
     - core/drupal
 
+modal-editor-image-dialog:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/03-organisms/modal-editor-image-dialog.css: {}
+
 ckeditor5:
   version: VERSION
   css:
