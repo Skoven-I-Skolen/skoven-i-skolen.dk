@@ -57,6 +57,7 @@ class Map extends BlockBase implements ContainerFactoryPluginInterface {
       '#filters' => $filters,
       '#icons' => $icons,
       '#org_name' => $org_name,
+      '#people_and_places_terms' => $this->mapManager->getPeopleAndPlacesTerms(),
     ];
   }
 
