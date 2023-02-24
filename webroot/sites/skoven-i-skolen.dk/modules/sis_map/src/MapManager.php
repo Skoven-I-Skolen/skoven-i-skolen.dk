@@ -268,4 +268,14 @@ class MapManager {
     }
   }
 
+  public function getPeopleAndPlacesTerms() {
+    $terms = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties(['vid' => 'people_and_places']);
+    $results = [];
+    foreach ($terms as $term) {
+      $results[] = $term->get('name')->getString();
+    }
+    return $results;
+  }
 }

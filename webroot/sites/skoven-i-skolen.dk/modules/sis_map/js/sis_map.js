@@ -7,7 +7,11 @@ Drupal.behaviors.sis_map_okapi_integration = {
     var firstRender = true;
     var query = new URL(window.location).searchParams;
     var doNotAddToQuery = false;
-    const peopleAndPlacesTerms = ['Biavlere', 'Jægere', 'Klimatilpasning', 'Livstræer', 'Natur- og friluftsvejledere', 'Udeskoler', 'Udstyr'];
+    let peopleAndPlacesTerms = ['Biavlere', 'Jægere', 'Klimatilpasning', 'Livstræer', 'Natur- og friluftsvejledere', 'Udeskoler', 'Udstyr'];
+    if (settings.sis_map.people_and_places_terms) {
+      peopleAndPlacesTerms = settings.sis_map.people_and_places_terms;
+      console.log(peopleAndPlacesTerms);
+    }
     if (settings.sis_map) {
       markers = settings.sis_map.markers;
     }
