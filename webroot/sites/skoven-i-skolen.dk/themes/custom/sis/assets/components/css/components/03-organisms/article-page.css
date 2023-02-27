@@ -1,6 +1,9 @@
 .article-page {
   &__content {
     word-break: break-word;
+    img {
+      height: auto;
+    }
   }
 
   &__image {
