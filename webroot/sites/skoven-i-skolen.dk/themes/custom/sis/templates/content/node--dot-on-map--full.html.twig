@@ -77,6 +77,7 @@
 
 {% set classes = [
   'dot-on-map-page',
+  'article-page',
   node.field_section_bg_graphics.value ? 'section--background-graphics' : '',
 ] %}
 
@@ -86,7 +87,7 @@
   {% endif %}
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-8 col-lg-8">
+      <div class="col-md-8 col-lg-7 article-content-wrapper">
         <div{{ content_attributes }}>
           {% if node.field_header[0] %}
             {% include '@reusable-component/page-title.twig' with {
@@ -135,7 +136,7 @@
           </div>
         {% endif %}
       </div>
-      <div class="col-xs-12 col-md-4 col-lg-4">
+      <div class="col-md-4 col-lg-4 col-lg-offset-1 article-content-sidebar">
         {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] or node.sis_map_address_dawa.value or node.lat.value and node.lon.value %}
           <div class="facts-box">
             <div class="facts-box__title">
