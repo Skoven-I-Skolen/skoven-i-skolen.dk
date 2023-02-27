@@ -8,11 +8,11 @@ Drupal.behaviors.sis_map_okapi_integration = {
     var query = new URL(window.location).searchParams;
     var doNotAddToQuery = false;
     let peopleAndPlacesTerms = ['Biavlere', 'Jægere', 'Klimatilpasning', 'Livstræer', 'Natur- og friluftsvejledere', 'Udeskoler', 'Udstyr'];
-    if (settings.sis_map.people_and_places_terms) {
-      peopleAndPlacesTerms = settings.sis_map.people_and_places_terms;
-    }
     if (settings.sis_map) {
       markers = settings.sis_map.markers;
+      if (settings.sis_map.people_and_places_terms) {
+        peopleAndPlacesTerms = settings.sis_map.people_and_places_terms;
+      }
     }
     const TOKEN = '9f667a80fc5d9b3f0f8dac7ae6492048';
     var iconsFetched = false;
