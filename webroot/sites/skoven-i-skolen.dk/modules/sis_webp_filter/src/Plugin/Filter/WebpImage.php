@@ -91,7 +91,8 @@ class WebpImage extends FilterBase implements ContainerFactoryPluginInterface {
       foreach ($results as $result) {
         // If the src is already webp, ignore.
         /** @var \DOMElement $result */
-        $rel_path = str_replace('/sites/skoven-i-skolen.dk/files/', '', $result->getAttribute('src'));
+        $src = str_replace('/sites/default/', '/sites/skoven-i-skolen.dk/', $result->getAttribute('src'));
+        $rel_path = str_replace('/sites/skoven-i-skolen.dk/files/', '', $src);
         $file_uri = file_build_uri($rel_path);
         // Remove query arguments.
         $uri = preg_match('/^.*(?:\.)[a-zA-Z]+/m', $file_uri, $matches) ? $matches[0] : $file_uri;
