@@ -71,24 +71,6 @@ class LexiconContentDeliveryService {
     $numberOfArticles = $this->lexiconRepository->getTotalNumberOfArticlesByLetter($initialLetter);
 
     $nodes = Node::loadMultiple($lexiconArticlesIds);
-
-    // SIS2-693: This is a hacky solution for an issue where Å and å are
-    // handled like A and a by MySQL. The other solution would be changing the
-    // collation on the server, which is not easily doable for SiS.
-    $is_single_a = ($initialLetter === 'A' || $initialLetter === 'a');
-    $is_double_a = ($initialLetter === 'Å' || $initialLetter === 'å');
-    if ($is_double_a || $is_single_a) {
-      foreach ($nodes as $key => $value) {
-        $node_first_letter = substr($value->getTitle(), 0, 1);
-        if ($is_single_a && ($node_first_letter !== 'A' && $node_first_letter !== 'a')) {
-          unset($nodes[$key]);
-        }
-        if ($is_double_a && ($node_first_letter === 'A' || $node_first_letter === 'a')) {
-          unset($nodes[$key]);
-        }
-      }
-    }
-
     $lexiconArticles = $this->entityTypeManager->getViewBuilder('node')
       ->viewMultiple($nodes, 'list');
 
