@@ -7,6 +7,7 @@ use Drupal\entity_overview\OverviewFields\OwnerField;
 use Drupal\entity_overview\OverviewFields\SearchTextField;
 use Drupal\entity_overview\OverviewFilter;
 use Drupal\entity_overview\Plugin\EntityOverview\Engine\EntityQueryEngine;
+use Drupal\node\Entity\Node;
 use Drupal\sis_lexicon\OverviewFields\LetterField;
 
 /**
@@ -25,6 +26,9 @@ use Drupal\sis_lexicon\OverviewFields\LetterField;
  * )
  */
 class LexiconEngine extends EntityQueryEngine {
+
+  public $sqlFriendlyChars = ['A','B','C','D','E','F','G','H','I','J','K','L','M',
+    'N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Æ','Ø'];
 
   /**
    * Returns info about an engine field.
@@ -47,6 +51,8 @@ class LexiconEngine extends EntityQueryEngine {
    * @inheritDoc
    */
   public function getResult(OverviewFilter $filter) {
+    $firstLetter = $filter->getFieldValue('letter');
+    $isSqlFriendly = empty($firstLetter) || in_array($firstLetter, $this->sqlFriendlyChars);
     $overview = $filter->getOverview();
     $storage = $this->entityTypeManager->getStorage($this->getEntityTypeID($overview));
     $keys = $this->entityTypeManager->getDefinition($this->getEntityTypeID($overview))->getKeys();
@@ -87,8 +93,70 @@ class LexiconEngine extends EntityQueryEngine {
         $query->sort($overview->getSortField(), 'DESC');
         break;
     }
-
-    return $query->execute();
+    // The code below is a solution to MySQL not recognizing Å.
+    // It's a very hacky solution that's unfortunately necessary because we can't
+    // change the table collation at this point.
+    if (empty($firstLetter)) {
+      $results = $query->execute();
+      if ($filter->getPage() == '0') {
+        $final_results = [];
+        foreach ($results as $key => $value) {
+          $node = Node::load($value);
+          if ($node) {
+            if (in_array(substr($node->getTitle(), 0, 1), $this->sqlFriendlyChars)) {
+              $final_results[] = $value;
+            }
+          }
+        }
+        return $final_results;
+      }
+      else if (count($results) < $filter->getCount()) {
+        // We are on the last page.
+        $nodes_with_aa = $storage->getQuery()
+          ->condition('title', 'Å', 'STARTS_WITH')
+          ->condition('status', 1)
+          ->condition('field_article_type', 15)
+          ->execute();
+        $results = array_merge($nodes_with_aa, $results);
+        $isSqlFriendly = FALSE;
+      }
+      else {
+        return $results;
+      }
+    }
+    if ($isSqlFriendly) {
+      if (!$results) {
+        $results = $query->execute();
+      }
+      if (strtoupper($firstLetter) !== 'A') {
+        return $results;
+      }
+      $final_results = [];
+      foreach ($results as $result) {
+        $node = Node::load($result);
+        if ($node) {
+          if (in_array(substr($node->getTitle(), 0, 1), $this->sqlFriendlyChars)) {
+            $final_results[] = $result;
+          }
+        }
+      }
+      return $final_results;
+    }
+    else {
+      if (!$results) {
+        $results = $query->execute();
+      }
+      $final_results = [];
+      foreach ($results as $result) {
+        $node = Node::load($result);
+        if ($node) {
+          if (!in_array(substr($node->getTitle(), 0, 1), $this->sqlFriendlyChars)) {
+            $final_results[] = $result;
+          }
+        }
+      }
+      return $final_results;
+    }
   }
 
   /**

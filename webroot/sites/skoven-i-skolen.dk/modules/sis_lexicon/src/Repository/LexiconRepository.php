@@ -15,13 +15,17 @@ class LexiconRepository {
 
   private EntityTypeManager $entityTypeManager;
 
+  public $sqlFriendlyChars = ['A','B','C','D','E','F','G','H','I','J','K','L','M',
+    'N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Æ','Ø'];
+
   public function __construct(Connection $database) {
     $this->database = $database;
   }
 
   public function getEntityIdsByInitialLetter(string $initialLetter, $limit = 2, $page = 0): array {
 
-    $query = $this->database->select('node_field_data', 'n')->fields('n', ['nid']);
+    $sqlFriendly = in_array($initialLetter, $this->sqlFriendlyChars);
+    $query = $this->database->select('node_field_data', 'n')->fields('n', ['nid', 'title']);
 
     $query->leftJoin('node__field_article_type', 'a', 'n.nid = a.entity_id');
     $query->leftJoin('taxonomy_term_field_data', 't', 'a.field_article_type_target_id = t.tid');
@@ -31,12 +35,31 @@ class LexiconRepository {
       ->condition('n.title', strtolower($initialLetter) . '%', 'LIKE')
       ->condition('t.machine_name','lexicon');
 
-    if ($limit >= 1) {
+    if ($limit >= 1 && $sqlFriendly) {
       $query->range($page * $limit, $limit);
     }
 
-    return $query->execute()
-      ->fetchAllKeyed(0,0);
+    // The piece of code bellow handles queries with initial letter = Å.
+    // It's a hacky solution, since we can't change the database/table collation
+    // at this point.
+    if ($sqlFriendly) {
+      return $query->execute()
+        ->fetchAllKeyed(0, 0);
+    }
+
+    else {
+      $results = $query->execute()->fetchAllKeyed();
+      $finalResults = [];
+      foreach ($results as $key => $value) {
+        $nodeFirstLetter = strtoupper(substr($value, 0, 1));
+        if (!in_array($nodeFirstLetter, $this->sqlFriendlyChars)) {
+          if (count($finalResults) < $limit) {
+            $finalResults[$key] = $key;
+          }
+        }
+      }
+      return $finalResults;
+    }
   }
 
   public function getEntityIdsByKeyword(string $keyword, $limit = 0, $page = 0): array {
