@@ -11,6 +11,7 @@ dependencies:
     - entity_embed
     - media
     - sis_misc
+    - sis_webp_filter
 _core:
   default_config_hash: svejBAiBwALaC_w177xrfxgSohJVRMBWC8o2kfKabLs
 name: 'Fuld HTML'
@@ -47,7 +48,7 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <h1> <pre> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode alt title> <p class="resume default resume"> <img src alt data-entity-type data-entity-uuid data-align data-caption src alt data-entity-type data-entity-uuid data-align data-caption data-image-size>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <h1> <pre> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode alt title> <p class="resume default resume"> <img src alt data-entity-type data-entity-uuid data-align data-caption data-image-size>'
       filter_html_help: true
       filter_html_nofollow: false
   media_embed:
@@ -63,6 +64,12 @@ filters:
         small: small
       allowed_media_types:
         image: image
+  filter_responsive_table:
+    id: filter_responsive_table
+    provider: sis_misc
+    status: true
+    weight: 0
+    settings: {  }
   entity_embed:
     id: entity_embed
     provider: entity_embed
@@ -75,9 +82,9 @@ filters:
     status: true
     weight: 0
     settings: {  }
-  filter_responsive_table:
-    id: filter_responsive_table
-    provider: sis_misc
+  sis_webp_filter:
+    id: sis_webp_filter
+    provider: sis_webp_filter
     status: true
-    weight: 0
+    weight: 101
     settings: {  }

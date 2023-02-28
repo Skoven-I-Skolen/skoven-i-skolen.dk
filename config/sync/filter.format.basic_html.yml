@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - editor
+    - sis_webp_filter
 _core:
   default_config_hash: afTU0GNxo-MjXuKrD1zBE1IaHJRMmN1WXWmheRdJg8o
 name: 'Simpel HTML'
@@ -16,7 +17,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p class> <h1 class="text-align-left text-align-center text-align-right text-align-justify"> <h2 class="text-align-left text-align-center text-align-right text-align-justify"> <h3 class="text-align-left text-align-center text-align-right text-align-justify"> <strong> <em> <a href> <ul> <ol> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-entity-uuid data-entity-type data-caption data-align data-image-size> <figcaption> <figure src alt data-entity-type data-entity-uuid data-align data-caption data-image-size>'
+      allowed_html: '<br> <p class="default resume text-align-left text-align-center text-align-right text-align-justify"> <h1 class="text-align-left text-align-center text-align-right text-align-justify"> <h2 class="text-align-left text-align-center text-align-right text-align-justify"> <h3 class="text-align-left text-align-center text-align-right text-align-justify"> <strong> <em> <a href> <ul> <ol> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-entity-uuid data-entity-type data-caption data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -42,4 +43,10 @@ filters:
     provider: editor
     status: true
     weight: 11
+    settings: {  }
+  sis_webp_filter:
+    id: sis_webp_filter
+    provider: sis_webp_filter
+    status: true
+    weight: 101
     settings: {  }
