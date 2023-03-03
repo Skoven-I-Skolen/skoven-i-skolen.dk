@@ -102,7 +102,6 @@ third_party_settings:
         - group_factboxes
         - group_files
         - group_tid
-        - group_contact
       label: 'Artikel metadata'
       region: content
       parent_name: group_side_boxes
@@ -337,16 +336,16 @@ third_party_settings:
         - field_institution
       label: Kontakt
       region: content
-      parent_name: group_article_metadata
-      weight: 44
-      format_type: tab
+      parent_name: group_side_boxes
+      weight: 10
+      format_type: fieldset
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        formatter: closed
         description: ''
         required_fields: true
+        formatter: closed
     group_tid:
       children:
         - field_time
@@ -458,6 +457,7 @@ third_party_settings:
     group_side_boxes:
       children:
         - group_article_metadata
+        - group_contact
       label: 'Indhold vist på sideboksene'
       region: content
       parent_name: ''
