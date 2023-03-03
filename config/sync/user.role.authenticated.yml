@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
-    - filter.format.basic_html
+    - filter.format.simpel_html_til_anonym_
     - filter.format.simpel_html_til_faktabokse
   module:
     - field_permissions
@@ -29,7 +29,7 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
-  - 'use text format basic_html'
+  - 'use text format simpel_html_til_anonym_'
   - 'use text format simpel_html_til_faktabokse'
   - 'view any organization profile'
   - 'view any profile'

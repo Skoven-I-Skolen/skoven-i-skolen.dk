@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
-    - filter.format.basic_html
+    - filter.format.simpel_html_til_anonym_
     - filter.format.simpel_html_til_faktabokse
     - media.type.image
     - node.type.article
@@ -39,7 +39,7 @@ permissions:
   - 'edit own image media'
   - 'search content'
   - 'use editorial transition create_new_draft'
-  - 'use text format basic_html'
+  - 'use text format simpel_html_til_anonym_'
   - 'use text format simpel_html_til_faktabokse'
   - 'view any organization profile'
   - 'view any profile'

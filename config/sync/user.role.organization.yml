@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
     - filter.format.simpel_html_til_faktabokse
     - media.type.document
     - media.type.image
@@ -65,6 +66,7 @@ permissions:
   - 'update own organization profile'
   - 'use editorial transition afpublicere'
   - 'use editorial transition create_new_draft'
+  - 'use text format basic_html'
   - 'use text format simpel_html_til_faktabokse'
   - 'view field_top_image_anonymous'
   - 'view latest version'
