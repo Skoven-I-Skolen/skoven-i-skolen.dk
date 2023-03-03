@@ -28,6 +28,7 @@ settings:
       - insertTable
       - '|'
       - heading
+      - sourceEditing
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -42,6 +43,8 @@ settings:
         -
           label: Resumé
           element: '<p class="resume">'
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
     ckeditor5_list:
       reversed: false
       startIndex: false
