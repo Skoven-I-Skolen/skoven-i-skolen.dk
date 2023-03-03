@@ -137,7 +137,7 @@
         {% endif %}
       </div>
       <div class="col-md-4 col-lg-4 col-lg-offset-1 article-content-sidebar">
-        {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] or node.sis_map_address_dawa.value or node.lat.value and node.lon.value %}
+        {% if node.field_subject[0] or node.field_class[0] or node.field_location[0] or node.field_season[0] %}
           <div class="facts-box">
             <div class="facts-box__title">
                 Hvem, hvad, hvor
@@ -189,20 +189,32 @@
                     </div>
                   </div>
                 {% endif %}
-                {% if node.sis_map_address_dawa.value %}
-                  <div class="facts-box__content-item">
-                    <div class="facts-box__content-item-label">Addresse</div>
-                    <div class="facts-box__content-item-value">{{ node.sis_map_address_dawa.value }}</div>
-                  </div>
-                {% endif %}
-                {% if node.lat.value and node.lon.value %}
-                <div class="facts-box__content-item facts-box__content-item--lat-lon">
-                  <div class="facts-box__content-item-label">Breddegrad</div>
-                  <div class="facts-box__content-item-value">{{ node.lat.value }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if node.sis_map_address_dawa.value or (node.lat.value and node.lon.value) %}
+          <div class="facts-box">
+            <div class="facts-box__title">
+              Hvor
+            </div>
+            <div class="facts-box__content">
+              {% if node.sis_map_address_dawa.value %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">Addresse</div>
+                  <div class="facts-box__content-item-value">{{ node.sis_map_address_dawa.value }}</div>
                 </div>
-                <div class="facts-box__content-item facts-box__content-item--lat-lon">
+              {% endif %}
+              {% if node.lat.value %}
+                <div class="facts-box__content-item">
+                  <div class="facts-box__content-item-label">Breddegrad</div>
+                  <div class="facts-box__content-item-value">&nbsp;{{ node.lat.value }}</div>
+                </div>
+              {% endif %}
+              {% if node.lon.value %}
+                <div class="facts-box__content-item">
                   <div class="facts-box__content-item-label">Længdegrad</div>
-                  <div class="facts-box__content-item-value">{{ node.lon.value }}</div>
+                  <div class="facts-box__content-item-value">&nbsp;{{ node.lon.value }}</div>
                 </div>
               {% endif %}
             </div>
