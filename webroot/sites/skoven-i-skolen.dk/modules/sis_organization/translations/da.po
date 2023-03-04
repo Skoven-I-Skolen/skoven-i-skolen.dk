@@ -19,7 +19,7 @@ msgid "Organizations"
 msgstr "Organisationer"
 
 msgid "See site-specific materials from @name"
-msgstr "Se stedsbestemte materialer fra @name"
+msgstr "Se stedbestemte materialer fra @name"
 
 msgid "Go to map"
 msgstr "Gå til kortet"

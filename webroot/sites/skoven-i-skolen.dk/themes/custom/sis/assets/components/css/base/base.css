@@ -148,7 +148,23 @@ figure,
 
 table {
   width: 100% !important;
-  border-collapse: collapse !important;
+  margin-bottom: 20px;
+  font-size: var(--base-font-size-small);
+  border: 1px solid var(--color-gray-medium);
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 8px;
+    text-align: inherit;
+    vertical-align: top;
+    word-break: normal;
+    border: 1px solid var(--color-gray-medium);
+  }
+
+  th {
+    border-bottom: 2px solid var(--color-gray-medium);
+  }
 }
 
 .table-responsive {

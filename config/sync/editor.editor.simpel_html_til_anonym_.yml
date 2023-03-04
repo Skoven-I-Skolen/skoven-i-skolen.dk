@@ -1,19 +1,20 @@
-uuid: 572851a0-5446-4c68-bb40-ba53ab7c1e7b
+uuid: f1be93c1-09e9-49e9-af95-259e0ed6e486
 langcode: da
 status: true
 dependencies:
   config:
-    - filter.format.basic_html
+    - filter.format.simpel_html_til_anonym_
   module:
     - ckeditor5
-format: basic_html
+format: simpel_html_til_anonym_
 editor: ckeditor5
 settings:
   toolbar:
     items:
       - bold
       - italic
-      - '|'
+      - underline
+      - strikethrough
       - alignment
       - '|'
       - link
@@ -21,33 +22,23 @@ settings:
       - bulletedList
       - numberedList
       - '|'
+      - blockQuote
       - drupalInsertImage
-      - '|'
-      - style
       - '|'
       - insertTable
       - '|'
       - heading
-      - sourceEditing
   plugins:
     ckeditor5_heading:
       enabled_headings:
-        - heading1
         - heading2
         - heading3
-    ckeditor5_style:
-      styles:
-        -
-          label: Normal
-          element: '<p class="default">'
-        -
-          label: Resumé
-          element: '<p class="resume">'
-    ckeditor5_sourceEditing:
-      allowed_tags: {  }
+        - heading4
+        - heading5
+        - heading6
     ckeditor5_list:
-      reversed: false
-      startIndex: false
+      reversed: true
+      startIndex: true
     ckeditor5_alignment:
       enabled_alignments:
         - left

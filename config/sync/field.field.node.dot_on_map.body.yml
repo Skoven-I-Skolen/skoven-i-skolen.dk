@@ -13,6 +13,7 @@ third_party_settings:
     allowed_formats:
       - full_html
       - basic_html
+      - simpel_html_til_anonym_
 id: node.dot_on_map.body
 field_name: body
 entity_type: node

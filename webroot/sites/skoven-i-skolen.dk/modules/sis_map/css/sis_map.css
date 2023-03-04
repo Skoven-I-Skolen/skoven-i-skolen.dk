@@ -89,21 +89,28 @@
 }
 
 .same-line-text-and-icon label {
+  flex-grow: 1;
   cursor: pointer;
-  flex: 90%;
 }
 
 .same-line-text-and-icon .text {
-  width: 100%;
-  flex: 90%;
+  flex-grow: 1;
 }
 
 .same-line-text-and-icon .text label {
   cursor: pointer;
 }
 
-.same-line-text-and-icon .icon {
-  flex: 10%;
+.same-line-text-and-icon div.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
+}
+
+.same-line-text-and-icon div.icon.small {
+  height: 24px;
 }
 
 .same-line-text-and-icon svg {
@@ -111,8 +118,7 @@
   height: 27px;
 }
 
-.same-line-text-and-icon .small svg {
-  flex: 10%;
+.same-line-text-and-icon div.small svg {
   width: 14px;
   height: 8px;
 }
