@@ -75,4 +75,12 @@
     max-width: 100%;
     height: auto;
   }
+
+  @media print {
+    .blog-post--view-all-writers,
+    .blog-post__other-writers,
+    .news-page__latest {
+      display: none;
+    }
+  }
 }
