@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - editor
+    - sis_webp_filter
 _core:
   default_config_hash: afTU0GNxo-MjXuKrD1zBE1IaHJRMmN1WXWmheRdJg8o
 name: 'Simpel HTML (til Anonym)'
@@ -42,4 +43,10 @@ filters:
     provider: editor
     status: true
     weight: 11
+    settings: {  }
+  sis_webp_filter:
+    id: sis_webp_filter
+    provider: sis_webp_filter
+    status: true
+    weight: 101
     settings: {  }
