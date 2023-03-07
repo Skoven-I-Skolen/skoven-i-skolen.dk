@@ -20,7 +20,8 @@ third_party_settings:
         article_submitted: article_submitted
       publish:
         article_approved: article_approved
-      afpublicere: {  }
+      afpublicere:
+        article_submitted: article_submitted
 _core:
   default_config_hash: S15d9uky9v-NcZ8f-mLyK9BwEd4XAbyd7YvqceCbgDM
 id: editorial

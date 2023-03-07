@@ -67,8 +67,17 @@ function sis_preprocess_block(&$variables) {
       }
       $variables['content']['title']['#title'] =
         new TranslatableMarkup('Create @name', ['@name' => $name]);
-      $variables['#cache']['contexts'][] = 'url.query_args';
+      if (isset($variables['#cache']['contexts'])) {
+        $variables['#cache']['contexts'][] = 'url.query_args:type';
+      }
     }
+    if (isset($variables['#cache']['contexts'])) {
+      $variables['#cache']['contexts'][] = 'url';
+      if (($key = array_search('user.permissions', $variables['#cache']['contexts'])) !== false) {
+        unset($variables['#cache']['contexts'][$key]);
+      }
+    }
+
   }
 }
 
@@ -142,10 +151,10 @@ function sis_theme_suggestions_media_alter(array &$suggestions, array $variables
  */
 function sis_preprocess_input__submit(&$variables) {
   if ($variables["element"]["#name"] === 'field_top_image_anonymous_0_upload_button') {
-    $variables["attributes"]["value"] = t('Select media');
+    $variables["attributes"]["value"] = 'Vælg fil';
   }
   if ($variables["element"]["#name"] === 'field_top_image_entity_browser_entity_browser') {
-    $variables["attributes"]["value"] = t('Select media');
+    $variables["attributes"]["value"] = 'Vælg fil';
   }
 }
 

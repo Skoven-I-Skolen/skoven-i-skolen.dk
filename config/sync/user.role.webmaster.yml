@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_display.node.page.full
+    - filter.format.basic_html
     - filter.format.full_html
     - filter.format.limited_html_link
     - filter.format.simpel_html_til_faktabokse
@@ -123,6 +124,7 @@ permissions:
   - 'create document media'
   - 'create dot_on_map content'
   - 'create field_article_image'
+  - 'create field_article_image_anonymous'
   - 'create field_article_related'
   - 'create field_colophon'
   - 'create field_description'
@@ -131,6 +133,7 @@ permissions:
   - 'create field_files_webmasters'
   - 'create field_header'
   - 'create field_list_media'
+  - 'create field_list_media_anonymous'
   - 'create field_summary'
   - 'create field_top_image'
   - 'create field_top_image_anonymous'
@@ -229,6 +232,7 @@ permissions:
   - 'edit any webform submission'
   - 'edit atom'
   - 'edit field_article_image'
+  - 'edit field_article_image_anonymous'
   - 'edit field_article_image_migrated'
   - 'edit field_article_related'
   - 'edit field_colophon'
@@ -239,6 +243,7 @@ permissions:
   - 'edit field_files_webmasters'
   - 'edit field_header'
   - 'edit field_list_media'
+  - 'edit field_list_media_anonymous'
   - 'edit field_summary'
   - 'edit field_top_image'
   - 'edit field_top_image_anonymous'
@@ -249,6 +254,7 @@ permissions:
   - 'edit own document media'
   - 'edit own dot_on_map content'
   - 'edit own field_article_image'
+  - 'edit own field_article_image_anonymous'
   - 'edit own field_article_related'
   - 'edit own field_colophon'
   - 'edit own field_description'
@@ -257,6 +263,7 @@ permissions:
   - 'edit own field_files_webmasters'
   - 'edit own field_header'
   - 'edit own field_list_media'
+  - 'edit own field_list_media_anonymous'
   - 'edit own field_summary'
   - 'edit own field_top_image'
   - 'edit own field_top_image_anonymous'
@@ -300,6 +307,7 @@ permissions:
   - 'update content translations'
   - 'update media'
   - 'update own organization profile'
+  - 'use editorial transition afpublicere'
   - 'use editorial transition archive'
   - 'use editorial transition archived_draft'
   - 'use editorial transition archived_published'
@@ -314,6 +322,7 @@ permissions:
   - 'use media remote_video bulk upload form'
   - 'use media sis_custom_video bulk upload form'
   - 'use media video bulk upload form'
+  - 'use text format basic_html'
   - 'use text format full_html'
   - 'use text format limited_html_link'
   - 'use text format simpel_html_til_faktabokse'

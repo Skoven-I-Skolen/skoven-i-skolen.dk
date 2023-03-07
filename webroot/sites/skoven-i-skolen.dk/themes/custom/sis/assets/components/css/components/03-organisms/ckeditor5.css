@@ -1,0 +1,7 @@
+.ck-text-alternative-form__decorative-toggle {
+  display: none !important;
+}
+
+.ck-editor__editable_inline {
+  min-height: 200px;
+}

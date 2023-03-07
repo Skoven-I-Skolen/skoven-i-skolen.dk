@@ -44,6 +44,7 @@ dependencies:
     - field.field.node.article.lat
     - field.field.node.article.lon
     - field.field.node.article.sis_map_address_dawa
+    - image.style.article
     - node.type.article
     - responsive_image.styles.3_column_flex_height
   module:
@@ -134,7 +135,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: article
       image_loading:
         attribute: lazy
     third_party_settings: {  }

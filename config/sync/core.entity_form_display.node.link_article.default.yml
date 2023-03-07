@@ -73,7 +73,7 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        description: 'Her kan du vælge, hvilke fag, klassetrin, sted eller årstid, som passer bedst til din aktivitet/dit undervisningsforløb.'
+        description: 'Her kan du vælge, hvilke fag, klassetrin, sted eller årstid, som passer bedst til dit undervisningsforløb.'
         required_fields: true
     group_categorie_panes:
       children:

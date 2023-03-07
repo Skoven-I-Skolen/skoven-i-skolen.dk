@@ -81,6 +81,7 @@
         "drupal/redirect": "^1.0",
         "drupal/redirect_404": "^1.8",
         "drupal/redis": "^1.5",
+        "drupal/robotstxt": "^1.4",
         "drupal/role_delegation": "^1.1",
         "drupal/role_theme_switcher": "^1.1",
         "drupal/rules": "^3.0@alpha",
@@ -95,6 +96,7 @@
         "drupal/view_unpublished": "^1.0",
         "drupal/webform": "^6.0",
         "drupal/webp": "^1.0.0-beta5",
+        "drupal/webp_extras": "1.x-dev@dev",
         "drupal/workbench_email": "^2.2",
         "drush/drush": "^10.0",
         "novicell/atoms": "^1.0",
@@ -149,9 +151,6 @@
                 "web-root": "webroot/"
             },
             "file-mapping": {
-                "[web-root]/robots.txt": {
-                    "append": "assets/robots-additions.txt"
-                },
                 "[web-root]/sites/development.services.yml": {
                     "mode": "replace",
                     "path": "assets/development.services.yml",
@@ -202,7 +201,8 @@
                 "(#3080606) Reorder Layout Builder sections": "https://www.drupal.org/files/issues/2020-06-18/3080606-reorder-layout-sections-43.patch",
                 "(#2985882) Call to a member function getLabel() after enabling layout_builder": "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch",
                 "(#2780839) Optimize migration of specific source IDs for SQL sources": "https://www.drupal.org/files/issues/2022-04-25/2780839-9.4.x-optimize-migrate-source-filter-53.patch",
-                "(#3278959) oEmbed resource version as float throws exception": "https://www.drupal.org/files/issues/2022-08-30/media-float-version-3278959-8.patch"
+                "(#3278959) oEmbed resource version as float throws exception": "https://www.drupal.org/files/issues/2022-08-30/media-float-version-3278959-8.patch",
+                "Remove csfr requirement from CKEditor5 routes II" : "webroot/sites/skoven-i-skolen.dk/patches/ckeditor5-remove-csfr-requirement-from-routes.patch"
             },
             "drupal/paragraphs": {
                 "(#2901390) Integrity constraint violation: 1048 Column 'langcode' cannot be null": "https://www.drupal.org/files/issues/2020-06-25/paragraphs-2901390-51.patch"

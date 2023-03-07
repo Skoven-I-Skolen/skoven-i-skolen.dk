@@ -45,9 +45,10 @@ dependencies:
     - field.field.node.article.lon
     - field.field.node.article.sis_map_address_dawa
     - node.type.article
+    - responsive_image.styles.list_view
   module:
     - datetime
-    - image
+    - responsive_image
     - user
 _core:
   default_config_hash: cITkIPn3-i-ZQcV_BmrcIM66yh1kZWBRCYKeSftnYpc
@@ -124,13 +125,11 @@ content:
     weight: 4
     region: content
   field_list_media_anonymous:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: list_view
       image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 5
     region: content

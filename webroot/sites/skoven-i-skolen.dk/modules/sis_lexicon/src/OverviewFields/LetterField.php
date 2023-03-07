@@ -42,7 +42,7 @@ class LetterField implements OverviewFieldInfoInterface {
   protected function getOptions() {
     $alphabet = array_merge(range('A', 'Z'), ['Æ', 'Ø', 'Å']);
     $options = [
-      '' => t('All')
+      '' => 'Alle',
     ];
     foreach ($alphabet as $letter) {
       $options[$letter] = $letter;

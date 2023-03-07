@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('seven/global-styling') }}
+{{ attach_library('seven/seven.drupal.dialog') }}
+{{ attach_library('sis/modal-editor-image-dialog') }}
+<form{{ attributes }}>
+  {{ children }}
+</form>

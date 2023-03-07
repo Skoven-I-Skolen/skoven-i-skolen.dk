@@ -62,6 +62,13 @@ const mobileNav = () => {
 
   mobileNavigation.addEventListener('click', (e) => {
     const burgerMenu = document.getElementById('burger-menu');
+    if (!e.target.getAttribute('href')) {
+      e.preventDefault();
+      const arrow = e.target.parentElement.querySelector('.burger-nav-item--arrow-right');
+      if (arrow) {
+        arrow.click();
+      }
+    }
     if (e.offsetX > burgerMenu.offsetWidth && hamburgerIcon.classList.contains('hamburger-icon--open')) {
       hamburgerIcon.classList.remove('hamburger-icon--open');
       mobileNavigation.classList.remove('burger-menu--overlay__active');

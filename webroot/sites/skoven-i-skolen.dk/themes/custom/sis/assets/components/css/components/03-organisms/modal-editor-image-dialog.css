@@ -1,0 +1,51 @@
+.ui-widget.ui-widget-content {
+  border: 0 solid #c5c5c5 !important;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.ui-dialog {
+  padding: 0 !important;
+
+  .ui-dialog-title {
+    margin: 0 !important;
+    color: #fff;
+    font-size: 1.1em !important;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ui-dialog-titlebar-close {
+    right: 12px !important;
+    width: 30px !important;
+    height: 30px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+    transform: translateY(-50%);
+    border: 3px solid rgb(255 255 255 / 15%) !important;
+    border-radius: 5px;
+    background: none;
+
+    &.ui-button {
+      &:hover {
+        background: none !important;
+        border: 3px solid #fff !important;
+
+        .ui-icon {
+          background: url("../../../../../../../../../../core/misc/icons/ffffff/ex.svg") 0 0 no-repeat !important;
+        }
+      }
+    }
+  }
+}
+
+.ui-widget-header {
+  padding: 12px 49px 12px 15px !important;
+  background: #1c6153 !important;
+  border: 0 solid #c5c5c5 !important;
+  border-radius: 0 !important;
+}

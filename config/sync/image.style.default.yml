@@ -1,0 +1,22 @@
+uuid: da6cb625-81d6-4c3b-a622-0cd917069c80
+langcode: da
+status: true
+dependencies: {  }
+name: default
+label: 'Default WebP'
+effects:
+  240e7a79-fcb1-4ad4-8201-0dbce5c250a7:
+    uuid: 240e7a79-fcb1-4ad4-8201-0dbce5c250a7
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp
+  e192914c-6e15-458c-b469-e16a9bbcf4f8:
+    uuid: e192914c-6e15-458c-b469-e16a9bbcf4f8
+    id: image_scale
+    weight: 2
+    data:
+      width: 800
+      height: null
+      upscale: false
+pipeline: __default__

@@ -7,9 +7,12 @@ Drupal.behaviors.sis_map_okapi_integration = {
     var firstRender = true;
     var query = new URL(window.location).searchParams;
     var doNotAddToQuery = false;
-    const peopleAndPlacesTerms = ['Biavlere', 'Jægere', 'Klimatilpasning', 'Livstræer', 'Natur- og friluftsvejledere', 'Udeskoler', 'Udstyr'];
+    let peopleAndPlacesTerms = ['Biavlere', 'Jægere', 'Klimatilpasning', 'Livstræer', 'Natur- og friluftsvejledere', 'Udeskoler', 'Udstyr'];
     if (settings.sis_map) {
       markers = settings.sis_map.markers;
+      if (settings.sis_map.people_and_places_terms) {
+        peopleAndPlacesTerms = settings.sis_map.people_and_places_terms;
+      }
     }
     const TOKEN = '9f667a80fc5d9b3f0f8dac7ae6492048';
     var iconsFetched = false;
@@ -446,25 +449,27 @@ Drupal.behaviors.sis_map_okapi_integration = {
     });
 
     document.querySelectorAll('.see-all-filters-link').forEach(function (link) {
-      link.addEventListener('click', function(event) {
-        event.currentTarget.parentElement.querySelectorAll('.same-line-text-and-icon').forEach(function (filter){
-          if (filter.classList.contains('can-be-hidden')) {
-            if (filter.classList.contains('is-hidden')) {
-              filter.classList.remove('is-hidden');
-            } else if (!filter.classList.contains('is-hidden')) {
-              filter.classList.add('is-hidden');
+      if (!link.classList.contains('initialized')) {
+        link.classList.add('initialized');
+        link.addEventListener('click', function (event) {
+          event.currentTarget.parentElement.querySelectorAll('.same-line-text-and-icon').forEach(function (filter) {
+            if (filter.classList.contains('can-be-hidden')) {
+              if (filter.classList.contains('is-hidden')) {
+                filter.classList.remove('is-hidden');
+              } else if (!filter.classList.contains('is-hidden')) {
+                filter.classList.add('is-hidden');
+              }
             }
+          });
+
+          if (event.currentTarget.innerText.includes('Se færre valg')) {
+            event.currentTarget.innerText = '+ Se alle valg';
+          } else {
+            event.currentTarget.innerText = '- Se færre valg';
           }
+
         });
-
-        if (event.currentTarget.innerText.includes('Se færre valg')) {
-          event.currentTarget.innerText = '+ Se alle valg';
-        }
-        else {
-          event.currentTarget.innerText = '- Se færre valg';
-        }
-
-      });
+      }
     });
 
     buildMap();

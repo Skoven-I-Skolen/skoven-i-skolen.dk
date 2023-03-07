@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
     - filter.format.simpel_html_til_faktabokse
     - media.type.document
     - media.type.image
@@ -40,8 +41,6 @@ permissions:
   - 'create link_article content'
   - 'create remote_video media'
   - 'create video media'
-  - 'delete any article content'
-  - 'delete any link_article content'
   - 'delete own article content'
   - 'delete own document media'
   - 'delete own dot_on_map content'
@@ -67,6 +66,7 @@ permissions:
   - 'update own organization profile'
   - 'use editorial transition afpublicere'
   - 'use editorial transition create_new_draft'
+  - 'use text format basic_html'
   - 'use text format simpel_html_til_faktabokse'
   - 'view field_top_image_anonymous'
   - 'view latest version'

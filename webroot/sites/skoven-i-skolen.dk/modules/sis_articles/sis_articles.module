@@ -41,10 +41,12 @@ function sis_articles_anonymous_message() {
   Drupal::messenger()->addWarning(atom_str('pending-approval-message'));
 }
 
-function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function sis_articles_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $roles = Drupal::currentUser()->getRoles();
   $is_anon_or_org = in_array('anonymous', $roles) ||
     in_array('organization', $roles);
+  $is_editor = in_array('webmaster', $roles) ||
+    in_array('editor', $roles);
 
   unset($form['field_people_and_places']['widget']['#options']['_none']);
 
@@ -78,6 +80,9 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
 
     if ($article_type = Drupal::requestStack()->getCurrentRequest()->get('type')) {
+      if ($article_type === 'Link-artikel') {
+        $article_type = 'Undervisningsforløb';
+      }
       if (!isset($form['field_article_type']['widget']['#options'])) {
         return;
       }
@@ -153,11 +158,42 @@ function sis_articles_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $f
     }
   }
 
+  $forms_with_custom_validation = [
+    'node_article_form',
+    'node_article_edit_form',
+    'node_dot_on_map_form',
+    'node_dot_on_map_edit_form',
+    'node_link_article_form',
+    'node_link_article_edit_form',
+    'node_blog_post_form',
+    'node_blog_post_edit_form',
+  ];
+
+  if (in_array($form_id, $forms_with_custom_validation)) {
+    $form['#validate'][] = 'sis_articles_custom_validate';
+  }
+
   else if ($form_id === 'views_form_media_library_page' || 'views_form_media_library_widget_document') {
     $form['#attached']['library'][] = 'sis/media-library';
   }
+}
 
+function sis_articles_custom_validate($form,FormStateInterface &$form_state) {
 
+  $has_list_media_anonymous = FALSE;
+  $has_list_media = FALSE;
+
+  if ($list_media_anonymous = $form_state->getValue('field_list_media_anonymous')) {
+    $has_list_media_anonymous = !empty($list_media_anonymous[0]['fids']);
+  }
+
+  if ($list_media = $form_state->getValue('field_list_media')) {
+    $has_list_media = !empty($list_media['target_id']);
+  }
+
+  if (!$has_list_media && !$has_list_media_anonymous) {
+    $form_state->setErrorByName('field_list_media_anonymous', 'An image is required as list media');
+  }
 }
 
 /**

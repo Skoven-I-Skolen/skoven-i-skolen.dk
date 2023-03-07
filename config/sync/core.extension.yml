@@ -136,6 +136,7 @@ module:
   sis_overview: 0
   sis_relewise: 0
   sis_season_wheel: 0
+  sis_webp_filter: 0
   smtp: 0
   status_feed: 0
   styles: 0
@@ -157,6 +158,7 @@ module:
   workbench_email: 0
   workflows: 0
   pathauto: 1
+  robotstxt: 1
   content_translation: 10
   views: 10
   paragraphs: 11

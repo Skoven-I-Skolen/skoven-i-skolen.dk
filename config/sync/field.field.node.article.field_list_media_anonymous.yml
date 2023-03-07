@@ -13,7 +13,7 @@ entity_type: node
 bundle: article
 label: 'Liste media'
 description: 'Vælg et foto, der vises på interne søgeresultater og andre lister. Det kan være det samme billede som artiklens billede.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -22,7 +22,7 @@ settings:
   handler_settings: {  }
   file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
-  max_filesize: '5 MB'
+  max_filesize: '10 MB'
   max_resolution: ''
   min_resolution: ''
   alt_field: true

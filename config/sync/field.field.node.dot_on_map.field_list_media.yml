@@ -10,9 +10,9 @@ id: node.dot_on_map.field_list_media
 field_name: field_list_media
 entity_type: node
 bundle: dot_on_map
-label: 'Liste media'
-description: 'Brug knappen og hent et godt foto på din computer. Billedet bliver vist ifm. søgeoversigter på hjemmesiden. Det skal være i bredformat og mindst 900 pixels bredt. (Ideelt er 900 x 506 pixels.) Du kan kun vælge ét foto.'
-required: true
+label: 'Liste media (kan kun redigeres af redaktører)'
+description: "Dette billede erstatter billedet ovenfor, som er uploadet af en anonym bruger eller en blogger.\r\nBrug knappen og hent et godt foto på din computer. Billedet bliver vist ifm. søgeoversigter på hjemmesiden. Det skal være i bredformat og mindst 900 pixels bredt. (Ideelt er 900 x 506 pixels.) Du kan kun vælge ét foto."
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

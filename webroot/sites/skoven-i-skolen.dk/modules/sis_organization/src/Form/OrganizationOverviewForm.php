@@ -83,23 +83,6 @@ class OrganizationOverviewForm extends OverviewFilterForm {
   }
 
   protected function buildEntitiesInContent(array &$content, array $entities, OverviewFilter $filter) {
-
-    $request = \Drupal::requestStack()->getCurrentRequest();
-    if(!$request->getQueryString()) {
-      // No filters are selected.
-      $uid = $filter->getFieldValue('owner');
-      $entities = \Drupal::entityTypeManager()->getStorage('node')
-        ->loadByProperties([
-          'uid' => $uid,
-          'type' => 'article',
-          'status' => 1,
-        ]);
-    }
-
-    if (!$entities) {
-      $entities = parent::getEntitiesForBuilding($filter);
-    }
-
     parent::buildEntitiesInContent($content, $entities, $filter);
     $profile = $this->request->get('profile');
     $uid = '';

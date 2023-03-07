@@ -28,6 +28,7 @@ settings:
       - insertTable
       - '|'
       - heading
+      - sourceEditing
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -43,11 +44,7 @@ settings:
           label: Resumé
           element: '<p class="resume">'
     ckeditor5_sourceEditing:
-      allowed_tags:
-        - '<figcaption>'
-        - '<figure src alt data-entity-type data-entity-uuid data-align data-caption data-image-size>'
-        - '<img data-image-size>'
-        - '<p class>'
+      allowed_tags: {  }
     ckeditor5_list:
       reversed: false
       startIndex: false
@@ -63,7 +60,7 @@ image_upload:
   status: true
   scheme: public
   directory: inline-images
-  max_size: '5 MB'
+  max_size: '10 MB'
   max_dimensions:
-    width: 0
-    height: 0
+    width: 3840
+    height: 2160
