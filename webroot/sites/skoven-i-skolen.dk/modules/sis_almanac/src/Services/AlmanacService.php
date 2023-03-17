@@ -37,7 +37,11 @@ class AlmanacService {
   }
 
   public function createdFormattedDate(int $month, int $day) {
-    return $this->createDate($month, $day)->format('j. F Y');
+    $formatted_day = $this->createDate($month, $day)->format('j.');
+    $formatted_month= t($this->createDate($month, $day)->format('F'));
+    $formatted_year = $this->createDate($month, $day)->format('Y');
+
+    return $formatted_day . ' ' . $formatted_month . ' ' . $formatted_year;
   }
 
   /**
