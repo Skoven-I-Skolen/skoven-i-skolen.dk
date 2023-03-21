@@ -60,7 +60,11 @@ class LexiconEngine extends EntityQueryEngine {
       }
 
       if ($field_name == 'text') {
-        $query->condition($keys['label'], $value, 'CONTAINS');
+        $group = $query->orConditionGroup()
+          ->condition($keys['label'], $value, 'CONTAINS')
+          ->condition('body', $value, 'CONTAINS')
+          ->condition('field_description', $value, 'CONTAINS');
+        $query->condition($group);
       } elseif ($field_name == 'letter') {
         $query->condition($keys['label'], $value, 'STARTS_WITH');
       } elseif (is_array($value)) {
