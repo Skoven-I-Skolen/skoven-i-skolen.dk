@@ -268,7 +268,7 @@
             <div class="facts-box__title">
               Undervisningsm&aring;l
             </div>
-            <div class="facts-box__content undervi-box">
+            <div class="facts-box__content{{ content.field_teaching_goals|render|striptags|length > 300 ? ' undervi-box' }}">
               {{ content.field_teaching_goals }}
             </div>
             {% if content.field_teaching_goals|render|striptags|length > 300 %}
