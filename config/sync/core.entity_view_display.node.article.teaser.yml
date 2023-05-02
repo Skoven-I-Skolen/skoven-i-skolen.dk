@@ -76,7 +76,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_article_type:
     type: entity_reference_label
@@ -85,6 +85,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_class:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_description:
     type: basic_string
@@ -149,7 +157,6 @@ hidden:
   field_article_image_migrated: true
   field_article_months: true
   field_article_related: true
-  field_class: true
   field_colophon: true
   field_colophon_author: true
   field_colophon_editor: true
