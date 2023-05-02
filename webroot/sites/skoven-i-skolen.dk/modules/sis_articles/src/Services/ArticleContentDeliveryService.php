@@ -106,7 +106,9 @@ class ArticleContentDeliveryService {
         ->getStorage('node')
         ->loadByProperties([
           $field => $random_term->tid,
-          'field_search_exclude' => 0
+          'field_search_exclude' => 0,
+          'type' => 'article',
+          'status' => 1,
         ]);
 
       if ($nodes) {
@@ -317,7 +319,13 @@ class ArticleContentDeliveryService {
       $vid = 'subject';
     }
     $result = $this->entityTypeManager->getStorage('node')
-      ->loadByProperties(['field_' . $vid => $term_id]);
+      ->loadByProperties(
+        [
+          'field_' . $vid => $term_id,
+          'type' => 'article',
+          'status' => 1,
+        ]
+      );
     $nodes = [];
     if ($result) {
       $rand_keys = array_rand($result, 3);

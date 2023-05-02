@@ -182,18 +182,6 @@
                   </div>
                 </div>
               {% endif %}
-              {% if node.field_subject[0] %}
-                <div class="facts-box__content-item">
-                  <div class="facts-box__content-item-label">
-                    Fag
-                  </div>
-                  <div class="facts-box__content-item-value">
-                    {% for subject in node.field_subject %}
-                      {{ subject.entity.name.value }}{{ loop.index != node.field_subject|length ? ', ' : '' }}
-                    {% endfor %}
-                  </div>
-                </div>
-              {% endif %}
               {% if node.sis_map_address_dawa.value %}
                 <div class="facts-box__content-item">
                   <div class="facts-box__content-item-label">Addresse</div>
