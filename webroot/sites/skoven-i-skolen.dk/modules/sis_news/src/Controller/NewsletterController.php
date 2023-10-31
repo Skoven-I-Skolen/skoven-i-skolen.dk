@@ -14,7 +14,7 @@ class NewsletterController extends ControllerBase {
   private $url = 'https://np-skjoldundernes-land.uxmail.io/handlers/post/';
   private Request $request;
 
-  public function __construct(RequestStack $requestStack) {
+  public function __construct(\Symfony\Component\HttpFoundation\RequestStack $requestStack) {
     $this->request = $requestStack->getCurrentRequest();
   }
 

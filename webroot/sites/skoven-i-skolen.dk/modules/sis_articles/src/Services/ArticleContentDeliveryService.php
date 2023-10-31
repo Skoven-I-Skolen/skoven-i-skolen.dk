@@ -204,7 +204,7 @@ class ArticleContentDeliveryService {
 
   public function getUnpublishedContentByUser($user_id) {
     $nodes = \Drupal::entityTypeManager()->getStorage('node')
-      ->getQuery()
+      ->getQuery()->accessCheck(FALSE)
       ->condition('uid', $user_id)
       ->condition('status', '0')
       ->condition('type', 'almanac', 'NOT IN')
@@ -215,7 +215,7 @@ class ArticleContentDeliveryService {
 
   public function getPublishedContentByUser($user_id) {
     $nodes = \Drupal::entityTypeManager()->getStorage('node')
-      ->getQuery()
+      ->getQuery()->accessCheck(FALSE)
       ->condition('uid', $user_id)
       ->condition('status', '1')
       ->condition('type', 'almanac', 'NOT IN')

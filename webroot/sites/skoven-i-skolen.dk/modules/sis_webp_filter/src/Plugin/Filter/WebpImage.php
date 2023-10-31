@@ -93,7 +93,11 @@ class WebpImage extends FilterBase implements ContainerFactoryPluginInterface {
         /** @var \DOMElement $result */
         $src = str_replace('/sites/default/', '/sites/skoven-i-skolen.dk/', $result->getAttribute('src'));
         $rel_path = str_replace('/sites/skoven-i-skolen.dk/files/', '', $src);
-        $file_uri = file_build_uri($rel_path);
+
+        $uri = \Drupal::config('system.file')->get('default_scheme') . '://' . $rel_path;
+        /** @var \Drupal\Core\StreamWrapper\StreamWrapperManagerInterface $stream_wrapper_manager */
+        $stream_wrapper_manager = \Drupal::service('stream_wrapper_manager');
+        $file_uri = $stream_wrapper_manager->normalizeUri($uri);
         // Remove query arguments.
         $uri = preg_match('/^.*(?:\.)[a-zA-Z]+/m', $file_uri, $matches) ? $matches[0] : $file_uri;
         $uri = urldecode($uri);

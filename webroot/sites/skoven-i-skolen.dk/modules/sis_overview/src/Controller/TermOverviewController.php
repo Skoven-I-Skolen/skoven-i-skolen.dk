@@ -33,7 +33,7 @@ class TermOverviewController extends ControllerBase {
    */
   private PagerManager $pagerManager;
 
-  public function __construct(EntityTypeManager $entityTypeManager, TermContentDeliveryService $termContentDelivery, TermRepository $termRepository, RequestStack $requestStack, PagerManager $pagerManager) {
+  public function __construct(EntityTypeManager $entityTypeManager, TermContentDeliveryService $termContentDelivery, TermRepository $termRepository, \Symfony\Component\HttpFoundation\RequestStack $requestStack, PagerManager $pagerManager) {
     $this->termContentDelivery = $termContentDelivery;
     $this->request = $requestStack->getCurrentRequest();
     $this->termRepository = $termRepository;

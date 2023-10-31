@@ -23,7 +23,7 @@ class TermBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    */
   private AdminContext $adminContext;
 
-  public function __construct(AdminContext $adminContext, RequestStack $requestStack) {
+  public function __construct(AdminContext $adminContext, \Symfony\Component\HttpFoundation\RequestStack $requestStack) {
     $this->request = $requestStack->getCurrentRequest();
     $this->adminContext = $adminContext;
   }

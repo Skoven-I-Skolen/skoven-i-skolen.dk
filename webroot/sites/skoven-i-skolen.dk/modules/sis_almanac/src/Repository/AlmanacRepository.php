@@ -17,7 +17,7 @@ class AlmanacRepository {
    *   Array ot node ids
    */
   public function getAlmanacFromDayAndMonth(int $day, int $month): array {
-    $query = \Drupal::entityQuery('node')
+    $query = \Drupal::entityQuery('node')->accessCheck(FALSE)
       ->condition('type', 'almanac')
       ->condition('status', NodeInterface::PUBLISHED)
       ->condition('field_almanac_day', $day)
@@ -29,7 +29,7 @@ class AlmanacRepository {
   public function getCurrentAlmanacWithPreviousAndNext() {
     $date = new DateTime('yesterday');
 
-    $query = \Drupal::entityQuery('node')
+    $query = \Drupal::entityQuery('node')->accessCheck(FALSE)
       ->condition('type', 'almanac')
       ->condition('status', NodeInterface::PUBLISHED);
 
