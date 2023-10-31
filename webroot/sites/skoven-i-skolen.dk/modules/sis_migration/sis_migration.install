@@ -16,7 +16,7 @@ function sis_migration_update_9000(&$sandbox) {
 
   // Initialize some variables during the first pass through.
   if (!isset($sandbox['total'])) {
-      $ids = $storage->getQuery()
+      $ids = $storage->getQuery()->accessCheck(FALSE)
           ->condition("bundle", "image")
           ->execute();
       $sandbox['ids'] = $ids;
@@ -29,7 +29,7 @@ function sis_migration_update_9000(&$sandbox) {
 
   /** @var \Drupal\media\Entity\Media[] $entities */
   $entities = $storage->loadMultiple($ids);
-  
+
   foreach ($entities as $entity) {
     $hasChanges = FALSE;
     $owner = $entity->getOwner();
@@ -37,11 +37,11 @@ function sis_migration_update_9000(&$sandbox) {
       $entity->setOwnerId(1);
       $hasChanges = TRUE;
     }
-    
+
     if ($hasChanges) {
       try {
         $entity->save();
-      } 
+      }
       catch (Exception $ex) {
         $messenger = \Drupal::messenger();
         $messenger->addMessage($ex->getMessage(), $messenger::TYPE_WARNING);
@@ -65,7 +65,7 @@ function sis_migration_update_9001(&$sandbox) {
 
   // Initialize some variables during the first pass through.
   if (!isset($sandbox['total'])) {
-    $ids = $storage->getQuery()
+    $ids = $storage->getQuery()->accessCheck(FALSE)
         ->condition("type", "article")
         ->execute();
     $sandbox['ids'] = $ids;
@@ -78,18 +78,18 @@ function sis_migration_update_9001(&$sandbox) {
 
   /** @var \Drupal\node\Entity\Node[] $entities */
   $entities = $storage->loadMultiple($ids);
-  
+
   foreach ($entities as $entity) {
     if ($entity->get("field_article_image")->isEmpty()) {
       continue;
     }
-    
+
     try {
       $value = $entity->get("field_article_image")->getValue();
       $entity->get("field_article_image_migrated")->setValue($value);
       $entity->get("field_article_image")->setValue(NULL);
       $entity->save();
-    } 
+    }
     catch (Exception $ex) {
       $messenger = \Drupal::messenger();
       $messenger->addMessage($ex->getMessage(), $messenger::TYPE_WARNING);

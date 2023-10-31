@@ -39,7 +39,7 @@ class ArticleRepository {
    * @return \Drupal\Core\Entity\Query\QueryInterface
    */
   private function buildQuery(array $fields, $limit): Drupal\Core\Entity\Query\QueryInterface {
-    $query = Drupal::entityQuery('node')
+    $query = Drupal::entityQuery('node')->accessCheck(FALSE)
       ->condition('type', 'article')
       ->condition('status', NodeInterface::PUBLISHED);
 

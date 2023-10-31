@@ -3,7 +3,7 @@ type: theme
 description: 'Premium subtheme'
 package: Drupal Premium
 version: 2.0.0
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^8.8 || ^9 || ^10
 base theme: premium_theme
 ckeditor_stylesheets:
   - dist/components/css/base/ckeditor.css

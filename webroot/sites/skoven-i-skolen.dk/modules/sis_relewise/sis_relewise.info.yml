@@ -2,7 +2,7 @@ name: SIS Relewise
 description: Helper module for Relewise
 package: Skoven i Skolen
 type: module
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 
 interface translation project: sis_relewise
 interface translation server pattern: modules/contrib/sis_relewise/translations/%language.po

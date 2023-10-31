@@ -2,7 +2,7 @@ name: SIS Blog Post
 description: Helper module for blog posts
 package: Skoven i Skolen
 type: module
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 
 interface translation project: sis_blog_post
 interface translation server pattern: modules/contrib/sis_blog_post/translations/%language.po

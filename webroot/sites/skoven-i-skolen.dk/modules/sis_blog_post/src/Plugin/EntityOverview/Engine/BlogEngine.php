@@ -48,7 +48,7 @@ class BlogEngine extends EntityQueryEngine {
     $overview = $filter->getOverview();
     $storage = $this->entityTypeManager->getStorage($this->getEntityTypeID($overview));
     $keys = $this->entityTypeManager->getDefinition($this->getEntityTypeID($overview))->getKeys();
-    $query = $storage->getQuery()
+    $query = $storage->getQuery()->accessCheck(FALSE)
       ->condition($keys['bundle'], $this->getBundles($overview), 'IN')
       ->condition('status', 1);
     foreach ($filter->getFieldValues() as $field_name => $value) {
@@ -91,7 +91,7 @@ class BlogEngine extends EntityQueryEngine {
   public function getResultsCount(OverviewFilter $filter) {
     $overview = $filter->getOverview();
     $keys = $this->entityTypeManager->getDefinition($this->getEntityTypeID($overview))->getKeys();
-    $query = $this->entityTypeManager->getStorage($this->getEntityTypeID($overview))->getQuery()
+    $query = $this->entityTypeManager->getStorage($this->getEntityTypeID($overview))->getQuery()->accessCheck(FALSE)
       ->condition($keys['bundle'], $this->getBundles($overview), 'IN')
       ->condition('status', 1)
       ->condition('field_article_type', 15)
