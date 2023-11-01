@@ -37,7 +37,7 @@ class OrganizationRepository {
 
 
   public function getNumberOfOrganizations() {
-    return $this->entityTypeManager->getStorage('profile')
+    return $this->entityTypeManager->getStorage('profile')->accessCheck(FALSE)
       ->getQuery()
       ->accessCheck(TRUE)
       ->condition('status', NodeInterface::PUBLISHED)

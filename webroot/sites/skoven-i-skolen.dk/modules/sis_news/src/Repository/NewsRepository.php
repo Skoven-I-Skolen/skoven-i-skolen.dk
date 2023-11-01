@@ -27,7 +27,7 @@ class NewsRepository {
    *   Array if node ids.
    */
   public function getLatestNews(NodeInterface $node = NULL, $limit = 12): array {
-    $query = \Drupal::entityQuery('node')
+    $query = \Drupal::entityQuery('node')->accessCheck(FALSE)
       ->condition('type', 'news')
       ->condition('status', NodeInterface::PUBLISHED)
       ->range(0, $limit)
@@ -51,7 +51,7 @@ class NewsRepository {
    *   Array if node ids.
    */
   public function getLatestContent(NodeInterface $node = NULL, $limit = 12): array {
-    $query = \Drupal::entityQuery('node')
+    $query = \Drupal::entityQuery('node')->accessCheck(FALSE)
       ->condition('type', ['news', 'article', 'blog_post'], 'IN')
       ->condition('status', NodeInterface::PUBLISHED)
       ->range(0, $limit)

@@ -18,7 +18,7 @@ class LexiconController extends ControllerBase {
 
   private ?\Symfony\Component\HttpFoundation\Request $request;
 
-  public function __construct(LexiconContentDeliveryService $lexiconContentDelivery, RequestStack $requestStack) {
+  public function __construct(LexiconContentDeliveryService $lexiconContentDelivery, \Symfony\Component\HttpFoundation\RequestStack $requestStack) {
     $this->lexiconContentDelivery = $lexiconContentDelivery;
     $this->request = $requestStack->getCurrentRequest();
   }

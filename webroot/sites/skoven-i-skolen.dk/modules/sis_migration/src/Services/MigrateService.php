@@ -69,7 +69,7 @@ class MigrateService {
         break;
     }
 
-    $article_type = \Drupal::entityQuery('taxonomy_term')
+    $article_type = \Drupal::entityQuery('taxonomy_term')->accessCheck(FALSE)
       ->condition('machine_name', $type)
       ->condition('vid', 'article_types')
       ->execute();

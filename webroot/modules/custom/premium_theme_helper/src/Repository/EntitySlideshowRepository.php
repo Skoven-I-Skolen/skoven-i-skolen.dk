@@ -20,8 +20,8 @@ class EntitySlideshowRepository {
    *
    * @return \Drupal\Core\Entity\Query\QueryInterface
    */
-  private function buildQuery(?string $entityBundle = NULL, array $fields, int $limit): QueryInterface {
-    $query = Drupal::entityQuery('node')
+  private function buildQuery(?string $entityBundle = NULL, array $fields = [], int $limit = 100): QueryInterface {
+    $query = Drupal::entityQuery('node')->accessCheck(FALSE)
       ->condition('status', NodeInterface::PUBLISHED);
 
     if($entityBundle) {

@@ -7,7 +7,7 @@ use Drupal\node\NodeInterface;
 class BlogPostRepository {
 
   public function getWriters($target_id, $exception): array {
-    $writers = \Drupal::entityQuery('user')
+    $writers = \Drupal::entityQuery('user')->accessCheck(FALSE)
       ->condition('roles', 'writer', 'CONTAINS');
 
     if ($target_id) {
@@ -24,7 +24,7 @@ class BlogPostRepository {
   }
 
   public function getBlogPosts($limit) {
-    $query = \Drupal::entityQuery('node')
+    $query = \Drupal::entityQuery('node')->accessCheck(FALSE)
       ->condition('type', 'blog_post')
       ->condition('status', NodeInterface::PUBLISHED)
       ->range(0, $limit)
@@ -33,7 +33,7 @@ class BlogPostRepository {
   }
 
   public function getBlogPostsByAuthor($author_ids) {
-    $query = \Drupal::entityQuery('node')
+    $query = \Drupal::entityQuery('node')->accessCheck(FALSE)
       ->condition('type', 'blog_post')
       ->condition('status', NodeInterface::PUBLISHED)
       ->condition('uid', $author_ids)

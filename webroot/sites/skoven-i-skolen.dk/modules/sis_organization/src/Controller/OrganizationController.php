@@ -32,7 +32,7 @@ class OrganizationController extends ControllerBase {
    */
   private ?Request $request;
 
-  public function __construct(OrganizationContentDeliveryService $contentDelivery, OrganizationRepository $organizationRepository, PagerManager $pagerManager, RequestStack $requestStack) {
+  public function __construct(OrganizationContentDeliveryService $contentDelivery, OrganizationRepository $organizationRepository, PagerManager $pagerManager, \Symfony\Component\HttpFoundation\RequestStack $requestStack) {
     $this->contentDelivery = $contentDelivery;
     $this->pagerManager = $pagerManager;
     $this->organizationRepository = $organizationRepository;
