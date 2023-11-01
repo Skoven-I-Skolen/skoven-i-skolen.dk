@@ -10,7 +10,7 @@ field_name: field_entity_bundle
 entity_type: block_content
 type: entity_reference
 settings:
-  target_type: 'entity_bundle:node'
+  target_type: node_type
 module: core
 locked: false
 cardinality: 1
