@@ -24,18 +24,22 @@ const filterOpen = document.querySelector('.js-overview-form__toolbar__filter-bu
 const filterWrapper = document.querySelector('.js-overview-form__search-filters');
 const filterClose = document.querySelector('.js-search-filters-close');
 
-filterOpen.addEventListener('click', (e) => {
-  if (filterWrapper.classList.contains('overview-form__search-filters--active')) {
-    filterWrapper.classList.remove('overview-form__search-filters--active');
-  } else {
-    filterWrapper.classList.add('overview-form__search-filters--active');
-    disableBodyScroll(filterWrapper);
-    filterWrapper.closest('section').classList.add('section--no-z-index');
-  }
-});
+if (filterOpen && filterWrapper) {
+  filterOpen.addEventListener('click', (e) => {
+    if (filterWrapper.classList.contains('overview-form__search-filters--active')) {
+      filterWrapper.classList.remove('overview-form__search-filters--active');
+    } else {
+      filterWrapper.classList.add('overview-form__search-filters--active');
+      disableBodyScroll(filterWrapper);
+      filterWrapper.closest('section').classList.add('section--no-z-index');
+    }
+  });
+}
 
-filterClose.addEventListener('click', (e) => {
-  filterWrapper.classList.remove('overview-form__search-filters--active');
-  enableBodyScroll(filterWrapper);
-  filterWrapper.closest('section').classList.remove('section--no-z-index');
-});
+if (filterClose && filterWrapper) {
+  filterClose.addEventListener('click', (e) => {
+    filterWrapper.classList.remove('overview-form__search-filters--active');
+    enableBodyScroll(filterWrapper);
+    filterWrapper.closest('section').classList.remove('section--no-z-index');
+  });
+}

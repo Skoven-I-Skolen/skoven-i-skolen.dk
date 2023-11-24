@@ -1,0 +1,6 @@
+label: 'Media Directories: Editor widget'
+display_configuration:
+  link_text: 'Select entities'
+widgets:
+  5bc2a17c-b080-4a3b-867c-7953ae9b55c4:
+    label: 'Directory browser'

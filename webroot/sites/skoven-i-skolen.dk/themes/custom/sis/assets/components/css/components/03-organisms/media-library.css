@@ -1,5 +1,4 @@
 .media-library-item__preview {
-  min-height: 185px;
   background-image: url("../../../../../dist/images/file.svg");
   background-repeat: no-repeat;
   background-position-x: 50%;

@@ -13,88 +13,91 @@
 {{ attach_library('sis/overview-form') }}
 {{ attach_library('sis/search-page') }}
 
-<form{{attributes.addClass('overview-form')}}>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-        {% if element['keyword']['#markup'] != '' %}
-          <div class="search-page__header">
-            <div class="search-page__header-inner">
-              <div class="search-page__description">
-                {{ 'Showing search results for'|t }}
+<section class="section">
+
+  <form{{attributes.addClass('overview-form')}}>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          {% if element['keyword']['#markup'] != '' %}
+            <div class="search-page__header">
+              <div class="search-page__header-inner">
+                <div class="search-page__description">
+                  {{ 'Showing search results for'|t }}
+                </div>
+                <h3 class="search-page__title">
+                  "<span class="overview-form-contents__keyword">{{ element['keyword'] }}</span>"
+                </h3>
+                <div class="search-page__count">
+                  <span class="overview-form-contents__total">{{ element['content']['total'] }}</span>
+                </div>
               </div>
-              <h3 class="search-page__title">
-                "<span class="overview-form-contents__keyword">{{ element['keyword'] }}</span>"
-              </h3>
-              <div class="search-page__count">
-                <span class="overview-form-contents__total">{{ element['content']['total'] }}</span>
+            </div>
+          {% else %}
+            <div class="section section--spacing-top-small"></div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 overview-form__toolbar">
+          <span class="overview-form__toolbar__filter-button js-overview-form__toolbar__filter-button">
+            {% include '@reusable-component/svg-icon.twig' with {
+              'attributes': '',
+              'svgIconName': 'filter-icon'
+            } %}
+            {{ "Filter"|t }}
+          </span>
+          <span class="overview-form__toolbar-label">{{ "Sorted by"|t }}:</span>
+          <div class="overview-form__toolbar-label--default">{{ element['facets'].sort }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-3">
+          <div class="overview-form__search-filters js-overview-form__search-filters">
+            <div class="overview-form__search-filters__mobile-header">
+              <div>
+                {{ "Filter"|t }}
+              </div>
+              <div class="js-search-filters-close">
+                {% include '@reusable-component/svg-icon.twig' with {
+                'attributes': '',
+                'svgIconName': 'close'
+              } %}
+              </div>
+            </div>
+            <div class="accordion js-accordion">
+              <div class="accordion__items">
+                <div class="accordion-buttons">
+                  <button id="buttonExpandAll" type="button" class="accordion-button accordion-button__expand">
+                    {{ "Expand All"|t }}
+                    +
+                  </button>
+                  <button id="buttonCollapseAll" type="button" class="accordion-button accordion-button__collapse hide">
+                    {{ "Collapse All"|t }}
+                    -
+                  </button>
+                </div>
+                {{ element['facets'].field_article_type }}
+                {{ element['facets'].field_subject }}
+                {{ element['facets'].field_class }}
+                {{ element['facets'].field_location }}
+                {{ element['facets'].field_season }}
+                {{ element['facets'].external }}
               </div>
             </div>
           </div>
-        {% else %}
-          <div class="section section--spacing-top-small"></div>
-        {% endif %}
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12 overview-form__toolbar">
-				<span class="overview-form__toolbar__filter-button js-overview-form__toolbar__filter-button">
-					{% include '@reusable-component/svg-icon.twig' with {
-            'attributes': '',
-            'svgIconName': 'filter-icon'
-          } %}
-					{{ "Filter"|t }}
-				</span>
-				<span class="overview-form__toolbar-label">{{ "Sorted by"|t }}:</span>
-				<div class="overview-form__toolbar-label--default">{{ element['facets'].sort }}</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12 col-sm-3">
-				<div class="overview-form__search-filters js-overview-form__search-filters">
-					<div class="overview-form__search-filters__mobile-header">
-						<div>
-							{{ "Filter"|t }}
-						</div>
-						<div class="js-search-filters-close">
-							{% include '@reusable-component/svg-icon.twig' with {
-              'attributes': '',
-              'svgIconName': 'close'
-            } %}
-						</div>
-					</div>
-					<div class="accordion js-accordion">
-						<div class="accordion__items">
-							<div class="accordion-buttons">
-								<button id="buttonExpandAll" type="button" class="accordion-button accordion-button__expand">
-									{{ "Expand All"|t }}
-									+
-								</button>
-								<button id="buttonCollapseAll" type="button" class="accordion-button accordion-button__collapse hide">
-									{{ "Collapse All"|t }}
-									-
-								</button>
-							</div>
-							{{ element['facets'].field_article_type }}
-              {{ element['facets'].field_subject }}
-              {{ element['facets'].field_class }}
-							{{ element['facets'].field_location }}
-							{{ element['facets'].field_season }}
-							{{ element['facets'].external }}
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-9">
-				<div class="row">
-					{{ element['content']|without('total') }}
-				</div>
-			</div>
-		</div>
-	</div>
-	{{ element['page'] }}
-	{{ element['page_submit'] }}
-	{{ element['form_build_id'] }}
-	{{ element['form_token'] }}
-	{{ element['form_id'] }}
-</form>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+          <div class="row">
+            {{ element['content']|without('total') }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ element['page'] }}
+    {{ element['page_submit'] }}
+    {{ element['form_build_id'] }}
+    {{ element['form_token'] }}
+    {{ element['form_id'] }}
+  </form>
+</section>

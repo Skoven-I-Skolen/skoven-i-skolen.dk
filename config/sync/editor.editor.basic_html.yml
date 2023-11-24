@@ -30,11 +30,24 @@ settings:
       - heading
       - sourceEditing
   plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+        - justify
     ckeditor5_heading:
       enabled_headings:
         - heading1
         - heading2
         - heading3
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: false
+      startIndex: false
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
     ckeditor5_style:
       styles:
         -
@@ -43,19 +56,6 @@ settings:
         -
           label: Resumé
           element: '<p class="resume">'
-    ckeditor5_sourceEditing:
-      allowed_tags: {  }
-    ckeditor5_list:
-      reversed: false
-      startIndex: false
-    ckeditor5_alignment:
-      enabled_alignments:
-        - left
-        - center
-        - right
-        - justify
-    ckeditor5_imageResize:
-      allow_resize: true
 image_upload:
   status: true
   scheme: public

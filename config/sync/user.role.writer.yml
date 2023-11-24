@@ -18,6 +18,7 @@ dependencies:
   module:
     - content_moderation
     - field_permissions
+    - file
     - filter
     - media
     - node
@@ -34,7 +35,6 @@ permissions:
   - 'create field_article_image_anonymous'
   - 'create field_description'
   - 'create field_list_media_anonymous'
-  - 'create field_summary'
   - 'create image media'
   - 'create link_article content'
   - 'create remote_video media'
@@ -42,6 +42,7 @@ permissions:
   - 'delete own article content'
   - 'delete own blog_post content'
   - 'delete own document media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own link_article content'
   - 'delete own remote_video media'
@@ -53,7 +54,6 @@ permissions:
   - 'edit own field_article_image_anonymous'
   - 'edit own field_description'
   - 'edit own field_list_media_anonymous'
-  - 'edit own field_summary'
   - 'edit own image media'
   - 'edit own link_article content'
   - 'edit own news content'

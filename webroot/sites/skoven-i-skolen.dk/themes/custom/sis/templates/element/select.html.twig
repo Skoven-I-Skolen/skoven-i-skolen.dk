@@ -7,7 +7,7 @@
 {% endif %}
 
 {% apply spaceless %}
-  <select{{ attributes.addClass('hidden') }}>
+  <select{{ attributes }}>
     {% for option in options %}
       {% if option.type == 'optgroup' %}
         <optgroup label="{{ option.label }}">

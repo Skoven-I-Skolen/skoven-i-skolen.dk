@@ -3,7 +3,8 @@
  * Select.
  */
 
-.select {
+.select,
+.form-select{
   display: block;
   width: 100%;
   height: 40px;
@@ -23,16 +24,23 @@
   &:focus {
     outline: 0;
   }
+
+  section.section & {
+    display: none;
+  }
 }
 
 
 .premium-dropdown {
   &--wrapper {
     position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
     z-index: 9;
+    display: none;
+
+    section.section & {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &--trigger {
