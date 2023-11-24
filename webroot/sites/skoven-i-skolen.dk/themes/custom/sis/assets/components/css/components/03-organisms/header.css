@@ -16,7 +16,7 @@
   box-shadow: 0 25px 75px rgb(0 0 0 / 10%);
 
   /* When user is logged in, we remove fixed from header */
-  .adminimal-admin-toolbar & {
+  .gin--horizontal-toolbar & {
     position: relative;
   }
 

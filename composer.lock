@@ -8465,10 +8465,10 @@
         },
         {
             "name": "novicell/drupal-premium-theme",
-            "version": "1.1.4",
+            "version": "1.1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_2265rU/novicelldrupalpremiumtheme-1-1-4.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_4eY2k/novicelldrupalpremiumtheme-1-1-7.zip"
             },
             "type": "drupal-theme",
             "license": [
@@ -8584,10 +8584,10 @@
         },
         {
             "name": "novicell/premium_profile",
-            "version": "1.2.6",
+            "version": "1.3.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_5ca7O/novicellpremium_profile-1-2-6.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_Ks59d/novicellpremium_profile-1-3-3.zip"
             },
             "type": "drupal-profile",
             "license": [
@@ -13383,6 +13383,7 @@
         "drupal/config_split": 5,
         "drupal/entity_clone": 10,
         "drupal/focal_point": 15,
+        "drupal/gin": 5,
         "drupal/html5history": 20,
         "drupal/imageapi_optimize": 10,
         "drupal/media_directories": 10,

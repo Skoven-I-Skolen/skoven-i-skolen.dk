@@ -30,7 +30,9 @@ function premium_theme_helper_layout_alter(array &$definitions) {
  */
 function premium_theme_helper_element_info_alter(array &$types) {
   if (isset($types['layout_builder'])) {
-    $types['layout_builder']['#attached']['library'][] = 'premium_theme/layout-builder';
+    if (\Drupal::config('system.theme')->get('admin') !== 'gin') {
+      $types['layout_builder']['#attached']['library'][] = 'premium_theme/layout-builder';
+    }
   }
 }
 
