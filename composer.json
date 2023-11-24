@@ -68,6 +68,7 @@
         "drupal/field_permissions": "^1.2",
         "drupal/file_delete": "^2.0",
         "drupal/focal_point": "^2.0@alpha",
+        "drupal/gin": "^3.0@RC",
         "drupal/honeypot": "^2.1",
         "drupal/hreflang": "^1.0",
         "drupal/html5history": "1.x-dev@dev",

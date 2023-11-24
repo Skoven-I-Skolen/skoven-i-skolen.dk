@@ -1,13 +1,13 @@
-uuid: 9ed82e08-ef29-4d5e-9624-c8b94d5cd05f
+uuid: 2ed25540-e863-45d8-bed5-b53e3886cfa7
 langcode: da
 status: true
 dependencies:
   theme:
-    - adminimal_theme
+    - gin
 _core:
-  default_config_hash: CyX_aDKAka2_eihevNLscCHDYrzDgIqwWzFVEFRKIww
-id: adminimal_theme_primary_local_tasks
-theme: adminimal_theme
+  default_config_hash: Hh01DLj9k7UnNdPpOQXHZHW7GHf2OPNDQyCJF7_R9ac
+id: gin_primary_local_tasks
+theme: gin
 region: header
 weight: 0
 provider: null
