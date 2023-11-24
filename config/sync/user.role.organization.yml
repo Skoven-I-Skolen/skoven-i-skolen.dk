@@ -18,6 +18,7 @@ dependencies:
   module:
     - content_moderation
     - field_permissions
+    - file
     - filter
     - media
     - node
@@ -44,6 +45,7 @@ permissions:
   - 'delete own article content'
   - 'delete own document media'
   - 'delete own dot_on_map content'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own link_article content'
   - 'delete own remote_video media'

@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.simpel_html_til_faktabokse
   module:
+    - file
     - filter
     - status_feed
   enforced:
@@ -18,4 +19,5 @@ weight: 5
 is_admin: null
 permissions:
   - 'access status feed'
+  - 'delete own files'
   - 'use text format simpel_html_til_faktabokse'
