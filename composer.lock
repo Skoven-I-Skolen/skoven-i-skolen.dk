@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4215da3fa9f70bc5e512e5413199f52e",
+    "content-hash": "a0b8ddf143f22aa261f130d0bc5f941f",
     "packages": [
         {
             "name": "algolia/places",
@@ -8445,10 +8445,10 @@
         },
         {
             "name": "novicell/dds_dawa",
-            "version": "2.0.1-alpha.2",
+            "version": "2.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_1Yn7Bm/novicelldds_dawa-2-0-1-alpha-2.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_O5pn2/novicelldds_dawa-2-0-1.zip"
             },
             "require": {
                 "drupal/core": "^8.7|^9.0|^10.0|^10.1"
@@ -8618,10 +8618,10 @@
         },
         {
             "name": "novicell/relewise",
-            "version": "2.0.18",
+            "version": "2.0.19",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_s1i9E/novicellrelewise-2-0-18.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_E62Jh/novicellrelewise-2-0-19.zip"
             },
             "type": "drupal-module",
             "license": [
