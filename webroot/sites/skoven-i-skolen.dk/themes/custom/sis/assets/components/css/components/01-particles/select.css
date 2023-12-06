@@ -25,7 +25,8 @@
     outline: 0;
   }
 
-  section.section & {
+  section.section &,
+  .entity-overview-filter-form & {
     display: none;
   }
 }
@@ -37,7 +38,8 @@
     z-index: 9;
     display: none;
 
-    section.section & {
+    section.section &,
+    .entity-overview-filter-form & {
       display: flex;
       flex-direction: column;
     }
