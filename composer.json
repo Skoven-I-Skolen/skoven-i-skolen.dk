@@ -122,7 +122,7 @@
         "drush/drush": "^12",
         "novicell/atoms": "^1.0",
         "novicell/content_hierarchy": "^1.0",
-        "novicell/dds_dawa": "^2.0",
+        "novicell/dds_dawa": "^2.0.4",
         "novicell/drupal-premium-theme": "^1.0",
         "novicell/dynamic_key_value": "1.1.9",
         "novicell/entity_overview": "^2.0",
