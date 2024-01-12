@@ -3,6 +3,7 @@ entity_bundles:
   node:
     - article
     - blog_post
+    - dot_on_map
     - link_article
     - news
     - page

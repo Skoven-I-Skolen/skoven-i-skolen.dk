@@ -12,6 +12,6 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <code> <blockquote> <a href> <ul> <ol start> <li> <img src alt data-entity-type data-entity-uuid data-image-size>'
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <img src alt data-entity-type data-entity-uuid data-image-size> <strong> <em> <code> <blockquote> <a href rel> <ul> <ol start> <li>'
       filter_html_help: true
       filter_html_nofollow: false
