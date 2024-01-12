@@ -16,5 +16,5 @@ type: news
 description: 'Brug <em>nyhed</em> til ar oprettet nyheder'
 help: ''
 new_revision: true
-preview_mode: 0
+preview_mode: 1
 display_submitted: true

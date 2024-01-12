@@ -14,5 +14,5 @@ type: almanac
 description: 'Brug <em>almanak</em> til at oprette et emne i almanakken'
 help: ''
 new_revision: true
-preview_mode: 0
+preview_mode: 1
 display_submitted: true
