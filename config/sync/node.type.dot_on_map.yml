@@ -14,5 +14,5 @@ type: dot_on_map
 description: 'Brug "prik på kortet" for at vise prikker på kortet.'
 help: ''
 new_revision: true
-preview_mode: 1
+preview_mode: 0
 display_submitted: true
