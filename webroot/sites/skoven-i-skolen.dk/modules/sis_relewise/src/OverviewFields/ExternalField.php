@@ -64,4 +64,12 @@ class ExternalField implements OverviewFieldInfoInterface {
     ];
   }
 
+  public function setFieldFormElementAttribute(array &$form, $attribute, $value): void {
+    $form['#' . $attribute] = $value;
+  }
+
+  public function getFilterValueFromFormStateValue($value): mixed {
+    return $value;
+  }
+
 }
