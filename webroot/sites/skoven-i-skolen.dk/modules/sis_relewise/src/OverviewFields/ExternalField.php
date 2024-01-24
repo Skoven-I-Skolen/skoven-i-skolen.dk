@@ -2,41 +2,17 @@
 
 namespace Drupal\sis_relewise\OverviewFields;
 
-use Drupal\Core\StringTranslation\TranslatableMarkup;
-use Drupal\entity_overview\OverviewFieldInfoInterface;
+use Drupal\entity_overview\OverviewFields\OverviewFieldBase;
 use Drupal\entity_overview\OverviewFilter;
 
-class ExternalField implements OverviewFieldInfoInterface {
+class ExternalField extends OverviewFieldBase {
 
   public function __construct() {
-  }
-
-  public function id(): string {
-    return 'external';
-  }
-
-  public function label(): string|TranslatableMarkup {
-    return t('External material');
-  }
-
-  public function isBase(): bool {
-    return FALSE;
-  }
-
-  public function canBeExposed(): bool {
-    return TRUE;
-  }
-
-  public function requiresFacets(): bool {
-    return FALSE;
+    parent::__construct('external', t('External material'));
   }
 
   public function getWidgets(): array {
     return ['checkboxes' => t('Check boxes')];
-  }
-
-  public function updateFieldFormElementDefaultValue($value): mixed {
-    return $value;
   }
 
   protected function getOptions() {
@@ -46,30 +22,33 @@ class ExternalField implements OverviewFieldInfoInterface {
     return $options;
   }
 
+  /**
+   * @inheritDoc
+   */
   public function getFieldFormElement(OverviewFilter $filter): array {
-    return [
-      '#type' => 'checkboxes',
-      '#title' => $this->label(),
-      '#options' => $this->getOptions(),
-      '#default_value' => $filter->getFieldValue($this->id()) ?? []
-    ];
+    return parent::getFieldFormElement($filter) + ['#options' => $this->getOptions()];
   }
 
+  /**
+   * @inheritDoc
+   */
   public function getFieldFormTransform(OverviewFilter $filter): array {
-    return [
-      'type' => 'checkboxes',
-      'title' => $this->label(),
-      'options' => $this->getOptions(),
-      'default_value' => $filter->getFieldValue($this->id()) ?? ''
-    ];
-  }
-
-  public function setFieldFormElementAttribute(array &$form, $attribute, $value): void {
-    $form['#' . $attribute] = $value;
+    $transformation = parent::getFieldFormTransform($filter) + ['options' => []];
+    foreach ($this->getOptions() as $key => $value) {
+      $transformation['options'][] = [
+        'key' => $key,
+        'value' => $value
+      ];
+    }
+    return $transformation;
   }
 
   public function getFilterValueFromFormStateValue($value): mixed {
-    return $value;
+    if ($value['external']) {
+      return ['external'];
+    }
+
+    return NULL;
   }
 
 }
