@@ -47,6 +47,10 @@ function sis_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['search']['title']['#suffix'] = "</h3>";
     $form["#attached"]["library"][] = 'sis/pager-overview';
   }
+  // Hide the view mode selector on the node preview form.
+  if ($form_id === 'node_preview_form_select') {
+    $form['view_mode']['#access'] = false;
+  }
 }
 
 /**

@@ -69,4 +69,18 @@ class LetterField implements OverviewFieldInfoInterface {
     ];
   }
 
+  /**
+   * @inheritDoc
+   */
+  public function setFieldFormElementAttribute(array &$form, $attribute, $value): void {
+    $form['#' . $attribute] = $value;
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getFilterValueFromFormStateValue($value): mixed {
+    return $value;
+  }
+
 }

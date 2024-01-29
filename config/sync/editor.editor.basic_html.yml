@@ -32,10 +32,10 @@ settings:
   plugins:
     ckeditor5_alignment:
       enabled_alignments:
-        - left
         - center
-        - right
         - justify
+        - left
+        - right
     ckeditor5_heading:
       enabled_headings:
         - heading1
@@ -56,6 +56,11 @@ settings:
         -
           label: Resumé
           element: '<p class="resume">'
+    editor_advanced_link_link:
+      enabled_attributes:
+        - target
+    linkit_extension:
+      linkit_enabled: false
 image_upload:
   status: true
   scheme: public

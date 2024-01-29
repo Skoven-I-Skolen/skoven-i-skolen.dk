@@ -67,10 +67,8 @@ Drupal.behaviors.sis_map_okapi_integration = {
     }
 
     function applyFiltersFromSearchQuery(query) {
-      console.log("applyFiltersFromSearchQuery");
       let iterator = query.keys();
       for (const i of iterator) {
-        console.log(i);
         query.getAll(i).forEach(function (f) {
           if (i !== 'uid') {
             var checkbox = document.querySelector('[id="' + decodeURIComponent(f) + '"]');
@@ -135,8 +133,16 @@ Drupal.behaviors.sis_map_okapi_integration = {
       // Erase all current map markers and entries on result list.
       document.querySelectorAll('.geomarker, .result-item').forEach(function (e) {
         e.remove();
-      })
+      });
 
+      if (resultSet.length === 0) {
+        // Empty resultSet.
+        var resultSet = [];
+        // Re-add all markers when resultSet equals 0 (when no filters are selected).
+        Object.keys(markers).forEach(function (index) {
+          resultSet.push(markers[index]);
+        });
+      }
 
       // Render each map new marker.
       resultSet.forEach(function (element) {
@@ -370,8 +376,14 @@ Drupal.behaviors.sis_map_okapi_integration = {
         if (query.toString().includes('=')) {
           firstRender = false;
           applyFiltersFromSearchQuery(query);
+          if (query.size === 1 && query.toString().includes('uid')) {
+            Object.keys(markers).forEach(function (index) {
+              renderMapMarker(markers[index]);
+            });
+            renderResultList(markers);
+          }
         }
-        else if (settings.sis_map.render_all_markers_on_build) {
+        else {
           doNotAddToQuery = true;
           Object.keys(markers).forEach(function (index) {
             renderMapMarker(markers[index]);

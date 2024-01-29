@@ -357,10 +357,11 @@
 }
 
 .ui-dialog.article-modal {
-  width: 96% !important;
+  width: 96% !important; /* stylelint disable-line */
   padding: 0;
   font-family: var(--base-font-family);
-  border-radius: 10px;
+  border-radius: 10px !important; /* stylelint disable-line */
+  background-color: #fff !important; /* stylelint disable-line */
 
   @media (--viewport-sm-min) {
     width: 600px !important;
@@ -379,7 +380,7 @@
   }
 
   .ui-dialog-titlebar-close {
-    right: 10px;
+    right: 10px !important; /* stylelint-disable-line */
     width: 28px;
     height: 28px;
     margin: 0;
