@@ -53,10 +53,6 @@ function newsletterValidation(newsletterFormWrappers) {
     const fieldItemsDiv = document.createElement('div');
     fieldItemsDiv.setAttribute('class', 'field-items');
 
-    // Create field-name div
-    const fieldNameDiv = document.createElement('div');
-    fieldNameDiv.setAttribute('class', 'field-item field-name');
-
     // Create field-email div
     const fieldEmailDiv = document.createElement('div');
     fieldEmailDiv.setAttribute('class', 'field-item field-email');
@@ -72,16 +68,6 @@ function newsletterValidation(newsletterFormWrappers) {
     // Create field-item div
     const fieldItemDiv = document.createElement('div');
     fieldItemDiv.setAttribute('class', 'field-item');
-
-    // Create input for name
-    const nameInput = document.createElement('input');
-    nameInput.setAttribute('type', 'text');
-    nameInput.setAttribute('name', 'data_Navn');
-    nameInput.setAttribute('placeholder', 'Navn');
-    nameInput.setAttribute('class', 'input');
-    nameInput.setAttribute('required', 'true');
-
-    fieldNameDiv.appendChild(nameInput);
 
     // Create input for email
     const emailInput = document.createElement('input');
@@ -113,7 +99,6 @@ function newsletterValidation(newsletterFormWrappers) {
     fieldItemDiv.appendChild(submitInput);
 
     // Create Append input fields to the form
-    fieldItemsDiv.appendChild(fieldNameDiv);
     fieldItemsDiv.appendChild(fieldEmailDiv);
     fieldItemsDiv.appendChild(fieldGdprDiv);
     fieldItemsDiv.appendChild(fieldItemDiv);
