@@ -140,26 +140,14 @@
               {{ almanac }}
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
-
-              {% if atom('footer-col4-link').0['#url'] %}
-                <div class="footer__header">Tilmeld dig nyhedsbrevet</div>
-                <form action="{{ atom_str('newsletter-url') }}" method="post" class="newsletter-form">
-                  <input type="hidden" name="optin_scheme" value="double" />
-                  <input type="hidden" name="action" value="subscribe" />
-                  <input type="hidden" name="lists" value="{{ atom_str('newsletter-list-id') }}" />
-                  <input type="hidden" name="secret" value="" />
-                  <div class="field-items">
-                    <div class="field-item field-email">
-                      <input type="text" name="email_address" placeholder="E-mail adresse" class="input" required />
-                    </div>
-                    <div class="field-item field-gdpr">
-                      <label><input type="checkbox" value="gdpr" class="checkbox" required /><span></span>{{ atom_str('footer-col4-text') }} {{ atom('footer-col4-link') }}</label>
-                    </div>
-                    <div class="field-item">
-                      <input type="submit" value="Tilmeld" class="button" />
-                    </div>
-                  </div>
-                </form>
+              {% if atom('footer-col4-link').0['#url'] and atom_str('newsletter-url') and atom_str('newsletter-list-id') and atom_str('footer-col4-text') %}
+                {% include '@reusable-component/newsletter-form.twig' with {
+                  'newsletter_url': atom_str('newsletter-url'),
+                  'newsletter_list': atom_str('newsletter-list-id'),
+                  'gdpr_text': atom_str('footer-col4-text'),
+                  'gdpr_link': atom('footer-col4-link').0['#url'],
+                  'newsletter_header': 'Tilmeld dig nyhedsbrevet',
+                } %}
               {% endif %}
             </div>
           </div>

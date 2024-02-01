@@ -435,6 +435,13 @@ news-form:
     - core/drupal.ajax
     - sis/form-select
 
+newsletter-form:
+  version: VERSION
+  css:
+    theme:
+      dist/components/css/components/02-molecules/newsletter-form.css: {}
+  js:
+    dist/components/js/newsletter-form.js: {}
 
 profile:
   version: VERSION
