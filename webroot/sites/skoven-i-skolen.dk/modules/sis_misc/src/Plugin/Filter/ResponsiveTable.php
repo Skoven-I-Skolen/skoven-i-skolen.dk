@@ -11,7 +11,7 @@ use Drupal\filter\Plugin\FilterBase;
  * @Filter(
  *   id = "filter_responsive_table",
  *   title = @Translation("Responsive table"),
- *   type = Drupal\filter\Plugin\FilterInterface::TYPE_MARKUP_LANGUAGE,
+ *   type = Drupal\filter\Plugin\FilterInterface::TYPE_TRANSFORM_REVERSIBLE,
  * )
  */
 class ResponsiveTable extends FilterBase {
