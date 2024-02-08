@@ -1,0 +1,4 @@
+dialog-custom:
+  css:
+    theme:
+      css/dialog-custom.css: {}

@@ -42,3 +42,7 @@ function premium_theme_helper_locale_translation_projects_alter(array &$projects
   $path = $module_handler->getModule('premium_theme_helper')->getPath();
   $projects['premium_theme_helper']['info']['interface translation server pattern'] = $path . '/translations/%language.po';
 }
+
+function premium_theme_helper_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'premium_theme_helper/dialog-custom';
+}

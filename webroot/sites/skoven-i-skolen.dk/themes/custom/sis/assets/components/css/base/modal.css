@@ -8,23 +8,22 @@ body {
 }
 
 .ui-dialog:not(.ui-dialog-position-side):not(.ui-dialog.article-modal) {
-  /* stylelint-disable */
-  top: 50% !important;
-  left: 50% !important;
-  height: 80% !important;
-  margin-top: 0 !important;
+  position: fixed !important; /* stylelint-disable-line declaration-no-important */
+  top: 50% !important; /* stylelint-disable-line declaration-no-important */
+  left: 50% !important; /* stylelint-disable-line declaration-no-important */
+  height: 82% !important; /* stylelint-disable-line declaration-no-important */
+  margin-top: 0 !important; /* stylelint-disable-line declaration-no-important */
   transform: translate(-50%, -50%);
 
   .ui-dialog-content {
-    max-height: calc(100% - 46px) !important;
-    min-height: calc(100% - 46px) !important;
+    min-height: calc(100% - 56px) !important; /* stylelint-disable-line declaration-no-important */
+    max-height: calc(100% - 56px) !important; /* stylelint-disable-line declaration-no-important */
   }
-  /* stylelint-enable */
 }
 
 .ui-widget-overlay {
   background: var(--color-black);
-  opacity: 0.8;
+  opacity: .8;
 }
 
 #layout-builder-modal {
@@ -47,8 +46,8 @@ body {
   }
 
   .section-form {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-top: 0 !important; /* stylelint-disable-line declaration-no-important */
+    padding-bottom: 0 !important; /* stylelint-disable-line declaration-no-important */
   }
 }
 
@@ -69,5 +68,17 @@ body {
 }
 
 .entity-browser-modal {
-  margin-top: -200px !important;
+  margin-top: -200px !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.ui-dialog .ajax-progress-throbber {
+  position: relative !important; /* stylelint-disable-line declaration-no-important */
+  top: auto !important; /* stylelint-disable-line declaration-no-important */
+  left: auto !important; /* stylelint-disable-line declaration-no-important */
+  width: 40px;
+  height: 40px;
+  padding: 0 !important; /* stylelint-disable-line declaration-no-important */
+  background: none !important; /* stylelint-disable-line declaration-no-important */
+  border: 0 solid white !important; /* stylelint-disable-line declaration-no-important */
+  box-shadow: none !important; /* stylelint-disable-line declaration-no-important */
 }
