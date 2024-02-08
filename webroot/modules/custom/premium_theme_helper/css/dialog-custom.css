@@ -1,0 +1,29 @@
+.ui-dialog:not(.ui-dialog-position-side):not(.ui-dialog.article-modal) {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  height: 82% !important;
+  margin-top: 0 !important;
+  transform: translate(-50%, -50%);
+}
+
+.ui-dialog:not(.ui-dialog-position-side):not(.ui-dialog.article-modal) .ui-dialog-content {
+  max-height: calc(100% - 56px) !important;
+  min-height: calc(100% - 56px) !important;
+}
+
+.entity-browser-modal-iframe {
+  height: calc(100% - 60px) !important;
+}
+
+.ui-dialog .ajax-progress-throbber {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  width: 40px;
+  height: 40px;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 solid white !important;
+  box-shadow: none !important;
+}
