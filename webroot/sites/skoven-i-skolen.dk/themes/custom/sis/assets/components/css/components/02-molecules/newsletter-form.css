@@ -1,0 +1,72 @@
+/**
+ * Type: Molecules.
+ * Newsletter form.
+ */
+
+.newsletter-form {
+  &__wrapper {
+    display: none;
+
+    &.loaded {
+      display: block;
+    }
+  }
+
+  &__header {
+    margin-bottom: 10px;
+    font-weight: var(--heading-font-weight);
+    font-size: var(--base-font-size-xlarge);
+    font-family: var(--heading-font-family);
+  }
+
+  .field-item {
+    margin-bottom: 12px;
+
+    &.field-gdpr {
+      input[type="checkbox"] {
+        top: 0;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        opacity: 0;
+      }
+
+      label {
+        position: relative;
+        display: block;
+        padding-left: 35px;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 25px;
+          height: 25px;
+          background: var(--color-white);
+          border-radius: 4px;
+          content: "";
+          pointer-events: none;
+        }
+
+        & span {
+          position: absolute;
+          top: 6px;
+          left: 3px;
+          display: none;
+          width: 19px;
+          height: 10px;
+          border-bottom: 3px solid var(--color-purple);
+          border-left: 3px solid var(--color-purple);
+          transform: rotate(-45deg) scale(1);
+          content: "";
+          pointer-events: none;
+        }
+      }
+
+      input[type="checkbox"]:checked + span {
+        display: block;
+      }
+    }
+  }
+}
