@@ -1,0 +1,30 @@
+uuid: 9ee2d58b-fba6-430d-b1d2-a022da128614
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.news
+  module:
+    - node
+id: node.news.content
+type: content
+target_entity_type: node
+target_bundle: news
+display_name:
+  plugin: entity_label
+category_path:
+  plugin: path_alias
+brand: {  }
+list_price: {  }
+sales_price: {  }
+data_fields:
+  body:
+    plugin: multilingual_plain_text
+  field_article_type:
+    plugin: entity_reference_ids
+  field_description:
+    plugin: string
+  field_list_date:
+    plugin: timestamp
+exclude_field: ''
+tracking: true

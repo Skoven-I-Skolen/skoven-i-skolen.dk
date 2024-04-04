@@ -1,0 +1,26 @@
+uuid: 0488ea1e-07a2-4625-a05e-90caf65e69e4
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - node
+id: node.page.content
+type: content
+target_entity_type: node
+target_bundle: page
+display_name:
+  plugin: entity_label
+category_path:
+  plugin: path_alias
+brand: {  }
+list_price: {  }
+sales_price: {  }
+data_fields:
+  body:
+    plugin: multilingual_plain_text
+  field_description:
+    plugin: string
+exclude_field: field_search_exclude
+tracking: true

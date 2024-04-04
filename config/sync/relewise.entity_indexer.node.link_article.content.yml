@@ -1,0 +1,36 @@
+uuid: 73391c1a-15e9-4260-b172-c9ad68365618
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.link_article
+  module:
+    - node
+id: node.link_article.content
+type: content
+target_entity_type: node
+target_bundle: link_article
+display_name:
+  plugin: entity_label
+category_path:
+  plugin: path_alias
+brand: {  }
+list_price: {  }
+sales_price: {  }
+data_fields:
+  body:
+    plugin: multilingual_plain_text
+  field_article_type:
+    plugin: entity_reference_ids
+  field_class:
+    plugin: entity_reference_ids
+  field_description:
+    plugin: string
+  field_location:
+    plugin: entity_reference_ids
+  field_season:
+    plugin: entity_reference_ids
+  field_subject:
+    plugin: entity_reference_ids
+exclude_field: ''
+tracking: true

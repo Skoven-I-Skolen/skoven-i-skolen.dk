@@ -131,7 +131,7 @@
         "novicell/premium_core": "^1.0",
         "novicell/premium_profile": "^1.0",
         "novicell/premium_tools": "^1.0",
-        "novicell/relewise": "^2.0.19",
+        "novicell/relewise": "^3.0",
         "novicell/status_feed": "^1.0",
         "novicell/styles": "^1.0",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -140,7 +140,7 @@
     },
     "require-dev": {
         "drupal/devel": "^5.1",
-        "kint-php/kint": "^3.3"
+        "kint-php/kint": "^5.0"
     },
     "conflict": {
         "drupal/drupal": "*"

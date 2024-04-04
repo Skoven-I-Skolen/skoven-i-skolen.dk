@@ -13,6 +13,8 @@ entity_bundles:
     - blog_post
 fields:
   text: search
-engine_id: relewise
+engine_id: relewise_content
+engine_settings:
+  index: ''
 sort_field: created
 show_total: ''
