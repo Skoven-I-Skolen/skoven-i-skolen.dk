@@ -42,7 +42,6 @@ dependencies:
     - entity_browser
     - field_permissions
     - file
-    - file_delete
     - filter
     - layout_builder
     - media
@@ -165,6 +164,7 @@ permissions:
   - 'delete any blog_post content'
   - 'delete any document media'
   - 'delete any dot_on_map content'
+  - 'delete any file'
   - 'delete any image media'
   - 'delete any link_article content'
   - 'delete any media'
@@ -179,7 +179,6 @@ permissions:
   - 'delete blog_post revisions'
   - 'delete content translations'
   - 'delete dot_on_map revisions'
-  - 'delete files'
   - 'delete link_article revisions'
   - 'delete media'
   - 'delete news revisions'
