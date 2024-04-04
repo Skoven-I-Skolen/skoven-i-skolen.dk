@@ -1,4 +1,4 @@
-index_batch_size: '200'
+index_batch_size: 200
 entity_bundles:
   node:
     - article
@@ -9,3 +9,5 @@ entity_bundles:
     - page
   profile:
     - organization
+cache_default_max_age: 3600
+cache_personal_max_age: 0
