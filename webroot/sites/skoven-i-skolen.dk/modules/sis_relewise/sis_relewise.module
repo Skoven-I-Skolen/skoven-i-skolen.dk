@@ -1,11 +1,16 @@
 <?php
 
-use Drupal\Component\Render\PlainTextOutput;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Field\EntityReferenceFieldItemList;
 use Drupal\entity_overview\OverviewFilter;
 use Drupal\node\Entity\Node;
-use Drupal\relewise\DataTypes\Search\Sorting\Content\ContentPopularitySorting;
+use Relewise\Factory\DataValueFactory;
+use Relewise\Models\ContainsCondition;
+use Relewise\Models\ContainsConditionCollectionArgumentEvaluationMode;
+use Relewise\Models\ContentDataFilter;
+use Relewise\Models\ContentRecommendationRequestSettings;
+use Relewise\Models\FilterCollection;
+use Relewise\Models\PopularContentsRequest;
+use Relewise\Models\ValueConditionCollection;
 
 /**
  * Implements hook_locale_translation_projects_alter().
@@ -21,104 +26,29 @@ function sis_relewise_locale_translation_projects_alter(&$projects) {
 /**
  * Relewise content alter.
  *
- * @param \Drupal\relewise\Content $content
+ * @param \Relewise\Models\Content $content
  */
-function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content, EntityInterface $entity) {
+function sis_relewise_relewise_content_alter(\Relewise\Models\Content &$content, EntityInterface $entity) {
+  /** @var \Drupal\relewise\Relewise $relewise */
+  $relewise = \Drupal::service('relewise');
+
   if ($entity->getEntityTypeId() == 'node') {
     /** @var Node $node */
     $node = $entity;
     $langcode = $entity->language()->getId();
+    $language = $relewise->languageFromLanguageCode($langcode);
 
     $bundle = \Drupal::entityTypeManager()->getStorage($node->getEntityType()->getBundleEntityType())->load($node->bundle());
-    $content->addData('bundle_label', new \Drupal\relewise\DataTypes\Multilingual($bundle->label(), $langcode));
+    $content->addToData('bundle_label', DataValueFactory::multilingualCollectionWithSingleLanguage($language, $bundle->label()));
 
-    if ($node->hasField('body') && !$node->get('body')
-        ->isEmpty()) {
-      $content->addData('body', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('body')
-        ->first()
-        ->getValue()['value']), $langcode));
-    }
-    if ($node->hasField('field_description') && !$node->get('field_description')
-        ->isEmpty()) {
-      $content->addData('field_description', new \Drupal\relewise\DataTypes\Multilingual($node->get('field_description')
-        ->first()
-        ->getValue()['value'], $langcode));
-    }
     if ($node->hasField('field_article_type') && !$node->get('field_article_type')
         ->isEmpty()) {
-      $content->addData('field_article_type', $node->get('field_article_type')
-        ->first()
-        ->getValue()['target_id']);
       $tid = $node->get('field_article_type')
         ->first()
         ->getValue()['target_id'];
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
       if ($term) {
-        $content->addData('field_article_type_label', $term->label());
-      }
-    }
-    if ($node->hasField('field_subject') && !$node->get('field_subject')
-        ->isEmpty()) {
-      $content->addData('field_subject', _sis_relewise_relewise_taxonomy_value($node->get('field_subject')));
-    }
-    if ($node->hasField('field_class') && !$node->get('field_class')
-        ->isEmpty()) {
-      $content->addData('field_class', _sis_relewise_relewise_taxonomy_value($node->get('field_class')));
-    }
-    if ($node->hasField('field_location') && !$node->get('field_location')
-        ->isEmpty()) {
-      $content->addData('field_location', _sis_relewise_relewise_taxonomy_value($node->get('field_location')));
-    }
-    if ($node->hasField('field_season') && !$node->get('field_season')
-        ->isEmpty()) {
-      $content->addData('field_season', _sis_relewise_relewise_taxonomy_value($node->get('field_season')));
-    }
-    if ($node->hasField('field_equipment') && !$node->get('field_equipment')
-        ->isEmpty()) {
-      $content->addData('field_equipment', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_equipment')
-        ->first()
-        ->getValue()['value']), $langcode));
-    }
-    if ($node->hasField('field_colophon') && !$node->get('field_colophon')
-        ->isEmpty()) {
-      $content->addData('field_colophon', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_colophon')
-        ->first()
-        ->getValue()['value']), $langcode));
-    }
-    if ($node->hasField('field_colophon_author') && !$node->get('field_colophon_author')
-        ->isEmpty()) {
-      $content->addData('field_colophon_author', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_colophon_author')
-        ->first()
-        ->getValue()['value']), $langcode));
-    }
-    if ($node->hasField('field_colophon_photographer') && !$node->get('field_colophon_photographer')
-        ->isEmpty()) {
-      $content->addData('field_colophon_photographer', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_colophon_photographer')
-        ->first()
-        ->getValue()['value']), $langcode));
-    }
-    if ($node->hasField('field_teaching_goals') && !$node->get('field_teaching_goals')
-        ->isEmpty()) {
-      $content->addData('field_teaching_goals', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($node->get('field_teaching_goals')
-        ->first()
-        ->getValue()['value']), $langcode));
-    }
-    if ($node->hasField('field_list_date') && !$node->get('field_list_date')
-        ->isEmpty()) {
-      $dateformat = new \Drupal\Core\Datetime\DrupalDateTime($node->get('field_list_date')
-        ->first()
-        ->getValue()['value']);
-      $content->addData('field_list_date', $dateformat->getTimestamp());
-    }
-    if ($node->hasField('field_search_exclude') && !$node->get('field_search_exclude')
-        ->isEmpty()) {
-      if ($node->get('field_search_exclude')
-        ->first()
-        ->getValue()['value'] == 1) {
-        /** @var \Drupal\relewise\Relewise $relewise */
-        $relewise = \Drupal::service('relewise');
-        $relewise->disableContentIndex($entity);
-        $content = NULL;
+        $content->addToData('field_article_type_label', DataValueFactory::string($term->label()));
       }
     }
   }
@@ -126,38 +56,26 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
     /** @var \Drupal\profile\Entity\Profile $profile */
     $profile = $entity;
     $langcode = \Drupal::languageManager()->getDefaultLanguage()->getId();
+    $language = $relewise->languageFromLanguageCode($langcode);
 
     $bundle = \Drupal::entityTypeManager()->getStorage($profile->getEntityType()->getBundleEntityType())->load($profile->bundle());
-    $content->addData('bundle_label', new \Drupal\relewise\DataTypes\Multilingual($bundle->label(), $langcode));
+    $content->addToData('bundle_label', DataValueFactory::multilingualCollectionWithSingleLanguage($language, $bundle->label()));
 
-    if ($profile->hasField('field_organization_description') && !$profile->get('field_organization_description')
-        ->isEmpty()) {
-      $content->addData('field_description', new \Drupal\relewise\DataTypes\Multilingual(PlainTextOutput::renderFromHtml($profile->get('field_organization_description')
-        ->first()
-        ->getValue()['value']), $langcode));
-    }
     if ($profile->hasField('field_organization_address') && !$profile->get('field_organization_address')
         ->isEmpty()) {
-      $content->addData('field_organization_address', $profile->get('field_organization_address')->first()->getValue()['organization'] ?? '');
+      $content->addToData('field_organization_address', DataValueFactory::string($profile->get('field_organization_address')->first()->getValue()['organization'] ?? ''));
     }
     if ($profile->hasField('field_article_type') && !$profile->get('field_article_type')
         ->isEmpty()) {
-      $content->addData('field_article_type', $profile->get('field_article_type')
-        ->first()
-        ->getValue()['target_id']);
       $tid = $profile->get('field_article_type')
         ->first()
         ->getValue()['target_id'];
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
       if ($term) {
-        $content->addData('field_article_type_label', $term->label());
+        $content->addToData('field_article_type_label', DataValueFactory::string($term->label()));
       }
     }
   }
-  else {
-    $content = NULL;
-  }
-  //$content = null;
   return $content;
 }
 
@@ -167,21 +85,6 @@ function sis_relewise_relewise_content_alter(\Drupal\relewise\Content &$content,
 function sis_relewise_entity_overview_facet_options_alter(&$facet_options, OverviewFilter $filter) {
   unset($facet_options['count']);
   unset($facet_options['owner']);
-}
-
-/**
- * @param \Drupal\Core\Field\EntityReferenceFieldItemList $field
- *
- * @return \Drupal\relewise\DataTypes\StringList
- */
-function _sis_relewise_relewise_taxonomy_value(EntityReferenceFieldItemList $field): \Drupal\relewise\DataTypes\StringList {
-  $terms = $field->referencedEntities();
-  $value = new \Drupal\relewise\DataTypes\StringList([]);
-  /** @var \Drupal\taxonomy\Entity\Term $term */
-  foreach ($terms as $term) {
-    $value->addValue($term->id());
-  }
-  return $value;
 }
 
 /**
@@ -206,8 +109,28 @@ function sis_relewise_preprocess_sis_relewise_most_popular(array &$variables) {
   /** @var \Drupal\relewise\Relewise $relewise */
   $relewise = \Drupal::service('relewise');
   try {
-    $result = $relewise->searchContent('', ['bundle' => ['article']], new ContentPopularitySorting(), 4);
-    $nodes = $relewise->getSearchedContent($result);
+    $recommender = $relewise->getRecommender();
+
+    $filters = [];
+    $filters[] = ContentDataFilter::create('bundle')
+      ->setConditions(ValueConditionCollection::create(ContainsCondition::create(FALSE)
+        ->setValue(DataValueFactory::string('article'))
+        ->setValueCollectionEvaluationMode(ContainsConditionCollectionArgumentEvaluationMode::Any)));
+    $collection = FilterCollection::create(... $filters);
+    $settings = ContentRecommendationRequestSettings::create();
+    $settings->setNumberOfRecommendations(4);
+
+    $request = PopularContentsRequest::create(
+      $relewise->getCurrentLanguage(),
+      $relewise->getCurrentCurrency(),
+      $relewise->getDisplayLocation(),
+      $relewise->getCurrentUser(),
+    );
+    $request->setSettings($settings);
+    $request->setFilters($collection);
+    $result = $recommender->popularContents($request);
+
+    $nodes = $relewise->getEntitiesFromResults($result->recommendations, 'contentId');
   } catch (Exception $exception) {
     $nodes = [];
   }

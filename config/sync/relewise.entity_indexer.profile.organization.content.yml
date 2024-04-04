@@ -1,0 +1,26 @@
+uuid: b99c580c-e6e0-49f8-a465-29c375e09980
+langcode: da
+status: true
+dependencies:
+  config:
+    - profile.type.organization
+  module:
+    - profile
+id: profile.organization.content
+type: content
+target_entity_type: profile
+target_bundle: organization
+display_name:
+  plugin: entity_label
+category_path:
+  plugin: path_alias
+brand: {  }
+list_price: {  }
+sales_price: {  }
+data_fields:
+  field_article_type:
+    plugin: entity_reference_ids
+  field_organization_description:
+    plugin: string
+exclude_field: ''
+tracking: true

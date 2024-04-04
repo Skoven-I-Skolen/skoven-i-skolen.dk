@@ -1,0 +1,53 @@
+uuid: 10c68b31-1097-4fdd-aa80-ef1729188d2f
+langcode: da
+status: true
+dependencies: {  }
+id: default
+label: Default
+enabled: 1
+default: true
+content_id:
+  include: true
+  weight: 1
+  prediction: Disabled
+  parser: ClearText
+content_display_name:
+  include: true
+  weight: 20
+  prediction: CompleteWordSequence
+  parser: ClearText
+content_data:
+  body:
+    include: true
+    weight: 1
+    prediction: IndividualWords
+    parser: ClearText
+  field_organization_description:
+    include: true
+    weight: 2
+    prediction: IndividualWords
+    parser: ClearText
+product_id:
+  include: false
+  weight: 0
+  prediction: Disabled
+  parser: ClearText
+product_display_name:
+  include: false
+  weight: 0
+  prediction: Disabled
+  parser: ClearText
+product_data: {  }
+product_brand:
+  id:
+    include: false
+    weight: 0
+    prediction: Disabled
+    parser: ClearText
+  display_name:
+    include: false
+    weight: 0
+    prediction: Disabled
+    parser: ClearText
+languages:
+  - da
