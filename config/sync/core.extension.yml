@@ -118,6 +118,7 @@ module:
   redirect_404: 0
   redis: 0
   relewise: 0
+  relewise_autocomplete: 0
   responsive_image: 0
   role_delegation: 0
   scheduled_transitions: 0
