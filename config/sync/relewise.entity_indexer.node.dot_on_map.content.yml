@@ -1,0 +1,34 @@
+uuid: 28a72d6b-6b0e-4cdc-af43-919fd8b17d1b
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.dot_on_map
+  module:
+    - node
+id: node.dot_on_map.content
+type: content
+target_entity_type: node
+target_bundle: dot_on_map
+display_name:
+  plugin: entity_label
+category_path:
+  plugin: path_alias
+brand: {  }
+list_price: {  }
+sales_price: {  }
+data_fields:
+  body:
+    plugin: multilingual_plain_text
+  field_article_type:
+    plugin: entity_reference_ids
+  field_class:
+    plugin: entity_reference_ids
+  field_location:
+    plugin: entity_reference_ids
+  field_season:
+    plugin: entity_reference_ids
+  field_subject:
+    plugin: entity_reference_ids
+exclude_field: ''
+tracking: true

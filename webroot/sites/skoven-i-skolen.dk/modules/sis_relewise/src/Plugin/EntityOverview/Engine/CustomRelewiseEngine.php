@@ -7,6 +7,7 @@ use Drupal\entity_overview\OverviewFields\OwnerField;
 use Drupal\entity_overview\OverviewFields\SearchTextField;
 use Drupal\entity_overview\OverviewFilter;
 use Drupal\entity_overview\OverviewResultInterface;
+use Drupal\relewise\Plugin\EntityOverview\Engine\ContentEngine;
 use Drupal\relewise\Plugin\EntityOverview\Engine\RelewiseEngine;
 use Drupal\relewise\RelewiseOverviewResult;
 use Drupal\sis_relewise\OverviewFields\ExternalField;
@@ -27,7 +28,7 @@ use Drupal\sis_relewise\OverviewFields\ExternalField;
  *  recommendations = false
  * )
  */
-class CustomRelewiseEngine extends RelewiseEngine {
+class CustomRelewiseEngine extends ContentEngine {
 
   /**
    * @inheritDoc
@@ -44,7 +45,7 @@ class CustomRelewiseEngine extends RelewiseEngine {
   /**
    * @inheritDoc
    */
-  protected function getSearchFields(OverviewFilter $filter) {
+  protected function getSearchFields(OverviewFilter $filter): array {
     $fields = parent::getSearchFields($filter);
     unset($fields['external']);
     if (!empty($filter->getFieldValue('external'))) {
@@ -52,12 +53,5 @@ class CustomRelewiseEngine extends RelewiseEngine {
       $fields['bundle'] = 'link_article';
     }
     return $fields;
-  }
-
-  /**
-   * @inheritDoc
-   */
-  public function getOverviewResult(OverviewFilter $filter): OverviewResultInterface {
-    return new RelewiseOverviewResult($this, $filter);
   }
 }

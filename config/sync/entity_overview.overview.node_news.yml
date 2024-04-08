@@ -1,13 +1,19 @@
 uuid: 19ab264a-7015-4287-99d9-3248866de98c
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.news
+  module:
+    - node
 id: node_news
 label: Nyhed
 entity_bundles:
   node:
     - news
 fields: {  }
-engine_id: relewise
+engine_id: relewise_content
+engine_settings:
+  index: ''
 sort_field: created
 show_total: results
