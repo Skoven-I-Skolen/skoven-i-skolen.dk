@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a710314b31ffd0668d0c115363a13773",
+    "content-hash": "6e2dc85be41b676d63c679c5ef46c400",
     "packages": [
         {
             "name": "algolia/places",
@@ -8662,10 +8662,13 @@
         },
         {
             "name": "novicell/relewise",
-            "version": "2.0.19",
+            "version": "3.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.drupal.dk/php/~/up/ver_E62Jh/novicellrelewise-2-0-19.zip"
+                "url": "https://packages.drupal.dk/php/~/up/ver_tXTkZ/novicellrelewise-3-0-2.zip"
+            },
+            "require": {
+                "relewise/client": "^2.0"
             },
             "type": "drupal-module",
             "license": [
@@ -9832,6 +9835,50 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "relewise/client",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Relewise/relewise-sdk-php.git",
+                "reference": "e4ffe0dbf9cd98ad547de94fb3ae1987a8cc83c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Relewise/relewise-sdk-php/zipball/e4ffe0dbf9cd98ad547de94fb3ae1987a8cc83c7",
+                "reference": "e4ffe0dbf9cd98ad547de94fb3ae1987a8cc83c7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "fqqdk/packagist-publisher": "*",
+                "phpunit/phpunit": "10.0.19"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Relewise\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Relewise is a next generation personalization SaaS-platform, which offers functionality within product- and content recommendations and personalized search. This official SDK helps you interact with our API.",
+            "homepage": "https://relewise.com",
+            "keywords": [
+                "personalization",
+                "recommendations",
+                "relewise"
+            ],
+            "support": {
+                "issues": "https://github.com/Relewise/relewise-sdk-php/issues",
+                "source": "https://github.com/Relewise/relewise-sdk-php/tree/v2.1.2"
+            },
+            "time": "2024-01-10T15:43:39+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -13346,37 +13393,32 @@
         },
         {
             "name": "kint-php/kint",
-            "version": "3.3",
+            "version": "5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kint-php/kint.git",
-                "reference": "335ac1bcaf04d87df70d8aa51e8887ba2c6d203b"
+                "reference": "128303461092734a1e3cb4beb1eea9afe7a5a0ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kint-php/kint/zipball/335ac1bcaf04d87df70d8aa51e8887ba2c6d203b",
-                "reference": "335ac1bcaf04d87df70d8aa51e8887ba2c6d203b",
+                "url": "https://api.github.com/repos/kint-php/kint/zipball/128303461092734a1e3cb4beb1eea9afe7a5a0ee",
+                "reference": "128303461092734a1e3cb4beb1eea9afe7a5a0ee",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.6"
+                "php": ">=7.1"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.0",
-                "phpunit/phpunit": "^4.0",
-                "seld/phar-utils": "^1.0",
-                "symfony/finder": "^2.0 || ^3.0 || ^4.0",
-                "vimeo/psalm": "^3.0"
+                "friendsofphp/php-cs-fixer": "^3",
+                "phpspec/prophecy-phpunit": "^2",
+                "phpunit/phpunit": "^9",
+                "seld/phar-utils": "^1",
+                "symfony/finder": ">=4.0",
+                "vimeo/psalm": "^5"
             },
             "suggest": {
-                "ext-ctype": "Simple data type tests",
-                "ext-iconv": "Provides fallback detection for ambiguous legacy string encodings such as the Windows and ISO 8859 code pages",
-                "ext-mbstring": "Provides string encoding detection",
-                "kint-php/kint-js": "Provides a simplified dump to console.log()",
-                "kint-php/kint-twig": "Provides d() and s() functions in twig templates",
-                "symfony/polyfill-ctype": "Replacement for ext-ctype if missing",
-                "symfony/polyfill-iconv": "Replacement for ext-iconv if missing",
-                "symfony/polyfill-mbstring": "Replacement for ext-mbstring if missing"
+                "kint-php/kint-helpers": "Provides extra helper functions",
+                "kint-php/kint-twig": "Provides d() and s() functions in twig templates"
             },
             "type": "library",
             "autoload": {
@@ -13397,10 +13439,6 @@
                     "homepage": "https://github.com/jnvsor"
                 },
                 {
-                    "name": "Rokas Šleinius",
-                    "homepage": "https://github.com/raveren"
-                },
-                {
                     "name": "Contributors",
                     "homepage": "https://github.com/kint-php/kint/graphs/contributors"
                 }
@@ -13414,9 +13452,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kint-php/kint/issues",
-                "source": "https://github.com/kint-php/kint/tree/master"
+                "source": "https://github.com/kint-php/kint/tree/5.1.0"
             },
-            "time": "2019-10-17T18:05:24+00:00"
+            "time": "2023-11-16T06:04:49+00:00"
         }
     ],
     "aliases": [],

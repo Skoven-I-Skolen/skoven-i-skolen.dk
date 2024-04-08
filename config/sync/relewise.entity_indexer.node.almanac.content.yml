@@ -1,0 +1,22 @@
+uuid: 02b71bd5-eb8c-4c32-a893-b8b5391f8397
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.almanac
+  module:
+    - node
+id: node.almanac.content
+type: content
+target_entity_type: node
+target_bundle: almanac
+display_name:
+  plugin: entity_label
+category_path:
+  plugin: path_alias
+brand: {  }
+list_price: {  }
+sales_price: {  }
+data_fields: {  }
+exclude_field: ''
+tracking: true

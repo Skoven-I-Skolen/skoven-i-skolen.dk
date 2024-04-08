@@ -1,0 +1,48 @@
+uuid: ec111881-eacc-4c3f-b571-a7cbe469a801
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.article
+  module:
+    - node
+id: node.article.content
+type: content
+target_entity_type: node
+target_bundle: article
+display_name:
+  plugin: entity_label
+category_path:
+  plugin: path_alias
+brand: {  }
+list_price: {  }
+sales_price: {  }
+data_fields:
+  body:
+    plugin: multilingual_plain_text
+  field_article_type:
+    plugin: entity_reference_ids
+  field_class:
+    plugin: entity_reference_ids
+  field_colophon:
+    plugin: string
+  field_colophon_author:
+    plugin: string
+  field_colophon_photographer:
+    plugin: string
+  field_description:
+    plugin: string
+  field_equipment:
+    plugin: string
+  field_list_date:
+    plugin: timestamp
+  field_location:
+    plugin: entity_reference_ids
+  field_season:
+    plugin: entity_reference_ids
+  field_subject:
+    plugin: entity_reference_ids
+  field_teaching_goals:
+    plugin: string
+exclude_field: field_search_exclude
+tracking: true

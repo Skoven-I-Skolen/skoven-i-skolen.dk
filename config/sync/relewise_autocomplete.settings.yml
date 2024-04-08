@@ -1,0 +1,21 @@
+multi_search: {  }
+content:
+  id: 0
+  index: ''
+  count: '10'
+  content_id: null
+  display_name: 1
+  category_paths: 0
+  recommendations: 0
+  href: 1
+  all_data: 1
+product:
+  id: 0
+  index: ''
+  count: '10'
+  content_id: null
+  display_name: 1
+  category_paths: 0
+  recommendations: 0
+  href: 1
+  all_data: 1
