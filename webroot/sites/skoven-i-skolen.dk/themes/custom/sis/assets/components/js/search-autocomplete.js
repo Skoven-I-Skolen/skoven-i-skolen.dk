@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     placeHolder: Drupal.t('Search entire site'),
     selector: '#js-header-search-input',
     submit: true,
+    threshold: 2,
+    debounce: 800,
     data: {
       src: async (query) => {
         try {
