@@ -53,6 +53,7 @@
       position: relative;
       margin-bottom: 15px;
       padding-left: 30px;
+      background-color: var(--color-gray-light);
 
       svg {
         position: absolute;
@@ -64,6 +65,7 @@
 
     &-description {
       font-weight: 400;
+      background-color: var(--color-gray-light);
     }
   }
 }
